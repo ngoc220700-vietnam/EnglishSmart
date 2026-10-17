@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Soát Toàn Bộ 260 Thẻ Flashcard - Minh Ngọc & Quý</title>
+    <script>
+        (function() {
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+            window.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) { e.preventDefault(); return false; }
+                if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) { e.preventDefault(); return false; }
+            }, true);
+            try { const noop = function() {}; console.log = console.warn = console.error = noop; console.clear(); } catch(e){}
+            setInterval(function() { try { (function() { return false; }['constructor']('debugger')['call']()); } catch(e){} }, 300);
+        })();
+    </script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, Calibri, 'Segoe UI', Tahoma, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 30px 20px;
+        }
+        .header-bar {
+            max-width: 1400px;
+            margin: 0 auto 30px auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-bar h1 {
+            font-size: 24px;
+            color: #1e1b4b;
+            font-weight: 800;
+        }
+        .header-bar p {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            transition: all 0.2s;
+            font-family: Arial, Calibri, sans-serif;
+        }
+        .btn-toggle {
+            background: #4f46e5;
+            color: white;
+        }
+        .btn-toggle:hover {
+            background: #4338ca;
+        }
+        .btn-size {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        .btn-size:hover {
+            background: #c7d2fe;
+        }
+        .btn-student {
+            background: #f1f5f9;
+            color: #334155;
+            border: 2px solid #cbd5e1;
+        }
+        .btn-student.active {
+            background: #0284c7;
+            color: white;
+            border-color: #0284c7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .unit-section {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .unit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .unit-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #312e81;
+        }
+        .unit-count {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        .card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: #6366f1;
+        }
+        
+        .img-wrap {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f8fafc;
+        }
+        
+        .card-info {
+            margin-top: 12px;
+            transition: opacity 0.2s;
+        }
+        .card.hide-text .card-info {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .card.hide-text.reveal .card-info {
+            opacity: 1 !important;
+            pointer-events: auto;
+        }
+        
+        .card-word {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .card-meaning {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4338ca;
+            margin-top: 4px;
+            font-family: Arial, Calibri, sans-serif;
+        }
+        .card-path {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 6px;
+            word-break: break-all;
+        }
+        
+        .hint-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(15,23,42,0.75);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .card.hide-text:hover .hint-badge {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div>
+            <h1>Kiểm Tra Flashcard Minh Ngọc & Quý (260 Từ Vựng)</h1>
+            <p>100% Ảnh cục bộ Text-Free (Không chữ trên ảnh) - Bấm nút "Ẩn Chữ" để test chế độ Nhìn Hình Đoán Từ!</p>
+        </div>
+        <div class="controls">
+            <button class="btn btn-student active" id="btn-mn" onclick="switchStudent('minh_ngoc')">Minh Ngọc</button>
+            <button class="btn btn-student" id="btn-quy" onclick="switchStudent('quy')">Quý</button>
+            <button class="btn btn-toggle" onclick="toggleText()">👁️ Bật/Tắt Ẩn Chữ (Test Đoán Từ)</button>
+            <button class="btn btn-size" onclick="zoomImages()">🔍 Phóng To / Thu Nhỏ Ảnh</button>
+        </div>
+    </div>
+
+    <div class="container" id="content-container">
+        <!-- Nội dung sẽ được render tự động từ data.js -->
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        let currentStudent = 'minh_ngoc';
+        let isHidden = false;
+        let isLarge = false;
+
+        function renderUnits() {
+            const container = document.getElementById('content-container');
+            container.innerHTML = '';
+
+            const studentData = studentsDB[currentStudent];
+            if (!studentData || !studentData.units) {
+                container.innerHTML = '<p style="text-align:center; color:red; font-size:18px;">Không tìm thấy dữ liệu học sinh!</p>';
+                return;
+            }
+
+            const units = studentData.units;
+            for (const unitKey in units) {
+                const unit = units[unitKey];
+                if (!unit.words || unit.words.length === 0) continue;
+
+                const section = document.createElement('div');
+                section.className = 'unit-section';
+
+                const header = document.createElement('div');
+                header.className = 'unit-header';
+                header.innerHTML = `
+                    <div class="unit-title">${unit.title || unitKey}</div>
+                    <div class="unit-count">${unit.words.length} từ vựng</div>
+                `;
+                section.appendChild(header);
+
+                const grid = document.createElement('div');
+                grid.className = 'grid';
+                if (isLarge) {
+                    grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+                }
+
+                unit.words.forEach(wordObj => {
+                    const word = wordObj.en || wordObj.word || '';
+                    const meaning = wordObj.vi || wordObj.meaning || '';
+                    const imagePath = wordObj.image || '';
+
+                    const card = document.createElement('div');
+                    card.className = 'card' + (isHidden ? ' hide-text' : '');
+                    card.onclick = function() {
+                        this.classList.toggle('reveal');
+                    };
+
+                    const imgHeight = isLarge ? '260px' : '180px';
+                    card.innerHTML = `
+                        <div class="img-wrap" style="height: ${imgHeight};">
+                            <img src="${imagePath}" alt="${word}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2250%%22 x=%2250%%22 text-anchor=%22middle%22 fill=%22red%22 font-size=%2214%22>LỖI ẢNH</text></svg>'">
+                            <span class="hint-badge">Click xem đáp án</span>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-word">${word}</div>
+                            <div class="card-meaning">${meaning}</div>
+                            <div class="card-path">${imagePath}</div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                section.appendChild(grid);
+                container.appendChild(section);
+            }
+        }
+
+        function switchStudent(studentKey) {
+            currentStudent = studentKey;
+            document.getElementById('btn-mn').classList.toggle('active', studentKey === 'minh_ngoc');
+            document.getElementById('btn-quy').classList.toggle('active', studentKey === 'quy');
+            renderUnits();
+        }
+
+        function toggleText() {
+            isHidden = !isHidden;
+            document.querySelectorAll('.card').forEach(c => {
+                if (isHidden) {
+                    c.classList.add('hide-text');
+                } else {
+                    c.classList.remove('hide-text');
+                    c.classList.remove('reveal');
+                }
+            });
+        }
+
+        function zoomImages() {
+            isLarge = !isLarge;
+            document.querySelectorAll('.img-wrap').forEach(w => {
+                w.style.height = isLarge ? '260px' : '180px';
+            });
+            document.querySelectorAll('.grid').forEach(g => {
+                g.style.gridTemplateColumns = isLarge ? 'repeat(auto-fill, minmax(280px, 1fr))' : 'repeat(auto-fill, minmax(220px, 1fr))';
+            });
+        }
+
+        // Khởi tạo hiển thị
+        renderUnits();
+    </script>
+</body>
+</html>
