@@ -24375,8 +24375,6075 @@
                   "avatar":  "avatars/gemma.jpg",
                   "name":  "Gemma",
                   "age":  "26 tuổi",
-                  "curriculum":  "Cambridge English Empower A1 Starter (Full 12 Units)",
-                  "units":  {
+                                    "curricula": {
+                      "empower_a1": {
+                          "title": "Cambridge English Empower A1 Starter (Full 12 Units)",
+                          "badge": "A1 Starter",
+                          "units": {
+                                "unit_1":  {
+                                               "title":  "Unit 1: Names and countries",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Verb \u0027be\u0027 with I, you, we (Động từ to be với I, you, we)",
+                                                                   "structure":  "I am (I\u0027m) | You are (You\u0027re) | We are (We\u0027re)",
+                                                                   "explanation":  "Dùng để giới thiệu bản thân, quốc tịch, quê quán và chào hỏi người khác trong giao tiếp hàng ngày.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Hello, I\u0027m Gemma. I\u0027m from Vietnam.",
+                                                                                        "vi":  "Xin chào, tôi là Gemma. Tôi đến từ Việt Nam."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Are you from the UK? - Yes, I am. / No, I\u0027m not.",
+                                                                                        "vi":  "Bạn có phải đến từ Anh không? - Vâng, đúng vậy. / Không, tôi không phải."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Trong giao tiếp nói hàng ngày, người bản xứ thường dùng dạng viết tắt: I\u0027m, you\u0027re, we\u0027re."
+                                                               },
+                                                               {
+                                                                   "title":  "Verb \u0027be\u0027 with he, she, they (Động từ to be với he, she, they)",
+                                                                   "structure":  "He is (He\u0027s) | She is (She\u0027s) | They are (They\u0027re)",
+                                                                   "explanation":  "Dùng để giới thiệu về đồng nghiệp, bạn bè hoặc người khác.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "This is Alex. He\u0027s from Canada.",
+                                                                                        "vi":  "Đây là Alex. Anh ấy đến từ Canada."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "They aren\u0027t American; they\u0027re Australian.",
+                                                                                        "vi":  "Họ không phải là người Mỹ; họ là người Úc."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Phủ định viết tắt: isn\u0027t (is not), aren\u0027t (are not)."
+                                                               },
+                                                               {
+                                                                   "title":  "Question Words: What \u0026 Where (Từ để hỏi What và Where)",
+                                                                   "structure":  "What\u0027s your name? | Where are you from?",
+                                                                   "explanation":  "Hai câu hỏi thông dụng nhất khi mới làm quen với đối tác hoặc bạn bè quốc tế.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "What\u0027s your full name? - My name is Gemma Nguyen.",
+                                                                                        "vi":  "Tên đầy đủ của bạn là gì? - Tên tôi là Gemma Nguyễn."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Where is she from? - She\u0027s from Japan.",
+                                                                                        "vi":  "Cô ấy đến từ đâu? - Cô ấy đến từ Nhật Bản."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Where = Ở đâu (hỏi nơi chốn/quốc gia); What = Cái gì/Gì (hỏi thông tin)."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Country",
+                                                                 "ipa":  "/ˈkʌn.tri/",
+                                                                 "vi":  "Quốc gia, đất nước",
+                                                                 "ex":  "Which country are you from?"
+                                                             },
+                                                             {
+                                                                 "en":  "Nationality",
+                                                                 "ipa":  "/ˌnæʃ.ənˈæl.ə.ti/",
+                                                                 "vi":  "Quốc tịch",
+                                                                 "ex":  "What is your nationality? - I am Vietnamese."
+                                                             },
+                                                             {
+                                                                 "en":  "First name",
+                                                                 "ipa":  "/ˈfɜːst neɪm/",
+                                                                 "vi":  "Tên gọi",
+                                                                 "ex":  "My first name is Gemma."
+                                                             },
+                                                             {
+                                                                 "en":  "Surname",
+                                                                 "ipa":  "/ˈsɜː.neɪm/",
+                                                                 "vi":  "Họ",
+                                                                 "ex":  "Please write your surname on this registration form."
+                                                             },
+                                                             {
+                                                                 "en":  "Passport",
+                                                                 "ipa":  "/ˈpɑːs.pɔːt/",
+                                                                 "vi":  "Hộ chiếu",
+                                                                 "ex":  "Please show your passport at airport check-in."
+                                                             },
+                                                             {
+                                                                 "en":  "Introduce",
+                                                                 "ipa":  "/ˌɪn.trəˈdʒuːs/",
+                                                                 "vi":  "Giới thiệu",
+                                                                 "ex":  "Let me introduce my colleague, David."
+                                                             },
+                                                             {
+                                                                 "en":  "Pleased to meet you",
+                                                                 "ipa":  "/pliːzd tuː miːt juː/",
+                                                                 "vi":  "Rất vui được gặp bạn",
+                                                                 "ex":  "Hello! Pleased to meet you, Mr. Smith."
+                                                             },
+                                                             {
+                                                                 "en":  "Colleague",
+                                                                 "ipa":  "/ˈkɒl.iːɡ/",
+                                                                 "vi":  "Đồng nghiệp",
+                                                                 "ex":  "Sarah and I are colleagues at the new office."
+                                                             },
+                                                             {
+                                                                 "en":  "Spell",
+                                                                 "ipa":  "/spel/",
+                                                                 "vi":  "Đánh vần",
+                                                                 "ex":  "How do you spell your surname?"
+                                                             },
+                                                             {
+                                                                 "en":  "Number",
+                                                                 "ipa":  "/ˈnʌm.bər/",
+                                                                 "vi":  "Số điện thoại, con số",
+                                                                 "ex":  "What\u0027s your mobile phone number?"
+                                                             },
+                                                             {
+                                                                 "en":  "Japan",
+                                                                 "ipa":  "/dʒəˈpæn/",
+                                                                 "vi":  "Nước Nhật Bản",
+                                                                 "ex":  "Toyota is a famous company from Japan."
+                                                             },
+                                                             {
+                                                                 "en":  "Japanese",
+                                                                 "ipa":  "/ˌdʒæp.ənˈiːz/",
+                                                                 "vi":  "Người Nhật / Tiếng Nhật",
+                                                                 "ex":  "She is Japanese and speaks three languages."
+                                                             },
+                                                             {
+                                                                 "en":  "Great Britain",
+                                                                 "ipa":  "/ɡreɪt ˈbrɪt.ən/",
+                                                                 "vi":  "Vương quốc Anh",
+                                                                 "ex":  "London is the capital of Great Britain."
+                                                             },
+                                                             {
+                                                                 "en":  "British",
+                                                                 "ipa":  "/ˈbrɪt.ɪʃ/",
+                                                                 "vi":  "Người Anh / Thuộc về Anh",
+                                                                 "ex":  "He is British, but he lives in Hanoi."
+                                                             },
+                                                             {
+                                                                 "en":  "Spain",
+                                                                 "ipa":  "/speɪn/",
+                                                                 "vi":  "Nước Tây Ban Nha",
+                                                                 "ex":  "They go on holiday to Spain every summer."
+                                                             },
+                                                             {
+                                                                 "en":  "Spanish",
+                                                                 "ipa":  "/ˈspæn.ɪʃ/",
+                                                                 "vi":  "Người Tây Ban Nha / Tiếng TBN",
+                                                                 "ex":  "Can you speak Spanish or English?"
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Hello, I ______ Gemma. Nice to meet you.",
+                                                                          "options":  [
+                                                                                          "am",
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027I\u0027 đi với to be \u0027am\u0027 (I am Gemma)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where ______ you from? - I\u0027m from Vietnam.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  1,
+                                                                          "explain":  "Chủ ngữ \u0027you\u0027 đi với động từ to be \u0027are\u0027 trong câu hỏi."
+                                                                      },
+                                                                      {
+                                                                          "q":  "This is Marco. ______ from Italy.",
+                                                                          "options":  [
+                                                                                          "He\u0027s",
+                                                                                          "She\u0027s",
+                                                                                          "They\u0027re",
+                                                                                          "I\u0027m"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Marco là tên nam giới, đại từ thay thế là \u0027He\u0027s\u0027 (He is)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ they British? - No, they\u0027re American.",
+                                                                          "options":  [
+                                                                                          "Are",
+                                                                                          "Is",
+                                                                                          "Am",
+                                                                                          "Do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027they\u0027 số nhiều đi với to be \u0027Are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What ______ your email address?",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Your email address\u0027 là danh từ số ít nên to be là \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ from Germany; we are from Austria.",
+                                                                          "options":  [
+                                                                                          "aren\u0027t",
+                                                                                          "isn\u0027t",
+                                                                                          "am not",
+                                                                                          "don\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Phủ định của \u0027We are\u0027 là \u0027We aren\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is she a doctor? - Yes, she ______.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "does"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời khẳng định ngắn với \u0027Is she...?\u0027 là \u0027Yes, she is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My colleagues ______ Japanese.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027My colleagues\u0027 là danh từ số nhiều (những người đồng nghiệp) -\u003e dùng \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How do you ______ your last name? - G-E-M-M-A.",
+                                                                          "options":  [
+                                                                                          "spell",
+                                                                                          "spells",
+                                                                                          "spelling",
+                                                                                          "spelled"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau trợ động từ \u0027do you\u0027 là động từ nguyên thể \u0027spell\u0027 (đánh vần)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ is your phone number? - It\u0027s 0905 123 456.",
+                                                                          "options":  [
+                                                                                          "What",
+                                                                                          "Where",
+                                                                                          "Who",
+                                                                                          "When"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi thông tin số điện thoại dùng từ để hỏi \u0027What\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They ______ married. They have two children.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027They\u0027 đi với to be \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Excuse me, ______ you Mr. David Wilson?",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi lịch sự xác nhận danh tính: \u0027Are you Mr. David Wilson?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "She ______ from Spain. Her native language is Spanish.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027She\u0027 số ít đi với \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Are you from Paris? - No, I ______.",
+                                                                          "options":  [
+                                                                                          "\u0027m not",
+                                                                                          "aren\u0027t",
+                                                                                          "isn\u0027t",
+                                                                                          "don\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời phủ định ngắn cho \u0027Are you...?\u0027 là \u0027No, I\u0027m not\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ is from South Korea. Her name is Min-ji.",
+                                                                          "options":  [
+                                                                                          "She",
+                                                                                          "He",
+                                                                                          "They",
+                                                                                          "We"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Her name\u0027 chỉ nữ giới -\u003e đại từ chủ ngữ là \u0027She\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What is ______ nationality? - I am Vietnamese.",
+                                                                          "options":  [
+                                                                                          "your",
+                                                                                          "you",
+                                                                                          "yours",
+                                                                                          "she"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Tính từ sở hữu đứng trước danh từ \u0027nationality\u0027 là \u0027your\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where ______ your manager today? - He is in Singapore.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Your manager\u0027 là danh từ số ít -\u003e to be \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "John and Lisa ______ at the international conference.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ gồm 2 người (\u0027John and Lisa\u0027) -\u003e dùng \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ are you? - I am very well, thank you.",
+                                                                          "options":  [
+                                                                                          "How",
+                                                                                          "What",
+                                                                                          "Where",
+                                                                                          "Who"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu chào hỏi thăm sức khỏe: \u0027How are you?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Pleased to ______ you, Mr. Tanaka.",
+                                                                          "options":  [
+                                                                                          "meet",
+                                                                                          "meets",
+                                                                                          "meeting",
+                                                                                          "met"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Thành ngữ chào hỏi giao tiếp lịch sự: \u0027Pleased to meet you\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_2":  {
+                                               "title":  "Unit 2: People and possessions",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Possessive Adjectives (Tính từ sở hữu: my, your, his, her, their, our)",
+                                                                   "structure":  "Possessive Adjective + Noun (my phone, her bag, his car)",
+                                                                   "explanation":  "Dùng để nói về quyền sở hữu đồ đạc cá nhân trong công việc và cuộc sống.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Is this your laptop? - No, it\u0027s her laptop.",
+                                                                                        "vi":  "Đây có phải là máy tính xách tay của bạn không? - Không, đó là laptop của cô ấy."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Our office is on the fifth floor.",
+                                                                                        "vi":  "Văn phòng của chúng tôi ở tầng năm."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "I -\u003e my, You -\u003e your, He -\u003e his, She -\u003e her, We -\u003e our, They -\u003e their."
+                                                               },
+                                                               {
+                                                                   "title":  "Plural Nouns (Danh từ số nhiều thêm -s / -es và bất quy tắc)",
+                                                                   "structure":  "Singular + -s / -es (key -\u003e keys, watch -\u003e watches, person -\u003e people)",
+                                                                   "explanation":  "Dùng khi nói về số lượng đồ vật, giấy tờ hoặc số người từ 2 trở lên.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I have two mobile phones and three keys.",
+                                                                                        "vi":  "Tôi có hai chiếc điện thoại di động và ba chiếc chìa khóa."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "There are five people in the meeting room.",
+                                                                                        "vi":  "Có năm người trong phòng họp."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Từ kết thúc bằng -ch, -sh, -s, -x thêm -es: watch -\u003e watches, box -\u003e boxes. Bất quy tắc: person -\u003e people, child -\u003e children."
+                                                               },
+                                                               {
+                                                                   "title":  "Verb \u0027be\u0027 with \u0027it\u0027 and \u0027they\u0027 for things (Động từ to be chỉ đồ vật)",
+                                                                   "structure":  "It is (It\u0027s) a laptop. | They are (They\u0027re) laptops.",
+                                                                   "explanation":  "Dùng \u0027It\u0027 cho một đồ vật số ít, dùng \u0027They\u0027 cho nhiều đồ vật số nhiều.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "What is it? - It\u0027s a company badge.",
+                                                                                        "vi":  "Nó là cái gì vậy? - Đó là thẻ nhân viên công ty."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Where are my glasses? - They\u0027re on your desk.",
+                                                                                        "vi":  "Kính mắt của tôi ở đâu rồi? - Chúng ở trên bàn làm việc của bạn đấy."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Số ít dùng \u0027It\u0027s a...\u0027, số nhiều dùng \u0027They\u0027re...\u0027 (không có a/an)."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Possession",
+                                                                 "ipa":  "/pəˈzeʃ.ən/",
+                                                                 "vi":  "Đồ sở hữu, tài sản",
+                                                                 "ex":  "Please keep all your personal possessions safe."
+                                                             },
+                                                             {
+                                                                 "en":  "Laptop",
+                                                                 "ipa":  "/ˈlæp.tɒp/",
+                                                                 "vi":  "Máy tính xách tay",
+                                                                 "ex":  "I bring my laptop to work every day."
+                                                             },
+                                                             {
+                                                                 "en":  "Identity card",
+                                                                 "ipa":  "/aɪˈden.tɪ.ti kɑːd/",
+                                                                 "vi":  "Căn cước công dân / Thẻ ID",
+                                                                 "ex":  "You need an identity card to open a bank account."
+                                                             },
+                                                             {
+                                                                 "en":  "Credit card",
+                                                                 "ipa":  "/ˈkred.ɪt kɑːd/",
+                                                                 "vi":  "Thẻ tín dụng",
+                                                                 "ex":  "Can I pay by credit card or cash?"
+                                                             },
+                                                             {
+                                                                 "en":  "Wallet",
+                                                                 "ipa":  "/ˈwɒl.ɪt/",
+                                                                 "vi":  "Ví tiền (nam)",
+                                                                 "ex":  "He forgot his wallet at the restaurant."
+                                                             },
+                                                             {
+                                                                 "en":  "Handbag",
+                                                                 "ipa":  "/ˈhænd.bæɡ/",
+                                                                 "vi":  "Túi xách tay (nữ)",
+                                                                 "ex":  "She has a stylish leather handbag."
+                                                             },
+                                                             {
+                                                                 "en":  "Keys",
+                                                                 "ipa":  "/kiːz/",
+                                                                 "vi":  "Chùm chìa khóa",
+                                                                 "ex":  "Here are the keys to your new apartment."
+                                                             },
+                                                             {
+                                                                 "en":  "Glasses",
+                                                                 "ipa":  "/ˈɡlɑːs.ɪz/",
+                                                                 "vi":  "Kính mắt",
+                                                                 "ex":  "I wear reading glasses when working at the computer."
+                                                             },
+                                                             {
+                                                                 "en":  "Watch",
+                                                                 "ipa":  "/wɒtʃ/",
+                                                                 "vi":  "Đồng hồ đeo tay",
+                                                                 "ex":  "That Swiss watch is very elegant."
+                                                             },
+                                                             {
+                                                                 "en":  "Charger",
+                                                                 "ipa":  "/ˈtʃɑː.dʒər/",
+                                                                 "vi":  "Cục sạc pin",
+                                                                 "ex":  "Do you have a phone charger I can borrow?"
+                                                             },
+                                                             {
+                                                                 "en":  "Headphones",
+                                                                 "ipa":  "/ˈhed.fəʊnz/",
+                                                                 "vi":  "Tai nghe",
+                                                                 "ex":  "I use wireless headphones during Zoom meetings."
+                                                             },
+                                                             {
+                                                                 "en":  "Notebook",
+                                                                 "ipa":  "/ˈnəʊt.bʊk/",
+                                                                 "vi":  "Sổ ghi chép",
+                                                                 "ex":  "Write the meeting notes in your notebook."
+                                                             },
+                                                             {
+                                                                 "en":  "Expensive",
+                                                                 "ipa":  "/ɪkˈspen.sɪv/",
+                                                                 "vi":  "Đắt tiền",
+                                                                 "ex":  "This designer coat is very expensive."
+                                                             },
+                                                             {
+                                                                 "en":  "Cheap",
+                                                                 "ipa":  "/tʃiːp/",
+                                                                 "vi":  "Rẻ tiền, giá mềm",
+                                                                 "ex":  "Coffee here is delicious and quite cheap."
+                                                             },
+                                                             {
+                                                                 "en":  "Heavy",
+                                                                 "ipa":  "/ˈhev.i/",
+                                                                 "vi":  "Nặng",
+                                                                 "ex":  "This suitcase is too heavy for carry-on luggage."
+                                                             },
+                                                             {
+                                                                 "en":  "Light",
+                                                                 "ipa":  "/laɪt/",
+                                                                 "vi":  "Nhẹ",
+                                                                 "ex":  "This modern laptop is extremely thin and light."
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Is this ______ new laptop, Gemma?",
+                                                                          "options":  [
+                                                                                          "your",
+                                                                                          "you",
+                                                                                          "yours",
+                                                                                          "she"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đứng trước danh từ \u0027new laptop\u0027 cần tính từ sở hữu \u0027your\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "David left ______ wallet on the office desk.",
+                                                                          "options":  [
+                                                                                          "his",
+                                                                                          "her",
+                                                                                          "their",
+                                                                                          "its"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "David là nam giới nên tính từ sở hữu tương ứng là \u0027his\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where are my car ______? - They are on the kitchen table.",
+                                                                          "options":  [
+                                                                                          "keys",
+                                                                                          "keyes",
+                                                                                          "key",
+                                                                                          "key\u0027s"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Danh từ số nhiều của \u0027key\u0027 chỉ cần thêm -s: \u0027keys\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "She bought two new ______ yesterday.",
+                                                                          "options":  [
+                                                                                          "watches",
+                                                                                          "watchs",
+                                                                                          "watch",
+                                                                                          "watchies"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Từ \u0027watch\u0027 kết thúc bằng âm \u0027ch\u0027, số nhiều thêm -es: \u0027watches\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What are these? - ______ are my new business cards.",
+                                                                          "options":  [
+                                                                                          "They",
+                                                                                          "It",
+                                                                                          "This",
+                                                                                          "That"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi \u0027What are these?\u0027 thì câu trả lời đại từ số nhiều là \u0027They are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My sister loves ______ new job at the international bank.",
+                                                                          "options":  [
+                                                                                          "her",
+                                                                                          "his",
+                                                                                          "their",
+                                                                                          "its"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027My sister\u0027 là nữ giới nên tính từ sở hữu là \u0027her\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There are ten ______ in the conference room.",
+                                                                          "options":  [
+                                                                                          "people",
+                                                                                          "persons",
+                                                                                          "peoples",
+                                                                                          "person"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Số nhiều bất quy tắc của \u0027person\u0027 là \u0027people\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is that your coat? - No, ______ isn\u0027t. It\u0027s Mark\u0027s.",
+                                                                          "options":  [
+                                                                                          "it",
+                                                                                          "they",
+                                                                                          "this",
+                                                                                          "these"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đại từ số ít thay thế cho \u0027that coat\u0027 trong câu trả lời là \u0027it\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We live in Hanoi. ______ apartment is near West Lake.",
+                                                                          "options":  [
+                                                                                          "Our",
+                                                                                          "We",
+                                                                                          "Us",
+                                                                                          "Ours"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Tính từ sở hữu tương ứng với \u0027We\u0027 là \u0027Our\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They forgot ______ passports at the hotel.",
+                                                                          "options":  [
+                                                                                          "their",
+                                                                                          "theirs",
+                                                                                          "they",
+                                                                                          "them"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Tính từ sở hữu tương ứng với \u0027They\u0027 là \u0027their\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How many ______ do you have? - I have two boys.",
+                                                                          "options":  [
+                                                                                          "children",
+                                                                                          "childs",
+                                                                                          "child",
+                                                                                          "childrens"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Số nhiều bất quy tắc của \u0027child\u0027 là \u0027children\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Whose sunglasses are these? - They are ______ sunglasses.",
+                                                                          "options":  [
+                                                                                          "my",
+                                                                                          "mine",
+                                                                                          "me",
+                                                                                          "I"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đứng trước danh từ \u0027sunglasses\u0027 cần tính từ sở hữu \u0027my\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "This smartphone is very ______; it costs over 1,500 dollars.",
+                                                                          "options":  [
+                                                                                          "expensive",
+                                                                                          "cheap",
+                                                                                          "light",
+                                                                                          "small"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Giá hơn 1,500 đô la thì rất đắt tiền: \u0027expensive\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where ______ my glasses? - They\u0027re in your handbag.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Glasses\u0027 (kính mắt) luôn là danh từ số nhiều nên to be là \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Can I borrow your phone ______? My battery is low.",
+                                                                          "options":  [
+                                                                                          "charger",
+                                                                                          "wallet",
+                                                                                          "keys",
+                                                                                          "passport"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Pin yếu cần mượn cục sạc điện thoại: \u0027phone charger\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Peter and Mary sold ______ old car last week.",
+                                                                          "options":  [
+                                                                                          "their",
+                                                                                          "his",
+                                                                                          "her",
+                                                                                          "our"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Peter and Mary\u0027 là ngôi thứ ba số nhiều (họ) -\u003e tính từ sở hữu \u0027their\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What is that over there? - It ______ a modern coffee machine.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027It\u0027 số ít đi với to be \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "These boxes are too ______ to carry alone.",
+                                                                          "options":  [
+                                                                                          "heavy",
+                                                                                          "light",
+                                                                                          "cheap",
+                                                                                          "fast"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Không thể khiêng một mình vì quá nặng: \u0027heavy\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I have three ______ on my smartphone for language learning.",
+                                                                          "options":  [
+                                                                                          "apps",
+                                                                                          "appes",
+                                                                                          "appies",
+                                                                                          "app"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Danh từ số nhiều của \u0027app\u0027 thêm -s: \u0027apps\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is that your identity card? - Yes, it ______.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "does",
+                                                                                          "can"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trả lời khẳng định ngắn: \u0027Yes, it is\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_3":  {
+                                               "title":  "Unit 3: Food and drink",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Present Simple with I, you, we, they (Thì hiện tại đơn với I, you, we, they)",
+                                                                   "structure":  "(+) S + V | (-) S + don\u0027t + V | (?) Do + S + V...?",
+                                                                   "explanation":  "Dùng để nói về sở thích ăn uống, thói quen sinh hoạt và chế độ ăn hàng ngày.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I drink coffee with milk every morning.",
+                                                                                        "vi":  "Tôi uống cà phê sữa mỗi buổi sáng."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "We don\u0027t eat fast food on weekdays.",
+                                                                                        "vi":  "Chúng tôi không ăn thức ăn nhanh vào các ngày trong tuần."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Do you like Italian food? - Yes, I do. / No, I don\u0027t.",
+                                                                                        "vi":  "Bạn có thích món ăn Ý không? - Có, tôi thích. / Không, tôi không thích."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Với các chủ ngữ I, you, we, they, động từ giữ nguyên mẫu ở thể khẳng định và mượn trợ động từ \u0027don\u0027t\u0027 ở phủ định."
+                                                               },
+                                                               {
+                                                                   "title":  "Adverbs of Frequency (Trạng từ chỉ tần suất: always, usually, sometimes, never)",
+                                                                   "structure":  "S + Adverb of Frequency + V (always drink, usually eat, never drink)",
+                                                                   "explanation":  "Dùng để diễn tả mức độ thường xuyên của thói quen ăn uống.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I always have breakfast before 8 a.m.",
+                                                                                        "vi":  "Tôi luôn luôn ăn sáng trước 8 giờ."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "She never drinks beer or wine.",
+                                                                                        "vi":  "Cô ấy không bao giờ uống bia hay rượu."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Trạng từ chỉ tần suất đứng trước động từ thường (I usually eat) nhưng đứng sau động từ to be (I am always on time)."
+                                                               },
+                                                               {
+                                                                   "title":  "Ordering in a Café / Restaurant (Cách gọi món lịch sự)",
+                                                                   "structure":  "Can I have a / an [item], please? | I\u0027d like a [item], please.",
+                                                                   "explanation":  "Mẫu câu chuẩn giao tiếp quốc tế khi gọi đồ ăn, thức uống tại quán cà phê hoặc nhà hàng.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Can I have an iced latte and a croissant, please?",
+                                                                                        "vi":  "Làm ơn cho tôi một ly latte đá và một bánh sừng bò nhé?"
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "How much is it? - It\u0027s 4 pounds 50.",
+                                                                                        "vi":  "Hết bao nhiêu tiền vậy? - Dạ 4 bảng 50 xu."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Luôn thêm từ \u0027please\u0027 ở cuối câu để thể hiện sự lịch sự, nhã nhặn."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Breakfast",
+                                                                 "ipa":  "/ˈbrek.fəst/",
+                                                                 "vi":  "Bữa ăn sáng",
+                                                                 "ex":  "I usually have bread and eggs for breakfast."
+                                                             },
+                                                             {
+                                                                 "en":  "Lunch",
+                                                                 "ipa":  "/lʌntʃ/",
+                                                                 "vi":  "Bữa ăn trưa",
+                                                                 "ex":  "We meet our clients for lunch at 12:30."
+                                                             },
+                                                             {
+                                                                 "en":  "Dinner",
+                                                                 "ipa":  "/ˈdɪn.ər/",
+                                                                 "vi":  "Bữa ăn tối",
+                                                                 "ex":  "What are we having for dinner tonight?"
+                                                             },
+                                                             {
+                                                                 "en":  "Croissant",
+                                                                 "ipa":  "/ˈkwæs.ɒ̃/",
+                                                                 "vi":  "Bánh sừng bò",
+                                                                 "ex":  "A warm butter croissant goes great with black coffee."
+                                                             },
+                                                             {
+                                                                 "en":  "Mineral water",
+                                                                 "ipa":  "/ˈmɪn.ər.əl ˈwɔː.tər/",
+                                                                 "vi":  "Nước khoáng",
+                                                                 "ex":  "Can I have a bottle of sparkling mineral water, please?"
+                                                             },
+                                                             {
+                                                                 "en":  "Orange juice",
+                                                                 "ipa":  "/ˈɒr.ɪndʒ dʒuːs/",
+                                                                 "vi":  "Nước cam ép",
+                                                                 "ex":  "Fresh orange juice is rich in vitamin C."
+                                                             },
+                                                             {
+                                                                 "en":  "Vegetarian",
+                                                                 "ipa":  "/ˌvedʒ.ɪˈteə.ri.ən/",
+                                                                 "vi":  "Người ăn chay / Đồ chay",
+                                                                 "ex":  "Do you have any vegetarian options on the menu?"
+                                                             },
+                                                             {
+                                                                 "en":  "Bill",
+                                                                 "ipa":  "/bɪl/",
+                                                                 "vi":  "Hóa đơn thanh toán",
+                                                                 "ex":  "Could we have the bill, please?"
+                                                             },
+                                                             {
+                                                                 "en":  "Tip",
+                                                                 "ipa":  "/tɪp/",
+                                                                 "vi":  "Tiền boa, tiền boa thêm",
+                                                                 "ex":  "Service was excellent, so we left a good tip."
+                                                             },
+                                                             {
+                                                                 "en":  "Receipt",
+                                                                 "ipa":  "/rɪˈsiːt/",
+                                                                 "vi":  "Biên lai, phiếu thu",
+                                                                 "ex":  "Would you like a receipt for your company expense claim?"
+                                                             },
+                                                             {
+                                                                 "en":  "Menu",
+                                                                 "ipa":  "/ˈmen.juː/",
+                                                                 "vi":  "Thực đơn",
+                                                                 "ex":  "Let\u0027s look at the dessert menu."
+                                                             },
+                                                             {
+                                                                 "en":  "Delicious",
+                                                                 "ipa":  "/dɪˈlɪʃ.əs/",
+                                                                 "vi":  "Ngon miệng, thơm ngon",
+                                                                 "ex":  "The grilled salmon was absolutely delicious."
+                                                             },
+                                                             {
+                                                                 "en":  "Spicy",
+                                                                 "ipa":  "/ˈspaɪ.si/",
+                                                                 "vi":  "Cay, có nhiều gia vị",
+                                                                 "ex":  "Thai curry is usually very spicy."
+                                                             },
+                                                             {
+                                                                 "en":  "Sugar",
+                                                                 "ipa":  "/ˈʃʊɡ.ər/",
+                                                                 "vi":  "Đường",
+                                                                 "ex":  "Do you take sugar in your hot tea?"
+                                                             },
+                                                             {
+                                                                 "en":  "Snack",
+                                                                 "ipa":  "/snæk/",
+                                                                 "vi":  "Bữa ăn nhẹ, đồ ăn vặt",
+                                                                 "ex":  "I usually have some fruit or nuts as an afternoon snack."
+                                                             },
+                                                             {
+                                                                 "en":  "Order",
+                                                                 "ipa":  "/ˈɔː.dər/",
+                                                                 "vi":  "Gọi món, đơn gọi món",
+                                                                 "ex":  "Are you ready to order, sir?"
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Do you ______ coffee every morning?",
+                                                                          "options":  [
+                                                                                          "drink",
+                                                                                          "drinks",
+                                                                                          "drinking",
+                                                                                          "drank"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trong câu hỏi thì hiện tại đơn với \u0027Do you\u0027, động từ ở dạng nguyên thể: \u0027drink\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I ______ eat meat because I am a vegetarian.",
+                                                                          "options":  [
+                                                                                          "don\u0027t",
+                                                                                          "doesn\u0027t",
+                                                                                          "not",
+                                                                                          "am not"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027I\u0027 phủ định ở thì hiện tại đơn dùng trợ động từ \u0027don\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Can I ______ an iced Americano, please?",
+                                                                          "options":  [
+                                                                                          "have",
+                                                                                          "has",
+                                                                                          "having",
+                                                                                          "had"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Mẫu câu gọi món: \u0027Can I have + item, please?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They ______ have lunch together in the office canteen.",
+                                                                          "options":  [
+                                                                                          "always",
+                                                                                          "always are",
+                                                                                          "are always",
+                                                                                          "always do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trạng từ chỉ tần suất \u0027always\u0027 đứng trước động từ thường \u0027have\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Do they like seafood? - Yes, they ______.",
+                                                                          "options":  [
+                                                                                          "do",
+                                                                                          "does",
+                                                                                          "are",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu hỏi bắt đầu bằng \u0027Do they\u0027 -\u003e trả lời: \u0027Yes, they do\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ drink alcohol during work hours.",
+                                                                          "options":  [
+                                                                                          "never",
+                                                                                          "always",
+                                                                                          "sometimes",
+                                                                                          "usually"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Không bao giờ uống rượu trong giờ làm việc: \u0027never\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How much ______ that bottle of wine?",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027That bottle of wine\u0027 là danh từ số ít nên dùng \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I\u0027d ______ a cup of green tea, please.",
+                                                                          "options":  [
+                                                                                          "like",
+                                                                                          "likes",
+                                                                                          "liking",
+                                                                                          "liked"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cấu trúc gọi món lịch sự: \u0027I\u0027d like + noun\u0027 (I would like)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What time do you usually ______ dinner?",
+                                                                          "options":  [
+                                                                                          "have",
+                                                                                          "has",
+                                                                                          "having",
+                                                                                          "had"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027do you usually\u0027 là động từ nguyên thể \u0027have\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Could we have the ______, please? We want to pay now.",
+                                                                          "options":  [
+                                                                                          "bill",
+                                                                                          "menu",
+                                                                                          "tip",
+                                                                                          "snack"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Muốn thanh toán tiền gọi hóa đơn: \u0027Could we have the bill, please?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "You and I ______ breakfast at the same café every Friday.",
+                                                                          "options":  [
+                                                                                          "eat",
+                                                                                          "eats",
+                                                                                          "eating",
+                                                                                          "ate"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027You and I\u0027 là chủ ngữ số nhiều (chúng ta) -\u003e dùng \u0027eat\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Do you want milk in your tea? - No, thank you. Just ______.",
+                                                                          "options":  [
+                                                                                          "black",
+                                                                                          "white",
+                                                                                          "sweet",
+                                                                                          "spicy"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trà/cà phê không sữa gọi là \u0027black\u0027 (đen/mộc)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I usually drink water, but ______ I have fruit juice.",
+                                                                          "options":  [
+                                                                                          "sometimes",
+                                                                                          "never",
+                                                                                          "always",
+                                                                                          "ever"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Thỉnh thoảng tôi uống nước ép: \u0027sometimes\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where ______ you usually buy fresh vegetables?",
+                                                                          "options":  [
+                                                                                          "do",
+                                                                                          "does",
+                                                                                          "are",
+                                                                                          "is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trợ động từ thì hiện tại đơn với chủ ngữ \u0027you\u0027 là \u0027do\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Excuse me, ______ you ready to order?",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "do",
+                                                                                          "is",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm tính từ \u0027ready\u0027 đi với to be: \u0027Are you ready to order?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We don\u0027t ______ fast food very often.",
+                                                                          "options":  [
+                                                                                          "eat",
+                                                                                          "eats",
+                                                                                          "eating",
+                                                                                          "ate"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau trợ động từ phủ định \u0027don\u0027t\u0027 là động từ nguyên thể \u0027eat\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How much are these two sandwiches? - ______ £8 in total.",
+                                                                          "options":  [
+                                                                                          "They are",
+                                                                                          "It is",
+                                                                                          "There is",
+                                                                                          "This is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Two sandwiches\u0027 là danh từ số nhiều -\u003e \u0027They are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I ______ coffee without sugar.",
+                                                                          "options":  [
+                                                                                          "prefer",
+                                                                                          "prefers",
+                                                                                          "preferring",
+                                                                                          "preferred"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027I\u0027 ở hiện tại đơn đi với động từ nguyên thể \u0027prefer\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Do you need a ______ for your expenses? - Yes, please.",
+                                                                          "options":  [
+                                                                                          "receipt",
+                                                                                          "menu",
+                                                                                          "tip",
+                                                                                          "plate"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cần biên lai thanh toán để thanh toán công tác phí: \u0027receipt\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is the soup hot? - Yes, it ______ very hot and spicy.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "does"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027it\u0027 số ít đi với \u0027is\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_4":  {
+                                               "title":  "Unit 4: My life and my family",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Present Simple with he, she, it (Thì hiện tại đơn ngôi thứ ba số ít)",
+                                                                   "structure":  "(+) S + V-s / V-es | (-) S + doesn\u0027t + V | (?) Does + S + V...?",
+                                                                   "explanation":  "Dùng để kể về công việc, thói quen sinh hoạt hàng ngày của người thân, sếp hoặc đồng nghiệp.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "My brother works in an IT company in Da Nang.",
+                                                                                        "vi":  "Anh trai tôi làm việc tại một công ty công nghệ ở Đà Nẵng."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "She doesn\u0027t work on Saturdays.",
+                                                                                        "vi":  "Cô ấy không làm việc vào các ngày thứ Bảy."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Does your husband speak English? - Yes, he does.",
+                                                                                        "vi":  "Chồng bạn có nói tiếng Anh không? - Có, anh ấy có nói."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Quy tắc thêm -s/-es: work -\u003e works, teach -\u003e teaches, go -\u003e goes, have -\u003e has."
+                                                               },
+                                                               {
+                                                                   "title":  "Possessive \u0027s (Sở hữu cách với \u0027s)",
+                                                                   "structure":  "Name\u0027s + Noun | Singular Noun\u0027s + Noun (Mark\u0027s sister, my manager\u0027s email)",
+                                                                   "explanation":  "Dùng để diễn đạt mối quan hệ gia đình hoặc quyền sở hữu của một người cụ thể.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Gemma\u0027s husband is an architect.",
+                                                                                        "vi":  "Chồng của Gemma là một kiến trúc sư."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "What is your boss\u0027s name? - His name is Mr. Clark.",
+                                                                                        "vi":  "Tên của sếp bạn là gì? - Tên của ông ấy là ông Clark."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Phân biệt: He\u0027s = He is (viết tắt), còn John\u0027s car = chiếc xe của John (sở hữu cách)."
+                                                               },
+                                                               {
+                                                                   "title":  "Daily Routine Expressions (Cụm từ chỉ nhịp sinh hoạt hàng ngày)",
+                                                                   "structure":  "wake up, leave home, start work, have a break, get home",
+                                                                   "explanation":  "Các cụm động từ quen thuộc nhất để mô tả một ngày làm việc điển hình.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I usually get up at 6:30 and leave home at 7:45.",
+                                                                                        "vi":  "Tôi thường thức dậy lúc 6:30 và rời khỏi nhà lúc 7:45."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "He finishes work late in the evening.",
+                                                                                        "vi":  "Anh ấy kết thúc công việc muộn vào buổi tối."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Đừng quên thêm \u0027s\u0027 vào động từ khi chủ ngữ là he/she: She wakes up, he leaves home."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Parents",
+                                                                 "ipa":  "/ˈpeə.rənts/",
+                                                                 "vi":  "Bố mẹ, phụ huynh",
+                                                                 "ex":  "My parents live in a quiet seaside town."
+                                                             },
+                                                             {
+                                                                 "en":  "Husband",
+                                                                 "ipa":  "/ˈhʌz.bənd/",
+                                                                 "vi":  "Người chồng",
+                                                                 "ex":  "Her husband is a software engineer."
+                                                             },
+                                                             {
+                                                                 "en":  "Wife",
+                                                                 "ipa":  "/waɪf/",
+                                                                 "vi":  "Người vợ",
+                                                                 "ex":  "He loves cooking dinner for his wife."
+                                                             },
+                                                             {
+                                                                 "en":  "Son",
+                                                                 "ipa":  "/sʌn/",
+                                                                 "vi":  "Con trai",
+                                                                 "ex":  "Their son is five years old and attends kindergarten."
+                                                             },
+                                                             {
+                                                                 "en":  "Daughter",
+                                                                 "ipa":  "/ˈdɔː.tər/",
+                                                                 "vi":  "Con gái",
+                                                                 "ex":  "Their daughter is studying at university."
+                                                             },
+                                                             {
+                                                                 "en":  "Brother",
+                                                                 "ipa":  "/ˈbrʌð.ər/",
+                                                                 "vi":  "Anh/em trai",
+                                                                 "ex":  "My older brother works in marketing."
+                                                             },
+                                                             {
+                                                                 "en":  "Sister",
+                                                                 "ipa":  "/ˈsɪs.tər/",
+                                                                 "vi":  "Chị/em gái",
+                                                                 "ex":  "She has two younger sisters."
+                                                             },
+                                                             {
+                                                                 "en":  "Wake up",
+                                                                 "ipa":  "/weɪk ʌp/",
+                                                                 "vi":  "Thức dậy, tỉnh giấc",
+                                                                 "ex":  "What time do you usually wake up on weekdays?"
+                                                             },
+                                                             {
+                                                                 "en":  "Commute",
+                                                                 "ipa":  "/kəˈmjuːt/",
+                                                                 "vi":  "Đi làm (quãng đường đi lại)",
+                                                                 "ex":  "I commute to work by bus every day."
+                                                             },
+                                                             {
+                                                                 "en":  "Finish work",
+                                                                 "ipa":  "/ˈfɪn.ɪʃ wɜːk/",
+                                                                 "vi":  "Tan sở, xong việc",
+                                                                 "ex":  "We usually finish work at 5:30 p.m."
+                                                             },
+                                                             {
+                                                                 "en":  "Relax",
+                                                                 "ipa":  "/rɪˈlæks/",
+                                                                 "vi":  "Thư giãn, nghỉ ngơi",
+                                                                 "ex":  "I like to relax with a good book at the weekend."
+                                                             },
+                                                             {
+                                                                 "en":  "Exercise",
+                                                                 "ipa":  "/ˈek.sə.saɪz/",
+                                                                 "vi":  "Tập thể dục",
+                                                                 "ex":  "She does exercise at the gym three times a week."
+                                                             },
+                                                             {
+                                                                 "en":  "Busy",
+                                                                 "ipa":  "/ˈbɪz.i/",
+                                                                 "vi":  "Bận rộn",
+                                                                 "ex":  "Monday is always my busiest day of the week."
+                                                             },
+                                                             {
+                                                                 "en":  "Lawyer",
+                                                                 "ipa":  "/ˈlɔɪ.ər/",
+                                                                 "vi":  "Luật sư",
+                                                                 "ex":  "His brother is a corporate lawyer in the city."
+                                                             },
+                                                             {
+                                                                 "en":  "Nurse",
+                                                                 "ipa":  "/nɜːs/",
+                                                                 "vi":  "Y tá, điều dưỡng",
+                                                                 "ex":  "The nurse was very kind and professional."
+                                                             },
+                                                             {
+                                                                 "en":  "Daily routine",
+                                                                 "ipa":  "/ˈdeɪ.li ruːˈtiːn/",
+                                                                 "vi":  "Lịch trình sinh hoạt hàng ngày",
+                                                                 "ex":  "Exercise is an essential part of my daily routine."
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "My sister ______ in an international hospital in Ho Chi Minh City.",
+                                                                          "options":  [
+                                                                                          "works",
+                                                                                          "work",
+                                                                                          "working",
+                                                                                          "is work"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027My sister\u0027 số ít (ngôi thứ ba) ở hiện tại đơn -\u003e thêm -s: \u0027works\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "David ______ drink coffee; he prefers green tea.",
+                                                                          "options":  [
+                                                                                          "doesn\u0027t",
+                                                                                          "don\u0027t",
+                                                                                          "isn\u0027t",
+                                                                                          "not"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027David\u0027 là ngôi thứ ba số ít, phủ định dùng \u0027doesn\u0027t + V\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ your manager speak French? - Yes, she does.",
+                                                                          "options":  [
+                                                                                          "Does",
+                                                                                          "Do",
+                                                                                          "Is",
+                                                                                          "Are"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu hỏi thì hiện tại đơn với chủ ngữ số ít \u0027your manager\u0027 dùng \u0027Does\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "This is ______ office. She is the marketing director.",
+                                                                          "options":  [
+                                                                                          "Sarah\u0027s",
+                                                                                          "Sarah",
+                                                                                          "Sarahs",
+                                                                                          "Sarah is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sở hữu cách chỉ văn phòng của Sarah: \u0027Sarah\u0027s office\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What time does he usually ______ work?",
+                                                                          "options":  [
+                                                                                          "finish",
+                                                                                          "finishes",
+                                                                                          "finishing",
+                                                                                          "finished"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau trợ động từ \u0027does he\u0027 thì động từ chính trở về dạng nguyên thể: \u0027finish\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My brother has two ______: a boy and a girl.",
+                                                                          "options":  [
+                                                                                          "children",
+                                                                                          "childs",
+                                                                                          "child",
+                                                                                          "childrens"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Danh từ số nhiều bất quy tắc: \u0027children\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He ______ to the gym before going to the office.",
+                                                                          "options":  [
+                                                                                          "goes",
+                                                                                          "go",
+                                                                                          "going",
+                                                                                          "is go"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Động từ \u0027go\u0027 kết thúc bằng \u0027o\u0027, khi đi với chủ ngữ \u0027He\u0027 thêm -es: \u0027goes\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "She ______ live with her parents; she has her own apartment.",
+                                                                          "options":  [
+                                                                                          "doesn\u0027t",
+                                                                                          "don\u0027t",
+                                                                                          "isn\u0027t",
+                                                                                          "hasn\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Phủ định hiện tại đơn với \u0027She\u0027 dùng \u0027doesn\u0027t live\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where does your husband ______ from? - He comes from Sydney.",
+                                                                          "options":  [
+                                                                                          "come",
+                                                                                          "comes",
+                                                                                          "coming",
+                                                                                          "came"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đã có trợ động từ \u0027does\u0027 thì động từ sau đó ở dạng nguyên mẫu: \u0027come\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "That is my ______ car parked outside.",
+                                                                          "options":  [
+                                                                                          "boss\u0027s",
+                                                                                          "boss",
+                                                                                          "bosses",
+                                                                                          "boss\u0027"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sở hữu cách của danh từ số ít \u0027boss\u0027: \u0027my boss\u0027s car\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Does Gemma work on weekends? - No, she ______.",
+                                                                          "options":  [
+                                                                                          "doesn\u0027t",
+                                                                                          "don\u0027t",
+                                                                                          "isn\u0027t",
+                                                                                          "hasn\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời phủ định ngắn với \u0027Does\u0027: \u0027No, she doesn\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My father ______ up at 6 a.m. every morning.",
+                                                                          "options":  [
+                                                                                          "wakes",
+                                                                                          "wake",
+                                                                                          "waking",
+                                                                                          "is wake"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ số ít \u0027My father\u0027 -\u003e động từ thêm -s: \u0027wakes up\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Who is that woman? - She is ______ wife.",
+                                                                          "options":  [
+                                                                                          "Mark\u0027s",
+                                                                                          "Mark",
+                                                                                          "Marks",
+                                                                                          "Mark is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sở hữu cách: \u0027Mark\u0027s wife\u0027 (vợ của Mark)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How does she ______ to work? - By motorbike.",
+                                                                          "options":  [
+                                                                                          "commute",
+                                                                                          "commutes",
+                                                                                          "commuting",
+                                                                                          "commuted"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027does she\u0027 dùng động từ nguyên thể \u0027commute\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He ______ TV in the evening to relax.",
+                                                                          "options":  [
+                                                                                          "watches",
+                                                                                          "watch",
+                                                                                          "watching",
+                                                                                          "is watch"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Từ \u0027watch\u0027 kết thúc bằng \u0027ch\u0027, chủ ngữ \u0027He\u0027 thêm -es: \u0027watches\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Does your son like studying English? - Yes, he ______.",
+                                                                          "options":  [
+                                                                                          "does",
+                                                                                          "is",
+                                                                                          "do",
+                                                                                          "likes"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời khẳng định ngắn: \u0027Yes, he does\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Lisa ______ a very busy schedule this week.",
+                                                                          "options":  [
+                                                                                          "has",
+                                                                                          "haves",
+                                                                                          "have",
+                                                                                          "is having"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Ngôi thứ ba số ít của \u0027have\u0027 là \u0027has\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My parents ______ in a quiet village near the mountains.",
+                                                                          "options":  [
+                                                                                          "live",
+                                                                                          "lives",
+                                                                                          "living",
+                                                                                          "are live"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027My parents\u0027 là số nhiều (bố mẹ) -\u003e động từ nguyên thể \u0027live\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What ______ your sister do? - She is an accountant.",
+                                                                          "options":  [
+                                                                                          "does",
+                                                                                          "do",
+                                                                                          "is",
+                                                                                          "are"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi nghề nghiệp: \u0027What does your sister do?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He always ______ his teeth after eating breakfast.",
+                                                                          "options":  [
+                                                                                          "brushes",
+                                                                                          "brush",
+                                                                                          "brushing",
+                                                                                          "brushed"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Từ \u0027brush\u0027 kết thúc bằng \u0027sh\u0027, chủ ngữ số ít \u0027He\u0027 -\u003e thêm -es: \u0027brushes\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_5":  {
+                                               "title":  "Unit 5: Places",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "There is / There are (Cấu trúc diễn tả \u0027Có cái gì\u0027)",
+                                                                   "structure":  "(+) There is a/an + N (số ít) | There are + N (số nhiều) | (-) There isn\u0027t / There aren\u0027t",
+                                                                   "explanation":  "Dùng để mô tả tiện ích khách sạn, tiện nghi phòng ở hoặc các địa điểm trong khu phố.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "There is a swimming pool on the hotel rooftop.",
+                                                                                        "vi":  "Có một hồ bơi trên tầng thượng của khách sạn."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "There are three good restaurants near our apartment.",
+                                                                                        "vi":  "Có ba nhà hàng ngon ở gần căn hộ của chúng tôi."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Is there a gym in this hotel? - Yes, there is. / No, there isn\u0027t.",
+                                                                                        "vi":  "Khách sạn này có phòng gym không? - Có, có phòng gym. / Không, không có."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Số ít đi với \u0027There is\u0027, số nhiều đi với \u0027There are\u0027."
+                                                               },
+                                                               {
+                                                                   "title":  "Quantifiers: some, any, a lot of (Từ chỉ số lượng)",
+                                                                   "structure":  "some (khẳng định) | any (phủ định \u0026 câu hỏi) | a lot of (rất nhiều)",
+                                                                   "explanation":  "Dùng để nói về số lượng địa điểm, dịch vụ hoặc tiện nghi xung quanh.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "There are some nice cafés near my office.",
+                                                                                        "vi":  "Có một vài quán cà phê xinh xắn gần văn phòng tôi."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Are there any ATMs near here? - No, there aren\u0027t any.",
+                                                                                        "vi":  "Gần đây có cây ATM nào không? - Không, không có cây nào cả."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Nhớ quy tắc: Khẳng định dùng \u0027some\u0027, phủ định và nghi vấn dùng \u0027any\u0027."
+                                                               },
+                                                               {
+                                                                   "title":  "Prepositions of Place (Giới từ chỉ vị trí nơi chốn)",
+                                                                   "structure":  "next to, opposite, near, between... and..., behind, in front of",
+                                                                   "explanation":  "Dùng khi hỏi và chỉ đường trong thành phố hoặc chỉ vị trí các phòng trong tòa nhà.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "The pharmacy is opposite the supermarket.",
+                                                                                        "vi":  "Hiệu thuốc nằm đối diện siêu thị."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "The bank is between the post office and the coffee shop.",
+                                                                                        "vi":  "Ngân hàng nằm ở giữa bưu điện và quán cà phê."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "opposite = đối diện; between A and B = ở giữa A và B; next to = ngay bên cạnh."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Supermarket",
+                                                                 "ipa":  "/ˈsuː.pəˌmɑː.kɪt/",
+                                                                 "vi":  "Siêu thị",
+                                                                 "ex":  "There is a modern supermarket just 200 metres from here."
+                                                             },
+                                                             {
+                                                                 "en":  "Pharmacy",
+                                                                 "ipa":  "/ˈfɑː.mə.si/",
+                                                                 "vi":  "Hiệu thuốc tây",
+                                                                 "ex":  "I need to buy some headache tablets at the pharmacy."
+                                                             },
+                                                             {
+                                                                 "en":  "Hospital",
+                                                                 "ipa":  "/ˈhɒs.pɪ.təl/",
+                                                                 "vi":  "Bệnh viện",
+                                                                 "ex":  "The general hospital is located on Main Avenue."
+                                                             },
+                                                             {
+                                                                 "en":  "Elevator",
+                                                                 "ipa":  "/ˈel.ə.veɪ.tər/",
+                                                                 "vi":  "Thang máy",
+                                                                 "ex":  "Take the elevator to the 10th floor, please."
+                                                             },
+                                                             {
+                                                                 "en":  "Reception",
+                                                                 "ipa":  "/rɪˈsep.ʃən/",
+                                                                 "vi":  "Quầy lễ tân",
+                                                                 "ex":  "Please leave your room key at reception when going out."
+                                                             },
+                                                             {
+                                                                 "en":  "Gym",
+                                                                 "ipa":  "/dʒɪm/",
+                                                                 "vi":  "Phòng tập thể hình",
+                                                                 "ex":  "The hotel gym is open 24 hours a day."
+                                                             },
+                                                             {
+                                                                 "en":  "Station",
+                                                                 "ipa":  "/ˈsteɪ.ʃən/",
+                                                                 "vi":  "Nhà ga, bến tàu",
+                                                                 "ex":  "Our office is within walking distance of the central train station."
+                                                             },
+                                                             {
+                                                                 "en":  "Bank",
+                                                                 "ipa":  "/bæŋk/",
+                                                                 "vi":  "Ngân hàng",
+                                                                 "ex":  "Where is the nearest bank to exchange currency?"
+                                                             },
+                                                             {
+                                                                 "en":  "Museum",
+                                                                 "ipa":  "/mjuːˈziː.əm/",
+                                                                 "vi":  "Bảo tàng",
+                                                                 "ex":  "The national art museum is closed on Mondays."
+                                                             },
+                                                             {
+                                                                 "en":  "Convenient",
+                                                                 "ipa":  "/kənˈviː.ni.ənt/",
+                                                                 "vi":  "Thuận tiện, tiện lợi",
+                                                                 "ex":  "Living in the city centre is very convenient for shopping."
+                                                             },
+                                                             {
+                                                                 "en":  "Crowded",
+                                                                 "ipa":  "/ˈkraʊ.dɪd/",
+                                                                 "vi":  "Đông đúc",
+                                                                 "ex":  "The subway trains are very crowded during rush hour."
+                                                             },
+                                                             {
+                                                                 "en":  "Quiet",
+                                                                 "ipa":  "/ˈkwaɪ.ət/",
+                                                                 "vi":  "Yên tĩnh",
+                                                                 "ex":  "We prefer staying in a quiet neighborhood."
+                                                             },
+                                                             {
+                                                                 "en":  "Facility",
+                                                                 "ipa":  "/fəˈsɪl.ə.ti/",
+                                                                 "vi":  "Tiện ích, cơ sở vật chất",
+                                                                 "ex":  "The apartment complex has excellent facilities."
+                                                             },
+                                                             {
+                                                                 "en":  "Balcony",
+                                                                 "ipa":  "/ˈbæl.kə.ni/",
+                                                                 "vi":  "Ban công",
+                                                                 "ex":  "Our hotel room has a private balcony with a sea view."
+                                                             },
+                                                             {
+                                                                 "en":  "Neighbourhood",
+                                                                 "ipa":  "/ˈneɪ.bə.hʊd/",
+                                                                 "vi":  "Khu dân cư, khu lân cận",
+                                                                 "ex":  "It is a safe and friendly neighbourhood."
+                                                             },
+                                                             {
+                                                                 "en":  "Car park",
+                                                                 "ipa":  "/ˈkɑː ˌpɑːk/",
+                                                                 "vi":  "Bãi đỗ xe",
+                                                                 "ex":  "Is there a free car park for hotel guests?"
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Excuse me, ______ a pharmacy near this hotel?",
+                                                                          "options":  [
+                                                                                          "is there",
+                                                                                          "are there",
+                                                                                          "there is",
+                                                                                          "there are"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu hỏi số ít với danh từ \u0027a pharmacy\u0027: \u0027Is there a pharmacy...?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There ______ three bedrooms and two bathrooms in this apartment.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ số nhiều (\u0027three bedrooms...\u0027) -\u003e dùng \u0027There are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Are there ______ good restaurants in this street?",
+                                                                          "options":  [
+                                                                                          "any",
+                                                                                          "some",
+                                                                                          "a",
+                                                                                          "an"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trong câu hỏi với danh từ số nhiều dùng lượng từ \u0027any\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There is ______ ATM machine right next to the bank entrance.",
+                                                                          "options":  [
+                                                                                          "an",
+                                                                                          "a",
+                                                                                          "some",
+                                                                                          "any"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trước từ \u0027ATM\u0027 bắt đầu bằng nguyên âm /eɪ/ dùng mạo từ \u0027an\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There aren\u0027t ______ towels left in the bathroom.",
+                                                                          "options":  [
+                                                                                          "any",
+                                                                                          "some",
+                                                                                          "a",
+                                                                                          "much"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu phủ định (\u0027aren\u0027t\u0027) đi với danh từ số nhiều đếm được dùng \u0027any\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The coffee shop is ______ the bookstore and the bakery.",
+                                                                          "options":  [
+                                                                                          "between",
+                                                                                          "opposite",
+                                                                                          "next",
+                                                                                          "behind"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cấu trúc: \u0027between A and B\u0027 (ở giữa A và B)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is there a swimming pool? - No, there ______.",
+                                                                          "options":  [
+                                                                                          "isn\u0027t",
+                                                                                          "aren\u0027t",
+                                                                                          "doesn\u0027t",
+                                                                                          "don\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời phủ định ngắn cho \u0027Is there...?\u0027: \u0027No, there isn\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There are ______ lot of tourists visiting the museum today.",
+                                                                          "options":  [
+                                                                                          "a",
+                                                                                          "an",
+                                                                                          "the",
+                                                                                          "some"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm từ chỉ số lượng nhiều: \u0027a lot of\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The bus stop is right ______ to the front gate.",
+                                                                          "options":  [
+                                                                                          "next",
+                                                                                          "near",
+                                                                                          "opposite",
+                                                                                          "between"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm giới từ vị trí \u0027next to\u0027 (ngay bên cạnh)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Are there any elevators in this building? - Yes, there ______.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "do",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời khẳng định ngắn cho \u0027Are there...?\u0027: \u0027Yes, there are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There ______ no parking space available right now.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "have",
+                                                                                          "has"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Parking space\u0027 là danh từ số ít không đếm được -\u003e \u0027There is no parking space\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The bank is ______ the supermarket on the other side of the road.",
+                                                                          "options":  [
+                                                                                          "opposite",
+                                                                                          "between",
+                                                                                          "next",
+                                                                                          "in"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Ở bên kia đường (đối diện) dùng giới từ \u0027opposite\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There are ______ delicious tropical fruits in the local market.",
+                                                                          "options":  [
+                                                                                          "some",
+                                                                                          "any",
+                                                                                          "a",
+                                                                                          "an"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu khẳng định với danh từ số nhiều dùng \u0027some\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where is room 402? - It\u0027s ______ the fourth floor.",
+                                                                          "options":  [
+                                                                                          "on",
+                                                                                          "in",
+                                                                                          "at",
+                                                                                          "to"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trước số tầng của tòa nhà dùng giới từ \u0027on the fourth floor\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There ______ a large balcony in our hotel room.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "have",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Danh từ số ít \u0027a large balcony\u0027 -\u003e dùng \u0027There is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is there any noise at night? - No, it is very ______.",
+                                                                          "options":  [
+                                                                                          "quiet",
+                                                                                          "crowded",
+                                                                                          "heavy",
+                                                                                          "spicy"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Không có tiếng ồn nghĩa là nơi đó rất yên tĩnh: \u0027quiet\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How many meeting rooms ______ there in the new office?",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "do",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi số lượng với danh từ số nhiều: \u0027How many meeting rooms are there...?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There isn\u0027t ______ gym in this building.",
+                                                                          "options":  [
+                                                                                          "a",
+                                                                                          "any",
+                                                                                          "some",
+                                                                                          "an"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027gym\u0027 là danh từ đếm được số ít, phủ định dùng \u0027a gym\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Our hotel is in a very ______ location, near the metro.",
+                                                                          "options":  [
+                                                                                          "convenient",
+                                                                                          "crowded",
+                                                                                          "difficult",
+                                                                                          "heavy"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Gần ga tàu điện ngầm thì vị trí rất thuận tiện: \u0027convenient location\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The reception desk is on the ground ______.",
+                                                                          "options":  [
+                                                                                          "floor",
+                                                                                          "room",
+                                                                                          "elevator",
+                                                                                          "car park"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Tầng trệt: \u0027on the ground floor\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_6":  {
+                                               "title":  "Unit 6: Work and study",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Present Continuous Tense (Thì hiện tại tiếp diễn)",
+                                                                   "structure":  "S + am / is / are + V-ing | (-) S + am not / isn\u0027t / aren\u0027t + V-ing",
+                                                                   "explanation":  "Dùng để nói về các công việc, dự án hoặc hành động đang thực hiện ngay lúc nói.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I am working on a new marketing campaign.",
+                                                                                        "vi":  "Tôi đang thực hiện một chiến dịch tiếp thị mới."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "He is writing an urgent report for the director.",
+                                                                                        "vi":  "Anh ấy đang viết một báo cáo khẩn cho giám đốc."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Dấu hiệu nhận biết: now, right now, at the moment, currently."
+                                                               },
+                                                               {
+                                                                   "title":  "Present Simple vs. Present Continuous (Thói quen vs Đang diễn ra)",
+                                                                   "structure":  "Thói quen: S + V(s/es) | Đang làm lúc này: S + be + V-ing",
+                                                                   "explanation":  "Phân biệt giữa công việc thường nhật (Present Simple) và công việc đang xử lý tạm thời (Present Continuous).",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I usually work in the office, but today I am working from home.",
+                                                                                        "vi":  "Tôi thường làm việc tại văn phòng, nhưng hôm nay tôi đang làm việc tại nhà."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "She manages the sales team, but this week she is attending a training course.",
+                                                                                        "vi":  "Cô ấy quản lý đội ngũ kinh doanh, nhưng tuần này cô ấy đang tham gia một khóa đào tạo."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Usually/always -\u003e Present Simple; Today/at the moment -\u003e Present Continuous."
+                                                               },
+                                                               {
+                                                                   "title":  "Professional Phone Communication (Giao tiếp điện thoại công sở)",
+                                                                   "structure":  "Can I speak to [Name], please? | Who\u0027s calling, please? | Just a moment, please.",
+                                                                   "explanation":  "Các mẫu câu tiếng Anh lịch sự chuẩn mực khi gọi điện thoại trong môi trường làm việc chuyên nghiệp.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Hello, can I speak to Ms. Gemma Nguyen, please?",
+                                                                                        "vi":  "Xin chào, tôi có thể nói chuyện với cô Gemma Nguyễn được không?"
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Hold the line, please. I\u0027ll put you through.",
+                                                                                        "vi":  "Xin vui lòng giữ máy. Tôi sẽ nối máy cho bạn ngay."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Nói \u0027This is [Name] speaking\u0027 khi giới thiệu bản thân qua điện thoại, không nói \u0027I am [Name]\u0027."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Accountant",
+                                                                 "ipa":  "/əˈkaʊn.tənt/",
+                                                                 "vi":  "Kế toán viên",
+                                                                 "ex":  "Our accountant is preparing the quarterly financial report."
+                                                             },
+                                                             {
+                                                                 "en":  "Manager",
+                                                                 "ipa":  "/ˈmæn.ɪ.dʒər/",
+                                                                 "vi":  "Người quản lý, trưởng phòng",
+                                                                 "ex":  "I have a weekly one-on-one meeting with my manager."
+                                                             },
+                                                             {
+                                                                 "en":  "Engineer",
+                                                                 "ipa":  "/ˌen.dʒɪˈnɪər/",
+                                                                 "vi":  "Kỹ sư",
+                                                                 "ex":  "Software engineers build and update mobile apps."
+                                                             },
+                                                             {
+                                                                 "en":  "Receptionist",
+                                                                 "ipa":  "/rɪˈsep.ʃən.ɪst/",
+                                                                 "vi":  "Nhân viên lễ tân",
+                                                                 "ex":  "The receptionist welcomed visitors with a warm smile."
+                                                             },
+                                                             {
+                                                                 "en":  "Customer",
+                                                                 "ipa":  "/ˈkʌs.tə.mər/",
+                                                                 "vi":  "Khách hàng",
+                                                                 "ex":  "Excellent customer service is our top business priority."
+                                                             },
+                                                             {
+                                                                 "en":  "Meeting",
+                                                                 "ipa":  "/ˈmiː.tɪŋ/",
+                                                                 "vi":  "Cuộc họp",
+                                                                 "ex":  "The project kick-off meeting starts at 2 p.m."
+                                                             },
+                                                             {
+                                                                 "en":  "Presentation",
+                                                                 "ipa":  "/ˌprez.ənˈteɪ.ʃən/",
+                                                                 "vi":  "Bài thuyết trình",
+                                                                 "ex":  "She is giving a presentation to international investors."
+                                                             },
+                                                             {
+                                                                 "en":  "Project",
+                                                                 "ipa":  "/ˈprɒdʒ.ekt/",
+                                                                 "vi":  "Dự án công việc",
+                                                                 "ex":  "We are working hard to deliver the project on schedule."
+                                                             },
+                                                             {
+                                                                 "en":  "Deadline",
+                                                                 "ipa":  "/ˈded.laɪn/",
+                                                                 "vi":  "Hạn chót hoàn thành",
+                                                                 "ex":  "The strict deadline for this proposal is 5 p.m. today."
+                                                             },
+                                                             {
+                                                                 "en":  "Overtime",
+                                                                 "ipa":  "/ˈəʊ.və.taɪm/",
+                                                                 "vi":  "Làm thêm giờ (tăng ca)",
+                                                                 "ex":  "He often works overtime during the tax season."
+                                                             },
+                                                             {
+                                                                 "en":  "Remote work",
+                                                                 "ipa":  "/rɪˈməʊt wɜːk/",
+                                                                 "vi":  "Làm việc từ xa",
+                                                                 "ex":  "Remote work gives employees better flexibility."
+                                                             },
+                                                             {
+                                                                 "en":  "Shift",
+                                                                 "ipa":  "/ʃɪft/",
+                                                                 "vi":  "Ca làm việc",
+                                                                 "ex":  "Nurses often work the night shift at the clinic."
+                                                             },
+                                                             {
+                                                                 "en":  "Solve",
+                                                                 "ipa":  "/sɒlv/",
+                                                                 "vi":  "Giải quyết",
+                                                                 "ex":  "Our technical team can solve IT problems very quickly."
+                                                             },
+                                                             {
+                                                                 "en":  "Email",
+                                                                 "ipa":  "/ˈiː.meɪl/",
+                                                                 "vi":  "Thư điện tử",
+                                                                 "ex":  "I will send you a confirmation email with all details."
+                                                             },
+                                                             {
+                                                                 "en":  "Colleague",
+                                                                 "ipa":  "/ˈkɒl.iːɡ/",
+                                                                 "vi":  "Đồng nghiệp",
+                                                                 "ex":  "My colleagues are supportive and professional."
+                                                             },
+                                                             {
+                                                                 "en":  "Attend",
+                                                                 "ipa":  "/əˈtend/",
+                                                                 "vi":  "Tham dự",
+                                                                 "ex":  "All department heads must attend the annual summit."
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "What ______ you working on at the moment?",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "do",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hiện tại tiếp diễn với \u0027you\u0027 và \u0027at the moment\u0027: \u0027What are you working on?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I usually work in the office, but today I ______ from home.",
+                                                                          "options":  [
+                                                                                          "am working",
+                                                                                          "work",
+                                                                                          "worked",
+                                                                                          "working"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hành động tạm thời trong ngày hôm nay (\u0027today\u0027) dùng thì hiện tại tiếp diễn: \u0027am working\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He ______ an important presentation to the board right now.",
+                                                                          "options":  [
+                                                                                          "is giving",
+                                                                                          "gives",
+                                                                                          "give",
+                                                                                          "gave"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Có từ \u0027right now\u0027 và chủ ngữ \u0027He\u0027 số ít -\u003e dùng \u0027is giving\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Can I ______ to Mr. Robert, please?",
+                                                                          "options":  [
+                                                                                          "speak",
+                                                                                          "speaks",
+                                                                                          "speaking",
+                                                                                          "spoke"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Mẫu câu điện thoại chuẩn mực: \u0027Can I speak to + Name, please?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Hello, this ______ Gemma speaking.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "am",
+                                                                                          "be"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Khi xưng danh qua điện thoại: \u0027This is Gemma speaking\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They aren\u0027t in the office; they ______ lunch with a client.",
+                                                                          "options":  [
+                                                                                          "are having",
+                                                                                          "have",
+                                                                                          "had",
+                                                                                          "has"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hành động đang diễn ra lúc này -\u003e dùng \u0027are having\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What does an accountant do? - An accountant ______ financial records.",
+                                                                          "options":  [
+                                                                                          "manages",
+                                                                                          "is managing",
+                                                                                          "managing",
+                                                                                          "manage"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Mô tả nhiệm vụ nghề nghiệp thường xuyên dùng hiện tại đơn: \u0027manages\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Hold the line, please. I\u0027ll put you ______.",
+                                                                          "options":  [
+                                                                                          "through",
+                                                                                          "over",
+                                                                                          "across",
+                                                                                          "between"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm nối máy điện thoại: \u0027put someone through\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Who is ______? - It\u0027s David from the IT department.",
+                                                                          "options":  [
+                                                                                          "calling",
+                                                                                          "call",
+                                                                                          "called",
+                                                                                          "calls"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi ai đang gọi điện thoại: \u0027Who is calling, please?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "She ______ three foreign languages fluently.",
+                                                                          "options":  [
+                                                                                          "speaks",
+                                                                                          "is speaking",
+                                                                                          "speak",
+                                                                                          "speaking"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Năng lực ngôn ngữ cố định dùng hiện tại đơn: \u0027speaks\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Are you busy right now? - Yes, I ______ an urgent email.",
+                                                                          "options":  [
+                                                                                          "am writing",
+                                                                                          "write",
+                                                                                          "writing",
+                                                                                          "wrote"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đang bận viết email lúc này -\u003e \u0027am writing\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ a team meeting every Monday at 9 a.m.",
+                                                                          "options":  [
+                                                                                          "have",
+                                                                                          "are having",
+                                                                                          "having",
+                                                                                          "has"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Lịch họp cố định hàng tuần (\u0027every Monday\u0027) dùng hiện tại đơn: \u0027have\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He is ______ a training course in Tokyo this week.",
+                                                                          "options":  [
+                                                                                          "attending",
+                                                                                          "attend",
+                                                                                          "attends",
+                                                                                          "attended"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027is\u0027 ở hiện tại tiếp diễn dùng V-ing: \u0027attending\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I\u0027m sorry, Ms. Laura is not available. Would you like to leave a ______?",
+                                                                          "options":  [
+                                                                                          "message",
+                                                                                          "project",
+                                                                                          "deadline",
+                                                                                          "shift"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Mẫu câu giao tiếp qua điện thoại: để lại lời nhắn \u0027leave a message\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The engineering team ______ very hard to meet tomorrow\u0027s deadline.",
+                                                                          "options":  [
+                                                                                          "is working",
+                                                                                          "work",
+                                                                                          "worked",
+                                                                                          "are work"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ tập hợp \u0027The engineering team\u0027 số ít -\u003e \u0027is working\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where do you usually ______ lunch? - At the company cafeteria.",
+                                                                          "options":  [
+                                                                                          "have",
+                                                                                          "having",
+                                                                                          "has",
+                                                                                          "had"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027do you usually\u0027 là động từ nguyên thể \u0027have\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Listen! The director ______ about the new expansion plan.",
+                                                                          "options":  [
+                                                                                          "is talking",
+                                                                                          "talks",
+                                                                                          "talk",
+                                                                                          "talked"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Có từ mệnh lệnh \u0027Listen!\u0027 -\u003e dùng hiện tại tiếp diễn: \u0027is talking\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He doesn\u0027t like working ______ because he wants to be home with his family.",
+                                                                          "options":  [
+                                                                                          "overtime",
+                                                                                          "project",
+                                                                                          "meeting",
+                                                                                          "remote"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Không thích làm thêm giờ tăng ca: \u0027working overtime\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Why ______ she working late tonight? - Because the proposal is due tomorrow.",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "does",
+                                                                                          "are",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hiện tại tiếp diễn với \u0027working\u0027 và chủ ngữ \u0027she\u0027 -\u003e dùng to be \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I will call you ______ as soon as the meeting ends.",
+                                                                          "options":  [
+                                                                                          "back",
+                                                                                          "through",
+                                                                                          "in",
+                                                                                          "down"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm gọi lại sau: \u0027call someone back\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_7":  {
+                                               "title":  "Unit 7: Shopping and fashion",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Demonstratives in Shopping (Đại từ chỉ định khi đi mua sắm)",
+                                                                   "structure":  "This / That (số ít) | These / Those (số nhiều)",
+                                                                   "explanation":  "Dùng để hỏi giá và chỉ vào quần áo, phụ kiện ở gần hoặc ở xa bạn trong cửa hàng.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "How much is this black jacket? - It\u0027s 45 pounds.",
+                                                                                        "vi":  "Chiếc áo khoác đen này giá bao nhiêu? - Dạ 45 bảng."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "How much are those brown leather shoes? - They\u0027re 80 dollars.",
+                                                                                        "vi":  "Đôi giày da màu nâu đằng kia giá bao nhiêu? - Dạ 80 đô la."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Số ít đi với \u0027is this / is that\u0027; Số nhiều đi với \u0027are these / are those\u0027."
+                                                               },
+                                                               {
+                                                                   "title":  "Asking to Try On Clothes (Hỏi thử đồ và chọn size)",
+                                                                   "structure":  "Can I try it / them on? | Where is the fitting room? | Do you have this in a larger/smaller size?",
+                                                                   "explanation":  "Các mẫu câu tiếng Anh thiết yếu nhất khi bạn đi mua sắm quần áo tại các trung tâm thương mại.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I love this silk dress. Can I try it on, please?",
+                                                                                        "vi":  "Tôi rất thích chiếc đầm lụa này. Tôi có thể mặc thử nó được không?"
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Do you have this shirt in medium or large size?",
+                                                                                        "vi":  "Bạn có chiếc áo sơ mi này size vừa (M) hay size lớn (L) không?"
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Đồ vật số ít (dress, shirt, jacket) dùng \u0027try it on\u0027; Đồ vật số nhiều/đôi (shoes, jeans, trousers) dùng \u0027try them on\u0027."
+                                                               },
+                                                               {
+                                                                   "title":  "Paying for Items (Hỏi phương thức thanh toán)",
+                                                                   "structure":  "Can I pay by credit card / in cash? | Here is your change and receipt.",
+                                                                   "explanation":  "Cách giao tiếp tại quầy thu ngân khi thanh toán bằng thẻ hoặc tiền mặt.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Can I pay with credit card? - Yes, of course. Please tap here.",
+                                                                                        "vi":  "Tôi thanh toán bằng thẻ tín dụng được không? - Dạ vâng, xin mời bạn quẹt thẻ ở đây."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Thanh toán bằng thẻ dùng \u0027by credit card\u0027; Thanh toán bằng tiền mặt dùng \u0027in cash\u0027."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Jacket",
+                                                                 "ipa":  "/ˈdʒæk.ɪt/",
+                                                                 "vi":  "Áo khoác nhẹ",
+                                                                 "ex":  "This warm jacket is perfect for cool autumn days."
+                                                             },
+                                                             {
+                                                                 "en":  "Shirt",
+                                                                 "ipa":  "/ʃɜːt/",
+                                                                 "vi":  "Áo sơ mi",
+                                                                 "ex":  "He wears a formal white shirt to business meetings."
+                                                             },
+                                                             {
+                                                                 "en":  "Trousers",
+                                                                 "ipa":  "/ˈtraʊ.zəz/",
+                                                                 "vi":  "Quần tây, quần dài",
+                                                                 "ex":  "I need a pair of dark trousers for office wear."
+                                                             },
+                                                             {
+                                                                 "en":  "Dress",
+                                                                 "ipa":  "/dres/",
+                                                                 "vi":  "Váy liền, đầm",
+                                                                 "ex":  "She bought an elegant black dress for the party."
+                                                             },
+                                                             {
+                                                                 "en":  "Boots",
+                                                                 "ipa":  "/buːts/",
+                                                                 "vi":  "Ủng, giày bốt",
+                                                                 "ex":  "These leather boots are comfortable and waterproof."
+                                                             },
+                                                             {
+                                                                 "en":  "Fitting room",
+                                                                 "ipa":  "/ˈfɪt.ɪŋ ruːm/",
+                                                                 "vi":  "Phòng thử đồ",
+                                                                 "ex":  "The fitting rooms are located at the back of the store."
+                                                             },
+                                                             {
+                                                                 "en":  "Size",
+                                                                 "ipa":  "/saɪz/",
+                                                                 "vi":  "Kích cỡ, size",
+                                                                 "ex":  "What size are you looking for, small or medium?"
+                                                             },
+                                                             {
+                                                                 "en":  "Discount",
+                                                                 "ipa":  "/ˈdɪs.kaʊnt/",
+                                                                 "vi":  "Giảm giá, chiết khấu",
+                                                                 "ex":  "All winter clothing items are at a 20% discount today."
+                                                             },
+                                                             {
+                                                                 "en":  "Receipt",
+                                                                 "ipa":  "/rɪˈsiːt/",
+                                                                 "vi":  "Hóa đơn, biên nhận",
+                                                                 "ex":  "Please keep your receipt in case you want an exchange."
+                                                             },
+                                                             {
+                                                                 "en":  "Cash",
+                                                                 "ipa":  "/kæʃ/",
+                                                                 "vi":  "Tiền mặt",
+                                                                 "ex":  "Do you accept cash or only contactless payment?"
+                                                             },
+                                                             {
+                                                                 "en":  "Refund",
+                                                                 "ipa":  "/ˈriː.fʌnd/",
+                                                                 "vi":  "Tiền hoàn lại, hoàn tiền",
+                                                                 "ex":  "Can I get a full refund if the shoes don\u0027t fit?"
+                                                             },
+                                                             {
+                                                                 "en":  "Bargain",
+                                                                 "ipa":  "/ˈbɑː.ɡɪn/",
+                                                                 "vi":  "Món hời, giá rẻ bất ngờ",
+                                                                 "ex":  "At only ten pounds, this beautiful silk scarf is a real bargain."
+                                                             },
+                                                             {
+                                                                 "en":  "Sales assistant",
+                                                                 "ipa":  "/ˈseɪlz əˌsɪs.tənt/",
+                                                                 "vi":  "Nhân viên bán hàng",
+                                                                 "ex":  "The sales assistant was very polite and helpful."
+                                                             },
+                                                             {
+                                                                 "en":  "Customer",
+                                                                 "ipa":  "/ˈkʌs.tə.mər/",
+                                                                 "vi":  "Khách mua hàng",
+                                                                 "ex":  "The shop is full of happy customers during the sale."
+                                                             },
+                                                             {
+                                                                 "en":  "Exchange",
+                                                                 "ipa":  "/ɪksˈtʃeɪndʒ/",
+                                                                 "vi":  "Đổi hàng",
+                                                                 "ex":  "You can exchange the item within 14 days."
+                                                             },
+                                                             {
+                                                                 "en":  "Comfortable",
+                                                                 "ipa":  "/ˈkʌm.fə.tə.bəl/",
+                                                                 "vi":  "Thoải mái, dễ chịu",
+                                                                 "ex":  "These cotton sneakers are very comfortable to walk in."
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "How much ______ this wool sweater, please?",
+                                                                          "options":  [
+                                                                                          "is",
+                                                                                          "are",
+                                                                                          "do",
+                                                                                          "have"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ số ít \u0027this wool sweater\u0027 -\u003e dùng to be \u0027is\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How much ______ those black leather shoes over there?",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "do",
+                                                                                          "does"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ số nhiều \u0027those black leather shoes\u0027 -\u003e dùng to be \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I really like these trousers. Can I try ______ on?",
+                                                                          "options":  [
+                                                                                          "them",
+                                                                                          "it",
+                                                                                          "him",
+                                                                                          "her"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Trousers\u0027 (quần dài) là danh từ số nhiều nên đại từ tân ngữ tương ứng là \u0027them\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Where is the ______ room? I want to try this dress on.",
+                                                                          "options":  [
+                                                                                          "fitting",
+                                                                                          "living",
+                                                                                          "meeting",
+                                                                                          "dining"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Phòng thử đồ quần áo: \u0027fitting room\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Do you have this jacket ______ a larger size?",
+                                                                          "options":  [
+                                                                                          "in",
+                                                                                          "on",
+                                                                                          "at",
+                                                                                          "with"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Cụm từ hỏi về kích cỡ: \u0027in a larger size\u0027 (size lớn hơn)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Can I pay ______ credit card? - Yes, of course.",
+                                                                          "options":  [
+                                                                                          "by",
+                                                                                          "in",
+                                                                                          "on",
+                                                                                          "with"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Thanh toán bằng thẻ ngân hàng/tín dụng dùng giới từ \u0027by credit card\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I don\u0027t have cards. Can I pay ______ cash?",
+                                                                          "options":  [
+                                                                                          "in",
+                                                                                          "by",
+                                                                                          "on",
+                                                                                          "to"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Thanh toán bằng tiền mặt dùng giới từ \u0027in cash\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Excuse me, ______ are my gloves. Yours are on the chair.",
+                                                                          "options":  [
+                                                                                          "these",
+                                                                                          "this",
+                                                                                          "that",
+                                                                                          "there"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027Gloves\u0027 là danh từ số nhiều (đôi găng tay) ở gần người nói -\u003e \u0027these are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "These shoes are too small; they ______ me.",
+                                                                          "options":  [
+                                                                                          "don\u0027t fit",
+                                                                                          "doesn\u0027t fit",
+                                                                                          "aren\u0027t fit",
+                                                                                          "not fit"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027they\u0027 ở thì hiện tại đơn phủ định: \u0027don\u0027t fit\u0027 (không vừa vặn)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Keep your ______ so you can exchange the shirt later.",
+                                                                          "options":  [
+                                                                                          "receipt",
+                                                                                          "discount",
+                                                                                          "price",
+                                                                                          "fitting room"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Biên lai mua hàng để đổi hàng: \u0027receipt\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Is ______ your handbag over there on the counter?",
+                                                                          "options":  [
+                                                                                          "that",
+                                                                                          "this",
+                                                                                          "these",
+                                                                                          "those"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Danh từ số ít ở đằng xa (\u0027over there\u0027) -\u003e dùng \u0027that\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The coat is 50 pounds, but today there is a 20% ______.",
+                                                                          "options":  [
+                                                                                          "discount",
+                                                                                          "receipt",
+                                                                                          "size",
+                                                                                          "fitting"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Giảm giá 20%: \u0027discount\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Are you paying together or ______? - Together, please.",
+                                                                          "options":  [
+                                                                                          "separately",
+                                                                                          "separate",
+                                                                                          "separation",
+                                                                                          "separating"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Thanh toán riêng rẽ: \u0027separately\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Can I try this shirt on? - Yes, the fitting rooms ______ on the left.",
+                                                                          "options":  [
+                                                                                          "are",
+                                                                                          "is",
+                                                                                          "am",
+                                                                                          "do"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ số nhiều \u0027the fitting rooms\u0027 -\u003e to be là \u0027are\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Here is your change and your credit card ______.",
+                                                                          "options":  [
+                                                                                          "slip",
+                                                                                          "room",
+                                                                                          "size",
+                                                                                          "shoe"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hóa đơn cà thẻ thanh toán: \u0027credit card slip\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "This jacket ______ great on you!",
+                                                                          "options":  [
+                                                                                          "looks",
+                                                                                          "look",
+                                                                                          "looking",
+                                                                                          "is look"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027This jacket\u0027 số ít -\u003e động từ thêm -s: \u0027looks great on you\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We don\u0027t accept personal cheques, only cash ______ card.",
+                                                                          "options":  [
+                                                                                          "or",
+                                                                                          "and",
+                                                                                          "but",
+                                                                                          "so"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Liên từ lựa chọn: \u0027cash or card\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "This store has a very friendly sales ______.",
+                                                                          "options":  [
+                                                                                          "assistant",
+                                                                                          "assistance",
+                                                                                          "assist",
+                                                                                          "assisted"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Nhân viên bán hàng: \u0027sales assistant\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Could I have a plastic ______ for my shopping, please?",
+                                                                          "options":  [
+                                                                                          "bag",
+                                                                                          "shoe",
+                                                                                          "trousers",
+                                                                                          "jacket"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Túi đựng đồ mua sắm: \u0027plastic bag\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Does this shop give a ______ if I return the item? - Yes, within 7 days.",
+                                                                          "options":  [
+                                                                                          "refund",
+                                                                                          "change",
+                                                                                          "fitting",
+                                                                                          "pocket"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hoàn lại tiền: \u0027give a refund\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_8":  {
+                                               "title":  "Unit 8: Past events",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Past Simple with \u0027be\u0027 (Quá khứ đơn với was / were)",
+                                                                   "structure":  "I / He / She / It + was (wasn\u0027t) | You / We / They + were (weren\u0027t)",
+                                                                   "explanation":  "Dùng để kể lại bạn đã ở đâu, tâm trạng như thế nào hoặc thời tiết ra sao trong quá khứ.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I was at a live music concert last Saturday.",
+                                                                                        "vi":  "Tôi đã đi xem một buổi hòa nhạc trực tiếp vào thứ Bảy tuần trước."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "Were you tired after work yesterday? - Yes, I was.",
+                                                                                        "vi":  "Hôm qua tan làm bạn có mệt không? - Có, tôi khá mệt."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Số ít đi với WAS; Số nhiều đi với WERE."
+                                                               },
+                                                               {
+                                                                   "title":  "Past Simple: Regular \u0026 Common Irregular Verbs (Quá khứ đơn với động từ thường)",
+                                                                   "structure":  "(+) S + V-ed / V2 | (-) S + didn\u0027t + V-bare",
+                                                                   "explanation":  "Dùng để kể lại những việc bạn đã làm vào cuối tuần, kỳ nghỉ hoặc tối hôm qua.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "We watched a great movie and ate pizza together.",
+                                                                                        "vi":  "Chúng tôi đã xem một bộ phim rất hay và cùng ăn pizza."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "I didn\u0027t go out last night; I stayed at home and relaxed.",
+                                                                                        "vi":  "Tối qua tôi không đi chơi; tôi ở nhà nghỉ ngơi."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Động từ bất quy tắc quen thuộc: go -\u003e went, have -\u003e had, see -\u003e saw, buy -\u003e bought, meet -\u003e met."
+                                                               },
+                                                               {
+                                                                   "title":  "Past Time Expressions (Cụm từ chỉ thời gian quá khứ)",
+                                                                   "structure":  "yesterday, yesterday afternoon, last night, last week, two days ago, in 2024",
+                                                                   "explanation":  "Dùng để xác định rõ thời điểm xảy ra sự việc trong câu chuyện kể của bạn.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "I met my old university friend three days ago.",
+                                                                                        "vi":  "Tôi đã gặp lại người bạn đại học cũ cách đây ba ngày."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Trước \u0027yesterday\u0027 và \u0027last\u0027 không dùng giới từ in/on/at (nói \u0027last night\u0027, không nói \u0027in last night\u0027)."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Yesterday",
+                                                                 "ipa":  "/ˈjes.tə.deɪ/",
+                                                                 "vi":  "Hôm qua",
+                                                                 "ex":  "I finished the proposal yesterday afternoon."
+                                                             },
+                                                             {
+                                                                 "en":  "Last weekend",
+                                                                 "ipa":  "/lɑːst ˌwiːkˈend/",
+                                                                 "vi":  "Cuối tuần trước",
+                                                                 "ex":  "We drove to the beach last weekend."
+                                                             },
+                                                             {
+                                                                 "en":  "Concert",
+                                                                 "ipa":  "/ˈkɒn.sət/",
+                                                                 "vi":  "Buổi hòa nhạc",
+                                                                 "ex":  "The acoustic concert was unforgettable."
+                                                             },
+                                                             {
+                                                                 "en":  "Cinema",
+                                                                 "ipa":  "/ˈsɪn.ə.mɑː/",
+                                                                 "vi":  "Rạp chiếu phim",
+                                                                 "ex":  "Let\u0027s meet outside the cinema at 7 p.m."
+                                                             },
+                                                             {
+                                                                 "en":  "Stay at home",
+                                                                 "ipa":  "/steɪ æt həʊm/",
+                                                                 "vi":  "Ở nhà",
+                                                                 "ex":  "Because it rained heavily, we stayed at home."
+                                                             },
+                                                             {
+                                                                 "en":  "Delicious",
+                                                                 "ipa":  "/dɪˈlɪʃ.əs/",
+                                                                 "vi":  "Thơm ngon, ngon tuyệt",
+                                                                 "ex":  "The seafood hotpot was really delicious."
+                                                             },
+                                                             {
+                                                                 "en":  "Terrible",
+                                                                 "ipa":  "/ˈter.ə.bəl/",
+                                                                 "vi":  "Tồi tệ, khủng khiếp",
+                                                                 "ex":  "The traffic was terrible on Friday evening."
+                                                             },
+                                                             {
+                                                                 "en":  "Awesome",
+                                                                 "ipa":  "/ˈɔː.səm/",
+                                                                 "vi":  "Tuyệt vời, đỉnh cao",
+                                                                 "ex":  "Our holiday in Da Nang was absolutely awesome!"
+                                                             },
+                                                             {
+                                                                 "en":  "Tired",
+                                                                 "ipa":  "/taɪəd/",
+                                                                 "vi":  "Mệt mỏi",
+                                                                 "ex":  "I was very tired after working a 10-hour shift."
+                                                             },
+                                                             {
+                                                                 "en":  "Relaxed",
+                                                                 "ipa":  "/rɪˈlækst/",
+                                                                 "vi":  "Thư thái, thoải mái",
+                                                                 "ex":  "A short walk in the park made me feel relaxed."
+                                                             },
+                                                             {
+                                                                 "en":  "Visit",
+                                                                 "ipa":  "/ˈvɪz.ɪt/",
+                                                                 "vi":  "Thăm viếng",
+                                                                 "ex":  "We visited our grandparents in Hue last month."
+                                                             },
+                                                             {
+                                                                 "en":  "Buy",
+                                                                 "ipa":  "/baɪ/",
+                                                                 "vi":  "Mua sắm (quá khứ: bought)",
+                                                                 "ex":  "She bought a stylish leather coat yesterday."
+                                                             },
+                                                             {
+                                                                 "en":  "Meet",
+                                                                 "ipa":  "/miːt/",
+                                                                 "vi":  "Gặp gỡ (quá khứ: met)",
+                                                                 "ex":  "I met our new marketing director this morning."
+                                                             },
+                                                             {
+                                                                 "en":  "Go out",
+                                                                 "ipa":  "/ɡəʊ aʊt/",
+                                                                 "vi":  "Đi chơi ngoài trời, ra ngoài",
+                                                                 "ex":  "Did you go out with your friends last night?"
+                                                             },
+                                                             {
+                                                                 "en":  "Cook",
+                                                                 "ipa":  "/kʊk/",
+                                                                 "vi":  "Nấu nướng",
+                                                                 "ex":  "He cooked a special dinner for his family."
+                                                             },
+                                                             {
+                                                                 "en":  "Enjoy",
+                                                                 "ipa":  "/ɪnˈdʒɔɪ/",
+                                                                 "vi":  "Thích thú, tận hưởng",
+                                                                 "ex":  "Did you enjoy the musical performance?"
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Where ______ you last Sunday evening?",
+                                                                          "options":  [
+                                                                                          "were",
+                                                                                          "was",
+                                                                                          "are",
+                                                                                          "did"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027you\u0027 ở thì quá khứ đơn đi với to be \u0027were\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I ______ at the office until 8 p.m. yesterday.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "am",
+                                                                                          "did"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027I\u0027 ở quá khứ đơn đi với to be \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ a fantastic Italian movie at the cinema last night.",
+                                                                          "options":  [
+                                                                                          "watched",
+                                                                                          "watch",
+                                                                                          "watching",
+                                                                                          "watches"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Kể lại hành động \u0027last night\u0027 -\u003e dùng động từ quá khứ có quy tắc \u0027watched\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "She ______ to Singapore for a business trip last month.",
+                                                                          "options":  [
+                                                                                          "went",
+                                                                                          "go",
+                                                                                          "gone",
+                                                                                          "goes"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Quá khứ của động từ \u0027go\u0027 là \u0027went\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I didn\u0027t ______ out yesterday because the weather was bad.",
+                                                                          "options":  [
+                                                                                          "go",
+                                                                                          "went",
+                                                                                          "going",
+                                                                                          "goes"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau trợ động từ phủ định \u0027didn\u0027t\u0027, động từ trở về nguyên thể: \u0027didn\u0027t go\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did you ______ your old colleagues at the conference?",
+                                                                          "options":  [
+                                                                                          "meet",
+                                                                                          "met",
+                                                                                          "meeting",
+                                                                                          "meets"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trong câu hỏi có \u0027Did you\u0027, động từ theo sau ở dạng nguyên mẫu: \u0027meet\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Yes, I ______ them and we had lunch together.",
+                                                                          "options":  [
+                                                                                          "met",
+                                                                                          "meet",
+                                                                                          "meeting",
+                                                                                          "meets"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời kể lại hành động quá khứ -\u003e dùng \u0027met\u0027 (quá khứ của meet)."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The food at the new restaurant ______ delicious.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "is",
+                                                                                          "did"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ không đếm được \u0027The food\u0027 ở quá khứ -\u003e dùng \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They ______ at home last weekend; they went camping.",
+                                                                          "options":  [
+                                                                                          "weren\u0027t",
+                                                                                          "wasn\u0027t",
+                                                                                          "didn\u0027t",
+                                                                                          "aren\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027They\u0027 số nhiều phủ định ở quá khứ -\u003e \u0027weren\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "My father ______ a new laptop three days ago.",
+                                                                          "options":  [
+                                                                                          "bought",
+                                                                                          "buy",
+                                                                                          "buyed",
+                                                                                          "buying"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Quá khứ bất quy tắc của \u0027buy\u0027 là \u0027bought\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How was your holiday? - It ______ wonderful, thank you!",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "is",
+                                                                                          "did"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027It\u0027 số ít ở quá khứ -\u003e dùng \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "______ you tired after your long flight?",
+                                                                          "options":  [
+                                                                                          "Were",
+                                                                                          "Was",
+                                                                                          "Did",
+                                                                                          "Are"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi về trạng thái/tính từ \u0027tired\u0027 với chủ ngữ \u0027you\u0027 ở quá khứ -\u003e dùng \u0027Were\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He didn\u0027t ______ breakfast this morning because he woke up late.",
+                                                                          "options":  [
+                                                                                          "have",
+                                                                                          "had",
+                                                                                          "having",
+                                                                                          "has"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027didn\u0027t\u0027 dùng động từ nguyên thể \u0027have\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ our grandparents in the countryside last summer.",
+                                                                          "options":  [
+                                                                                          "visited",
+                                                                                          "visit",
+                                                                                          "visiting",
+                                                                                          "visits"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hành động trong quá khứ (\u0027last summer\u0027) -\u003e dùng \u0027visited\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The concert ______ at 7:30 p.m. and finished at 10 p.m.",
+                                                                          "options":  [
+                                                                                          "started",
+                                                                                          "start",
+                                                                                          "starting",
+                                                                                          "starts"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đồng thì với \u0027finished\u0027 ở quá khứ -\u003e dùng \u0027started\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did she like the anniversary gift? - Yes, she ______.",
+                                                                          "options":  [
+                                                                                          "did",
+                                                                                          "was",
+                                                                                          "liked",
+                                                                                          "does"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trả lời ngắn khẳng định cho \u0027Did she...?\u0027: \u0027Yes, she did\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I ______ an email to the client two hours ago.",
+                                                                          "options":  [
+                                                                                          "sent",
+                                                                                          "send",
+                                                                                          "sending",
+                                                                                          "sended"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Quá khứ của \u0027send\u0027 là \u0027sent\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "There ______ a lot of people at the exhibition yesterday.",
+                                                                          "options":  [
+                                                                                          "were",
+                                                                                          "was",
+                                                                                          "are",
+                                                                                          "is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027A lot of people\u0027 là danh từ số nhiều ở quá khứ -\u003e \u0027There were\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "He ______ very happy when he heard the good news.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "is",
+                                                                                          "did"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027He\u0027 số ít ở quá khứ -\u003e \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We cooked dinner and ______ board games together.",
+                                                                          "options":  [
+                                                                                          "played",
+                                                                                          "play",
+                                                                                          "playing",
+                                                                                          "plays"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đồng thì với \u0027cooked\u0027 ở quá khứ -\u003e \u0027played\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_9":  {
+                                               "title":  "Unit 9: Holidays and travel",
+                                               "grammar":  [
+                                                               {
+                                                                   "title":  "Past Simple: Questions \u0026 Negatives (Câu hỏi và câu phủ định quá khứ)",
+                                                                   "structure":  "Did + S + V-bare...? ➔ Yes, S + did. / No, S + didn\u0027t. | S + didn\u0027t + V-bare",
+                                                                   "explanation":  "Dùng để hỏi thăm về chuyến đi du lịch, kỳ nghỉ và các trải nghiệm đã qua.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Did you travel by plane or by train? - We travelled by plane.",
+                                                                                        "vi":  "Bạn đã đi bằng máy bay hay tàu hỏa? - Chúng tôi đã đi bằng máy bay."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "We didn\u0027t stay in a hotel; we rented an apartment by the beach.",
+                                                                                        "vi":  "Chúng tôi không ở khách sạn; chúng tôi đã thuê một căn hộ gần bãi biển."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Đã có trợ động từ Did/Didn\u0027t thì động từ chính luôn ở dạng nguyên mẫu."
+                                                               },
+                                                               {
+                                                                   "title":  "Wh- Questions in the Past (Câu hỏi thông tin chuyến đi)",
+                                                                   "structure":  "Where / What / How / Who + did + S + V-bare...?",
+                                                                   "explanation":  "Dùng để hỏi chi tiết về địa điểm, phương tiện và hoạt động trong kỳ nghỉ.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "Where did you go on your last holiday? - We went to Phu Quoc Island.",
+                                                                                        "vi":  "Bạn đã đi đâu vào kỳ nghỉ trước? - Chúng tôi đã đi đảo Phú Quốc."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "What did you do there? - We swam and ate fresh seafood.",
+                                                                                        "vi":  "Bạn đã làm gì ở đó? - Chúng tôi tắm biển và ăn hải sản tươi ngon."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Wh-word đứng đầu câu hỏi: Where (nơi nào), When (khi nào), How (bằng cách nào)."
+                                                               },
+                                                               {
+                                                                   "title":  "Means of Transport (Cách dùng giới từ với phương tiện đi lại)",
+                                                                   "structure":  "by plane / by train / by bus / by car | on foot (đi bộ) | take a taxi / take a flight",
+                                                                   "explanation":  "Dùng để diễn đạt phương tiện di chuyển trong chuyến du lịch.",
+                                                                   "examples":  [
+                                                                                    {
+                                                                                        "en":  "We went from Hanoi to Da Nang by plane.",
+                                                                                        "vi":  "Chúng tôi đi từ Hà Nội đến Đà Nẵng bằng máy bay."
+                                                                                    },
+                                                                                    {
+                                                                                        "en":  "It\u0027s near our hotel, so we went on foot.",
+                                                                                        "vi":  "Nó ở gần khách sạn nên chúng tôi đi bộ."
+                                                                                    }
+                                                                                ],
+                                                                   "tip":  "Nói \u0027by car / by plane\u0027, nhưng đi bộ nói \u0027on foot\u0027."
+                                                               }
+                                                           ],
+                                               "words":  [
+                                                             {
+                                                                 "en":  "Holiday",
+                                                                 "ipa":  "/ˈhɒl.ə.deɪ/",
+                                                                 "vi":  "Kỳ nghỉ lễ, kỳ du lịch",
+                                                                 "ex":  "Where are you going for your summer holiday?"
+                                                             },
+                                                             {
+                                                                 "en":  "Flight",
+                                                                 "ipa":  "/flaɪt/",
+                                                                 "vi":  "Chuyến bay",
+                                                                 "ex":  "Our flight to Bangkok departs at 9:15 a.m."
+                                                             },
+                                                             {
+                                                                 "en":  "Airport",
+                                                                 "ipa":  "/ˈeə.pɔːt/",
+                                                                 "vi":  "Sân bay, phi trường",
+                                                                 "ex":  "We arrived at the airport two hours before departure."
+                                                             },
+                                                             {
+                                                                 "en":  "Luggage",
+                                                                 "ipa":  "/ˈlʌɡ.ɪdʒ/",
+                                                                 "vi":  "Hành lý",
+                                                                 "ex":  "You are allowed one piece of hand luggage on the plane."
+                                                             },
+                                                             {
+                                                                 "en":  "Boarding pass",
+                                                                 "ipa":  "/ˈbɔː.dɪŋ pɑːs/",
+                                                                 "vi":  "Thẻ lên máy bay",
+                                                                 "ex":  "Please scan your boarding pass at gate number 4."
+                                                             },
+                                                             {
+                                                                 "en":  "Sightseeing",
+                                                                 "ipa":  "/ˈsaɪtˌsiː.ɪŋ/",
+                                                                 "vi":  "Ngắm cảnh, tham quan",
+                                                                 "ex":  "We did a lot of sightseeing in ancient Hoi An."
+                                                             },
+                                                             {
+                                                                 "en":  "Souvenir",
+                                                                 "ipa":  "/ˌsuː.vənˈɪər/",
+                                                                 "vi":  "Quà lưu niệm",
+                                                                 "ex":  "I bought some lovely handmade souvenirs for my colleagues."
+                                                             },
+                                                             {
+                                                                 "en":  "Beach",
+                                                                 "ipa":  "/biːtʃ/",
+                                                                 "vi":  "Bãi biển",
+                                                                 "ex":  "My Khe beach has white sand and warm blue water."
+                                                             },
+                                                             {
+                                                                 "en":  "Ticket",
+                                                                 "ipa":  "/ˈtɪk.ɪt/",
+                                                                 "vi":  "Vé máy bay, vé tàu",
+                                                                 "ex":  "Did you book a one-way or return ticket?"
+                                                             },
+                                                             {
+                                                                 "en":  "Delay",
+                                                                 "ipa":  "/dɪˈleɪ/",
+                                                                 "vi":  "Bị hoãn, sự chậm trễ",
+                                                                 "ex":  "Due to bad weather, our flight had a two-hour delay."
+                                                             },
+                                                             {
+                                                                 "en":  "Cancel",
+                                                                 "ipa":  "/ˈkæn.səl/",
+                                                                 "vi":  "Hủy chuyến",
+                                                                 "ex":  "Fortunately, the domestic train was not cancelled."
+                                                             },
+                                                             {
+                                                                 "en":  "Passport control",
+                                                                 "ipa":  "/ˈpɑːs.pɔːt kənˌtrəʊl/",
+                                                                 "vi":  "Khu kiểm soát hộ chiếu",
+                                                                 "ex":  "Have your passport ready at the immigration counter."
+                                                             },
+                                                             {
+                                                                 "en":  "Tour guide",
+                                                                 "ipa":  "/tʊə ɡaɪd/",
+                                                                 "vi":  "Hướng dẫn viên du lịch",
+                                                                 "ex":  "Our tour guide explained the history of the old palace."
+                                                             },
+                                                             {
+                                                                 "en":  "Experience",
+                                                                 "ipa":  "/ɪkˈspɪə.ri.əns/",
+                                                                 "vi":  "Trải nghiệm",
+                                                                 "ex":  "Scuba diving in Nha Trang was an amazing experience."
+                                                             },
+                                                             {
+                                                                 "en":  "Rent",
+                                                                 "ipa":  "/rent/",
+                                                                 "vi":  "Thuê (xe, nhà)",
+                                                                 "ex":  "We rented a scooter to explore the island."
+                                                             },
+                                                             {
+                                                                 "en":  "Scenic",
+                                                                 "ipa":  "/ˈsiː.nɪk/",
+                                                                 "vi":  "Có phong cảnh đẹp",
+                                                                 "ex":  "The train route offers scenic views of the coastline."
+                                                             }
+                                                         ],
+                                               "grammar_review":  [
+                                                                      {
+                                                                          "q":  "Where ______ you go for your summer holiday?",
+                                                                          "options":  [
+                                                                                          "did",
+                                                                                          "do",
+                                                                                          "were",
+                                                                                          "was"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hỏi về hành động trong kỳ nghỉ quá khứ: \u0027Where did you go...?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We ______ to Da Nang by airplane last July.",
+                                                                          "options":  [
+                                                                                          "travelled",
+                                                                                          "travel",
+                                                                                          "travelling",
+                                                                                          "travels"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Kể lại chuyến đi \u0027last July\u0027 -\u003e dùng quá khứ đơn \u0027travelled\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did you stay in a hotel? - No, we ______; we rented a villa.",
+                                                                          "options":  [
+                                                                                          "didn\u0027t",
+                                                                                          "weren\u0027t",
+                                                                                          "don\u0027t",
+                                                                                          "haven\u0027t"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời phủ định ngắn cho \u0027Did you...?\u0027: \u0027No, we didn\u0027t\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How did you travel to the island? - We went ______ boat.",
+                                                                          "options":  [
+                                                                                          "by",
+                                                                                          "in",
+                                                                                          "on",
+                                                                                          "with"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Phương tiện di chuyển dùng giới từ \u0027by\u0027: \u0027by boat\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The city center is close, so we went there ______ foot.",
+                                                                          "options":  [
+                                                                                          "on",
+                                                                                          "by",
+                                                                                          "in",
+                                                                                          "with"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đi bộ dùng cụm từ cố định \u0027on foot\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What ______ you buy at the night market? - Some local handicrafts.",
+                                                                          "options":  [
+                                                                                          "did",
+                                                                                          "do",
+                                                                                          "were",
+                                                                                          "are"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trợ động từ quá khứ: \u0027What did you buy...?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We didn\u0027t ______ any souvenirs because the shop was closed.",
+                                                                          "options":  [
+                                                                                          "buy",
+                                                                                          "bought",
+                                                                                          "buying",
+                                                                                          "buys"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027didn\u0027t\u0027 là động từ nguyên thể \u0027buy\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did the flight arrive on time? - Yes, it ______.",
+                                                                          "options":  [
+                                                                                          "did",
+                                                                                          "was",
+                                                                                          "arrived",
+                                                                                          "does"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Câu trả lời khẳng định ngắn cho \u0027Did it...?\u0027: \u0027Yes, it did\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Who did you go on vacation ______? - With my family.",
+                                                                          "options":  [
+                                                                                          "with",
+                                                                                          "for",
+                                                                                          "at",
+                                                                                          "to"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Đi du lịch cùng với ai: \u0027go on vacation with\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "I ______ a one-way ticket online yesterday evening.",
+                                                                          "options":  [
+                                                                                          "booked",
+                                                                                          "book",
+                                                                                          "booking",
+                                                                                          "books"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Hành động đã làm \u0027yesterday evening\u0027 -\u003e dùng \u0027booked\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Why ______ the flight delayed? - Because of heavy fog.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "did",
+                                                                                          "were",
+                                                                                          "is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "\u0027The flight\u0027 là danh từ số ít ở thể bị động quá khứ -\u003e \u0027Why was the flight delayed?\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "How long did you ______ in Hue? - For three days.",
+                                                                          "options":  [
+                                                                                          "stay",
+                                                                                          "stayed",
+                                                                                          "staying",
+                                                                                          "stays"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027did you\u0027 là động từ nguyên thể \u0027stay\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did you take a lot of photos? - Yes, I ______ over a hundred pictures.",
+                                                                          "options":  [
+                                                                                          "took",
+                                                                                          "take",
+                                                                                          "taken",
+                                                                                          "taking"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Quá khứ của take là \u0027took\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We rented a car to ______ around the countryside.",
+                                                                          "options":  [
+                                                                                          "drive",
+                                                                                          "drove",
+                                                                                          "driving",
+                                                                                          "drives"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chỉ mục đích dùng \u0027to + V nguyên thể\u0027: \u0027to drive\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "The hotel receptionist ______ very helpful when we checked in.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "did",
+                                                                                          "is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027The hotel receptionist\u0027 số ít ở quá khứ -\u003e \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Have your passport ready for the immigration ______.",
+                                                                          "options":  [
+                                                                                          "officer",
+                                                                                          "office",
+                                                                                          "official",
+                                                                                          "officially"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sĩ quan xuất nhập cảnh: \u0027immigration officer\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "They didn\u0027t ______ the local food because it was too spicy.",
+                                                                          "options":  [
+                                                                                          "like",
+                                                                                          "liked",
+                                                                                          "liking",
+                                                                                          "likes"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Sau \u0027didn\u0027t\u0027 là động từ nguyên thể \u0027like\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "What was the weather like on the island? - It ______ sunny every day.",
+                                                                          "options":  [
+                                                                                          "was",
+                                                                                          "were",
+                                                                                          "did",
+                                                                                          "is"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Chủ ngữ \u0027It\u0027 chỉ thời tiết quá khứ -\u003e \u0027was\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "We took a taxi from the airport ______ our hotel.",
+                                                                          "options":  [
+                                                                                          "to",
+                                                                                          "at",
+                                                                                          "in",
+                                                                                          "by"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Từ đâu đến đâu: \u0027from the airport to our hotel\u0027."
+                                                                      },
+                                                                      {
+                                                                          "q":  "Did you enjoy your trip? - Yes, it was an amazing ______!",
+                                                                          "options":  [
+                                                                                          "experience",
+                                                                                          "flight",
+                                                                                          "luggage",
+                                                                                          "delay"
+                                                                                      ],
+                                                                          "ans":  0,
+                                                                          "explain":  "Trải nghiệm tuyệt vời: \u0027an amazing experience\u0027."
+                                                                      }
+                                                                  ]
+                                           },
+                                "unit_10":  {
+                                                "title":  "Unit 10: Food and experiences",
+                                                "grammar":  [
+                                                                {
+                                                                    "title":  "Countable and Uncountable Nouns (Danh từ đếm được và không đếm được)",
+                                                                    "structure":  "Countable: an apple, two apples | Uncountable: water, rice, sugar, money",
+                                                                    "explanation":  "Danh từ đếm được có dạng số ít và số nhiều (thêm -s/-es). Danh từ không đếm được không có dạng số nhiều và không dùng với a/an.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "We need two bottles of water and some fresh fruit.",
+                                                                                         "vi":  "Chúng tôi cần hai chai nước và một ít trái cây tươi."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "How much milk do you take in your coffee? - Just a little, please.",
+                                                                                         "vi":  "Bạn uống bao nhiêu sữa trong cà phê? - Dạ chỉ một chút thôi."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Hỏi số lượng danh từ đếm được dùng \u0027How many...?\u0027, danh từ không đếm được dùng \u0027How much...?."
+                                                                },
+                                                                {
+                                                                    "title":  "Can and Can\u0027t for Ability (Diễn tả khả năng và kỹ năng cá nhân)",
+                                                                    "structure":  "(+) S + can + V | (-) S + can\u0027t + V | (?) Can you + V...?",
+                                                                    "explanation":  "Dùng để nói về những việc bạn biết làm hoặc không biết làm (bơi lội, lái xe, nấu ăn, nói tiếng Anh).",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "I can speak English and Vietnamese fluently.",
+                                                                                         "vi":  "Tôi có thể nói tiếng Anh và tiếng Việt trôi chảy."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "Can you drive a manual car? - No, I can\u0027t.",
+                                                                                         "vi":  "Bạn có biết lái xe số sàn không? - Không, tôi không biết lái."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Sau can / can\u0027t luôn là động từ nguyên thể không chia."
+                                                                },
+                                                                {
+                                                                    "title":  "Polite Requests with \u0027Can\u0027 \u0026 \u0027Could\u0027 (Đưa ra lời đề nghị và xin phép lịch sự)",
+                                                                    "structure":  "Can / Could you + V, please? | Could I have...?",
+                                                                    "explanation":  "Mẫu câu nhờ ai đó làm việc gì hoặc xin phép làm việc gì một cách nhã nhặn.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "Could you pass me the salt, please?",
+                                                                                         "vi":  "Bạn có thể vui lòng chuyền giúp tôi lọ muối được không?"
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "Could I ask a quick question about this recipe?",
+                                                                                         "vi":  "Tôi có thể hỏi một câu nhanh về công thức nấu ăn này được không?"
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "\u0027Could\u0027 lịch sự và trang trọng hơn \u0027Can\u0027."
+                                                                }
+                                                            ],
+                                                "words":  [
+                                                              {
+                                                                  "en":  "Ability",
+                                                                  "ipa":  "/əˈbɪl.ə.ti/",
+                                                                  "vi":  "Khả năng, năng lực",
+                                                                  "ex":  "She has a natural ability to learn foreign languages."
+                                                              },
+                                                              {
+                                                                  "en":  "Swim",
+                                                                  "ipa":  "/swɪm/",
+                                                                  "vi":  "Bơi lội",
+                                                                  "ex":  "I can swim 500 metres without stopping."
+                                                              },
+                                                              {
+                                                                  "en":  "Drive",
+                                                                  "ipa":  "/draɪv/",
+                                                                  "vi":  "Lái xe",
+                                                                  "ex":  "Can you drive an automatic car?"
+                                                              },
+                                                              {
+                                                                  "en":  "Cook",
+                                                                  "ipa":  "/kʊk/",
+                                                                  "vi":  "Nấu ăn",
+                                                                  "ex":  "He can cook delicious Italian pasta."
+                                                              },
+                                                              {
+                                                                  "en":  "Play the guitar",
+                                                                  "ipa":  "/pleɪ ðə ɡɪˈtɑːr/",
+                                                                  "vi":  "Chơi đàn ghi-ta",
+                                                                  "ex":  "My colleague plays the guitar in an acoustic band."
+                                                              },
+                                                              {
+                                                                  "en":  "Ingredient",
+                                                                  "ipa":  "/ɪnˈɡriː.di.ənt/",
+                                                                  "vi":  "Nguyên liệu nấu ăn",
+                                                                  "ex":  "Fresh herbs are essential ingredients for Vietnamese soup."
+                                                              },
+                                                              {
+                                                                  "en":  "Recipe",
+                                                                  "ipa":  "/ˈres.ɪ.pi/",
+                                                                  "vi":  "Công thức nấu ăn",
+                                                                  "ex":  "This traditional recipe was passed down from my grandmother."
+                                                              },
+                                                              {
+                                                                  "en":  "Flour",
+                                                                  "ipa":  "/flaʊər/",
+                                                                  "vi":  "Bột mì",
+                                                                  "ex":  "You need 200 grams of flour to bake this cake."
+                                                              },
+                                                              {
+                                                                  "en":  "Butter",
+                                                                  "ipa":  "/ˈbʌt.ər/",
+                                                                  "vi":  "Bơ thực phẩm",
+                                                                  "ex":  "Spread a little butter on the toast."
+                                                              },
+                                                              {
+                                                                  "en":  "Bottle",
+                                                                  "ipa":  "/ˈbɒt.əl/",
+                                                                  "vi":  "Chai nước",
+                                                                  "ex":  "Could I have a bottle of still mineral water, please?"
+                                                              },
+                                                              {
+                                                                  "en":  "Glass",
+                                                                  "ipa":  "/ɡlɑːs/",
+                                                                  "vi":  "Ly, cốc thủy tinh",
+                                                                  "ex":  "Would you like a glass of fresh orange juice?"
+                                                              },
+                                                              {
+                                                                  "en":  "Request",
+                                                                  "ipa":  "/rɪˈkwest/",
+                                                                  "vi":  "Lời đề nghị, yêu cầu",
+                                                                  "ex":  "The waiter handled our special dietary request politely."
+                                                              },
+                                                              {
+                                                                  "en":  "Permission",
+                                                                  "ipa":  "/pəˈmɪʃ.ən/",
+                                                                  "vi":  "Sự cho phép",
+                                                                  "ex":  "You must ask for permission before taking photographs inside."
+                                                              },
+                                                              {
+                                                                  "en":  "Skill",
+                                                                  "ipa":  "/skɪl/",
+                                                                  "vi":  "Kỹ năng",
+                                                                  "ex":  "Communication is a vital soft skill in business."
+                                                              },
+                                                              {
+                                                                  "en":  "Taste",
+                                                                  "ipa":  "/teɪst/",
+                                                                  "vi":  "Nếm thử, mùi vị",
+                                                                  "ex":  "Taste this sauce and tell me if it needs more salt."
+                                                              },
+                                                              {
+                                                                  "en":  "Bake",
+                                                                  "ipa":  "/beɪk/",
+                                                                  "vi":  "Nướng bánh",
+                                                                  "ex":  "I love baking chocolate cookies on Sunday mornings."
+                                                              }
+                                                          ],
+                                                "grammar_review":  [
+                                                                       {
+                                                                           "q":  "How ______ apples did you buy at the supermarket?",
+                                                                           "options":  [
+                                                                                           "many",
+                                                                                           "much",
+                                                                                           "lot",
+                                                                                           "little"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "\u0027Apples\u0027 là danh từ đếm được số nhiều -\u003e dùng \u0027How many\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "How ______ water should we drink every day?",
+                                                                           "options":  [
+                                                                                           "much",
+                                                                                           "many",
+                                                                                           "few",
+                                                                                           "number"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "\u0027Water\u0027 là danh từ không đếm được -\u003e dùng \u0027How much\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Can you speak Spanish? - No, I ______.",
+                                                                           "options":  [
+                                                                                           "can\u0027t",
+                                                                                           "don\u0027t",
+                                                                                           "am not",
+                                                                                           "couldn\u0027t"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Câu trả lời phủ định ngắn cho \u0027Can you...?\u0027: \u0027No, I can\u0027t\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Could you ______ me the sugar, please?",
+                                                                           "options":  [
+                                                                                           "pass",
+                                                                                           "passes",
+                                                                                           "passing",
+                                                                                           "passed"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau \u0027Could you\u0027 là động từ nguyên thể \u0027pass\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "She ______ drive very well; she passed her driving test on the first try.",
+                                                                           "options":  [
+                                                                                           "can",
+                                                                                           "is",
+                                                                                           "have",
+                                                                                           "must to"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Diễn tả khả năng làm việc gì: \u0027can + V-bare\u0027 (can drive)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "We need a ______ of olive oil for the salad dressing.",
+                                                                           "options":  [
+                                                                                           "bottle",
+                                                                                           "glass",
+                                                                                           "slice",
+                                                                                           "bowl"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Dầu ăn đựng trong chai: \u0027a bottle of olive oil\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Is there ______ milk left in the fridge?",
+                                                                           "options":  [
+                                                                                           "any",
+                                                                                           "many",
+                                                                                           "few",
+                                                                                           "a"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Trong câu hỏi với danh từ không đếm được \u0027milk\u0027 dùng lượng từ \u0027any\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I have ______ friends who work in graphic design.",
+                                                                           "options":  [
+                                                                                           "a few",
+                                                                                           "a little",
+                                                                                           "much",
+                                                                                           "any"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Với danh từ đếm được số nhiều \u0027friends\u0027 dùng \u0027a few\u0027 (một vài)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Please add ______ salt to the tomato soup.",
+                                                                           "options":  [
+                                                                                           "a little",
+                                                                                           "a few",
+                                                                                           "many",
+                                                                                           "these"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Với danh từ không đếm được \u0027salt\u0027 dùng \u0027a little\u0027 (một chút)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "______ I ask you a personal question? - Yes, of course.",
+                                                                           "options":  [
+                                                                                           "Could",
+                                                                                           "Do",
+                                                                                           "Am",
+                                                                                           "Will"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Xin phép lịch sự: \u0027Could I ask you...?\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "He ______ swim when he was five years old.",
+                                                                           "options":  [
+                                                                                           "could",
+                                                                                           "can",
+                                                                                           "is able",
+                                                                                           "knows"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Khả năng trong quá khứ (\u0027when he was five\u0027) dùng \u0027could\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "There are too ______ cars on the road during rush hour.",
+                                                                           "options":  [
+                                                                                           "many",
+                                                                                           "much",
+                                                                                           "little",
+                                                                                           "any"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "\u0027Cars\u0027 là danh từ đếm được số nhiều -\u003e \u0027too many cars\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Can Gemma cook Vietnamese food? - Yes, she ______.",
+                                                                           "options":  [
+                                                                                           "can",
+                                                                                           "does",
+                                                                                           "is",
+                                                                                           "can\u0027t"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Khẳng định ngắn cho \u0027Can Gemma...?\u0027: \u0027Yes, she can\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Could you speak a little louder, please? I ______ hear you clearly.",
+                                                                           "options":  [
+                                                                                           "can\u0027t",
+                                                                                           "don\u0027t",
+                                                                                           "am not",
+                                                                                           "couldn\u0027t"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Không thể nghe rõ lúc này: \u0027I can\u0027t hear you clearly\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Would you like a ______ of coffee or tea?",
+                                                                           "options":  [
+                                                                                           "cup",
+                                                                                           "bottle",
+                                                                                           "plate",
+                                                                                           "slice"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cốc tách cà phê/trà: \u0027a cup of coffee\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "How ______ luggage do you have to check in?",
+                                                                           "options":  [
+                                                                                           "much",
+                                                                                           "many",
+                                                                                           "few",
+                                                                                           "number"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "\u0027Luggage\u0027 là danh từ không đếm được trong tiếng Anh -\u003e \u0027How much luggage\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "We don\u0027t have ______ eggs left to bake the cake.",
+                                                                           "options":  [
+                                                                                           "enough",
+                                                                                           "much",
+                                                                                           "little",
+                                                                                           "an"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Không có đủ trứng: \u0027don\u0027t have enough eggs\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Can you play ______ guitar? - Yes, I can play classical guitar.",
+                                                                           "options":  [
+                                                                                           "the",
+                                                                                           "a",
+                                                                                           "an",
+                                                                                           "this"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Chơi nhạc cụ có mạo từ \u0027the\u0027: \u0027play the guitar\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Could we have a table for four, please? - Certainly, right ______ way.",
+                                                                           "options":  [
+                                                                                           "this",
+                                                                                           "that",
+                                                                                           "there",
+                                                                                           "these"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Mẫu câu phục vụ chỉ dẫn: \u0027right this way\u0027 (lối này xin mời)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "They ______ speak German, but they are taking online lessons now.",
+                                                                           "options":  [
+                                                                                           "can\u0027t",
+                                                                                           "don\u0027t can",
+                                                                                           "aren\u0027t",
+                                                                                           "not can"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Không biết nói tiếng Đức: \u0027can\u0027t speak German\u0027."
+                                                                       }
+                                                                   ]
+                                            },
+                                "unit_11":  {
+                                                "title":  "Unit 11: Life changes",
+                                                "grammar":  [
+                                                                {
+                                                                    "title":  "Comparative Adjectives (Tính từ so sánh hơn)",
+                                                                    "structure":  "Short adj + -er + than | more + Long adj + than",
+                                                                    "explanation":  "Dùng để so sánh giữa hai nơi ở, hai công việc, mức lương hoặc chất lượng cuộc sống.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "Living in Da Nang is cheaper and more peaceful than living in Hanoi.",
+                                                                                         "vi":  "Sống ở Đà Nẵng rẻ hơn và yên bình hơn sống ở Hà Nội."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "My new job is more interesting than my previous one.",
+                                                                                         "vi":  "Công việc mới của tôi thú vị hơn công việc trước đây."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Tính từ ngắn: cheap -\u003e cheaper, safe -\u003e safer, noisy -\u003e noisier. Tính từ dài: more expensive, more convenient."
+                                                                },
+                                                                {
+                                                                    "title":  "Superlative Adjectives (Tính từ so sánh nhất)",
+                                                                    "structure":  "the + Short adj-est | the most + Long adj",
+                                                                    "explanation":  "Dùng để chỉ vị trí, thành phố hoặc cơ hội tốt nhất, hiện đại nhất.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "This is the best decision I have made for my career.",
+                                                                                         "vi":  "Đây là quyết định tốt nhất tôi từng đưa ra cho sự nghiệp của mình."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "Singapore is one of the safest cities in the world.",
+                                                                                         "vi":  "Singapore là một trong những thành phố an toàn nhất thế giới."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Bất quy tắc quan trọng: good -\u003e better -\u003e the best; bad -\u003e worse -\u003e the worst."
+                                                                },
+                                                                {
+                                                                    "title":  "Expressing Opinions (Bày tỏ quan điểm và ý kiến cá nhân)",
+                                                                    "structure":  "I think... | In my opinion... | I agree with you. | I disagree.",
+                                                                    "explanation":  "Cách giao tiếp thể hiện chính kiến và thảo luận một cách lịch thiệp, chuyên nghiệp.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "I think working from home improves work-life balance.",
+                                                                                         "vi":  "Tôi nghĩ làm việc tại nhà cải thiện sự cân bằng giữa công việc và cuộc sống."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "I agree with you completely.",
+                                                                                         "vi":  "Tôi hoàn toàn đồng ý với bạn."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Bày tỏ không đồng ý lịch sự: \u0027I see your point, but I think...\u0027."
+                                                                }
+                                                            ],
+                                                "words":  [
+                                                              {
+                                                                  "en":  "Modern",
+                                                                  "ipa":  "/ˈmɒd.ən/",
+                                                                  "vi":  "Hiện đại",
+                                                                  "ex":  "Our company has a modern office equipped with smart technology."
+                                                              },
+                                                              {
+                                                                  "en":  "Peaceful",
+                                                                  "ipa":  "/ˈpiːs.fəl/",
+                                                                  "vi":  "Yên bình, thanh bình",
+                                                                  "ex":  "She moved to a peaceful town to escape city noise."
+                                                              },
+                                                              {
+                                                                  "en":  "Noisy",
+                                                                  "ipa":  "/ˈnɔɪ.zi/",
+                                                                  "vi":  "Ồn ào, huyên náo",
+                                                                  "ex":  "Downtown streets are very noisy during the day."
+                                                              },
+                                                              {
+                                                                  "en":  "Safe",
+                                                                  "ipa":  "/seɪf/",
+                                                                  "vi":  "An toàn",
+                                                                  "ex":  "This residential area is safe and secure for families."
+                                                              },
+                                                              {
+                                                                  "en":  "Dangerous",
+                                                                  "ipa":  "/ˈdeɪn.dʒər.əs/",
+                                                                  "vi":  "Nguy hiểm",
+                                                                  "ex":  "Riding a motorbike in heavy rain can be dangerous."
+                                                              },
+                                                              {
+                                                                  "en":  "Quality of life",
+                                                                  "ipa":  "/ˈkwɒl.ə.ti əv laɪf/",
+                                                                  "vi":  "Chất lượng cuộc sống",
+                                                                  "ex":  "Clean air and green parks improve our quality of life."
+                                                              },
+                                                              {
+                                                                  "en":  "Career",
+                                                                  "ipa":  "/kəˈrɪər/",
+                                                                  "vi":  "Sự nghiệp",
+                                                                  "ex":  "Learning fluent English opens up great career opportunities."
+                                                              },
+                                                              {
+                                                                  "en":  "Salary",
+                                                                  "ipa":  "/ˈsæl.ər.i/",
+                                                                  "vi":  "Mức lương hàng tháng",
+                                                                  "ex":  "The job offers a competitive salary and health insurance."
+                                                              },
+                                                              {
+                                                                  "en":  "Decision",
+                                                                  "ipa":  "/dɪˈsɪʒ.ən/",
+                                                                  "vi":  "Quyết định",
+                                                                  "ex":  "Changing careers was a difficult but rewarding decision."
+                                                              },
+                                                              {
+                                                                  "en":  "Advantage",
+                                                                  "ipa":  "/ədˈvɑːn.tɪdʒ/",
+                                                                  "vi":  "Ưu điểm, lợi thế",
+                                                                  "ex":  "One big advantage of remote work is saving commute time."
+                                                              },
+                                                              {
+                                                                  "en":  "Disadvantage",
+                                                                  "ipa":  "/ˌdɪs.ədˈvɑːn.tɪdʒ/",
+                                                                  "vi":  "Nhược điểm, bất lợi",
+                                                                  "ex":  "The main disadvantage of the apartment is high monthly rent."
+                                                              },
+                                                              {
+                                                                  "en":  "Environment",
+                                                                  "ipa":  "/ɪnˈvaɪ.rən.mənt/",
+                                                                  "vi":  "Môi trường sống, môi trường làm việc",
+                                                                  "ex":  "A positive work environment boosts employee productivity."
+                                                              },
+                                                              {
+                                                                  "en":  "Move house",
+                                                                  "ipa":  "/muːv haʊs/",
+                                                                  "vi":  "Chuyển nhà",
+                                                                  "ex":  "They are moving house next weekend."
+                                                              },
+                                                              {
+                                                                  "en":  "Promotion",
+                                                                  "ipa":  "/prəˈməʊ.ʃən/",
+                                                                  "vi":  "Thăng chức, thăng tiến",
+                                                                  "ex":  "Congratulations on your well-deserved promotion!"
+                                                              },
+                                                              {
+                                                                  "en":  "Opinion",
+                                                                  "ipa":  "/əˈpɪn.jən/",
+                                                                  "vi":  "Quan điểm, ý kiến",
+                                                                  "ex":  "In my opinion, continuous learning is key to success."
+                                                              },
+                                                              {
+                                                                  "en":  "Lifestyle",
+                                                                  "ipa":  "/ˈlaɪf.staɪl/",
+                                                                  "vi":  "Lối sống, phong cách sống",
+                                                                  "ex":  "Adopting an active lifestyle keeps you energetic."
+                                                              }
+                                                          ],
+                                                "grammar_review":  [
+                                                                       {
+                                                                           "q":  "My new apartment is ______ than my old one.",
+                                                                           "options":  [
+                                                                                           "bigger",
+                                                                                           "more big",
+                                                                                           "biggest",
+                                                                                           "the biggest"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn với tính từ ngắn \u0027big\u0027: gấp đôi phụ âm g -\u003e \u0027bigger than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Public transport in this city is ______ than it was five years ago.",
+                                                                           "options":  [
+                                                                                           "better",
+                                                                                           "gooder",
+                                                                                           "more good",
+                                                                                           "best"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn bất quy tắc của \u0027good\u0027 là \u0027better\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "This is ______ difficult project I have ever managed.",
+                                                                           "options":  [
+                                                                                           "the most",
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "the more"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh nhất với tính từ dài \u0027difficult\u0027 -\u003e \u0027the most difficult\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Living in the countryside is ______ than living in a crowded metropolis.",
+                                                                           "options":  [
+                                                                                           "more peaceful",
+                                                                                           "peacefuller",
+                                                                                           "peaceful",
+                                                                                           "most peaceful"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Tính từ 2 âm tiết \u0027peaceful\u0027 dùng \u0027more peaceful than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "What is ______ city in Vietnam to live in? - Many people think it\u0027s Da Nang.",
+                                                                           "options":  [
+                                                                                           "the best",
+                                                                                           "better",
+                                                                                           "good",
+                                                                                           "best"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh nhất trong tất cả các thành phố -\u003e \u0027the best city\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Do you agree with the manager\u0027s proposal? - Yes, I ______ with him completely.",
+                                                                           "options":  [
+                                                                                           "agree",
+                                                                                           "agrees",
+                                                                                           "agreeing",
+                                                                                           "am agree"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Bày tỏ sự đồng ý: \u0027I agree with him\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "My current commute is ______ than my previous one.",
+                                                                           "options":  [
+                                                                                           "shorter",
+                                                                                           "more short",
+                                                                                           "shortest",
+                                                                                           "short"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn của \u0027short\u0027 là \u0027shorter than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "In my ______, learning a foreign language broadens your horizons.",
+                                                                           "options":  [
+                                                                                           "opinion",
+                                                                                           "decision",
+                                                                                           "career",
+                                                                                           "salary"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cụm thành ngữ bày tỏ quan điểm: \u0027In my opinion\u0027 (Theo quan điểm của tôi)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Air pollution in big industrial cities is getting ______.",
+                                                                           "options":  [
+                                                                                           "worse",
+                                                                                           "badder",
+                                                                                           "worst",
+                                                                                           "more bad"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn của \u0027bad\u0027 là \u0027worse\u0027 (ngày càng tồi tệ hơn)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "This smartphone is ______ expensive than that tablet.",
+                                                                           "options":  [
+                                                                                           "more",
+                                                                                           "much",
+                                                                                           "many",
+                                                                                           "most"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn của tính từ dài \u0027expensive\u0027: \u0027more expensive than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Who is ______ experienced engineer on your team?",
+                                                                           "options":  [
+                                                                                           "the most",
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "the more"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh nhất cần mạo từ \u0027the\u0027: \u0027the most experienced\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I ______ with you. I think that plan will cost too much money.",
+                                                                           "options":  [
+                                                                                           "disagree",
+                                                                                           "am disagree",
+                                                                                           "not agree",
+                                                                                           "disagrees"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Bày tỏ không đồng tình: \u0027I disagree with you\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "His new salary is significantly ______ than his previous one.",
+                                                                           "options":  [
+                                                                                           "higher",
+                                                                                           "more high",
+                                                                                           "highest",
+                                                                                           "the highest"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn của \u0027high\u0027 là \u0027higher than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Tokyo is one of ______ crowded cities in the world.",
+                                                                           "options":  [
+                                                                                           "the most",
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "much"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cấu trúc: \u0027one of the most + adj\u0027 -\u003e \u0027one of the most crowded\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Is living abroad ______ than staying in your hometown?",
+                                                                           "options":  [
+                                                                                           "harder",
+                                                                                           "more hard",
+                                                                                           "hardest",
+                                                                                           "the hardest"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Tính từ ngắn \u0027hard\u0027 -\u003e so sánh hơn \u0027harder than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "She wants to change jobs because she wants a better work-life ______.",
+                                                                           "options":  [
+                                                                                           "balance",
+                                                                                           "career",
+                                                                                           "opinion",
+                                                                                           "advantage"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sự cân bằng công việc và cuộc sống: \u0027work-life balance\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "This is ______ expensive restaurant in the entire district.",
+                                                                           "options":  [
+                                                                                           "the most",
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "the more"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh nhất trong toàn bộ quận: \u0027the most expensive\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I think customer satisfaction is ______ important than quick sales.",
+                                                                           "options":  [
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "much",
+                                                                                           "many"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "So sánh hơn với tính từ dài: \u0027more important than\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Learning English helped Gemma become ______ confident at work.",
+                                                                           "options":  [
+                                                                                           "more",
+                                                                                           "most",
+                                                                                           "much",
+                                                                                           "many"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Tự tin hơn: \u0027more confident\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Moving to a new apartment was a great ______ for our family.",
+                                                                           "options":  [
+                                                                                           "decision",
+                                                                                           "decide",
+                                                                                           "decisive",
+                                                                                           "deciding"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau tính từ \u0027great\u0027 cần một danh từ: \u0027decision\u0027."
+                                                                       }
+                                                                   ]
+                                            },
+                                "unit_12":  {
+                                                "title":  "Unit 12: Plans",
+                                                "grammar":  [
+                                                                {
+                                                                    "title":  "Future with \u0027be going to\u0027 (Thì tương lai gần với be going to)",
+                                                                    "structure":  "S + am / is / are + going to + V-bare | (-) S + be + not going to + V",
+                                                                    "explanation":  "Dùng để nói về các kế hoạch, dự định chắc chắn sẽ thực hiện trong tương lai.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "I am going to study an advanced business English course next month.",
+                                                                                         "vi":  "Tôi dự định sẽ học một khóa tiếng Anh thương mại nâng cao vào tháng tới."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "We are going to travel to Europe this December.",
+                                                                                         "vi":  "Chúng tôi dự định sẽ đi du lịch châu Âu vào tháng 12 này."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "I am going to / He is going to / We are going to + động từ nguyên thể."
+                                                                },
+                                                                {
+                                                                    "title":  "Future Time Expressions \u0026 Dates (Cách diễn đạt thời gian tương lai và ngày tháng)",
+                                                                    "structure":  "next week / next month / next year | tomorrow morning | on + Date | in + Month",
+                                                                    "explanation":  "Dùng để xác định rõ mốc thời gian thực hiện kế hoạch tương lai.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "The new project is going to launch on 15th October.",
+                                                                                         "vi":  "Dự án mới sẽ được khởi động vào ngày 15 tháng 10."
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "She is going to take her English certification exam in November.",
+                                                                                         "vi":  "Cô ấy dự định sẽ thi chứng chỉ tiếng Anh vào tháng 11."
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "Ngày dùng ON (on 15th October), Tháng dùng IN (in November), Năm dùng IN (in 2026)."
+                                                                },
+                                                                {
+                                                                    "title":  "Saying Goodbye \u0026 Keeping in Touch (Chào tạm biệt và giữ liên lạc)",
+                                                                    "structure":  "Let\u0027s stay in touch. | See you soon! | It was great meeting you.",
+                                                                    "explanation":  "Mẫu câu kết thúc một cuộc gặp gỡ, khóa học hoặc chào đồng nghiệp trước kỳ nghỉ.",
+                                                                    "examples":  [
+                                                                                     {
+                                                                                         "en":  "It was wonderful working with you. Let\u0027s stay in touch!",
+                                                                                         "vi":  "Thật tuyệt vời được làm việc cùng bạn. Chúng ta hãy giữ liên lạc nhé!"
+                                                                                     },
+                                                                                     {
+                                                                                         "en":  "Have a safe flight and see you next week!",
+                                                                                         "vi":  "Chúc bạn có chuyến bay an toàn và hẹn gặp lại tuần sau nhé!"
+                                                                                     }
+                                                                                 ],
+                                                                    "tip":  "\u0027Stay in touch\u0027 nghĩa là duy trì liên lạc qua email, điện thoại hoặc mạng xã hội."
+                                                                }
+                                                            ],
+                                                "words":  [
+                                                              {
+                                                                  "en":  "Plan",
+                                                                  "ipa":  "/plæn/",
+                                                                  "vi":  "Kế hoạch, dự định",
+                                                                  "ex":  "What are your plans for the upcoming summer holiday?"
+                                                              },
+                                                              {
+                                                                  "en":  "Goal",
+                                                                  "ipa":  "/ɡəʊl/",
+                                                                  "vi":  "Mục tiêu",
+                                                                  "ex":  "My main goal this year is to speak English fluently."
+                                                              },
+                                                              {
+                                                                  "en":  "Achieve",
+                                                                  "ipa":  "/əˈtʃiːv/",
+                                                                  "vi":  "Đạt được",
+                                                                  "ex":  "With persistent effort, you will achieve all your dreams."
+                                                              },
+                                                              {
+                                                                  "en":  "Promotion",
+                                                                  "ipa":  "/prəˈməʊ.ʃən/",
+                                                                  "vi":  "Thăng tiến chức vụ",
+                                                                  "ex":  "She hopes to get a promotion to senior manager next year."
+                                                              },
+                                                              {
+                                                                  "en":  "Travel abroad",
+                                                                  "ipa":  "/ˈtræv.əl əˈbrɔːd/",
+                                                                  "vi":  "Đi du lịch nước ngoài",
+                                                                  "ex":  "We are going to travel abroad for the first time."
+                                                              },
+                                                              {
+                                                                  "en":  "Stay in touch",
+                                                                  "ipa":  "/steɪ ɪn tʌtʃ/",
+                                                                  "vi":  "Giữ liên lạc",
+                                                                  "ex":  "Here is my business card, let\u0027s definitely stay in touch."
+                                                              },
+                                                              {
+                                                                  "en":  "Schedule",
+                                                                  "ipa":  "/ˈʃedʒ.uːl/",
+                                                                  "vi":  "Lịch trình",
+                                                                  "ex":  "Let me check my calendar schedule for next Monday."
+                                                              },
+                                                              {
+                                                                  "en":  "Contact",
+                                                                  "ipa":  "/ˈkɒn.tækt/",
+                                                                  "vi":  "Liên hệ",
+                                                                  "ex":  "Feel free to contact me whenever you need assistance."
+                                                              },
+                                                              {
+                                                                  "en":  "Intention",
+                                                                  "ipa":  "/ɪnˈten.ʃən/",
+                                                                  "vi":  "Ý định",
+                                                                  "ex":  "I have every intention of finishing this project on time."
+                                                              },
+                                                              {
+                                                                  "en":  "Course",
+                                                                  "ipa":  "/kɔːs/",
+                                                                  "vi":  "Khóa học",
+                                                                  "ex":  "She enrolled in an evening digital marketing course."
+                                                              },
+                                                              {
+                                                                  "en":  "Farewell",
+                                                                  "ipa":  "/ˌfeəˈwel/",
+                                                                  "vi":  "Buổi chia tay, lời từ biệt",
+                                                                  "ex":  "We organized a warm farewell party for our departing colleague."
+                                                              },
+                                                              {
+                                                                  "en":  "Successful",
+                                                                  "ipa":  "/səkˈses.fəl/",
+                                                                  "vi":  "Thành công",
+                                                                  "ex":  "Hard work and dedication lead to a successful career."
+                                                              },
+                                                              {
+                                                                  "en":  "Future",
+                                                                  "ipa":  "/ˈfjuː.tʃər/",
+                                                                  "vi":  "Tương lai",
+                                                                  "ex":  "Investing in language skills is an investment in your future."
+                                                              },
+                                                              {
+                                                                  "en":  "Hope",
+                                                                  "ipa":  "/həʊp/",
+                                                                  "vi":  "Hi vọng",
+                                                                  "ex":  "I hope to see you again soon."
+                                                              },
+                                                              {
+                                                                  "en":  "Arrange",
+                                                                  "ipa":  "/əˈreɪndʒ/",
+                                                                  "vi":  "Sắp xếp, thu xếp",
+                                                                  "ex":  "Can we arrange a Zoom call for tomorrow afternoon?"
+                                                              },
+                                                              {
+                                                                  "en":  "Goodbye",
+                                                                  "ipa":  "/ˌɡʊdˈbaɪ/",
+                                                                  "vi":  "Tạm biệt",
+                                                                  "ex":  "Goodbye and take good care of yourself!"
+                                                              }
+                                                          ],
+                                                "grammar_review":  [
+                                                                       {
+                                                                           "q":  "What ______ you going to do this weekend?",
+                                                                           "options":  [
+                                                                                           "are",
+                                                                                           "is",
+                                                                                           "do",
+                                                                                           "have"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cấu trúc tương lai gần với \u0027you\u0027: \u0027What are you going to do...?\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I am ______ to visit my family in Da Nang next Saturday.",
+                                                                           "options":  [
+                                                                                           "going",
+                                                                                           "go",
+                                                                                           "gone",
+                                                                                           "goes"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cấu trúc: \u0027be going to + V-bare\u0027 (am going to visit)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "She is going to ______ an advanced English course next month.",
+                                                                           "options":  [
+                                                                                           "take",
+                                                                                           "takes",
+                                                                                           "taking",
+                                                                                           "took"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau \u0027is going to\u0027 là động từ nguyên thể \u0027take\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "They ______ not going to move house until next year.",
+                                                                           "options":  [
+                                                                                           "are",
+                                                                                           "is",
+                                                                                           "do",
+                                                                                           "have"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Chủ ngữ \u0027They\u0027 số nhiều đi với \u0027are not going to\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "When is the new branch going to open? - It\u0027s going to open ______ 20th November.",
+                                                                           "options":  [
+                                                                                           "on",
+                                                                                           "in",
+                                                                                           "at",
+                                                                                           "to"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Trước ngày tháng cụ thể (20th November) dùng giới từ \u0027on\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "We are going to launch the product ______ January.",
+                                                                           "options":  [
+                                                                                           "in",
+                                                                                           "on",
+                                                                                           "at",
+                                                                                           "by"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Trước tháng trong năm không có ngày dùng giới từ \u0027in\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Are you going to attend the seminar tomorrow? - Yes, I ______.",
+                                                                           "options":  [
+                                                                                           "am",
+                                                                                           "do",
+                                                                                           "going",
+                                                                                           "will"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Câu trả lời khẳng định ngắn cho \u0027Are you going to...?\u0027: \u0027Yes, I am\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "He is going to ______ a new laptop tomorrow morning.",
+                                                                           "options":  [
+                                                                                           "buy",
+                                                                                           "buys",
+                                                                                           "buying",
+                                                                                           "bought"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau \u0027is going to\u0027 dùng động từ nguyên thể \u0027buy\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "It was wonderful working with you. Let\u0027s stay in ______!",
+                                                                           "options":  [
+                                                                                           "touch",
+                                                                                           "hand",
+                                                                                           "mind",
+                                                                                           "sight"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cụm thành ngữ giữ liên lạc: \u0027stay in touch\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Is David going to travel abroad next summer? - No, he ______.",
+                                                                           "options":  [
+                                                                                           "isn\u0027t",
+                                                                                           "aren\u0027t",
+                                                                                           "doesn\u0027t",
+                                                                                           "won\u0027t"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Câu trả lời phủ định ngắn cho \u0027Is he going to...?\u0027: \u0027No, he isn\u0027t\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "We ______ going to celebrate our wedding anniversary at a French restaurant.",
+                                                                           "options":  [
+                                                                                           "are",
+                                                                                           "is",
+                                                                                           "am",
+                                                                                           "do"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Chủ ngữ \u0027We\u0027 đi với to be \u0027are\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "What time are you going to ______ work tomorrow?",
+                                                                           "options":  [
+                                                                                           "start",
+                                                                                           "starts",
+                                                                                           "starting",
+                                                                                           "started"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau \u0027are you going to\u0027 là động từ nguyên thể \u0027start\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I am not ______ to work overtime this Friday evening.",
+                                                                           "options":  [
+                                                                                           "going",
+                                                                                           "go",
+                                                                                           "gone",
+                                                                                           "goes"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cấu trúc phủ định: \u0027am not going to work\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Goodbye! Have a safe flight and take ______ of yourself.",
+                                                                           "options":  [
+                                                                                           "care",
+                                                                                           "mind",
+                                                                                           "look",
+                                                                                           "attention"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Thành ngữ chào tạm biệt: \u0027take care of yourself\u0027 (chăm sóc bản thân thật tốt)."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Where are they going to ______ their summer vacation?",
+                                                                           "options":  [
+                                                                                           "spend",
+                                                                                           "spends",
+                                                                                           "spending",
+                                                                                           "spent"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Dành kỳ nghỉ ở đâu: \u0027spend their summer vacation\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "She is going to ______ her job interview online via Microsoft Teams.",
+                                                                           "options":  [
+                                                                                           "have",
+                                                                                           "has",
+                                                                                           "having",
+                                                                                           "had"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Sau \u0027is going to\u0027 là động từ nguyên thể \u0027have\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "See you ______ Monday morning at the office!",
+                                                                           "options":  [
+                                                                                           "next",
+                                                                                           "in",
+                                                                                           "at",
+                                                                                           "for"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Hẹn gặp vào sáng thứ Hai tuần tới: \u0027See you next Monday morning\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Are they going to buy a new apartment? - Yes, they ______.",
+                                                                           "options":  [
+                                                                                           "are",
+                                                                                           "do",
+                                                                                           "have",
+                                                                                           "is"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Câu trả lời khẳng định ngắn cho \u0027Are they going to...?\u0027: \u0027Yes, they are\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "I hope ______ achieve all my professional career goals this year.",
+                                                                           "options":  [
+                                                                                           "to",
+                                                                                           "for",
+                                                                                           "with",
+                                                                                           "at"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Cấu trúc: hope + to + V-bare -\u003e \u0027hope to achieve\u0027."
+                                                                       },
+                                                                       {
+                                                                           "q":  "Thank you for everything, Gemma. Keep in ______!",
+                                                                           "options":  [
+                                                                                           "touch",
+                                                                                           "line",
+                                                                                           "hand",
+                                                                                           "call"
+                                                                                       ],
+                                                                           "ans":  0,
+                                                                           "explain":  "Thành ngữ giữ liên lạc: \u0027Keep in touch!\u0027."
+                                                                       }
+                                                                   ]
+                                            }
+                            }
+                      },
+                      "empower_a2": {
+  "title": "Cambridge English Empower A2 Elementary (Full 12 Units)",
+  "badge": "A2 Elementary",
+  "units": {
+    "unit_1": {
+      "title": "Unit 1: People",
+      "grammar": [
+        {
+          "title": "Verb 'be' (Present Simple: Positive & Negative)",
+          "structure": "S + am/is/are + Complement | S + am not / isn't / aren't + Complement",
+          "explanation": "Dùng động từ 'to be' ở thì Hiện tại đơn để nói về tên, nghề nghiệp, xuất xứ, tính cách và trạng thái của một người.",
+          "examples": [
+            {
+              "en": "They aren't from the UK; they're from Canada.",
+              "vi": "Họ không đến từ Vương quốc Anh; họ đến từ Canada."
+            },
+            {
+              "en": "My new colleague is very friendly and hard-working.",
+              "vi": "Đồng nghiệp mới của tôi rất thân thiện và chăm chỉ."
+            }
+          ],
+          "tip": "Trong giao tiếp hàng ngày, luôn ưu tiên dạng viết tắt (I'm, you're, he's, isn't, aren't) để câu nói tự nhiên và trôi chảy hơn."
+        },
+        {
+          "title": "Verb 'be' (Questions & Short Answers)",
+          "structure": "Am/Is/Are + S + Complement? ➔ Yes, S + be / No, S + be + not",
+          "explanation": "Dùng để hỏi thông tin xác nhận về ai đó hoặc đặt câu hỏi mở với các từ để hỏi (What / Where / Who / How).",
+          "examples": [
+            {
+              "en": "Are you new to this company? - Yes, I am.",
+              "vi": "Bạn mới đến công ty này à? - Đúng vậy."
+            },
+            {
+              "en": "Where is your manager today? - She's at a client meeting.",
+              "vi": "Hôm nay sếp của bạn ở đâu? - Cô ấy đang ở cuộc họp với khách hàng."
+            }
+          ],
+          "tip": "Trong câu trả lời khẳng định ngắn, TUYỆT ĐỐI không viết tắt: 'Yes, I am' (không nói 'Yes, I'm')."
+        }
+      ],
+      "words": [
+        {
+          "en": "Nationality",
+          "ipa": "/ˌnæʃ.ənˈæl.ə.ti/",
+          "vi": "Quốc tịch",
+          "ex": "What nationality are you? - I am Vietnamese."
+        },
+        {
+          "en": "Colleague",
+          "ipa": "/ˈkɒl.iːɡ/",
+          "vi": "Đồng nghiệp",
+          "ex": "Let me introduce my new colleague, Anna."
+        },
+        {
+          "en": "Introduce",
+          "ipa": "/ˌɪn.trəˈdʒuːs/",
+          "vi": "Giới thiệu",
+          "ex": "Could you please introduce yourself to the marketing team?"
+        },
+        {
+          "en": "Pleased to meet you",
+          "ipa": "/pliːzd tuː miːt juː/",
+          "vi": "Rất vui được gặp bạn (lịch sự)",
+          "ex": "Hello Mr. Davis, pleased to meet you!"
+        },
+        {
+          "en": "Occupation",
+          "ipa": "/ˌɒk.jəˈpeɪ.ʃən/",
+          "vi": "Nghề nghiệp, công việc",
+          "ex": "Please state your occupation on this application form."
+        },
+        {
+          "en": "Single",
+          "ipa": "/ˈsɪŋ.ɡəl/",
+          "vi": "Độc thân",
+          "ex": "She is currently single and lives in Danang city."
+        },
+        {
+          "en": "Married",
+          "ipa": "/ˈmær.id/",
+          "vi": "Đã kết hôn",
+          "ex": "Mark is happily married with two children."
+        },
+        {
+          "en": "Friendly",
+          "ipa": "/ˈfrend.li/",
+          "vi": "Thân thiện, hòa đồng",
+          "ex": "The people in this department are very friendly and supportive."
+        },
+        {
+          "en": "Hard-working",
+          "ipa": "/ˌhɑːdˈwɜː.kɪŋ/",
+          "vi": "Chăm chỉ, nỗ lực",
+          "ex": "Gemma is a hard-working project manager."
+        },
+        {
+          "en": "Polite",
+          "ipa": "/pəˈlaɪt/",
+          "vi": "Lịch sự, nhã nhặn",
+          "ex": "It is important to be polite when writing emails to clients."
+        },
+        {
+          "en": "Creative",
+          "ipa": "/kriˈeɪ.tɪv/",
+          "vi": "Sáng tạo",
+          "ex": "Our design team has many creative ideas for the new campaign."
+        },
+        {
+          "en": "Neighborhood",
+          "ipa": "/ˈneɪ.bə.hʊd/",
+          "vi": "Khu dân cư, vùng lân cận",
+          "ex": "She lives in a quiet and safe neighborhood near the office."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Where ______ your business partners from?",
+          "options": ["are", "is", "am", "be"],
+          "ans": 0,
+          "explain": "Chủ ngữ số nhiều 'your business partners' đi với động từ to be 'are'."
+        },
+        {
+          "q": "Is your new colleague friendly? - Yes, she ______.",
+          "options": ["is", "'s", "are", "be"],
+          "ans": 0,
+          "explain": "Trong câu trả lời ngắn khẳng định 'Yes, she is', không được dùng dạng viết tắt 'she's'."
+        },
+        {
+          "q": "Mark and I ______ managers; we are senior software engineers.",
+          "options": ["aren't", "isn't", "am not", "not be"],
+          "ans": 0,
+          "explain": "Chủ ngữ 'Mark and I' tương đương 'we' (chúng tôi), phủ định dùng 'aren't'."
+        }
+      ]
+    },
+    "unit_2": {
+      "title": "Unit 2: Work and study",
+      "grammar": [
+        {
+          "title": "Present Simple: Positive & Negative (Hiện tại đơn: Khẳng định & Phủ định)",
+          "structure": "S + V(s/es) | S + do/does not + V-bare",
+          "explanation": "Diễn tả thói quen làm việc, lịch trình cố định và các sự thật lặp đi lặp lại trong công việc hàng ngày.",
+          "examples": [
+            {
+              "en": "She manages a team of ten software engineers.",
+              "vi": "Cô ấy quản lý một đội ngũ mười kỹ sư phần mềm."
+            },
+            {
+              "en": "He doesn't work on weekends because he spends time with family.",
+              "vi": "Anh ấy không làm việc vào cuối tuần vì anh dành thời gian cho gia đình."
+            }
+          ],
+          "tip": "Với chủ ngữ He/She/It: Động từ thêm 's' hoặc 'es'. Phủ định dùng 'doesn't + động từ nguyên thể'."
+        },
+        {
+          "title": "Present Simple: Questions & Short Answers",
+          "structure": "Do/Does + S + V-bare? | Wh-word + do/does + S + V-bare?",
+          "explanation": "Dùng để hỏi về công việc, thói quen học tập và lịch trình sinh hoạt của người khác.",
+          "examples": [
+            {
+              "en": "What time do you usually start work in the morning?",
+              "vi": "Bạn thường bắt đầu làm việc lúc mấy giờ vào buổi sáng?"
+            },
+            {
+              "en": "Does your company offer remote working options? - Yes, it does.",
+              "vi": "Công ty của bạn có cung cấp lựa chọn làm việc từ xa không? - Có."
+            }
+          ],
+          "tip": "Khi đã có trợ động từ 'do/does' trong câu hỏi, động từ chính luôn ở dạng nguyên mẫu không chia."
+        }
+      ],
+      "words": [
+        {
+          "en": "Accountant",
+          "ipa": "/əˈkaʊn.tənt/",
+          "vi": "Kế toán viên",
+          "ex": "The accountant is checking the quarterly financial report."
+        },
+        {
+          "en": "Architect",
+          "ipa": "/ˈɑː.kɪ.tekt/",
+          "vi": "Kiến trúc sư",
+          "ex": "An architect designs beautiful and modern buildings."
+        },
+        {
+          "en": "Engineer",
+          "ipa": "/ˌen.dʒɪˈnɪər/",
+          "vi": "Kỹ sư",
+          "ex": "He works as a senior software engineer in a tech firm."
+        },
+        {
+          "en": "Business owner",
+          "ipa": "/ˈbɪz.nɪs ˈəʊ.nər/",
+          "vi": "Chủ doanh nghiệp",
+          "ex": "She became a successful business owner at the age of twenty-six."
+        },
+        {
+          "en": "Office hours",
+          "ipa": "/ˈɒf.ɪs ˌaʊəz/",
+          "vi": "Giờ làm việc hành chính",
+          "ex": "Our official office hours are from 8:30 AM to 5:30 PM."
+        },
+        {
+          "en": "Deadline",
+          "ipa": "/ˈded.laɪn/",
+          "vi": "Hạn chót hoàn thành",
+          "ex": "We have to finish this presentation before tomorrow's deadline."
+        },
+        {
+          "en": "Schedule",
+          "ipa": "/ˈʃedʒ.uːl/",
+          "vi": "Lịch trình, thời gian biểu",
+          "ex": "Let me check my schedule before confirming the appointment."
+        },
+        {
+          "en": "Attend a meeting",
+          "ipa": "/əˈtend ə ˈmiː.tɪŋ/",
+          "vi": "Tham dự cuộc họp",
+          "ex": "All department heads will attend a strategic meeting this Friday."
+        },
+        {
+          "en": "Take a course",
+          "ipa": "/teɪk ə kɔːs/",
+          "vi": "Tham gia một khóa học",
+          "ex": "Gemma is taking an advanced business English course online."
+        },
+        {
+          "en": "Improve skills",
+          "ipa": "/ɪmˈpruːv skɪlz/",
+          "vi": "Nâng cao kỹ năng",
+          "ex": "Regular practice helps you improve communication skills quickly."
+        },
+        {
+          "en": "Work overtime",
+          "ipa": "/wɜːk ˈəʊ.və.taɪm/",
+          "vi": "Làm thêm giờ (tăng ca)",
+          "ex": "Employees rarely work overtime because the company respects work-life balance."
+        },
+        {
+          "en": "Earn money",
+          "ipa": "/ɜːn ˈmʌn.i/",
+          "vi": "Kiếm tiền, tạo thu nhập",
+          "ex": "She earns money through consulting and content creation."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "My manager ______ very early to prepare for the board meeting.",
+          "options": ["arrives", "arrive", "is arrive", "arriving"],
+          "ans": 0,
+          "explain": "Chủ ngữ ngôi thứ 3 số ít 'My manager' ở thì Hiện tại đơn chia động từ thêm 's': 'arrives'."
+        },
+        {
+          "q": "______ your company provide health insurance for employees?",
+          "options": ["Does", "Do", "Is", "Are"],
+          "ans": 0,
+          "explain": "Chủ ngữ 'your company' (số ít) đi với trợ động từ 'Does' trong câu hỏi Hiện tại đơn."
+        },
+        {
+          "q": "We ______ work on Sunday; that is our rest day.",
+          "options": ["don't", "doesn't", "aren't", "not"],
+          "ans": 0,
+          "explain": "Chủ ngữ 'We' dùng trợ động từ phủ định 'don't + V-bare' (don't work)."
+        }
+      ]
+    },
+    "unit_3": {
+      "title": "Unit 3: Daily life",
+      "grammar": [
+        {
+          "title": "Position of Adverbs of Frequency (Vị trí của trạng từ chỉ tần suất)",
+          "structure": "S + Adverb (always / usually / often / sometimes / rarely / never) + Main Verb | S + be + Adverb",
+          "explanation": "Chỉ mức độ thường xuyên của hành động trong cuộc sống và thói quen sinh hoạt hàng ngày.",
+          "examples": [
+            {
+              "en": "I always check my work emails before having breakfast.",
+              "vi": "Tôi luôn kiểm tra email công việc trước khi ăn bữa sáng."
+            },
+            {
+              "en": "She is rarely late for morning company meetings.",
+              "vi": "Cô ấy hiếm khi trễ các cuộc họp công ty buổi sáng."
+            }
+          ],
+          "tip": "Quy tắc vàng: Đứng TRƯỚC động từ thường (always drink), đứng SAU động từ 'to be' (is always punctual)."
+        },
+        {
+          "title": "Have got / Has got (Sở hữu trong giao tiếp)",
+          "structure": "S + have/has got + Noun | S + haven't/hasn't got + Noun | Have/Has + S + got + Noun?",
+          "explanation": "Dùng phổ biến trong Anh - Anh để nói về quyền sở hữu thiết bị, công nghệ, đồ dùng hoặc đặc điểm cá nhân.",
+          "examples": [
+            {
+              "en": "Have you got a wireless mouse I can borrow for today?",
+              "vi": "Bạn có chuột không dây nào cho tôi mượn hôm nay không?"
+            },
+            {
+              "en": "He has got a new ultrabook for his graphic design work.",
+              "vi": "Anh ấy có một chiếc máy tính xách tay mỏng nhẹ mới để làm thiết kế đồ họa."
+            }
+          ],
+          "tip": "Dạng rút gọn: I've got, She's got. Phủ định: haven't got / hasn't got."
+        }
+      ],
+      "words": [
+        {
+          "en": "Routine",
+          "ipa": "/ruːˈtiːn/",
+          "vi": "Thói quen sinh hoạt thường nhật",
+          "ex": "Having a healthy morning routine helps me stay focused all day."
+        },
+        {
+          "en": "Smartphone",
+          "ipa": "/ˈsmɑːt.fəʊn/",
+          "vi": "Điện thoại thông minh",
+          "ex": "I use my smartphone to organize tasks and manage my calendar."
+        },
+        {
+          "en": "Laptop",
+          "ipa": "/ˈlæp.tɒp/",
+          "vi": "Máy tính xách tay",
+          "ex": "Her lightweight laptop has excellent battery life for business trips."
+        },
+        {
+          "en": "Social media",
+          "ipa": "/ˌsəʊ.ʃəl ˈmiː.di.ə/",
+          "vi": "Mạng xã hội",
+          "ex": "Try to spend less time scrolling social media before bedtime."
+        },
+        {
+          "en": "Check notifications",
+          "ipa": "/tʃek ˌnəʊ.tɪ.fɪˈkeɪ.ʃənz/",
+          "vi": "Kiểm tra thông báo",
+          "ex": "I only check notifications twice a day to maintain deep focus."
+        },
+        {
+          "en": "Listen to podcasts",
+          "ipa": "/ˈlɪs.ən tuː ˈpɒd.kɑːsts/",
+          "vi": "Nghe podcast",
+          "ex": "Listening to English podcasts during morning commute is a great habit."
+        },
+        {
+          "en": "Have a coffee break",
+          "ipa": "/hæv ə ˈkɒf.i breɪk/",
+          "vi": "Nghỉ giải lao uống cà phê",
+          "ex": "Let's have a quick coffee break before continuing the brainstorming."
+        },
+        {
+          "en": "Cook dinner",
+          "ipa": "/kʊk ˈdɪn.ər/",
+          "vi": "Nấu bữa tối",
+          "ex": "Cooking dinner at home is both healthier and more economical."
+        },
+        {
+          "en": "Go to the gym",
+          "ipa": "/ɡəʊ tuː ðə dʒɪm/",
+          "vi": "Đi tập gym rèn luyện thể thao",
+          "ex": "She goes to the gym three times a week to stay fit."
+        },
+        {
+          "en": "Relax on the sofa",
+          "ipa": "/rɪˈlæks ɒn ðə ˈsəʊ.fə/",
+          "vi": "Thư giãn trên ghế sô-pha",
+          "ex": "After a long working day, I love relaxing on the sofa with a good book."
+        },
+        {
+          "en": "Set an alarm",
+          "ipa": "/set ən əˈlɑːm/",
+          "vi": "Đặt chuông báo thức",
+          "ex": "Don't forget to set an alarm for 6:00 AM tomorrow."
+        },
+        {
+          "en": "Early bird",
+          "ipa": "/ˈɜː.li bɜːd/",
+          "vi": "Người có thói quen dậy sớm",
+          "ex": "Gemma is an early bird; she usually wakes up at sunrise."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "David ______ late for work; he is extremely punctual.",
+          "options": ["is never", "never is", "is always", "always is"],
+          "ans": 0,
+          "explain": "Trạng từ chỉ tần suất đứng SAU động từ to be: 'is never late'."
+        },
+        {
+          "q": "______ you got your tablet with you today?",
+          "options": ["Have", "Do", "Are", "Has"],
+          "ans": 0,
+          "explain": "Cấu trúc sở hữu 'have got' đi với chủ ngữ 'you': 'Have you got...?'."
+        },
+        {
+          "q": "She usually ______ English for 30 minutes before going to bed.",
+          "options": ["practices", "practice", "is practicing", "practiced"],
+          "ans": 0,
+          "explain": "Chủ ngữ 'She' với trạng từ 'usually' diễn tả thói quen ở Hiện tại đơn -> động từ thêm 's': 'practices'."
+        }
+      ]
+    },
+    "unit_4": {
+      "title": "Unit 4: Food",
+      "grammar": [
+        {
+          "title": "Countable & Uncountable Nouns with 'a/an', 'some', 'any'",
+          "structure": "Affirmative: some + Plural Countable / Uncountable | Negative & Questions: any",
+          "explanation": "Phân biệt danh từ đếm được (apples, eggs, tomatoes) và danh từ không đếm được (water, milk, bread, rice, information).",
+          "examples": [
+            {
+              "en": "Would you like some fresh orange juice?",
+              "vi": "Bạn có muốn dùng một chút nước cam tươi không?"
+            },
+            {
+              "en": "We haven't got any milk left in the office pantry.",
+              "vi": "Chúng ta không còn chút sữa nào trong phòng bếp văn phòng."
+            }
+          ],
+          "tip": "Dùng 'some' trong lời mời lịch sự: 'Would you like some...?' hoặc lời đề nghị xin phép: 'Can I have some...?'."
+        },
+        {
+          "title": "How much / How many (Hỏi lượng & Hỏi giá)",
+          "structure": "How many + Plural Countable Noun? | How much + Uncountable Noun / Price?",
+          "explanation": "Dùng để hỏi số lượng vật thể đếm được (How many) hoặc khối lượng, số lượng chất lỏng, tiền bạc (How much).",
+          "examples": [
+            {
+              "en": "How many cups of espresso do you drink each day?",
+              "vi": "Bạn uống bao nhiêu tách cà phê espresso mỗi ngày?"
+            },
+            {
+              "en": "How much is this lunch set per person? - It's 15 dollars.",
+              "vi": "Set ăn trưa này bao nhiêu tiền một người? - 15 đô la."
+            }
+          ],
+          "tip": "'How many' luôn đi với danh từ số nhiều có 's/es'. 'How much' dùng hỏi giá cả hoặc danh từ không đếm được."
+        }
+      ],
+      "words": [
+        {
+          "en": "Ingredient",
+          "ipa": "/ɪnˈɡriː.di.ənt/",
+          "vi": "Nguyên liệu, thành phần món ăn",
+          "ex": "Fresh ingredients are the secret to delicious cooking."
+        },
+        {
+          "en": "Seafood",
+          "ipa": "/ˈsiː.fuːd/",
+          "vi": "Hải sản tươi sống",
+          "ex": "Danang is famous for its delicious and fresh seafood."
+        },
+        {
+          "en": "Vegetable",
+          "ipa": "/ˈvedʒ.tə.bəl/",
+          "vi": "Rau củ",
+          "ex": "You should include plenty of green vegetables in every meal."
+        },
+        {
+          "en": "Beverage",
+          "ipa": "/ˈbev.ər.ɪdʒ/",
+          "vi": "Đồ uống, thức uống",
+          "ex": "Hot tea is a wonderful beverage for a rainy afternoon."
+        },
+        {
+          "en": "Delicious",
+          "ipa": "/dɪˈlɪʃ.əs/",
+          "vi": "Ngon miệng, thơm ngon",
+          "ex": "This traditional beef noodle soup tastes absolutely delicious."
+        },
+        {
+          "en": "Nutritious",
+          "ipa": "/njuːˈtrɪʃ.əs/",
+          "vi": "Bổ dưỡng, giàu dinh dưỡng",
+          "ex": "Avocado salad is a light and nutritious dinner option."
+        },
+        {
+          "en": "Order a meal",
+          "ipa": "/ˈɔː.dər ə miːl/",
+          "vi": "Gọi món ăn tại nhà hàng",
+          "ex": "Are you ready to order a meal, or do you need a few more minutes?"
+        },
+        {
+          "en": "Bill / Check",
+          "ipa": "/bɪl/",
+          "vi": "Hóa đơn thanh toán",
+          "ex": "Could we have the bill, please? We would like to pay by card."
+        },
+        {
+          "en": "Vegetarian",
+          "ipa": "/ˌvedʒ.ɪˈteə.ri.ən/",
+          "vi": "Người ăn chay, món chay",
+          "ex": "Does this restaurant offer a special vegetarian menu?"
+        },
+        {
+          "en": "Recipe",
+          "ipa": "/ˈres.ɪ.pi/",
+          "vi": "Công thức nấu ăn",
+          "ex": "Could you share the recipe for this wonderful pasta sauce?"
+        },
+        {
+          "en": "Snack",
+          "ipa": "/snæk/",
+          "vi": "Đồ ăn nhẹ, đồ ăn vặt",
+          "ex": "Almonds and fresh fruit make healthy afternoon snacks."
+        },
+        {
+          "en": "Dessert",
+          "ipa": "/dɪˈzɜːt/",
+          "vi": "Món tráng miệng",
+          "ex": "For dessert, we chose dark chocolate mousse with berries."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Are there ______ good restaurants near your office?",
+          "options": ["any", "some", "a", "much"],
+          "ans": 0,
+          "explain": "Trong câu hỏi với danh từ số nhiều 'restaurants', ta dùng 'any'."
+        },
+        {
+          "q": "______ water should we drink during a busy working day?",
+          "options": ["How much", "How many", "How long", "How often"],
+          "ans": 0,
+          "explain": "'Water' là danh từ không đếm được -> dùng 'How much'."
+        },
+        {
+          "q": "I'd like to order ______ green tea, please.",
+          "options": ["some", "any", "many", "an"],
+          "ans": 0,
+          "explain": "Trong câu đề nghị lịch sự 'I'd like...', ta dùng 'some'."
+        }
+      ]
+    },
+    "unit_5": {
+      "title": "Unit 5: Places",
+      "grammar": [
+        {
+          "title": "There is / There are (Miêu tả nơi chốn & Tiện ích)",
+          "structure": "There is + Singular / Uncountable Noun | There are + Plural Noun",
+          "explanation": "Dùng để miêu tả sự tồn tại của đồ vật, tòa nhà hoặc tiện ích tại một khu vực hay căn hộ.",
+          "examples": [
+            {
+              "en": "There is a 24-hour convenience store on the ground floor of our building.",
+              "vi": "Có một cửa hàng tiện lợi mở cửa 24 giờ ở tầng trệt của tòa nhà chúng tôi."
+            },
+            {
+              "en": "Are there any quiet co-working spaces near your apartment?",
+              "vi": "Có không gian làm việc chung yên tĩnh nào gần căn hộ của bạn không?"
+            }
+          ],
+          "tip": "Câu hỏi đảo 'Is there...?' / 'Are there...?'. Phủ định: 'There isn't...' / 'There aren't...'."
+        },
+        {
+          "title": "Prepositions of Place & Directions (Giới từ chỉ vị trí & Chỉ đường)",
+          "structure": "next to | between A and B | opposite | in front of | behind | on the corner",
+          "explanation": "Chỉ rõ vị trí của các địa điểm trong thành phố và hướng dẫn người khác tìm đường một cách lịch sự.",
+          "examples": [
+            {
+              "en": "The commercial bank is right opposite the central post office.",
+              "vi": "Ngân hàng thương mại nằm ngay đối diện bưu điện trung tâm."
+            },
+            {
+              "en": "Go straight for two blocks, then turn left at the traffic lights.",
+              "vi": "Đi thẳng qua hai dãy nhà, sau đó rẽ trái ở cột đèn giao thông."
+            }
+          ],
+          "tip": "'Between' luôn đi với cặp từ nối 'and' (between X and Y)."
+        }
+      ],
+      "words": [
+        {
+          "en": "Apartment building",
+          "ipa": "/əˈpɑːt.mənt ˈbɪl.dɪŋ/",
+          "vi": "Tòa nhà chung cư",
+          "ex": "She lives in a modern apartment building with 24/7 security."
+        },
+        {
+          "en": "Supermarket",
+          "ipa": "/ˈsuː.pəˌmɑː.kɪt/",
+          "vi": "Siêu thị lớn",
+          "ex": "There is a large supermarket within five minutes' walking distance."
+        },
+        {
+          "en": "Pharmacy",
+          "ipa": "/ˈfɑː.mə.si/",
+          "vi": "Hiệu thuốc tây",
+          "ex": "The 24-hour pharmacy is located right next to the clinic."
+        },
+        {
+          "en": "Atmosphere",
+          "ipa": "/ˈæt.məs.fɪər/",
+          "vi": "Bầu không khí, cảm giác không gian",
+          "ex": "The cafe has a cozy atmosphere that is perfect for reading."
+        },
+        {
+          "en": "Convenient",
+          "ipa": "/kənˈviː.ni.ənt/",
+          "vi": "Tiện lợi, thuận tiện",
+          "ex": "Living close to the metro station is extremely convenient for daily commuting."
+        },
+        {
+          "en": "Crowded",
+          "ipa": "/ˈkraʊ.dɪd/",
+          "vi": "Đông đúc, tấp nập",
+          "ex": "The downtown shopping mall gets very crowded on Saturday evenings."
+        },
+        {
+          "en": "Modern furniture",
+          "ipa": "/ˈmɒd.ən ˈfɜː.nɪ.tʃər/",
+          "vi": "Nội thất hiện đại",
+          "ex": "The studio is fully furnished with sleek and modern furniture."
+        },
+        {
+          "en": "Balcony",
+          "ipa": "/ˈbæl.kə.ni/",
+          "vi": "Ban công",
+          "ex": "She enjoys growing potted herbs and green plants on her balcony."
+        },
+        {
+          "en": "Intersection",
+          "ipa": "/ˈɪn.tə.sek.ʃən/",
+          "vi": "Ngã tư, giao lộ",
+          "ex": "Turn right at the busy intersection to reach the coastal boulevard."
+        },
+        {
+          "en": "Pedestrian zone",
+          "ipa": "/pəˈdes.tri.ən zəʊn/",
+          "vi": "Phố đi bộ",
+          "ex": "On weekends, the riverfront street turns into a vibrant pedestrian zone."
+        },
+        {
+          "en": "Turn left / right",
+          "ipa": "/tɜːn left / raɪt/",
+          "vi": "Rẽ trái / rẽ phải",
+          "ex": "Turn left at the roundabout, and you will see the museum on your right."
+        },
+        {
+          "en": "Opposite",
+          "ipa": "/ˈɒp.ə.zɪt/",
+          "vi": "Đối diện",
+          "ex": "Our office building is located opposite the city library."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "______ any parking spaces available in this building?",
+          "options": ["Are there", "Is there", "There are", "There is"],
+          "ans": 0,
+          "explain": "Câu hỏi với danh từ số nhiều 'parking spaces' -> đảo 'Are there'."
+        },
+        {
+          "q": "There ______ a lovely artisan bakery just around the corner.",
+          "options": ["is", "are", "be", "were"],
+          "ans": 0,
+          "explain": "'A lovely artisan bakery' là danh từ số ít -> dùng 'There is'."
+        },
+        {
+          "q": "The pharmacy is situated ______ the bookstore and the coffee shop.",
+          "options": ["between", "among", "opposite", "next"],
+          "ans": 0,
+          "explain": "Cặp từ nối 'between ... and ...' dùng để chỉ vị trí ở giữa hai nơi."
+        }
+      ]
+    },
+    "unit_6": {
+      "title": "Unit 6: Family and history",
+      "grammar": [
+        {
+          "title": "Past Simple: Verb 'be' (was / were)",
+          "structure": "I/He/She/It was (wasn't) | You/We/They were (weren't) | Was/Were + S...?",
+          "explanation": "Nói về trạng thái, nghề nghiệp, nơi chốn hoặc cảm xúc trong quá khứ.",
+          "examples": [
+            {
+              "en": "Where were you born? - I was born in Danang.",
+              "vi": "Bạn sinh ra ở đâu? - Tôi sinh ra ở Đà Nẵng."
+            },
+            {
+              "en": "The quarterly business meeting wasn't very long, but it was highly productive.",
+              "vi": "Cuộc họp kinh doanh quý không quá dài, nhưng rất hiệu quả."
+            }
+          ],
+          "tip": "'Was' đi với chủ ngữ số ít (I, he, she, it); 'Were' đi với chủ ngữ số nhiều và 'you'."
+        },
+        {
+          "title": "Past Simple: Regular & Irregular Verbs (Thì Quá khứ đơn)",
+          "structure": "S + V-ed / V2 | S + didn't + V-bare | Did + S + V-bare?",
+          "explanation": "Diễn tả hành động đã bắt đầu và kết thúc hoàn toàn trong quá khứ kèm mốc thời gian xác định (yesterday, last year, in 2020, two years ago).",
+          "examples": [
+            {
+              "en": "She graduated from university with honors four years ago.",
+              "vi": "Cô ấy tốt nghiệp đại học loại ưu cách đây bốn năm."
+            },
+            {
+              "en": "Did you receive the updated project contract yesterday? - Yes, I did.",
+              "vi": "Hôm qua bạn đã nhận được hợp đồng dự án cập nhật chưa? - Rồi, tôi nhận rồi."
+            }
+          ],
+          "tip": "Khi đã có trợ động từ 'did' hoặc 'didn't', động từ chính luôn trở về dạng nguyên thể (không chia -ed hay V2)."
+        }
+      ],
+      "words": [
+        {
+          "en": "Generation",
+          "ipa": "/ˌdʒen.əˈreɪ.ʃən/",
+          "vi": "Thế hệ",
+          "ex": "Each generation brings new perspectives and innovative ideas to society."
+        },
+        {
+          "en": "Relative",
+          "ipa": "/ˈrel.ə.tɪv/",
+          "vi": "Người họ hàng, bà con",
+          "ex": "We visit our relatives in the countryside during the Lunar New Year."
+        },
+        {
+          "en": "Grow up",
+          "ipa": "/ɡrəʊ ʌp/",
+          "vi": "Lớn lên, trưởng thành",
+          "ex": "I grew up in a peaceful coastal town with sandy beaches."
+        },
+        {
+          "en": "Graduate",
+          "ipa": "/ˈɡrædʒ.u.eɪt/",
+          "vi": "Tốt nghiệp đại học",
+          "ex": "After graduating from university, she started working as a designer."
+        },
+        {
+          "en": "Get married",
+          "ipa": "/ɡet ˈmær.id/",
+          "vi": "Kết hôn, lập gia đình",
+          "ex": "They got married in an intimate ceremony with close friends."
+        },
+        {
+          "en": "Move house",
+          "ipa": "/muːv haʊs/",
+          "vi": "Chuyển nhà, đổi chỗ ở",
+          "ex": "Moving house can be stressful, but it marks an exciting fresh start."
+        },
+        {
+          "en": "Childhood memory",
+          "ipa": "/ˈtʃaɪld.hʊd ˈmem.ər.i/",
+          "vi": "Kỷ niệm tuổi thơ êm đềm",
+          "ex": "One of my favorite childhood memories is learning to ride a bicycle with my father."
+        },
+        {
+          "en": "Hometown",
+          "ipa": "/ˈhəʊm.taʊn/",
+          "vi": "Quê hương, nơi chôn rau cắt rốn",
+          "ex": "Although she lives in Ho Chi Minh City, her hometown is Hue."
+        },
+        {
+          "en": "Yesterday",
+          "ipa": "/ˈjes.tə.deɪ/",
+          "vi": "Hôm qua",
+          "ex": "We finalized the partnership agreement late yesterday afternoon."
+        },
+        {
+          "en": "Last weekend",
+          "ipa": "/lɑːst ˌwiːkˈend/",
+          "vi": "Cuối tuần trước",
+          "ex": "Last weekend, we went camping in the national park."
+        },
+        {
+          "en": "Two years ago",
+          "ipa": "/tuː jɪəz əˈɡəʊ/",
+          "vi": "Hai năm trước",
+          "ex": "Two years ago, Gemma decided to learn professional graphic design."
+        },
+        {
+          "en": "Career milestone",
+          "ipa": "/kəˈrɪər ˈmaɪl.stəʊn/",
+          "vi": "Cột mốc quan trọng trong sự nghiệp",
+          "ex": "Promoted to lead manager was a major career milestone for her."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Where ______ your grandparents living when you were born?",
+          "options": ["were", "was", "are", "did"],
+          "ans": 0,
+          "explain": "Chủ ngữ số nhiều 'your grandparents' đi với động từ to be ở quá khứ là 'were'."
+        },
+        {
+          "q": "She ______ to another tech company last month.",
+          "options": ["moved", "moves", "move", "is moving"],
+          "ans": 0,
+          "explain": "Có mốc thời gian quá khứ 'last month' -> chia thì Quá khứ đơn: 'moved'."
+        },
+        {
+          "q": "Did you ______ the contract yesterday? - Yes, I did.",
+          "options": ["sign", "signed", "signing", "signs"],
+          "ans": 0,
+          "explain": "Trong câu hỏi Quá khứ đơn có trợ động từ 'Did', động từ chính ở dạng nguyên thể: 'sign'."
+        }
+      ]
+    },
+    "unit_7": {
+      "title": "Unit 7: Journeys",
+      "grammar": [
+        {
+          "title": "Verbs of Preference + Verb-ing (Động từ chỉ sở thích + V-ing)",
+          "structure": "S + love / like / don't mind / dislike / hate / prefer + V-ing",
+          "explanation": "Bày tỏ thái độ, sở thích đối với các trải nghiệm di chuyển, đi lại hoặc phong cách du lịch.",
+          "examples": [
+            {
+              "en": "I prefer taking the metro because I hate sitting in traffic jams.",
+              "vi": "Tôi thích đi tàu điện ngầm hơn vì tôi ghét bị kẹt xe."
+            },
+            {
+              "en": "She doesn't mind traveling for business once every month.",
+              "vi": "Cô ấy không phiền việc phải đi công tác mỗi tháng một lần."
+            }
+          ],
+          "tip": "Sau các động từ 'love, like, enjoy, hate, prefer, don't mind', động từ theo sau luôn thêm đuôi '-ing'."
+        },
+        {
+          "title": "Time Linkers: before, after, when, while (Từ nối thời gian)",
+          "structure": "Clause + before / after / when + Clause / V-ing",
+          "explanation": "Nối các mốc sự kiện trong chuyến hành trình để lời kể mạch lạc, sinh động và chuyên nghiệp.",
+          "examples": [
+            {
+              "en": "Always check your passport and boarding pass before leaving for the airport.",
+              "vi": "Luôn kiểm tra hộ chiếu và thẻ lên máy bay trước khi khởi hành ra sân bay."
+            },
+            {
+              "en": "When the high-speed train arrived, all passengers boarded smoothly.",
+              "vi": "Khi tàu cao tốc đến ga, tất cả hành khách lên tàu rất trật tự."
+            }
+          ],
+          "tip": "Khi 'before' hoặc 'after' đứng trước một động từ mà không có chủ ngữ riêng, động từ đó dùng dạng V-ing: 'before leaving'."
+        }
+      ],
+      "words": [
+        {
+          "en": "Commute",
+          "ipa": "/kəˈmjuːt/",
+          "vi": "Việc đi lại hàng ngày giữa nhà và chỗ làm",
+          "ex": "Her daily commute takes about thirty minutes by electric bus."
+        },
+        {
+          "en": "Flight",
+          "ipa": "/flaɪt/",
+          "vi": "Chuyến bay",
+          "ex": "Our direct flight to Tokyo departs at 9:00 AM sharp."
+        },
+        {
+          "en": "Boarding pass",
+          "ipa": "/ˈbɔː.dɪŋ ˌpɑːs/",
+          "vi": "Thẻ lên máy bay",
+          "ex": "You can download your digital boarding pass directly onto your phone."
+        },
+        {
+          "en": "Luggage / Baggage",
+          "ipa": "/ˈlʌɡ.ɪdʒ/",
+          "vi": "Hành lý",
+          "ex": "She travels light with only one carry-on luggage for weekend getaways."
+        },
+        {
+          "en": "Delay",
+          "ipa": "/dɪˈleɪ/",
+          "vi": "Sự trì hoãn, trễ giờ",
+          "ex": "Due to bad weather, there was a two-hour flight delay."
+        },
+        {
+          "en": "Public transport",
+          "ipa": "/ˌpʌb.lɪk ˈtræn.spɔːt/",
+          "vi": "Phương tiện giao thông công cộng",
+          "ex": "Using public transport reduces carbon emissions and eases traffic."
+        },
+        {
+          "en": "High-speed train",
+          "ipa": "/ˌhaɪ.spiːd ˈtreɪn/",
+          "vi": "Tàu hỏa cao tốc",
+          "ex": "Traveling across the country by high-speed train is smooth and picturesque."
+        },
+        {
+          "en": "Traffic jam",
+          "ipa": "/ˈtræf.ɪk ˌdʒæm/",
+          "vi": "Kẹt xe, tắc đường",
+          "ex": "We left home early to avoid getting stuck in the morning traffic jam."
+        },
+        {
+          "en": "Comfortable",
+          "ipa": "/ˈkʌm.fə.tə.bəl/",
+          "vi": "Thoải mái, tiện nghi",
+          "ex": "The airline seats were surprisingly comfortable during the long journey."
+        },
+        {
+          "en": "Passenger",
+          "ipa": "/ˈpæs.ən.dʒər/",
+          "vi": "Hành khách",
+          "ex": "Flight attendants greeted each passenger with a warm smile."
+        },
+        {
+          "en": "Platform",
+          "ipa": "/ˈplæt.fɔːm/",
+          "vi": "Sân ga đón tàu",
+          "ex": "The express train to Kyoto will depart from platform number 4."
+        },
+        {
+          "en": "Book tickets",
+          "ipa": "/bʊk ˈtɪk.ɪts/",
+          "vi": "Đặt vé trực tuyến hoặc tại quầy",
+          "ex": "It is advisable to book flight tickets at least two weeks in advance."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Gemma enjoys ______ by airplane to distant countries.",
+          "options": ["traveling", "travel", "to travel", "traveled"],
+          "ans": 0,
+          "explain": "Sau động từ 'enjoys', động từ theo sau chia ở dạng V-ing: 'traveling'."
+        },
+        {
+          "q": "Remember to turn off your laptop before ______ the conference room.",
+          "options": ["leaving", "leave", "left", "leaves"],
+          "ans": 0,
+          "explain": "Sau giới từ 'before' không có chủ ngữ, động từ chia V-ing: 'leaving'."
+        },
+        {
+          "q": "I don't mind ______ up early to catch the sunrise express train.",
+          "options": ["waking", "wake", "woke", "woken"],
+          "ans": 0,
+          "explain": "Cấu trúc: 'don't mind + V-ing' -> 'waking up'."
+        }
+      ]
+    },
+    "unit_8": {
+      "title": "Unit 8: Fit and healthy",
+      "grammar": [
+        {
+          "title": "Modal Verbs: 'can / can't' & 'could / couldn't' (Khả năng hiện tại & quá khứ)",
+          "structure": "S + can / can't / could / couldn't + V-bare",
+          "explanation": "Nói về năng lực, khả năng làm được việc gì ở thời điểm hiện tại hoặc trong quá khứ.",
+          "examples": [
+            {
+              "en": "She can run 5 kilometers in under thirty minutes now.",
+              "vi": "Bây giờ cô ấy có thể chạy 5 km trong vòng chưa đầy 30 phút."
+            },
+            {
+              "en": "Four years ago, I couldn't swim at all, but now I swim every week.",
+              "vi": "Bốn năm trước, tôi hoàn toàn không biết bơi, nhưng bây giờ tôi bơi mỗi tuần."
+            }
+          ],
+          "tip": "Sau động từ khuyết thiếu (modal verbs), động từ chính luôn ở dạng nguyên mẫu không 'to'."
+        },
+        {
+          "title": "Have to / Don't have to (Quy định & Sự không bắt buộc)",
+          "structure": "S + have to / has to + V-bare | S + don't / doesn't have to + V-bare",
+          "explanation": "Diễn tả sự bắt buộc hoặc quy định ('have to') và điều không bắt buộc làm ('don't have to').",
+          "examples": [
+            {
+              "en": "You have to drink enough water and stay hydrated during workouts.",
+              "vi": "Bạn phải uống đủ nước và giữ đủ nước cho cơ thể trong suốt buổi tập."
+            },
+            {
+              "en": "We don't have to work on Fridays; our team has flexible hours.",
+              "vi": "Chúng tôi không phải đến công ty vào thứ Sáu; đội ngũ chúng tôi có giờ làm việc linh hoạt."
+            }
+          ],
+          "tip": "'Don't have to' = Không cần thiết phải làm (tùy bạn chọn), khác hoàn toàn với 'mustn't' = Bị cấm."
+        }
+      ],
+      "words": [
+        {
+          "en": "Physical health",
+          "ipa": "/ˈfɪz.ɪ.kəl helθ/",
+          "vi": "Sức khỏe thể chất",
+          "ex": "Regular exercise is the foundation of good physical health."
+        },
+        {
+          "en": "Mental well-being",
+          "ipa": "/ˈmen.təl ˈwelˌbiː.ɪŋ/",
+          "vi": "Sức khỏe tinh thần, tâm an",
+          "ex": "Meditation and quiet walks improve your mental well-being."
+        },
+        {
+          "en": "Workout",
+          "ipa": "/ˈwɜːk.aʊt/",
+          "vi": "Buổi tập luyện thể dục thể thao",
+          "ex": "She starts her morning with an energizing 30-minute workout."
+        },
+        {
+          "en": "Stretching",
+          "ipa": "/ˈstretʃ.ɪŋ/",
+          "vi": "Bài tập giãn cơ",
+          "ex": "Doing stretching exercises prevents muscle soreness after sitting all day."
+        },
+        {
+          "en": "Headache",
+          "ipa": "/ˈhed.eɪk/",
+          "vi": "Đau đầu",
+          "ex": "Taking a break from screens helps relieve your headache."
+        },
+        {
+          "en": "Stress relief",
+          "ipa": "/stres rɪˈliːf/",
+          "vi": "Sự giải tỏa căng thẳng",
+          "ex": "Listening to instrumental jazz is her favorite stress relief."
+        },
+        {
+          "en": "Prescription",
+          "ipa": "/prɪˈskrɪp.ʃən/",
+          "vi": "Đơn thuốc của bác sĩ",
+          "ex": "The doctor wrote a prescription for vitamins and mild pain relief."
+        },
+        {
+          "en": "Balanced diet",
+          "ipa": "/ˌbæl.ənst ˈdaɪ.ət/",
+          "vi": "Chế độ ăn uống cân bằng",
+          "ex": "A balanced diet with greens and lean protein fuels your energy."
+        },
+        {
+          "en": "Get enough sleep",
+          "ipa": "/ɡet ɪˈnʌf sliːp/",
+          "vi": "Ngủ đủ giấc mỗi đêm",
+          "ex": "Getting eight hours of sleep is vital for focus and memory."
+        },
+        {
+          "en": "Stay hydrated",
+          "ipa": "/steɪ haɪˈdreɪ.tɪd/",
+          "vi": "Giữ đủ nước cho cơ thể",
+          "ex": "Keep a water bottle on your desk to stay hydrated throughout the day."
+        },
+        {
+          "en": "Appointment",
+          "ipa": "/əˈpɔɪnt.mənt/",
+          "vi": "Cuộc hẹn với chuyên gia y tế",
+          "ex": "She booked an appointment for her annual health check-up."
+        },
+        {
+          "en": "Energy level",
+          "ipa": "/ˈen.ə.dʒi ˌlev.əl/",
+          "vi": "Mức năng lượng cơ thể",
+          "ex": "Nutritious breakfasts keep your energy levels steady until lunchtime."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Employees ______ wear formal business suits on casual Fridays.",
+          "options": ["don't have to", "mustn't", "can't", "aren't"],
+          "ans": 0,
+          "explain": "'Don't have to' diễn tả không bắt buộc: 'không cần thiết phải mặc'."
+        },
+        {
+          "q": "When Gemma was at university, she ______ run ten miles easily.",
+          "options": ["could", "can", "is able to", "may"],
+          "ans": 0,
+          "explain": "Diễn tả khả năng trong quá khứ ('When Gemma was at university') dùng 'could'."
+        },
+        {
+          "q": "You ______ drink plenty of pure water after intense gym workouts.",
+          "options": ["have to", "has to", "are having to", "had"],
+          "ans": 0,
+          "explain": "Chủ ngữ 'You' đi với cấu trúc 'have to + V-bare'."
+        }
+      ]
+    },
+    "unit_9": {
+      "title": "Unit 9: Clothes and shopping",
+      "grammar": [
+        {
+          "title": "Present Continuous (Thì Hiện tại tiếp diễn)",
+          "structure": "S + am/is/are + V-ing | Am/Is/Are + S + V-ing?",
+          "explanation": "Miêu tả hành động đang diễn ra ngay lúc nói, hoặc một xu hướng/trạng thái trang phục tạm thời hôm nay.",
+          "examples": [
+            {
+              "en": "She is wearing an elegant dark navy blazer to today's client meeting.",
+              "vi": "Hôm nay cô ấy đang diện chiếc áo blazer xanh thẫm rất thanh lịch tới cuộc họp khách hàng."
+            },
+            {
+              "en": "More and more consumers are shopping on mobile apps this year.",
+              "vi": "Ngày càng có nhiều người tiêu dùng mua sắm trên ứng dụng di động trong năm nay."
+            }
+          ],
+          "tip": "Dấu hiệu nhận biết: now, right now, at the moment, currently, today, this week."
+        },
+        {
+          "title": "Present Simple vs. Present Continuous (Hiện tại đơn vs. Tiếp diễn)",
+          "structure": "Present Simple (Thói quen, sự thật) vs. Present Continuous (Đang diễn ra, tạm thời)",
+          "explanation": "Phân biệt thói quen thường ngày (Hiện tại đơn) và trang phục/hành vi đặc biệt trong ngày hôm nay (Hiện tại tiếp diễn).",
+          "examples": [
+            {
+              "en": "I usually wear casual jeans, but today I am wearing formal trousers.",
+              "vi": "Tôi thường mặc quần jeans thoải mái, nhưng hôm nay tôi đang mặc quần tây công sở."
+            },
+            {
+              "en": "He works in advertising, but he is currently leading a brand relaunch project.",
+              "vi": "Anh ấy làm việc ở mảng quảng cáo, nhưng hiện tại anh đang phụ trách dự án tái định vị thương hiệu."
+            }
+          ],
+          "tip": "Các động từ tri giác, cảm xúc (know, like, understand, want) hầu như KHÔNG chia ở tiếp diễn."
+        }
+      ],
+      "words": [
+        {
+          "en": "Business attire",
+          "ipa": "/ˈbɪz.nɪs əˈtaɪər/",
+          "vi": "Trang phục công sở chuyên nghiệp",
+          "ex": "The corporate dress code requires smart business attire."
+        },
+        {
+          "en": "Suit jacket",
+          "ipa": "/suːt ˈdʒæk.ɪt/",
+          "vi": "Áo khoác vest sang trọng",
+          "ex": "A well-fitted suit jacket makes a great impression in job interviews."
+        },
+        {
+          "en": "High heels",
+          "ipa": "/haɪ hiːlz/",
+          "vi": "Giày cao gót",
+          "ex": "She wore classic black high heels to the gala dinner."
+        },
+        {
+          "en": "Sneakers",
+          "ipa": "/ˈsniː.kəz/",
+          "vi": "Giày thể thao êm ái",
+          "ex": "Clean white sneakers look modern and stylish with casual suits."
+        },
+        {
+          "en": "Fitting room",
+          "ipa": "/ˈfɪt.ɪŋ ruːm/",
+          "vi": "Phòng thử đồ tại cửa hàng",
+          "ex": "The fitting rooms are located right behind the customer service counter."
+        },
+        {
+          "en": "Discount",
+          "ipa": "/ˈdɪs.kaʊnt/",
+          "vi": "Mức giảm giá, chiết khấu",
+          "ex": "Members receive a twenty percent discount on all new arrivals."
+        },
+        {
+          "en": "Receipt",
+          "ipa": "/rɪˈsiːt/",
+          "vi": "Biên lai, hóa đơn bán lẻ",
+          "ex": "Please keep your payment receipt in case you want an exchange."
+        },
+        {
+          "en": "Return an item",
+          "ipa": "/rɪˈtɜːn ən ˈaɪ.təm/",
+          "vi": "Đổi/trả lại món đồ đã mua",
+          "ex": "You can return an item within thirty days with valid proof of purchase."
+        },
+        {
+          "en": "Customer service",
+          "ipa": "/ˌkʌs.tə.mə ˈsɜː.vɪs/",
+          "vi": "Dịch vụ chăm sóc khách hàng",
+          "ex": "Their customer service team responds warmly within minutes."
+        },
+        {
+          "en": "Brand",
+          "ipa": "/brænd/",
+          "vi": "Thương hiệu thời trang, nhãn hàng",
+          "ex": "She prefers supporting sustainable fashion brands."
+        },
+        {
+          "en": "Try on",
+          "ipa": "/traɪ ɒn/",
+          "vi": "Mặc thử quần áo, giày dép",
+          "ex": "Would you like to try on this silk blouse in a smaller size?"
+        },
+        {
+          "en": "Elegant",
+          "ipa": "/ˈel.ɪ.ɡənt/",
+          "vi": "Thanh lịch, trang nhã",
+          "ex": "Her minimalist jewelry gives her an elegant and modern look."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Look! Gemma ______ a stylish new trench coat today.",
+          "options": ["is wearing", "wears", "wearing", "wear"],
+          "ans": 0,
+          "explain": "Hành động có 'Look!' và 'today' diễn tả sự việc đang xảy ra -> dùng Hiện tại tiếp diễn: 'is wearing'."
+        },
+        {
+          "q": "They normally buy clothes in boutique shops, but this month they ______ online.",
+          "options": ["are shopping", "shop", "shopped", "were shopping"],
+          "ans": 0,
+          "explain": "Tình huống tạm thời trong khoảng thời gian này ('this month') -> dùng Hiện tại tiếp diễn: 'are shopping'."
+        },
+        {
+          "q": "Excuse me, where can I ______ this dress on?",
+          "options": ["try", "trying", "tried", "tries"],
+          "ans": 0,
+          "explain": "Sau trợ động từ khuyết thiếu 'can', động từ ở dạng nguyên thể: 'try on'."
+        }
+      ]
+    },
+    "unit_10": {
+      "title": "Unit 10: Communication",
+      "grammar": [
+        {
+          "title": "Comparative Adjectives (Tính từ so sánh hơn)",
+          "structure": "Short adj + -er + than | more + Long adj + than",
+          "explanation": "So sánh hai sản phẩm công nghệ, giải pháp hoặc phương thức giao tiếp trong môi trường làm việc hiện đại.",
+          "examples": [
+            {
+              "en": "Communicating via instant messaging is often faster than sending lengthy emails.",
+              "vi": "Giao tiếp qua nhắn tin nhanh thường nhanh hơn so với việc gửi email dài dòng."
+            },
+            {
+              "en": "This new ultra-portable laptop is more powerful and lighter than our old model.",
+              "vi": "Chiếc máy tính xách tay siêu di động mới này mạnh mẽ hơn và nhẹ hơn mẫu cũ của chúng tôi."
+            }
+          ],
+          "tip": "Các tính từ bất quy tắc phổ biến: good ➔ better, bad ➔ worse, far ➔ farther / further."
+        },
+        {
+          "title": "Superlative Adjectives (Tính từ so sánh nhất)",
+          "structure": "the + Short adj + -est | the most + Long adj",
+          "explanation": "Chỉ ra đối tượng nổi bật nhất, hiệu quả nhất hoặc tiên tiến nhất trong một nhóm đối tượng.",
+          "examples": [
+            {
+              "en": "Slack is currently the most popular collaboration platform among design agencies.",
+              "vi": "Slack hiện là nền tảng cộng tác phổ biến nhất trong các công ty thiết kế sáng tạo."
+            },
+            {
+              "en": "Cloud storage is the easiest way to share high-resolution project files.",
+              "vi": "Lưu trữ đám mây là cách dễ nhất để chia sẻ các tệp dự án độ phân giải cao."
+            }
+          ],
+          "tip": "Luôn phải có mạo từ 'the' trước tính từ so sánh nhất: the best, the easiest, the most efficient."
+        }
+      ],
+      "words": [
+        {
+          "en": "Conference call",
+          "ipa": "/ˈkɒn.fər.əns kɔːl/",
+          "vi": "Cuộc gọi hội nghị trực tuyến",
+          "ex": "We have an international conference call scheduled with London at 3 PM."
+        },
+        {
+          "en": "Send an attachment",
+          "ipa": "/send ən əˈtætʃ.mənt/",
+          "vi": "Gửi tệp tài liệu đính kèm",
+          "ex": "I sent the project proposal as a PDF attachment earlier this morning."
+        },
+        {
+          "en": "Respond to emails",
+          "ipa": "/rɪˈspɒnd tuː ˈiː.meɪlz/",
+          "vi": "Phản hồi thư điện tử công việc",
+          "ex": "She always responds to client emails within two business hours."
+        },
+        {
+          "en": "Video conference",
+          "ipa": "/ˈvɪd.i.əʊ ˌkɒn.fər.əns/",
+          "vi": "Hội nghị truyền hình trực tiếp",
+          "ex": "Video conferences enable teams to collaborate across continents seamlessly."
+        },
+        {
+          "en": "Instant messaging",
+          "ipa": "/ˌɪn.stənt ˈmes.ɪ.dʒɪŋ/",
+          "vi": "Nhắn tin nhanh tức thời",
+          "ex": "Our office uses instant messaging for quick daily updates."
+        },
+        {
+          "en": "Presentation",
+          "ipa": "/ˌprez.ənˈteɪ.ʃən/",
+          "vi": "Bài thuyết trình dự án",
+          "ex": "Her visual presentation impressed all potential corporate investors."
+        },
+        {
+          "en": "Feedback",
+          "ipa": "/ˈfiːd.bæk/",
+          "vi": "Ý kiến phản hồi, đánh giá",
+          "ex": "Constructive feedback helps employees refine their technical skills."
+        },
+        {
+          "en": "Discuss",
+          "ipa": "/dɪˈskʌs/",
+          "vi": "Thảo luận, trao đổi ý kiến",
+          "ex": "Let's discuss the marketing strategy during our weekly sync."
+        },
+        {
+          "en": "Keep in touch",
+          "ipa": "/kiːp ɪn tʌtʃ/",
+          "vi": "Giữ liên lạc với nhau",
+          "ex": "It was wonderful collaborating with you; let's definitely keep in touch!"
+        },
+        {
+          "en": "Reliable connection",
+          "ipa": "/rɪˈlaɪ.ə.bəl kəˈnek.ʃən/",
+          "vi": "Đường truyền kết nối mạng ổn định",
+          "ex": "A reliable high-speed connection is essential for remote work."
+        },
+        {
+          "en": "Mute microphone",
+          "ipa": "/mjuːt ˈmaɪ.krə.fəʊn/",
+          "vi": "Tắt micrô khi người khác đang nói",
+          "ex": "Please remember to mute your microphone when not speaking."
+        },
+        {
+          "en": "Collaborate",
+          "ipa": "/kəˈlæb.ə.reɪt/",
+          "vi": "Hợp tác, làm việc nhóm",
+          "ex": "Designers and developers collaborate closely on the new interface."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Online meetings are often ______ flexible than traditional face-to-face sessions.",
+          "options": ["more", "most", "much", "many"],
+          "ans": 0,
+          "explain": "'Flexible' là tính từ dài, so sánh hơn dùng 'more flexible than'."
+        },
+        {
+          "q": "This high-speed fiber package offers ______ fastest internet connection in the district.",
+          "options": ["the", "a", "an", "more"],
+          "ans": 0,
+          "explain": "Trước tính từ so sánh nhất 'fastest' bắt buộc phải có mạo từ xác định 'the'."
+        },
+        {
+          "q": "Using clear bullet points makes your update email much ______ to digest.",
+          "options": ["easier", "easy", "easiest", "more easy"],
+          "ans": 0,
+          "explain": "'Easy' có 2 âm tiết kết thúc bằng 'y' đổi thành '-ier': 'easier'."
+        }
+      ]
+    },
+    "unit_11": {
+      "title": "Unit 11: Entertainment",
+      "grammar": [
+        {
+          "title": "Future with 'be going to' (Dự định & Kế hoạch tương lai)",
+          "structure": "S + am/is/are + going to + V-bare | Am/Is/Are + S + going to + V-bare?",
+          "explanation": "Nói về các kế hoạch, dự định giải trí hoặc sự kiện đã được lên lịch sắp đặt từ trước.",
+          "examples": [
+            {
+              "en": "We are going to see an acoustic live concert this Saturday evening.",
+              "vi": "Chúng tôi dự định đi xem một buổi hòa nhạc acoustic vào tối thứ Bảy tuần này."
+            },
+            {
+              "en": "Is she going to join us for dinner after the movie premiere? - Yes, she is.",
+              "vi": "Cô ấy có định đi ăn tối cùng chúng ta sau buổi công chiếu phim không? - Có."
+            }
+          ],
+          "tip": "'Going to' diễn tả kế hoạch đã có chủ đích từ trước, khác với 'will' thường là quyết định bộc phát ngay thời điểm nói."
+        },
+        {
+          "title": "Polite Invitations & Suggestions (Lời mời & Gợi ý lịch sự)",
+          "structure": "Would you like to + V-bare? | How about + V-ing? | Why don't we + V-bare?",
+          "explanation": "Cách đưa ra lời mời tinh tế, trang nhã trong giao tiếp bạn bè và đối tác.",
+          "examples": [
+            {
+              "en": "Would you like to join our creative reading club this weekend?",
+              "vi": "Bạn có muốn tham gia câu lạc bộ đọc sách sáng tạo của chúng tôi cuối tuần này không?"
+            },
+            {
+              "en": "Why don't we check out that newly opened modern art gallery downtown?",
+              "vi": "Tại sao chúng ta không ghé thăm phòng trưng bày nghệ thuật đương đại mới mở ở trung tâm thành phố nhỉ?"
+            }
+          ],
+          "tip": "Đồng ý lời mời: 'I'd love to! Thank you.' Từ chối khéo: 'I'd love to, but I'm afraid I have other plans.'"
+        }
+      ],
+      "words": [
+        {
+          "en": "Documentary",
+          "ipa": "/ˌdɒk.jəˈmen.tri/",
+          "vi": "Phim tài liệu khoa học, nghệ thuật",
+          "ex": "We watched an inspiring documentary about architectural design."
+        },
+        {
+          "en": "Blockbuster",
+          "ipa": "/ˈblɒkˌbʌs.tər/",
+          "vi": "Phim bom tấn điện ảnh",
+          "ex": "The latest sci-fi blockbuster broke worldwide box office records."
+        },
+        {
+          "en": "Live performance",
+          "ipa": "/laɪv pəˈfɔː.məns/",
+          "vi": "Buổi biểu diễn âm nhạc trực tiếp",
+          "ex": "Experiencing a live jazz performance creates wonderful memories."
+        },
+        {
+          "en": "Art exhibition",
+          "ipa": "/ɑːt ˌek.sɪˈbɪʃ.ən/",
+          "vi": "Triển lãm mỹ thuật, tranh ảnh",
+          "ex": "The contemporary art exhibition showcases stunning paintings by young artists."
+        },
+        {
+          "en": "Cinema ticket",
+          "ipa": "/ˈsɪn.ə.mə ˈtɪk.ɪt/",
+          "vi": "Vé xem phim rạp",
+          "ex": "She booked two VIP cinema tickets through the theater's mobile app."
+        },
+        {
+          "en": "Soundtrack",
+          "ipa": "/ˈsaʊnd.træk/",
+          "vi": "Nhạc nền phim",
+          "ex": "The emotional soundtrack enhanced every scene of the drama."
+        },
+        {
+          "en": "Musician",
+          "ipa": "/mjuːˈzɪʃ.ən/",
+          "vi": "Nhạc sĩ, nhạc công",
+          "ex": "The indie musician composed all the songs on this new acoustic album."
+        },
+        {
+          "en": "Book a table",
+          "ipa": "/bʊk ə ˈteɪ.bəl/",
+          "vi": "Đặt bàn ăn trước tại nhà hàng",
+          "ex": "I will book a table by the window for our weekend celebration."
+        },
+        {
+          "en": "Invite friends",
+          "ipa": "/ɪnˈvaɪt frendz/",
+          "vi": "Mời bạn bè tụ họp",
+          "ex": "Let's invite friends over for a relaxed barbecue this Sunday."
+        },
+        {
+          "en": "Weekend getaway",
+          "ipa": "/ˌwiːkˈend ˈɡet.ə.weɪ/",
+          "vi": "Chuyến đi nghỉ dưỡng ngắn cuối tuần",
+          "ex": "A short weekend getaway to the pine hills refreshed our minds."
+        },
+        {
+          "en": "Recommend",
+          "ipa": "/ˌrek.əˈmend/",
+          "vi": "Giới thiệu, khuyên dùng, gợi ý",
+          "ex": "Which psychological thriller novel would you recommend reading?"
+        },
+        {
+          "en": "Enjoyable",
+          "ipa": "/ɪnˈdʒɔɪ.ə.bəl/",
+          "vi": "Thú vị, mang lại niềm vui",
+          "ex": "We spent a truly enjoyable evening listening to acoustic songs."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "What are you ______ to do this Sunday evening?",
+          "options": ["going", "go", "goes", "gone"],
+          "ans": 0,
+          "explain": "Cấu trúc hỏi dự định tương lai: 'be going to + V-bare' -> 'are you going to do'."
+        },
+        {
+          "q": "Would you like ______ the new indie film premiere with us tonight?",
+          "options": ["to watch", "watch", "watching", "watched"],
+          "ans": 0,
+          "explain": "Cấu trúc mời mọc lịch sự: 'Would you like + to V-bare' -> 'to watch'."
+        },
+        {
+          "q": "How about ______ dinner at that cozy Italian bistro down the street?",
+          "options": ["having", "have", "had", "to have"],
+          "ans": 0,
+          "explain": "Sau 'How about' là dạng V-ing: 'having'."
+        }
+      ]
+    },
+    "unit_12": {
+      "title": "Unit 12: Travel",
+      "grammar": [
+        {
+          "title": "Present Perfect Simple with 'ever' and 'never' (Trải nghiệm cuộc đời)",
+          "structure": "Have/Has + S + ever + V3/ed? | S + have/has + never + V3/ed",
+          "explanation": "Hỏi hoặc kể về những trải nghiệm du lịch, cột mốc trong cuộc sống tính đến thời điểm hiện tại.",
+          "examples": [
+            {
+              "en": "Have you ever visited Kyoto during the cherry blossom season?",
+              "vi": "Bạn đã từng ghé thăm Kyoto vào mùa hoa anh đào nở rộ bao giờ chưa?"
+            },
+            {
+              "en": "Gemma has never flown on a scenic helicopter before.",
+              "vi": "Gemma chưa từng bay trên trực thăng ngắm cảnh trước đây."
+            }
+          ],
+          "tip": "'Ever' dùng trong câu hỏi (đã từng bao giờ); 'Never' mang nghĩa phủ định (chưa bao giờ), không cần dùng thêm 'not'."
+        },
+        {
+          "title": "Present Perfect vs. Past Simple (Hiện tại hoàn thành vs. Quá khứ đơn)",
+          "structure": "Present Perfect (Trải nghiệm, thời gian không xác định) vs. Past Simple (Mốc thời gian cụ thể)",
+          "explanation": "Dùng Hiện tại hoàn thành để giới thiệu một trải nghiệm, sau đó dùng Quá khứ đơn để kể chi tiết sự việc đó diễn ra khi nào, như thế nào.",
+          "examples": [
+            {
+              "en": "I have visited France twice. I went to Paris for the first time in 2022.",
+              "vi": "Tôi đã từng đến nước Pháp hai lần. Tôi đã đến Paris lần đầu tiên vào năm 2022."
+            },
+            {
+              "en": "Have you checked in at the boutique hotel yet? - Yes, we arrived an hour ago.",
+              "vi": "Bạn đã nhận phòng ở khách sạn boutique chưa? - Rồi, chúng tôi đến cách đây một tiếng."
+            }
+          ],
+          "tip": "Khi xuất hiện các từ chỉ mốc thời gian cụ thể trong quá khứ (in 2022, two days ago, yesterday, last summer), BẮT BUỘC dùng Quá khứ đơn."
+        }
+      ],
+      "words": [
+        {
+          "en": "Destination",
+          "ipa": "/ˌdes.tɪˈneɪ.ʃən/",
+          "vi": "Điểm đến du lịch lý tưởng",
+          "ex": "Da Lat is one of the most romantic destinations for autumn retreats."
+        },
+        {
+          "en": "Itinerary",
+          "ipa": "/aɪˈtɪn.ər.ər.i/",
+          "vi": "Lịch trình chuyến du lịch chi tiết",
+          "ex": "Our travel itinerary includes city walking tours and cooking workshops."
+        },
+        {
+          "en": "Sightseeing",
+          "ipa": "/ˈsaɪtˌsiː.ɪŋ/",
+          "vi": "Đi tham quan ngắm cảnh đẹp",
+          "ex": "We spent the entire morning sightseeing around the ancient citadel."
+        },
+        {
+          "en": "Souvenir",
+          "ipa": "/ˌsuː.vəˈnɪər/",
+          "vi": "Quà lưu niệm ý nghĩa",
+          "ex": "She bought handmade ceramics as souvenirs for her close colleagues."
+        },
+        {
+          "en": "Hotel reservation",
+          "ipa": "/həʊˈtel ˌrez.əˈveɪ.ʃən/",
+          "vi": "Việc đặt phòng khách sạn",
+          "ex": "Always confirm your hotel reservation three days prior to arrival."
+        },
+        {
+          "en": "Check-in desk",
+          "ipa": "/ˈtʃek.ɪn desk/",
+          "vi": "Quầy làm thủ tục nhận phòng hoặc chuyến bay",
+          "ex": "The friendly receptionist greeted us at the hotel check-in desk."
+        },
+        {
+          "en": "Tour guide",
+          "ipa": "/tʊər ɡaɪd/",
+          "vi": "Hướng dẫn viên du lịch",
+          "ex": "Our knowledgeable tour guide shared fascinating historical stories."
+        },
+        {
+          "en": "Local specialty",
+          "ipa": "/ˈləʊ.kəl ˈspeʃ.əl.ti/",
+          "vi": "Đặc sản địa phương",
+          "ex": "Sampling local specialties is the highlight of every culinary journey."
+        },
+        {
+          "en": "Breathtaking view",
+          "ipa": "/ˈbreθˌteɪ.kɪŋ vjuː/",
+          "vi": "Khung cảnh đẹp nghẹt thở, ngoạn mục",
+          "ex": "From the mountain peak, we enjoyed a breathtaking view of the sea."
+        },
+        {
+          "en": "Explore",
+          "ipa": "/ɪkˈsplɔːr/",
+          "vi": "Thám hiểm, khám phá vùng đất mới",
+          "ex": "She loves renting a bicycle to explore quiet alleys and local markets."
+        },
+        {
+          "en": "Memorable trip",
+          "ipa": "/ˈmem.ər.ə.bəl trɪp/",
+          "vi": "Chuyến đi đầy ắp kỷ niệm đáng nhớ",
+          "ex": "Our holiday in Hokkaido was an unforgettable, memorable trip."
+        },
+        {
+          "en": "Currency exchange",
+          "ipa": "/ˈkʌr.ən.si ɪksˌtʃeɪndʒ/",
+          "vi": "Dịch vụ đổi ngoại tệ",
+          "ex": "You can find reputable currency exchange counters at international airports."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Have you ever ______ street food in Bangkok at night?",
+          "options": ["tried", "try", "trying", "tries"],
+          "ans": 0,
+          "explain": "Sau 'Have you ever...' là quá khứ phân từ (V3/ed) -> 'tried'."
+        },
+        {
+          "q": "I ______ to Singapore for an international technology conference last November.",
+          "options": ["went", "have gone", "go", "was going"],
+          "ans": 0,
+          "explain": "Có mốc thời gian quá khứ rõ ràng 'last November' -> bắt buộc dùng Quá khứ đơn: 'went'."
+        },
+        {
+          "q": "She has ______ traveled abroad alone before this project.",
+          "options": ["never", "ever", "not ever", "did"],
+          "ans": 0,
+          "explain": "Diễn tả chưa từng làm gì trong đời -> 'has never traveled'."
+        }
+      ]
+    }
+  }
+}
+
+                  },
+                  "curriculum": "Cambridge English Empower A1 Starter (Full 12 Units)",
+                  "units": {
                                 "unit_1":  {
                                                "title":  "Unit 1: Names and countries",
                                                "grammar":  [
@@ -28860,3 +34927,19 @@
                             }
               }
 };
+
+// ==========================================
+// THIáº¾T Láº¬P Máº¶C Äá»ŠNH CON TRá»Ž GIÃO TRÃŒNH CHO PROFILE GEMMA
+// ==========================================
+if (typeof studentsDB !== 'undefined' && studentsDB.gemma && studentsDB.gemma.curricula) {
+    try {
+        var _savedCurrKey = (typeof localStorage !== 'undefined' && localStorage.getItem('gemma_active_curriculum')) || 'empower_a1';
+        var _activeCurr = studentsDB.gemma.curricula[_savedCurrKey] || studentsDB.gemma.curricula['empower_a1'];
+        if (_activeCurr) {
+            studentsDB.gemma.curriculum = _activeCurr.title;
+            studentsDB.gemma.units = _activeCurr.units;
+        }
+    } catch (e) {
+        console.warn('Init gemma curriculum fallback', e);
+    }
+}

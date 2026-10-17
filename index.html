@@ -344,6 +344,15 @@
                         </button>
                     </div>
 
+                    <!-- CURRICULUM SELECTOR (DÀNH RIÊNG CHO PROFILE GEMMA) -->
+                    <div id="curriculum-selector-box" class="hidden mb-2.5 pb-2 border-b border-gray-100">
+                        <label class="text-[10px] sm:text-[11px] font-bold text-violet-700 uppercase tracking-wider flex items-center justify-between mb-1.5">
+                            <span class="flex items-center gap-1">📚 Chọn giáo trình:</span>
+                            <span class="text-[9px] font-semibold bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded">Cambridge</span>
+                        </label>
+                        <div class="grid grid-cols-2 gap-1.5" id="curriculum-selector-buttons"></div>
+                    </div>
+
                     <div>
                         <label class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
                             Lessons List (Units):
@@ -1414,6 +1423,12 @@
             welcomeGrid.innerHTML = '';
             for (const key in studentsDB) {
                 const student = studentsDB[key];
+                if (key === 'gemma' && student.curricula) {
+                    const savedCurr = localStorage.getItem('gemma_active_curriculum') || 'empower_a1';
+                    const activeCurr = student.curricula[savedCurr] || student.curricula['empower_a1'];
+                    student.curriculum = activeCurr.title;
+                    student.units = activeCurr.units;
+                }
                 const unitCount = Object.keys(student.units).length;
                 const isRecent = key === lastStudentKey;
                 const cardBtn = document.createElement('button');
@@ -1454,6 +1469,23 @@
         function startLearning(studentKey) {
             currentStudentKey = studentKey;
             lastStudentKey = studentKey;
+
+            // Đồng bộ giáo trình nếu là Gemma
+            if (currentStudentKey === 'gemma' && studentsDB.gemma && studentsDB.gemma.curricula) {
+                const savedCurr = localStorage.getItem('gemma_active_curriculum') || 'empower_a1';
+                const activeCurr = studentsDB.gemma.curricula[savedCurr] || studentsDB.gemma.curricula['empower_a1'];
+                studentsDB.gemma.curriculum = activeCurr.title;
+                studentsDB.gemma.units = activeCurr.units;
+            }
+
+            // Đảm bảo unitKey hợp lệ
+            if (!studentsDB[currentStudentKey].units[studentProgress[currentStudentKey]?.unitKey]) {
+                studentProgress[currentStudentKey] = {
+                    unitKey: Object.keys(studentsDB[currentStudentKey].units)[0],
+                    index: 0
+                };
+            }
+
             currentUnitKey = studentProgress[currentStudentKey].unitKey;
             currentIndex = studentProgress[currentStudentKey].index;
             isShuffled = false;
@@ -1466,6 +1498,7 @@
             updateDirectionUI();
             refreshActiveWords();
             renderStudentButtons();
+            renderCurriculumSelector();
             renderUnitButtons();
             updateStudentHeader();
             updateGameButtonLabel();
@@ -1851,11 +1884,107 @@
             }
         }
 
+        function renderCurriculumSelector() {
+            const box = document.getElementById('curriculum-selector-box');
+            const container = document.getElementById('curriculum-selector-buttons');
+            if (!box || !container) return;
+
+            if (currentStudentKey !== 'gemma' || !studentsDB.gemma || !studentsDB.gemma.curricula) {
+                box.classList.add('hidden');
+                return;
+            }
+
+            box.classList.remove('hidden');
+            container.innerHTML = '';
+
+            const activeCurrKey = localStorage.getItem('gemma_active_curriculum') || 'empower_a1';
+            const curricula = studentsDB.gemma.curricula;
+
+            for (const currKey in curricula) {
+                const curr = curricula[currKey];
+                const isActive = (currKey === activeCurrKey);
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = isActive
+                    ? "px-2 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-xs shadow-md shadow-violet-200 border border-violet-500 flex flex-col items-center justify-center transition-all duration-200 active:scale-95"
+                    : "px-2 py-1.5 rounded-xl bg-white hover:bg-violet-50 text-gray-700 hover:text-violet-700 font-semibold text-xs border border-violet-200 shadow-2xs flex flex-col items-center justify-center transition-all duration-200 active:scale-95";
+                
+                btn.innerHTML = `
+                    <span class="text-[11px] font-extrabold truncate w-full text-center">${curr.badge || curr.title}</span>
+                    <span class="text-[9px] ${isActive ? 'text-violet-100 font-medium' : 'text-gray-400 font-normal'} mt-0.5">${Object.keys(curr.units).length} Units</span>
+                `;
+
+                btn.onclick = () => switchGemmaCurriculum(currKey);
+                container.appendChild(btn);
+            }
+        }
+
+        function switchGemmaCurriculum(currKey) {
+            if (!studentsDB.gemma || !studentsDB.gemma.curricula || !studentsDB.gemma.curricula[currKey]) return;
+            const activeCurrKey = localStorage.getItem('gemma_active_curriculum') || 'empower_a1';
+            if (currKey === activeCurrKey && studentsDB.gemma.curriculum === studentsDB.gemma.curricula[currKey].title) {
+                return;
+            }
+
+            localStorage.setItem('gemma_active_curriculum', currKey);
+            const curr = studentsDB.gemma.curricula[currKey];
+            studentsDB.gemma.curriculum = curr.title;
+            studentsDB.gemma.units = curr.units;
+
+            const firstUnitKey = Object.keys(curr.units)[0];
+            currentUnitKey = firstUnitKey;
+            currentIndex = 0;
+            studentProgress['gemma'] = {
+                unitKey: firstUnitKey,
+                index: 0
+            };
+            isShuffled = false;
+
+            updateShuffleUI();
+            updateDirectionUI();
+            refreshActiveWords();
+            renderCurriculumSelector();
+            renderUnitButtons();
+            updateStudentHeader();
+            saveProgress();
+
+            if (currentStudyMode === 'quiz') {
+                startQuiz();
+            } else if (currentStudyMode === 'grammar') {
+                renderGrammarView();
+            } else if (currentStudyMode === 'grammar_review') {
+                startGrammarReview();
+            } else if (currentStudyMode === 'note') {
+                loadNoteForCurrentUnit();
+            } else if (currentStudyMode === 'game') {
+                startGameMode();
+            } else {
+                resetAndLoadCard();
+            }
+        }
+
         function selectStudent(studentKey) {
             if (currentStudentKey === studentKey) return;
             studentProgress[currentStudentKey] = { unitKey: currentUnitKey, index: currentIndex };
             currentStudentKey = studentKey;
             lastStudentKey = studentKey;
+
+            // Đồng bộ giáo trình nếu là Gemma
+            if (currentStudentKey === 'gemma' && studentsDB.gemma && studentsDB.gemma.curricula) {
+                const savedCurr = localStorage.getItem('gemma_active_curriculum') || 'empower_a1';
+                const activeCurr = studentsDB.gemma.curricula[savedCurr] || studentsDB.gemma.curricula['empower_a1'];
+                studentsDB.gemma.curriculum = activeCurr.title;
+                studentsDB.gemma.units = activeCurr.units;
+            }
+
+            // Đảm bảo unitKey hợp lệ
+            if (!studentsDB[currentStudentKey].units[studentProgress[currentStudentKey]?.unitKey]) {
+                studentProgress[currentStudentKey] = {
+                    unitKey: Object.keys(studentsDB[currentStudentKey].units)[0],
+                    index: 0
+                };
+            }
+
             currentUnitKey = studentProgress[currentStudentKey].unitKey;
             currentIndex = studentProgress[currentStudentKey].index;
             isShuffled = false;
@@ -1863,6 +1992,7 @@
             updateDirectionUI();
             refreshActiveWords();
             renderStudentButtons();
+            renderCurriculumSelector();
             renderUnitButtons();
             updateStudentHeader();
             updateGameButtonLabel();
