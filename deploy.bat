@@ -1,14 +1,22 @@
 @echo off
-chcp 65001 >nul
+cd /d "%~dp0"
+set "PATH=C:\Program Files\Git\cmd;%PATH%"
+
 echo ========================================================
-echo   Đang tự động đồng bộ Smart English Class lên Web...
+echo   SMART ENGLISH CLASS - AUTO DEPLOY
 echo ========================================================
-"C:\Program Files\Git\cmd\git.exe" add .
-"C:\Program Files\Git\cmd\git.exe" commit -m "Auto update: %date% %time%"
-"C:\Program Files\Git\cmd\git.exe" push origin main
+echo.
+echo [1/3] Adding changes...
+git add .
+
+echo [2/3] Committing changes...
+git commit -m "Update project: %date% %time%"
+
+echo [3/3] Uploading all files to GitHub...
+git push -u origin main
+
 echo.
 echo ========================================================
-echo   CẬP NHẬT THÀNH CÔNG!
-echo   Cloudflare Pages sẽ tự động deploy trang web trong 15s.
+echo   DE FACTO SUCCESS / HOAN TAT!
 echo ========================================================
-timeout /t 4 >nul
+pause
