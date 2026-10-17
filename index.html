@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Smart English Class</title>
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -93,6 +93,15 @@
     <style>
         body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a { 
             font-family: 'Nunito', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        /* VÔ HIỆU HÓA HOÀN TOÀN DOUBLE-TAP ZOOM TRÊN IPHONE / IOS SAFARI */
+        html, body, button, input, select, textarea, .glass-panel, #pin-modal, #pin-modal * { 
+            touch-action: manipulation !important;
+            -webkit-text-size-adjust: 100%;
+        }
+        button, .pin-dot, #pin-modal button { 
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent;
         }
         body { 
             -webkit-user-select: none;
@@ -4285,6 +4294,25 @@
                 toggleShuffle();
             }
         });
+
+        // ==========================================
+        // 10. CHỐNG DOUBLE-TAP ZOOM TRÊN IPHONE / IOS KHI NHẬP MÃ PIN (VD: 2207)
+        // ==========================================
+        (function() {
+            let lastTouchEndTime = 0;
+            document.addEventListener('touchend', function(e) {
+                const now = Date.now();
+                if (now - lastTouchEndTime <= 350) {
+                    const btn = e.target.closest('button') || e.target.closest('#pin-modal') || e.target.closest('#change-pin-modal');
+                    if (btn) {
+                        e.preventDefault();
+                        const targetBtn = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+                        if (targetBtn) targetBtn.click();
+                    }
+                }
+                lastTouchEndTime = now;
+            }, { passive: false });
+        })();
 
         // Khởi chạy khi mới vào web
         updateDirectionUI();
