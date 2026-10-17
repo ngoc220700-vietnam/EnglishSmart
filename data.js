@@ -30439,7 +30439,1586 @@
       ]
     }
   }
+},
+                      "empower_b1": {
+  "title": "Cambridge English Empower B1 Pre-intermediate (Full 12 Units)",
+  "badge": "B1 Pre-Int",
+  "units": {
+    "unit_1": {
+      "title": "Unit 1: Communicating",
+      "grammar": [
+        {
+          "title": "Question Forms: Subject vs. Object Questions (Dạng câu hỏi chủ ngữ & tân ngữ)",
+          "structure": "Object question: Wh-word + auxiliary + S + V? | Subject question: Wh-word + V(s/ed)?",
+          "explanation": "Phân biệt câu hỏi về tân ngữ (cần trợ động từ do/does/did) và câu hỏi về chủ ngữ (từ để hỏi chính là chủ ngữ, động từ chia trực tiếp không cần trợ động từ).",
+          "examples": [
+            {
+              "en": "Who did you call yesterday? (Object question - hỏi về tân ngữ: Bạn đã gọi cho ai?)",
+              "vi": "Hôm qua bạn đã gọi điện cho ai?"
+            },
+            {
+              "en": "Who called you yesterday? (Subject question - hỏi về chủ ngữ: Ai đã gọi cho bạn?)",
+              "vi": "Ai đã gọi điện cho bạn hôm qua?"
+            }
+          ],
+          "tip": "Khi từ để hỏi (Who/What) thay thế cho chủ ngữ hành động, TUYỆT ĐỐI không dùng do/does/did."
+        },
+        {
+          "title": "Present Simple & Present Continuous (Hiện tại đơn & Hiện tại tiếp diễn)",
+          "structure": "Present Simple: S + V(s/es) (facts, habits) | Present Continuous: S + am/is/are + V-ing (now, temporary trends)",
+          "explanation": "Dùng Hiện tại đơn để nói về tính cách, thói quen giao tiếp lâu dài; dùng Hiện tại tiếp diễn cho các hành động đang xảy ra hoặc xu hướng giao tiếp công nghệ hiện tại.",
+          "examples": [
+            {
+              "en": "I usually communicate with clients via email, but today I am video calling them.",
+              "vi": "Tôi thường giao tiếp với khách hàng qua email, nhưng hôm nay tôi đang gọi video với họ."
+            },
+            {
+              "en": "Why are you whispering on the phone? - Because everyone is concentrating here.",
+              "vi": "Tại sao bạn lại thì thầm trong điện thoại vậy? - Vì mọi người ở đây đang tập trung làm việc."
+            }
+          ],
+          "tip": "State verbs (động từ chỉ trạng thái: believe, belong, seem, understand) không dùng ở thì tiếp diễn."
+        }
+      ],
+      "words": [
+        {
+          "en": "Communicate",
+          "ipa": "/kəˈmjuː.nɪ.keɪt/",
+          "vi": "Giao tiếp, truyền tải thông điệp",
+          "ex": "Effective leaders know how to communicate clearly and empathetically."
+        },
+        {
+          "en": "Social interaction",
+          "ipa": "/ˌsəʊ.ʃəl ˌɪn.təˈræk.ʃən/",
+          "vi": "Sự tương tác xã hội",
+          "ex": "Regular social interaction improves emotional resilience and mental health."
+        },
+        {
+          "en": "Express feelings",
+          "ipa": "/ɪkˈspres ˈfiː.lɪŋz/",
+          "vi": "Bày tỏ cảm xúc, tâm tư",
+          "ex": "Writing in a personal journal helps you express feelings constructively."
+        },
+        {
+          "en": "Stay in touch",
+          "ipa": "/steɪ ɪn tʌtʃ/",
+          "vi": "Giữ liên lạc thường xuyên",
+          "ex": "We still stay in touch through messaging apps even though she moved to London."
+        },
+        {
+          "en": "Whisper",
+          "ipa": "/ˈwɪs.pər/",
+          "vi": "Thì thầm, nói nhỏ",
+          "ex": "She whispered the urgent password so that bystanders could not overhear."
+        },
+        {
+          "en": "Interrupt",
+          "ipa": "/ˌɪn.təˈrʌpt/",
+          "vi": "Ngắt lời, cắt ngang",
+          "ex": "It is polite to wait until a colleague finishes before you speak, without interrupting."
+        },
+        {
+          "en": "Supportive",
+          "ipa": "/səˈpɔː.tɪv/",
+          "vi": "Luôn ủng hộ, nâng đỡ",
+          "ex": "Having a supportive mentor made my onboarding experience delightful."
+        },
+        {
+          "en": "Misunderstand",
+          "ipa": "/ˌmɪs.ʌn.dəˈstænd/",
+          "vi": "Hiểu lầm, hiểu sai ý",
+          "ex": "Double-check the project guidelines to avoid misunderstanding expectations."
+        },
+        {
+          "en": "Chatty",
+          "ipa": "/ˈtʃæt.i/",
+          "vi": "Thích trò chuyện, cởi mở",
+          "ex": "Our receptionist is warm and chatty, making visitors feel welcome instantly."
+        },
+        {
+          "en": "Body language",
+          "ipa": "/ˈbɒd.i ˌlæŋ.ɡwɪdʒ/",
+          "vi": "Ngôn ngữ cơ thể",
+          "ex": "Open body language and steady eye contact build trust in business negotiations."
+        },
+        {
+          "en": "Tone of voice",
+          "ipa": "/təʊn əv vɔɪs/",
+          "vi": "Giọng điệu, âm sắc lời nói",
+          "ex": "A calm tone of voice can quickly defuse heated arguments."
+        },
+        {
+          "en": "Active listener",
+          "ipa": "/ˈæk.tɪv ˈlɪs.ən.ər/",
+          "vi": "Người lắng nghe tích cực",
+          "ex": "Being an active listener is the hallmark of great management."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "______ told you about the upcoming product launch?",
+          "options": ["Who", "Who did", "Whom did", "Which did"],
+          "ans": 0,
+          "explain": "Câu hỏi về chủ ngữ ('Ai đã kể cho bạn...') -> dùng 'Who' đi trực tiếp với động từ 'told', không dùng trợ động từ."
+        },
+        {
+          "q": "What ______ at the office these days?",
+          "options": ["are you working on", "do you work on", "work you on", "are you work on"],
+          "ans": 0,
+          "explain": "'These days' diễn tả tình huống/dự án tạm thời trong thời gian này -> dùng Hiện tại tiếp diễn: 'are you working on'."
+        },
+        {
+          "q": "Listen! The keynote speaker ______ very important insights.",
+          "options": ["is sharing", "shares", "shared", "is share"],
+          "ans": 0,
+          "explain": "Dấu hiệu 'Listen!' báo hiệu hành động đang diễn ra tại thời điểm nói -> dùng Hiện tại tiếp diễn: 'is sharing'."
+        }
+      ]
+    },
+    "unit_2": {
+      "title": "Unit 2: Travel and Tourism",
+      "grammar": [
+        {
+          "title": "Past Simple vs. Past Continuous (Quá khứ đơn vs. Quá khứ tiếp diễn)",
+          "structure": "Past Continuous (was/were + V-ing) + WHEN + Past Simple (V2/ed) | WHILE + Past Continuous",
+          "explanation": "Quá khứ tiếp diễn mô tả một hành động đang diễn ra thì một hành động ngắn khác (Quá khứ đơn) xen vào.",
+          "examples": [
+            {
+              "en": "While we were waiting for our flight in the lounge, the gate announced a delay.",
+              "vi": "Khi chúng tôi đang đợi chuyến bay trong phòng chờ, cửa khởi hành thông báo chuyến bay bị trễ."
+            },
+            {
+              "en": "She lost her passport while she was shopping in the duty-free boutique.",
+              "vi": "Cô ấy bị mất hộ chiếu trong lúc đang mua sắm ở cửa hàng miễn thuế."
+            }
+          ],
+          "tip": "'While' thường đi kèm hành động kéo dài (quá khứ tiếp diễn); 'When' thường đi kèm hành động xen vào (quá khứ đơn)."
+        },
+        {
+          "title": "Travel Collocations & Prepositions (Cụm từ & Giới từ du lịch)",
+          "structure": "go on holiday | travel on business | arrive in (a city/country) | arrive at (an airport/station)",
+          "explanation": "Quy tắc dùng giới từ chính xác khi nói về các hành trình du lịch và công tác.",
+          "examples": [
+            {
+              "en": "We arrived in London late at night after a nine-hour flight.",
+              "vi": "Chúng tôi đến London vào đêm muộn sau chuyến bay kéo dài 9 tiếng."
+            },
+            {
+              "en": "They arrived at Heathrow Airport ahead of schedule.",
+              "vi": "Họ đã đến sân bay Heathrow trước giờ dự kiến."
+            }
+          ],
+          "tip": "Đến một quốc gia hoặc thành phố lớn dùng 'arrive IN'; đến một địa điểm cụ thể (nhà ga, khách sạn, sân bay) dùng 'arrive AT'."
+        }
+      ],
+      "words": [
+        {
+          "en": "Ecotourism",
+          "ipa": "/ˈiː.kəʊˌtʊə.rɪ.zəm/",
+          "vi": "Du lịch sinh thái",
+          "ex": "Ecotourism encourages travelers to respect local wildlife and communities."
+        },
+        {
+          "en": "Backpacker",
+          "ipa": "/ˈbækˌpæk.ər/",
+          "vi": "Khách du lịch bụi, phượt thủ",
+          "ex": "Hostels in Southeast Asia are very popular among solo backpackers."
+        },
+        {
+          "en": "Sightseer",
+          "ipa": "/ˈsaɪtˌsiː.ər/",
+          "vi": "Người đi ngắm cảnh",
+          "ex": "Thousands of sightseers flock to the historical square at sunset."
+        },
+        {
+          "en": "Scenic route",
+          "ipa": "/ˈsiː.nɪk ruːt/",
+          "vi": "Cung đường cảnh đẹp thơ mộng",
+          "ex": "We took the scenic coastal route to marvel at the ocean view."
+        },
+        {
+          "en": "Travel brochure",
+          "ipa": "/ˈtræv.əl ˈbrəʊ.ʃər/",
+          "vi": "Sách ảnh hướng dẫn du lịch",
+          "ex": "The travel brochure highlighted luxury island resorts in Phu Quoc."
+        },
+        {
+          "en": "Remote area",
+          "ipa": "/rɪˈməʊt ˈeə.ri.ə/",
+          "vi": "Vùng sâu vùng xa, hẻo lánh",
+          "ex": "They hiked through a remote mountain area with no cellular reception."
+        },
+        {
+          "en": "Overnight sleeper train",
+          "ipa": "/ˌəʊ.vəˈnaɪt ˈsliː.pər treɪn/",
+          "vi": "Tàu hỏa giường nằm qua đêm",
+          "ex": "Taking an overnight sleeper train from Da Nang to Hanoi saves travel time."
+        },
+        {
+          "en": "Luggage allowance",
+          "ipa": "/ˈlʌɡ.ɪdʒ əˌlaʊ.əns/",
+          "vi": "Trọng lượng hành lý cho phép",
+          "ex": "Make sure your suitcase is within the airline's baggage allowance."
+        },
+        {
+          "en": "Local delicacy",
+          "ipa": "/ˈləʊ.kəl ˈdel.ɪ.kə.si/",
+          "vi": "Món ăn đặc sản địa phương",
+          "ex": "Trying authentic local delicacies is an indispensable part of traveling."
+        },
+        {
+          "en": "Cultural heritage",
+          "ipa": "/ˈkʌl.tʃər.əl ˈher.ɪ.tɪdʒ/",
+          "vi": "Di sản văn hóa",
+          "ex": "Hoi An Ancient Town is recognized as a world cultural heritage site."
+        },
+        {
+          "en": "Check in online",
+          "ipa": "/tʃek ɪn ˈɒn.laɪn/",
+          "vi": "Làm thủ tục chuyến bay trực tuyến",
+          "ex": "You can check in online twenty-four hours before your scheduled departure."
+        },
+        {
+          "en": "Unforgettable adventure",
+          "ipa": "/ˌʌn.fəˈɡet.ə.bəl ədˈven.tʃər/",
+          "vi": "Chuyến phiêu lưu khó quên",
+          "ex": "Our road trip along the Hai Van Pass was an unforgettable adventure."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "While we ______ along the coastline, we spotted dolphins leaping from the waves.",
+          "options": ["were driving", "drove", "are driving", "had driven"],
+          "ans": 0,
+          "explain": "Hành động đang diễn ra trong quá khứ sau liên từ 'While' -> dùng Quá khứ tiếp diễn: 'were driving'."
+        },
+        {
+          "q": "Our flight touched down and we arrived ______ Tokyo early this morning.",
+          "options": ["in", "at", "to", "on"],
+          "ans": 0,
+          "explain": "Đến một thành phố lớn ('Tokyo') dùng giới từ 'arrive in'."
+        },
+        {
+          "q": "What ______ when the pilot made the emergency landing announcement?",
+          "options": ["were you doing", "did you do", "are you doing", "have you done"],
+          "ans": 0,
+          "explain": "Hành động đang xảy ra tại thời điểm hành động khác xen vào trong quá khứ -> 'were you doing'."
+        }
+      ]
+    },
+    "unit_3": {
+      "title": "Unit 3: Money",
+      "grammar": [
+        {
+          "title": "Present Perfect vs. Past Simple (Hiện tại hoàn thành vs. Quá khứ đơn)",
+          "structure": "Present Perfect (have/has + V3): Indefinite time, experience, connection to now | Past Simple (V2/ed): Finished time (yesterday, in 2021)",
+          "explanation": "Dùng Hiện tại hoàn thành khi nói về các giao dịch tài chính, đầu tư có liên hệ đến hiện tại; dùng Quá khứ đơn khi có mốc thời gian đã chấm dứt.",
+          "examples": [
+            {
+              "en": "I have saved up enough money for my study abroad course.",
+              "vi": "Tôi đã tiết kiệm đủ tiền cho khóa học du học của mình."
+            },
+            {
+              "en": "She invested in property last year and gained a good return.",
+              "vi": "Cô ấy đã đầu tư vào bất động sản hồi năm ngoái và thu về lợi nhuận tốt."
+            }
+          ],
+          "tip": "Khi thấy 'last week, ago, in 2020', BẮT BUỘC dùng Quá khứ đơn."
+        },
+        {
+          "title": "Present Perfect with 'just', 'already', and 'yet' (Dấu hiệu Hiện tại hoàn thành)",
+          "structure": "just (vừa mới - giữa have và V3) | already (đã rồi - giữa have và V3) | yet (chưa - cuối câu phủ định & nghi vấn)",
+          "explanation": "Diễn tả các hoạt động thanh toán, chuyển khoản hoặc mua sắm vừa diễn ra hoặc chưa hoàn thành.",
+          "examples": [
+            {
+              "en": "I have just transferred the monthly rent to the landlord.",
+              "vi": "Tôi vừa mới chuyển khoản tiền thuê nhà hàng tháng cho chủ nhà."
+            },
+            {
+              "en": "Have you paid the electricity bill yet? - No, not yet.",
+              "vi": "Bạn đã thanh toán hóa đơn tiền điện chưa? - Vẫn chưa."
+            }
+          ],
+          "tip": "'Yet' chỉ dùng trong câu phủ định (chưa làm) và câu hỏi (đã làm chưa), luôn đứng cuối câu."
+        }
+      ],
+      "words": [
+        {
+          "en": "Afford",
+          "ipa": "/əˈfɔːd/",
+          "vi": "Đủ khả năng tài chính chi trả",
+          "ex": "After receiving her promotion bonus, Gemma can comfortably afford a new laptop."
+        },
+        {
+          "en": "Bank account",
+          "ipa": "/ˈbæŋk əˌkaʊnt/",
+          "vi": "Tài khoản ngân hàng",
+          "ex": "Setting up an online banking account allows you to monitor spending instantly."
+        },
+        {
+          "en": "Save up",
+          "ipa": "/seɪv ʌp/",
+          "vi": "Tiết kiệm tiền tích lũy",
+          "ex": "She is saving up to purchase a cozy apartment in the city center."
+        },
+        {
+          "en": "Waste money",
+          "ipa": "/weɪst ˈmʌn.i/",
+          "vi": "Lãng phí tiền bạc vào việc không cần thiết",
+          "ex": "Avoid wasting money on luxury subscriptions that you never use."
+        },
+        {
+          "en": "Borrow",
+          "ipa": "/ˈbɒr.əʊ/",
+          "vi": "Vay, mượn từ ai đó",
+          "ex": "He borrowed a small amount from his brother to launch his online store."
+        },
+        {
+          "en": "Lend",
+          "ipa": "/lend/",
+          "vi": "Cho ai đó vay, mượn",
+          "ex": "Reputable commercial banks lend money to businesses with sound business plans."
+        },
+        {
+          "en": "Investment",
+          "ipa": "/ɪnˈvest.mənt/",
+          "vi": "Khoản đầu tư sinh lời",
+          "ex": "Investing in self-education is the smartest investment anyone can make."
+        },
+        {
+          "en": "Monthly budget",
+          "ipa": "/ˈmʌnθ.li ˈbʌdʒ.ɪt/",
+          "vi": "Ngân sách tài chính hàng tháng",
+          "ex": "Creating a monthly budget helps young professionals build wealth steadily."
+        },
+        {
+          "en": "Do volunteer work",
+          "ipa": "/duː ˌvɒl.ənˈtɪər wɜːk/",
+          "vi": "Làm công việc từ thiện, tình nguyện",
+          "ex": "Many employees do volunteer work on weekends to support local shelters."
+        },
+        {
+          "en": "Give someone a tip",
+          "ipa": "/ɡɪv ˈsʌm.wʌn ə tɪp/",
+          "vi": "Cho ai đó tiền boa / tiền thưởng thêm",
+          "ex": "We gave the polite waiter a generous tip for his outstanding service."
+        },
+        {
+          "en": "Make a payment",
+          "ipa": "/meɪk ə ˈpeɪ.mənt/",
+          "vi": "Thực hiện thanh toán tiền",
+          "ex": "You can make a contactless payment using your mobile wallet."
+        },
+        {
+          "en": "Financial independence",
+          "ipa": "/faɪˈnæn.ʃəl ˌɪn.dɪˈpen.dəns/",
+          "vi": "Độc lập, tự chủ về tài chính",
+          "ex": "Achieving financial independence requires discipline and thoughtful spending."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Have you settled the invoice ______?",
+          "options": ["yet", "already", "just", "since"],
+          "ans": 0,
+          "explain": "Trong câu hỏi ở thì Hiện tại hoàn thành, từ đứng ở cuối câu là 'yet' (đã... chưa?)."
+        },
+        {
+          "q": "Gemma has ______ signed the consulting contract; the ink is barely dry!",
+          "options": ["just", "yet", "ever", "ago"],
+          "ans": 0,
+          "explain": "'Just' đứng giữa trợ động từ 'has' và V3 để chỉ hành động vừa mới xảy ra tức thì."
+        },
+        {
+          "q": "Last week, our financial director ______ three corporate bank accounts.",
+          "options": ["opened", "has opened", "opens", "is opening"],
+          "ans": 0,
+          "explain": "Có mốc thời gian quá khứ rõ ràng 'Last week' -> dùng thì Quá khứ đơn: 'opened'."
+        }
+      ]
+    },
+    "unit_4": {
+      "title": "Unit 4: Social Life",
+      "grammar": [
+        {
+          "title": "Future Forms: Present Continuous & 'be going to' (Dự định & Kế hoạch tương lai)",
+          "structure": "Present Continuous: Fixed arrangement with other people & time | be going to: Personal intention / plan",
+          "explanation": "Present Continuous nhấn mạnh kế hoạch đã có lịch hẹn cụ thể với người khác; 'be going to' nhấn mạnh ý định đã nhen nhóm trong đầu.",
+          "examples": [
+            {
+              "en": "I am having dinner with my university alumni this Friday at 7 PM.",
+              "vi": "Tôi có hẹn ăn tối với cựu sinh viên cùng trường vào thứ Sáu này lúc 7 giờ tối."
+            },
+            {
+              "en": "We are going to throw a surprise birthday party for our manager.",
+              "vi": "Chúng tôi dự định sẽ tổ chức một bữa tiệc sinh nhật bất ngờ cho sếp."
+            }
+          ],
+          "tip": "Khi đã có giờ giấc và địa điểm thỏa thuận với người khác, hãy ưu tiên dùng thì Hiện tại tiếp diễn."
+        },
+        {
+          "title": "Will / Won't and Shall (Quyết định tức thì, lời hứa & lời đề nghị)",
+          "structure": "Will + V-bare: Instant decisions, promises, predictions | Shall I / we...?: Polite offers & suggestions",
+          "explanation": "Dùng 'will' khi quyết định ngay tại lúc nói; dùng 'Shall I...?' khi lịch sự muốn giúp đỡ ai.",
+          "examples": [
+            {
+              "en": "It looks heavy; shall I carry that bag for you? - Thank you, that's very kind!",
+              "vi": "Trông có vẻ nặng đấy; để tôi xách túi đó giúp bạn nhé? - Cảm ơn bạn, bạn tốt bụng quá!"
+            },
+            {
+              "en": "Don't worry about the celebration venue; I will make the booking right away.",
+              "vi": "Đừng lo lắng về địa điểm tổ chức; tôi sẽ đặt chỗ ngay bây giờ."
+            }
+          ],
+          "tip": "'Shall' chỉ đi với ngôi 'I' và 'we' trong câu hỏi đề nghị giúp đỡ hoặc gợi ý."
+        }
+      ],
+      "words": [
+        {
+          "en": "Celebration",
+          "ipa": "/ˌsel.əˈbreɪ.ʃən/",
+          "vi": "Lễ kỷ niệm, tiệc chúc mừng",
+          "ex": "The company hosted a lavish celebration for its tenth anniversary."
+        },
+        {
+          "en": "Wedding reception",
+          "ipa": "/ˈwed.ɪŋ rɪˌsep.ʃən/",
+          "vi": "Tiệc cưới thân mật",
+          "ex": "The wedding reception was held in an open-air garden by the river."
+        },
+        {
+          "en": "Atmospheric venue",
+          "ipa": "/ˌæt.məsˈfer.ɪk ˈven.juː/",
+          "vi": "Địa điểm tổ chức có không gian lãng mạn, ấm cúng",
+          "ex": "The jazz lounge is an atmospheric venue for weekend socializing."
+        },
+        {
+          "en": "Historic district",
+          "ipa": "/hɪˈstɒr.ɪk ˈdɪs.trɪkt/",
+          "vi": "Khu phố cổ kính, giàu lịch sử",
+          "ex": "Strolling through the historic district at night is captivating."
+        },
+        {
+          "en": "Bustling nightlife",
+          "ipa": "/ˈbʌs.lɪŋ ˈnaɪt.laɪf/",
+          "vi": "Cuộc sống về đêm náo nhiệt, sôi động",
+          "ex": "Da Nang is celebrated for its bustling nightlife and vibrant riverside bars."
+        },
+        {
+          "en": "Dress code",
+          "ipa": "/ˈdres kəʊd/",
+          "vi": "Quy tắc trang phục của sự kiện",
+          "ex": "The gala invitation states a black-tie dress code."
+        },
+        {
+          "en": "Formal occasion",
+          "ipa": "/ˈfɔː.məl əˌkeɪ.ʒən/",
+          "vi": "Dịp trang trọng, sự kiện lễ nghi",
+          "ex": "Wearing a tailored evening gown is appropriate for this formal occasion."
+        },
+        {
+          "en": "Catch up with friends",
+          "ipa": "/kætʃ ʌp wɪð frendz/",
+          "vi": "Gặp lại và cập nhật tin tức với bạn bè",
+          "ex": "Sunday mornings are my favorite time to catch up with close friends."
+        },
+        {
+          "en": "Social calendar",
+          "ipa": "/ˈsəʊ.ʃəl ˈkæl.ən.dər/",
+          "vi": "Lịch sự kiện và giao lưu xã hội",
+          "ex": "During December, her social calendar is packed with year-end galas."
+        },
+        {
+          "en": "Host a gathering",
+          "ipa": "/həʊst ə ˈɡæð.ər.ɪŋ/",
+          "vi": "Đứng ra tổ chức buổi tụ họp",
+          "ex": "Gemma loves hosting dinner gatherings for her creative circle."
+        },
+        {
+          "en": "Warm hospitality",
+          "ipa": "/wɔːm ˌhɒs.pɪˈtæl.ə.ti/",
+          "vi": "Lòng hiếu khách nồng hậu",
+          "ex": "The hosts welcomed us with sincere warmth and delicious delicacies."
+        },
+        {
+          "en": "Make an arrangement",
+          "ipa": "/meɪk ən əˈreɪndʒ.mənt/",
+          "vi": "Sắp xếp, hẹn thời gian gặp gỡ",
+          "ex": "Let's make an arrangement to meet outside the theater at six-thirty."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "______ I book our table at the rooftop terrace for this evening?",
+          "options": ["Shall", "Will", "Would", "Do"],
+          "ans": 0,
+          "explain": "Đưa ra lời đề nghị giúp đỡ lịch sự với chủ ngữ 'I' -> dùng 'Shall I'."
+        },
+        {
+          "q": "Gemma ______ dinner with her mentor at 8:00 PM tomorrow; she already reserved the table.",
+          "options": ["is having", "has", "will have", "have"],
+          "ans": 0,
+          "explain": "Kế hoạch đã có giờ giấc và đặt bàn cụ thể -> dùng thì Hiện tại tiếp diễn: 'is having'."
+        },
+        {
+          "q": "Oh, you don't have a ride home? Don't worry, I ______ you a lift.",
+          "options": ["will give", "am giving", "give", "shall give"],
+          "ans": 0,
+          "explain": "Quyết định tức thì đưa ra ngay lúc nói -> dùng 'will give'."
+        }
+      ]
+    },
+    "unit_5": {
+      "title": "Unit 5: Work",
+      "grammar": [
+        {
+          "title": "Modal Verbs of Obligation & Permission: must, have to, can, mustn't",
+          "structure": "must / have to (bắt buộc) | can (được phép) | don't have to (không cần thiết) | mustn't (cấm)",
+          "explanation": "Quy định công sở, trách nhiệm công việc và quyền hạn của nhân viên.",
+          "examples": [
+            {
+              "en": "All employees have to wear their security badges inside the tech building.",
+              "vi": "Tất cả nhân viên phải đeo thẻ an ninh khi ở bên trong tòa nhà công nghệ."
+            },
+            {
+              "en": "You mustn't share confidential client documents with unauthorized third parties.",
+              "vi": "Bạn tuyệt đối không được chia sẻ tài liệu mật của khách hàng cho bên thứ ba không có thẩm quyền."
+            }
+          ],
+          "tip": "'Mustn't' diễn tả sự ngăn cấm nghiêm ngặt; 'Don't have to' chỉ là không bắt buộc (tùy chọn)."
+        },
+        {
+          "title": "Predictions with 'will' and 'might' (Dự đoán tương lai trong công việc)",
+          "structure": "S + will / won't + V-bare (chắc chắn xảy ra) | S + might / might not + V-bare (có thể xảy ra, không chắc)",
+          "explanation": "Dự báo tình hình kinh doanh, doanh thu và xu hướng nghề nghiệp.",
+          "examples": [
+            {
+              "en": "AI tools will definitely transform the creative graphic design industry.",
+              "vi": "Các công cụ AI chắc chắn sẽ biến đổi ngành thiết kế đồ họa sáng tạo."
+            },
+            {
+              "en": "We might expand our marketing campaign to Singapore if the quarterly budget permits.",
+              "vi": "Chúng tôi có thể mở rộng chiến dịch marketing sang Singapore nếu ngân sách quý cho phép."
+            }
+          ],
+          "tip": "Dùng 'might' khi mức độ chắc chắn chỉ khoảng 40-50%."
+        }
+      ],
+      "words": [
+        {
+          "en": "Professional qualification",
+          "ipa": "/prəˈfeʃ.ən.əl ˌkwɒl.ɪ.fɪˈkeɪ.ʃən/",
+          "vi": "Chứng chỉ, văn bằng chuyên môn",
+          "ex": "Gaining an international professional qualification advances your career prospect."
+        },
+        {
+          "en": "Handle pressure",
+          "ipa": "/ˈhæn.dəl ˈpreʃ.ər/",
+          "vi": "Chịu đựng và xử lý tốt áp lực công việc",
+          "ex": "Great project managers know how to handle pressure calmly during tight deadlines."
+        },
+        {
+          "en": "Meet targets",
+          "ipa": "/miːt ˈtɑː.ɡɪts/",
+          "vi": "Đạt chỉ tiêu doanh số/KPI",
+          "ex": "Our marketing team exceeded all quarterly performance targets."
+        },
+        {
+          "en": "Deal with clients",
+          "ipa": "/diːl wɪð ˈklaɪ.ənts/",
+          "vi": "Làm việc, thương thảo với khách hàng",
+          "ex": "She excels at dealing with demanding international corporate clients."
+        },
+        {
+          "en": "Work long hours",
+          "ipa": "/wɜːk lɒŋ ˈaʊəz/",
+          "vi": "Làm việc nhiều giờ liên tục",
+          "ex": "Doctors and tech founders often work long hours in the initial years."
+        },
+        {
+          "en": "Job satisfaction",
+          "ipa": "/dʒɒb ˌsæt.ɪsˈfæk.ʃən/",
+          "vi": "Sự hài lòng, thỏa mãn với công việc",
+          "ex": "Meaningful work and autonomy generate profound job satisfaction."
+        },
+        {
+          "en": "Career progression",
+          "ipa": "/kəˈrɪər prəˈɡreʃ.ən/",
+          "vi": "Lộ trình thăng tiến nghề nghiệp",
+          "ex": "The corporation offers clear career progression pathways for talented youth."
+        },
+        {
+          "en": "Flexible schedule",
+          "ipa": "/ˈflek.sə.bəl ˈʃedʒ.uːl/",
+          "vi": "Thời gian biểu làm việc linh hoạt",
+          "ex": "A flexible schedule enables working professionals to maintain life balance."
+        },
+        {
+          "en": "Mentorship",
+          "ipa": "/ˈmen.tɔː.ʃɪp/",
+          "vi": "Chương trình cố vấn, hướng dẫn",
+          "ex": "She joined a leadership mentorship program to refine her strategic mindset."
+        },
+        {
+          "en": "Collaborative culture",
+          "ipa": "/kəˈlæb.ər.ə.tɪv ˈkʌl.tʃər/",
+          "vi": "Văn hóa doanh nghiệp hợp tác",
+          "ex": "A collaborative culture encourages team members to share insights openly."
+        },
+        {
+          "en": "Solve problems",
+          "ipa": "/sɒlv ˈprɒb.ləmz/",
+          "vi": "Giải quyết vấn đề phát sinh",
+          "ex": "Critical thinking enables engineers to solve complex software problems."
+        },
+        {
+          "en": "High productivity",
+          "ipa": "/haɪ ˌprɒd.ʌkˈtɪv.ə.ti/",
+          "vi": "Năng suất làm việc cao",
+          "ex": "Deep focus blocks and minimal notifications ensure high daily productivity."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "You ______ disclose client passwords to anyone; it is strictly prohibited by law.",
+          "options": ["mustn't", "don't have to", "might not", "can"],
+          "ans": 0,
+          "explain": "'Mustn't' diễn tả điều cấm tuyệt đối theo quy định an toàn bảo mật."
+        },
+        {
+          "q": "Tomorrow is a national holiday, so employees ______ come to the office.",
+          "options": ["don't have to", "mustn't", "can't", "might"],
+          "ans": 0,
+          "explain": "'Don't have to' diễn tả không bắt buộc: 'không phải đến công ty'."
+        },
+        {
+          "q": "The product launch is next month, but we ______ postpone it if testing finds bugs.",
+          "options": ["might", "must", "will to", "have to"],
+          "ans": 0,
+          "explain": "'Might' diễn tả khả năng có thể xảy ra trong tương lai nhưng chưa hoàn toàn chắc chắn."
+        }
+      ]
+    },
+    "unit_6": {
+      "title": "Unit 6: Problems and Advice",
+      "grammar": [
+        {
+          "title": "Giving Advice: should, shouldn't & Imperatives (Lời khuyên & Lời chỉ dẫn)",
+          "structure": "S + should / shouldn't + V-bare | Imperative: V-bare / Don't + V-bare",
+          "explanation": "Đưa ra lời khuyên chân thành và gợi ý cách tháo gỡ khó khăn trong cuộc sống hoặc công việc.",
+          "examples": [
+            {
+              "en": "You look exhausted; you should take a couple of days off to recharge.",
+              "vi": "Trông bạn kiệt sức rồi; bạn nên nghỉ ngơi vài ngày để nạp lại năng lượng."
+            },
+            {
+              "en": "Don't bottle up your stress; talk to a trusted friend or mentor.",
+              "vi": "Đừng dồn nén căng thẳng một mình; hãy tâm sự với một người bạn tin cậy hoặc cố vấn."
+            }
+          ],
+          "tip": "Để lời khuyên mềm mại, nhã nhặn hơn: 'I think you should...' hoặc 'Why don't you...'."
+        },
+        {
+          "title": "Uses of 'to + infinitive' (Mục đích & Theo sau tính từ)",
+          "structure": "to-infinitive of purpose: V + to + V-bare | Adjective + to + V-bare",
+          "explanation": "Dùng 'to-V' để giải thích mục đích của hành động ('để làm gì') hoặc diễn tả cảm xúc/nhận định sau tính từ.",
+          "examples": [
+            {
+              "en": "I downloaded this mobile meditation app to reduce evening anxiety.",
+              "vi": "Tôi đã tải ứng dụng thiền này để giảm bớt lo âu vào buổi tối."
+            },
+            {
+              "en": "It is difficult to maintain perfect work-life balance during product launches.",
+              "vi": "Rất khó để duy trì sự cân bằng hoàn hảo giữa công việc và cuộc sống trong đợt ra mắt sản phẩm."
+            }
+          ],
+          "tip": "Cấu trúc 'in order to + V' cũng mang nghĩa tương đương với 'to + V' nhưng trang trọng hơn."
+        }
+      ],
+      "words": [
+        {
+          "en": "Dilemma",
+          "ipa": "/daɪˈlem.ə/",
+          "vi": "Tình huống tiến thoái lưỡng nan",
+          "ex": "She faced an ethical dilemma between career advancement and personal integrity."
+        },
+        {
+          "en": "Overcome obstacles",
+          "ipa": "/ˌəʊ.vəˈkʌm ˈɒb.stə.kəlz/",
+          "vi": "Vượt qua các chướng ngại vật, thử thách",
+          "ex": "Resilience enables professionals to overcome unexpected career obstacles."
+        },
+        {
+          "en": "Seek advice",
+          "ipa": "/siːk ədˈvaɪs/",
+          "vi": "Tìm kiếm lời khuyên từ người có kinh nghiệm",
+          "ex": "When facing burnout, it is wise to seek advice from an experienced psychologist."
+        },
+        {
+          "en": "Burnout",
+          "ipa": "/ˈbɜːn.aʊt/",
+          "vi": "Hội chứng kiệt sức vì công việc",
+          "ex": "Working twelve hours a day without holidays is a direct path to mental burnout."
+        },
+        {
+          "en": "Cope with stress",
+          "ipa": "/kəʊp wɪð stres/",
+          "vi": "Ứng phó và vượt qua căng thẳng",
+          "ex": "Yoga, walking in parks, and herbal teas help her cope with daily stress."
+        },
+        {
+          "en": "Rely on",
+          "ipa": "/rɪˈlaɪ ɒn/",
+          "vi": "Trông cậy, tin tưởng vào",
+          "ex": "A cohesive team can rely on each member during critical phases."
+        },
+        {
+          "en": "Frustrated",
+          "ipa": "/frʌsˈtreɪ.tɪd/",
+          "vi": "Cảm giác bực bội, bất lực",
+          "ex": "He felt frustrated when his software code kept crashing repeatedly."
+        },
+        {
+          "en": "Encouraging",
+          "ipa": "/ɪnˈkʌr.ɪ.dʒɪŋ/",
+          "vi": "Mang tính khích lệ, động viên",
+          "ex": "Her mentor gave her encouraging feedback that boosted her confidence."
+        },
+        {
+          "en": "Constructive criticism",
+          "ipa": "/kənˈstrʌk.tɪv ˈkrɪt.ɪ.sɪ.zəm/",
+          "vi": "Lời phê bình mang tính xây dựng",
+          "ex": "Mature specialists welcome constructive criticism as a tool for rapid growth."
+        },
+        {
+          "en": "Find a solution",
+          "ipa": "/faɪnd ə səˈluː.ʃən/",
+          "vi": "Tìm ra giải pháp thỏa đáng",
+          "ex": "Through collective brainstorming, they found an elegant solution to the dispute."
+        },
+        {
+          "en": "Sympathize",
+          "ipa": "/ˈsɪm.pə.θaɪz/",
+          "vi": "Thấu hiểu, đồng cảm",
+          "ex": "I can deeply sympathize with the challenges of launching a startup."
+        },
+        {
+          "en": "Recharge batteries",
+          "ipa": "/riːˈtʃɑːdʒ ˈbæt.ər.iz/",
+          "vi": "Nghỉ ngơi nạp lại năng lượng",
+          "ex": "A peaceful weekend retreat in nature is the best way to recharge your batteries."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "If you are suffering from chronic eye fatigue, you ______ reduce screen time.",
+          "options": ["should", "would", "shall", "are"],
+          "ans": 0,
+          "explain": "'Should' dùng để đưa ra lời khuyên y tế/sức khỏe: 'bạn nên giảm thời gian nhìn màn hình'."
+        },
+        {
+          "q": "She enrolled in the executive English masterclass ______ improve her negotiation skills.",
+          "options": ["to", "for", "so", "that"],
+          "ans": 0,
+          "explain": "'To + V-bare' dùng để chỉ mục đích: 'để nâng cao kỹ năng đàm phán'."
+        },
+        {
+          "q": "It is important ______ calm when resolving misunderstandings with teammates.",
+          "options": ["to stay", "staying", "stay", "stayed"],
+          "ans": 0,
+          "explain": "Cấu trúc sau tính từ: 'It is + adjective + to + V-bare' -> 'to stay'."
+        }
+      ]
+    },
+    "unit_7": {
+      "title": "Unit 7: Changes",
+      "grammar": [
+        {
+          "title": "Comparatives & Superlatives: Advanced Forms (So sánh nâng cao)",
+          "structure": "much / far + more + Adj | not as + Adj + as | the most + Adj",
+          "explanation": "Nhấn mạnh mức độ khác biệt lớn giữa phong cách sống hiện tại và quá khứ.",
+          "examples": [
+            {
+              "en": "Remote working is far more convenient than commuting two hours daily.",
+              "vi": "Làm việc từ xa thuận tiện hơn nhiều so với việc phải đi lại hai tiếng mỗi ngày."
+            },
+            {
+              "en": "My current lifestyle is not as stressful as it was three years ago.",
+              "vi": "Lối sống hiện tại của tôi không còn căng thẳng như cách đây ba năm nữa."
+            }
+          ],
+          "tip": "Dùng 'much' hoặc 'far' trước tính từ so sánh hơn để nhấn mạnh sự cách biệt vượt trội."
+        },
+        {
+          "title": "Used to (Thói quen hoặc tình trạng trong quá khứ)",
+          "structure": "S + used to + V-bare | S + didn't use to + V-bare | Did + S + use to + V-bare?",
+          "explanation": "Diễn tả hành động hoặc trạng thái thường xảy ra trong quá khứ nhưng hiện tại không còn nữa.",
+          "examples": [
+            {
+              "en": "I used to drink five cups of black coffee a day, but now I prefer herbal tea.",
+              "vi": "Tôi từng có thói quen uống năm tách cà phê đen mỗi ngày, nhưng giờ tôi thích trà thảo mộc hơn."
+            },
+            {
+              "en": "Did you use to live in Hanoi before relocating to Da Nang?",
+              "vi": "Trước khi chuyển đến Đà Nẵng bạn có từng sống ở Hà Nội không?"
+            }
+          ],
+          "tip": "Trong câu phủ định và nghi vấn, 'used' bỏ chữ 'd' ➔ 'didn't use to' / 'Did you use to'."
+        }
+      ],
+      "words": [
+        {
+          "en": "Transformation",
+          "ipa": "/ˌtræns.fəˈmeɪ.ʃən/",
+          "vi": "Sự chuyển mình, biến đổi tích cực",
+          "ex": "Her career underwent an extraordinary transformation after learning digital marketing."
+        },
+        {
+          "en": "Get promoted",
+          "ipa": "/ɡet prəˈməʊ.tɪd/",
+          "vi": "Được thăng chức, lên vị trí cao hơn",
+          "ex": "Gemma worked hard and got promoted to senior creative director."
+        },
+        {
+          "en": "Get used to",
+          "ipa": "/ɡet juːst tuː/",
+          "vi": "Dần quen với môi trường/thói quen mới",
+          "ex": "It took her several weeks to get used to living in a vibrant coastal city."
+        },
+        {
+          "en": "Healthy habits",
+          "ipa": "/ˈhel.θi ˈhæb.ɪts/",
+          "vi": "Thói quen sống lành mạnh",
+          "ex": "Adopting healthy habits transformed her energy and physical appearance."
+        },
+        {
+          "en": "Relocate",
+          "ipa": "/ˌriː.ləʊˈkeɪt/",
+          "vi": "Chuyển địa điểm sinh sống/làm việc",
+          "ex": "Many technology specialists decide to relocate to Da Nang for a peaceful lifestyle."
+        },
+        {
+          "en": "Break a bad habit",
+          "ipa": "/breɪk ə bæd ˈhæb.ɪt/",
+          "vi": "Từ bỏ một thói quen xấu",
+          "ex": "Breaking the bad habit of late-night screen time improved her sleep quality."
+        },
+        {
+          "en": "Self-discipline",
+          "ipa": "/ˌselfˈdɪs.ə.plɪn/",
+          "vi": "Kỷ luật tự giác bản thân",
+          "ex": "Consistent daily self-discipline is the secret to mastering fluent English."
+        },
+        {
+          "en": "Life transition",
+          "ipa": "/laɪf trænˈzɪʃ.ən/",
+          "vi": "Giai đoạn chuyển giao cuộc đời",
+          "ex": "Turning twenty-six marked a meaningful life transition toward maturity."
+        },
+        {
+          "en": "Adaptable",
+          "ipa": "/əˈdæp.tə.bəl/",
+          "vi": "Có khả năng thích ứng cao",
+          "ex": "Being adaptable allows modern professionals to thrive in dynamic markets."
+        },
+        {
+          "en": "Upgrade skills",
+          "ipa": "/ʌpˈɡreɪd skɪlz/",
+          "vi": "Nâng cấp kỹ năng chuyên môn",
+          "ex": "Continuously upgrading your skills protects your relevance in the AI era."
+        },
+        {
+          "en": "Mindset shift",
+          "ipa": "/ˈmaɪnd.set ʃɪft/",
+          "vi": "Sự thay đổi tư duy sâu sắc",
+          "ex": "A positive mindset shift helped her see challenges as stepping stones."
+        },
+        {
+          "en": "Personal growth",
+          "ipa": "/ˈpɜː.sən.əl ɡrəʊθ/",
+          "vi": "Sự phát triển hoàn thiện bản thân",
+          "ex": "Investing in books and workshops accelerates your personal growth."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Working from home is ______ more relaxed than commuting across the city at rush hour.",
+          "options": ["far", "very", "more", "as"],
+          "ans": 0,
+          "explain": "Đứng trước tính từ so sánh hơn 'more relaxed', ta dùng 'far' hoặc 'much' để nhấn mạnh mức độ vượt trội."
+        },
+        {
+          "q": "Gemma ______ to stay up past midnight, but now she sleeps at 10 PM.",
+          "options": ["used", "uses", "use", "is used"],
+          "ans": 0,
+          "explain": "'Used to + V-bare' diễn tả thói quen từng có trong quá khứ nay không còn nữa."
+        },
+        {
+          "q": "Did you ______ use to commute by bicycle when you were at university?",
+          "options": ["use", "used", "uses", "using"],
+          "ans": 0,
+          "explain": "Trong câu hỏi có trợ động từ 'Did', ta dùng dạng nguyên thể 'Did you use to'."
+        }
+      ]
+    },
+    "unit_8": {
+      "title": "Unit 8: Culture",
+      "grammar": [
+        {
+          "title": "Passive Voice: Present & Past Simple (Câu bị động thì Hiện tại & Quá khứ đơn)",
+          "structure": "Present Passive: S + am/is/are + V3/ed | Past Passive: S + was/were + V3/ed",
+          "explanation": "Nhấn mạnh vào đối tượng chịu tác động hoặc tác phẩm văn hóa nghệ thuật hơn là người thực hiện.",
+          "examples": [
+            {
+              "en": "This award-winning novel was written by a contemporary Vietnamese author.",
+              "vi": "Cuốn tiểu thuyết đoạt giải này được viết bởi một tác giả đương đại người Việt."
+            },
+            {
+              "en": "Over two thousand art pieces are exhibited in the city museum every season.",
+              "vi": "Hơn hai ngàn tác phẩm nghệ thuật được trưng bày trong bảo tàng thành phố mỗi mùa."
+            }
+          ],
+          "tip": "Khi muốn nêu rõ tác giả hay người thực hiện hành động, ta thêm 'by + tác nhân' ở cuối câu."
+        },
+        {
+          "title": "Present Perfect with 'for' and 'since' (Khoảng thời gian & Mốc thời gian)",
+          "structure": "for + duration (for five years, for two months) | since + starting point (since 2018, since last week)",
+          "explanation": "Diễn tả sự gắn bó với một nét văn hóa, đam mê nghệ thuật bắt đầu trong quá khứ và vẫn đang tiếp diễn ở hiện tại.",
+          "examples": [
+            {
+              "en": "She has played the classical violin for twelve years.",
+              "vi": "Cô ấy đã chơi đàn vĩ cầm cổ điển được 12 năm rồi."
+            },
+            {
+              "en": "The heritage festival has taken place in this town since the seventeenth century.",
+              "vi": "Lễ hội di sản đã diễn ra tại thị trấn này từ thế kỷ thứ mười bảy."
+            }
+          ],
+          "tip": "'Since' luôn đi với mốc thời điểm cụ thể; 'For' luôn đi với một khoảng thời gian đếm được."
+        }
+      ],
+      "words": [
+        {
+          "en": "Masterpiece",
+          "ipa": "/ˈmɑː.stə.piːs/",
+          "vi": "Kiệt tác nghệ thuật đỉnh cao",
+          "ex": "The lacquer painting is regarded as a national artistic masterpiece."
+        },
+        {
+          "en": "Sculpture",
+          "ipa": "/ˈskʌlp.tʃər/",
+          "vi": "Nghệ thuật điêu khắc, bức tượng",
+          "ex": "Contemporary marble sculptures adorn the spacious art gallery courtyard."
+        },
+        {
+          "en": "Classical music",
+          "ipa": "/ˌklæs.ɪ.kəl ˈmjuː.zɪk/",
+          "vi": "Âm nhạc cổ điển hàn lâm",
+          "ex": "Listening to Mozart's classical music fosters deep concentration and tranquility."
+        },
+        {
+          "en": "Contemporary art",
+          "ipa": "/kənˈtem.pər.ər.i ɑːt/",
+          "vi": "Nghệ thuật đương đại",
+          "ex": "The exhibition explores bold contemporary art created by emerging painters."
+        },
+        {
+          "en": "Tradition",
+          "ipa": "/trəˈdɪʃ.ən/",
+          "vi": "Truyền thống văn hóa tốt đẹp",
+          "ex": "Gathering around the dinner table on the eve of Tet is a cherished family tradition."
+        },
+        {
+          "en": "Curator",
+          "ipa": "/kjʊəˈreɪ.tər/",
+          "vi": "Người phụ trách giám tuyển triển lãm",
+          "ex": "The museum curator delivered an enlightening presentation about ancient ceramics."
+        },
+        {
+          "en": "Heritage festival",
+          "ipa": "/ˈher.ɪ.tɪdʒ ˈfes.tɪ.vəl/",
+          "vi": "Lễ hội di sản truyền thống",
+          "ex": "The Lantern Heritage Festival in Hoi An attracts travelers from all across the globe."
+        },
+        {
+          "en": "Acoustic concert",
+          "ipa": "/əˈkuː.stɪk ˈkɒn.sət/",
+          "vi": "Đêm nhạc mộc acoustic",
+          "ex": "We spent a romantic evening listening to an intimate acoustic concert by the sea."
+        },
+        {
+          "en": "Poem",
+          "ipa": "/ˈpəʊ.ɪm/",
+          "vi": "Bài thơ văn",
+          "ex": "She translated a renowned classical poem into elegant English verse."
+        },
+        {
+          "en": "Cultural identity",
+          "ipa": "/ˈkʌl.tʃər.əl aɪˈden.tə.ti/",
+          "vi": "Bản sắc văn hóa dân tộc",
+          "ex": "Preserving indigenous cultural identity is crucial in an interconnected world."
+        },
+        {
+          "en": "Folk music",
+          "ipa": "/fəʊk ˈmjuː.zɪk/",
+          "vi": "Âm nhạc dân gian, làn điệu dân ca",
+          "ex": "Traditional Vietnamese folk music resonates with profound pastoral lyricism."
+        },
+        {
+          "en": "Inspiring",
+          "ipa": "/ɪnˈspaɪə.rɪŋ/",
+          "vi": "Truyền cảm hứng sâu sắc",
+          "ex": "Visiting the historical museum was a deeply inspiring cultural experience."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "The iconic Golden Bridge in Da Nang ______ by talented Vietnamese architects.",
+          "options": ["was designed", "is designed", "designed", "was designing"],
+          "ans": 0,
+          "explain": "Hành động thiết kế xảy ra trong quá khứ, chủ ngữ chịu tác động -> dùng Quá khứ đơn bị động: 'was designed'."
+        },
+        {
+          "q": "She has lived in this historic neighborhood ______ five years.",
+          "options": ["for", "since", "ago", "during"],
+          "ans": 0,
+          "explain": "'Five years' là một khoảng thời gian đếm được -> dùng 'for'."
+        },
+        {
+          "q": "The international film awards ______ broadcast live across seventy countries every autumn.",
+          "options": ["are", "is", "was", "were"],
+          "ans": 0,
+          "explain": "Chủ ngữ số nhiều 'film awards', diễn ra lặp lại hàng năm ('every autumn') -> bị động Hiện tại đơn: 'are broadcast'."
+        }
+      ]
+    },
+    "unit_9": {
+      "title": "Unit 9: Achievement",
+      "grammar": [
+        {
+          "title": "First Conditional (Câu điều kiện loại 1: Có thể xảy ra ở tương lai)",
+          "structure": "If + S + Present Simple, S + will / can / might + V-bare",
+          "explanation": "Diễn tả điều kiện có thật hoặc rất có khả năng xảy ra ở hiện tại hoặc tương lai và kết quả của nó.",
+          "examples": [
+            {
+              "en": "If you pass the international certificate exam, you will qualify for a senior promotion.",
+              "vi": "Nếu bạn vượt qua kỳ thi chứng chỉ quốc tế, bạn sẽ đủ điều kiện để được thăng chức lên vị trí cấp cao."
+            },
+            {
+              "en": "If we launch the new app on schedule, we can capture substantial market share.",
+              "vi": "Nếu chúng ta ra mắt ứng dụng mới đúng lịch trình, chúng ta có thể chiếm lĩnh thị phần đáng kể."
+            }
+          ],
+          "tip": "Mệnh đề 'If' dùng Hiện tại đơn, TUYỆT ĐỐI không dùng 'will' trong mệnh đề chứa 'If'."
+        },
+        {
+          "title": "Verb Patterns: Verb + to-infinitive vs. Verb + -ing",
+          "structure": "decide / hope / plan / promise + to V | enjoy / avoid / consider / finish + V-ing",
+          "explanation": "Các động từ chỉ ý chí, quyết định (decide, hope, manage) đi với 'to V'; các động từ chỉ cảm xúc, sự hoàn tất (enjoy, avoid, practice) đi với 'V-ing'.",
+          "examples": [
+            {
+              "en": "She decided to establish her own creative branding consultancy.",
+              "vi": "Cô ấy đã quyết định thành lập công ty tư vấn thương hiệu sáng tạo của riêng mình."
+            },
+            {
+              "en": "He enjoys mentoring junior designers on visual typography.",
+              "vi": "Anh ấy rất thích hướng dẫn các nhà thiết kế trẻ về nghệ thuật chữ thị giác."
+            }
+          ],
+          "tip": "Học theo cụm từ để phản xạ tự nhiên: decide to do, avoid doing, manage to do."
+        }
+      ],
+      "words": [
+        {
+          "en": "Accomplishment",
+          "ipa": "/əˈkʌm.plɪʃ.mənt/",
+          "vi": "Thành tựu đáng tự hào",
+          "ex": "Publishing her first design monograph was a stellar professional accomplishment."
+        },
+        {
+          "en": "Achieve a goal",
+          "ipa": "/əˈtʃiːv ə ɡəʊl/",
+          "vi": "Đạt được mục tiêu đã đề ra",
+          "ex": "With persistent dedication, Gemma achieved every single career goal she mapped out."
+        },
+        {
+          "en": "Certificate",
+          "ipa": "/səˈtɪf.ɪ.kət/",
+          "vi": "Chứng chỉ chuyên nghiệp",
+          "ex": "She proudly received an advanced Cambridge English language certificate."
+        },
+        {
+          "en": "Degree",
+          "ipa": "/dɪˈɡriː/",
+          "vi": "Bằng cử nhân, bằng đại học",
+          "ex": "He holds a bachelor's degree in architectural design and urban planning."
+        },
+        {
+          "en": "Determination",
+          "ipa": "/dɪˌtɜː.mɪˈneɪ.ʃən/",
+          "vi": "Ý chí quyết tâm kiên định",
+          "ex": "Her unshakeable determination enabled her to overcome early startup hurdles."
+        },
+        {
+          "en": "Ambitious",
+          "ipa": "/æmˈbɪʃ.əs/",
+          "vi": "Có hoài bão lớn, nhiều tham vọng tốt đẹp",
+          "ex": "The team formulated an ambitious strategy to expand regionally."
+        },
+        {
+          "en": "Master a skill",
+          "ipa": "/ˈmɑː.stər ə skɪl/",
+          "vi": "Làm chủ, thành thạo một kỹ năng",
+          "ex": "It requires deliberate daily practice to master fluent public speaking."
+        },
+        {
+          "en": "Overcome failure",
+          "ipa": "/ˌəʊ.vəˈkʌm ˈfeɪ.ljər/",
+          "vi": "Vượt qua thất bại bước đầu",
+          "ex": "Every successful entrepreneur knows that overcoming failure is the path to greatness."
+        },
+        {
+          "en": "Scholarship",
+          "ipa": "/ˈskɒl.ə.ʃɪp/",
+          "vi": "Học bổng du học / nghiên cứu",
+          "ex": "She won a prestigious merit-based scholarship for her master's studies abroad."
+        },
+        {
+          "en": "Breakthrough",
+          "ipa": "/ˈbreɪk.θruː/",
+          "vi": "Bước đột phá ấn tượng",
+          "ex": "The creative agency achieved a major breakthrough with their AI design tool."
+        },
+        {
+          "en": "Praise",
+          "ipa": "/preɪz/",
+          "vi": "Lời tán dương, khen ngợi",
+          "ex": "The CEO offered heartfelt praise to the marketing team for their record campaign."
+        },
+        {
+          "en": "Hard-earned success",
+          "ipa": "/ˌhɑːdˈɜːnd səkˈses/",
+          "vi": "Thành công xứng đáng đổi bằng mồ hôi công sức",
+          "ex": "Enjoying the fruits of hard-earned success inspires everyone around her."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "If Gemma ______ this advanced course, she will earn a Cambridge certification.",
+          "options": ["completes", "will complete", "completed", "complete"],
+          "ans": 0,
+          "explain": "Trong mệnh đề 'If' của câu điều kiện loại 1, động từ chia ở thì Hiện tại đơn: 'completes'."
+        },
+        {
+          "q": "She decided ______ her own creative studio after five years in the corporate world.",
+          "options": ["to found", "founding", "found", "to founding"],
+          "ans": 0,
+          "explain": "Sau động từ 'decided' là 'to-infinitive' -> 'to found'."
+        },
+        {
+          "q": "They avoided ______ unnecessary expenses during the economic slowdown.",
+          "options": ["incurring", "to incur", "incur", "incurred"],
+          "ans": 0,
+          "explain": "Sau động từ 'avoided' luôn là dạng V-ing -> 'incurring'."
+        }
+      ]
+    },
+    "unit_10": {
+      "title": "Unit 10: Values",
+      "grammar": [
+        {
+          "title": "Second Conditional (Câu điều kiện loại 2: Giả định trái với hiện tại)",
+          "structure": "If + S + Past Simple (were), S + would / could + V-bare",
+          "explanation": "Dùng để tưởng tượng về một tình huống không có thật hoặc khó xảy ra ở hiện tại và hệ quả giả định của nó.",
+          "examples": [
+            {
+              "en": "If I had six months of free time, I would travel and document indigenous cultures.",
+              "vi": "Nếu tôi có sáu tháng thảnh thơi, tôi sẽ đi du lịch và ghi chép về các nền văn hóa bản địa."
+            },
+            {
+              "en": "If you found a wallet full of cash on the street, what would you do?",
+              "vi": "Nếu bạn nhặt được một chiếc ví đầy tiền rơi trên đường, bạn sẽ làm gì?"
+            }
+          ],
+          "tip": "Với to be trong mệnh đề If của câu điều kiện 2, người bản xứ chuẩn mực ưu tiên dùng 'were' cho tất cả các ngôi (If I were you...)."
+        },
+        {
+          "title": "Quantifiers: too much, too many, (not) enough, plenty of",
+          "structure": "too much + Uncountable | too many + Plural Countable | (not) enough + Noun | Adj + enough",
+          "explanation": "Chỉ mức độ thừa thãi, thiếu hụt hoặc vừa vặn của các giá trị vật chất và thời gian.",
+          "examples": [
+            {
+              "en": "Consumerism causes too much plastic waste in modern metropolitan areas.",
+              "vi": "Chủ nghĩa tiêu dùng gây ra quá nhiều rác thải nhựa ở các đô thị hiện đại."
+            },
+            {
+              "en": "Do we have enough ethical guidelines to regulate generative AI tools?",
+              "vi": "Chúng ta đã có đủ các quy tắc đạo đức để quản lý các công cụ AI tạo sinh chưa?"
+            }
+          ],
+          "tip": "'Enough' đứng TRƯỚC danh từ (enough time), nhưng đứng SAU tính từ (smart enough, brave enough)."
+        }
+      ],
+      "words": [
+        {
+          "en": "Integrity",
+          "ipa": "/ɪnˈteɡ.rə.ti/",
+          "vi": "Sự chính trực, liêm chính",
+          "ex": "Personal integrity is the foundation of enduring trust in business and friendship."
+        },
+        {
+          "en": "Honesty",
+          "ipa": "/ˈɒn.ə.sti/",
+          "vi": "Tính trung thực, thật thà",
+          "ex": "Clients value honesty above flashy marketing slogans."
+        },
+        {
+          "en": "Fairness",
+          "ipa": "/ˈfeə.nəs/",
+          "vi": "Sự công bằng, minh bạch",
+          "ex": "The management promotes fairness in bonuses and career promotions."
+        },
+        {
+          "en": "Make a complaint",
+          "ipa": "/meɪk ə kəmˈpleɪnt/",
+          "vi": "Khiếu nại, phản ánh khi dịch vụ có lỗi",
+          "ex": "The customer made a polite complaint about the defective smartphone screen."
+        },
+        {
+          "en": "Resolve a dispute",
+          "ipa": "/rɪˈzɒlv ə dɪˈspjuːt/",
+          "vi": "Giải quyết tranh chấp thỏa đáng",
+          "ex": "Mediation is the most constructive way to resolve contract disputes."
+        },
+        {
+          "en": "Ethical consumer",
+          "ipa": "/ˈeθ.ɪ.kəl kənˈsjuː.mər/",
+          "vi": "Người tiêu dùng có đạo đức, chuộng sản phẩm sạch",
+          "ex": "Ethical consumers boycott products made with unfair labor practices."
+        },
+        {
+          "en": "Eco-friendly",
+          "ipa": "/ˌiː.kəʊˈfrend.li/",
+          "vi": "Thân thiện với môi trường sinh thái",
+          "ex": "Our brand packages all items in biodegradable, eco-friendly paper."
+        },
+        {
+          "en": "Core values",
+          "ipa": "/kɔːr ˈvæl.juːz/",
+          "vi": "Các giá trị cốt lõi",
+          "ex": "Empathy, innovation, and transparency are the company's core values."
+        },
+        {
+          "en": "Social responsibility",
+          "ipa": "/ˌsəʊ.ʃəl rɪˌspɒn.sɪˈbɪl.ə.ti/",
+          "vi": "Trách nhiệm đối với xã hội",
+          "ex": "Modern corporations must embrace environmental and social responsibility."
+        },
+        {
+          "en": "Keep one's word",
+          "ipa": "/kiːp wʌnz wɜːd/",
+          "vi": "Giữ đúng lời hứa, chữ tín",
+          "ex": "A reputable partner always keeps her word regardless of market fluctuations."
+        },
+        {
+          "en": "Generosity",
+          "ipa": "/ˌdʒen.əˈrɒs.ə.ti/",
+          "vi": "Lòng hào hiệp, sự rộng lượng",
+          "ex": "Her quiet generosity supports dozens of disadvantaged students each year."
+        },
+        {
+          "en": "Stand up for",
+          "ipa": "/stænd ʌp fɔːr/",
+          "vi": "Đứng lên bảo vệ lẽ phải",
+          "ex": "Leaders must stand up for justice and protect the vulnerable in their teams."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "If I ______ the CEO of this company, I would ban unpaid overtime work.",
+          "options": ["were", "am", "was to be", "have been"],
+          "ans": 0,
+          "explain": "Trong câu điều kiện loại 2 giả định, động từ to be chia là 'were' cho tất cả các ngôi."
+        },
+        {
+          "q": "What ______ you do if someone gave you constructive criticism in front of the team?",
+          "options": ["would", "will", "did", "shall"],
+          "ans": 0,
+          "explain": "Mệnh đề If có 'gave' (quá khứ) -> mệnh đề chính của câu điều kiện 2 dùng 'would'."
+        },
+        {
+          "q": "There is ______ plastic packaging in single-use fast food containers.",
+          "options": ["too much", "too many", "too", "enough of"],
+          "ans": 0,
+          "explain": "'Plastic packaging' là danh từ không đếm được -> dùng 'too much'."
+        }
+      ]
+    },
+    "unit_11": {
+      "title": "Unit 11: Discovery and Invention",
+      "grammar": [
+        {
+          "title": "Defining Relative Clauses (Mệnh đề quan hệ xác định: who, which, that, where, whose)",
+          "structure": "who/that (người) | which/that (vật) | where (nơi chốn) | whose (sở hữu)",
+          "explanation": "Cung cấp thông tin thiết yếu để định danh chính xác người, phát minh hoặc địa điểm được nhắc tới.",
+          "examples": [
+            {
+              "en": "An entrepreneur is someone who turns creative innovations into viable businesses.",
+              "vi": "Doanh nhân là người biến những đổi mới sáng tạo thành doanh nghiệp phát triển bền vững."
+            },
+            {
+              "en": "Silicon Valley is the technology hub where groundbreaking software startups are born.",
+              "vi": "Thung lũng Silicon là trung tâm công nghệ nơi các công ty khởi nghiệp phần mềm đột phá ra đời."
+            }
+          ],
+          "tip": "Mệnh đề quan hệ xác định KHÔNG dùng dấu phẩy ngăn cách với mệnh đề chính."
+        },
+        {
+          "title": "Articles: a/an, the, and Zero Article (Mạo từ trong tiếng Anh)",
+          "structure": "a/an: Mentioned for the first time, singular countable | the: Specific, unique, known | Zero article: Plural / uncountable in general",
+          "explanation": "Quy tắc dùng mạo từ khi nói về phát minh khoa học, công nghệ số và chân lý khoa học.",
+          "examples": [
+            {
+              "en": "The internet revolutionized the way human beings share information.",
+              "vi": "Internet đã cách mạng hóa cách loài người chia sẻ thông tin."
+            },
+            {
+              "en": "Artificial intelligence creates new opportunities for modern creators.",
+              "vi": "Trí tuệ nhân tạo (nói chung - không mạo từ) tạo ra những cơ hội mới cho các nhà sáng tạo hiện đại."
+            }
+          ],
+          "tip": "Khi nói về một phát minh công nghệ cụ thể dạng danh từ chung, ta dùng 'the': the internet, the telephone."
+        }
+      ],
+      "words": [
+        {
+          "en": "Breakthrough innovation",
+          "ipa": "/ˈbreɪk.θruː ˌɪn.əˈveɪ.ʃən/",
+          "vi": "Đổi mới đột phá, phát minh mang tính cách mạng",
+          "ex": "The new quantum chip represents a breakthrough innovation in high-speed computing."
+        },
+        {
+          "en": "Artificial intelligence",
+          "ipa": "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/",
+          "vi": "Trí tuệ nhân tạo (AI)",
+          "ex": "Artificial intelligence automates repetitive tasks so people can focus on strategic creativity."
+        },
+        {
+          "en": "Patent",
+          "ipa": "/ˈpeɪ.tənt/",
+          "vi": "Bằng sáng chế, văn bằng bảo hộ phát minh",
+          "ex": "The tech firm registered a global patent for its neural voice synthesizer."
+        },
+        {
+          "en": "Scientific discovery",
+          "ipa": "/ˌsaɪənˈtɪf.ɪk dɪˈskʌv.ər.i/",
+          "vi": "Phát hiện khoa học mang tính lịch sử",
+          "ex": "The scientific discovery of penicillin transformed modern medical healthcare."
+        },
+        {
+          "en": "User-friendly interface",
+          "ipa": "/ˌjuː.zəˈfrend.li ˈɪn.tə.feɪs/",
+          "vi": "Giao diện thân thiện, dễ sử dụng",
+          "ex": "The mobile app features a sleek, user-friendly interface suitable for everyone."
+        },
+        {
+          "en": "Cutting-edge technology",
+          "ipa": "/ˌkʌt.ɪŋˈedʒ tekˈnɒl.ə.dʒi/",
+          "vi": "Công nghệ tiên tiến, dẫn đầu xu hướng",
+          "ex": "Our design studio deploys cutting-edge technology for interactive 3D rendering."
+        },
+        {
+          "en": "Touchscreen",
+          "ipa": "/ˈtʌtʃ.skriːn/",
+          "vi": "Màn hình cảm ứng",
+          "ex": "Tablets equipped with responsive touchscreens replaced bulky paper dossiers."
+        },
+        {
+          "en": "By chance",
+          "ipa": "/baɪ tʃɑːns/",
+          "vi": "Tình cờ, ngẫu nhiên khám phá ra",
+          "ex": "Many life-saving antibiotic substances were discovered completely by chance."
+        },
+        {
+          "en": "Revolutionize",
+          "ipa": "/ˌrev.əˈluː.ʃən.aɪz/",
+          "vi": "Cách mạng hóa toàn bộ ngành nghề",
+          "ex": "Electric vehicles revolutionize urban mobility and reduce harmful emissions."
+        },
+        {
+          "en": "Prototype",
+          "ipa": "/ˈprəʊ.tə.taɪp/",
+          "vi": "Mô hình sản phẩm mẫu ban đầu",
+          "ex": "Engineers constructed a working prototype to validate user feedback."
+        },
+        {
+          "en": "High-tech device",
+          "ipa": "/ˌhaɪˈtek dɪˈvaɪs/",
+          "vi": "Thiết bị công nghệ cao",
+          "ex": "Smartwatches are high-tech devices that monitor your heart rate and sleep."
+        },
+        {
+          "en": "Unexpectedly",
+          "ipa": "/ˌʌn.ɪkˈspek.tɪd.li/",
+          "vi": "Một cách bất ngờ, ngoài mong đợi",
+          "ex": "The experimental algorithm unexpectedly solved the routing equation in seconds."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "Alexander Graham Bell was the Scottish inventor ______ invented the telephone.",
+          "options": ["who", "which", "where", "whose"],
+          "ans": 0,
+          "explain": "Đại từ quan hệ thay thế cho danh từ chỉ người ('the Scottish inventor') làm chủ ngữ là 'who'."
+        },
+        {
+          "q": "This is the co-working space ______ we launched our initial software startup.",
+          "options": ["where", "which", "that", "whose"],
+          "ans": 0,
+          "explain": "Đại từ quan hệ chỉ nơi chốn ('co-working space') -> dùng 'where'."
+        },
+        {
+          "q": "______ technology is evolving faster than ever in the twenty-first century.",
+          "options": ["(No article)", "The", "A", "An"],
+          "ans": 0,
+          "explain": "Khi nói về 'công nghệ' nói chung mang tính trừu tượng, ta không dùng mạo từ (zero article)."
+        }
+      ]
+    },
+    "unit_12": {
+      "title": "Unit 12: Characters",
+      "grammar": [
+        {
+          "title": "Past Perfect Simple (Thì Quá khứ hoàn thành: had + V3/ed)",
+          "structure": "S + had + V3/ed (hành động xảy ra trước) + BEFORE / WHEN + Past Simple (hành động xảy ra sau)",
+          "explanation": "Diễn tả một hành động đã hoàn tất trong quá khứ trước một thời điểm hoặc một hành động khác trong quá khứ.",
+          "examples": [
+            {
+              "en": "When Gemma arrived at the airport terminal, the flight had already departed.",
+              "vi": "Khi Gemma đến nhà ga sân bay thì chuyến bay đã cất cánh từ trước đó rồi."
+            },
+            {
+              "en": "She had already gained extensive design experience before she started teaching English.",
+              "vi": "Cô ấy đã tích lũy được nhiều kinh nghiệm thiết kế sâu rộng trước khi bắt đầu dạy tiếng Anh."
+            }
+          ],
+          "tip": "Hành động nào xảy ra TRƯỚC ➔ dùng Quá khứ hoàn thành (had + V3); hành động nào xảy ra SAU ➔ dùng Quá khứ đơn (V2/ed)."
+        },
+        {
+          "title": "Reported Speech: Statements (Câu tường thuật gián tiếp)",
+          "structure": "Direct: 'I love designing.' ➔ Reported: She said that she loved designing (lùi thì).",
+          "explanation": "Tường thuật lại lời nói, nhận xét hoặc quan điểm của người khác trong các cuộc họp và giao tiếp thường ngày.",
+          "examples": [
+            {
+              "en": "Direct: 'I am learning business English.' ➔ She told me she was learning business English.",
+              "vi": "Trực tiếp: 'Tôi đang học tiếng Anh thương mại.' ➔ Gián tiếp: Cô ấy bảo tôi rằng cô ấy đang học tiếng Anh thương mại."
+            },
+            {
+              "en": "Direct: 'We will support your initiative.' ➔ They promised that they would support our initiative.",
+              "vi": "Trực tiếp: 'Chúng tôi sẽ ủng hộ sáng kiến của bạn.' ➔ Gián tiếp: Họ hứa rằng họ sẽ ủng hộ sáng kiến của chúng tôi."
+            }
+          ],
+          "tip": "Quy tắc lùi thì khi động từ tường thuật ở quá khứ (said, told): am/is ➔ was, are ➔ were, will ➔ would, can ➔ could, present simple ➔ past simple."
+        }
+      ],
+      "words": [
+        {
+          "en": "Personality trait",
+          "ipa": "/ˌpɜː.sənˈæl.ə.ti treɪt/",
+          "vi": "Nét tính cách đặc trưng của một người",
+          "ex": "Empathy and resilience are admirable personality traits in modern leadership."
+        },
+        {
+          "en": "Charismatic",
+          "ipa": "/ˌkær.ɪzˈmæt.ɪk/",
+          "vi": "Có sức hút, lôi cuốn tự nhiên",
+          "ex": "A charismatic speaker captures the audience's hearts from the opening sentence."
+        },
+        {
+          "en": "Ambitious",
+          "ipa": "/æmˈbɪʃ.əs/",
+          "vi": "Đầy hoài bão, có chí tiến thủ",
+          "ex": "She is an ambitious woman with clear visions for her creative agency."
+        },
+        {
+          "en": "Empathetic",
+          "ipa": "/ˌem.pəˈθet.ɪk/",
+          "vi": "Biết đồng cảm, thấu hiểu lòng người",
+          "ex": "Empathetic leaders listen attentively to their colleagues' challenges."
+        },
+        {
+          "en": "Resourceful",
+          "ipa": "/rɪˈzɔː.sfəl/",
+          "vi": "Nhanh trí, tháo vát xoay xở trong mọi hoàn cảnh",
+          "ex": "Being resourceful helped Gemma solve project bottlenecks without extra budget."
+        },
+        {
+          "en": "Articulate",
+          "ipa": "/ɑːˈtɪk.jə.lət/",
+          "vi": "Ăn nói lưu loát, gãy gọn, rõ ràng",
+          "ex": "She delivered an articulate summary of the market research findings."
+        },
+        {
+          "en": "Dependable",
+          "ipa": "/dɪˈpen.də.bəl/",
+          "vi": "Đáng tin cậy, luôn hoàn thành lời hứa",
+          "ex": "He is a dependable colleague who delivers flawless code every sprint."
+        },
+        {
+          "en": "Role model",
+          "ipa": "/ˈrəʊl ˌmɒd.əl/",
+          "vi": "Hình mẫu lý tưởng để noi gương",
+          "ex": "Her mentor has been an exemplary role model throughout her career."
+        },
+        {
+          "en": "Generous spirit",
+          "ipa": "/ˈdʒen.ər.əs ˈspɪr.ɪt/",
+          "vi": "Tấm lòng bao dung, rộng mở",
+          "ex": "Her generous spirit shines through in how she supports young creatives."
+        },
+        {
+          "en": "Tell an anecdote",
+          "ipa": "/tel ən ˈæn.ɪk.dəʊt/",
+          "vi": "Kể một mẩu chuyện vui, mẩu giai thoại ý nghĩa",
+          "ex": "The professor told a humorous anecdote to break the ice with the class."
+        },
+        {
+          "en": "Self-motivated",
+          "ipa": "/ˌselfˈməʊ.tɪ.veɪ.tɪd/",
+          "vi": "Có động lực nội tại mạnh mẽ",
+          "ex": "Self-motivated learners acquire complex skills twice as fast."
+        },
+        {
+          "en": "Unforgettable character",
+          "ipa": "/ˌʌn.fəˈɡet.ə.bəl ˈkær.ək.tər/",
+          "vi": "Một nhân vật khó phai trong tâm trí",
+          "ex": "Ms Gemma is an unforgettable character: knowledgeable, warm, and inspiring."
+        }
+      ],
+      "grammar_review": [
+        {
+          "q": "By the time the manager arrived at the boardroom, the team ______ the presentation.",
+          "options": ["had finished", "finished", "have finished", "finishes"],
+          "ans": 0,
+          "explain": "Hành động hoàn thành bài thuyết trình xảy ra TRƯỚC hành động 'manager arrived' trong quá khứ -> dùng Quá khứ hoàn thành: 'had finished'."
+        },
+        {
+          "q": "Gemma said that she ______ an article on AI education for the magazine.",
+          "options": ["was writing", "is writing", "writes", "has written"],
+          "ans": 0,
+          "explain": "Trong câu tường thuật gián tiếp có động từ 'said' ở quá khứ, thì Hiện tại tiếp diễn lùi về Quá khứ tiếp diễn: 'was writing'."
+        },
+        {
+          "q": "He told me that he ______ attend the conference because of a client emergency.",
+          "options": ["couldn't", "can't", "won't", "is unable to"],
+          "ans": 0,
+          "explain": "Lùi thì từ 'can't' thành 'couldn't' trong câu tường thuật gián tiếp."
+        }
+      ]
+    }
+  }
 }
+
 
                   },
                   "curriculum": "Cambridge English Empower A1 Starter (Full 12 Units)",

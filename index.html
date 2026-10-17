@@ -350,7 +350,7 @@
                             <span class="flex items-center gap-1">📚 Chọn giáo trình:</span>
                             <span class="text-[9px] font-semibold bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded">Cambridge</span>
                         </label>
-                        <div class="grid grid-cols-2 gap-1.5" id="curriculum-selector-buttons"></div>
+                        <div class="grid grid-cols-3 gap-1" id="curriculum-selector-buttons"></div>
                     </div>
 
                     <div>
@@ -1906,12 +1906,12 @@
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = isActive
-                    ? "px-2 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-xs shadow-md shadow-violet-200 border border-violet-500 flex flex-col items-center justify-center transition-all duration-200 active:scale-95"
-                    : "px-2 py-1.5 rounded-xl bg-white hover:bg-violet-50 text-gray-700 hover:text-violet-700 font-semibold text-xs border border-violet-200 shadow-2xs flex flex-col items-center justify-center transition-all duration-200 active:scale-95";
+                    ? "px-1.5 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-xs shadow-md shadow-violet-200 border border-violet-500 flex flex-col items-center justify-center transition-all duration-200 active:scale-95 text-center min-w-0"
+                    : "px-1.5 py-1.5 rounded-xl bg-white hover:bg-violet-50 text-gray-700 hover:text-violet-700 font-semibold text-xs border border-violet-200 shadow-2xs flex flex-col items-center justify-center transition-all duration-200 active:scale-95 text-center min-w-0";
                 
                 btn.innerHTML = `
-                    <span class="text-[11px] font-extrabold truncate w-full text-center">${curr.badge || curr.title}</span>
-                    <span class="text-[9px] ${isActive ? 'text-violet-100 font-medium' : 'text-gray-400 font-normal'} mt-0.5">${Object.keys(curr.units).length} Units</span>
+                    <span class="text-[10px] sm:text-[11px] font-extrabold truncate w-full text-center leading-tight">${curr.badge || curr.title}</span>
+                    <span class="text-[8.5px] sm:text-[9px] ${isActive ? 'text-violet-100 font-medium' : 'text-gray-400 font-normal'} mt-0.5">${Object.keys(curr.units).length} Units</span>
                 `;
 
                 btn.onclick = () => switchGemmaCurriculum(currKey);
