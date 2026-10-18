@@ -33,6 +33,13 @@ let mediaRecorder = null;
 let audioChunks = [];
 let recordedAudioUrls = {};
 
+// =========================================================================
+// GOOGLE GEMINI AI EXAMINER STATE & STORAGE
+// =========================================================================
+const GEMINI_API_KEY_STORAGE = 'smart_gemini_api_key';
+let isGeminiEvaluating = false;
+let ieltsAiWritingResults = {}; // { [testId]: { task_1: result, task_2: result } }
+
 // Khởi tạo và khôi phục bài làm từ localStorage
 function initIeltsTestEngine() {
     try {
@@ -42,6 +49,12 @@ function initIeltsTestEngine() {
             if (parsed && typeof parsed === 'object') {
                 ieltsUserAnswers = { ...ieltsUserAnswers, ...parsed };
             }
+        }
+        const savedAi = localStorage.getItem('smart_ielts_ai_writing_' + activeIeltsTestId);
+        if (savedAi) {
+            try {
+                ieltsAiWritingResults[activeIeltsTestId] = JSON.parse(savedAi);
+            } catch(e) {}
         }
         const savedSub = localStorage.getItem('smart_ielts_submitted_' + activeIeltsTestId);
         if (savedSub === 'true') {
@@ -59,6 +72,9 @@ function saveIeltsProgress() {
     try {
         localStorage.setItem('smart_ielts_answers_' + activeIeltsTestId, JSON.stringify(ieltsUserAnswers));
         localStorage.setItem('smart_ielts_submitted_' + activeIeltsTestId, ieltsTestSubmitted.toString());
+        if (ieltsAiWritingResults[activeIeltsTestId]) {
+            localStorage.setItem('smart_ielts_ai_writing_' + activeIeltsTestId, JSON.stringify(ieltsAiWritingResults[activeIeltsTestId]));
+        }
     } catch (e) {}
 }
 
@@ -645,8 +661,331 @@ function switchIeltsPassage(num) {
 }
 
 // =========================================================================
-// 3. GIAO DIỆN & LOGIC WRITING (TASK 1 & TASK 2)
+// 3. GIAO DIỆN & LOGIC WRITING (TASK 1 & TASK 2) + GEMINI AI EXAMINER
 // =========================================================================
+
+function getGeminiApiKey() {
+    return localStorage.getItem(GEMINI_API_KEY_STORAGE) || '';
+}
+
+function openGeminiApiKeyModal() {
+    const modal = document.getElementById('gemini-key-modal');
+    const input = document.getElementById('input-gemini-api-key');
+    const status = document.getElementById('gemini-key-status');
+    if (input) input.value = getGeminiApiKey();
+    if (status) {
+        status.textContent = getGeminiApiKey() ? "✅ Đã có Google Gemini API Key lưu trên thiết bị" : "Chưa có API Key";
+        status.className = getGeminiApiKey() ? "text-[11px] font-bold min-h-[16px] text-emerald-600" : "text-[11px] font-bold min-h-[16px] text-amber-600";
+    }
+    if (modal) modal.classList.remove('hidden');
+}
+
+function closeGeminiApiKeyModal() {
+    const modal = document.getElementById('gemini-key-modal');
+    if (modal) modal.classList.add('hidden');
+}
+
+function toggleGeminiKeyVisibility() {
+    const input = document.getElementById('input-gemini-api-key');
+    if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+    }
+}
+
+function saveGeminiApiKeyFromModal() {
+    const input = document.getElementById('input-gemini-api-key');
+    const status = document.getElementById('gemini-key-status');
+    if (!input) return;
+    const key = input.value.trim();
+    if (!key) {
+        if (status) {
+            status.textContent = "❌ Vui lòng dán API Key của Google Gemini!";
+            status.className = "text-[11px] font-bold min-h-[16px] text-rose-500";
+        }
+        return;
+    }
+    localStorage.setItem(GEMINI_API_KEY_STORAGE, key);
+    if (status) {
+        status.textContent = "✅ Đã lưu Google Gemini API Key thành công!";
+        status.className = "text-[11px] font-bold min-h-[16px] text-emerald-600";
+    }
+    setTimeout(() => {
+        closeGeminiApiKeyModal();
+        alert("✅ Đã lưu Google Gemini API Key thành công! Bây giờ bạn có thể bấm nút AI Examiner để chấm bài viết.");
+    }, 400);
+}
+
+function renderIeltsAiWritingCard(taskKey, result = null) {
+    if (!result) {
+        result = ieltsAiWritingResults[activeIeltsTestId]?.[taskKey];
+    }
+    if (!result) {
+        return `
+            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center text-xs text-slate-500">
+                <span class="text-base block mb-1">🤖</span>
+                <p class="font-bold text-slate-700">Chưa có kết quả chấm điểm của AI cho ${taskKey === 'task_1' ? 'Task 1' : 'Task 2'}</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Viết bài xong và bấm <strong>"AI Examiner Chấm & Sửa Bài"</strong> để nhận bảng điểm 4 tiêu chí & sửa lỗi chi tiết.</p>
+            </div>
+        `;
+    }
+
+    const sc = result.scores || {};
+    const fb = result.criteria_feedback || {};
+    const errors = result.detailed_errors || [];
+    const upgrades = result.key_upgrades || [];
+
+    return `
+        <div class="p-4 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-500/40 shadow-xl space-y-3.5">
+            <!-- HEADER SCORE -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pb-3 border-b border-indigo-700/50">
+                <div class="flex items-center gap-3">
+                    <div class="w-13 h-13 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 text-slate-950 font-black text-2xl flex items-center justify-center font-mono shadow-md shrink-0">
+                        ${result.overall_band ? result.overall_band.toFixed(1) : 'N/A'}
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xs font-black uppercase tracking-wider text-amber-300">IELTS Writing Band Score</span>
+                            <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-200 px-2 py-0.5 rounded-full border border-indigo-400/30">Gemini 1.5 Flash</span>
+                        </div>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-white mt-0.5">Bảng Điểm & Nhận Xét 4 Tiêu Chí</h4>
+                    </div>
+                </div>
+                ${result.general_advice ? `
+                    <div class="text-[11px] text-amber-200 bg-amber-500/10 border border-amber-400/30 px-3 py-1.5 rounded-xl max-w-xs">
+                        💡 <strong>Lời khuyên:</strong> ${escapeHtml(result.general_advice)}
+                    </div>
+                ` : ''}
+            </div>
+
+            <!-- 4 CRITERIA BADGES -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <div class="p-2.5 rounded-2xl bg-white/10 border border-white/10 flex flex-col justify-between">
+                    <span class="text-[10px] text-indigo-300 font-bold uppercase truncate" title="Task Achievement / Response">Task Response</span>
+                    <span class="text-xl font-black font-mono text-amber-300 mt-1">${sc.task_response ? sc.task_response.toFixed(1) : '-'}</span>
+                </div>
+                <div class="p-2.5 rounded-2xl bg-white/10 border border-white/10 flex flex-col justify-between">
+                    <span class="text-[10px] text-sky-300 font-bold uppercase truncate" title="Coherence and Cohesion">Coherence</span>
+                    <span class="text-xl font-black font-mono text-sky-300 mt-1">${sc.coherence_cohesion ? sc.coherence_cohesion.toFixed(1) : '-'}</span>
+                </div>
+                <div class="p-2.5 rounded-2xl bg-white/10 border border-white/10 flex flex-col justify-between">
+                    <span class="text-[10px] text-emerald-300 font-bold uppercase truncate" title="Lexical Resource">Lexical</span>
+                    <span class="text-xl font-black font-mono text-emerald-300 mt-1">${sc.lexical_resource ? sc.lexical_resource.toFixed(1) : '-'}</span>
+                </div>
+                <div class="p-2.5 rounded-2xl bg-white/10 border border-white/10 flex flex-col justify-between">
+                    <span class="text-[10px] text-fuchsia-300 font-bold uppercase truncate" title="Grammatical Range & Accuracy">Grammar</span>
+                    <span class="text-xl font-black font-mono text-fuchsia-300 mt-1">${sc.grammatical_accuracy ? sc.grammatical_accuracy.toFixed(1) : '-'}</span>
+                </div>
+            </div>
+
+            <!-- CRITERIA FEEDBACK TEXT -->
+            <div class="p-3 rounded-2xl bg-white/5 border border-white/10 text-xs space-y-1.5 leading-relaxed text-indigo-100">
+                <p><strong>🎯 Task Response:</strong> ${escapeHtml(fb.task_response || '')}</p>
+                <p><strong>🔗 Coherence:</strong> ${escapeHtml(fb.coherence_cohesion || '')}</p>
+                <p><strong>📚 Lexical:</strong> ${escapeHtml(fb.lexical_resource || '')}</p>
+                <p><strong>📐 Grammar:</strong> ${escapeHtml(fb.grammatical_accuracy || '')}</p>
+            </div>
+
+            <!-- DETAILED ERRORS & CORRECTIONS -->
+            ${errors.length > 0 ? `
+                <div class="space-y-2 pt-1">
+                    <span class="text-xs font-extrabold text-amber-300 block">🔍 Các Lỗi Cần Sửa (${errors.length} lỗi):</span>
+                    <div class="space-y-2 max-h-48 overflow-y-auto custom-scroll pr-1 text-xs">
+                        ${errors.map(err => `
+                            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 space-y-1">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-rose-400 font-bold shrink-0">✗ Sai:</span>
+                                    <span class="line-through text-rose-300 font-mono text-[11px]">${escapeHtml(err.original)}</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-emerald-400 font-bold shrink-0">✓ Đúng:</span>
+                                    <span class="text-emerald-300 font-mono font-bold text-[11px]">${escapeHtml(err.corrected)}</span>
+                                </div>
+                                <p class="text-[11px] text-slate-300 italic bg-white/5 p-1 rounded">💡 ${escapeHtml(err.explanation)}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : '<p class="text-xs text-emerald-400 font-bold">🎉 Bài viết không có lỗi ngữ pháp lớn!</p>'}
+
+            <!-- IMPROVED BAND 8.5+ VERSION -->
+            ${result.improved_version ? `
+                <div class="pt-2 border-t border-indigo-700/50">
+                    <button onclick="toggleTranscript('ai-improved-${taskKey}')" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-xs shadow-sm flex items-center justify-between transition">
+                        <span>🌟 Xem Bài Viết Nâng Cấp Band 8.5+ Từ Ý Tưởng Của Bạn</span>
+                        <span>▼</span>
+                    </button>
+                    <div id="ai-improved-${taskKey}" class="hidden mt-2.5 p-3.5 rounded-2xl bg-emerald-950/80 border border-emerald-500/50 text-xs leading-relaxed text-emerald-100 space-y-2 max-h-60 overflow-y-auto custom-scroll">
+                        <div class="p-3 bg-slate-900/90 rounded-xl border border-emerald-500/30 font-serif whitespace-pre-line text-emerald-50 leading-relaxed">
+                            ${escapeHtml(result.improved_version)}
+                        </div>
+                        ${upgrades.length > 0 ? `
+                            <div class="pt-1.5">
+                                <span class="font-bold text-amber-300 text-[11px] block mb-1">💎 Từ vựng / Collocations học thuật nâng tầm bài viết:</span>
+                                <div class="flex flex-wrap gap-1">
+                                    ${upgrades.map(u => `<span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded text-[10px] font-bold">${escapeHtml(u)}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+}
+
+async function evaluateWritingWithGemini(taskNum) {
+    const apiKey = getGeminiApiKey();
+    if (!apiKey) {
+        alert("⚠️ Bạn chưa cấu hình Google Gemini API Key. Vui lòng dán API Key (hoàn toàn miễn phí) để kích hoạt Giám khảo AI!");
+        openGeminiApiKeyModal();
+        return;
+    }
+
+    const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
+    if (!test || !test.writing) return;
+    const task = taskNum === 1 ? test.writing.task_1 : test.writing.task_2;
+    const taskKey = taskNum === 1 ? 'task_1' : 'task_2';
+    const studentEssay = ieltsUserAnswers.writing[taskKey] || '';
+    const wordCount = countWords(studentEssay);
+
+    if (wordCount < 30) {
+        alert("⚠️ Bài viết của bạn hiện tại có " + wordCount + " từ (quá ngắn). Vui lòng viết ít nhất 30 - 50 từ để Giám khảo AI có thể phân tích và chấm điểm chuẩn xác!");
+        return;
+    }
+
+    const evalContainer = document.getElementById('ielts-ai-eval-container-' + taskKey);
+    const evalBtn = document.getElementById('btn-gemini-eval-' + taskKey);
+
+    if (evalBtn) {
+        evalBtn.disabled = true;
+        evalBtn.innerHTML = `<span>⏳</span> <span>Giám khảo AI đang chấm điểm & phân tích...</span>`;
+    }
+
+    if (evalContainer) {
+        evalContainer.innerHTML = `
+            <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 animate-pulse text-xs text-indigo-950 space-y-2">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-indigo-600 animate-ping"></span>
+                    <span class="font-extrabold text-indigo-900">Google Gemini 1.5 Flash Examiner đang phân tích bài thi...</span>
+                </div>
+                <p class="text-slate-600">Đang đối chiếu 4 tiêu chí: Task Response, Coherence & Cohesion, Lexical Resource, Grammatical Accuracy...</p>
+            </div>
+        `;
+    }
+
+    const promptText = `You are a strict, highly authoritative Cambridge IELTS Academic Writing Examiner with 15+ years of official examination experience.
+Evaluate the candidate's essay for IELTS Writing ${taskNum === 1 ? 'Task 1 (Academic Report)' : 'Task 2 (Academic Essay)'}.
+
+[TOPIC / PROMPT]:
+${task.prompt}
+
+[CANDIDATE'S ESSAY] (${wordCount} words):
+${studentEssay}
+
+You MUST evaluate strictly according to official IELTS Band Descriptors (Bands 1.0 - 9.0 in increments of 0.5):
+1. Task Achievement (for Task 1) or Task Response (for Task 2)
+2. Coherence and Cohesion
+3. Lexical Resource
+4. Grammatical Range and Accuracy
+
+Calculate Overall Band as the mathematical average of the 4 criteria rounded to the nearest 0.5.
+All explanations and feedback must be written in Vietnamese for the Vietnamese student, while grammar/vocabulary examples and improved sentences remain in English.
+
+Respond ONLY with a valid JSON object matching this exact format:
+{
+  "overall_band": 6.5,
+  "scores": {
+    "task_response": 6.5,
+    "coherence_cohesion": 6.5,
+    "lexical_resource": 6.0,
+    "grammatical_accuracy": 6.5
+  },
+  "criteria_feedback": {
+    "task_response": "Nhận xét chi tiết tiếng Việt về Task Response...",
+    "coherence_cohesion": "Nhận xét chi tiết tiếng Việt về Coherence & Cohesion...",
+    "lexical_resource": "Nhận xét chi tiết tiếng Việt về Lexical Resource...",
+    "grammatical_accuracy": "Nhận xét chi tiết tiếng Việt về Grammatical Range & Accuracy..."
+  },
+  "detailed_errors": [
+    {
+      "original": "cụm từ hoặc câu học sinh viết chưa chuẩn",
+      "corrected": "cách viết sửa lại chuẩn ngữ pháp hoặc từ vựng",
+      "explanation": "giải thích quy tắc ngữ pháp hoặc collocation bằng tiếng Việt"
+    }
+  ],
+  "improved_version": "Toàn bộ bài viết hoàn chỉnh được viết lại mượt mà, đạt chuẩn Band 8.5+ nâng tầm từ chính ý tưởng của học sinh...",
+  "key_upgrades": [
+    "Từ/cụm từ học thuật đắt giá 1 (nghĩa tiếng Việt)",
+    "Từ/cụm từ học thuật đắt giá 2 (nghĩa tiếng Việt)"
+  ],
+  "general_advice": "Lời khuyên chiến lược bằng tiếng Việt để nâng band..."
+}`;
+
+    try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: promptText }] }],
+                generationConfig: {
+                    temperature: 0.2,
+                    responseMimeType: "application/json"
+                }
+            })
+        });
+
+        if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            const msg = errData.error?.message || response.statusText;
+            throw new Error(msg);
+        }
+
+        const data = await response.json();
+        const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!rawJsonText) throw new Error("Không nhận được dữ liệu phản hồi từ Gemini API.");
+
+        let parsedResult;
+        try {
+            const cleaned = rawJsonText.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
+            parsedResult = JSON.parse(cleaned);
+        } catch(e) {
+            throw new Error("Lỗi đọc định dạng kết quả AI: " + e.message);
+        }
+
+        if (!ieltsAiWritingResults[activeIeltsTestId]) {
+            ieltsAiWritingResults[activeIeltsTestId] = {};
+        }
+        ieltsAiWritingResults[activeIeltsTestId][taskKey] = parsedResult;
+
+        // Lưu điểm AI vào answers
+        if (!ieltsUserAnswers.writing) ieltsUserAnswers.writing = {};
+        ieltsUserAnswers.writing[taskKey + '_ai_score'] = parsedResult.overall_band;
+        saveIeltsProgress();
+
+        // Render card
+        if (evalContainer) {
+            evalContainer.innerHTML = renderIeltsAiWritingCard(taskKey, parsedResult);
+        }
+    } catch(err) {
+        alert("Lỗi khi chấm bài bằng Gemini AI: " + err.message + "\nVui lòng kiểm tra lại API Key hoặc kết nối mạng!");
+        if (evalContainer) {
+            evalContainer.innerHTML = `
+                <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
+                    <p class="font-bold">❌ Không thể hoàn tất chấm điểm AI:</p>
+                    <p class="mt-1">${escapeHtml(err.message)}</p>
+                    <button onclick="openGeminiApiKeyModal()" class="mt-2 px-3 py-1 bg-rose-600 text-white rounded-lg font-bold text-xs">Cài đặt lại API Key</button>
+                </div>
+            `;
+        }
+    } finally {
+        if (evalBtn) {
+            evalBtn.disabled = false;
+            evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Gemini AI)</span>`;
+        }
+    }
+}
+
 function renderIeltsWritingView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     const wri = test.writing;
@@ -703,12 +1042,29 @@ function renderIeltsWritingView(container) {
                     </div>
                 </div>
 
-                <!-- EDITOR TEXTAREA -->
-                <div class="flex flex-col h-full">
+                <!-- RIGHT: EDITOR TEXTAREA & AI EXAMINER -->
+                <div class="flex flex-col h-full overflow-hidden">
                     <textarea id="ielts-writing-textarea" 
                               oninput="handleWritingInput(this.value)"
-                              placeholder="Nhập toàn bộ bài viết của bạn tại đây (sử dụng câu phức, từ nối học thuật, từ vựng theo chủ đề)..."
-                              class="flex-1 w-full p-4 rounded-2xl border border-slate-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 text-xs sm:text-sm text-slate-900 leading-relaxed font-sans resize-none custom-scroll bg-white">${escapeHtml(currentEssay)}</textarea>
+                              placeholder="Nhập bài viết của bạn tại đây (sử dụng từ nối học thuật, cấu trúc câu đa dạng, từ vựng theo chủ đề)..."
+                              class="w-full h-44 sm:h-52 p-4 rounded-2xl border border-slate-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 text-xs sm:text-sm text-slate-900 leading-relaxed font-sans resize-none custom-scroll bg-white shrink-0">${escapeHtml(currentEssay)}</textarea>
+
+                    <!-- AI ACTION CONTROLS -->
+                    <div class="flex items-center justify-between gap-2 mt-2 pt-2 border-t border-slate-100 shrink-0">
+                        <button onclick="evaluateWritingWithGemini(${activeWritingTask})" 
+                                id="btn-gemini-eval-${taskKey}"
+                                class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-sky-600 hover:from-violet-700 hover:to-sky-700 text-white font-extrabold text-xs shadow-md transition active:scale-95 flex items-center gap-1.5">
+                            <span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Gemini AI)</span>
+                        </button>
+                        <button onclick="openGeminiApiKeyModal()" class="text-[11px] text-slate-400 hover:text-indigo-600 font-semibold transition flex items-center gap-1">
+                            <span>⚙️ Cài đặt Key</span>
+                        </button>
+                    </div>
+
+                    <!-- AI RESULT AREA -->
+                    <div id="ielts-ai-eval-container-${taskKey}" class="flex-1 overflow-y-auto custom-scroll mt-2 pr-1">
+                        ${renderIeltsAiWritingCard(taskKey)}
+                    </div>
                 </div>
             </div>
         </div>
@@ -1113,13 +1469,30 @@ function gradeIeltsTest(showModal = true) {
     const lisBand = convertRawToIeltsBand(lisNormalizedRaw, true);
     const redBand = convertRawToIeltsBand(redNormalizedRaw, false);
 
-    // Ước lượng điểm Writing & Speaking dựa trên mức độ hoàn thiện
+    // Ước lượng hoặc lấy điểm Writing chính xác do Gemini AI chấm
     const t1Words = countWords(ieltsUserAnswers.writing.task_1 || '');
     const t2Words = countWords(ieltsUserAnswers.writing.task_2 || '');
+    const t1Ai = ieltsUserAnswers.writing?.task_1_ai_score;
+    const t2Ai = ieltsUserAnswers.writing?.task_2_ai_score;
     let wriBand = 6.0;
-    if (t1Words >= 150 && t2Words >= 250) wriBand = 8.5;
-    else if (t1Words >= 120 && t2Words >= 200) wriBand = 7.5;
-    else if (t1Words > 50 || t2Words > 100) wriBand = 6.5;
+    let isAiGradedWriting = false;
+
+    if (t1Ai && t2Ai) {
+        // Chuẩn Cambridge: Task 2 chiếm 2/3 tổng điểm, Task 1 chiếm 1/3
+        const weighted = (t1Ai * 1 + t2Ai * 2) / 3;
+        wriBand = Math.round(weighted * 2) / 2;
+        isAiGradedWriting = true;
+    } else if (t2Ai) {
+        wriBand = t2Ai;
+        isAiGradedWriting = true;
+    } else if (t1Ai) {
+        wriBand = t1Ai;
+        isAiGradedWriting = true;
+    } else {
+        if (t1Words >= 150 && t2Words >= 250) wriBand = 8.5;
+        else if (t1Words >= 120 && t2Words >= 200) wriBand = 7.5;
+        else if (t1Words > 50 || t2Words > 100) wriBand = 6.5;
+    }
 
     let spkBand = 8.0; // Hoàn thành các phần thi nói
 
@@ -1135,6 +1508,7 @@ function gradeIeltsTest(showModal = true) {
         lisCorrect, lisTotal, lisBand,
         redCorrect, redTotal, redBand,
         wriBand, spkBand,
+        isAiGradedWriting,
         overallBand,
         allReview: [...lisReview, ...redReview]
     };
@@ -1224,10 +1598,13 @@ function showIeltsResultsModal() {
                 </div>
 
                 <div class="p-3 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col justify-between">
-                    <span class="text-[10px] font-bold text-emerald-800 uppercase">✍️ Writing</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-emerald-800 uppercase">✍️ Writing</span>
+                        ${res.isAiGradedWriting ? '<span class="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded-full font-black">AI Chấm 🤖</span>' : ''}
+                    </div>
                     <div class="flex items-baseline justify-between mt-1">
                         <span class="text-2xl font-black text-emerald-950 font-mono">${res.wriBand.toFixed(1)}</span>
-                        <span class="text-xs text-emerald-700 font-bold">Task 1 & Task 2</span>
+                        <span class="text-xs text-emerald-700 font-bold">${res.isAiGradedWriting ? 'Gemini AI 4 Tiêu Chí' : 'Task 1 & Task 2'}</span>
                     </div>
                 </div>
 
