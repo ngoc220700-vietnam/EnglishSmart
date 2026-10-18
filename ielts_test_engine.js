@@ -1901,3 +1901,24 @@ function escapeQuotes(text) {
     if (!text) return '';
     return text.toString().replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
+
+// ==========================================
+// PHÍM TẮT BÀN PHÍM: BẤM ESC ĐỂ ĐÓNG BẢNG ĐÁP ÁN
+// ==========================================
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+        const resultModal = document.getElementById('ielts-result-modal');
+        if (resultModal && !resultModal.classList.contains('hidden')) {
+            e.preventDefault();
+            closeIeltsResultModal();
+            return;
+        }
+
+        const geminiModal = document.getElementById('gemini-key-modal');
+        if (geminiModal && !geminiModal.classList.contains('hidden')) {
+            e.preventDefault();
+            closeGeminiApiKeyModal();
+            return;
+        }
+    }
+});

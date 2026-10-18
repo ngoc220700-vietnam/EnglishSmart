@@ -1234,9 +1234,12 @@
     <!-- ==========================================
          MODAL 3: IELTS EXAM RESULTS & BAND SCORE
          ========================================== -->
-    <div id="ielts-result-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 transition-all duration-300">
+    <div id="ielts-result-modal" onclick="if(event.target === this) closeIeltsResultModal()" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 transition-all duration-300">
         <div class="glass-panel w-full max-w-2xl bg-white rounded-3xl p-5 sm:p-7 shadow-2xl border border-white/80 max-h-[90vh] overflow-y-auto custom-scroll relative flex flex-col">
-            <button onclick="closeIeltsResultModal()" title="Đóng" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-sm font-bold transition">✕</button>
+            <button onclick="closeIeltsResultModal()" title="Đóng bảng đáp án (Phím Esc)" class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center gap-1.5 text-xs font-bold transition shadow-xs">
+                <span>✕ Đóng</span>
+                <kbd class="px-1.5 py-0.5 rounded bg-white border border-slate-300 text-[10px] font-mono text-slate-500 shadow-2xs">Esc</kbd>
+            </button>
             <div id="ielts-result-body">
                 <!-- Rendered dynamically by gradeIeltsTest() -->
             </div>
@@ -4542,6 +4545,27 @@
                     return;
                 }
                 return;
+            }
+
+            // Xử lý phím Escape để đóng bảng đáp án & bảng điểm IELTS hoặc modal cài đặt AI
+            const ieltsModal = document.getElementById('ielts-result-modal');
+            if (ieltsModal && !ieltsModal.classList.contains('hidden')) {
+                if (e.key === 'Escape' || e.key === 'Esc') {
+                    e.preventDefault();
+                    if (typeof closeIeltsResultModal === 'function') closeIeltsResultModal();
+                    else ieltsModal.classList.add('hidden');
+                    return;
+                }
+            }
+
+            const geminiModal = document.getElementById('gemini-key-modal');
+            if (geminiModal && !geminiModal.classList.contains('hidden')) {
+                if (e.key === 'Escape' || e.key === 'Esc') {
+                    e.preventDefault();
+                    if (typeof closeGeminiApiKeyModal === 'function') closeGeminiApiKeyModal();
+                    else geminiModal.classList.add('hidden');
+                    return;
+                }
             }
 
             if (studyScreen.classList.contains('hidden')) return;
