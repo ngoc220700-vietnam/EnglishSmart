@@ -5,6 +5,7 @@
 
 let activeIeltsTestId = 'cam_1';
 let activeIeltsSkill = 'listening'; // 'listening' | 'reading' | 'writing' | 'speaking'
+let activeListeningPart = 1; // 1 | 2 | 3 | 4 | 0 (0 = all)
 let activeReadingPassage = 1;
 let activeWritingTask = 1;
 let activeSpeakingPart = 1;
@@ -157,6 +158,108 @@ function renderIeltsSkillContent() {
     }
 }
 
+function switchIeltsListeningPart(num) {
+    activeListeningPart = num;
+    renderIeltsSkillContent();
+}
+
+function jumpToIeltsQuestion(skill, qId) {
+    if (skill === 'listening') {
+        const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
+        let targetPart = 1;
+        if (qId >= 1 && qId <= 10) targetPart = 1;
+        else if (qId >= 11 && qId <= 20) targetPart = 2;
+        else if (qId >= 21 && qId <= 30) targetPart = 3;
+        else if (qId >= 31 && qId <= 40) targetPart = 4;
+
+        if (activeListeningPart !== 0 && activeListeningPart !== targetPart) {
+            activeListeningPart = targetPart;
+            renderIeltsSkillContent();
+        }
+    } else if (skill === 'reading') {
+        let targetPassage = 1;
+        if (qId >= 1 && qId <= 13) targetPassage = 1;
+        else if (qId >= 14 && qId <= 26) targetPassage = 2;
+        else if (qId >= 27 && qId <= 40) targetPassage = 3;
+
+        if (activeReadingPassage !== targetPassage) {
+            activeReadingPassage = targetPassage;
+            renderIeltsSkillContent();
+        }
+    }
+
+    setTimeout(() => {
+        const targetId = skill === 'listening' ? `ielts-q-box-${qId}` : `ielts-red-q-${qId}`;
+        const el = document.getElementById(targetId);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            el.classList.add('ring-2', 'ring-indigo-600', 'bg-indigo-50/70');
+            setTimeout(() => {
+                el.classList.remove('ring-2', 'ring-indigo-600', 'bg-indigo-50/70');
+            }, 1800);
+        }
+    }, 150);
+}
+
+function renderQuestionPalette(skill, totalQuestions = 40) {
+    const answers = ieltsUserAnswers[skill] || {};
+    const answeredCount = Object.keys(answers).filter(k => answers[k] && answers[k].toString().trim().length > 0).length;
+
+    let paletteHtml = `
+        <div class="mt-3 p-3 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs shrink-0">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2 mb-2.5 border-b border-slate-100">
+                <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                    <span>🧭</span> <span>Bảng câu hỏi (${skill === 'listening' ? 'Listening 40 câu' : 'Reading 40 câu'}):</span>
+                </span>
+                <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
+                    Đã làm: ${answeredCount} / ${totalQuestions} câu
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scroll">
+    `;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const hasAns = answers[i] && answers[i].toString().trim().length > 0;
+        let btnClass = hasAns 
+            ? 'bg-indigo-600 text-white font-extrabold border-indigo-600 shadow-2xs' 
+            : 'bg-slate-50 text-slate-700 font-bold border-slate-200 hover:bg-slate-100';
+
+        if (ieltsTestSubmitted) {
+            const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
+            let qObj = null;
+            if (skill === 'listening' && test && test.listening) {
+                test.listening.parts.forEach(p => {
+                    const found = p.questions.find(q => q.id === i);
+                    if (found) qObj = found;
+                });
+            } else if (skill === 'reading' && test && test.reading) {
+                test.reading.passages.forEach(p => {
+                    const found = p.questions.find(q => q.id === i);
+                    if (found) qObj = found;
+                });
+            }
+            if (qObj) {
+                const isCorr = checkAnswerMatch(answers[i], qObj.correct_answers);
+                btnClass = isCorr ? 'bg-emerald-600 text-white font-bold' : 'bg-rose-600 text-white font-bold';
+            }
+        }
+
+        paletteHtml += `
+            <button onclick="jumpToIeltsQuestion('${skill}', ${i})" 
+                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs flex items-center justify-center border transition active:scale-95 ${btnClass}"
+                    title="Chuyển đến câu ${i}">
+                ${i}
+            </button>
+        `;
+    }
+
+    paletteHtml += `
+            </div>
+        </div>
+    `;
+    return paletteHtml;
+}
+
 // =========================================================================
 // 1. GIAO DIỆN & LOGIC LISTENING
 // =========================================================================
@@ -164,8 +267,12 @@ function renderIeltsListeningView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     const lis = test.listening;
 
+    const visibleParts = activeListeningPart === 0 
+        ? lis.parts 
+        : lis.parts.filter(p => p.part_number === activeListeningPart);
+
     let partsHtml = '';
-    lis.parts.forEach(part => {
+    visibleParts.forEach(part => {
         let questionsHtml = '';
         part.questions.forEach(q => {
             const userAns = ieltsUserAnswers.listening[q.id] || '';
@@ -260,7 +367,7 @@ function renderIeltsListeningView(container) {
     container.innerHTML = `
         <div class="flex flex-col h-full overflow-hidden">
             <!-- AUDIO PLAYER BAR -->
-            <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-3 sm:p-4 mb-4 shadow-md border border-indigo-700/50 flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
+            <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-3 sm:p-4 mb-3 shadow-md border border-indigo-700/50 flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
                 <div class="flex items-center gap-3">
                     <button id="ielts-play-btn" onclick="toggleIeltsAudio()" class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-xl flex items-center justify-center shadow-md transition active:scale-95 shrink-0">
                         ${ieltsAudioPlaying ? '⏸' : '▶'}
@@ -289,12 +396,46 @@ function renderIeltsListeningView(container) {
                 </div>
             </div>
 
+            <!-- LISTENING PART TABS (PART 1, 2, 3, 4, ALL) -->
+            <div class="flex flex-wrap items-center justify-between pb-2.5 mb-3 border-b border-slate-200 gap-2 shrink-0">
+                <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Phần nghe:</span>
+                    ${[1, 2, 3, 4].map(pNum => {
+                        const qRange = pNum === 1 ? 'Q1-10' : pNum === 2 ? 'Q11-20' : pNum === 3 ? 'Q21-30' : 'Q31-40';
+                        const isAct = activeListeningPart === pNum;
+                        return `
+                            <button onclick="switchIeltsListeningPart(${pNum})" class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition ${
+                                isAct 
+                                ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-200' 
+                                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                            }">
+                                Part ${pNum} <span class="opacity-80 text-[10px]">(${qRange})</span>
+                            </button>
+                        `;
+                    }).join('')}
+                    <button onclick="switchIeltsListeningPart(0)" class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition ${
+                        activeListeningPart === 0 
+                        ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-200' 
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                    }">
+                        Tất cả (Q1-40)
+                    </button>
+                </div>
+                <div class="text-xs font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+                    40 Câu hỏi • 30 Phút
+                </div>
+            </div>
+
             <!-- QUESTIONS SCROLLABLE CONTAINER -->
             <div class="flex-1 overflow-y-auto custom-scroll pr-1">
                 ${partsHtml}
             </div>
+
+            <!-- QUESTION PALETTE NAVIGATION (1 - 40) -->
+            ${renderQuestionPalette('listening', 40)}
         </div>
     `;
+}
 }
 
 // Xử lý Audio Player (HTML5 / Speech Synthesis Backup)
@@ -459,15 +600,18 @@ function renderIeltsReadingView(container) {
             <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-200 shrink-0">
                 <div class="flex items-center gap-1.5">
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Chọn bài đọc:</span>
-                    ${red.passages.map((p, idx) => `
-                        <button onclick="switchIeltsPassage(${idx + 1})" class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition ${
-                            activeReadingPassage === (idx + 1)
-                            ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-200'
-                            : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                        }">
-                            Passage ${idx + 1}
-                        </button>
-                    `).join('')}
+                    ${red.passages.map((p, idx) => {
+                        const qRange = idx === 0 ? 'Q1-13' : idx === 1 ? 'Q14-26' : 'Q27-40';
+                        return `
+                            <button onclick="switchIeltsPassage(${idx + 1})" class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition ${
+                                activeReadingPassage === (idx + 1)
+                                ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-200'
+                                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                            }">
+                                Passage ${idx + 1} <span class="opacity-80 text-[10px]">(${qRange})</span>
+                            </button>
+                        `;
+                    }).join('')}
                 </div>
                 <div class="text-xs font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
                     40 Câu hỏi • 60 Phút
@@ -489,6 +633,9 @@ function renderIeltsReadingView(container) {
                     ${questionsHtml}
                 </div>
             </div>
+
+            <!-- QUESTION PALETTE NAVIGATION (1 - 40) -->
+            ${renderQuestionPalette('reading', 40)}
         </div>
     `;
 }
