@@ -3,7 +3,7 @@
 // Chấm điểm tự động chuẩn thang điểm IELTS 1.0 - 9.0 & Giải thích chi tiết
 // =========================================================================
 
-let activeIeltsTestId = 'cam_19_test_1';
+let activeIeltsTestId = 'cam_1';
 let activeIeltsSkill = 'listening'; // 'listening' | 'reading' | 'writing' | 'speaking'
 let activeReadingPassage = 1;
 let activeWritingTask = 1;
@@ -86,6 +86,18 @@ function updateIeltsTimerDisplay() {
 function switchIeltsTest(testId) {
     if (!ieltsProfileData.ielts_tests[testId]) return;
     activeIeltsTestId = testId;
+    if (typeof currentUnitKey !== 'undefined') {
+        currentUnitKey = testId;
+    }
+    if (typeof studentProgress !== 'undefined' && studentProgress['ielts']) {
+        studentProgress['ielts'] = { unitKey: testId, index: 0 };
+    }
+    if (typeof renderUnitButtons === 'function') {
+        renderUnitButtons();
+    }
+    if (typeof saveProgress === 'function') {
+        saveProgress();
+    }
     ieltsTestSubmitted = false;
     ieltsTestScoreResult = null;
     ieltsUserAnswers = { listening: {}, reading: {}, writing: { task_1: '', task_2: '' }, speaking: {} };
@@ -120,6 +132,11 @@ function renderIeltsTestView() {
 
     const titleEl = document.getElementById('ielts-exam-title');
     if (titleEl) titleEl.textContent = test.title;
+
+    const fastSelect = document.getElementById('ielts-fast-test-select');
+    if (fastSelect && fastSelect.value !== activeIeltsTestId) {
+        fastSelect.value = activeIeltsTestId;
+    }
 
     switchIeltsSkill(activeIeltsSkill);
 }

@@ -354,7 +354,7 @@
                     </div>
 
                     <div>
-                        <label class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
+                        <label id="lessons-list-label" class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
                             Lessons List (Units):
                         </label>
                         <div class="flex flex-row md:flex-col gap-1.5 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto max-h-[160px] md:max-h-[38vh] lg:max-h-[46vh] custom-scroll pb-1.5 md:pb-0 md:pr-1" id="unit-container"></div>
@@ -379,7 +379,7 @@
         <div id="main-study-panel" class="flex-1 min-w-0 flex flex-col w-full h-full justify-between transition-none">
             
             <!-- MODE SWITCHER: FLASHCARD / VOCAB REVIEW / GRAMMAR / GRAMMAR REVIEW / NOTE -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3.5 pb-2 border-b border-violet-100/60 gap-2">
+            <div id="study-mode-switcher-bar" class="flex flex-col sm:flex-row sm:items-center justify-between mb-3.5 pb-2 border-b border-violet-100/60 gap-2">
                 <div class="inline-flex p-1 bg-violet-100/80 rounded-2xl shadow-inner gap-1 overflow-x-auto max-w-full custom-scroll">
                     <button id="btn-mode-flashcard" onclick="setStudyMode('flashcard')" class="whitespace-nowrap px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 shadow-sm bg-white text-violet-700 shrink-0">
                         🗂️ Flashcard
@@ -1050,25 +1050,58 @@
                                 🎓
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
+                                <div class="flex items-center gap-2 flex-wrap">
                                     <h2 id="ielts-exam-title" class="text-sm sm:text-base font-extrabold text-slate-800">
-                                        Cambridge IELTS 19 Academic - Test 1
+                                        Cambridge IELTS 1 Academic Test
                                     </h2>
                                     <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full border border-indigo-200">
                                         Standard Mock Exam
                                     </span>
                                 </div>
-                                <p class="text-[11px] text-slate-500 font-medium">Full 4 Kỹ năng (Nghe, Đọc, Viết, Nói) • Chấm điểm & Giải thích chi tiết</p>
+                                <p class="text-[11px] text-slate-500 font-medium">Trọn bộ 20 Đề Thi Cambridge IELTS (Full 4 Kỹ năng: Nghe, Đọc, Viết, Nói) • Chấm điểm & Giải thích chi tiết</p>
                             </div>
                         </div>
 
                         <div class="flex items-center gap-2 flex-wrap">
+                            <!-- Fast Test Selector (Cambridge 1 to 20) -->
+                            <div class="flex items-center gap-1.5 bg-indigo-50 border border-indigo-200 px-2.5 py-1.5 rounded-xl shadow-2xs">
+                                <span class="text-xs">📚</span>
+                                <span class="text-[11px] font-extrabold text-indigo-700 hidden sm:inline">Chọn đề:</span>
+                                <select id="ielts-fast-test-select" onchange="switchIeltsTest(this.value)" class="text-xs font-black bg-transparent text-indigo-900 border-none outline-none cursor-pointer py-0.5">
+                                    <option value="cam_1">Cambridge IELTS 1</option>
+                                    <option value="cam_2">Cambridge IELTS 2</option>
+                                    <option value="cam_3">Cambridge IELTS 3</option>
+                                    <option value="cam_4">Cambridge IELTS 4</option>
+                                    <option value="cam_5">Cambridge IELTS 5</option>
+                                    <option value="cam_6">Cambridge IELTS 6</option>
+                                    <option value="cam_7">Cambridge IELTS 7</option>
+                                    <option value="cam_8">Cambridge IELTS 8</option>
+                                    <option value="cam_9">Cambridge IELTS 9</option>
+                                    <option value="cam_10">Cambridge IELTS 10</option>
+                                    <option value="cam_11">Cambridge IELTS 11</option>
+                                    <option value="cam_12">Cambridge IELTS 12</option>
+                                    <option value="cam_13">Cambridge IELTS 13</option>
+                                    <option value="cam_14">Cambridge IELTS 14</option>
+                                    <option value="cam_15">Cambridge IELTS 15</option>
+                                    <option value="cam_16">Cambridge IELTS 16</option>
+                                    <option value="cam_17">Cambridge IELTS 17</option>
+                                    <option value="cam_18">Cambridge IELTS 18</option>
+                                    <option value="cam_19">Cambridge IELTS 19</option>
+                                    <option value="cam_20">Cambridge IELTS 20</option>
+                                </select>
+                            </div>
+
                             <!-- Countdown Timer -->
                             <div class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl shadow-2xs">
                                 <span class="text-sm">⏱️</span>
                                 <span class="text-xs font-bold text-amber-700">Time Left:</span>
                                 <span id="ielts-timer-display" class="text-xs sm:text-sm font-mono font-black text-amber-900">02:45:00</span>
                             </div>
+
+                            <!-- Full Screen Toggle -->
+                            <button onclick="toggleStudyFullScreen()" title="Phóng to toàn màn hình thi thử" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
+                                <span>⛶ Phóng to</span>
+                            </button>
 
                             <!-- Reset Test Button -->
                             <button onclick="resetIeltsTest()" title="Xoá làm lại từ đầu" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
@@ -1587,9 +1620,20 @@
             renderUnitButtons();
             updateStudentHeader();
             updateGameButtonLabel();
+            
+            const switcherBar = document.getElementById('study-mode-switcher-bar');
+            const lessonsLabel = document.getElementById('lessons-list-label');
+            const speedBtn = document.getElementById('speed-btn');
+
             if (currentStudentKey === 'ielts') {
+                if (switcherBar) switcherBar.classList.add('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = '🎯 ĐỀ THI CAMBRIDGE (1 - 20):';
+                if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
             } else {
+                if (switcherBar) switcherBar.classList.remove('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = 'Lessons List (Units):';
+                if (speedBtn) speedBtn.classList.remove('hidden');
                 setStudyMode('flashcard');
             }
             saveProgress();
@@ -2087,13 +2131,23 @@
             updateGameButtonLabel();
             saveProgress();
 
-            if (currentStudentKey === 'ielts' && currentStudyMode === 'flashcard') {
+            const switcherBar = document.getElementById('study-mode-switcher-bar');
+            const lessonsLabel = document.getElementById('lessons-list-label');
+            const speedBtn = document.getElementById('speed-btn');
+
+            if (currentStudentKey === 'ielts') {
+                if (switcherBar) switcherBar.classList.add('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = '🎯 ĐỀ THI CAMBRIDGE (1 - 20):';
+                if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
-            } else if (currentStudentKey !== 'ielts' && currentStudyMode === 'ielts_test') {
-                setStudyMode('flashcard');
-            } else if (currentStudyMode === 'ielts_test') {
-                if (typeof renderIeltsTestView === 'function') renderIeltsTestView();
-            } else if (currentStudyMode === 'quiz') {
+                return;
+            } else {
+                if (switcherBar) switcherBar.classList.remove('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = 'Lessons List (Units):';
+                if (speedBtn) speedBtn.classList.remove('hidden');
+            }
+
+            if (currentStudyMode === 'quiz') {
                 startQuiz();
             } else if (currentStudyMode === 'grammar') {
                 renderGrammarView();
@@ -2109,6 +2163,17 @@
         }
 
         function selectUnit(unitKey) {
+            if (currentStudentKey === 'ielts') {
+                currentUnitKey = unitKey;
+                studentProgress['ielts'] = { unitKey: unitKey, index: 0 };
+                renderUnitButtons();
+                saveProgress();
+                if (typeof switchIeltsTest === 'function') {
+                    switchIeltsTest(unitKey);
+                }
+                return;
+            }
+
             if (currentUnitKey === unitKey) return;
             currentUnitKey = unitKey;
             currentIndex = 0;
@@ -2491,7 +2556,19 @@
         // 4. HỆ THỐNG TRẮC NGHIỆM & CHUYỂN ĐỔI CHẾ ĐỘ
         // ==========================================
         function setStudyMode(mode) {
+            if (currentStudentKey === 'ielts') {
+                mode = 'ielts_test';
+            }
             currentStudyMode = mode;
+            
+            const switcherBar = document.getElementById('study-mode-switcher-bar');
+            if (switcherBar) {
+                if (currentStudentKey === 'ielts') {
+                    switcherBar.classList.add('hidden');
+                } else {
+                    switcherBar.classList.remove('hidden');
+                }
+            }
             const btnFlashcard = document.getElementById('btn-mode-flashcard');
             const btnQuiz = document.getElementById('btn-mode-quiz');
             const btnGrammar = document.getElementById('btn-mode-grammar');
