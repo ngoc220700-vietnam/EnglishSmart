@@ -27,6 +27,21 @@ let startersTestScoreResult = null;
 
 const STARTERS_STORAGE_KEY_PREFIX = 'smart_starters_progress_';
 
+function escapeQuotes(text) {
+    if (!text) return '';
+    return text.toString().replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    return text.toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 // 1. KHỞI TẠO TEST ENGINE
 function initStartersTestEngine() {
     loadStartersProgress();
@@ -349,6 +364,265 @@ function getStartersBookImages(test, skill, partNum) {
 }
 
 // -------------------------------------------------------------
+// BỘ CÔNG CỤ TƯƠNG TÁC CHO LISTENING PART 1 (NỐI) & PART 4 (TÔ MÀU)
+// -------------------------------------------------------------
+let startersP1SelectedQId = 1;
+const P1_PALETTE = [
+    { bg: "bg-rose-500", text: "text-white", border: "border-rose-400", hex: "#ef4444" },
+    { bg: "bg-violet-600", text: "text-white", border: "border-violet-400", hex: "#8b5cf6" },
+    { bg: "bg-emerald-600", text: "text-white", border: "border-emerald-400", hex: "#10b981" },
+    { bg: "bg-amber-500", text: "text-slate-950", border: "border-amber-400", hex: "#f59e0b" },
+    { bg: "bg-sky-600", text: "text-white", border: "border-sky-400", hex: "#0284c7" }
+];
+
+function selectStartersP1Name(qId) {
+    startersP1SelectedQId = qId;
+    renderStartersSkillContent();
+}
+
+function connectStartersP1Target(targetText) {
+    if (!startersP1SelectedQId) return;
+    handleStartersAnswerChange('listening', startersP1SelectedQId, targetText);
+    
+    // Tự động chuyển sang bạn nhỏ tiếp theo chưa nối (nếu có)
+    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
+    if (test && test.listening && test.listening.parts && test.listening.parts[0]) {
+        const p1 = test.listening.parts[0];
+        const nextUnlinked = p1.questions.find(q => !startersUserAnswers.listening[q.id]);
+        if (nextUnlinked) {
+            startersP1SelectedQId = nextUnlinked.id;
+        }
+    }
+    renderStartersSkillContent();
+}
+
+function clearStartersP1Connection(qId) {
+    if (startersUserAnswers.listening && startersUserAnswers.listening[qId]) {
+        delete startersUserAnswers.listening[qId];
+        saveStartersProgress();
+        renderStartersSkillContent();
+    }
+}
+
+// Bút vẽ nối tự do Part 1
+function initStartersP1Canvas() {
+    const canvas = document.getElementById('starters-p1-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return {
+            x: (clientX - rect.left) * scaleX,
+            y: (clientY - rect.top) * scaleY
+        };
+    }
+
+    function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        lastX = pos.x;
+        lastY = pos.y;
+    }
+
+    function draw(e) {
+        if (!isDrawing) return;
+        if (e.cancelable) e.preventDefault();
+        const pos = getPos(e);
+        ctx.strokeStyle = '#ef4444';
+        ctx.lineWidth = 4;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+        lastX = pos.x;
+        lastY = pos.y;
+    }
+
+    function stopDraw() {
+        isDrawing = false;
+    }
+
+    canvas.onmousedown = startDraw;
+    canvas.onmousemove = draw;
+    window.addEventListener('mouseup', stopDraw);
+    canvas.ontouchstart = startDraw;
+    canvas.ontouchmove = draw;
+    canvas.ontouchend = stopDraw;
+}
+
+function clearStartersP1Canvas() {
+    const canvas = document.getElementById('starters-p1-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Trạng thái công cụ Tô màu Part 4
+let startersP4ActiveColor = 'Red (Đỏ)';
+let startersP4ActiveHex = '#ef4444';
+let startersP4BrushSize = 14;
+let startersP4IsEraser = false;
+let startersP4UndoStack = [];
+
+const P4_PALETTE = [
+    { name: "Red (Đỏ)", hex: "#ef4444", bg: "bg-rose-500" },
+    { name: "Blue (Xanh dương)", hex: "#0284c7", bg: "bg-sky-600" },
+    { name: "Yellow (Vàng)", hex: "#eab308", bg: "bg-amber-400" },
+    { name: "Green (Xanh lá)", hex: "#16a34a", bg: "bg-emerald-600" },
+    { name: "Brown (Nâu)", hex: "#854d0e", bg: "bg-amber-800" },
+    { name: "Purple (Tím)", hex: "#9333ea", bg: "bg-purple-600" },
+    { name: "Orange (Cam)", hex: "#ea580c", bg: "bg-orange-500" },
+    { name: "Pink (Hồng)", hex: "#ec4899", bg: "bg-pink-500" }
+];
+
+function setStartersP4Color(colorName, hex) {
+    startersP4ActiveColor = colorName;
+    startersP4ActiveHex = hex;
+    startersP4IsEraser = false;
+    renderStartersSkillContent();
+}
+
+function setStartersP4BrushSize(size) {
+    startersP4BrushSize = size;
+    renderStartersSkillContent();
+}
+
+function setStartersP4Eraser(isEraser = true) {
+    startersP4IsEraser = !!isEraser;
+    renderStartersSkillContent();
+}
+
+function applyColorToP4Item(qId) {
+    handleStartersAnswerChange('listening', qId, startersP4ActiveColor);
+}
+
+function undoStartersP4() {
+    const canvas = document.getElementById('starters-p4-canvas');
+    if (!canvas || startersP4UndoStack.length <= 1) return;
+    startersP4UndoStack.pop();
+    const prevState = startersP4UndoStack[startersP4UndoStack.length - 1];
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+    };
+    img.src = prevState;
+}
+
+function clearStartersP4Canvas(bgImgSrc) {
+    const canvas = document.getElementById('starters-p4-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        startersP4UndoStack = [canvas.toDataURL()];
+    };
+    img.src = bgImgSrc;
+}
+
+function initStartersP4ColoringCanvas(bgImgSrc) {
+    const canvas = document.getElementById('starters-p4-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    const bgImg = new Image();
+    bgImg.crossOrigin = 'anonymous';
+    bgImg.onload = () => {
+        canvas.width = bgImg.naturalWidth || 800;
+        canvas.height = bgImg.naturalHeight || 600;
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        if (startersP4UndoStack.length === 0) {
+            try {
+                startersP4UndoStack.push(canvas.toDataURL());
+            } catch(e) {}
+        }
+    };
+    bgImg.src = bgImgSrc;
+
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return {
+            x: (clientX - rect.left) * scaleX,
+            y: (clientY - rect.top) * scaleY
+        };
+    }
+
+    function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        lastX = pos.x;
+        lastY = pos.y;
+    }
+
+    function draw(e) {
+        if (!isDrawing) return;
+        if (e.cancelable) e.preventDefault();
+        const pos = getPos(e);
+
+        ctx.lineWidth = startersP4BrushSize;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        if (startersP4IsEraser) {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.strokeStyle = '#ffffff';
+            ctx.globalAlpha = 1.0;
+        } else {
+            ctx.globalCompositeOperation = 'multiply';
+            ctx.strokeStyle = startersP4ActiveHex;
+            ctx.globalAlpha = 0.65;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+
+        lastX = pos.x;
+        lastY = pos.y;
+    }
+
+    function stopDraw() {
+        if (isDrawing) {
+            isDrawing = false;
+            if (startersP4UndoStack.length > 15) startersP4UndoStack.shift();
+            try {
+                startersP4UndoStack.push(canvas.toDataURL());
+            } catch(e) {}
+        }
+    }
+
+    canvas.onmousedown = startDraw;
+    canvas.onmousemove = draw;
+    window.addEventListener('mouseup', stopDraw);
+    canvas.ontouchstart = startDraw;
+    canvas.ontouchmove = draw;
+    canvas.ontouchend = stopDraw;
+}
+
+// -------------------------------------------------------------
 // A. GIAO DIỆN LISTENING (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersListeningView(container) {
@@ -359,49 +633,143 @@ function renderStartersListeningView(container) {
     let partHtml = '';
 
     if (activeStartersLisPart === 1) {
-        // Part 1: Listen and draw lines
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 1), "Tranh toàn cảnh Part 1 (Nhìn tranh và nối bạn nhỏ)", "gal_lis_1");
+        // Part 1: CÔNG CỤ NỐI TRỰC TIẾP (LINE CONNECTOR & MATCHING TOOL)
+        const bgImages = getStartersBookImages(test, 'listening', 1);
+        const p1ImgSrc = bgImages[0] || '';
+        const allTargets = currentPart.questions[0].options;
+        const selectedQ = currentPart.questions.find(q => q.id === startersP1SelectedQId) || currentPart.questions[0];
+
         partHtml = `
             <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
-                    <span>🎧 <strong>Part 1:</strong> Nghe đoạn hội thoại và chọn đúng vị trí hoặc hành động của từng bạn nhỏ trong bức tranh gốc bên dưới.</span>
+                <!-- HƯỚNG DẪN TƯƠNG TÁC NỐI -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">🎧 Part 1</span>
+                            <span class="font-extrabold text-sm text-amber-900">Công cụ Nối trực tiếp (Listen and draw lines)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Cách làm:</strong> Bấm chọn <strong>Tên Bạn nhỏ</strong> ➔ Bấm vào <strong>Mục tiêu trên tranh</strong> để nối dây tự động (hoặc cầm bút vẽ trực tiếp lên tranh)!
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="clearStartersP1Canvas()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
+                            <span>🧹</span> <span>Xoá nét vẽ tay</span>
+                        </button>
+                    </div>
                 </div>
 
-                ${galleryHtml}
+                <!-- 1. DANH SÁCH THẺ TÊN 5 BẠN NHỎ ĐỂ CHỌN NỐI -->
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
+                            <span>👥</span> <span>Bước 1: Chọn một bạn nhỏ để nghe & nối:</span>
+                        </span>
+                        <span class="text-[11px] font-bold text-slate-500">Đã nối: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5 bạn</span>
+                    </div>
 
-                <div class="space-y-3">
-                    ${currentPart.questions.map((q, qIdx) => {
-                        const userVal = startersUserAnswers.listening[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
-                                <div class="flex items-start justify-between gap-2">
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
-                                        <h4 class="font-extrabold text-sm text-slate-900">${q.name}</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 pt-1">
+                        ${currentPart.questions.map((q, idx) => {
+                            const isSelected = (q.id === startersP1SelectedQId);
+                            const connectedTarget = startersUserAnswers.listening[q.id] || '';
+                            const col = P1_PALETTE[idx % P1_PALETTE.length];
+
+                            return `
+                                <div onclick="selectStartersP1Name(${q.id})" 
+                                     class="p-3 rounded-2xl border cursor-pointer transition-all active:scale-95 flex flex-col justify-between ${
+                                         isSelected 
+                                             ? 'bg-amber-50 border-amber-500 ring-3 ring-amber-300 shadow-md scale-[1.02]' 
+                                             : (connectedTarget ? 'bg-emerald-50/70 border-emerald-300' : 'bg-slate-50 hover:bg-slate-100 border-slate-200')
+                                     }">
+                                    <div class="flex items-center justify-between gap-1 mb-2">
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-6 h-6 rounded-full ${col.bg} ${col.text} font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
+                                            <span class="font-extrabold text-sm text-slate-900">${q.name}</span>
+                                        </div>
+                                        <button onclick="event.stopPropagation(); speakStartersQuestion('${escapeQuotes(q.audio_prompt)}')" 
+                                                title="Nghe câu đố" 
+                                                class="w-7 h-7 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 flex items-center justify-center text-xs font-bold transition active:scale-90">
+                                            🔊
+                                        </button>
                                     </div>
-                                    <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_prompt)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                        <span>🔊</span> <span>Nghe câu đố</span>
-                                    </button>
-                                </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                                    ${q.options.map(opt => {
-                                        const isSelected = userVal === opt;
-                                        return `
-                                            <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${escapeQuotes(opt)}')"
-                                                    class="text-left p-2.5 rounded-xl border text-xs font-semibold transition active:scale-95 ${
-                                                        isSelected 
-                                                            ? 'bg-amber-100 border-amber-500 text-amber-950 font-bold ring-2 ring-amber-300' 
-                                                            : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
-                                                    }">
-                                                ${isSelected ? '✓ ' : '○ '} ${opt}
-                                            </button>
-                                        `;
-                                    }).join('')}
+                                    <div class="pt-1 border-t border-slate-200/60">
+                                        ${connectedTarget ? `
+                                            <div class="flex items-center justify-between text-[11px] text-emerald-800 font-bold">
+                                                <span class="truncate" title="${escapeHtml(connectedTarget)}">✓ Đã nối</span>
+                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${q.id})" title="Hủy nối" class="text-rose-600 hover:text-rose-800 ml-1 font-black">✕</button>
+                                            </div>
+                                        ` : (isSelected ? `
+                                            <span class="text-[11px] text-amber-700 font-black animate-pulse">👉 Bấm mục tiêu</span>
+                                        ` : `
+                                            <span class="text-[11px] text-slate-400 font-medium">Chưa nối</span>
+                                        `)}
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                    }).join('')}
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                <!-- 2. TRANH GỐC CAMBRIDGE & BẢNG MỤC TIÊU NỐI TRỰC TIẾP -->
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
+                            <span>🎯</span> <span>Bước 2: Bấm vào mục tiêu trên tranh tương ứng với bạn [${selectedQ ? selectedQ.name : ''}]:</span>
+                        </span>
+                        <div class="flex items-center gap-2">
+                            <button onclick="openStartersImageModal('${p1ImgSrc}', 'Tranh toàn cảnh Part 1 (Cambridge Starters)')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
+                                🔍 Phóng to tranh
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- BỨC TRANH KÈM CANVAS VẼ DÂY NỐI TỰ DO -->
+                    <div class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center">
+                        <img src="${p1ImgSrc}" 
+                             onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p1ImgSrc}';}" 
+                             alt="Tranh toàn cảnh Part 1" 
+                             class="w-full max-h-[520px] object-contain select-none pointer-events-none">
+                        <!-- Canvas phủ lên để vẽ nét nối tự do -->
+                        <canvas id="starters-p1-canvas" 
+                                width="900" 
+                                height="650" 
+                                class="absolute inset-0 w-full h-full cursor-crosshair touch-none"></canvas>
+                    </div>
+
+                    <!-- 6 Ô MỤC TIÊU NHÂN VẬT NỐI TRỰC QUAN -->
+                    <div class="pt-2">
+                        <span class="text-[11px] font-extrabold text-slate-600 block mb-2">🎯 Danh sách mục tiêu trong tranh (Bấm vào mục tiêu để nối dây với bạn [${selectedQ ? selectedQ.name : ''}]):</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                            ${allTargets.map(target => {
+                                const connectedQ = currentPart.questions.find(q => startersUserAnswers.listening[q.id] === target);
+
+                                return `
+                                    <div onclick="connectStartersP1Target('${escapeQuotes(target)}')"
+                                         class="p-3 rounded-2xl border transition-all cursor-pointer flex items-start gap-2.5 active:scale-95 ${
+                                             connectedQ 
+                                                 ? 'bg-emerald-50 border-emerald-400 shadow-sm' 
+                                                 : 'bg-slate-50 hover:bg-amber-50 hover:border-amber-300 border-slate-200'
+                                         }">
+                                        <div class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${connectedQ ? 'bg-emerald-600 text-white font-black' : 'bg-slate-200 text-slate-600'} text-xs font-bold">
+                                            ${connectedQ ? `✓` : `🎯`}
+                                        </div>
+                                        <div class="flex-1 space-y-1">
+                                            <p class="text-xs font-bold text-slate-800 leading-snug">${target}</p>
+                                            ${connectedQ ? `
+                                                <div class="flex items-center gap-1.5 text-[11px] font-black text-emerald-800">
+                                                    <span class="px-2 py-0.5 rounded-md bg-emerald-200 text-emerald-950 font-black">🏷️ ${connectedQ.name}</span>
+                                                    <button onclick="event.stopPropagation(); clearStartersP1Connection(${connectedQ.id})" class="text-rose-600 hover:text-rose-800 font-bold ml-auto">Gỡ nối</button>
+                                                </div>
+                                            ` : `
+                                                <span class="text-[11px] text-indigo-600 font-bold hover:underline">🔗 Bấm để nối với ${selectedQ ? selectedQ.name : ''}</span>
+                                            `}
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -489,59 +857,149 @@ function renderStartersListeningView(container) {
             </div>
         `;
     } else if (activeStartersLisPart === 4) {
-        // Part 4: Listen and colour
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 4), "Tranh tô màu Part 4 (Nhìn tranh trong sách & chọn màu sắc)", "gal_lis_4");
+        // Part 4: CÔNG CỤ TÔ MÀU TRỰC TIẾP (COLOURING CANVAS & SMART COLOUR PICKER)
+        const bgImages = getStartersBookImages(test, 'listening', 4);
+        const p4ImgSrc = bgImages[0] || '';
+
         partHtml = `
             <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-fuchsia-50 border border-fuchsia-200 text-xs text-fuchsia-950 flex items-center justify-between">
-                    <span>🎨 <strong>Part 4:</strong> Quan sát bức tranh gốc trong sách bên dưới, nghe hướng dẫn và chọn màu sắc phù hợp cho từng đồ vật.</span>
+                <!-- HƯỚNG DẪN TÔ MÀU -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-fuchsia-50 to-pink-50 border border-fuchsia-200 text-xs text-fuchsia-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-fuchsia-500 text-white font-black text-[11px] uppercase tracking-wide">🎨 Part 4</span>
+                            <span class="font-extrabold text-sm text-fuchsia-900">Bảng vẽ & Công cụ Tô màu (Listen and colour)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Cách làm:</strong> Chọn màu sáp từ khay màu ➔ Dùng cọ tô trực tiếp lên bức tranh ➔ Bấm nút màu cho đồ vật bên dưới để ghi nhận đáp án!
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="undoStartersP4()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
+                            <span>↩️</span> <span>Hoàn tác</span>
+                        </button>
+                        <button onclick="clearStartersP4Canvas('${p4ImgSrc}')" class="px-3 py-1.5 rounded-xl bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
+                            <span>🗑️</span> <span>Xoá vẽ lại</span>
+                        </button>
+                    </div>
                 </div>
 
-                ${galleryHtml}
+                <!-- 1. BẢNG KHAY MÀU SÁP & CỌ VẼ CHUYÊN NGHIỆP -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-black uppercase text-slate-800">Khay màu sáp:</span>
+                            <span id="starters-p4-active-color-badge" class="text-xs font-extrabold px-3 py-1 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center gap-1.5">
+                                <span class="w-3.5 h-3.5 rounded-full border border-white shadow-xs" style="background-color: ${startersP4ActiveHex}"></span>
+                                <span>Đang cầm màu: <strong>${startersP4ActiveColor}</strong></span>
+                            </span>
+                        </div>
+                        <!-- CỠ NÉT CỌ & TẨY -->
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="setStartersP4BrushSize(6); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 6 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                                ✏️ Nét nhỏ
+                            </button>
+                            <button onclick="setStartersP4BrushSize(14); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 14 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                                🖌️ Nét vừa
+                            </button>
+                            <button onclick="setStartersP4BrushSize(26); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 26 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                                🖍️ Cọ to
+                            </button>
+                            <button onclick="setStartersP4Eraser(true);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4IsEraser ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                                🧽 Tẩy nét
+                            </button>
+                        </div>
+                    </div>
 
-                <div class="space-y-3">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.listening[q.id] || '';
-                        const colours = [
-                            { name: "Red (Đỏ)", bg: "bg-rose-500", text: "text-white" },
-                            { name: "Blue (Xanh dương)", bg: "bg-sky-500", text: "text-white" },
-                            { name: "Yellow (Vàng)", bg: "bg-amber-400", text: "text-slate-950" },
-                            { name: "Green (Xanh lá)", bg: "bg-emerald-500", text: "text-white" },
-                            { name: "Brown (Nâu)", bg: "bg-amber-800", text: "text-white" },
-                            { name: "Purple (Tím)", bg: "bg-purple-600", text: "text-white" }
-                        ];
+                    <!-- 8 NÚT MÀU SÁP TRÒN RỰC RỠ -->
+                    <div class="flex flex-wrap gap-2.5 pt-1">
+                        ${P4_PALETTE.map(c => {
+                            const isCurrent = (startersP4ActiveColor === c.name && !startersP4IsEraser);
+                            return `
+                                <button onclick="setStartersP4Color('${c.name}', '${c.hex}')"
+                                        class="px-3.5 py-2 rounded-2xl text-xs font-black transition-all active:scale-95 flex items-center gap-2 ${
+                                            isCurrent 
+                                                ? 'ring-4 ring-offset-2 ring-indigo-500 shadow-lg scale-105 font-black text-slate-950 bg-slate-100' 
+                                                : 'hover:bg-slate-100 border border-slate-200 text-slate-700'
+                                        }">
+                                    <span class="w-5 h-5 rounded-full border-2 border-white shadow-sm shrink-0" style="background-color: ${c.hex}"></span>
+                                    <span>${c.name}</span>
+                                    ${isCurrent ? '✓' : ''}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
 
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
-                                <div class="flex items-start justify-between gap-2">
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-7 h-7 rounded-full bg-fuchsia-500 text-white font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
-                                        <h4 class="font-extrabold text-xs sm:text-sm text-slate-900">${q.item}</h4>
+                <!-- 2. BỨC TRANH CANVAS TÔ MÀU TRỰC TIẾP -->
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
+                            <span>🖼️</span> <span>Khung vẽ tranh (Dùng chuột hoặc ngón tay để tô màu sáp lên tranh):</span>
+                        </span>
+                        <button onclick="openStartersImageModal('${p4ImgSrc}', 'Tranh gốc Part 4 (Cambridge Starters)')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
+                            🔍 Phóng to tranh
+                        </button>
+                    </div>
+
+                    <div class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center">
+                        <canvas id="starters-p4-canvas" class="max-h-[540px] w-auto max-w-full cursor-crosshair touch-none shadow-sm"></canvas>
+                    </div>
+                </div>
+
+                <!-- 3. DANH SÁCH 5 ĐỒ VẬT CẦN TÔ (CÂU 16 - 20) ĐỂ GÁN MÀU & CHẤM ĐIỂM -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
+                            <span>🎯</span> <span>Gán màu cho 5 đồ vật (Nghe câu hướng dẫn & chấm màu tương ứng):</span>
+                        </span>
+                        <span class="text-[11px] font-bold text-slate-500">Đã tô: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5 đồ vật</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
+                        ${currentPart.questions.map(q => {
+                            const userColor = startersUserAnswers.listening[q.id] || '';
+                            const userColObj = P4_PALETTE.find(p => p.name === userColor);
+
+                            return `
+                                <div class="p-3.5 rounded-2xl border transition shadow-2xs space-y-2.5 ${
+                                    userColor ? 'bg-amber-50/70 border-amber-300' : 'bg-slate-50 border-slate-200'
+                                }">
+                                    <div class="flex items-start justify-between gap-1.5">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-7 h-7 rounded-full bg-fuchsia-500 text-white font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
+                                            <div>
+                                                <h4 class="font-extrabold text-xs sm:text-sm text-slate-900 leading-snug">${q.item}</h4>
+                                            </div>
+                                        </div>
+                                        <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" 
+                                                title="Nghe hướng dẫn tô màu"
+                                                class="px-2.5 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
+                                            <span>🔊</span> <span>Nghe</span>
+                                        </button>
                                     </div>
-                                    <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                        <span>🔊</span> <span>Nghe màu sắc</span>
-                                    </button>
-                                </div>
 
-                                <div class="flex flex-wrap gap-2 pt-1">
-                                    ${colours.map(c => {
-                                        const isSelected = userVal === c.name;
-                                        return `
-                                            <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${c.name}')"
-                                                    class="px-3 py-1.5 rounded-xl text-xs font-bold transition active:scale-95 flex items-center gap-1.5 ${
-                                                        isSelected 
-                                                            ? `${c.bg} ${c.text} ring-2 ring-offset-2 ring-indigo-500 shadow-sm scale-105` 
-                                                            : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                                                    }">
-                                                <span class="w-2.5 h-2.5 rounded-full ${c.bg} border border-white"></span>
-                                                <span>${c.name}</span>
-                                            </button>
-                                        `;
-                                    }).join('')}
+                                    <!-- NÚT CHẤM MÀU ĐỒ VẬT -->
+                                    <div class="pt-2 border-t border-slate-200/70 flex items-center justify-between gap-2">
+                                        ${userColor ? `
+                                            <div class="flex items-center gap-1.5 text-xs font-black text-slate-900">
+                                                <span class="w-4 h-4 rounded-full border border-white shadow-xs shrink-0" style="background-color: ${userColObj ? userColObj.hex : '#999'}"></span>
+                                                <span>✓ ${userColor}</span>
+                                            </div>
+                                        ` : `
+                                            <span class="text-xs text-slate-400 font-semibold italic">Chưa tô màu</span>
+                                        `}
+
+                                        <button onclick="applyColorToP4Item(${q.id})"
+                                                class="px-3 py-1.5 rounded-xl text-xs font-black transition active:scale-95 flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-xs hover:shadow-md">
+                                            <span>🎨</span>
+                                            <span>Tô màu ${startersP4ActiveColor.split(' ')[0]}</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                    }).join('')}
+                            `;
+                        }).join('')}
+                    </div>
                 </div>
             </div>
         `;
@@ -568,6 +1026,19 @@ function renderStartersListeningView(container) {
             </div>
         </div>
     `;
+
+    // Kích hoạt Canvas tương tác sau khi DOM render xong
+    if (activeStartersLisPart === 1) {
+        setTimeout(() => {
+            initStartersP1Canvas();
+        }, 50);
+    } else if (activeStartersLisPart === 4) {
+        const bgImages = getStartersBookImages(test, 'listening', 4);
+        const p4ImgSrc = bgImages[0] || '';
+        setTimeout(() => {
+            initStartersP4ColoringCanvas(p4ImgSrc);
+        }, 50);
+    }
 }
 
 function switchStartersLisPart(partNum) {
