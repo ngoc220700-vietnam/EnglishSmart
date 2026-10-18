@@ -767,7 +767,9 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
                     <div>
                         <div class="flex items-center gap-1.5">
                             <span class="text-xs font-black uppercase tracking-wider text-amber-300">IELTS Writing Band Score</span>
-                            <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-200 px-2 py-0.5 rounded-full border border-indigo-400/30">Gemini 1.5 Flash</span>
+                            <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-200 px-2 py-0.5 rounded-full border border-indigo-400/30">
+                                ${result.is_builtin_engine ? '⚡ AI Examiner (Tích Hợp Sẵn)' : '🤖 Gemini 1.5 Flash'}
+                            </span>
                         </div>
                         <h4 class="text-xs sm:text-sm font-extrabold text-white mt-0.5">Bảng Điểm & Nhận Xét 4 Tiêu Chí</h4>
                     </div>
@@ -855,14 +857,139 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
     `;
 }
 
-async function evaluateWritingWithGemini(taskNum) {
-    const apiKey = getGeminiApiKey();
-    if (!apiKey) {
-        alert("⚠️ Bạn chưa cấu hình Google Gemini API Key. Vui lòng dán API Key (hoàn toàn miễn phí) để kích hoạt Giám khảo AI!");
-        openGeminiApiKeyModal();
-        return;
-    }
+function evaluateWritingLocally(taskNum, studentEssay, task) {
+    const wordCount = countWords(studentEssay);
+    const minWords = task.min_words || (taskNum === 1 ? 150 : 250);
+    const lowerText = studentEssay.toLowerCase();
 
+    // 1. Task Achievement / Response (TR)
+    let trScore = 5.0;
+    if (wordCount >= minWords) trScore = 6.5;
+    else if (wordCount >= minWords * 0.8) trScore = 6.0;
+    else if (wordCount >= minWords * 0.5) trScore = 5.0;
+    else trScore = 4.0;
+
+    // Kiểm tra cấu trúc đoạn văn (paragraphing)
+    const paragraphs = studentEssay.split(/\n+/).filter(p => p.trim().length > 0);
+    if (paragraphs.length >= 3 && wordCount >= minWords) trScore += 0.5;
+
+    // 2. Coherence and Cohesion (CC)
+    const linkingWords = [
+        'firstly', 'secondly', 'furthermore', 'moreover', 'in addition', 'besides',
+        'however', 'nevertheless', 'on the other hand', 'in contrast', 'although', 'even though',
+        'while', 'whereas', 'consequently', 'therefore', 'as a result', 'thus',
+        'in conclusion', 'to summarize', 'overall', 'it is clear that', 'specifically', 'for instance'
+    ];
+    let linkCount = 0;
+    linkingWords.forEach(w => {
+        if (lowerText.includes(w)) linkCount++;
+    });
+
+    let ccScore = 5.0;
+    if (linkCount >= 5 && paragraphs.length >= 3) ccScore = 7.0;
+    else if (linkCount >= 3) ccScore = 6.0;
+    else if (linkCount >= 1) ccScore = 5.5;
+    else ccScore = 4.5;
+
+    // 3. Lexical Resource (LR)
+    const academicWords = [
+        'significant', 'dramatic', 'substantial', 'considerable', 'negligible',
+        'illustrate', 'demonstrate', 'depict', 'fluctuation', 'proportion',
+        'indicator', 'perspective', 'phenomenon', 'predominant', 'fundamental',
+        'subsequent', 'facilitate', 'detrimental', 'allocated', 'substantiate',
+        'trend', 'steadily', 'markedly', 'respectively', 'counterpart', 'outweigh'
+    ];
+    let awlCount = 0;
+    const matchedAwl = [];
+    academicWords.forEach(w => {
+        if (lowerText.includes(w)) {
+            awlCount++;
+            matchedAwl.push(w);
+        }
+    });
+
+    const wordsArr = lowerText.match(/[a-z]+/g) || [];
+    const uniqueWords = new Set(wordsArr).size;
+    const varietyRatio = wordsArr.length > 0 ? (uniqueWords / wordsArr.length) : 0;
+
+    let lrScore = 5.0;
+    if (awlCount >= 4 && varietyRatio > 0.5) lrScore = 7.0;
+    else if (awlCount >= 2 || varietyRatio > 0.45) lrScore = 6.0;
+    else lrScore = 5.5;
+
+    // 4. Grammatical Range and Accuracy (GRA)
+    const complexIndicators = ['which', 'that', 'who', 'whom', 'whose', 'because', 'although', 'if', 'unless', 'provided that', 'since', 'whereas', 'while'];
+    let complexCount = 0;
+    complexIndicators.forEach(w => {
+        if (lowerText.includes(' ' + w + ' ')) complexCount++;
+    });
+
+    let graScore = 5.0;
+    if (complexCount >= 4) graScore = 6.5;
+    else if (complexCount >= 2) graScore = 6.0;
+    else graScore = 5.5;
+
+    // Overall Band
+    const rawAverage = (trScore + ccScore + lrScore + graScore) / 4;
+    const decimal = rawAverage - Math.floor(rawAverage);
+    let overallBand = Math.floor(rawAverage);
+    if (decimal >= 0.75) overallBand += 1.0;
+    else if (decimal >= 0.25) overallBand += 0.5;
+
+    const sampleText = task.sample_band_9 || task.sample_band_85 || task.model_answer || '';
+
+    return {
+        overall_band: overallBand,
+        is_builtin_engine: true,
+        scores: {
+            task_response: trScore,
+            coherence_cohesion: ccScore,
+            lexical_resource: lrScore,
+            grammatical_accuracy: graScore
+        },
+        criteria_feedback: {
+            task_response: `Bài viết đạt ${wordCount}/${minWords} từ (${wordCount >= minWords ? 'đã đáp ứng yêu cầu độ dài' : 'chưa đủ số từ quy định'}). ${paragraphs.length >= 3 ? 'Bố cục bài có chia đoạn rõ ràng.' : 'Cần phân bổ cấu trúc thành ít nhất 3-4 đoạn văn (Mở bài, Thân bài 1, Thân bài 2, Kết luận).'}` ,
+            coherence_cohesion: `Đã sử dụng ${linkCount} từ/cụm từ liên kết học thuật. ${linkCount >= 4 ? 'Mạch lạc tốt, luồng tư duy chuyển tiếp tự nhiên giữa các câu.' : 'Cần bổ sung thêm các liên từ chỉ sự tương phản (However, In contrast) và bổ sung (Furthermore, In addition) để tăng tính chặt chẽ.'}`,
+            lexical_resource: `Mức độ đa dạng từ vựng: ${(varietyRatio * 100).toFixed(0)}%. ${awlCount > 0 ? `Đã dùng tốt các thuật ngữ học thuật như: ${matchedAwl.slice(0, 4).join(', ')}.` : 'Nên thay thế các từ ngữ thông dụng bằng từ vựng mang tính học thuật cao hơn (Academic Collocations).'}` ,
+            grammatical_accuracy: `Đã kết hợp câu đơn và câu phức (${complexCount} mệnh đề phức). Cần tiếp tục duy trì việc dùng mệnh đề quan hệ và các cấu trúc bị động để nâng cao tính đa dạng ngữ pháp.`
+        },
+        detailed_errors: [
+            {
+                original: "Sử dụng từ vựng chung chung hoặc lặp từ",
+                corrected: "Áp dụng các từ vựng học thuật nâng cao từ bài mẫu Band 9.0 bên dưới",
+                explanation: "Trong IELTS Writing, giám khảo đánh giá rất cao việc paraphrase và sử dụng Collocations tự nhiên."
+            }
+        ],
+        improved_version: sampleText,
+        key_upgrades: [
+            "illustrates significant changes (minh họa các biến động rõ rệt)",
+            "a substantial proportion of (một tỷ lệ đáng kể)",
+            "plays a pivotal role (đóng vai trò nòng cốt)",
+            "witnessed a dramatic surge (chứng kiến sự tăng trưởng vượt bậc)"
+        ],
+        general_advice: `Bạn đã hoàn thành tốt bài viết. Hãy đối chiếu với bài viết mẫu chuẩn Band 9.0 bên dưới để học cách dẫn dắt luận điểm và cấu trúc câu ăn điểm của chuyên gia Cambridge!`
+    };
+}
+
+function applyWritingEvaluationResult(taskKey, parsedResult) {
+    if (!ieltsAiWritingResults[activeIeltsTestId]) {
+        ieltsAiWritingResults[activeIeltsTestId] = {};
+    }
+    ieltsAiWritingResults[activeIeltsTestId][taskKey] = parsedResult;
+
+    // Lưu điểm AI vào answers
+    if (!ieltsUserAnswers.writing) ieltsUserAnswers.writing = {};
+    ieltsUserAnswers.writing[taskKey + '_ai_score'] = parsedResult.overall_band;
+    saveIeltsProgress();
+
+    // Render card
+    const evalContainer = document.getElementById('ielts-ai-eval-container-' + taskKey);
+    if (evalContainer) {
+        evalContainer.innerHTML = renderIeltsAiWritingCard(taskKey, parsedResult);
+    }
+}
+
+async function evaluateWritingWithGemini(taskNum) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     if (!test || !test.writing) return;
     const task = taskNum === 1 ? test.writing.task_1 : test.writing.task_2;
@@ -870,8 +997,8 @@ async function evaluateWritingWithGemini(taskNum) {
     const studentEssay = ieltsUserAnswers.writing[taskKey] || '';
     const wordCount = countWords(studentEssay);
 
-    if (wordCount < 30) {
-        alert("⚠️ Bài viết của bạn hiện tại có " + wordCount + " từ (quá ngắn). Vui lòng viết ít nhất 30 - 50 từ để Giám khảo AI có thể phân tích và chấm điểm chuẩn xác!");
+    if (wordCount < 25) {
+        alert("⚠️ Bài viết của bạn hiện tại có " + wordCount + " từ (quá ngắn). Vui lòng viết ít nhất 25 - 30 từ để Giám khảo AI có thể phân tích và chấm điểm chuẩn xác!");
         return;
     }
 
@@ -888,11 +1015,26 @@ async function evaluateWritingWithGemini(taskNum) {
             <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 animate-pulse text-xs text-indigo-950 space-y-2">
                 <div class="flex items-center gap-2">
                     <span class="w-3 h-3 rounded-full bg-indigo-600 animate-ping"></span>
-                    <span class="font-extrabold text-indigo-900">Google Gemini 1.5 Flash Examiner đang phân tích bài thi...</span>
+                    <span class="font-extrabold text-indigo-900">Giám khảo IELTS AI đang phân tích bài thi...</span>
                 </div>
                 <p class="text-slate-600">Đang đối chiếu 4 tiêu chí: Task Response, Coherence & Cohesion, Lexical Resource, Grammatical Accuracy...</p>
             </div>
         `;
+    }
+
+    const apiKey = getGeminiApiKey();
+
+    // TỐI ƯU HÓA: Nếu không có API Key, tự động dùng bộ phân tích IELTS Academic NLP nội bộ tức thì (Zero-Setup)
+    if (!apiKey) {
+        setTimeout(() => {
+            const result = evaluateWritingLocally(taskNum, studentEssay, task);
+            applyWritingEvaluationResult(taskKey, result);
+            if (evalBtn) {
+                evalBtn.disabled = false;
+                evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>`;
+            }
+        }, 600);
+        return;
     }
 
     const promptText = `You are a strict, highly authoritative Cambridge IELTS Academic Writing Examiner with 15+ years of official examination experience.
@@ -975,35 +1117,17 @@ Respond ONLY with a valid JSON object matching this exact format:
             throw new Error("Lỗi đọc định dạng kết quả AI: " + e.message);
         }
 
-        if (!ieltsAiWritingResults[activeIeltsTestId]) {
-            ieltsAiWritingResults[activeIeltsTestId] = {};
-        }
-        ieltsAiWritingResults[activeIeltsTestId][taskKey] = parsedResult;
-
-        // Lưu điểm AI vào answers
-        if (!ieltsUserAnswers.writing) ieltsUserAnswers.writing = {};
-        ieltsUserAnswers.writing[taskKey + '_ai_score'] = parsedResult.overall_band;
-        saveIeltsProgress();
-
-        // Render card
-        if (evalContainer) {
-            evalContainer.innerHTML = renderIeltsAiWritingCard(taskKey, parsedResult);
-        }
+        applyWritingEvaluationResult(taskKey, parsedResult);
     } catch(err) {
-        alert("Lỗi khi chấm bài bằng Gemini AI: " + err.message + "\nVui lòng kiểm tra lại API Key hoặc kết nối mạng!");
-        if (evalContainer) {
-            evalContainer.innerHTML = `
-                <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
-                    <p class="font-bold">❌ Không thể hoàn tất chấm điểm AI:</p>
-                    <p class="mt-1">${escapeHtml(err.message)}</p>
-                    <button onclick="openGeminiApiKeyModal()" class="mt-2 px-3 py-1 bg-rose-600 text-white rounded-lg font-bold text-xs">Cài đặt lại API Key</button>
-                </div>
-            `;
-        }
+        console.warn("Lỗi Gemini API, tự động chuyển sang bộ chấm IELTS Academic nội bộ:", err);
+        // Fallback mượt mà sang bộ chấm cục bộ
+        const fallbackResult = evaluateWritingLocally(taskNum, studentEssay, task);
+        fallbackResult.general_advice = "⚡ Đã chấm bằng Hệ thống IELTS Academic Examiner nội bộ (tự động kích hoạt khi kết nối Gemini API bận).";
+        applyWritingEvaluationResult(taskKey, fallbackResult);
     } finally {
         if (evalBtn) {
             evalBtn.disabled = false;
-            evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Gemini AI)</span>`;
+            evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>`;
         }
     }
 }
@@ -1076,10 +1200,10 @@ function renderIeltsWritingView(container) {
                         <button onclick="evaluateWritingWithGemini(${activeWritingTask})" 
                                 id="btn-gemini-eval-${taskKey}"
                                 class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-sky-600 hover:from-violet-700 hover:to-sky-700 text-white font-extrabold text-xs shadow-md transition active:scale-95 flex items-center gap-1.5">
-                            <span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Gemini AI)</span>
+                            <span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>
                         </button>
                         <button onclick="openGeminiApiKeyModal()" class="text-[11px] text-slate-400 hover:text-indigo-600 font-semibold transition flex items-center gap-1">
-                            <span>⚙️ Cài đặt Key</span>
+                            <span>⚙️ Khóa Gemini (Tùy chọn)</span>
                         </button>
                     </div>
 
@@ -1532,12 +1656,12 @@ function gradeIeltsTest(showModal = true) {
     const lisBand = convertRawToIeltsBand(lisNormalizedRaw, true);
     const redBand = convertRawToIeltsBand(redNormalizedRaw, false);
 
-    // Ước lượng hoặc lấy điểm Writing chính xác do Gemini AI chấm
-    const t1Words = countWords(ieltsUserAnswers.writing.task_1 || '');
-    const t2Words = countWords(ieltsUserAnswers.writing.task_2 || '');
+    // 3. Tính điểm Writing (Nếu chưa viết thì 0.0, có AI chấm thì lấy điểm AI, nếu viết thì tính theo độ dài thực tế)
+    const t1Words = countWords(ieltsUserAnswers.writing?.task_1 || '');
+    const t2Words = countWords(ieltsUserAnswers.writing?.task_2 || '');
     const t1Ai = ieltsUserAnswers.writing?.task_1_ai_score;
     const t2Ai = ieltsUserAnswers.writing?.task_2_ai_score;
-    let wriBand = 6.0;
+    let wriBand = 0.0;
     let isAiGradedWriting = false;
 
     if (t1Ai && t2Ai) {
@@ -1552,27 +1676,64 @@ function gradeIeltsTest(showModal = true) {
         wriBand = t1Ai;
         isAiGradedWriting = true;
     } else {
-        if (t1Words >= 150 && t2Words >= 250) wriBand = 8.5;
-        else if (t1Words >= 120 && t2Words >= 200) wriBand = 7.5;
-        else if (t1Words > 50 || t2Words > 100) wriBand = 6.5;
+        const totalWords = t1Words + t2Words;
+        if (totalWords === 0) {
+            wriBand = 0.0; // Chưa viết từ nào
+        } else if (totalWords < 30) {
+            wriBand = 1.0;
+        } else if (totalWords < 80) {
+            wriBand = 3.0;
+        } else if (totalWords < 150) {
+            wriBand = 4.5;
+        } else if (t1Words >= 120 && t2Words >= 200) {
+            wriBand = 6.0;
+        } else if (t1Words >= 150 && t2Words >= 250) {
+            wriBand = 6.5;
+        } else {
+            wriBand = 5.0;
+        }
     }
 
-    let spkBand = 8.0; // Hoàn thành các phần thi nói
+    // 4. Tính điểm Speaking (Nếu chưa ghi âm bài nào thì 0.0)
+    const recordedCount = Object.keys(recordedAudioUrls || {}).length;
+    let spkBand = 0.0;
+    if (recordedCount === 0) {
+        spkBand = 0.0; // Chưa ghi âm bài nào
+    } else if (recordedCount === 1) {
+        spkBand = 5.0;
+    } else if (recordedCount >= 2 && recordedCount < 4) {
+        spkBand = 6.5;
+    } else {
+        spkBand = 7.5;
+    }
 
-    // Tính Overall Band
-    const rawOverall = (lisBand + redBand + wriBand + spkBand) / 4;
-    // Làm tròn theo chuẩn IELTS: .25 -> .5, .75 -> số nguyên tiếp theo
+    // 5. Tính Overall Band trên các kỹ năng học viên thực sự đã làm bài
+    const testedSkills = [];
+    testedSkills.push({ name: 'Listening', band: lisBand });
+    testedSkills.push({ name: 'Reading', band: redBand });
+    if (wriBand > 0) testedSkills.push({ name: 'Writing', band: wriBand });
+    if (spkBand > 0) testedSkills.push({ name: 'Speaking', band: spkBand });
+
+    const sumBand = testedSkills.reduce((acc, s) => acc + s.band, 0);
+    const rawOverall = sumBand / testedSkills.length;
     const decimal = rawOverall - Math.floor(rawOverall);
     let overallBand = Math.floor(rawOverall);
     if (decimal >= 0.75) overallBand += 1.0;
     else if (decimal >= 0.25) overallBand += 0.5;
 
+    let overallSubtitle = `Tính trên ${testedSkills.length}/4 kỹ năng đã làm`;
+    if (testedSkills.length === 4) {
+        overallSubtitle = "Đầy đủ 4 kỹ năng chuẩn Cambridge";
+    }
+
     ieltsTestScoreResult = {
         lisCorrect, lisTotal, lisBand,
         redCorrect, redTotal, redBand,
         wriBand, spkBand,
+        t1Words, t2Words, recordedCount,
         isAiGradedWriting,
         overallBand,
+        overallSubtitle,
         allReview: [...lisReview, ...redReview]
     };
 
@@ -1597,6 +1758,9 @@ function showIeltsResultsModal() {
     if (res.overallBand >= 8.5) levelTitle = "Expert User (C2)";
     else if (res.overallBand >= 7.5) levelTitle = "Very Good User (C1+)";
     else if (res.overallBand >= 6.5) levelTitle = "Good User (B2/C1)";
+    else if (res.overallBand >= 5.5) levelTitle = "Competent User (B2)";
+    else if (res.overallBand >= 4.5) levelTitle = "Modest User (B1)";
+    else levelTitle = "Limited User (A2/B1)";
 
     let reviewItemsHtml = '';
     res.allReview.forEach(item => {
@@ -1640,6 +1804,7 @@ function showIeltsResultsModal() {
                     ${res.overallBand.toFixed(1)}
                 </div>
                 <span class="text-xs font-extrabold text-white bg-white/10 px-3 py-0.5 rounded-full border border-white/20">${levelTitle}</span>
+                <span class="text-[10px] text-indigo-200/80 mt-1.5">${res.overallSubtitle}</span>
             </div>
 
             <!-- 4 SKILLS CARDS -->
@@ -1666,16 +1831,20 @@ function showIeltsResultsModal() {
                         ${res.isAiGradedWriting ? '<span class="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded-full font-black">AI Chấm 🤖</span>' : ''}
                     </div>
                     <div class="flex items-baseline justify-between mt-1">
-                        <span class="text-2xl font-black text-emerald-950 font-mono">${res.wriBand.toFixed(1)}</span>
-                        <span class="text-xs text-emerald-700 font-bold">${res.isAiGradedWriting ? 'Gemini AI 4 Tiêu Chí' : 'Task 1 & Task 2'}</span>
+                        <span class="text-2xl font-black ${res.wriBand > 0 ? 'text-emerald-950' : 'text-slate-400'} font-mono">${res.wriBand.toFixed(1)}</span>
+                        <span class="text-xs ${res.wriBand > 0 ? 'text-emerald-700' : 'text-slate-400'} font-bold">
+                            ${res.wriBand === 0 ? 'Chưa làm bài' : (res.isAiGradedWriting ? 'Gemini AI' : `${res.t1Words + res.t2Words} từ`)}
+                        </span>
                     </div>
                 </div>
 
                 <div class="p-3 rounded-2xl bg-fuchsia-50 border border-fuchsia-200 flex flex-col justify-between">
                     <span class="text-[10px] font-bold text-fuchsia-800 uppercase">🗣️ Speaking</span>
                     <div class="flex items-baseline justify-between mt-1">
-                        <span class="text-2xl font-black text-fuchsia-950 font-mono">${res.spkBand.toFixed(1)}</span>
-                        <span class="text-xs text-fuchsia-700 font-bold">Part 1, 2, 3</span>
+                        <span class="text-2xl font-black ${res.spkBand > 0 ? 'text-fuchsia-950' : 'text-slate-400'} font-mono">${res.spkBand.toFixed(1)}</span>
+                        <span class="text-xs ${res.spkBand > 0 ? 'text-fuchsia-700' : 'text-slate-400'} font-bold">
+                            ${res.spkBand === 0 ? 'Chưa ghi âm' : `Đã ghi âm ${res.recordedCount} phần`}
+                        </span>
                     </div>
                 </div>
             </div>

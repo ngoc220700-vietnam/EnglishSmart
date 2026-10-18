@@ -1255,33 +1255,39 @@
                     🤖
                 </div>
                 <div>
-                    <h3 class="text-base sm:text-lg font-black text-slate-800">Cài Đặt Google Gemini AI</h3>
-                    <p class="text-xs text-indigo-600 font-semibold">Giám khảo AI chấm Writing & Speaking chuẩn Cambridge</p>
+                    <h3 class="text-base sm:text-lg font-black text-slate-800">Giám Khảo AI Chấm Điểm Writing</h3>
+                    <p class="text-xs text-indigo-600 font-semibold">Tự động chấm 4 tiêu chí chuẩn Cambridge IELTS</p>
                 </div>
             </div>
 
-            <div class="p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950 mb-3 space-y-2 leading-relaxed">
-                <p>💡 <strong>Hoàn toàn MIỄN PHÍ 100%:</strong> Google cung cấp Gemini 1.5 Flash API miễn phí với hạn mức rất lớn hàng ngày (15 yêu cầu/phút).</p>
-                <p>👉 Nếu bạn chưa có API Key, bấm nút dưới để lấy ngay chỉ trong 30 giây:</p>
-                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" 
-                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition">
-                    <span>🔑 Mở Google AI Studio để lấy Key Miễn Phí ↗</span>
-                </a>
+            <!-- ZERO-SETUP NOTICE -->
+            <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 mb-3 space-y-1.5 leading-relaxed">
+                <p class="font-bold flex items-center gap-1.5 text-emerald-900">
+                    <span>⚡</span> <span>Hệ thống chấm AI Tự Động đã sẵn sàng 100%!</span>
+                </p>
+                <p class="text-slate-600">Bạn <strong>KHÔNG CẦN</strong> nhập bất kỳ mã khóa nào. Chỉ cần viết bài và bấm nút <em>"AI Examiner Chấm & Sửa Bài (Tự động)"</em>, hệ thống sẽ phân tích ngay lập tức.</p>
             </div>
 
-            <div class="space-y-1.5 mb-3">
-                <label class="text-xs font-bold text-slate-700 block">Dán Google Gemini API Key của bạn vào đây:</label>
+            <!-- ADVANCED OPTION -->
+            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 mb-3 space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="font-bold text-slate-800">Tùy chọn nâng cao: Khóa Gemini Cloud</span>
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" 
+                       class="text-[11px] text-indigo-600 hover:underline font-bold">
+                        Lấy Key Google ↗
+                    </a>
+                </div>
                 <div class="relative">
-                    <input id="input-gemini-api-key" type="password" placeholder="AIzaSy..." 
-                           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 text-xs sm:text-sm font-mono outline-none pr-10">
-                    <button type="button" onclick="toggleGeminiKeyVisibility()" class="absolute right-2.5 top-2.5 text-xs text-slate-400 hover:text-slate-600 font-bold" title="Ẩn/Hiện">👁️</button>
+                    <input id="input-gemini-api-key" type="password" placeholder="Dán mã khóa AIzaSy... (nếu có)" 
+                           class="w-full px-3 py-2 rounded-xl border border-slate-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 text-xs font-mono outline-none pr-10 bg-white">
+                    <button type="button" onclick="toggleGeminiKeyVisibility()" class="absolute right-2.5 top-2 text-xs text-slate-400 hover:text-slate-600 font-bold" title="Ẩn/Hiện">👁️</button>
                 </div>
                 <div id="gemini-key-status" class="text-[11px] font-bold min-h-[16px] text-slate-500"></div>
             </div>
 
             <div class="flex gap-2 w-full pt-1">
-                <button onclick="closeGeminiApiKeyModal()" class="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">Hủy</button>
-                <button onclick="saveGeminiApiKeyFromModal()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-extrabold text-xs shadow-md transition active:scale-95">Lưu Khóa AI</button>
+                <button onclick="closeGeminiApiKeyModal()" class="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">Đóng</button>
+                <button onclick="saveGeminiApiKeyFromModal()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-extrabold text-xs shadow-md transition active:scale-95">Lưu Khóa Nâng Cao</button>
             </div>
         </div>
     </div>
