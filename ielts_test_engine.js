@@ -217,15 +217,15 @@ function renderIeltsListeningView(container) {
                     <div class="flex items-start justify-between gap-2">
                         <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${q.id}</span>
                         <div class="flex-1">
-                            <p class="text-xs sm:text-sm font-bold text-slate-800">${q.prompt}</p>
+                            <p class="text-xs sm:text-sm font-bold text-slate-800">${q.prompt || q.question || ''}</p>
                             ${inputWidget}
                             ${ieltsTestSubmitted ? `
                                 <div class="mt-2.5 p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 leading-relaxed">
                                     <div class="font-bold text-amber-800 mb-1 flex items-center gap-1">
                                         <span>🔍</span> <span>Dẫn chứng & Giải thích:</span>
                                     </div>
-                                    <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence}"</p>
-                                    <p>${q.explanation}</p>
+                                    <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence || ''}"</p>
+                                    <p>${q.explanation || ''}</p>
                                 </div>
                             ` : ''}
                         </div>
@@ -239,7 +239,7 @@ function renderIeltsListeningView(container) {
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 mb-3 border-b border-slate-100">
                     <div>
                         <h4 class="font-black text-sm sm:text-base text-slate-900">${part.title}</h4>
-                        <p class="text-xs text-indigo-600 font-medium">${part.instructions}</p>
+                        <p class="text-xs text-indigo-600 font-medium">${part.instructions || part.instruction || ''}</p>
                     </div>
                     <button onclick="toggleTranscript('trans-${part.part_number}')" class="px-2.5 py-1 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold border border-indigo-200/60 transition active:scale-95 flex items-center gap-1 self-start sm:self-auto shrink-0">
                         <span>📜</span> <span>Xem Audio Script</span>
@@ -433,15 +433,15 @@ function renderIeltsReadingView(container) {
                 <div class="flex items-start gap-2.5">
                     <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${q.id}</span>
                     <div class="flex-1">
-                        <p class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">${q.statement || q.prompt}</p>
+                        <p class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">${q.statement || q.prompt || q.question || ''}</p>
                         ${inputWidget}
                         ${ieltsTestSubmitted ? `
                             <div class="mt-2.5 p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 leading-relaxed">
                                 <div class="font-bold text-amber-800 mb-1 flex items-center gap-1">
                                     <span>🔍</span> <span>Dẫn chứng bài đọc:</span>
                                 </div>
-                                <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence}"</p>
-                                <p>${q.explanation}</p>
+                                <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence || ''}"</p>
+                                <p>${q.explanation || ''}</p>
                             </div>
                         ` : ''}
                     </div>
@@ -449,6 +449,9 @@ function renderIeltsReadingView(container) {
             </div>
         `;
     });
+
+    const passageRawText = currentPassage.content || currentPassage.text || '';
+    const passageParagraphs = passageRawText.split(/\n\n|\\n\\n/).filter(p => p.trim().length > 0);
 
     container.innerHTML = `
         <div class="flex flex-col h-full overflow-hidden">
@@ -475,9 +478,9 @@ function renderIeltsReadingView(container) {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 min-h-0 overflow-hidden">
                 <!-- LEFT: PASSAGE TEXT -->
                 <div class="h-full overflow-y-auto custom-scroll p-4 rounded-2xl bg-amber-50/30 border border-amber-200/50 shadow-2xs">
-                    <h3 class="font-black text-base text-slate-900 mb-3 pb-2 border-b border-amber-200/60 text-indigo-950">${currentPassage.title}</h3>
+                    <h3 class="font-black text-base text-slate-900 mb-3 pb-2 border-b border-amber-200/60 text-indigo-950">${currentPassage.title || ('Passage ' + activeReadingPassage)}</h3>
                     <div class="text-xs sm:text-sm text-slate-800 leading-relaxed space-y-3 font-serif">
-                        ${currentPassage.text.split('\n\n').map(para => `<p class="leading-relaxed">${escapeHtml(para)}</p>`).join('')}
+                        ${passageParagraphs.map(para => `<p class="leading-relaxed">${escapeHtml(para.trim())}</p>`).join('')}
                     </div>
                 </div>
 
@@ -505,7 +508,7 @@ function renderIeltsWritingView(container) {
     const taskKey = activeWritingTask === 1 ? 'task_1' : 'task_2';
     const currentEssay = ieltsUserAnswers.writing[taskKey] || '';
     const wordCount = countWords(currentEssay);
-    const minWords = task.min_words;
+    const minWords = task.min_words || (activeWritingTask === 1 ? 150 : 250);
     const isWordCountMet = wordCount >= minWords;
 
     container.innerHTML = `
@@ -535,8 +538,8 @@ function renderIeltsWritingView(container) {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 min-h-0 overflow-hidden">
                 <!-- PROMPT & CHART -->
                 <div class="h-full overflow-y-auto custom-scroll p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h4 class="font-extrabold text-sm text-slate-900 mb-2">${task.title}</h4>
-                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-3">${task.prompt}</p>
+                    <h4 class="font-extrabold text-sm text-slate-900 mb-2">${task.title || (activeWritingTask === 1 ? 'Task 1: Academic Report (150 từ)' : 'Task 2: Academic Essay (250 từ)')}</h4>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-3 whitespace-pre-line">${task.prompt}</p>
                     ${task.chart_svg ? `<div class="mb-3">${task.chart_svg}</div>` : ''}
 
                     <!-- ACCORDION: BÀI MẪU BAND 8.5+ & 9.0 -->
@@ -548,7 +551,7 @@ function renderIeltsWritingView(container) {
                         <div id="writing-sample-${taskKey}" class="hidden mt-2.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-2">
                             <p class="font-bold text-amber-900 uppercase">Bài mẫu đạt chuẩn Band 9.0:</p>
                             <div class="p-3 bg-white rounded-xl border border-amber-200/80 font-serif leading-relaxed whitespace-pre-line text-slate-800">
-                                ${task.sample_band_9 || task.sample_band_85}
+                                ${task.sample_band_9 || task.sample_band_85 || task.model_answer || ''}
                             </div>
                         </div>
                     </div>
@@ -625,9 +628,11 @@ function renderIeltsSpeakingView(container) {
                         <div id="sample-spk-p1-${idx}" class="hidden mt-3 p-3 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-1.5">
                             <p class="font-bold text-amber-900">Mẫu trả lời xuất sắc:</p>
                             <p class="italic font-serif bg-white p-2.5 rounded-xl border border-amber-100">"${item.model_answer}"</p>
-                            <div class="flex flex-wrap gap-1 mt-1">
-                                ${item.key_vocab.map(v => `<span class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded text-[10px] font-bold">${v}</span>`).join('')}
-                            </div>
+                            ${(item.key_vocab && item.key_vocab.length > 0) ? `
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    ${item.key_vocab.map(v => `<span class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded text-[10px] font-bold">${v}</span>`).join('')}
+                                </div>
+                            ` : ''}
                         </div>
                     </div>
                 `).join('')}
@@ -645,7 +650,7 @@ function renderIeltsSpeakingView(container) {
                     <h3 class="font-black text-sm sm:text-base text-slate-900 mb-2">${card.cue_card_title}</h3>
                     <p class="text-xs text-slate-700 font-semibold mb-2">You should say:</p>
                     <ul class="list-disc list-inside text-xs text-slate-800 space-y-1 mb-3">
-                        ${card.cue_points.map(pt => `<li>${pt}</li>`).join('')}
+                        ${(card.cue_points || card.cues || []).map(pt => `<li>${pt}</li>`).join('')}
                     </ul>
                 </div>
 
@@ -918,12 +923,12 @@ function gradeIeltsTest(showModal = true) {
                 skill: 'Listening',
                 part: p.part_number,
                 id: q.id,
-                prompt: q.prompt,
+                prompt: q.prompt || q.question || '',
                 userAns: userAns || '(Chưa điền)',
                 correctAns: q.correct_answers[0],
                 isCorrect: isCorr,
-                evidence: q.evidence,
-                explanation: q.explanation
+                evidence: q.evidence || '',
+                explanation: q.explanation || ''
             });
         });
     });
@@ -944,12 +949,12 @@ function gradeIeltsTest(showModal = true) {
                 skill: 'Reading',
                 part: pIdx + 1,
                 id: q.id,
-                prompt: q.statement || q.prompt,
+                prompt: q.statement || q.prompt || q.question || '',
                 userAns: userAns || '(Chưa điền)',
                 correctAns: q.correct_answers[0],
                 isCorrect: isCorr,
-                evidence: q.evidence,
-                explanation: q.explanation
+                evidence: q.evidence || '',
+                explanation: q.explanation || ''
             });
         });
     });
