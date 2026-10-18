@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE IELTS 1 - 20 MASTER DATABASE & TESTING ENGINE DATA
 // Dành riêng cho Profile IELTS Master trong Smart English Class
 // =========================================================================
@@ -133,14 +133,14 @@ const ieltsProfileData = {
                 {
                     q: "The sudden decline in honeybee populations is largely ______ excessive pesticide usage.",
                     options: ["attributable to", "stemming", "owing of", "because"],
-                    ans": 0,
-                    explain": "Cấu trúc học thuật chỉ nguyên nhân sau to be: 'is attributable to + Noun phrase' (bắt nguồn từ)."
+                    "ans": 0,
+                    "explain": "Cấu trúc học thuật chỉ nguyên nhân sau to be: 'is attributable to + Noun phrase' (bắt nguồn từ)."
                 },
                 {
-                    q": "Not only ______ to global warming, but intensive farming also exhausts groundwater reserves.",
-                    options": ["does deforestation contribute", "deforestation contributes", "is deforestation contribute", "contributes deforestation"],
-                    ans": 0,
-                    explain": "Đảo ngữ với 'Not only': trợ động từ 'does' đứng trước chủ ngữ 'deforestation' và sau đó là động từ nguyên thể 'contribute'."
+                    "q": "Not only ______ to global warming, but intensive farming also exhausts groundwater reserves.",
+                    "options": ["does deforestation contribute", "deforestation contributes", "is deforestation contribute", "contributes deforestation"],
+                    "ans": 0,
+                    "explain": "Đảo ngữ với 'Not only': trợ động từ 'does' đứng trước chủ ngữ 'deforestation' và sau đó là động từ nguyên thể 'contribute'."
                 }
             ]
         },
@@ -150,124 +150,124 @@ const ieltsProfileData = {
                 {
                     title: "Reduced Relative Clauses (Mệnh đề quan hệ rút gọn)",
                     structure: "Active: V-ing | Passive: V3/ed",
-                    explanation": "Rút gọn mệnh đề quan hệ giúp câu văn học thuật cô đọng, súc tích và trang trọng hơn trong cả Reading và Writing.",
-                    examples": [
+                    "explanation": "Rút gọn mệnh đề quan hệ giúp câu văn học thuật cô đọng, súc tích và trang trọng hơn trong cả Reading và Writing.",
+                    "examples": [
                         {
                             en: "Algorithms processing large datasets (who/which process) can uncover hidden consumer trends.",
-                            vi": "Các thuật toán xử lý tập dữ liệu lớn có thể phát hiện các xu hướng tiêu dùng tiềm ẩn."
+                            "vi": "Các thuật toán xử lý tập dữ liệu lớn có thể phát hiện các xu hướng tiêu dùng tiềm ẩn."
                         },
                         {
                             en: "Prototypes developed by the engineering department (which were developed) underwent stringent safety tests.",
-                            vi": "Các mô hình mẫu được phòng kỹ thuật phát triển đã trải qua các bài kiểm định an toàn nghiêm ngặt."
+                            "vi": "Các mô hình mẫu được phòng kỹ thuật phát triển đã trải qua các bài kiểm định an toàn nghiêm ngặt."
                         }
                     ],
-                    tip": "Chủ động dùng V-ing, bị động dùng V3/ed. Không được để nhầm lẫn giữa thì quá khứ đơn và phân từ hai rút gọn."
+                    "tip": "Chủ động dùng V-ing, bị động dùng V3/ed. Không được để nhầm lẫn giữa thì quá khứ đơn và phân từ hai rút gọn."
                 },
                 {
                     title: "Hypothetical Conditionals (Câu điều kiện giả định học thuật)",
-                    structure": "Had it not been for + Noun Phrase, S + would have + V3/ed",
-                    explanation": "Dạng đảo ngữ của câu điều kiện loại 3 dùng để nhấn mạnh tầm quan trọng của phát minh hoặc sự kiện trong quá khứ.",
-                    examples": [
+                    "structure": "Had it not been for + Noun Phrase, S + would have + V3/ed",
+                    "explanation": "Dạng đảo ngữ của câu điều kiện loại 3 dùng để nhấn mạnh tầm quan trọng của phát minh hoặc sự kiện trong quá khứ.",
+                    "examples": [
                         {
                             en: "Had it not been for the advent of microprocessors, modern computing would not have flourished.",
-                            vi": "Nếu không có sự ra đời của bộ vi xử lý, ngành điện toán hiện đại đã không thể phát triển rực rỡ như vậy."
+                            "vi": "Nếu không có sự ra đời của bộ vi xử lý, ngành điện toán hiện đại đã không thể phát triển rực rỡ như vậy."
                         }
                     ],
-                    tip": "Cụm 'Had it not been for...' cực kỳ đắt giá khi mở rộng ý tưởng trong Writing Task 2 và Speaking Part 3."
+                    "tip": "Cụm 'Had it not been for...' cực kỳ đắt giá khi mở rộng ý tưởng trong Writing Task 2 và Speaking Part 3."
                 }
             ],
-            words": [
+            "words": [
                 {
                     en: "Artificial intelligence",
-                    ipa": "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/",
-                    vi": "Trí tuệ nhân tạo (AI)",
-                    ex": "Artificial intelligence is fundamentally reshaping contemporary labor markets and creative disciplines."
+                    "ipa": "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/",
+                    "vi": "Trí tuệ nhân tạo (AI)",
+                    "ex": "Artificial intelligence is fundamentally reshaping contemporary labor markets and creative disciplines."
                 },
                 {
                     en: "Algorithm",
-                    ipa": "/ˈæl.ɡə.rɪ.ðəm/",
-                    vi": "Thuật toán máy tính",
-                    ex": "Sophisticated recommendation algorithms personalize digital content streams for millions of users."
+                    "ipa": "/ˈæl.ɡə.rɪ.ðəm/",
+                    "vi": "Thuật toán máy tính",
+                    "ex": "Sophisticated recommendation algorithms personalize digital content streams for millions of users."
                 },
                 {
                     en: "Automation",
-                    ipa": "/ˌɔː.təˈmeɪ.ʃən/",
-                    vi": "Tự động hóa dây chuyền / quy trình",
-                    ex": "Industrial automation enhances operational efficiency while eliminating mundane repetitive tasks."
+                    "ipa": "/ˌɔː.təˈmeɪ.ʃən/",
+                    "vi": "Tự động hóa dây chuyền / quy trình",
+                    "ex": "Industrial automation enhances operational efficiency while eliminating mundane repetitive tasks."
                 },
                 {
                     en: "Cybersecurity",
-                    ipa": "/ˈsaɪ.bə.sɪˌkjʊə.rə.ti/",
-                    vi": "An ninh mạng và bảo mật dữ liệu",
-                    ex": "Robust cybersecurity infrastructure is indispensable for safeguarding sensitive cloud records."
+                    "ipa": "/ˈsaɪ.bə.sɪˌkjʊə.rə.ti/",
+                    "vi": "An ninh mạng và bảo mật dữ liệu",
+                    "ex": "Robust cybersecurity infrastructure is indispensable for safeguarding sensitive cloud records."
                 },
                 {
                     en: "Breakthrough",
-                    ipa": "/ˈbreɪk.θruː/",
-                    vi": "Bước đột phá công nghệ mang tính thời đại",
-                    ex": "The quantum computing breakthrough solved problems that classical supercomputers could not touch."
+                    "ipa": "/ˈbreɪk.θruː/",
+                    "vi": "Bước đột phá công nghệ mang tính thời đại",
+                    "ex": "The quantum computing breakthrough solved problems that classical supercomputers could not touch."
                 },
                 {
                     en: "Disruptive technology",
-                    ipa": "/dɪsˈrʌp.tɪv tekˈnɒl.ə.dʒi/",
-                    vi": "Công nghệ đột phá làm thay đổi toàn bộ thị trường",
-                    ex": "Ride-hailing smartphone apps are classic examples of disruptive technology in urban transport."
+                    "ipa": "/dɪsˈrʌp.tɪv tekˈnɒl.ə.dʒi/",
+                    "vi": "Công nghệ đột phá làm thay đổi toàn bộ thị trường",
+                    "ex": "Ride-hailing smartphone apps are classic examples of disruptive technology in urban transport."
                 },
                 {
                     en: "Digital literacy",
-                    ipa": "/ˌdɪdʒ.ɪ.təl ˈlɪt.ər.ə.si/",
-                    vi": "Năng lực làm chủ công nghệ số",
-                    ex": "Cultivating digital literacy among elderly citizens prevents social alienation."
+                    "ipa": "/ˌdɪdʒ.ɪ.təl ˈlɪt.ər.ə.si/",
+                    "vi": "Năng lực làm chủ công nghệ số",
+                    "ex": "Cultivating digital literacy among elderly citizens prevents social alienation."
                 },
                 {
                     en: "Ubiquitous",
-                    ipa": "/juːˈbɪk.wɪ.təs/",
-                    vi": "Phổ biến khắp nơi, đâu đâu cũng thấy",
-                    ex": "Smartphones have become ubiquitous companions in both professional and private spheres."
+                    "ipa": "/juːˈbɪk.wɪ.təs/",
+                    "vi": "Phổ biến khắp nơi, đâu đâu cũng thấy",
+                    "ex": "Smartphones have become ubiquitous companions in both professional and private spheres."
                 },
                 {
                     en: "Ethical implication",
-                    ipa": "/ˈeθ.ɪ.kəl ˌɪm.plɪˈkeɪ.ʃən/",
-                    vi": "Hệ quả về mặt đạo đức",
-                    ex": "Philosophers and software engineers must rigorously debate the ethical implications of autonomous robotics."
+                    "ipa": "/ˈeθ.ɪ.kəl ˌɪm.plɪˈkeɪ.ʃən/",
+                    "vi": "Hệ quả về mặt đạo đức",
+                    "ex": "Philosophers and software engineers must rigorously debate the ethical implications of autonomous robotics."
                 },
                 {
                     en: "Revolutionize",
-                    ipa": "/ˌrev.əˈluː.ʃən.aɪz/",
-                    vi": "Cách mạng hóa toàn diện",
-                    ex": "Generative language models will revolutionize online education and personalized tutoring."
+                    "ipa": "/ˌrev.əˈluː.ʃən.aɪz/",
+                    "vi": "Cách mạng hóa toàn diện",
+                    "ex": "Generative language models will revolutionize online education and personalized tutoring."
                 },
                 {
                     en: "Technological obsolescence",
-                    ipa": "/ˌtek.nəˈlɒdʒ.ɪ.kəl ˌɒb.səˈles.əns/",
-                    vi": "Sự lỗi thời nhanh chóng của công nghệ",
-                    ex": "Rapid technological obsolescence leads to mounting quantities of electronic toxic waste."
+                    "ipa": "/ˌtek.nəˈlɒdʒ.ɪ.kəl ˌɒb.səˈles.əns/",
+                    "vi": "Sự lỗi thời nhanh chóng của công nghệ",
+                    "ex": "Rapid technological obsolescence leads to mounting quantities of electronic toxic waste."
                 },
                 {
                     en: "Cutting-edge",
-                    ipa": "/ˌkʌt.ɪŋˈedʒ/",
-                    vi": "Tối tân, tiên tiến nhất",
-                    ex": "The oncology clinic employs cutting-edge robotic instruments for minimally invasive surgeries."
+                    "ipa": "/ˌkʌt.ɪŋˈedʒ/",
+                    "vi": "Tối tân, tiên tiến nhất",
+                    "ex": "The oncology clinic employs cutting-edge robotic instruments for minimally invasive surgeries."
                 }
             ],
-            grammar_review": [
+            "grammar_review": [
                 {
                     q: "The security protocol ______ by senior cryptographers prevented any unauthorized data breach.",
-                    options": ["devised", "devising", "was devised", "which devised"],
+                    "options": ["devised", "devising", "was devised", "which devised"],
                     ans: 0,
-                    explain": "Mệnh đề quan hệ rút gọn ở thể bị động: 'which was devised' rút gọn thành quá khứ phân từ 'devised'."
+                    "explain": "Mệnh đề quan hệ rút gọn ở thể bị động: 'which was devised' rút gọn thành quá khứ phân từ 'devised'."
                 },
                 {
-                    q": "Had it not been for machine learning innovations, automated translation ______ so natural.",
-                    options": ["would not have become", "did not become", "will not become", "would not become"],
-                    ans": 0,
-                    explain": "Cấu trúc đảo ngữ câu điều kiện loại 3: 'Had it not been for..., S + would have + V3/ed'."
+                    "q": "Had it not been for machine learning innovations, automated translation ______ so natural.",
+                    "options": ["would not have become", "did not become", "will not become", "would not become"],
+                    "ans": 0,
+                    "explain": "Cấu trúc đảo ngữ câu điều kiện loại 3: 'Had it not been for..., S + would have + V3/ed'."
                 },
                 {
-                    q": "Smart wearable devices ______ vital health metrics enable proactive medical diagnosis.",
-                    options": ["monitoring", "monitored", "are monitoring", "which monitored"],
-                    ans": 0,
-                    explain": "Mệnh đề quan hệ rút gọn chủ động: 'which monitor' rút gọn thành hiện tại phân từ 'monitoring'."
+                    "q": "Smart wearable devices ______ vital health metrics enable proactive medical diagnosis.",
+                    "options": ["monitoring", "monitored", "are monitoring", "which monitored"],
+                    "ans": 0,
+                    "explain": "Mệnh đề quan hệ rút gọn chủ động: 'which monitor' rút gọn thành hiện tại phân từ 'monitoring'."
                 }
             ]
         },
@@ -276,129 +276,129 @@ const ieltsProfileData = {
             grammar: [
                 {
                     title: "Passive with Reporting Verbs (Thể bị động khách quan học thuật)",
-                    structure": "It is widely believed/acknowledged that + Clause | S + is considered to be + Noun/Adj",
-                    explanation": "Giúp bày tỏ quan điểm một cách khách quan, tránh lạm dụng đại từ ngôi thứ nhất (I think, In my opinion) trong Writing Task 2.",
-                    examples": [
+                    "structure": "It is widely believed/acknowledged that + Clause | S + is considered to be + Noun/Adj",
+                    "explanation": "Giúp bày tỏ quan điểm một cách khách quan, tránh lạm dụng đại từ ngôi thứ nhất (I think, In my opinion) trong Writing Task 2.",
+                    "examples": [
                         {
                             en: "It is widely acknowledged that early childhood immersion fosters bilingual fluency.",
-                            vi": "Người ta thừa nhận rộng rãi rằng việc tiếp xúc sớm từ thời thơ ấu thúc đẩy khả năng song ngữ lưu loát."
+                            "vi": "Người ta thừa nhận rộng rãi rằng việc tiếp xúc sớm từ thời thơ ấu thúc đẩy khả năng song ngữ lưu loát."
                         },
                         {
                             en: "Critical thinking is deemed to be the cornerstone of tertiary academic education.",
-                            vi": "Tư duy phản biện được coi là nền tảng của giáo dục đại học."
+                            "vi": "Tư duy phản biện được coi là nền tảng của giáo dục đại học."
                         }
                     ],
-                    tip": "Dùng 'It is argued that...' để giới thiệu các luồng quan điểm đối lập trong dạng bài 'Discuss both views'."
+                    "tip": "Dùng 'It is argued that...' để giới thiệu các luồng quan điểm đối lập trong dạng bài 'Discuss both views'."
                 },
                 {
                     title: "Cleft Sentences for Focus (Câu chẻ nhấn mạnh trọng tâm)",
-                    structure": "It is [Focus] that [Clause] | What [Clause] is [Focus]",
-                    explanation": "Nhấn mạnh yếu tố cốt lõi giúp ý văn sắc sảo và nổi bật trong các bài luận học thuật.",
-                    examples": [
+                    "structure": "It is [Focus] that [Clause] | What [Clause] is [Focus]",
+                    "explanation": "Nhấn mạnh yếu tố cốt lõi giúp ý văn sắc sảo và nổi bật trong các bài luận học thuật.",
+                    "examples": [
                         {
                             en: "It is intrinsic motivation that sustains long-term intellectual pursuits.",
-                            vi": "Chính động lực nội tại mới là thứ duy trì những nỗ lực học thuật dài hạn."
+                            "vi": "Chính động lực nội tại mới là thứ duy trì những nỗ lực học thuật dài hạn."
                         },
                         {
                             en: "What underprivileged schools desperately lack is qualified pedagogical staff.",
-                            vi": "Điều mà các trường học còn khó khăn đang thiếu thốn trầm trọng chính là đội ngũ giáo viên có chuyên môn sư phạm vững vàng."
+                            "vi": "Điều mà các trường học còn khó khăn đang thiếu thốn trầm trọng chính là đội ngũ giáo viên có chuyên môn sư phạm vững vàng."
                         }
                     ],
-                    tip": "Sau 'It is + Noun phrase', ta dùng 'that' bất kể đối tượng là người hay vật trong câu chẻ chuẩn mực."
+                    "tip": "Sau 'It is + Noun phrase', ta dùng 'that' bất kể đối tượng là người hay vật trong câu chẻ chuẩn mực."
                 }
             ],
-            words": [
+            "words": [
                 {
                     en: "Pedagogy",
-                    ipa": "/ˈped.ə.ɡɒdʒ.i/",
-                    vi": "Phương pháp giảng dạy, sư phạm học",
-                    ex": "Innovative digital pedagogy shifts learners from passive recipients to active collaborators."
+                    "ipa": "/ˈped.ə.ɡɒdʒ.i/",
+                    "vi": "Phương pháp giảng dạy, sư phạm học",
+                    "ex": "Innovative digital pedagogy shifts learners from passive recipients to active collaborators."
                 },
                 {
                     en: "Curriculum",
-                    ipa": "/kəˈrɪk.jə.ləm/",
-                    vi": "Khung chương trình đào tạo",
-                    ex": "The national curriculum should integrate practical life skills alongside academic rigor."
+                    "ipa": "/kəˈrɪk.jə.ləm/",
+                    "vi": "Khung chương trình đào tạo",
+                    "ex": "The national curriculum should integrate practical life skills alongside academic rigor."
                 },
                 {
                     en: "Critical thinking",
-                    ipa": "/ˌkrɪt.ɪ.kəl ˈθɪŋ.kɪŋ/",
-                    vi": "Tư duy phản biện độc lập",
-                    ex": "Higher education should train students in critical thinking rather than mere rote memorization."
+                    "ipa": "/ˌkrɪt.ɪ.kəl ˈθɪŋ.kɪŋ/",
+                    "vi": "Tư duy phản biện độc lập",
+                    "ex": "Higher education should train students in critical thinking rather than mere rote memorization."
                 },
                 {
                     en: "Rote learning",
-                    ipa": "/rəʊt ˈlɜː.nɪŋ/",
-                    vi": "Học vẹt, học thuộc lòng thụ động",
-                    ex": "Overreliance on rote learning stifles children's innate creative curiosity."
+                    "ipa": "/rəʊt ˈlɜː.nɪŋ/",
+                    "vi": "Học vẹt, học thuộc lòng thụ động",
+                    "ex": "Overreliance on rote learning stifles children's innate creative curiosity."
                 },
                 {
                     en: "Tertiary education",
-                    ipa": "/ˈtɜː.ʃər.i ˌedʒ.uˈkeɪ.ʃən/",
-                    vi": "Giáo dục bậc cao (cao đẳng, đại học, sau ĐH)",
-                    ex": "Tuition subsidies facilitate equitable access to tertiary education for rural adolescents."
+                    "ipa": "/ˈtɜː.ʃər.i ˌedʒ.uˈkeɪ.ʃən/",
+                    "vi": "Giáo dục bậc cao (cao đẳng, đại học, sau ĐH)",
+                    "ex": "Tuition subsidies facilitate equitable access to tertiary education for rural adolescents."
                 },
                 {
                     en: "Well-rounded individual",
-                    ipa": "/ˌwel ˈraʊn.dɪd ˌɪn.dɪˈvɪdʒ.u.əl/",
-                    vi": "Con người phát triển toàn diện (đức, trí, thể, mỹ)",
-                    ex": "Extracurricular arts and athletics nurture students into resilient, well-rounded individuals."
+                    "ipa": "/ˌwel ˈraʊn.dɪd ˌɪn.dɪˈvɪdʒ.u.əl/",
+                    "vi": "Con người phát triển toàn diện (đức, trí, thể, mỹ)",
+                    "ex": "Extracurricular arts and athletics nurture students into resilient, well-rounded individuals."
                 },
                 {
                     en: "Holistic approach",
-                    ipa": "/həʊˈlɪs.tɪk əˈprəʊtʃ/",
-                    vi": "Cách tiếp cận toàn diện, tổng thể",
-                    ex": "A holistic approach to well-being embraces intellectual, physical, and emotional health."
+                    "ipa": "/həʊˈlɪs.tɪk əˈprəʊtʃ/",
+                    "vi": "Cách tiếp cận toàn diện, tổng thể",
+                    "ex": "A holistic approach to well-being embraces intellectual, physical, and emotional health."
                 },
                 {
                     en: "Cognitive development",
-                    ipa": "/ˈkɒɡ.nə.tɪv dɪˈvel.əp.mənt/",
-                    vi": "Sự phát triển nhận thức và tư duy",
-                    ex": "Reading diverse literary genres stimulates cognitive development during formative years."
+                    "ipa": "/ˈkɒɡ.nə.tɪv dɪˈvel.əp.mənt/",
+                    "vi": "Sự phát triển nhận thức và tư duy",
+                    "ex": "Reading diverse literary genres stimulates cognitive development during formative years."
                 },
                 {
                     en: "Educational disparity",
-                    ipa": "/ˌedʒ.uˈkeɪ.ʃən.əl dɪˈspær.ə.ti/",
-                    vi": "Sự chênh lệch, bất bình đẳng về giáo dục",
-                    ex": "Bridging regional educational disparity requires targeted government investment in digital infrastructure."
+                    "ipa": "/ˌedʒ.uˈkeɪ.ʃən.əl dɪˈspær.ə.ti/",
+                    "vi": "Sự chênh lệch, bất bình đẳng về giáo dục",
+                    "ex": "Bridging regional educational disparity requires targeted government investment in digital infrastructure."
                 },
                 {
                     en: "Academic rigor",
-                    ipa": "/ˌæk.əˈdem.ɪk ˈrɪɡ.ər/",
-                    vi": "Tính nghiêm túc, chuẩn xác trong học thuật",
-                    ex": "Peer-reviewed scientific journals maintain rigorous standards of academic rigor."
+                    "ipa": "/ˌæk.əˈdem.ɪk ˈrɪɡ.ər/",
+                    "vi": "Tính nghiêm túc, chuẩn xác trong học thuật",
+                    "ex": "Peer-reviewed scientific journals maintain rigorous standards of academic rigor."
                 },
                 {
                     en: "Formative years",
-                    ipa": "/ˈfɔː.mə.tɪv jɪəz/",
-                    vi": "Những năm tháng định hình nhân cách thời thơ ấu",
-                    ex": "Family values instilled during formative years exert a permanent influence on adult ethics."
+                    "ipa": "/ˈfɔː.mə.tɪv jɪəz/",
+                    "vi": "Những năm tháng định hình nhân cách thời thơ ấu",
+                    "ex": "Family values instilled during formative years exert a permanent influence on adult ethics."
                 },
                 {
                     en: "Lifelong learning",
-                    ipa": "/ˈlaɪf.lɒŋ ˈlɜː.nɪŋ/",
-                    vi": "Tinh thần học tập suốt đời",
-                    ex": "Embracing lifelong learning is the surest defense against workplace obsolescence."
+                    "ipa": "/ˈlaɪf.lɒŋ ˈlɜː.nɪŋ/",
+                    "vi": "Tinh thần học tập suốt đời",
+                    "ex": "Embracing lifelong learning is the surest defense against workplace obsolescence."
                 }
             ],
-            grammar_review": [
+            "grammar_review": [
                 {
-                    q": "It is widely ______ that experiential learning produces deeper knowledge retention than textbook memorization.",
-                    options": ["acknowledged", "acknowledging", "acknowledge", "to acknowledge"],
-                    ans": 0,
-                    explain": "Cấu trúc bị động khách quan: 'It is widely acknowledged that...' (Mọi người đều thừa nhận rằng...)."
+                    "q": "It is widely ______ that experiential learning produces deeper knowledge retention than textbook memorization.",
+                    "options": ["acknowledged", "acknowledging", "acknowledge", "to acknowledge"],
+                    "ans": 0,
+                    "explain": "Cấu trúc bị động khách quan: 'It is widely acknowledged that...' (Mọi người đều thừa nhận rằng...)."
                 },
                 {
-                    q": "It is the lack of practical mentorship ______ hinders young graduates in competitive job markets.",
-                    options": ["that", "which", "whom", "where"],
-                    ans": 0,
-                    explain": "Cấu trúc câu chẻ nhấn mạnh: 'It is + [đối tượng nhấn mạnh] + that + [mệnh đề]'."
+                    "q": "It is the lack of practical mentorship ______ hinders young graduates in competitive job markets.",
+                    "options": ["that", "which", "whom", "where"],
+                    "ans": 0,
+                    "explain": "Cấu trúc câu chẻ nhấn mạnh: 'It is + [đối tượng nhấn mạnh] + that + [mệnh đề]'."
                 },
                 {
-                    q": "Vocational apprenticeships ______ to be viable alternatives to university degrees.",
-                    options": ["are considered", "is considered", "considered", "considering"],
-                    ans": 0,
-                    explain": "Chủ ngữ số nhiều 'Vocational apprenticeships' đi với bị động số nhiều: 'are considered to be'."
+                    "q": "Vocational apprenticeships ______ to be viable alternatives to university degrees.",
+                    "options": ["are considered", "is considered", "considered", "considering"],
+                    "ans": 0,
+                    "explain": "Chủ ngữ số nhiều 'Vocational apprenticeships' đi với bị động số nhiều: 'are considered to be'."
                 }
             ]
         }
