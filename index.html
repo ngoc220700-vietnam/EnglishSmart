@@ -399,6 +399,9 @@
                     <button id="btn-mode-game" onclick="setStudyMode('game')" class="whitespace-nowrap px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 text-violet-700 hover:text-violet-900 bg-violet-50/70 border border-violet-200/60 shrink-0" title="Chơi game đoán từ Hangman vui nhộn">
                         🎮 Game: Hangman
                     </button>
+                    <button id="btn-mode-ielts-test" onclick="setStudyMode('ielts_test')" class="hidden whitespace-nowrap px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 text-indigo-700 hover:text-indigo-900 bg-indigo-50 border border-indigo-200 shrink-0" title="Làm bài thi thử Cambridge IELTS 4 kỹ năng">
+                        🎯 IELTS Mock Test
+                    </button>
                 </div>
                 
                 <div class="flex items-center gap-2 self-end sm:self-auto">
@@ -1035,6 +1038,73 @@
 
                 </div>
             </div>
+
+            <!-- MODE 7: CAMBRIDGE IELTS FULL TEST VIEW (4 SKILLS) -->
+            <div id="ielts-test-view" class="hidden flex flex-col w-full h-full justify-between">
+                <div class="flex flex-col w-full h-full bg-white rounded-3xl p-3 sm:p-5 border-2 border-indigo-100 shadow-lg">
+                    
+                    <!-- IELTS HEADER BAR: EXAM SELECTOR, TIMER, ACTIONS -->
+                    <div class="flex flex-wrap items-center justify-between pb-3 mb-3 border-b border-slate-100 gap-3">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-sky-600 text-white flex items-center justify-center font-black text-xl shadow-md shrink-0">
+                                🎓
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 id="ielts-exam-title" class="text-sm sm:text-base font-extrabold text-slate-800">
+                                        Cambridge IELTS 19 Academic - Test 1
+                                    </h2>
+                                    <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full border border-indigo-200">
+                                        Standard Mock Exam
+                                    </span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 font-medium">Full 4 Kỹ năng (Nghe, Đọc, Viết, Nói) • Chấm điểm & Giải thích chi tiết</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <!-- Countdown Timer -->
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl shadow-2xs">
+                                <span class="text-sm">⏱️</span>
+                                <span class="text-xs font-bold text-amber-700">Time Left:</span>
+                                <span id="ielts-timer-display" class="text-xs sm:text-sm font-mono font-black text-amber-900">02:45:00</span>
+                            </div>
+
+                            <!-- Reset Test Button -->
+                            <button onclick="resetIeltsTest()" title="Xoá làm lại từ đầu" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
+                                <span>🔄 Làm lại</span>
+                            </button>
+
+                            <!-- Submit Test Button -->
+                            <button onclick="submitIeltsTest()" title="Nộp bài và chấm điểm ngay" class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs sm:text-sm font-extrabold shadow-md hover:shadow-lg transition active:scale-95 flex items-center gap-1.5">
+                                <span>📋 Nộp bài & Chấm điểm</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4-SKILL TAB SELECTOR -->
+                    <div class="flex items-center gap-1.5 sm:gap-2 mb-3 pb-2 border-b border-slate-100 overflow-x-auto custom-scroll">
+                        <button id="btn-ielts-skill-listening" onclick="switchIeltsSkill('listening')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 shadow-sm bg-amber-400 text-slate-950 ring-2 ring-amber-300 shrink-0">
+                            <span>🎧</span> <span>Listening (40 câu)</span>
+                        </button>
+                        <button id="btn-ielts-skill-reading" onclick="switchIeltsSkill('reading')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0">
+                            <span>📖</span> <span>Reading (3 Passages)</span>
+                        </button>
+                        <button id="btn-ielts-skill-writing" onclick="switchIeltsSkill('writing')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0">
+                            <span>✍️</span> <span>Writing (Task 1 & 2)</span>
+                        </button>
+                        <button id="btn-ielts-skill-speaking" onclick="switchIeltsSkill('speaking')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0">
+                            <span>🎙️</span> <span>Speaking (Part 1, 2, 3)</span>
+                        </button>
+                    </div>
+
+                    <!-- MAIN IELTS DYNAMIC CONTENT AREA -->
+                    <div id="ielts-content-area" class="w-full flex-1 overflow-y-auto custom-scroll">
+                        <!-- Dynamic rendered by ielts_test_engine.js -->
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1123,8 +1193,22 @@
         </div>
     </div>
 
-    <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG RIÊNG BIỆT (data.js) -->
+    <!-- ==========================================
+         MODAL 3: IELTS EXAM RESULTS & BAND SCORE
+         ========================================== -->
+    <div id="ielts-result-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 transition-all duration-300">
+        <div class="glass-panel w-full max-w-2xl bg-white rounded-3xl p-5 sm:p-7 shadow-2xl border border-white/80 max-h-[90vh] overflow-y-auto custom-scroll relative flex flex-col">
+            <button onclick="closeIeltsResultModal()" title="Đóng" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-sm font-bold transition">✕</button>
+            <div id="ielts-result-body">
+                <!-- Rendered dynamically by gradeIeltsTest() -->
+            </div>
+        </div>
+    </div>
+
+    <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js"></script>
+    <script src="ielts_data.js"></script>
+    <script src="ielts_test_engine.js"></script>
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>
@@ -1227,7 +1311,8 @@
             "minh_ngoc": "60219579_==AO2EDN",
             "quy": "1393912794_==wMyUDO",
             "thien_giang": "2089061218_==wN0kjN",
-            "gemma": "1797231452_==QO3EzM"
+            "gemma": "1797231452_==QO3EzM",
+            "ielts": "1797231452_==QO3EzM"
         };
         const _MASTER_HASH = "877395059_==wNwIjM";
 
@@ -1502,7 +1587,11 @@
             renderUnitButtons();
             updateStudentHeader();
             updateGameButtonLabel();
-            setStudyMode('flashcard');
+            if (currentStudentKey === 'ielts') {
+                setStudyMode('ielts_test');
+            } else {
+                setStudyMode('flashcard');
+            }
             saveProgress();
 
             const savedW = localStorage.getItem('smart_english_sidebar_width');
@@ -1998,7 +2087,13 @@
             updateGameButtonLabel();
             saveProgress();
 
-            if (currentStudyMode === 'quiz') {
+            if (currentStudentKey === 'ielts' && currentStudyMode === 'flashcard') {
+                setStudyMode('ielts_test');
+            } else if (currentStudentKey !== 'ielts' && currentStudyMode === 'ielts_test') {
+                setStudyMode('flashcard');
+            } else if (currentStudyMode === 'ielts_test') {
+                if (typeof renderIeltsTestView === 'function') renderIeltsTestView();
+            } else if (currentStudyMode === 'quiz') {
                 startQuiz();
             } else if (currentStudyMode === 'grammar') {
                 renderGrammarView();
@@ -2403,6 +2498,7 @@
             const btnGr = document.getElementById('btn-mode-grammar-review');
             const btnNote = document.getElementById('btn-mode-note');
             const btnGame = document.getElementById('btn-mode-game');
+            const btnIelts = document.getElementById('btn-mode-ielts-test');
 
             const flashcardView = document.getElementById('flashcard-view');
             const quizView = document.getElementById('quiz-view');
@@ -2410,6 +2506,7 @@
             const grView = document.getElementById('grammar-review-view');
             const noteView = document.getElementById('note-view');
             const gameView = document.getElementById('game-view');
+            const ieltsTestView = document.getElementById('ielts-test-view');
 
             const quizHeaderBadge = document.getElementById('quiz-header-badge');
             const grHeaderBadge = document.getElementById('grammar-review-header-badge');
@@ -2424,6 +2521,9 @@
             if (btnGr) btnGr.className = inactiveClass;
             if (btnNote) btnNote.className = inactiveClass;
             if (btnGame) btnGame.className = inactiveClass;
+            if (btnIelts) {
+                btnIelts.className = "whitespace-nowrap px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 text-indigo-700 hover:text-indigo-900 bg-indigo-50 border border-indigo-200 shrink-0" + (currentStudentKey === 'ielts' ? '' : ' hidden');
+            }
 
             flashcardView.classList.add('hidden');
             quizView.classList.add('hidden');
@@ -2431,6 +2531,7 @@
             if (grView) grView.classList.add('hidden');
             if (noteView) noteView.classList.add('hidden');
             if (gameView) gameView.classList.add('hidden');
+            if (ieltsTestView) ieltsTestView.classList.add('hidden');
 
             quizHeaderBadge.classList.add('hidden');
             if (grHeaderBadge) grHeaderBadge.classList.add('hidden');
@@ -2462,6 +2563,13 @@
                 if (gameView) gameView.classList.remove('hidden');
                 if (gameHeaderBadge) gameHeaderBadge.classList.remove('hidden');
                 startGameMode();
+            } else if (mode === 'ielts_test') {
+                if (btnIelts) {
+                    btnIelts.className = "whitespace-nowrap px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 shadow-sm bg-gradient-to-r from-indigo-600 to-sky-600 text-white shrink-0 ring-2 ring-indigo-300";
+                }
+                if (ieltsTestView) ieltsTestView.classList.remove('hidden');
+                if (typeof initIeltsTestEngine === 'function') initIeltsTestEngine();
+                if (typeof renderIeltsTestView === 'function') renderIeltsTestView();
             }
         }
 
@@ -3817,10 +3925,18 @@
 
         function updateGameButtonLabel() {
             const btnGame = document.getElementById('btn-mode-game');
+            const btnIelts = document.getElementById('btn-mode-ielts-test');
+            if (btnIelts) {
+                if (currentStudentKey === 'ielts') {
+                    btnIelts.classList.remove('hidden');
+                } else {
+                    btnIelts.classList.add('hidden');
+                }
+            }
             if (!btnGame) return;
-            if (currentStudentKey === 'gemma') {
+            if (currentStudentKey === 'gemma' || currentStudentKey === 'ielts') {
                 btnGame.innerHTML = '🧩 Game: Word Scramble';
-                btnGame.title = 'Chơi game sắp xếp chữ cái Word Scramble (Trí tuệ người lớn)';
+                btnGame.title = 'Chơi game sắp xếp chữ cái Word Scramble (Trí tuệ nâng cao)';
             } else {
                 btnGame.innerHTML = '🎮 Game: Hangman';
                 btnGame.title = 'Chơi game đoán từ Hangman vui nhộn';
@@ -3832,7 +3948,7 @@
             const hangmanBox = document.getElementById('game-hangman-content');
             const scrambleBox = document.getElementById('game-scramble-content');
 
-            if (currentStudentKey === 'gemma') {
+            if (currentStudentKey === 'gemma' || currentStudentKey === 'ielts') {
                 if (hangmanBox) hangmanBox.classList.add('hidden');
                 if (scrambleBox) scrambleBox.classList.remove('hidden');
                 startScrambleGame();
