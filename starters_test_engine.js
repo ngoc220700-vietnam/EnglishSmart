@@ -174,7 +174,10 @@ function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters"
                 </div>
                 <div class="relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
                      onclick="openStartersImageModal('${images[0]}', '${escapeQuotes(title)}')">
-                    <img src="${images[0]}" alt="${title}" class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
+                    <img src="${images[0]}" 
+                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${images[0]}';}" 
+                         alt="${title}" 
+                         class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
                     <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
                         <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
                             🔍 Nhấp để xem to toàn màn hình
@@ -213,7 +216,10 @@ function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters"
                      class="${i === 0 ? 'block' : 'hidden'} relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
                      data-src="${img}"
                      onclick="openStartersImageModal('${img}', '${escapeQuotes(title)} - Trang ${i + 1}')">
-                    <img src="${img}" alt="${title}" class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
+                    <img src="${img}" 
+                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${img}';}" 
+                         alt="${title}" 
+                         class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
                     <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
                         <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
                             🔍 Nhấp để xem to toàn màn hình
@@ -270,7 +276,11 @@ function openStartersImageModal(src, title = 'Tranh gốc sách Cambridge') {
                     </button>
                 </div>
                 <div class="p-2 overflow-auto custom-scroll flex justify-center items-center bg-slate-100 flex-1 min-h-[300px]">
-                    <img id="starters-modal-img" src="" alt="Tranh gốc sách Cambridge" class="max-h-[82vh] w-auto object-contain rounded-lg shadow-sm">
+                    <img id="starters-modal-img" 
+                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + (this.getAttribute('data-original-src') || this.src);}"
+                         src="" 
+                         alt="Tranh gốc sách Cambridge" 
+                         class="max-h-[82vh] w-auto object-contain rounded-lg shadow-sm">
                 </div>
             </div>
         `;
@@ -279,7 +289,10 @@ function openStartersImageModal(src, title = 'Tranh gốc sách Cambridge') {
     }
     
     document.getElementById('starters-modal-title').innerHTML = `<span>📖</span> <span>${escapeHtml(title)}</span>`;
-    document.getElementById('starters-modal-img').src = src;
+    const mImg = document.getElementById('starters-modal-img');
+    mImg.dataset.triedCdn = '';
+    mImg.setAttribute('data-original-src', src);
+    mImg.src = src;
     modal.classList.remove('hidden');
 }
 
