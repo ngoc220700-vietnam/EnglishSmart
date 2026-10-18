@@ -1,0 +1,5 @@
+name = "englishsmart"
+compatibility_date = "2024-10-12"
+
+[assets]
+directory = "."

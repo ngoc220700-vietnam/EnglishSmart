@@ -1,0 +1,3 @@
+*.bak*
+test_*.ps1
+test_*.js

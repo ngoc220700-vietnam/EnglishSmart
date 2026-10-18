@@ -1,0 +1,7 @@
+.git
+.git/**
+.github
+*.bak*
+*.bat
+*.ps1
+test_*.js
