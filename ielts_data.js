@@ -229,3 +229,9 @@ cambridgeTestProfiles.forEach((profile, idx) => {
     ieltsProfileData.units[profile.id] = { title: profile.title };
     ieltsProfileData.ielts_tests[profile.id] = generateCambridgeTest(profile, idx);
 });
+
+// Đăng ký profile IELTS Master vào studentsDB của lớp học Smart English Class
+if (typeof studentsDB !== 'undefined') {
+    studentsDB["ielts"] = ieltsProfileData;
+}
+

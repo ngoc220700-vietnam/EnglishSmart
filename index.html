@@ -1245,6 +1245,10 @@
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>
+        if (typeof ieltsProfileData !== 'undefined' && typeof studentsDB !== 'undefined' && !studentsDB['ielts']) {
+            studentsDB['ielts'] = ieltsProfileData;
+        }
+
         const STORAGE_KEY_PROGRESS = 'smart_flashcard_progress';
         const STORAGE_KEY_LAST_STUDENT = 'smart_flashcard_last_student';
         const STORAGE_KEY_SPEED = 'smart_flashcard_speed';
@@ -1538,6 +1542,9 @@
 
         // 1. TẠO TRANG MỞ ĐẦU (WELCOME SCREEN)
         function renderWelcomeScreen() {
+            if (typeof ieltsProfileData !== 'undefined' && typeof studentsDB !== 'undefined' && !studentsDB['ielts']) {
+                studentsDB['ielts'] = ieltsProfileData;
+            }
             welcomeGrid.innerHTML = '';
             for (const key in studentsDB) {
                 const student = studentsDB[key];
@@ -1547,7 +1554,7 @@
                     student.curriculum = activeCurr.title;
                     student.units = activeCurr.units;
                 }
-                const unitCount = Object.keys(student.units).length;
+                const unitCount = student.units ? Object.keys(student.units).length : 0;
                 const isRecent = key === lastStudentKey;
                 const cardBtn = document.createElement('button');
                 cardBtn.className = `group bg-white/95 hover:bg-white p-3 sm:p-3.5 lg:p-4 rounded-2xl sm:rounded-3xl border-2 ${isRecent ? 'border-violet-500 ring-3 ring-violet-200/70 shadow-md' : 'border-violet-100 hover:border-violet-300'} shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-3 sm:gap-3.5 lg:gap-4 text-left active:scale-[0.98] relative w-full`;
@@ -1573,7 +1580,7 @@
                         <p class="text-[11px] sm:text-xs text-gray-500 truncate mt-0.5">📚 ${student.curriculum}</p>
                         <div class="flex items-center justify-between mt-1.5">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-violet-600 bg-violet-50 px-2.5 py-0.5 rounded-full">
-                                ${unitCount} bài học ➔
+                                ${key === 'ielts' ? `${unitCount} bộ đề thi 🏆` : `${unitCount} bài học ➔`}
                             </span>
                             <span class="text-[10px] text-gray-400 font-medium">Mã 4 số</span>
                         </div>
