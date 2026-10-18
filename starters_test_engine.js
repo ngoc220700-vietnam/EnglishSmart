@@ -289,10 +289,57 @@ function closeStartersImageModal() {
 }
 
 // -------------------------------------------------------------
+// HELPER: LẤY ĐƯỜNG DẪN ẢNH SÁCH GỐC (KÈM FALLBACK TỰ ĐỘNG TÍNH TOÁN)
+// -------------------------------------------------------------
+function getStartersBookImages(test, skill, partNum) {
+    if (test && test.book_images && test.book_images[skill] && test.book_images[skill][`part_${partNum}`]) {
+        return test.book_images[skill][`part_${partNum}`];
+    }
+
+    // Fallback: Tự động phân tích từ activeStartersTestId nếu book_images chưa nạp (do cache)
+    const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+    const parts = testId.split('_'); // ví dụ: starters_1_test_1 -> [starters, 1, test, 1]
+    const bookNum = parseInt(parts[1]) || 1;
+    const testNum = parseInt(parts[3]) || 1;
+    const basePage = 5 + (testNum - 1) * 14;
+
+    if (skill === 'listening') {
+        if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 1}.jpg`];
+        if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 3}.jpg`, `images/starters/book${bookNum}/page_${basePage + 4}.jpg`];
+        if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 5}.jpg`];
+    } else if (skill === 'reading_writing') {
+        if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage + 6}.jpg`, `images/starters/book${bookNum}/page_${basePage + 7}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 8}.jpg`];
+        if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 9}.jpg`];
+        if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 10}.jpg`];
+        if (partNum === 5) return [
+            `images/starters/book${bookNum}/page_${basePage + 11}.jpg`,
+            `images/starters/book${bookNum}/page_${basePage + 12}.jpg`,
+            `images/starters/book${bookNum}/page_${basePage + 13}.jpg`
+        ];
+    } else if (skill === 'speaking') {
+        let spkScenePage, spkCardsPage;
+        if (bookNum <= 2) {
+            if (testNum === 1) { spkScenePage = 44; spkCardsPage = 45; }
+            else if (testNum === 2) { spkScenePage = 46; spkCardsPage = 47; }
+            else { spkScenePage = 48; spkCardsPage = 49; }
+        } else {
+            if (testNum === 1) { spkScenePage = 47; spkCardsPage = 48; }
+            else if (testNum === 2) { spkScenePage = 51; spkCardsPage = 52; }
+            else { spkScenePage = 55; spkCardsPage = 56; }
+        }
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${spkCardsPage}.jpg`];
+        return [`images/starters/book${bookNum}/page_${spkScenePage}.jpg`];
+    }
+    return [];
+}
+
+// -------------------------------------------------------------
 // A. GIAO DIỆN LISTENING (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersListeningView(container) {
-    const test = startersProfileData.starters_tests[activeStartersTestId];
+    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
     const lis = test.listening;
     const currentPart = lis.parts.find(p => p.part_number === activeStartersLisPart) || lis.parts[0];
 
@@ -300,7 +347,7 @@ function renderStartersListeningView(container) {
 
     if (activeStartersLisPart === 1) {
         // Part 1: Listen and draw lines
-        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_1, "Tranh toàn cảnh Part 1 (Nhìn tranh và nối bạn nhỏ)", "gal_lis_1");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 1), "Tranh toàn cảnh Part 1 (Nhìn tranh và nối bạn nhỏ)", "gal_lis_1");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
@@ -347,7 +394,7 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 2) {
         // Part 2: Listen and write a name or a number
-        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_2, "Tranh minh họa Part 2 (Nghe và viết tên/số)", "gal_lis_2");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 2), "Tranh minh họa Part 2 (Nghe và viết tên/số)", "gal_lis_2");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
@@ -382,7 +429,7 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 3) {
         // Part 3: Listen and tick the box
-        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_3, "Tranh câu hỏi A, B, C Part 3 (Nhìn tranh trong sách & chọn đáp án)", "gal_lis_3");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 3), "Tranh câu hỏi A, B, C Part 3 (Nhìn tranh trong sách & chọn đáp án)", "gal_lis_3");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
@@ -430,7 +477,7 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 4) {
         // Part 4: Listen and colour
-        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_4, "Tranh tô màu Part 4 (Nhìn tranh trong sách & chọn màu sắc)", "gal_lis_4");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 4), "Tranh tô màu Part 4 (Nhìn tranh trong sách & chọn màu sắc)", "gal_lis_4");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-fuchsia-50 border border-fuchsia-200 text-xs text-fuchsia-950 flex items-center justify-between">
@@ -519,7 +566,7 @@ function switchStartersLisPart(partNum) {
 // B. GIAO DIỆN READING & WRITING (5 PARTS)
 // -------------------------------------------------------------
 function renderStartersReadingWritingView(container) {
-    const test = startersProfileData.starters_tests[activeStartersTestId];
+    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
     const rw = test.reading_writing;
     const currentPart = rw.parts.find(p => p.part_number === activeStartersRwPart) || rw.parts[0];
 
@@ -527,7 +574,7 @@ function renderStartersReadingWritingView(container) {
 
     if (activeStartersRwPart === 1) {
         // Part 1: Tick or Cross
-        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_1, "Trang tranh câu hỏi Part 1 (Nhìn hình trong sách và chọn Tick ✓ hoặc Cross ✗)", "gal_rw_1");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 1), "Trang tranh câu hỏi Part 1 (Nhìn hình trong sách và chọn Tick ✓ hoặc Cross ✗)", "gal_rw_1");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
@@ -574,7 +621,7 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 2) {
         // Part 2: Look and write 'yes' or 'no'
-        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_2, "Tranh toàn cảnh Part 2 (Nhìn tranh trong sách & chọn yes/no)", "gal_rw_2");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 2), "Tranh toàn cảnh Part 2 (Nhìn tranh trong sách & chọn yes/no)", "gal_rw_2");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
@@ -619,7 +666,7 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 3) {
         // Part 3: Jumbled letters
-        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_3, "Trang tranh đồ vật Part 3 (Nhìn hình đồ vật & thớt chữ cái)", "gal_rw_3");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 3), "Trang tranh đồ vật Part 3 (Nhìn hình đồ vật & thớt chữ cái)", "gal_rw_3");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-violet-50 border border-violet-200 text-xs text-violet-950 flex items-center justify-between">
@@ -659,7 +706,7 @@ function renderStartersReadingWritingView(container) {
     } else if (activeStartersRwPart === 4) {
         // Part 4: Cloze test
         const cloze = currentPart.cloze;
-        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_4, "Trang bài đọc & Word Bank Part 4 (Nhìn ô từ vựng trong sách)", "gal_rw_4");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 4), "Trang bài đọc & Word Bank Part 4 (Nhìn ô từ vựng trong sách)", "gal_rw_4");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
@@ -706,7 +753,7 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 5) {
         // Part 5: One-word answers
-        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_5, "Tranh diễn biến câu chuyện Part 5 (Nhìn tranh 1, 2, 3 trong sách & trả lời)", "gal_rw_5");
+        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 5), "Tranh diễn biến câu chuyện Part 5 (Nhìn tranh 1, 2, 3 trong sách & trả lời)", "gal_rw_5");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-950 flex items-center justify-between">
@@ -772,16 +819,16 @@ function switchStartersRwPart(partNum) {
 // C. GIAO DIỆN SPEAKING (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersSpeakingView(container) {
-    const test = startersProfileData.starters_tests[activeStartersTestId];
+    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
     const spk = test.speaking;
     const partKey = `part_${activeStartersSpkPart}`;
     const currentPart = spk[partKey];
 
     let spkGalleryHtml = '';
     if (activeStartersSpkPart === 1 || activeStartersSpkPart === 3) {
-        spkGalleryHtml = renderBookImageGallery(test.book_images?.speaking?.part_1, "Tranh toàn cảnh Speaking (Scene Picture)", "gal_spk_scene");
+        spkGalleryHtml = renderBookImageGallery(getStartersBookImages(test, 'speaking', 1), "Tranh toàn cảnh Speaking (Scene Picture)", "gal_spk_scene");
     } else if (activeStartersSpkPart === 2) {
-        spkGalleryHtml = renderBookImageGallery(test.book_images?.speaking?.part_2, "Các thẻ đồ vật Speaking (Object Cards)", "gal_spk_cards");
+        spkGalleryHtml = renderBookImageGallery(getStartersBookImages(test, 'speaking', 2), "Các thẻ đồ vật Speaking (Object Cards)", "gal_spk_cards");
     }
 
     container.innerHTML = `
