@@ -227,7 +227,7 @@ function renderQuestionPalette(skill, totalQuestions = 40) {
                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
                     <span>🧭</span> <span>Bảng câu hỏi (${skill === 'listening' ? 'Listening 40 câu' : 'Reading 40 câu'}):</span>
                 </span>
-                <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
+                <span id="ielts-palette-counter-${skill}" class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
                     Đã làm: ${answeredCount} / ${totalQuestions} câu
                 </span>
             </div>
@@ -261,7 +261,7 @@ function renderQuestionPalette(skill, totalQuestions = 40) {
         }
 
         paletteHtml += `
-            <button onclick="jumpToIeltsQuestion('${skill}', ${i})" 
+            <button id="palette-btn-${skill}-${i}" onclick="jumpToIeltsQuestion('${skill}', ${i})" 
                     class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs flex items-center justify-center border transition active:scale-95 ${btnClass}"
                     title="Chuyển đến câu ${i}">
                 ${i}
@@ -274,6 +274,27 @@ function renderQuestionPalette(skill, totalQuestions = 40) {
         </div>
     `;
     return paletteHtml;
+}
+
+function updatePaletteQuestionStatus(skill, qId, hasAnswer) {
+    const pBtn = document.getElementById(`palette-btn-${skill}-${qId}`);
+    if (pBtn && !ieltsTestSubmitted) {
+        if (hasAnswer) {
+            pBtn.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs flex items-center justify-center border transition active:scale-95 bg-indigo-600 text-white font-extrabold border-indigo-600 shadow-2xs";
+        } else {
+            pBtn.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs flex items-center justify-center border transition active:scale-95 bg-slate-50 text-slate-700 font-bold border-slate-200 hover:bg-slate-100";
+        }
+    }
+    updatePaletteAnsweredCounter(skill);
+}
+
+function updatePaletteAnsweredCounter(skill) {
+    const counterEl = document.getElementById(`ielts-palette-counter-${skill}`);
+    if (counterEl) {
+        const answers = ieltsUserAnswers[skill] || {};
+        const count = Object.keys(answers).filter(k => answers[k] && answers[k].toString().trim().length > 0).length;
+        counterEl.textContent = `Đã làm: ${count} / 40 câu`;
+    }
 }
 
 // =========================================================================
@@ -311,19 +332,19 @@ function renderIeltsListeningView(container) {
                     </div>
                 `;
             } else if (q.type === 'choice') {
-                inputWidget = `<div class="space-y-1.5 mt-2">`;
+                inputWidget = `<div class="space-y-1.5 mt-2" id="choice-group-listening-${q.id}">`;
                 q.options.forEach(opt => {
                     const optKey = opt.trim().charAt(0);
                     const isChecked = userAns.toUpperCase() === optKey.toUpperCase();
                     inputWidget += `
-                        <label class="flex items-center gap-2.5 p-2 rounded-xl border cursor-pointer transition text-xs sm:text-sm ${
-                            isChecked ? 'bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
+                        <label class="choice-lbl-listening-${q.id} flex items-center gap-2.5 p-2 rounded-xl border cursor-pointer transition text-xs sm:text-sm ${
+                            isChecked ? 'bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold ring-1 ring-indigo-300' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
                         }">
                             <input type="radio" 
-                                   name="ielts_q_${q.id}" 
+                                   name="ielts_q_listening_${q.id}" 
                                    value="${optKey}" 
                                    ${isChecked ? 'checked' : ''} 
-                                   onchange="handleIeltsAnswerChange('listening', ${q.id}, '${optKey}')"
+                                   onchange="selectIeltsRadioOption('listening', ${q.id}, '${optKey}')"
                                    class="text-indigo-600 focus:ring-indigo-500">
                             <span>${opt}</span>
                         </label>
@@ -538,10 +559,11 @@ function renderIeltsReadingView(container) {
                     ${options.map(opt => {
                         const isSelected = userAns.toUpperCase() === opt.toUpperCase();
                         return `
-                            <button onclick="handleIeltsAnswerChange('reading', ${q.id}, '${opt}')"
-                                    class="py-1.5 px-2 rounded-xl text-xs font-bold border transition ${
+                            <button type="button"
+                                    onclick="selectIeltsTfngOption('reading', ${q.id}, '${opt}')"
+                                    class="tfng-btn-${q.id} py-1.5 px-2 rounded-xl text-xs font-bold border transition active:scale-95 ${
                                         isSelected 
-                                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm' 
+                                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm ring-2 ring-indigo-300 scale-[1.02]' 
                                         : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
                                     }">
                                 ${opt}
@@ -554,15 +576,15 @@ function renderIeltsReadingView(container) {
                 inputWidget += `<div class="mt-1.5 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đáp án đúng: ' + q.correct_answers[0] + ')'}</div>`;
             }
         } else if (q.type === 'choice') {
-            inputWidget = `<div class="space-y-1.5 mt-2">`;
+            inputWidget = `<div class="space-y-1.5 mt-2" id="choice-group-reading-${q.id}">`;
             q.options.forEach(opt => {
                 const optKey = opt.trim().charAt(0);
                 const isChecked = userAns.toUpperCase() === optKey.toUpperCase();
                 inputWidget += `
-                    <label class="flex items-center gap-2 p-2 rounded-xl border cursor-pointer transition text-xs ${
-                        isChecked ? 'bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
+                    <label class="choice-lbl-reading-${q.id} flex items-center gap-2 p-2 rounded-xl border cursor-pointer transition text-xs ${
+                        isChecked ? 'bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold ring-1 ring-indigo-300' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
                     }">
-                        <input type="radio" name="ielts_q_${q.id}" value="${optKey}" ${isChecked ? 'checked' : ''} onchange="handleIeltsAnswerChange('reading', ${q.id}, '${optKey}')" class="text-indigo-600 focus:ring-indigo-500">
+                        <input type="radio" name="ielts_q_reading_${q.id}" value="${optKey}" ${isChecked ? 'checked' : ''} onchange="selectIeltsRadioOption('reading', ${q.id}, '${optKey}')" class="text-indigo-600 focus:ring-indigo-500">
                         <span>${opt}</span>
                     </label>
                 `;
@@ -1351,10 +1373,51 @@ function startCueTimer(type, seconds) {
 // =========================================================================
 // 5. CHẤM ĐIỂM TỰ ĐỘNG & QUY ĐỔI SANG IELTS BAND SCORE 1.0 - 9.0
 // =========================================================================
+function selectIeltsTfngOption(skill, qId, opt) {
+    if (ieltsTestSubmitted) return;
+
+    handleIeltsAnswerChange(skill, qId, opt);
+
+    // Cập nhật ngay style các nút trong câu hỏi vừa chọn
+    const btns = document.querySelectorAll(`.tfng-btn-${qId}`);
+    const targetOpt = opt.trim().toUpperCase();
+    btns.forEach(btn => {
+        if (btn.textContent.trim().toUpperCase() === targetOpt) {
+            btn.className = `tfng-btn-${qId} py-1.5 px-2 rounded-xl text-xs font-bold border transition active:scale-95 bg-indigo-600 text-white border-indigo-600 shadow-sm ring-2 ring-indigo-300 scale-[1.02]`;
+        } else {
+            btn.className = `tfng-btn-${qId} py-1.5 px-2 rounded-xl text-xs font-bold border transition active:scale-95 bg-white hover:bg-slate-50 text-slate-700 border-slate-200`;
+        }
+    });
+
+    updatePaletteQuestionStatus(skill, qId, true);
+}
+
+function selectIeltsRadioOption(skill, qId, optKey) {
+    if (ieltsTestSubmitted) return;
+
+    handleIeltsAnswerChange(skill, qId, optKey);
+
+    // Cập nhật màu nhãn của radio
+    const labels = document.querySelectorAll(`.choice-lbl-${skill}-${qId}`);
+    labels.forEach(lbl => {
+        const inp = lbl.querySelector('input[type="radio"]');
+        if (inp && inp.value.toUpperCase() === optKey.toUpperCase()) {
+            lbl.className = `choice-lbl-${skill}-${qId} flex items-center gap-2 p-2 rounded-xl border cursor-pointer transition text-xs bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold ring-1 ring-indigo-300`;
+        } else {
+            lbl.className = `choice-lbl-${skill}-${qId} flex items-center gap-2 p-2 rounded-xl border cursor-pointer transition text-xs bg-white hover:bg-slate-50 border-slate-200 text-slate-700`;
+        }
+    });
+
+    updatePaletteQuestionStatus(skill, qId, true);
+}
+
 function handleIeltsAnswerChange(skill, qId, val) {
     if (!ieltsUserAnswers[skill]) ieltsUserAnswers[skill] = {};
     ieltsUserAnswers[skill][qId] = val;
     saveIeltsProgress();
+
+    const hasVal = val && val.toString().trim().length > 0;
+    updatePaletteQuestionStatus(skill, qId, hasVal);
 }
 
 function checkAnswerMatch(userVal, correctList) {
