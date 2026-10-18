@@ -1143,6 +1143,103 @@
 
                 </div>
             </div>
+
+            <!-- MODE 8: CAMBRIDGE PRE-A1 STARTERS FULL TEST VIEW (3 SKILLS) -->
+            <div id="starters-test-view" class="hidden flex flex-col w-full h-full justify-between">
+                <div class="flex flex-col w-full h-full bg-white rounded-3xl p-3 sm:p-5 border-2 border-amber-200 shadow-lg">
+                    
+                    <!-- STARTERS HEADER BAR: EXAM SELECTOR, TIMER, ACTIONS -->
+                    <div class="flex flex-wrap items-center justify-between pb-3 mb-3 border-b border-slate-100 gap-3">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 text-white flex items-center justify-center font-black text-xl shadow-md shrink-0">
+                                🛡️
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h2 id="starters-exam-title" class="text-sm sm:text-base font-extrabold text-slate-800">
+                                        Cambridge Pre-A1 Starters 1 - Test 1
+                                    </h2>
+                                    <span class="text-[10px] font-black uppercase tracking-wider bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full border border-amber-300">
+                                        Cambridge Young Learners
+                                    </span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 font-medium">Trọn bộ 12 Đề Thi Cambridge Starters 1 - 4 (Listening • Reading & Writing • Speaking) • Chấm điểm Khiên 🛡️</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <!-- Fast Test Selector (Starters 1 to 4) -->
+                            <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 px-2.5 py-1.5 rounded-xl shadow-2xs">
+                                <span class="text-xs">📚</span>
+                                <span class="text-[11px] font-extrabold text-amber-800 hidden sm:inline">Chọn đề thi:</span>
+                                <select id="starters-test-selector" onchange="switchStartersTest(this.value)" class="text-xs font-black bg-transparent text-amber-950 border-none outline-none cursor-pointer py-0.5">
+                                    <optgroup label="Cuốn 1: Starters 1">
+                                        <option value="starters_1_test_1">Starters 1 • Test 1</option>
+                                        <option value="starters_1_test_2">Starters 1 • Test 2</option>
+                                        <option value="starters_1_test_3">Starters 1 • Test 3</option>
+                                    </optgroup>
+                                    <optgroup label="Cuốn 2: Starters 2">
+                                        <option value="starters_2_test_1">Starters 2 • Test 1</option>
+                                        <option value="starters_2_test_2">Starters 2 • Test 2</option>
+                                        <option value="starters_2_test_3">Starters 2 • Test 3</option>
+                                    </optgroup>
+                                    <optgroup label="Cuốn 3: Starters 3">
+                                        <option value="starters_3_test_1">Starters 3 • Test 1</option>
+                                        <option value="starters_3_test_2">Starters 3 • Test 2</option>
+                                        <option value="starters_3_test_3">Starters 3 • Test 3</option>
+                                    </optgroup>
+                                    <optgroup label="Cuốn 4: Starters 4">
+                                        <option value="starters_4_test_1">Starters 4 • Test 1</option>
+                                        <option value="starters_4_test_2">Starters 4 • Test 2</option>
+                                        <option value="starters_4_test_3">Starters 4 • Test 3</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <!-- Countdown Timer -->
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl shadow-2xs">
+                                <span class="text-sm">⏱️</span>
+                                <span class="text-xs font-bold text-amber-700">Thời gian:</span>
+                                <span id="starters-timer-display" class="text-xs sm:text-sm font-mono font-black text-amber-900">45:00</span>
+                            </div>
+
+                            <!-- Full Screen Toggle -->
+                            <button onclick="toggleStudyFullScreen()" title="Phóng to toàn màn hình thi thử" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
+                                <span>⛶ Phóng to</span>
+                            </button>
+
+                            <!-- Reset Test Button -->
+                            <button onclick="resetStartersTest()" title="Xoá làm lại từ đầu" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
+                                <span>🔄 Làm lại</span>
+                            </button>
+
+                            <!-- Submit Test Button -->
+                            <button onclick="submitStartersTest()" title="Nộp bài và nhận Khiên Cambridge ngay" class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs sm:text-sm font-extrabold shadow-md hover:shadow-lg transition active:scale-95 flex items-center gap-1.5">
+                                <span>🛡️ Nộp bài & Chấm Khiên</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3-SKILL TAB SELECTOR -->
+                    <div class="flex items-center gap-1.5 sm:gap-2 mb-3 pb-2 border-b border-slate-100 overflow-x-auto custom-scroll">
+                        <button id="btn-starters-skill-listening" onclick="switchStartersSkill('listening')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 shadow-sm bg-amber-400 text-slate-950 ring-2 ring-amber-300 shrink-0">
+                            <span>🎧</span> <span>Listening (20 câu)</span>
+                        </button>
+                        <button id="btn-starters-skill-reading_writing" onclick="switchStartersSkill('reading_writing')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0">
+                            <span>📖</span> <span>Reading & Writing (25 câu)</span>
+                        </button>
+                        <button id="btn-starters-skill-speaking" onclick="switchStartersSkill('speaking')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0">
+                            <span>🎙️</span> <span>Speaking (4 Parts)</span>
+                        </button>
+                    </div>
+
+                    <!-- MAIN STARTERS DYNAMIC CONTENT AREA -->
+                    <div id="starters-content-area" class="w-full flex-1 overflow-y-auto custom-scroll">
+                        <!-- Dynamic rendered by starters_test_engine.js -->
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1295,15 +1392,35 @@
         </div>
     </div>
 
+    <!-- ==========================================
+         MODAL 5: STARTERS EXAM RESULTS & CAMBRIDGE SHIELDS
+         ========================================== -->
+    <div id="starters-result-modal" onclick="if(event.target === this) closeStartersResultModal()" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 transition-all duration-300">
+        <div class="glass-panel w-full max-w-2xl bg-white rounded-3xl p-5 sm:p-7 shadow-2xl border border-white/80 max-h-[90vh] overflow-y-auto custom-scroll relative flex flex-col">
+            <button onclick="closeStartersResultModal()" title="Đóng bảng đáp án (Phím Esc)" class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center gap-1.5 text-xs font-bold transition shadow-xs">
+                <span>✕ Đóng</span>
+                <kbd class="px-1.5 py-0.5 rounded bg-white border border-slate-300 text-[10px] font-mono text-slate-500 shadow-2xs">Esc</kbd>
+            </button>
+            <div id="starters-result-body">
+                <!-- Rendered dynamically by gradeStartersTest() -->
+            </div>
+        </div>
+    </div>
+
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js"></script>
     <script src="ielts_data.js"></script>
     <script src="ielts_test_engine.js"></script>
+    <script src="starters_data.js"></script>
+    <script src="starters_test_engine.js"></script>
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>
         if (typeof ieltsProfileData !== 'undefined' && typeof studentsDB !== 'undefined' && !studentsDB['ielts']) {
             studentsDB['ielts'] = ieltsProfileData;
+        }
+        if (typeof startersProfileData !== 'undefined' && typeof studentsDB !== 'undefined' && !studentsDB['starters']) {
+            studentsDB['starters'] = startersProfileData;
         }
 
         const STORAGE_KEY_PROGRESS = 'smart_flashcard_progress';
@@ -1406,7 +1523,8 @@
             "quy": "1393912794_==wMyUDO",
             "thien_giang": "2089061218_==wN0kjN",
             "gemma": "1797231452_==QO3EzM",
-            "ielts": "1797231452_==QO3EzM"
+            "ielts": "1797231452_==QO3EzM",
+            "starters": "1797231452_==QO3EzM"
         };
         const _MASTER_HASH = "877395059_==wNwIjM";
 
@@ -1637,7 +1755,7 @@
                         <p class="text-[11px] sm:text-xs text-gray-500 truncate mt-0.5">📚 ${student.curriculum}</p>
                         <div class="flex items-center justify-between mt-1.5">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-violet-600 bg-violet-50 px-2.5 py-0.5 rounded-full">
-                                ${key === 'ielts' ? `${unitCount} bộ đề thi 🏆` : `${unitCount} bài học ➔`}
+                                ${key === 'ielts' ? `${unitCount} bộ đề thi 🏆` : (key === 'starters' ? `${unitCount} bộ đề Starters 🛡️` : `${unitCount} bài học ➔`)}
                             </span>
                             <span class="text-[10px] text-gray-400 font-medium">Mã 4 số</span>
                         </div>
@@ -1694,6 +1812,11 @@
                 if (lessonsLabel) lessonsLabel.textContent = '🎯 ĐỀ THI CAMBRIDGE (1 - 20):';
                 if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
+            } else if (currentStudentKey === 'starters') {
+                if (switcherBar) switcherBar.classList.add('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = '🛡️ ĐỀ THI STARTERS (1 - 4):';
+                if (speedBtn) speedBtn.classList.add('hidden');
+                setStudyMode('starters_test');
             } else {
                 if (switcherBar) switcherBar.classList.remove('hidden');
                 if (lessonsLabel) lessonsLabel.textContent = 'Lessons List (Units):';
@@ -2205,6 +2328,12 @@
                 if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
                 return;
+            } else if (currentStudentKey === 'starters') {
+                if (switcherBar) switcherBar.classList.add('hidden');
+                if (lessonsLabel) lessonsLabel.textContent = '🛡️ ĐỀ THI STARTERS (1 - 4):';
+                if (speedBtn) speedBtn.classList.add('hidden');
+                setStudyMode('starters_test');
+                return;
             } else {
                 if (switcherBar) switcherBar.classList.remove('hidden');
                 if (lessonsLabel) lessonsLabel.textContent = 'Lessons List (Units):';
@@ -2234,6 +2363,16 @@
                 saveProgress();
                 if (typeof switchIeltsTest === 'function') {
                     switchIeltsTest(unitKey);
+                }
+                return;
+            }
+            if (currentStudentKey === 'starters') {
+                currentUnitKey = unitKey;
+                studentProgress['starters'] = { unitKey: unitKey, index: 0 };
+                renderUnitButtons();
+                saveProgress();
+                if (typeof switchStartersTest === 'function') {
+                    switchStartersTest(unitKey);
                 }
                 return;
             }
@@ -2622,12 +2761,14 @@
         function setStudyMode(mode) {
             if (currentStudentKey === 'ielts') {
                 mode = 'ielts_test';
+            } else if (currentStudentKey === 'starters') {
+                mode = 'starters_test';
             }
             currentStudyMode = mode;
             
             const switcherBar = document.getElementById('study-mode-switcher-bar');
             if (switcherBar) {
-                if (currentStudentKey === 'ielts') {
+                if (currentStudentKey === 'ielts' || currentStudentKey === 'starters') {
                     switcherBar.classList.add('hidden');
                 } else {
                     switcherBar.classList.remove('hidden');
@@ -2648,6 +2789,7 @@
             const noteView = document.getElementById('note-view');
             const gameView = document.getElementById('game-view');
             const ieltsTestView = document.getElementById('ielts-test-view');
+            const startersTestView = document.getElementById('starters-test-view');
 
             const quizHeaderBadge = document.getElementById('quiz-header-badge');
             const grHeaderBadge = document.getElementById('grammar-review-header-badge');
@@ -2673,6 +2815,7 @@
             if (noteView) noteView.classList.add('hidden');
             if (gameView) gameView.classList.add('hidden');
             if (ieltsTestView) ieltsTestView.classList.add('hidden');
+            if (startersTestView) startersTestView.classList.add('hidden');
 
             quizHeaderBadge.classList.add('hidden');
             if (grHeaderBadge) grHeaderBadge.classList.add('hidden');
@@ -2711,6 +2854,10 @@
                 if (ieltsTestView) ieltsTestView.classList.remove('hidden');
                 if (typeof initIeltsTestEngine === 'function') initIeltsTestEngine();
                 if (typeof renderIeltsTestView === 'function') renderIeltsTestView();
+            } else if (mode === 'starters_test') {
+                if (startersTestView) startersTestView.classList.remove('hidden');
+                if (typeof initStartersTestEngine === 'function') initStartersTestEngine();
+                if (typeof renderStartersTestView === 'function') renderStartersTestView();
             }
         }
 
@@ -4554,6 +4701,16 @@
                     e.preventDefault();
                     if (typeof closeIeltsResultModal === 'function') closeIeltsResultModal();
                     else ieltsModal.classList.add('hidden');
+                    return;
+                }
+            }
+
+            const startersModal = document.getElementById('starters-result-modal');
+            if (startersModal && !startersModal.classList.contains('hidden')) {
+                if (e.key === 'Escape' || e.key === 'Esc') {
+                    e.preventDefault();
+                    if (typeof closeStartersResultModal === 'function') closeStartersResultModal();
+                    else startersModal.classList.add('hidden');
                     return;
                 }
             }
