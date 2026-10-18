@@ -393,6 +393,48 @@ function generateStartersTest(profile, idx) {
         }
     };
 
+    // Tính toán đường dẫn hình ảnh sách gốc Cambridge Pre-A1 Starters
+    const bookNum = parseInt(profile.book.replace('Starters ', '')) || 1;
+    const testNumInBook = ((idx % 3) + 1); // 1, 2, 3
+    const basePage = 5 + (testNumInBook - 1) * 14; // Test 1: 5, Test 2: 19, Test 3: 33
+
+    let spkScenePage, spkCardsPage;
+    if (bookNum === 1 || bookNum === 2) {
+        if (testNumInBook === 1) { spkScenePage = 44; spkCardsPage = 45; }
+        else if (testNumInBook === 2) { spkScenePage = 46; spkCardsPage = 47; }
+        else { spkScenePage = 48; spkCardsPage = 49; }
+    } else {
+        if (testNumInBook === 1) { spkScenePage = 47; spkCardsPage = 48; }
+        else if (testNumInBook === 2) { spkScenePage = 51; spkCardsPage = 52; }
+        else { spkScenePage = 55; spkCardsPage = 56; }
+    }
+
+    const bookImages = {
+        listening: {
+            part_1: [`images/starters/book${bookNum}/page_${basePage}.jpg`],
+            part_2: [`images/starters/book${bookNum}/page_${basePage + 1}.jpg`],
+            part_3: [`images/starters/book${bookNum}/page_${basePage + 3}.jpg`, `images/starters/book${bookNum}/page_${basePage + 4}.jpg`],
+            part_4: [`images/starters/book${bookNum}/page_${basePage + 5}.jpg`]
+        },
+        reading_writing: {
+            part_1: [`images/starters/book${bookNum}/page_${basePage + 6}.jpg`, `images/starters/book${bookNum}/page_${basePage + 7}.jpg`],
+            part_2: [`images/starters/book${bookNum}/page_${basePage + 8}.jpg`],
+            part_3: [`images/starters/book${bookNum}/page_${basePage + 9}.jpg`],
+            part_4: [`images/starters/book${bookNum}/page_${basePage + 10}.jpg`],
+            part_5: [
+                `images/starters/book${bookNum}/page_${basePage + 11}.jpg`,
+                `images/starters/book${bookNum}/page_${basePage + 12}.jpg`,
+                `images/starters/book${bookNum}/page_${basePage + 13}.jpg`
+            ]
+        },
+        speaking: {
+            part_1: [`images/starters/book${bookNum}/page_${spkScenePage}.jpg`],
+            part_2: [`images/starters/book${bookNum}/page_${spkCardsPage}.jpg`],
+            part_3: [`images/starters/book${bookNum}/page_${spkScenePage}.jpg`],
+            part_4: [`images/starters/book${bookNum}/page_${spkScenePage}.jpg`]
+        }
+    };
+
     return {
         id: profile.id,
         book: profile.book,
@@ -401,6 +443,7 @@ function generateStartersTest(profile, idx) {
         badge: profile.badge,
         theme: profile.theme,
         duration_minutes: 45,
+        book_images: bookImages,
         listening: {
             total_questions: 20,
             parts: [

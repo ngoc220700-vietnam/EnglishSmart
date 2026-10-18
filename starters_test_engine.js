@@ -154,6 +154,141 @@ function renderStartersSkillContent() {
 }
 
 // -------------------------------------------------------------
+// HELPER: RENDER GALLERY HÌNH ẢNH SÁCH GỐC CAMBRIDGE STARTERS
+// -------------------------------------------------------------
+function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters", galleryId = "gallery-default") {
+    if (!images || images.length === 0) return '';
+    
+    // Nếu chỉ có 1 trang ảnh
+    if (images.length === 1) {
+        return `
+            <div class="mb-4 bg-slate-900/5 rounded-2xl p-2.5 sm:p-3 border border-slate-200/90 shadow-2xs">
+                <div class="flex items-center justify-between mb-2 px-1">
+                    <span class="text-xs font-black text-slate-800 flex items-center gap-1.5">
+                        <span class="text-amber-500">📖</span> <span>${title}</span>
+                    </span>
+                    <button onclick="openStartersImageModal('${images[0]}', '${escapeQuotes(title)}')" 
+                            class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 text-indigo-600 border border-slate-200 text-[11px] font-bold flex items-center gap-1 shadow-2xs transition active:scale-95">
+                        <span>🔍</span> <span>Phóng to tranh gốc</span>
+                    </button>
+                </div>
+                <div class="relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
+                     onclick="openStartersImageModal('${images[0]}', '${escapeQuotes(title)}')">
+                    <img src="${images[0]}" alt="${title}" class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
+                    <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+                        <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
+                            🔍 Nhấp để xem to toàn màn hình
+                        </span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Nếu có nhiều trang ảnh (2 hoặc 3 trang liên tiếp)
+    const uniqueId = galleryId || 'gallery_' + Math.random().toString(36).substr(2, 9);
+    return `
+        <div class="mb-4 bg-slate-900/5 rounded-2xl p-2.5 sm:p-3 border border-slate-200/90 shadow-2xs" id="${uniqueId}">
+            <div class="flex items-center justify-between mb-2 px-1 flex-wrap gap-2">
+                <span class="text-xs font-black text-slate-800 flex items-center gap-1.5">
+                    <span class="text-amber-500">📖</span> <span>${title}</span> <span class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-200">${images.length} trang</span>
+                </span>
+                <div class="flex items-center gap-1.5">
+                    ${images.map((img, i) => `
+                        <button onclick="switchGalleryTab('${uniqueId}', ${i})" 
+                                id="${uniqueId}_tab_${i}"
+                                class="px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 ${i === 0 ? 'bg-indigo-600 text-white shadow-2xs' : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'}">
+                            Trang ${i + 1}
+                        </button>
+                    `).join('')}
+                    <button onclick="openCurrentGalleryModal('${uniqueId}')" 
+                            class="ml-1 px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 text-indigo-600 border border-slate-200 text-[11px] font-bold flex items-center gap-1 shadow-2xs transition active:scale-95">
+                        <span>🔍</span> <span>Phóng to</span>
+                    </button>
+                </div>
+            </div>
+
+            ${images.map((img, i) => `
+                <div id="${uniqueId}_img_${i}" 
+                     class="${i === 0 ? 'block' : 'hidden'} relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
+                     data-src="${img}"
+                     onclick="openStartersImageModal('${img}', '${escapeQuotes(title)} - Trang ${i + 1}')">
+                    <img src="${img}" alt="${title}" class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
+                    <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+                        <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
+                            🔍 Nhấp để xem to toàn màn hình
+                        </span>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function switchGalleryTab(galleryId, tabIndex) {
+    const gallery = document.getElementById(galleryId);
+    if (!gallery) return;
+    const imgs = gallery.querySelectorAll(`[id^="${galleryId}_img_"]`);
+    const tabs = gallery.querySelectorAll(`[id^="${galleryId}_tab_"]`);
+    imgs.forEach((el, i) => {
+        if (i === tabIndex) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+    });
+    tabs.forEach((tab, i) => {
+        if (i === tabIndex) {
+            tab.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 bg-indigo-600 text-white shadow-2xs";
+        } else {
+            tab.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200";
+        }
+    });
+}
+
+function openCurrentGalleryModal(galleryId) {
+    const gallery = document.getElementById(galleryId);
+    if (!gallery) return;
+    const activeImg = gallery.querySelector(`[id^="${galleryId}_img_"]:not(.hidden)`);
+    if (activeImg) {
+        const src = activeImg.getAttribute('data-src');
+        openStartersImageModal(src, 'Tranh gốc sách Cambridge');
+    }
+}
+
+function openStartersImageModal(src, title = 'Tranh gốc sách Cambridge') {
+    let modal = document.getElementById('starters-image-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'starters-image-modal';
+        modal.className = "fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-2 sm:p-4 transition-opacity";
+        modal.innerHTML = `
+            <div class="relative max-w-5xl max-h-[92vh] w-full flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-700" onclick="event.stopPropagation()">
+                <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between shrink-0">
+                    <h3 id="starters-modal-title" class="font-bold text-sm sm:text-base flex items-center gap-2">
+                        <span>📖</span> <span>Tranh gốc sách Cambridge</span>
+                    </h3>
+                    <button onclick="closeStartersImageModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 flex items-center justify-center font-bold text-sm transition">
+                        ✕
+                    </button>
+                </div>
+                <div class="p-2 overflow-auto custom-scroll flex justify-center items-center bg-slate-100 flex-1 min-h-[300px]">
+                    <img id="starters-modal-img" src="" alt="Tranh gốc sách Cambridge" class="max-h-[82vh] w-auto object-contain rounded-lg shadow-sm">
+                </div>
+            </div>
+        `;
+        modal.addEventListener('click', closeStartersImageModal);
+        document.body.appendChild(modal);
+    }
+    
+    document.getElementById('starters-modal-title').innerHTML = `<span>📖</span> <span>${escapeHtml(title)}</span>`;
+    document.getElementById('starters-modal-img').src = src;
+    modal.classList.remove('hidden');
+}
+
+function closeStartersImageModal() {
+    const modal = document.getElementById('starters-image-modal');
+    if (modal) modal.classList.add('hidden');
+}
+
+// -------------------------------------------------------------
 // A. GIAO DIỆN LISTENING (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersListeningView(container) {
@@ -165,11 +300,14 @@ function renderStartersListeningView(container) {
 
     if (activeStartersLisPart === 1) {
         // Part 1: Listen and draw lines
+        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_1, "Tranh toàn cảnh Part 1 (Nhìn tranh và nối bạn nhỏ)", "gal_lis_1");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
-                    <span>🎧 <strong>Part 1:</strong> Nghe đoạn hội thoại và chọn đúng vị trí hoặc hành động của từng bạn nhỏ trong tranh.</span>
+                    <span>🎧 <strong>Part 1:</strong> Nghe đoạn hội thoại và chọn đúng vị trí hoặc hành động của từng bạn nhỏ trong bức tranh gốc bên dưới.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map((q, qIdx) => {
@@ -209,11 +347,14 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 2) {
         // Part 2: Listen and write a name or a number
+        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_2, "Tranh minh họa Part 2 (Nghe và viết tên/số)", "gal_lis_2");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
                     <span>🎧 <strong>Part 2:</strong> Nghe đoạn hội thoại và điền một TÊN (Name) hoặc một CON SỐ (Number) vào chỗ trống.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map(q => {
@@ -241,11 +382,14 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 3) {
         // Part 3: Listen and tick the box
+        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_3, "Tranh câu hỏi A, B, C Part 3 (Nhìn tranh trong sách & chọn đáp án)", "gal_lis_3");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
-                    <span>🎧 <strong>Part 3:</strong> Nghe đoạn hội thoại và chọn bức tranh đúng (A, B hoặc C).</span>
+                    <span>🎧 <strong>Part 3:</strong> Nhìn tranh các câu hỏi trong sách bên dưới, nghe đoạn hội thoại và bấm chọn đáp án đúng (A, B hoặc C).</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3.5">
                     ${currentPart.questions.map(q => {
@@ -286,11 +430,14 @@ function renderStartersListeningView(container) {
         `;
     } else if (activeStartersLisPart === 4) {
         // Part 4: Listen and colour
+        const galleryHtml = renderBookImageGallery(test.book_images?.listening?.part_4, "Tranh tô màu Part 4 (Nhìn tranh trong sách & chọn màu sắc)", "gal_lis_4");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-fuchsia-50 border border-fuchsia-200 text-xs text-fuchsia-950 flex items-center justify-between">
-                    <span>🎨 <strong>Part 4:</strong> Nghe hướng dẫn và chọn màu sắc phù hợp để tô màu cho từng đồ vật trong tranh.</span>
+                    <span>🎨 <strong>Part 4:</strong> Quan sát bức tranh gốc trong sách bên dưới, nghe hướng dẫn và chọn màu sắc phù hợp cho từng đồ vật.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map(q => {
@@ -380,11 +527,14 @@ function renderStartersReadingWritingView(container) {
 
     if (activeStartersRwPart === 1) {
         // Part 1: Tick or Cross
+        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_1, "Trang tranh câu hỏi Part 1 (Nhìn hình trong sách và chọn Tick ✓ hoặc Cross ✗)", "gal_rw_1");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 1:</strong> Nhìn hình và đọc câu khẳng định. Nếu ĐÚNG bấm Tick (✓), nếu SAI bấm Cross (✗).</span>
+                    <span>📖 <strong>Part 1:</strong> Nhìn hình trong trang sách gốc bên dưới và đọc câu khẳng định. Nếu ĐÚNG bấm Tick (✓), nếu SAI bấm Cross (✗).</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map(q => {
@@ -392,9 +542,8 @@ function renderStartersReadingWritingView(container) {
                         return `
                             <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
                                 <div class="flex items-center gap-3">
-                                    <span class="text-3xl">${q.icon}</span>
+                                    <span class="w-8 h-8 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0">Câu ${q.id}</span>
                                     <div>
-                                        <span class="text-xs font-black text-indigo-600">Câu ${q.id}</span>
                                         <p class="font-extrabold text-sm text-slate-900">${q.statement}</p>
                                     </div>
                                 </div>
@@ -425,11 +574,14 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 2) {
         // Part 2: Look and write 'yes' or 'no'
+        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_2, "Tranh toàn cảnh Part 2 (Nhìn tranh trong sách & chọn yes/no)", "gal_rw_2");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 2:</strong> Nhìn bức tranh miêu tả và đọc câu khẳng định. Chọn <strong>yes</strong> hoặc <strong>no</strong>.</span>
+                    <span>📖 <strong>Part 2:</strong> Quan sát bức tranh sinh hoạt trong sách bên dưới và đọc câu miêu tả. Bấm chọn <strong>yes</strong> hoặc <strong>no</strong>.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map(q => {
@@ -467,11 +619,14 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 3) {
         // Part 3: Jumbled letters
+        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_3, "Trang tranh đồ vật Part 3 (Nhìn hình đồ vật & thớt chữ cái)", "gal_rw_3");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-violet-50 border border-violet-200 text-xs text-violet-950 flex items-center justify-between">
-                    <span>🔤 <strong>Part 3:</strong> Sắp xếp các chữ cái bị xáo trộn thành một từ vựng tiếng Anh đúng.</span>
+                    <span>🔤 <strong>Part 3:</strong> Quan sát đồ vật trong trang sách bên dưới và sắp xếp các chữ cái thành từ vựng tiếng Anh đúng.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3.5">
                     ${currentPart.questions.map(q => {
@@ -504,11 +659,14 @@ function renderStartersReadingWritingView(container) {
     } else if (activeStartersRwPart === 4) {
         // Part 4: Cloze test
         const cloze = currentPart.cloze;
+        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_4, "Trang bài đọc & Word Bank Part 4 (Nhìn ô từ vựng trong sách)", "gal_rw_4");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 4:</strong> Đọc đoạn văn và chọn từ trong ngân hàng từ vựng để điền vào chỗ trống 16 - 20.</span>
+                    <span>📖 <strong>Part 4:</strong> Đọc bài và nhìn hình trong ô từ vựng của trang sách bên dưới để điền từ vào chỗ trống 16 - 20.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <!-- WORD BANK -->
                 <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
@@ -548,11 +706,14 @@ function renderStartersReadingWritingView(container) {
         `;
     } else if (activeStartersRwPart === 5) {
         // Part 5: One-word answers
+        const galleryHtml = renderBookImageGallery(test.book_images?.reading_writing?.part_5, "Tranh diễn biến câu chuyện Part 5 (Nhìn tranh 1, 2, 3 trong sách & trả lời)", "gal_rw_5");
         partHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 5:</strong> Đọc câu hỏi và nhìn tranh để viết câu trả lời bằng <strong>ĐÚNG 1 TỪ DUY NHẤT</strong>.</span>
+                    <span>📖 <strong>Part 5:</strong> Quan sát 3 bức tranh diễn biến câu chuyện trong sách bên dưới và viết câu trả lời bằng <strong>ĐÚNG 1 TỪ DUY NHẤT</strong>.</span>
                 </div>
+
+                ${galleryHtml}
 
                 <div class="space-y-3">
                     ${currentPart.questions.map(q => {
@@ -616,6 +777,13 @@ function renderStartersSpeakingView(container) {
     const partKey = `part_${activeStartersSpkPart}`;
     const currentPart = spk[partKey];
 
+    let spkGalleryHtml = '';
+    if (activeStartersSpkPart === 1 || activeStartersSpkPart === 3) {
+        spkGalleryHtml = renderBookImageGallery(test.book_images?.speaking?.part_1, "Tranh toàn cảnh Speaking (Scene Picture)", "gal_spk_scene");
+    } else if (activeStartersSpkPart === 2) {
+        spkGalleryHtml = renderBookImageGallery(test.book_images?.speaking?.part_2, "Các thẻ đồ vật Speaking (Object Cards)", "gal_spk_cards");
+    }
+
     container.innerHTML = `
         <div class="flex flex-col h-full overflow-hidden">
             <!-- PART TABS (PART 1, 2, 3, 4) -->
@@ -650,6 +818,8 @@ function renderStartersSpeakingView(container) {
                 <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
                     <span>💡 <strong>${currentPart.title}:</strong> Lắng nghe giám khảo hỏi và bấm micro để ghi âm câu trả lời tự tin của bé nhé!</span>
                 </div>
+
+                ${spkGalleryHtml}
 
                 ${currentPart.prompts.map((p, idx) => `
                     <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
@@ -1011,13 +1181,21 @@ function resetStartersTest() {
     renderStartersSkillContent();
 }
 
-// PHÍM TẮT BÀN PHÍM: BẤM ESC ĐỂ ĐÓNG BẢNG ĐÁP ÁN STARTERS
+// PHÍM TẮT BÀN PHÍM: BẤM ESC ĐỂ ĐÓNG BẢNG ĐÁP ÁN HOẶC MODAL XEM ẢNH STARTERS
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Esc') {
+        const imgModal = document.getElementById('starters-image-modal');
+        if (imgModal && !imgModal.classList.contains('hidden')) {
+            e.preventDefault();
+            closeStartersImageModal();
+            return;
+        }
+
         const resultModal = document.getElementById('starters-result-modal');
         if (resultModal && !resultModal.classList.contains('hidden')) {
             e.preventDefault();
             closeStartersResultModal();
+            return;
         }
     }
 });
