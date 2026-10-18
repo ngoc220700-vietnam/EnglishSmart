@@ -436,7 +436,6 @@ function renderIeltsListeningView(container) {
         </div>
     `;
 }
-}
 
 // Xử lý Audio Player (HTML5 / Speech Synthesis Backup)
 function toggleIeltsAudio() {
