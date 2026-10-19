@@ -332,25 +332,37 @@ function getStartersBookImages(test, skill, partNum) {
     const parts = testId.split('_');
     const bookNum = parseInt(parts[1]) || 1;
     const testNum = parseInt(parts[3]) || 1;
-    const basePage = 5 + (testNum - 1) * 14;
+
+    // Exact authentic book page mapping for Cambridge Starters 1-4
+    // Books 1 & 2: T1 (p5-17), T2 (p18-30), T3 (p31-43)
+    // Books 3 & 4: T1 (p5-18), T2 (p19-32), T3 (p33-44)
+    let lisP1 = 5, lisP2 = 6, rwP2 = 13;
+    if (bookNum <= 2) {
+        if (testNum === 1) { lisP1 = 5; lisP2 = 6; rwP2 = 13; }
+        else if (testNum === 2) { lisP1 = 18; lisP2 = 19; rwP2 = 26; }
+        else if (testNum === 3) { lisP1 = 31; lisP2 = 32; rwP2 = 39; }
+    } else {
+        if (testNum === 1) { lisP1 = 5; lisP2 = 6; rwP2 = 13; }
+        else if (testNum === 2) { lisP1 = 19; lisP2 = 20; rwP2 = 27; }
+        else if (testNum === 3) { lisP1 = 33; lisP2 = 34; rwP2 = 41; }
+    }
 
     if (skill === 'listening') {
-        if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage}.jpg`];
-        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 1}_cropped.jpg`];
-        if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 3}.jpg`, `images/starters/book${bookNum}/page_${basePage + 4}.jpg`];
-        if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 5}.jpg`];
+        if (partNum === 1) return [`images/starters/book${bookNum}/page_${lisP1}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${lisP2}_cropped.jpg`];
+        if (partNum === 3) return [`images/starters/book${bookNum}/page_${lisP2 + 2}.jpg`, `images/starters/book${bookNum}/page_${lisP2 + 3}.jpg`];
+        if (partNum === 4) return [`images/starters/book${bookNum}/page_${lisP2 + 4}.jpg`];
     } else if (skill === 'reading_writing') {
-        if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage + 6}.jpg`, `images/starters/book${bookNum}/page_${basePage + 7}.jpg`];
-        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 8}_cropped.jpg`];
-        if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 9}.jpg`];
-        if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 10}.jpg`];
+        if (partNum === 1) return [`images/starters/book${bookNum}/page_${rwP2 - 2}.jpg`, `images/starters/book${bookNum}/page_${rwP2 - 1}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${rwP2}_cropped.jpg`];
+        if (partNum === 3) return [`images/starters/book${bookNum}/page_${rwP2 + 1}.jpg`];
+        if (partNum === 4) return [`images/starters/book${bookNum}/page_${rwP2 + 2}.jpg`];
         if (partNum === 5) return [
-            `images/starters/book${bookNum}/page_${basePage + 11}.jpg`,
-            `images/starters/book${bookNum}/page_${basePage + 12}.jpg`,
-            `images/starters/book${bookNum}/page_${basePage + 13}.jpg`
+            `images/starters/book${bookNum}/page_${rwP2 + 3}.jpg`,
+            `images/starters/book${bookNum}/page_${rwP2 + 4}.jpg`
         ];
     }
-    return [`images/starters/book${bookNum}/page_${basePage}.jpg`];
+    return [`images/starters/book${bookNum}/page_${lisP1}.jpg`];
 }
 
 // =========================================================================
@@ -861,14 +873,15 @@ function renderStartersListeningView(container) {
                         <span class="font-extrabold text-xs text-amber-900">Listen to the conversation examples:</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
-                            <span class="text-slate-700">What is the boy's name?</span>
-                            <span class="font-black text-amber-950 font-mono bg-amber-100 px-2 py-0.5 rounded">Tim</span>
-                        </div>
-                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
-                            <span class="text-slate-700">How old is he?</span>
-                            <span class="font-black text-amber-950 font-mono bg-amber-100 px-2 py-0.5 rounded">11</span>
-                        </div>
+                        ${(currentPart.examples || [
+                            { question: "What is the boy's name?", answer: "Tom" },
+                            { question: "How old is he?", answer: "11" }
+                        ]).map(ex => `
+                            <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                                <span class="text-slate-700">${ex.question}</span>
+                                <span class="font-black text-amber-950 font-mono bg-amber-100 px-2 py-0.5 rounded">${ex.answer}</span>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
 
@@ -1228,14 +1241,15 @@ function renderStartersReadingWritingView(container) {
                         <span class="font-extrabold text-xs text-amber-900">Look at the picture and read the examples:</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
-                            <span class="text-slate-700">There are two cats on the wall.</span>
-                            <span class="font-black text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">yes</span>
-                        </div>
-                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
-                            <span class="text-slate-700">A boy is riding a horse.</span>
-                            <span class="font-black text-rose-800 bg-rose-100 px-2.5 py-0.5 rounded-full">no</span>
-                        </div>
+                        ${(currentPart.examples || [
+                            { statement: "A young child is waving.", answer: "yes" },
+                            { statement: "The woman's bag is in her hand.", answer: "no" }
+                        ]).map(ex => `
+                            <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                                <span class="text-slate-700">${ex.statement}</span>
+                                <span class="font-black ${ex.answer === 'yes' ? 'text-emerald-800 bg-emerald-100' : 'text-rose-800 bg-rose-100'} px-2.5 py-0.5 rounded-full">${ex.answer}</span>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
 

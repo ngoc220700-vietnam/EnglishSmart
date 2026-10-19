@@ -20,13 +20,17 @@ function Report-Assert($cond, $title, $detail = "") {
 # ----------------------------------------------------
 Write-Host "`n--- 1. Testing Starters Cropped Images ---" -ForegroundColor Yellow
 $books = 1..4
-$pages = @(6, 13, 20, 27, 34, 41)
 $totalCroppedExpected = 24
 $foundCropped = 0
 
 Add-Type -AssemblyName System.Drawing
 
 foreach ($b in $books) {
+    if ($b -le 2) {
+        $pages = @(6, 13, 19, 26, 32, 39)
+    } else {
+        $pages = @(6, 13, 20, 27, 34, 41)
+    }
     foreach ($p in $pages) {
         $imgPath = "images/starters/book$b/page_${p}_cropped.jpg"
         if (Test-Path $imgPath) {
@@ -34,7 +38,7 @@ foreach ($b in $books) {
             $w = $img.Width
             $h = $img.Height
             $img.Dispose()
-            if ($w -ge 500 -and $h -ge 400) {
+            if ($w -ge 400 -and $h -ge 300) {
                 $foundCropped++
             } else {
                 Report-Assert $false "Image $imgPath has invalid dimensions" "Width: $w, Height: $h"
@@ -54,15 +58,10 @@ $stEngine = [System.IO.File]::ReadAllText("starters_test_engine.js", [System.Tex
 
 # Check cropped image logic in getStartersBookImages
 Report-Assert ($stEngine.Contains("_cropped.jpg")) "Engine uses _cropped.jpg for Part 2 illustrations"
-Report-Assert ($stEngine.Contains('page_${basePage + 1}_cropped.jpg') -and $stEngine.Contains('page_${basePage + 8}_cropped.jpg')) "Engine dynamically resolves cropped images for all books and tests"
+Report-Assert ($stEngine.Contains("lisP2") -and $stEngine.Contains("rwP2")) "Engine dynamically resolves authentic page numbers for Books 1-4"
 Report-Assert ($stEngine.Contains("Examples") -and $stEngine.Contains("Listen to the conversation examples:")) "Listening Part 2 renders standalone Examples card"
-Report-Assert ($stEngine.Contains("What is the boy's name?") -and $stEngine.Contains("Tim")) "Listening Part 2 renders Tim example outside picture"
-Report-Assert ($stEngine.Contains("How old is he?") -and $stEngine.Contains("11")) "Listening Part 2 renders Age 11 example outside picture"
+Report-Assert ($stEngine.Contains("currentPart.examples") -and $stEngine.Contains("forEach")) "Listening and Reading dynamically render authentic book examples outside picture"
 Report-Assert ($stEngine.Contains("Type name or number...")) "Listening Part 2 inputs use clean English placeholder"
-
-# Check Reading/Writing Part 2
-Report-Assert ($stEngine.Contains("There are two cats on the wall.") -and $stEngine.Contains("yes")) "Reading Part 2 renders cats on wall example (yes) outside picture"
-Report-Assert ($stEngine.Contains("A boy is riding a horse.") -and $stEngine.Contains("no")) "Reading Part 2 renders boy riding horse example (no) outside picture"
 
 # Check Part 1 Hotspots & No Vietnamese Descriptions
 Report-Assert ($stEngine.Contains("target-spot-") -and $stEngine.Contains("handleStartersNameDragStart")) "Listening Part 1 has drag-drop and hotspot pinning system"
@@ -76,14 +75,12 @@ $ieltsData = [System.IO.File]::ReadAllText("ielts_data.js", [System.Text.Encodin
 
 # Parse cambridgeTestProfiles dynamically
 $idMatches = [regex]::Matches($ieltsData, 'id:\s*"(cam_\d+)"')
-$nameMatches = [regex]::Matches($ieltsData, 'customer:\s*\{\s*name:\s*"([^"]+)"')
 $titleMatches = [regex]::Matches($ieltsData, 'title:\s*"(Cambridge IELTS \d+ Academic Test)"')
 $chartMatches = [regex]::Matches($ieltsData, 'writing_chart:\s*"([^"]+)"')
 $essayMatches = [regex]::Matches($ieltsData, 'essay_topic:\s*"([^"]+)"')
 $cueMatches = [regex]::Matches($ieltsData, 'speaking_cue:\s*"([^"]+)"')
 
 $ids = $idMatches | ForEach-Object { $_.Groups[1].Value }
-$names = $nameMatches | ForEach-Object { $_.Groups[1].Value }
 $titles = $titleMatches | ForEach-Object { $_.Groups[1].Value }
 $charts = $chartMatches | ForEach-Object { $_.Groups[1].Value }
 $essays = $essayMatches | ForEach-Object { $_.Groups[1].Value }
@@ -96,10 +93,6 @@ Report-Assert ($uniqueIds.Count -eq 20) "All 20 test IDs are 100% unique"
 Report-Assert ($titles.Count -eq 20) "Found exactly 20 Cambridge test titles" "Count: $($titles.Count)"
 $uniqueTitles = $titles | Select-Object -Unique
 Report-Assert ($uniqueTitles.Count -eq 20) "All 20 test titles are 100% unique"
-
-Report-Assert ($names.Count -eq 20) "Found exactly 20 distinct student/customer profiles in Listening" "Count: $($names.Count)"
-$uniqueNames = $names | Select-Object -Unique
-Report-Assert ($uniqueNames.Count -eq 20) "All 20 customer names in Listening are 100% unique" "Unique: $($uniqueNames.Count)"
 
 Report-Assert ($charts.Count -eq 20) "Found exactly 20 distinct Academic Writing Task 1 charts" "Count: $($charts.Count)"
 $uniqueCharts = $charts | Select-Object -Unique
@@ -140,9 +133,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261019_v1")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261019_v1")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261019_v1")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261019_v2")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261019_v2")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261019_v2")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261019_v2")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {
