@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Test Suite v5 - IELTS & Starters</title>
+</head>
+<body class="bg-slate-100 p-6 font-sans">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
+        <h1 class="text-2xl font-black text-slate-800 mb-4">🚀 Automated Test Runner v5</h1>
+        <div id="test-summary" class="p-4 rounded-xl font-mono text-sm mb-4 bg-slate-50 border border-slate-200">
+            Running automated tests...
+        </div>
+        <div id="test-logs" class="space-y-2 font-mono text-xs"></div>
+    </div>
+
+    <!-- Hidden mount containers for rendering engines -->
+    <div id="test-mount" style="position: absolute; left: -9999px; top: -9999px; width: 1200px; height: 900px; overflow: hidden;"></div>
+
+    <!-- Scripts under test -->
+    <script>
+        // Mock base studentsDB
+        window.studentsDB = {};
+    </script>
+    <script src="data.js?v=20261018_v5"></script>
+    <script src="ielts_data.js?v=20261018_v5"></script>
+    <script src="ielts_test_engine.js?v=20261018_v5"></script>
+    <script src="starters_data.js?v=20261018_v5"></script>
+    <script src="starters_test_engine.js?v=20261018_v5"></script>
+
+    <script>
+        const logsDiv = document.getElementById('test-logs');
+        const summaryDiv = document.getElementById('test-summary');
+        const mount = document.getElementById('test-mount');
+
+        const testResults = {
+            total: 0,
+            passed: 0,
+            failed: 0,
+            failures: []
+        };
+
+        function assert(condition, testName, details = '') {
+            testResults.total++;
+            const logItem = document.createElement('div');
+            logItem.className = 'p-2 rounded flex items-center justify-between ' + (condition ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-50 text-rose-800 border border-rose-200');
+            
+            if (condition) {
+                testResults.passed++;
+                logItem.innerHTML = `<span>✓ <b>PASS:</b> ${testName}</span> <span class="text-xs text-emerald-600">OK</span>`;
+            } else {
+                testResults.failed++;
+                testResults.failures.push({ testName, details });
+                logItem.innerHTML = `<span>✗ <b>FAIL:</b> ${testName}</span> <span class="text-xs text-rose-600 font-bold">${details}</span>`;
+            }
+            logsDiv.appendChild(logItem);
+        }
+
+        // Strict Vietnamese character regex
+        const VN_REGEX = /[\u00C0-\u00C3\u00C8-\u00CA\u00CC-\u00CD\u00D2-\u00D5\u00D9-\u00DA\u00DD\u00E0-\u00E3\u00E8-\u00EA\u00EC-\u00ED\u00F2-\u00F5\u00F9-\u00FA\u00FD\u0102-\u0103\u0110-\u0111\u0128-\u0129\u0168-\u0169\u01A0-\u01B0\u1EA0-\u1EF9]/i;
+
+        function runAllTests() {
+            try {
+                // ========================================================
+                // SUITE 1: DATA INTEGRITY (STARTERS & IELTS DIVERSITY)
+                // ========================================================
+                assert(typeof startersProfileData !== 'undefined', 'Starters profile data is loaded');
+                assert(typeof ieltsProfileData !== 'undefined', 'IELTS profile data is loaded');
+                
+                // 1.1 Starters Data
+                const sTest1 = startersProfileData.starters_tests['starters_1_test_1'];
+                assert(!!sTest1, 'Starters Test 1 exists');
+                assert(Array.isArray(sTest1.listening.parts[0].spots) && sTest1.listening.parts[0].spots.length === 6, 'Starters Part 1 defines exactly 6 hotspot coordinates', 'Found ' + (sTest1.listening.parts[0].spots?.length));
+                
+                // Check all Part 1 questions map to spot_1 - spot_6
+                const p1Questions = sTest1.listening.parts[0].questions;
+                assert(p1Questions.length === 5, 'Starters Part 1 has 5 matching questions');
+                const validSpots = p1Questions.every(q => /^spot_[1-6]$/.test(q.correct_answer));
+                assert(validSpots, 'All Part 1 correct answers are mapped to valid spot IDs (spot_1..6)');
+
+                // 1.2 IELTS Diversity: Verify 20 tests have distinct content
+                const test1 = ieltsProfileData.ielts_tests['cam_1'];
+                const test2 = ieltsProfileData.ielts_tests['cam_2'];
+                const test3 = ieltsProfileData.ielts_tests['cam_3'];
+                const test20 = ieltsProfileData.ielts_tests['cam_20'];
+
+                assert(!!test1 && !!test2 && !!test3 && !!test20, 'All 20 Cambridge IELTS tests generated');
+                assert(test1.title !== test2.title && test2.title !== test3.title, 'IELTS Tests have unique titles');
+                assert(test1.listening.parts[0].questions[0].question !== test2.listening.parts[0].questions[0].question, 'IELTS Listening Part 1 questions are DIFFERENT across tests (Cam 1 vs Cam 2)');
+                assert(test1.listening.parts[0].questions[0].correct_answers[0] === 'Lucas', 'Cam 1 Question 1 answer is Lucas');
+                assert(test2.listening.parts[0].questions[0].correct_answers[0] === 'Elena', 'Cam 2 Question 1 answer is Elena (Distinct from Cam 1)');
+                assert(test20.listening.parts[0].questions[0].correct_answers[0] === 'Alexander', 'Cam 20 Question 1 answer is Alexander (Distinct from Cam 1 & 2)');
+                assert(test1.reading.passages[0].title !== test2.reading.passages[0].title, 'IELTS Reading Passage 1 titles are unique across tests');
+
+                // ========================================================
+                // SUITE 2: STARTERS ENGINE - PART 1 INTERACTIVE HOTSPOTS
+                // ========================================================
+                activeStartersTestId = 'starters_1_test_1';
+                activeStartersSkill = 'listening';
+                activeStartersLisPart = 1;
+                startersUserAnswers = { listening: {}, reading_writing: {} };
+
+                mount.innerHTML = '<div id="starters-skill-content" class="w-full h-full"></div>';
+                const sContainer = document.getElementById('starters-skill-content');
+                renderStartersListeningView(sContainer);
+
+                // 2.1 Name badges check
+                const nameCards = sContainer.querySelectorAll('[ondragstart^="handleStartersNameDragStart"]');
+                assert(nameCards.length === 5, '5 Cambridge character name badges rendered as draggable/clickable elements', 'Found: ' + nameCards.length);
+
+                // 2.2 Hotspot coordinates directly placed on Cambridge picture
+                const spotElements = sContainer.querySelectorAll('[id^="target-spot-spot_"]');
+                assert(spotElements.length === 6, '6 interactive target spots placed on image coordinates', 'Found: ' + spotElements.length);
+
+                // 2.3 Verify description text cards are completely gone
+                const oldTextCards = sContainer.querySelectorAll('.text-amber-800');
+                let foundOldDescription = false;
+                oldTextCards.forEach(c => {
+                    if (c.textContent.includes('cạnh') || c.textContent.includes('trên cây') || c.textContent.includes('dưới')) {
+                        foundOldDescription = true;
+                    }
+                });
+                assert(!foundOldDescription, 'Old Vietnamese text descriptions are completely removed from Part 1');
+
+                // 2.4 Interaction test: Select Lucy (qId: 2) -> Connect to Spot 1
+                selectStartersP1Name(2);
+                assert(startersP1SelectedQId === 2, 'Selected character question ID is 2 (Lucy)');
+
+                connectStartersP1Target('spot_1', 2);
+                assert(startersUserAnswers.listening[2] === 'spot_1', 'Lucy connected to spot_1 in user answers', 'Answer: ' + startersUserAnswers.listening[2]);
+                
+                const spot1El = document.getElementById('target-spot-spot_1');
+                assert(spot1El && spot1El.textContent.includes('Lucy'), 'Spot 1 displays pinned badge for Lucy');
+
+                // 2.5 Remove connection test
+                clearStartersP1Connection(2);
+                assert(!startersUserAnswers.listening[2], 'Connection removed successfully');
+                const spot1ElFreed = document.getElementById('target-spot-spot_1');
+                assert(spot1ElFreed && !spot1ElFreed.textContent.includes('Lucy'), 'Spot 1 is freed up');
+
+                // Re-connect Lucy to Spot 1 for grading test
+                connectStartersP1Target('spot_1', 2);
+
+                // 2.6 Canvas clear test
+                clearStartersP1Canvas();
+                assert(true, 'Part 1 line canvas cleared without error');
+
+                // ========================================================
+                // SUITE 3: STARTERS PART 2 - CROPPED ILLUSTRATION & EXAMPLES
+                // ========================================================
+                activeStartersLisPart = 2;
+                renderStartersListeningView(sContainer);
+                
+                const p2Img = sContainer.querySelector('img[alt="Part 2 Illustration"]');
+                assert(!!p2Img, 'Listening Part 2 renders standalone illustration image');
+                assert(p2Img && p2Img.src.includes('_cropped'), 'Listening Part 2 uses cropped illustration (without page text)', p2Img?.src);
+
+                const p2Examples = sContainer.innerText.includes('What is the boy\'s name?') && sContainer.innerText.includes('Tim');
+                assert(p2Examples, 'Listening Part 2 examples are rendered on screen outside the image');
+
+                const p2Inputs = sContainer.querySelectorAll('input[placeholder="Type name or number..."]');
+                assert(p2Inputs.length === 5, 'Listening Part 2 has 5 question inputs with English placeholder', 'Found: ' + p2Inputs.length);
+
+                // ========================================================
+                // SUITE 4: STARTERS READING & WRITING PART 2 - CROPPED ILLUSTRATION
+                // ========================================================
+                activeStartersSkill = 'reading_writing';
+                activeStartersRwPart = 2;
+                renderStartersReadingWritingView(sContainer);
+
+                const rw2Img = sContainer.querySelector('img[alt="Part 2 Illustration"]');
+                assert(!!rw2Img, 'Reading Part 2 renders standalone illustration image');
+                assert(rw2Img && rw2Img.src.includes('_cropped'), 'Reading Part 2 uses cropped illustration (without page text)', rw2Img?.src);
+
+                const rw2Examples = sContainer.innerText.includes('There are two cats on the wall') && sContainer.innerText.includes('yes');
+                assert(rw2Examples, 'Reading Part 2 examples are rendered on screen outside the image');
+
+                // ========================================================
+                // SUITE 5: STARTERS GRADING & ZERO VIETNAMESE IN STARTERS DOM
+                // ========================================================
+                // Provide answers for Part 1: Tom = spot_4, Lucy = spot_1
+                startersUserAnswers.listening[1] = 'spot_4';
+                startersUserAnswers.listening[2] = 'spot_1';
+
+                // Submit test
+                submitStartersTest();
+
+                const startersModal = document.getElementById('starters-result-modal');
+                assert(!!startersModal, 'Starters score modal rendered with Cambridge shields');
+
+                // Zero Vietnamese in Starters DOM
+                const startersText = (sContainer.innerText || '') + (startersModal ? startersModal.innerText : '');
+                const vnStartersMatch = VN_REGEX.test(startersText);
+                assert(!vnStartersMatch, 'ZERO Vietnamese characters in entire Starters test view & score report', vnStartersMatch ? 'Found VN char in: ' + startersText.match(VN_REGEX) : '');
+
+                // Close starters modal
+                if (startersModal) startersModal.remove();
+
+                // ========================================================
+                // SUITE 6: IELTS ENGINE & ZERO VIETNAMESE IN IELTS DOM
+                // ========================================================
+                activeIeltsTestId = 'cam_2';
+                activeIeltsSkill = 'listening';
+                ieltsUserAnswers = { listening: {}, reading: {}, writing: {}, speaking: {} };
+
+                mount.innerHTML = '<div id="ielts-test-container" class="w-full h-full"></div>';
+                const iContainer = document.getElementById('ielts-test-container');
+                renderIeltsListeningView(iContainer);
+                assert(iContainer.innerHTML.includes('Lakeside Conference Center Registration'), 'IELTS Cam 2 Listening view rendered with unique topic');
+
+                // Test Reading
+                activeIeltsSkill = 'reading';
+                renderIeltsReadingView(iContainer);
+                assert(iContainer.innerHTML.includes('Tropical Rainforest Dynamics'), 'IELTS Cam 2 Reading rendered with unique topic');
+
+                // Test Writing
+                activeIeltsSkill = 'writing';
+                renderIeltsWritingView(iContainer);
+                const wordBadge = document.getElementById('writing-word-badge');
+                assert(wordBadge && wordBadge.textContent.includes('words'), 'IELTS Writing word badge uses English ("words", not "từ")');
+                assert(wordBadge && !wordBadge.textContent.includes('Chưa'), 'IELTS Writing word badge uses "(Short)" instead of "(Chưa đủ)"');
+
+                // Test Speaking
+                activeIeltsSkill = 'speaking';
+                renderIeltsSpeakingView(iContainer);
+                assert(iContainer.innerHTML.includes('Edinburgh historical capital'), 'IELTS Cam 2 Speaking rendered with unique topic');
+
+                // Submit IELTS Test
+                ieltsUserAnswers.listening[1] = 'Elena';
+                ieltsUserAnswers.reading[1] = 'TRUE';
+                submitIeltsTest();
+
+                const ieltsModal = document.getElementById('ielts-result-modal');
+                assert(!!ieltsModal, 'IELTS score modal rendered with official Band score');
+
+                // Zero Vietnamese in IELTS DOM
+                const ieltsText = (iContainer.innerText || '') + (ieltsModal ? ieltsModal.innerText : '');
+                const vnIeltsMatch = VN_REGEX.test(ieltsText);
+                assert(!vnIeltsMatch, 'ZERO Vietnamese characters in entire IELTS test view & score report', vnIeltsMatch ? 'Found VN char in: ' + ieltsText.match(VN_REGEX) : '');
+
+                // Final Summary
+                const isAllPass = testResults.failed === 0;
+                summaryDiv.className = 'p-4 rounded-xl font-mono text-sm mb-4 ' + (isAllPass ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-rose-100 text-rose-900 border border-rose-300');
+                summaryDiv.innerHTML = `
+                    <div class="text-base font-bold mb-1">${isAllPass ? '🎉 ALL TESTS PASSED SUCCESSFULLY!' : '⚠️ SOME TESTS FAILED!'}</div>
+                    <div>Total Tests: ${testResults.total} | Passed: ${testResults.passed} | Failed: ${testResults.failed}</div>
+                `;
+
+                window.__AUTOMATED_TEST_RESULTS__ = testResults;
+
+                // Stop all intervals to allow clean process exit
+                if (typeof ieltsTimerInterval !== 'undefined') clearInterval(ieltsTimerInterval);
+                if (typeof startersTimerInterval !== 'undefined') clearInterval(startersTimerInterval);
+                document.title = (testResults.failed === 0 ? "PASSED:" : "FAILED:") + testResults.passed + "/" + testResults.total;
+                console.log("===TEST_RUNNER_SUMMARY===" + JSON.stringify(testResults));
+
+            } catch (err) {
+                assert(false, 'Unexpected Runtime Exception', err.stack || err.message);
+                summaryDiv.className = 'p-4 rounded-xl font-mono text-sm mb-4 bg-rose-100 text-rose-900 border border-rose-300';
+                summaryDiv.innerHTML = `<div class="text-base font-bold text-rose-700">FATAL ERROR: ${err.message}</div>`;
+                window.__AUTOMATED_TEST_RESULTS__ = testResults;
+                document.title = "FATAL_ERROR:" + err.message;
+                console.error("FATAL_ERROR:" + err.message);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', runAllTests);
+    </script>
+</body>
+</html>

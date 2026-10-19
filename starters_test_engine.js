@@ -1,7 +1,8 @@
 // =========================================================================
 // CAMBRIDGE STARTERS TEST ENGINE (PRE-A1 STARTERS 1 - 4)
-// TỰ ĐỘNG CHẤM ĐIỂM KHIÊN CAMBRIDGE (SHIELDS 🛡️ TỐI ĐA 15 KHIÊN)
-// ĐẦY ĐỦ 3 KỸ NĂNG: LISTENING - READING & WRITING - SPEAKING
+// OFFICIAL CAMBRIDGE SHIELDS SCORING (MAXIMUM 15 SHIELDS)
+// ALL 3 SKILLS: LISTENING - READING & WRITING - SPEAKING
+// 100% ENGLISH INTERFACE & INTERACTIVE DRAG-AND-DROP LINE MATCHING TOOL
 // =========================================================================
 
 let activeStartersTestId = 'starters_1_test_1';
@@ -21,7 +22,7 @@ let startersMediaRecorder = null;
 let startersAudioChunks = [];
 
 let startersTimerInterval = null;
-let startersTimerSeconds = 45 * 60; // 45 phút cho đề thi Starters
+let startersTimerSeconds = 45 * 60; // 45 minutes for Starters test
 let startersTestSubmitted = false;
 let startersTestScoreResult = null;
 
@@ -42,7 +43,7 @@ function escapeHtml(text) {
         .replace(/'/g, "&#039;");
 }
 
-// 1. KHỞI TẠO TEST ENGINE
+// 1. INITIALIZE TEST ENGINE
 function initStartersTestEngine() {
     loadStartersProgress();
     startStartersTimer();
@@ -54,8 +55,8 @@ function loadStartersProgress() {
         if (saved) {
             const data = JSON.parse(saved);
             startersUserAnswers = data.answers || { listening: {}, reading_writing: {}, speaking: {} };
-            startersTestSubmitted = data.submitted || false;
-            startersTimerSeconds = data.timer || 45 * 60;
+            startersTestSubmitted = !!data.submitted;
+            startersTimerSeconds = (typeof data.timer === 'number') ? data.timer : 45 * 60;
             startersTestScoreResult = data.result || null;
         } else {
             startersUserAnswers = { listening: {}, reading_writing: {}, speaking: {} };
@@ -64,7 +65,7 @@ function loadStartersProgress() {
             startersTestScoreResult = null;
         }
     } catch(e) {
-        console.error("Lỗi khi nạp tiến độ Starters:", e);
+        console.error("Error loading Starters progress:", e);
     }
 }
 
@@ -78,35 +79,38 @@ function saveStartersProgress() {
         };
         localStorage.setItem(STARTERS_STORAGE_KEY_PREFIX + activeStartersTestId, JSON.stringify(data));
     } catch(e) {
-        console.error("Lỗi khi lưu tiến độ Starters:", e);
+        console.error("Error saving Starters progress:", e);
     }
 }
 
 function startStartersTimer() {
     if (startersTimerInterval) clearInterval(startersTimerInterval);
+    updateStartersTimerDisplay();
+
     startersTimerInterval = setInterval(() => {
         if (!startersTestSubmitted && startersTimerSeconds > 0) {
             startersTimerSeconds--;
             updateStartersTimerDisplay();
-            if (startersTimerSeconds % 15 === 0) saveStartersProgress();
+            if (startersTimerSeconds % 10 === 0) saveStartersProgress();
+
             if (startersTimerSeconds === 0) {
-                alert("⏰ Đã hết 45 phút thời gian làm bài thi Starters! Hệ thống sẽ tự động tổng kết số Khiên Cambridge của bé.");
+                clearInterval(startersTimerInterval);
+                alert("⏰ Time is up! Your Cambridge Starters test will now be graded.");
                 gradeStartersTest(true);
             }
         }
     }, 1000);
-    updateStartersTimerDisplay();
 }
 
 function updateStartersTimerDisplay() {
-    const el = document.getElementById('starters-timer-display');
-    if (!el) return;
+    const badge = document.getElementById('starters-timer-badge');
+    if (!badge) return;
     const m = Math.floor(startersTimerSeconds / 60);
     const s = startersTimerSeconds % 60;
-    el.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    badge.textContent = `⏱️ ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
-// 2. CHUYỂN BÀI TEST & KỸ NĂNG
+// 2. SWITCH TEST & SKILL
 function switchStartersTest(testId) {
     if (activeStartersTestId === testId) return;
     saveStartersProgress();
@@ -121,6 +125,7 @@ function switchStartersTest(testId) {
 }
 
 function switchStartersSkill(skill) {
+    if (activeStartersSkill === skill) return;
     activeStartersSkill = skill;
     updateStartersSkillNavButtons();
     renderStartersSkillContent();
@@ -129,17 +134,17 @@ function switchStartersSkill(skill) {
 function updateStartersSkillNavButtons() {
     const skills = ['listening', 'reading_writing', 'speaking'];
     skills.forEach(s => {
-        const btn = document.getElementById(`btn-starters-skill-${s}`);
+        const btn = document.getElementById(`starters-nav-${s}`);
         if (!btn) return;
         if (s === activeStartersSkill) {
-            btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-1.5 transition active:scale-95 shadow-sm bg-amber-400 text-slate-950 ring-2 ring-amber-300 shrink-0";
+            btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition shadow-xs flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white";
         } else {
-            btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition active:scale-95 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shrink-0";
+            btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1.5";
         }
     });
 }
 
-// 3. VẼ GIAO DIỆN CHÍNH
+// 3. RENDER MAIN INTERFACE
 function renderStartersTestView() {
     const container = document.getElementById('starters-test-view');
     if (!container) return;
@@ -147,7 +152,6 @@ function renderStartersTestView() {
     const test = startersProfileData.starters_tests[activeStartersTestId];
     if (!test) return;
 
-    // Cập nhật select chọn đề thi
     const select = document.getElementById('starters-test-selector');
     if (select) select.value = activeStartersTestId;
 
@@ -156,35 +160,34 @@ function renderStartersTestView() {
 }
 
 function renderStartersSkillContent() {
-    const container = document.getElementById('starters-content-area');
-    if (!container) return;
+    const contentArea = document.getElementById('starters-content-area');
+    if (!contentArea) return;
 
     if (activeStartersSkill === 'listening') {
-        renderStartersListeningView(container);
+        renderStartersListeningView(contentArea);
     } else if (activeStartersSkill === 'reading_writing') {
-        renderStartersReadingWritingView(container);
+        renderStartersReadingWritingView(contentArea);
     } else if (activeStartersSkill === 'speaking') {
-        renderStartersSpeakingView(container);
+        renderStartersSpeakingView(contentArea);
     }
 }
 
 // -------------------------------------------------------------
-// HELPER: RENDER GALLERY HÌNH ẢNH SÁCH GỐC CAMBRIDGE STARTERS
+// IMAGE GALLERY & MODAL ZOOM
 // -------------------------------------------------------------
-function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters", galleryId = "gallery-default") {
+function renderBookImageGallery(images, title = "Cambridge Starters Book Page", galleryId = "gallery-default") {
     if (!images || images.length === 0) return '';
-    
-    // Nếu chỉ có 1 trang ảnh
+
     if (images.length === 1) {
         return `
-            <div class="mb-4 bg-slate-900/5 rounded-2xl p-2.5 sm:p-3 border border-slate-200/90 shadow-2xs">
-                <div class="flex items-center justify-between mb-2 px-1">
-                    <span class="text-xs font-black text-slate-800 flex items-center gap-1.5">
+            <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-600 px-1">
+                    <span class="flex items-center gap-1.5 truncate">
                         <span class="text-amber-500">📖</span> <span>${title}</span>
                     </span>
                     <button onclick="openStartersImageModal('${images[0]}', '${escapeQuotes(title)}')" 
                             class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 text-indigo-600 border border-slate-200 text-[11px] font-bold flex items-center gap-1 shadow-2xs transition active:scale-95">
-                        <span>🔍</span> <span>Phóng to tranh gốc</span>
+                        <span>🔍</span> <span>Zoom Picture</span>
                     </button>
                 </div>
                 <div class="relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
@@ -192,56 +195,55 @@ function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters"
                     <img src="${images[0]}" 
                          onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${images[0]}';}" 
                          alt="${title}" 
-                         class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
-                    <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
-                        <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
-                            🔍 Nhấp để xem to toàn màn hình
-                        </span>
+                         class="max-h-[440px] w-auto max-w-full object-contain rounded-lg transition duration-200 group-hover:scale-[1.01] select-none">
+                    <div class="absolute bottom-2 right-2 px-2 py-1 rounded-md bg-slate-900/70 text-white text-[10px] font-bold opacity-0 group-hover:opacity-100 transition backdrop-blur-xs pointer-events-none">
+                        🔍 Click to Zoom
                     </div>
                 </div>
             </div>
         `;
     }
 
-    // Nếu có nhiều trang ảnh (2 hoặc 3 trang liên tiếp)
-    const uniqueId = galleryId || 'gallery_' + Math.random().toString(36).substr(2, 9);
+    const tabsHtml = images.map((img, i) => `
+        <button onclick="switchGalleryTab('${galleryId}', ${i})"
+                id="${galleryId}-tab-${i}"
+                class="gallery-tab-btn px-3 py-1 rounded-lg text-xs font-extrabold transition ${i === 0 ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+            Page ${i + 1}
+        </button>
+    `).join('');
+
+    const slidesHtml = images.map((img, i) => `
+        <div id="${galleryId}-slide-${i}" 
+             class="${i === 0 ? 'block' : 'hidden'} relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
+             data-src="${img}"
+             onclick="openStartersImageModal('${img}', '${escapeQuotes(title)} - Page ${i + 1}')">
+            <img src="${img}" 
+                 onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${img}';}" 
+                 alt="${title} - Page ${i + 1}" 
+                 class="max-h-[440px] w-auto max-w-full object-contain rounded-lg transition duration-200 group-hover:scale-[1.01] select-none">
+            <div class="absolute bottom-2 right-2 px-2 py-1 rounded-md bg-slate-900/70 text-white text-[10px] font-bold opacity-0 group-hover:opacity-100 transition backdrop-blur-xs pointer-events-none">
+                🔍 Click to Zoom
+            </div>
+        </div>
+    `).join('');
+
     return `
-        <div class="mb-4 bg-slate-900/5 rounded-2xl p-2.5 sm:p-3 border border-slate-200/90 shadow-2xs" id="${uniqueId}">
-            <div class="flex items-center justify-between mb-2 px-1 flex-wrap gap-2">
-                <span class="text-xs font-black text-slate-800 flex items-center gap-1.5">
-                    <span class="text-amber-500">📖</span> <span>${title}</span> <span class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-200">${images.length} trang</span>
+        <div class="space-y-2" id="${galleryId}">
+            <div class="flex items-center justify-between flex-wrap gap-2 px-1">
+                <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    <span class="text-amber-500">📖</span> <span>${title}</span>
                 </span>
                 <div class="flex items-center gap-1.5">
-                    ${images.map((img, i) => `
-                        <button onclick="switchGalleryTab('${uniqueId}', ${i})" 
-                                id="${uniqueId}_tab_${i}"
-                                class="px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 ${i === 0 ? 'bg-indigo-600 text-white shadow-2xs' : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'}">
-                            Trang ${i + 1}
-                        </button>
-                    `).join('')}
-                    <button onclick="openCurrentGalleryModal('${uniqueId}')" 
-                            class="ml-1 px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 text-indigo-600 border border-slate-200 text-[11px] font-bold flex items-center gap-1 shadow-2xs transition active:scale-95">
-                        <span>🔍</span> <span>Phóng to</span>
+                    <div class="flex items-center gap-1 bg-slate-100 p-0.5 rounded-xl border border-slate-200">
+                        ${tabsHtml}
+                    </div>
+                    <button onclick="openCurrentGalleryModal('${galleryId}')" 
+                            class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 text-indigo-600 border border-slate-200 text-[11px] font-bold flex items-center gap-1 shadow-2xs transition active:scale-95 ml-1">
+                        <span>🔍</span> <span>Zoom</span>
                     </button>
                 </div>
             </div>
-
-            ${images.map((img, i) => `
-                <div id="${uniqueId}_img_${i}" 
-                     class="${i === 0 ? 'block' : 'hidden'} relative group cursor-zoom-in overflow-hidden rounded-xl bg-white border border-slate-200 flex justify-center items-center max-h-[460px]"
-                     data-src="${img}"
-                     onclick="openStartersImageModal('${img}', '${escapeQuotes(title)} - Trang ${i + 1}')">
-                    <img src="${img}" 
-                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${img}';}" 
-                         alt="${title}" 
-                         class="max-h-[460px] w-auto object-contain transition duration-200 group-hover:scale-[1.01]">
-                    <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
-                        <span class="px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs font-bold shadow-lg backdrop-blur-xs flex items-center gap-1.5">
-                            🔍 Nhấp để xem to toàn màn hình
-                        </span>
-                    </div>
-                </div>
-            `).join('')}
+            ${slidesHtml}
         </div>
     `;
 }
@@ -249,17 +251,24 @@ function renderBookImageGallery(images, title = "Tranh gốc Cambridge Starters"
 function switchGalleryTab(galleryId, tabIndex) {
     const gallery = document.getElementById(galleryId);
     if (!gallery) return;
-    const imgs = gallery.querySelectorAll(`[id^="${galleryId}_img_"]`);
-    const tabs = gallery.querySelectorAll(`[id^="${galleryId}_tab_"]`);
-    imgs.forEach((el, i) => {
-        if (i === tabIndex) el.classList.remove('hidden');
-        else el.classList.add('hidden');
-    });
+
+    const tabs = gallery.querySelectorAll('.gallery-tab-btn');
     tabs.forEach((tab, i) => {
         if (i === tabIndex) {
-            tab.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 bg-indigo-600 text-white shadow-2xs";
+            tab.className = "gallery-tab-btn px-3 py-1 rounded-lg text-xs font-extrabold transition bg-indigo-600 text-white shadow-xs";
         } else {
-            tab.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition active:scale-95 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200";
+            tab.className = "gallery-tab-btn px-3 py-1 rounded-lg text-xs font-extrabold transition bg-slate-100 hover:bg-slate-200 text-slate-700";
+        }
+    });
+
+    const slides = gallery.querySelectorAll('[id^="' + galleryId + '-slide-"]');
+    slides.forEach((slide, i) => {
+        if (i === tabIndex) {
+            slide.classList.remove('hidden');
+            slide.classList.add('block');
+        } else {
+            slide.classList.add('hidden');
+            slide.classList.remove('block');
         }
     });
 }
@@ -267,48 +276,43 @@ function switchGalleryTab(galleryId, tabIndex) {
 function openCurrentGalleryModal(galleryId) {
     const gallery = document.getElementById(galleryId);
     if (!gallery) return;
-    const activeImg = gallery.querySelector(`[id^="${galleryId}_img_"]:not(.hidden)`);
-    if (activeImg) {
-        const src = activeImg.getAttribute('data-src');
-        openStartersImageModal(src, 'Tranh gốc sách Cambridge');
+    const activeSlide = gallery.querySelector('[id^="' + galleryId + '-slide-"]:not(.hidden)');
+    if (activeSlide && activeSlide.dataset.src) {
+        openStartersImageModal(activeSlide.dataset.src, "Cambridge Starters Full Page View");
     }
 }
 
-function openStartersImageModal(src, title = 'Tranh gốc sách Cambridge') {
+function openStartersImageModal(src, title = 'Cambridge Starters Book Page') {
     let modal = document.getElementById('starters-image-modal');
     if (!modal) {
         modal = document.createElement('div');
         modal.id = 'starters-image-modal';
-        modal.className = "fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-2 sm:p-4 transition-opacity";
+        modal.className = "fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6 transition-opacity";
         modal.innerHTML = `
-            <div class="relative max-w-5xl max-h-[92vh] w-full flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-700" onclick="event.stopPropagation()">
-                <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between shrink-0">
-                    <h3 id="starters-modal-title" class="font-bold text-sm sm:text-base flex items-center gap-2">
-                        <span>📖</span> <span>Tranh gốc sách Cambridge</span>
-                    </h3>
-                    <button onclick="closeStartersImageModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 flex items-center justify-center font-bold text-sm transition">
-                        ✕
-                    </button>
+            <div class="w-full max-w-5xl flex items-center justify-between text-white mb-2 px-2">
+                <div id="starters-modal-title" class="text-sm sm:text-base font-extrabold flex items-center gap-2 truncate">
+                    <span>📖</span> <span>${escapeHtml(title)}</span>
                 </div>
-                <div class="p-2 overflow-auto custom-scroll flex justify-center items-center bg-slate-100 flex-1 min-h-[300px]">
-                    <img id="starters-modal-img" 
-                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + (this.getAttribute('data-original-src') || this.src);}"
-                         src="" 
-                         alt="Tranh gốc sách Cambridge" 
-                         class="max-h-[82vh] w-auto object-contain rounded-lg shadow-sm">
+                <div class="flex items-center gap-2">
+                    <button onclick="closeStartersImageModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-rose-600 text-white font-bold flex items-center justify-center transition active:scale-95">✕</button>
                 </div>
             </div>
+            <div class="relative w-full max-w-5xl flex-1 overflow-auto rounded-2xl bg-slate-900/80 border border-white/10 flex items-center justify-center p-2 shadow-2xl custom-scroll">
+                <img id="starters-modal-img" src="${src}" alt="Full page view" class="max-h-[85vh] max-w-full object-contain rounded-lg shadow-lg select-none">
+            </div>
+            <p class="text-xs text-slate-400 mt-2">💡 Tip: Press <kbd class="px-1.5 py-0.5 rounded bg-white/20 text-white font-mono text-[10px]">ESC</kbd> or click outside to close</p>
         `;
-        modal.addEventListener('click', closeStartersImageModal);
+        modal.onclick = (e) => {
+            if (e.target === modal) closeStartersImageModal();
+        };
         document.body.appendChild(modal);
+    } else {
+        document.getElementById('starters-modal-title').innerHTML = `<span>📖</span> <span>${escapeHtml(title)}</span>`;
+        const mImg = document.getElementById('starters-modal-img');
+        mImg.dataset.triedCdn = '';
+        mImg.src = src;
+        modal.classList.remove('hidden');
     }
-    
-    document.getElementById('starters-modal-title').innerHTML = `<span>📖</span> <span>${escapeHtml(title)}</span>`;
-    const mImg = document.getElementById('starters-modal-img');
-    mImg.dataset.triedCdn = '';
-    mImg.setAttribute('data-original-src', src);
-    mImg.src = src;
-    modal.classList.remove('hidden');
 }
 
 function closeStartersImageModal() {
@@ -316,29 +320,28 @@ function closeStartersImageModal() {
     if (modal) modal.classList.add('hidden');
 }
 
-// -------------------------------------------------------------
-// HELPER: LẤY ĐƯỜNG DẪN ẢNH SÁCH GỐC (KÈM FALLBACK TỰ ĐỘNG TÍNH TOÁN)
-// -------------------------------------------------------------
 function getStartersBookImages(test, skill, partNum) {
-    if (test && test.book_images && test.book_images[skill] && test.book_images[skill][`part_${partNum}`]) {
-        return test.book_images[skill][`part_${partNum}`];
+    if (test && test.book_images && test.book_images[skill]) {
+        const key = `part_${partNum}`;
+        if (test.book_images[skill][key] && test.book_images[skill][key].length > 0) {
+            return test.book_images[skill][key];
+        }
     }
 
-    // Fallback: Tự động phân tích từ activeStartersTestId nếu book_images chưa nạp (do cache)
     const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
-    const parts = testId.split('_'); // ví dụ: starters_1_test_1 -> [starters, 1, test, 1]
+    const parts = testId.split('_');
     const bookNum = parseInt(parts[1]) || 1;
     const testNum = parseInt(parts[3]) || 1;
     const basePage = 5 + (testNum - 1) * 14;
 
     if (skill === 'listening') {
         if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage}.jpg`];
-        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 1}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 1}_cropped.jpg`];
         if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 3}.jpg`, `images/starters/book${bookNum}/page_${basePage + 4}.jpg`];
         if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 5}.jpg`];
     } else if (skill === 'reading_writing') {
         if (partNum === 1) return [`images/starters/book${bookNum}/page_${basePage + 6}.jpg`, `images/starters/book${bookNum}/page_${basePage + 7}.jpg`];
-        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 8}.jpg`];
+        if (partNum === 2) return [`images/starters/book${bookNum}/page_${basePage + 8}_cropped.jpg`];
         if (partNum === 3) return [`images/starters/book${bookNum}/page_${basePage + 9}.jpg`];
         if (partNum === 4) return [`images/starters/book${bookNum}/page_${basePage + 10}.jpg`];
         if (partNum === 5) return [
@@ -346,33 +349,22 @@ function getStartersBookImages(test, skill, partNum) {
             `images/starters/book${bookNum}/page_${basePage + 12}.jpg`,
             `images/starters/book${bookNum}/page_${basePage + 13}.jpg`
         ];
-    } else if (skill === 'speaking') {
-        let spkScenePage, spkCardsPage;
-        if (bookNum <= 2) {
-            if (testNum === 1) { spkScenePage = 44; spkCardsPage = 45; }
-            else if (testNum === 2) { spkScenePage = 46; spkCardsPage = 47; }
-            else { spkScenePage = 48; spkCardsPage = 49; }
-        } else {
-            if (testNum === 1) { spkScenePage = 47; spkCardsPage = 48; }
-            else if (testNum === 2) { spkScenePage = 51; spkCardsPage = 52; }
-            else { spkScenePage = 55; spkCardsPage = 56; }
-        }
-        if (partNum === 2) return [`images/starters/book${bookNum}/page_${spkCardsPage}.jpg`];
-        return [`images/starters/book${bookNum}/page_${spkScenePage}.jpg`];
     }
-    return [];
+    return [`images/starters/book${bookNum}/page_${basePage}.jpg`];
 }
 
-// -------------------------------------------------------------
-// BỘ CÔNG CỤ TƯƠNG TÁC CHO LISTENING PART 1 (NỐI) & PART 4 (TÔ MÀU)
-// -------------------------------------------------------------
-let startersP1SelectedQId = 1;
+// =========================================================================
+// PART 1: INTERACTIVE DRAG-AND-DROP & HOTSPOT MATCHING TOOL
+// =========================================================================
+let startersP1SelectedQId = 1; // ID of selected question (1 - 5)
+let startersP1DraggingQId = null; // Currently dragged name badge
+
 const P1_PALETTE = [
-    { bg: "bg-rose-500", text: "text-white", border: "border-rose-400", hex: "#ef4444" },
-    { bg: "bg-violet-600", text: "text-white", border: "border-violet-400", hex: "#8b5cf6" },
-    { bg: "bg-emerald-600", text: "text-white", border: "border-emerald-400", hex: "#10b981" },
-    { bg: "bg-amber-500", text: "text-slate-950", border: "border-amber-400", hex: "#f59e0b" },
-    { bg: "bg-sky-600", text: "text-white", border: "border-sky-400", hex: "#0284c7" }
+    { bg: "bg-rose-500", text: "text-white", border: "border-rose-500", hex: "#f43f5e" },
+    { bg: "bg-indigo-500", text: "text-white", border: "border-indigo-500", hex: "#6366f1" },
+    { bg: "bg-emerald-500", text: "text-white", border: "border-emerald-500", hex: "#10b981" },
+    { bg: "bg-amber-500", text: "text-white", border: "border-amber-500", hex: "#f59e0b" },
+    { bg: "bg-purple-500", text: "text-white", border: "border-purple-500", hex: "#a855f7" }
 ];
 
 function selectStartersP1Name(qId) {
@@ -380,19 +372,51 @@ function selectStartersP1Name(qId) {
     renderStartersSkillContent();
 }
 
-function connectStartersP1Target(targetText) {
-    if (!startersP1SelectedQId) return;
-    handleStartersAnswerChange('listening', startersP1SelectedQId, targetText);
-    
-    // Tự động chuyển sang bạn nhỏ tiếp theo chưa nối (nếu có)
+function handleStartersNameDragStart(e, qId) {
+    startersP1DraggingQId = qId;
+    startersP1SelectedQId = qId;
+    if (e.dataTransfer) {
+        e.dataTransfer.setData('text/plain', String(qId));
+        e.dataTransfer.effectAllowed = 'move';
+    }
+}
+
+function handleStartersSpotDrop(e, spotId) {
+    e.preventDefault();
+    const qId = startersP1DraggingQId || startersP1SelectedQId;
+    if (!qId) return;
+
+    connectStartersP1Target(spotId, qId);
+    startersP1DraggingQId = null;
+}
+
+function handleStartersSpotClick(spotId) {
+    const qId = startersP1SelectedQId;
+    if (!qId) return;
+    connectStartersP1Target(spotId, qId);
+}
+
+function connectStartersP1Target(spotId, targetQId = null) {
+    const qId = targetQId || startersP1SelectedQId;
+    if (!qId) return;
+
+    // Check if another name is already connected to this spot, disconnect it first
+    for (let i = 1; i <= 5; i++) {
+        if (i !== qId && startersUserAnswers.listening[i] === spotId) {
+            delete startersUserAnswers.listening[i];
+        }
+    }
+
+    handleStartersAnswerChange('listening', qId, spotId);
+
+    // Auto select next unattached name
     const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
     if (test && test.listening && test.listening.parts && test.listening.parts[0]) {
         const p1 = test.listening.parts[0];
-        const nextUnlinked = p1.questions.find(q => !startersUserAnswers.listening[q.id]);
-        if (nextUnlinked) {
-            startersP1SelectedQId = nextUnlinked.id;
-        }
+        const nextQ = p1.questions.find(q => !startersUserAnswers.listening[q.id]);
+        if (nextQ) startersP1SelectedQId = nextQ.id;
     }
+
     renderStartersSkillContent();
 }
 
@@ -404,7 +428,7 @@ function clearStartersP1Connection(qId) {
     }
 }
 
-// Bút vẽ nối tự do Part 1
+// Freehand line canvas for Part 1
 function initStartersP1Canvas() {
     const canvas = document.getElementById('starters-p1-canvas');
     if (!canvas) return;
@@ -426,6 +450,7 @@ function initStartersP1Canvas() {
     }
 
     function startDraw(e) {
+        e.preventDefault();
         isDrawing = true;
         const pos = getPos(e);
         lastX = pos.x;
@@ -434,10 +459,10 @@ function initStartersP1Canvas() {
 
     function draw(e) {
         if (!isDrawing) return;
-        if (e.cancelable) e.preventDefault();
+        e.preventDefault();
         const pos = getPos(e);
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 4;
+        ctx.strokeStyle = '#ef4444'; // Red crayon line
+        ctx.lineWidth = 5;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.beginPath();
@@ -455,6 +480,7 @@ function initStartersP1Canvas() {
     canvas.onmousedown = startDraw;
     canvas.onmousemove = draw;
     window.addEventListener('mouseup', stopDraw);
+
     canvas.ontouchstart = startDraw;
     canvas.ontouchmove = draw;
     canvas.ontouchend = stopDraw;
@@ -467,22 +493,24 @@ function clearStartersP1Canvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-// Trạng thái công cụ Tô màu Part 4
-let startersP4ActiveColor = 'Red (Đỏ)';
+// =========================================================================
+// PART 4: INTERACTIVE COLORING TOOL & CRAYON CANVAS
+// =========================================================================
+let startersP4ActiveColor = 'Red';
 let startersP4ActiveHex = '#ef4444';
 let startersP4BrushSize = 14;
 let startersP4IsEraser = false;
 let startersP4UndoStack = [];
 
 const P4_PALETTE = [
-    { name: "Red (Đỏ)", hex: "#ef4444", bg: "bg-rose-500" },
-    { name: "Blue (Xanh dương)", hex: "#0284c7", bg: "bg-sky-600" },
-    { name: "Yellow (Vàng)", hex: "#eab308", bg: "bg-amber-400" },
-    { name: "Green (Xanh lá)", hex: "#16a34a", bg: "bg-emerald-600" },
-    { name: "Brown (Nâu)", hex: "#854d0e", bg: "bg-amber-800" },
-    { name: "Purple (Tím)", hex: "#9333ea", bg: "bg-purple-600" },
-    { name: "Orange (Cam)", hex: "#ea580c", bg: "bg-orange-500" },
-    { name: "Pink (Hồng)", hex: "#ec4899", bg: "bg-pink-500" }
+    { name: "Red", hex: "#ef4444" },
+    { name: "Blue", hex: "#3b82f6" },
+    { name: "Green", hex: "#10b981" },
+    { name: "Yellow", hex: "#eab308" },
+    { name: "Orange", hex: "#f97316" },
+    { name: "Purple", hex: "#a855f7" },
+    { name: "Pink", hex: "#ec4899" },
+    { name: "Brown", hex: "#78350f" }
 ];
 
 function setStartersP4Color(colorName, hex) {
@@ -504,58 +532,55 @@ function setStartersP4Eraser(isEraser = true) {
 
 function applyColorToP4Item(qId) {
     handleStartersAnswerChange('listening', qId, startersP4ActiveColor);
+    renderStartersSkillContent();
 }
 
 function undoStartersP4() {
     const canvas = document.getElementById('starters-p4-canvas');
-    if (!canvas || startersP4UndoStack.length <= 1) return;
-    startersP4UndoStack.pop();
-    const prevState = startersP4UndoStack[startersP4UndoStack.length - 1];
+    if (!canvas || startersP4UndoStack.length === 0) return;
     const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.onload = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0);
-    };
-    img.src = prevState;
+    const prevState = startersP4UndoStack.pop();
+    ctx.putImageData(prevState, 0, 0);
 }
 
 function clearStartersP4Canvas(bgImgSrc) {
     const canvas = document.getElementById('starters-p4-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.onload = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        startersP4UndoStack = [canvas.toDataURL()];
-    };
-    img.src = bgImgSrc;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    startersP4UndoStack = [];
+    if (bgImgSrc) {
+        initStartersP4ColoringCanvas(bgImgSrc);
+    }
 }
 
 function initStartersP4ColoringCanvas(bgImgSrc) {
     const canvas = document.getElementById('starters-p4-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    
-    const bgImg = new Image();
-    bgImg.crossOrigin = 'anonymous';
-    bgImg.onload = () => {
-        canvas.width = bgImg.naturalWidth || 800;
-        canvas.height = bgImg.naturalHeight || 600;
-        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-        if (startersP4UndoStack.length === 0) {
-            try {
-                startersP4UndoStack.push(canvas.toDataURL());
-            } catch(e) {}
-        }
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+        canvas.width = img.naturalWidth || 900;
+        canvas.height = img.naturalHeight || 650;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        saveState();
     };
-    bgImg.src = bgImgSrc;
+    img.onerror = () => {
+        img.src = 'https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + bgImgSrc;
+    };
+    img.src = bgImgSrc;
 
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
+
+    function saveState() {
+        if (startersP4UndoStack.length > 15) startersP4UndoStack.shift();
+        startersP4UndoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    }
 
     function getPos(e) {
         const rect = canvas.getBoundingClientRect();
@@ -570,6 +595,8 @@ function initStartersP4ColoringCanvas(bgImgSrc) {
     }
 
     function startDraw(e) {
+        e.preventDefault();
+        saveState();
         isDrawing = true;
         const pos = getPos(e);
         lastX = pos.x;
@@ -578,52 +605,49 @@ function initStartersP4ColoringCanvas(bgImgSrc) {
 
     function draw(e) {
         if (!isDrawing) return;
-        if (e.cancelable) e.preventDefault();
+        e.preventDefault();
         const pos = getPos(e);
 
-        ctx.lineWidth = startersP4BrushSize;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-
         if (startersP4IsEraser) {
-            ctx.globalCompositeOperation = 'source-over';
-            ctx.strokeStyle = '#ffffff';
-            ctx.globalAlpha = 1.0;
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.strokeStyle = 'rgba(0,0,0,1)';
+            ctx.lineWidth = startersP4BrushSize * 1.5;
         } else {
             ctx.globalCompositeOperation = 'multiply';
             ctx.strokeStyle = startersP4ActiveHex;
             ctx.globalAlpha = 0.65;
+            ctx.lineWidth = startersP4BrushSize;
         }
 
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(pos.x, pos.y);
         ctx.stroke();
+
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 1.0;
 
         lastX = pos.x;
         lastY = pos.y;
     }
 
     function stopDraw() {
-        if (isDrawing) {
-            isDrawing = false;
-            if (startersP4UndoStack.length > 15) startersP4UndoStack.shift();
-            try {
-                startersP4UndoStack.push(canvas.toDataURL());
-            } catch(e) {}
-        }
+        isDrawing = false;
     }
 
     canvas.onmousedown = startDraw;
     canvas.onmousemove = draw;
     window.addEventListener('mouseup', stopDraw);
+
     canvas.ontouchstart = startDraw;
     canvas.ontouchmove = draw;
     canvas.ontouchend = stopDraw;
 }
 
 // -------------------------------------------------------------
-// A. GIAO DIỆN LISTENING (4 PARTS)
+// A. LISTENING VIEW (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersListeningView(container) {
     const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
@@ -633,76 +657,90 @@ function renderStartersListeningView(container) {
     let partHtml = '';
 
     if (activeStartersLisPart === 1) {
-        // Part 1: CÔNG CỤ NỐI TRỰC TIẾP (LINE CONNECTOR & MATCHING TOOL)
+        // Part 1: INTERACTIVE DRAG-AND-DROP LINE MATCHING TOOL
         const bgImages = getStartersBookImages(test, 'listening', 1);
         const p1ImgSrc = bgImages[0] || '';
-        const allTargets = currentPart.questions[0].options;
+        const spots = currentPart.spots || [
+            { id: "spot_1", x: 46, y: 40, label: "A" },
+            { id: "spot_2", x: 82, y: 44, label: "B" },
+            { id: "spot_3", x: 64, y: 44, label: "C" },
+            { id: "spot_4", x: 28, y: 39, label: "D" },
+            { id: "spot_5", x: 48, y: 58, label: "E" },
+            { id: "spot_6", x: 74, y: 54, label: "F" }
+        ];
+
         const selectedQ = currentPart.questions.find(q => q.id === startersP1SelectedQId) || currentPart.questions[0];
 
         partHtml = `
             <div class="space-y-4">
-                <!-- HƯỚNG DẪN TƯƠNG TÁC NỐI -->
+                <!-- INSTRUCTIONS HEADER -->
                 <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
                     <div class="space-y-1">
                         <div class="flex items-center gap-2">
                             <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">🎧 Part 1</span>
-                            <span class="font-extrabold text-sm text-amber-900">Công cụ Nối trực tiếp (Listen and draw lines)</span>
+                            <span class="font-extrabold text-sm text-amber-900">Listen and draw lines (5 questions)</span>
                         </div>
                         <p class="text-slate-700 text-xs">
-                            👉 <strong>Cách làm:</strong> Bấm chọn <strong>Tên Bạn nhỏ</strong> ➔ Bấm vào <strong>Mục tiêu trên tranh</strong> để nối dây tự động (hoặc cầm bút vẽ trực tiếp lên tranh)!
+                            👉 <strong>Instructions:</strong> Drag name badges onto the target spots on the picture, or click a name then click a target spot.
                         </p>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                         <button onclick="clearStartersP1Canvas()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
-                            <span>🧹</span> <span>Xoá nét vẽ tay</span>
+                            <span>🧹</span> <span>Clear Lines</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- 1. DANH SÁCH THẺ TÊN 5 BẠN NHỎ ĐỂ CHỌN NỐI -->
+                <!-- 1. DRAGGABLE NAME BADGES (5 CHARACTERS) -->
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
-                            <span>👥</span> <span>Bước 1: Chọn một bạn nhỏ để nghe & nối:</span>
+                            <span>👥</span> <span>Names to Match:</span>
                         </span>
-                        <span class="text-[11px] font-bold text-slate-500">Đã nối: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5 bạn</span>
+                        <span class="text-[11px] font-bold text-slate-500">
+                            Matched: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5
+                        </span>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 pt-1">
                         ${currentPart.questions.map((q, idx) => {
                             const isSelected = (q.id === startersP1SelectedQId);
-                            const connectedTarget = startersUserAnswers.listening[q.id] || '';
+                            const connectedSpot = startersUserAnswers.listening[q.id] || '';
                             const col = P1_PALETTE[idx % P1_PALETTE.length];
 
                             return `
-                                <div onclick="selectStartersP1Name(${q.id})" 
-                                     class="p-3 rounded-2xl border cursor-pointer transition-all active:scale-95 flex flex-col justify-between ${
+                                <div draggable="true"
+                                     ondragstart="handleStartersNameDragStart(event, ${q.id})"
+                                     onclick="selectStartersP1Name(${q.id})" 
+                                     class="p-3 rounded-2xl border cursor-grab active:cursor-grabbing transition-all active:scale-95 flex flex-col justify-between ${
                                          isSelected 
                                              ? 'bg-amber-50 border-amber-500 ring-3 ring-amber-300 shadow-md scale-[1.02]' 
-                                             : (connectedTarget ? 'bg-emerald-50/70 border-emerald-300' : 'bg-slate-50 hover:bg-slate-100 border-slate-200')
+                                             : (connectedSpot ? 'bg-emerald-50/70 border-emerald-300' : 'bg-slate-50 hover:bg-slate-100 border-slate-200')
                                      }">
                                     <div class="flex items-center justify-between gap-1 mb-2">
                                         <div class="flex items-center gap-1.5">
-                                            <span class="w-6 h-6 rounded-full ${col.bg} ${col.text} font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
+                                            <span class="w-6 h-6 rounded-full ${col.bg} ${col.text} font-black text-xs flex items-center justify-center shrink-0">
+                                                ${q.id}
+                                            </span>
                                             <span class="font-extrabold text-sm text-slate-900">${q.name}</span>
                                         </div>
                                         <button onclick="event.stopPropagation(); speakStartersQuestion('${escapeQuotes(q.audio_prompt)}')" 
-                                                title="Nghe câu đố" 
+                                                title="Listen" 
                                                 class="w-7 h-7 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 flex items-center justify-center text-xs font-bold transition active:scale-90">
                                             🔊
                                         </button>
                                     </div>
 
                                     <div class="pt-1 border-t border-slate-200/60">
-                                        ${connectedTarget ? `
+                                        ${connectedSpot ? `
                                             <div class="flex items-center justify-between text-[11px] text-emerald-800 font-bold">
-                                                <span class="truncate" title="${escapeHtml(connectedTarget)}">✓ Đã nối</span>
-                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${q.id})" title="Hủy nối" class="text-rose-600 hover:text-rose-800 ml-1 font-black">✕</button>
+                                                <span>✓ Matched to Spot ${connectedSpot.replace('spot_', '').toUpperCase()}</span>
+                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${q.id})" title="Remove" class="text-rose-600 hover:text-rose-800 ml-1 font-black">✕</button>
                                             </div>
                                         ` : (isSelected ? `
-                                            <span class="text-[11px] text-amber-700 font-black animate-pulse">👉 Bấm mục tiêu</span>
+                                            <span class="text-[11px] text-amber-700 font-black animate-pulse">👉 Click a Spot</span>
                                         ` : `
-                                            <span class="text-[11px] text-slate-400 font-medium">Chưa nối</span>
+                                            <span class="text-[11px] text-slate-400 font-medium">Drag or Click</span>
                                         `)}
                                     </div>
                                 </div>
@@ -711,290 +749,637 @@ function renderStartersListeningView(container) {
                     </div>
                 </div>
 
-                <!-- 2. TRANH GỐC CAMBRIDGE & BẢNG MỤC TIÊU NỐI TRỰC TIẾP -->
+                <!-- 2. CAMBRIDGE PICTURE STAGE WITH INTERACTIVE HOTSPOTS -->
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                     <div class="flex items-center justify-between flex-wrap gap-2">
                         <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
-                            <span>🎯</span> <span>Bước 2: Bấm vào mục tiêu trên tranh tương ứng với bạn [${selectedQ ? selectedQ.name : ''}]:</span>
+                            <span>🎯</span> <span>Target Picture (Drop or click on spots to match [${selectedQ ? selectedQ.name : ''}]):</span>
                         </span>
                         <div class="flex items-center gap-2">
-                            <button onclick="openStartersImageModal('${p1ImgSrc}', 'Tranh toàn cảnh Part 1 (Cambridge Starters)')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
-                                🔍 Phóng to tranh
+                            <button onclick="openStartersImageModal('${p1ImgSrc}', 'Part 1 Scene Picture')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
+                                🔍 Zoom Picture
                             </button>
                         </div>
                     </div>
 
-                    <!-- BỨC TRANH KÈM CANVAS VẼ DÂY NỐI TỰ DO -->
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center">
+                    <!-- SCENE PICTURE WITH INTERACTIVE DROP HOTSPOTS & FREEHAND CANVAS -->
+                    <div id="starters-p1-stage" class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center select-none min-h-[420px]">
                         <img src="${p1ImgSrc}" 
                              onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p1ImgSrc}';}" 
-                             alt="Tranh toàn cảnh Part 1" 
-                             class="w-full max-h-[520px] object-contain select-none pointer-events-none">
-                        <!-- Canvas phủ lên để vẽ nét nối tự do -->
+                             alt="Part 1 Scene" 
+                             class="w-full max-h-[580px] object-contain select-none pointer-events-none">
+
+                        <!-- FREEHAND DRAWING CANVAS OVERLAY -->
                         <canvas id="starters-p1-canvas" 
                                 width="900" 
                                 height="650" 
-                                class="absolute inset-0 w-full h-full cursor-crosshair touch-none"></canvas>
+                                class="absolute inset-0 w-full h-full cursor-crosshair touch-none z-2"></canvas>
+
+                        <!-- INTERACTIVE TARGET HOTSPOTS DIRECTLY ON PICTURE -->
+                        ${spots.map((spot, sIdx) => {
+                            const connectedQ = currentPart.questions.find(q => startersUserAnswers.listening[q.id] === spot.id);
+                            return `
+                                <div id="target-spot-${spot.id}"
+                                     data-spot-id="${spot.id}"
+                                     onclick="handleStartersSpotClick('${spot.id}')"
+                                     ondragover="event.preventDefault(); this.classList.add('scale-125', 'ring-4', 'ring-amber-400');"
+                                     ondragleave="this.classList.remove('scale-125', 'ring-4', 'ring-amber-400');"
+                                     ondrop="handleStartersSpotDrop(event, '${spot.id}')"
+                                     style="left: ${spot.x}%; top: ${spot.y}%;"
+                                     class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-200 z-10 group ${
+                                         connectedQ ? 'scale-110' : 'hover:scale-125'
+                                     }">
+                                    ${connectedQ ? `
+                                        <div class="px-2.5 py-1 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-xs shadow-lg flex items-center gap-1.5 border-2 border-white animate-bounce-once">
+                                            <span>🏷️ ${connectedQ.name}</span>
+                                            <button onclick="event.stopPropagation(); clearStartersP1Connection(${connectedQ.id})" 
+                                                    title="Remove match" 
+                                                    class="w-4 h-4 rounded-full bg-white/30 hover:bg-rose-600 text-white flex items-center justify-center text-[10px] font-black">
+                                                ✕
+                                            </button>
+                                        </div>
+                                    ` : `
+                                        <div class="relative flex items-center justify-center">
+                                            <span class="absolute w-8 h-8 rounded-full bg-amber-400/40 animate-ping"></span>
+                                            <div class="w-8 h-8 rounded-full bg-white/95 border-2 border-amber-500 text-amber-700 font-black text-xs shadow-md flex items-center justify-center backdrop-blur-xs group-hover:bg-amber-500 group-hover:text-white transition">
+                                                ${spot.label || (sIdx + 1)}
+                                            </div>
+                                        </div>
+                                    `}
+                                </div>
+                            `;
+                        }).join('')}
                     </div>
+                </div>
+            </div>
+        `;
 
-                    <!-- 6 Ô MỤC TIÊU NHÂN VẬT NỐI TRỰC QUAN -->
-                    <div class="pt-2">
-                        <span class="text-[11px] font-extrabold text-slate-600 block mb-2">🎯 Danh sách mục tiêu trong tranh (Bấm vào mục tiêu để nối dây với bạn [${selectedQ ? selectedQ.name : ''}]):</span>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-                            ${allTargets.map(target => {
-                                const connectedQ = currentPart.questions.find(q => startersUserAnswers.listening[q.id] === target);
+        setTimeout(initStartersP1Canvas, 100);
+    } 
+    else if (activeStartersLisPart === 2) {
+        // Part 2: Listen and write a name or a number
+        const p2Images = getStartersBookImages(test, 'listening', 2);
+        const p2ImgSrc = p2Images[0] || '';
+        partHtml = `
+            <div class="space-y-4">
+                <!-- INSTRUCTIONS BANNER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">🎧 Part 2</span>
+                            <span class="font-extrabold text-sm text-amber-900">Listen and write a name or a number (5 questions)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Instructions:</strong> Look at the picture, listen to the conversation, and write a name or a number for each question.
+                        </p>
+                    </div>
+                </div>
 
-                                return `
-                                    <div onclick="connectStartersP1Target('${escapeQuotes(target)}')"
-                                         class="p-3 rounded-2xl border transition-all cursor-pointer flex items-start gap-2.5 active:scale-95 ${
-                                             connectedQ 
-                                                 ? 'bg-emerald-50 border-emerald-400 shadow-sm' 
-                                                 : 'bg-slate-50 hover:bg-amber-50 hover:border-amber-300 border-slate-200'
-                                         }">
-                                        <div class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${connectedQ ? 'bg-emerald-600 text-white font-black' : 'bg-slate-200 text-slate-600'} text-xs font-bold">
-                                            ${connectedQ ? `✓` : `🎯`}
-                                        </div>
-                                        <div class="flex-1 space-y-1">
-                                            <p class="text-xs font-bold text-slate-800 leading-snug">${target}</p>
-                                            ${connectedQ ? `
-                                                <div class="flex items-center gap-1.5 text-[11px] font-black text-emerald-800">
-                                                    <span class="px-2 py-0.5 rounded-md bg-emerald-200 text-emerald-950 font-black">🏷️ ${connectedQ.name}</span>
-                                                    <button onclick="event.stopPropagation(); clearStartersP1Connection(${connectedQ.id})" class="text-rose-600 hover:text-rose-800 font-bold ml-auto">Gỡ nối</button>
-                                                </div>
-                                            ` : `
-                                                <span class="text-[11px] text-indigo-600 font-bold hover:underline">🔗 Bấm để nối với ${selectedQ ? selectedQ.name : ''}</span>
-                                            `}
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
+                <!-- 1. ILLUSTRATION ONLY (CROPPED PICTURE WITHOUT TEXT) -->
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-700 px-1">
+                        <span class="flex items-center gap-1.5 font-extrabold text-indigo-900">
+                            <span>🖼️</span> <span>Part 2 Scene Picture:</span>
+                        </span>
+                        <button onclick="openStartersImageModal('${p2ImgSrc}', 'Part 2 Scene Picture')" 
+                                class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-1">
+                            <span>🔍</span> <span>Zoom Picture</span>
+                        </button>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-50 border border-slate-200 flex justify-center items-center max-h-[460px] p-2">
+                        <img src="${p2ImgSrc}" 
+                             onerror="if(!this.dataset.triedOriginal){this.dataset.triedOriginal='1';this.src='${p2ImgSrc.replace('_cropped', '')}';}else if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p2ImgSrc}';}" 
+                             alt="Part 2 Illustration" 
+                             class="max-h-[430px] w-auto max-w-full object-contain rounded-lg shadow-sm select-none">
+                    </div>
+                </div>
+
+                <!-- 2. EXAMPLES DISPLAYED ON SCREEN OUTSIDE THE PICTURE -->
+                <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[10px] uppercase tracking-wide">Examples</span>
+                        <span class="font-extrabold text-xs text-amber-900">Listen to the conversation examples:</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                            <span class="text-slate-700">What is the boy's name?</span>
+                            <span class="font-black text-amber-950 font-mono bg-amber-100 px-2 py-0.5 rounded">Tim</span>
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                            <span class="text-slate-700">How old is he?</span>
+                            <span class="font-black text-amber-950 font-mono bg-amber-100 px-2 py-0.5 rounded">11</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
-    } else if (activeStartersLisPart === 2) {
-        // Part 2: Listen and write a name or a number
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 2), "Tranh minh họa Part 2 (Nghe và viết tên/số)", "gal_lis_2");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
-                    <span>🎧 <strong>Part 2:</strong> Nghe đoạn hội thoại và điền một TÊN (Name) hoặc một CON SỐ (Number) vào chỗ trống.</span>
-                </div>
 
-                ${galleryHtml}
-
-                <div class="space-y-3">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.listening[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                                <div class="flex-1 space-y-1">
-                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
-                                    <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="inline-flex items-center gap-1 text-[11px] font-bold text-violet-700 hover:text-violet-900 mt-1">
-                                        <span>🔊 Nghe hội thoại</span>
-                                    </button>
+                <!-- 3. QUESTIONS (6 - 10) -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Questions 6 - 10: Write a Name or a Number
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.listening[q.id] || '';
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="flex-1 space-y-1">
+                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
+                                        <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="inline-flex items-center gap-1 text-[11px] font-bold text-violet-700 hover:text-violet-900 mt-1">
+                                            <span>🔊 Listen Audio</span>
+                                        </button>
+                                    </div>
+                                    <div class="w-full sm:w-56 shrink-0">
+                                        <input type="text" 
+                                               value="${escapeHtml(userVal)}" 
+                                               oninput="handleStartersAnswerChange('listening', ${q.id}, this.value)"
+                                               placeholder="Type name or number..."
+                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-bold text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
                                 </div>
-                                <div class="w-full sm:w-auto">
-                                    <input type="text" 
-                                           value="${escapeHtml(userVal)}" 
-                                           oninput="handleStartersAnswerChange('listening', ${q.id}, this.value)"
-                                           placeholder="Nhập tên hoặc số..."
-                                           class="w-full sm:w-48 px-3.5 py-2 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 text-xs sm:text-sm font-bold font-mono outline-none">
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
+                            `;
+                        }).join('')}
+                    </div>
                 </div>
             </div>
         `;
-    } else if (activeStartersLisPart === 3) {
-        // Part 3: Listen and tick the box
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'listening', 3), "Tranh câu hỏi A, B, C Part 3 (Nhìn tranh trong sách & chọn đáp án)", "gal_lis_3");
+    }
+    else if (activeStartersLisPart === 3) {
+        // Part 3: Listen and tick the box A, B, C
+        const p3Images = getStartersBookImages(test, 'listening', 3);
         partHtml = `
             <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
-                    <span>🎧 <strong>Part 3:</strong> Nhìn tranh các câu hỏi trong sách bên dưới, nghe đoạn hội thoại và bấm chọn đáp án đúng (A, B hoặc C).</span>
-                </div>
-
-                ${galleryHtml}
-
-                <div class="space-y-3.5">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.listening[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                                <div class="flex items-start justify-between gap-2">
-                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
-                                    <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                        <span>🔊</span> <span>Nghe bài</span>
-                                    </button>
+                ${renderBookImageGallery(p3Images, "Part 3 Book Page", "p3-gallery")}
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Part 3: Listen and tick the box (Questions 11 - 15)
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.listening[q.id] || '';
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
+                                        <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
+                                            <span>🔊</span> <span>Listen</span>
+                                        </button>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                                        ${q.options.map(opt => {
+                                            const optKey = opt.charAt(0);
+                                            const isChecked = (userVal === optKey);
+                                            return `
+                                                <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${optKey}')"
+                                                        class="p-2.5 rounded-xl border text-left font-bold text-xs transition flex items-center gap-2 ${
+                                                            isChecked 
+                                                                ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' 
+                                                                : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                        }">
+                                                    <span class="w-5 h-5 rounded-md flex items-center justify-center text-xs font-black shrink-0 ${isChecked ? 'bg-white text-indigo-600' : 'bg-slate-100 text-slate-600'}">
+                                                        ${isChecked ? '✓' : optKey}
+                                                    </span>
+                                                    <span class="truncate">${opt}</span>
+                                                </button>
+                                            `;
+                                        }).join('')}
+                                    </div>
                                 </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                    ${q.options.map(opt => {
-                                        const optLetter = opt.charAt(0);
-                                        const isSelected = userVal.toUpperCase() === optLetter.toUpperCase();
-                                        return `
-                                            <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${optLetter}')"
-                                                    class="p-3 rounded-2xl border text-left transition active:scale-95 ${
-                                                        isSelected 
-                                                            ? 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold ring-2 ring-emerald-300' 
-                                                            : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700 font-semibold'
-                                                    }">
-                                                <div class="flex items-center gap-2">
-                                                    <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black ${isSelected ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-700'}">${optLetter}</span>
-                                                    <span class="text-xs leading-snug">${opt.substring(3)}</span>
-                                                </div>
-                                            </button>
-                                        `;
-                                    }).join('')}
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
+                            `;
+                        }).join('')}
+                    </div>
                 </div>
             </div>
         `;
-    } else if (activeStartersLisPart === 4) {
-        // Part 4: CÔNG CỤ TÔ MÀU TRỰC TIẾP (COLOURING CANVAS & SMART COLOUR PICKER)
-        const bgImages = getStartersBookImages(test, 'listening', 4);
-        const p4ImgSrc = bgImages[0] || '';
+    }
+    else if (activeStartersLisPart === 4) {
+        // Part 4: INTERACTIVE COLORING CANVAS & CRAYON PALETTE
+        const p4Images = getStartersBookImages(test, 'listening', 4);
+        const p4ImgSrc = p4Images[0] || '';
 
         partHtml = `
             <div class="space-y-4">
-                <!-- HƯỚNG DẪN TÔ MÀU -->
+                <!-- COLORING INSTRUCTIONS -->
                 <div class="p-4 rounded-2xl bg-gradient-to-r from-fuchsia-50 to-pink-50 border border-fuchsia-200 text-xs text-fuchsia-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
                     <div class="space-y-1">
                         <div class="flex items-center gap-2">
                             <span class="px-2.5 py-0.5 rounded-full bg-fuchsia-500 text-white font-black text-[11px] uppercase tracking-wide">🎨 Part 4</span>
-                            <span class="font-extrabold text-sm text-fuchsia-900">Bảng vẽ & Công cụ Tô màu (Listen and colour)</span>
+                            <span class="font-extrabold text-sm text-fuchsia-900">Listen and colour (Questions 16 - 20)</span>
                         </div>
                         <p class="text-slate-700 text-xs">
-                            👉 <strong>Cách làm:</strong> Chọn màu sáp từ khay màu ➔ Dùng cọ tô trực tiếp lên bức tranh ➔ Bấm nút màu cho đồ vật bên dưới để ghi nhận đáp án!
+                            👉 <strong>Instructions:</strong> Choose a crayon colour from the palette ➔ Colour directly on the canvas or click "Colour this item" below!
                         </p>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                         <button onclick="undoStartersP4()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
-                            <span>↩️</span> <span>Hoàn tác</span>
+                            <span>↩️</span> <span>Undo</span>
                         </button>
                         <button onclick="clearStartersP4Canvas('${p4ImgSrc}')" class="px-3 py-1.5 rounded-xl bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
-                            <span>🗑️</span> <span>Xoá vẽ lại</span>
+                            <span>🗑️</span> <span>Clear</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- 1. BẢNG KHAY MÀU SÁP & CỌ VẼ CHUYÊN NGHIỆP -->
+                <!-- 1. CRAYON PALETTE & BRUSH TOOLS -->
                 <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                     <div class="flex items-center justify-between flex-wrap gap-2">
                         <div class="flex items-center gap-2">
-                            <span class="text-xs font-black uppercase text-slate-800">Khay màu sáp:</span>
+                            <span class="text-xs font-black uppercase text-slate-800">Crayon Palette:</span>
                             <span id="starters-p4-active-color-badge" class="text-xs font-extrabold px-3 py-1 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center gap-1.5">
                                 <span class="w-3.5 h-3.5 rounded-full border border-white shadow-xs" style="background-color: ${startersP4ActiveHex}"></span>
-                                <span>Đang cầm màu: <strong>${startersP4ActiveColor}</strong></span>
+                                <span>Selected: <strong>${startersP4ActiveColor}</strong></span>
                             </span>
                         </div>
-                        <!-- CỠ NÉT CỌ & TẨY -->
+                        <!-- BRUSH SIZES & ERASER -->
                         <div class="flex items-center gap-1.5">
                             <button onclick="setStartersP4BrushSize(6); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 6 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
-                                ✏️ Nét nhỏ
+                                ✏️ Fine
                             </button>
                             <button onclick="setStartersP4BrushSize(14); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 14 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
-                                🖌️ Nét vừa
+                                🖌️ Medium
                             </button>
                             <button onclick="setStartersP4BrushSize(26); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 26 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
-                                🖍️ Cọ to
+                                🖍️ Thick
                             </button>
                             <button onclick="setStartersP4Eraser(true);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4IsEraser ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
-                                🧽 Tẩy nét
+                                🧽 Eraser
                             </button>
                         </div>
                     </div>
 
-                    <!-- 8 NÚT MÀU SÁP TRÒN RỰC RỠ -->
+                    <!-- 8 ROUND CRAYON COLOUR BUTTONS -->
                     <div class="flex flex-wrap gap-2.5 pt-1">
                         ${P4_PALETTE.map(c => {
-                            const isCurrent = (startersP4ActiveColor === c.name && !startersP4IsEraser);
+                            const isSelected = (startersP4ActiveColor === c.name && !startersP4IsEraser);
                             return `
-                                <button onclick="setStartersP4Color('${c.name}', '${c.hex}')"
-                                        class="px-3.5 py-2 rounded-2xl text-xs font-black transition-all active:scale-95 flex items-center gap-2 ${
-                                            isCurrent 
-                                                ? 'ring-4 ring-offset-2 ring-indigo-500 shadow-lg scale-105 font-black text-slate-950 bg-slate-100' 
-                                                : 'hover:bg-slate-100 border border-slate-200 text-slate-700'
+                                <button onclick="setStartersP4Color('${c.name}', '${c.hex}')" 
+                                        class="px-3 py-1.5 rounded-xl border flex items-center gap-2 text-xs font-bold transition active:scale-95 ${
+                                            isSelected 
+                                                ? 'ring-3 ring-indigo-500 scale-105 shadow-md border-indigo-500 bg-indigo-50/40 text-slate-900' 
+                                                : 'hover:bg-slate-50 border-slate-200 text-slate-700'
                                         }">
-                                    <span class="w-5 h-5 rounded-full border-2 border-white shadow-sm shrink-0" style="background-color: ${c.hex}"></span>
+                                    <span class="w-4 h-4 rounded-full border border-white shadow-2xs" style="background-color: ${c.hex};"></span>
                                     <span>${c.name}</span>
-                                    ${isCurrent ? '✓' : ''}
                                 </button>
                             `;
                         }).join('')}
                     </div>
                 </div>
 
-                <!-- 2. BỨC TRANH CANVAS TÔ MÀU TRỰC TIẾP -->
+                <!-- 2. COLORING CANVAS CONTAINER -->
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
-                            <span>🖼️</span> <span>Khung vẽ tranh (Dùng chuột hoặc ngón tay để tô màu sáp lên tranh):</span>
-                        </span>
-                        <button onclick="openStartersImageModal('${p4ImgSrc}', 'Tranh gốc Part 4 (Cambridge Starters)')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
-                            🔍 Phóng to tranh
+                    <div class="flex items-center justify-between text-xs font-black uppercase text-indigo-900 tracking-wide">
+                        <span>🎨 Colouring Canvas (Colour on the picture):</span>
+                        <button onclick="openStartersImageModal('${p4ImgSrc}', 'Part 4 Scene Picture')" class="px-2 py-0.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
+                            🔍 Zoom Picture
                         </button>
                     </div>
-
                     <div class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center">
-                        <canvas id="starters-p4-canvas" class="max-h-[540px] w-auto max-w-full cursor-crosshair touch-none shadow-sm"></canvas>
+                        <canvas id="starters-p4-canvas" 
+                                width="900" 
+                                height="650" 
+                                class="w-full max-h-[560px] object-contain cursor-crosshair touch-none select-none"></canvas>
                     </div>
                 </div>
 
-                <!-- 3. DANH SÁCH 5 ĐỒ VẬT CẦN TÔ (CÂU 16 - 20) ĐỂ GÁN MÀU & CHẤM ĐIỂM -->
+                <!-- 3. COLORING TARGET QUESTIONS (16 - 20) -->
                 <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
-                            <span>🎯</span> <span>Gán màu cho 5 đồ vật (Nghe câu hướng dẫn & chấm màu tương ứng):</span>
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                            Questions 16 - 20: Listen & Apply Colour
                         </span>
-                        <span class="text-[11px] font-bold text-slate-500">Đã tô: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5 đồ vật</span>
+                        <span class="text-[11px] font-bold text-slate-500">
+                            Coloured: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5
+                        </span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
-                        ${currentPart.questions.map(q => {
-                            const userColor = startersUserAnswers.listening[q.id] || '';
-                            const userColObj = P4_PALETTE.find(p => p.name === userColor);
+                    <div class="space-y-2.5">
+                        ${currentPart.questions.map((q, idx) => {
+                            const userCol = startersUserAnswers.listening[q.id] || '';
+                            const matchedHex = P4_PALETTE.find(p => p.name === userCol)?.hex || '#94a3b8';
 
                             return `
-                                <div class="p-3.5 rounded-2xl border transition shadow-2xs space-y-2.5 ${
-                                    userColor ? 'bg-amber-50/70 border-amber-300' : 'bg-slate-50 border-slate-200'
+                                <div class="p-3 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
+                                    userCol ? 'bg-fuchsia-50/40 border-fuchsia-200' : 'bg-slate-50 border-slate-200'
                                 }">
-                                    <div class="flex items-start justify-between gap-1.5">
+                                    <div class="flex items-center gap-3">
                                         <div class="flex items-center gap-2">
-                                            <span class="w-7 h-7 rounded-full bg-fuchsia-500 text-white font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
-                                            <div>
-                                                <h4 class="font-extrabold text-xs sm:text-sm text-slate-900 leading-snug">${q.item}</h4>
-                                            </div>
+                                            <span class="w-7 h-7 rounded-xl bg-fuchsia-100 text-fuchsia-800 font-black text-xs flex items-center justify-center shrink-0">
+                                                ${q.id}
+                                            </span>
+                                            <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.item}</p>
                                         </div>
                                         <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" 
-                                                title="Nghe hướng dẫn tô màu"
+                                                title="Listen audio" 
                                                 class="px-2.5 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                            <span>🔊</span> <span>Nghe</span>
+                                            <span>🔊</span> <span>Listen</span>
                                         </button>
                                     </div>
 
-                                    <!-- NÚT CHẤM MÀU ĐỒ VẬT -->
-                                    <div class="pt-2 border-t border-slate-200/70 flex items-center justify-between gap-2">
-                                        ${userColor ? `
-                                            <div class="flex items-center gap-1.5 text-xs font-black text-slate-900">
-                                                <span class="w-4 h-4 rounded-full border border-white shadow-xs shrink-0" style="background-color: ${userColObj ? userColObj.hex : '#999'}"></span>
-                                                <span>✓ ${userColor}</span>
+                                    <div class="flex items-center gap-2 shrink-0">
+                                        ${userCol ? `
+                                            <div class="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-800 shadow-2xs">
+                                                <span class="w-3.5 h-3.5 rounded-full border border-white shadow-xs" style="background-color: ${matchedHex}"></span>
+                                                <span>Coloured: <strong>${userCol}</strong></span>
                                             </div>
                                         ` : `
-                                            <span class="text-xs text-slate-400 font-semibold italic">Chưa tô màu</span>
+                                            <span class="text-xs font-bold text-slate-400">Not coloured</span>
                                         `}
-
-                                        <button onclick="applyColorToP4Item(${q.id})"
-                                                class="px-3 py-1.5 rounded-xl text-xs font-black transition active:scale-95 flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-xs hover:shadow-md">
-                                            <span>🎨</span>
-                                            <span>Tô màu ${startersP4ActiveColor.split(' ')[0]}</span>
+                                        <button onclick="applyColorToP4Item(${q.id})" 
+                                                class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1">
+                                            <span>🎨</span> <span>Apply [${startersP4ActiveColor}]</span>
                                         </button>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        setTimeout(() => initStartersP4ColoringCanvas(p4ImgSrc), 100);
+    }
+
+    container.innerHTML = `
+        <div class="space-y-4">
+            <!-- PART SUB-NAVIGATION (1, 2, 3, 4) -->
+            <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-slate-200 shadow-xs overflow-x-auto custom-scroll">
+                ${lis.parts.map(p => `
+                    <button onclick="switchStartersLisPart(${p.part_number})"
+                            class="px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                                p.part_number === activeStartersLisPart 
+                                    ? 'bg-amber-500 text-white shadow-xs' 
+                                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                            }">
+                        <span>Part ${p.part_number}</span>
+                    </button>
+                `).join('')}
+            </div>
+
+            ${partHtml}
+        </div>
+    `;
+}
+
+function switchStartersLisPart(partNum) {
+    if (activeStartersLisPart === partNum) return;
+    activeStartersLisPart = partNum;
+    renderStartersSkillContent();
+}
+
+// -------------------------------------------------------------
+// B. READING & WRITING VIEW (5 PARTS)
+// -------------------------------------------------------------
+function renderStartersReadingWritingView(container) {
+    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
+    const rw = test.reading_writing;
+    const currentPart = rw.parts.find(p => p.part_number === activeStartersRwPart) || rw.parts[0];
+
+    const rwImages = getStartersBookImages(test, 'reading_writing', activeStartersRwPart);
+
+    let partHtml = '';
+
+    if (activeStartersRwPart === 1) {
+        // Part 1: Tick or Cross
+        partHtml = `
+            <div class="space-y-4">
+                ${renderBookImageGallery(rwImages, "Part 1 Book Page", "rw1-gallery")}
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Part 1: Look and read. Put a tick (✓) or a cross (✗) in the box.
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.reading_writing[q.id];
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-2xl">${q.icon || '🖼️'}</span>
+                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.statement}</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 shrink-0">
+                                        <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, true)"
+                                                class="px-4 py-2 rounded-xl border text-xs font-black transition flex items-center gap-1.5 ${
+                                                    userVal === true 
+                                                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs' 
+                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                }">
+                                            <span>✓</span> <span>Tick</span>
+                                        </button>
+                                        <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, false)"
+                                                class="px-4 py-2 rounded-xl border text-xs font-black transition flex items-center gap-1.5 ${
+                                                    userVal === false 
+                                                        ? 'bg-rose-600 text-white border-rose-600 shadow-xs' 
+                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                }">
+                                            <span>✗</span> <span>Cross</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    else if (activeStartersRwPart === 2) {
+        // Part 2: Look and read. Write 'yes' or 'no'
+        const rw2Images = getStartersBookImages(test, 'reading_writing', 2);
+        const rw2ImgSrc = rw2Images[0] || '';
+        partHtml = `
+            <div class="space-y-4">
+                <!-- INSTRUCTIONS BANNER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">📖 Part 2</span>
+                            <span class="font-extrabold text-sm text-amber-900">Look and read. Write 'yes' or 'no' (5 questions)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Instructions:</strong> Look at the picture and read each sentence carefully. Choose <strong>yes</strong> or <strong>no</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 1. ILLUSTRATION ONLY (CROPPED PICTURE WITHOUT TEXT) -->
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-700 px-1">
+                        <span class="flex items-center gap-1.5 font-extrabold text-indigo-900">
+                            <span>🖼️</span> <span>Part 2 Scene Picture:</span>
+                        </span>
+                        <button onclick="openStartersImageModal('${rw2ImgSrc}', 'Part 2 Scene Picture')" 
+                                class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-1">
+                            <span>🔍</span> <span>Zoom Picture</span>
+                        </button>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-50 border border-slate-200 flex justify-center items-center max-h-[460px] p-2">
+                        <img src="${rw2ImgSrc}" 
+                             onerror="if(!this.dataset.triedOriginal){this.dataset.triedOriginal='1';this.src='${rw2ImgSrc.replace('_cropped', '')}';}else if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${rw2ImgSrc}';}" 
+                             alt="Part 2 Illustration" 
+                             class="max-h-[430px] w-auto max-w-full object-contain rounded-lg shadow-sm select-none">
+                    </div>
+                </div>
+
+                <!-- 2. EXAMPLES DISPLAYED ON SCREEN OUTSIDE THE PICTURE -->
+                <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[10px] uppercase tracking-wide">Examples</span>
+                        <span class="font-extrabold text-xs text-amber-900">Look at the picture and read the examples:</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                            <span class="text-slate-700">There are two cats on the wall.</span>
+                            <span class="font-black text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">yes</span>
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-amber-200/80 flex items-center justify-between">
+                            <span class="text-slate-700">A boy is riding a horse.</span>
+                            <span class="font-black text-rose-800 bg-rose-100 px-2.5 py-0.5 rounded-full">no</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. QUESTIONS (6 - 10) -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Questions 6 - 10: Choose 'yes' or 'no'
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.reading_writing[q.id];
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900 flex-1">${q.statement}</p>
+                                    <div class="flex items-center gap-2 shrink-0">
+                                        <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'yes')"
+                                                class="px-4 py-2 rounded-xl border text-xs font-black transition ${
+                                                    userVal === 'yes' 
+                                                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs' 
+                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                }">
+                                            yes
+                                        </button>
+                                        <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'no')"
+                                                class="px-4 py-2 rounded-xl border text-xs font-black transition ${
+                                                    userVal === 'no' 
+                                                        ? 'bg-rose-600 text-white border-rose-600 shadow-xs' 
+                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                }">
+                                            no
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    else if (activeStartersRwPart === 3) {
+        // Part 3: Jumbled letters - Write the words
+        partHtml = `
+            <div class="space-y-4">
+                ${renderBookImageGallery(rwImages, "Part 3 Book Page", "rw3-gallery")}
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Part 3: Look at the pictures. Look at the letters. Write the words (Questions 11 - 15)
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-mono font-black text-sm tracking-widest">${q.scrambled}</span>
+                                        </div>
+                                        <p class="text-xs text-slate-500 italic">${q.hint}</p>
+                                    </div>
+                                    <div class="w-full sm:w-48 shrink-0">
+                                        <input type="text" 
+                                               value="${escapeHtml(userVal)}" 
+                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value.toUpperCase())"
+                                               placeholder="Type word..."
+                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-mono font-black text-sm uppercase text-slate-900 tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    else if (activeStartersRwPart === 4) {
+        // Part 4: Cloze text with Word bank
+        const cloze = currentPart.cloze;
+        partHtml = `
+            <div class="space-y-4">
+                ${renderBookImageGallery(rwImages, "Part 4 Book Page", "rw4-gallery")}
+                <!-- WORD BANK -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Word Bank:
+                    </span>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        ${cloze.word_bank.map(w => `
+                            <div class="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                                <span>${w.icon}</span> <span>${w.word}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- CLOZE PASSAGE -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                    <h3 class="text-base font-black text-slate-900">${cloze.title}</h3>
+                    <p class="text-sm font-medium leading-relaxed text-slate-800">
+                        ${cloze.text_template}
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 pt-3 border-t border-slate-100">
+                        ${cloze.questions.map(q => {
+                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
+                            return `
+                                <div class="space-y-1">
+                                    <label class="text-[11px] font-black text-slate-600">[${q.id}]:</label>
+                                    <input type="text" 
+                                           value="${escapeHtml(userVal)}" 
+                                           oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
+                                           placeholder="Word..."
+                                           class="w-full px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    else if (activeStartersRwPart === 5) {
+        // Part 5: Picture story questions
+        partHtml = `
+            <div class="space-y-4">
+                ${renderBookImageGallery(rwImages, "Part 5 Book Pages", "rw5-gallery")}
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Part 5: Look at the pictures and read the questions. Write one-word answers.
+                    </span>
+                    <div class="space-y-3">
+                        ${currentPart.questions.map(q => {
+                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="space-y-1 flex-1">
+                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
+                                        <p class="text-xs text-slate-500 italic">${q.clue}</p>
+                                    </div>
+                                    <div class="w-full sm:w-44 shrink-0">
+                                        <input type="text" 
+                                               value="${escapeHtml(userVal)}" 
+                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
+                                               placeholder="One word..."
+                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                                     </div>
                                 </div>
                             `;
@@ -1006,301 +1391,34 @@ function renderStartersListeningView(container) {
     }
 
     container.innerHTML = `
-        <div class="flex flex-col h-full overflow-hidden">
-            <!-- PART TABS (PART 1, 2, 3, 4) -->
-            <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-200 shrink-0">
-                <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto">
-                    ${[1, 2, 3, 4].map(pNum => `
-                        <button onclick="switchStartersLisPart(${pNum})" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition shrink-0 ${
-                            activeStartersLisPart === pNum ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                        }">
-                            Part ${pNum}
-                        </button>
-                    `).join('')}
-                </div>
-                <span class="text-xs font-bold text-slate-500 hidden sm:inline">20 câu hỏi • Chuẩn Cambridge Pre-A1</span>
+        <div class="space-y-4">
+            <!-- PART SUB-NAVIGATION (1, 2, 3, 4, 5) -->
+            <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-slate-200 shadow-xs overflow-x-auto custom-scroll">
+                ${rw.parts.map(p => `
+                    <button onclick="switchStartersRwPart(${p.part_number})"
+                            class="px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                                p.part_number === activeStartersRwPart 
+                                    ? 'bg-amber-500 text-white shadow-xs' 
+                                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                            }">
+                        <span>Part ${p.part_number}</span>
+                    </button>
+                `).join('')}
             </div>
 
-            <div class="flex-1 overflow-y-auto custom-scroll pr-1">
-                ${partHtml}
-            </div>
-        </div>
-    `;
-
-    // Kích hoạt Canvas tương tác sau khi DOM render xong
-    if (activeStartersLisPart === 1) {
-        setTimeout(() => {
-            initStartersP1Canvas();
-        }, 50);
-    } else if (activeStartersLisPart === 4) {
-        const bgImages = getStartersBookImages(test, 'listening', 4);
-        const p4ImgSrc = bgImages[0] || '';
-        setTimeout(() => {
-            initStartersP4ColoringCanvas(p4ImgSrc);
-        }, 50);
-    }
-}
-
-function switchStartersLisPart(partNum) {
-    activeStartersLisPart = partNum;
-    renderStartersSkillContent();
-}
-
-// -------------------------------------------------------------
-// B. GIAO DIỆN READING & WRITING (5 PARTS)
-// -------------------------------------------------------------
-function renderStartersReadingWritingView(container) {
-    const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
-    const rw = test.reading_writing;
-    const currentPart = rw.parts.find(p => p.part_number === activeStartersRwPart) || rw.parts[0];
-
-    let partHtml = '';
-
-    if (activeStartersRwPart === 1) {
-        // Part 1: Tick or Cross
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 1), "Trang tranh câu hỏi Part 1 (Nhìn hình trong sách và chọn Tick ✓ hoặc Cross ✗)", "gal_rw_1");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 1:</strong> Nhìn hình trong trang sách gốc bên dưới và đọc câu khẳng định. Nếu ĐÚNG bấm Tick (✓), nếu SAI bấm Cross (✗).</span>
-                </div>
-
-                ${galleryHtml}
-
-                <div class="space-y-3">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-8 h-8 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0">Câu ${q.id}</span>
-                                    <div>
-                                        <p class="font-extrabold text-sm text-slate-900">${q.statement}</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center gap-2">
-                                    <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'tick')"
-                                            class="px-4 py-2 rounded-xl text-xs font-black transition active:scale-95 flex items-center gap-1.5 ${
-                                                userVal === 'tick'
-                                                    ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300'
-                                                    : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200'
-                                            }">
-                                        <span>✓ Tick (Đúng)</span>
-                                    </button>
-                                    <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'cross')"
-                                            class="px-4 py-2 rounded-xl text-xs font-black transition active:scale-95 flex items-center gap-1.5 ${
-                                                userVal === 'cross'
-                                                    ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300'
-                                                    : 'bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200'
-                                            }">
-                                        <span>✗ Cross (Sai)</span>
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    } else if (activeStartersRwPart === 2) {
-        // Part 2: Look and write 'yes' or 'no'
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 2), "Tranh toàn cảnh Part 2 (Nhìn tranh trong sách & chọn yes/no)", "gal_rw_2");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs text-sky-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 2:</strong> Quan sát bức tranh sinh hoạt trong sách bên dưới và đọc câu miêu tả. Bấm chọn <strong>yes</strong> hoặc <strong>no</strong>.</span>
-                </div>
-
-                ${galleryHtml}
-
-                <div class="space-y-3">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                                <div class="flex-1">
-                                    <span class="text-xs font-black text-sky-600">Câu ${q.id}</span>
-                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900 mt-0.5">${q.statement}</p>
-                                </div>
-
-                                <div class="flex items-center gap-2">
-                                    <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'yes')"
-                                            class="px-5 py-2 rounded-xl text-xs font-black transition active:scale-95 ${
-                                                userVal.toLowerCase() === 'yes'
-                                                    ? 'bg-sky-600 text-white shadow-md ring-2 ring-sky-300'
-                                                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                                            }">
-                                        yes (Có)
-                                    </button>
-                                    <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, 'no')"
-                                            class="px-5 py-2 rounded-xl text-xs font-black transition active:scale-95 ${
-                                                userVal.toLowerCase() === 'no'
-                                                    ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300'
-                                                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                                            }">
-                                        no (Không)
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    } else if (activeStartersRwPart === 3) {
-        // Part 3: Jumbled letters
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 3), "Trang tranh đồ vật Part 3 (Nhìn hình đồ vật & thớt chữ cái)", "gal_rw_3");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-violet-50 border border-violet-200 text-xs text-violet-950 flex items-center justify-between">
-                    <span>🔤 <strong>Part 3:</strong> Quan sát đồ vật trong trang sách bên dưới và sắp xếp các chữ cái thành từ vựng tiếng Anh đúng.</span>
-                </div>
-
-                ${galleryHtml}
-
-                <div class="space-y-3.5">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-8 h-8 rounded-full bg-violet-600 text-white font-black text-xs flex items-center justify-center shrink-0">${q.id}</span>
-                                    <div>
-                                        <p class="font-bold text-xs text-slate-600">${q.hint}</p>
-                                        <div class="flex items-center gap-1.5 mt-1 font-mono font-black text-base text-violet-900 tracking-wider">
-                                            ${q.scrambled.split(' / ').map(ch => `<span class="px-2 py-0.5 rounded bg-violet-100 border border-violet-300">${ch}</span>`).join('')}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="w-full sm:w-auto">
-                                    <input type="text" 
-                                           value="${escapeHtml(userVal)}" 
-                                           oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                           placeholder="Gõ từ hoàn chỉnh..."
-                                           class="w-full sm:w-44 px-3.5 py-2 rounded-xl border border-slate-300 focus:border-violet-600 focus:ring-2 focus:ring-violet-100 text-sm font-black font-mono uppercase tracking-wider outline-none text-center">
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    } else if (activeStartersRwPart === 4) {
-        // Part 4: Cloze test
-        const cloze = currentPart.cloze;
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 4), "Trang bài đọc & Word Bank Part 4 (Nhìn ô từ vựng trong sách)", "gal_rw_4");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 4:</strong> Đọc bài và nhìn hình trong ô từ vựng của trang sách bên dưới để điền từ vào chỗ trống 16 - 20.</span>
-                </div>
-
-                ${galleryHtml}
-
-                <!-- WORD BANK -->
-                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
-                    <span class="text-xs font-black text-amber-900 uppercase block mb-2">🎁 Ngân hàng từ vựng gợi ý:</span>
-                    <div class="flex flex-wrap gap-2">
-                        ${cloze.word_bank.map(wb => `
-                            <span class="px-3 py-1 rounded-xl bg-white border border-amber-300 shadow-2xs text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                <span>${wb.icon}</span> <span>${wb.word}</span> <span class="text-[10px] text-slate-400">(${wb.meaning})</span>
-                            </span>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <!-- STORY TEXT -->
-                <div class="p-5 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm leading-loose text-slate-800 font-sans shadow-xs space-y-3">
-                    <h4 class="font-black text-sm sm:text-base text-slate-900 pb-2 border-b border-slate-100">${cloze.title}</h4>
-                    <p class="whitespace-pre-line">${cloze.text_template}</p>
-                </div>
-
-                <!-- INPUT SLOTS 16 - 20 -->
-                <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 pt-1">
-                    ${cloze.questions.map(q => {
-                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                        return `
-                            <div class="p-2.5 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col">
-                                <span class="text-[10px] font-bold text-indigo-600 mb-1">Chỗ trống [${q.id}]:</span>
-                                <input type="text" 
-                                       value="${escapeHtml(userVal)}" 
-                                       oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                       placeholder="Từ điền..."
-                                       class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 focus:border-indigo-600 text-xs font-bold font-mono outline-none">
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    } else if (activeStartersRwPart === 5) {
-        // Part 5: One-word answers
-        const galleryHtml = renderBookImageGallery(getStartersBookImages(test, 'reading_writing', 5), "Tranh diễn biến câu chuyện Part 5 (Nhìn tranh 1, 2, 3 trong sách & trả lời)", "gal_rw_5");
-        partHtml = `
-            <div class="space-y-4">
-                <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-950 flex items-center justify-between">
-                    <span>📖 <strong>Part 5:</strong> Quan sát 3 bức tranh diễn biến câu chuyện trong sách bên dưới và viết câu trả lời bằng <strong>ĐÚNG 1 TỪ DUY NHẤT</strong>.</span>
-                </div>
-
-                ${galleryHtml}
-
-                <div class="space-y-3">
-                    ${currentPart.questions.map(q => {
-                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                        return `
-                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                                <div class="flex-1 space-y-1">
-                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
-                                    <p class="text-[11px] text-slate-500 italic">💡 Gợi ý: ${q.clue}</p>
-                                </div>
-
-                                <div class="w-full sm:w-auto">
-                                    <input type="text" 
-                                           value="${escapeHtml(userVal)}" 
-                                           oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                           placeholder="Gõ 1 từ duy nhất..."
-                                           class="w-full sm:w-44 px-3.5 py-2 rounded-xl border border-slate-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-100 text-xs sm:text-sm font-bold font-mono outline-none">
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    }
-
-    container.innerHTML = `
-        <div class="flex flex-col h-full overflow-hidden">
-            <!-- PART TABS (PART 1 - 5) -->
-            <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-200 shrink-0">
-                <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto">
-                    ${[1, 2, 3, 4, 5].map(pNum => `
-                        <button onclick="switchStartersRwPart(${pNum})" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition shrink-0 ${
-                            activeStartersRwPart === pNum ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                        }">
-                            Part ${pNum}
-                        </button>
-                    `).join('')}
-                </div>
-                <span class="text-xs font-bold text-slate-500 hidden sm:inline">25 câu hỏi • Chuẩn Cambridge Pre-A1</span>
-            </div>
-
-            <div class="flex-1 overflow-y-auto custom-scroll pr-1">
-                ${partHtml}
-            </div>
+            ${partHtml}
         </div>
     `;
 }
 
 function switchStartersRwPart(partNum) {
+    if (activeStartersRwPart === partNum) return;
     activeStartersRwPart = partNum;
     renderStartersSkillContent();
 }
 
 // -------------------------------------------------------------
-// C. GIAO DIỆN SPEAKING (4 PARTS)
+// C. SPEAKING VIEW (4 PARTS)
 // -------------------------------------------------------------
 function renderStartersSpeakingView(container) {
     const test = (startersProfileData && startersProfileData.starters_tests && startersProfileData.starters_tests[activeStartersTestId]) || null;
@@ -1308,149 +1426,151 @@ function renderStartersSpeakingView(container) {
     const partKey = `part_${activeStartersSpkPart}`;
     const currentPart = spk[partKey];
 
-    let spkGalleryHtml = '';
-    if (activeStartersSpkPart === 1 || activeStartersSpkPart === 3) {
-        spkGalleryHtml = renderBookImageGallery(getStartersBookImages(test, 'speaking', 1), "Tranh toàn cảnh Speaking (Scene Picture)", "gal_spk_scene");
-    } else if (activeStartersSpkPart === 2) {
-        spkGalleryHtml = renderBookImageGallery(getStartersBookImages(test, 'speaking', 2), "Các thẻ đồ vật Speaking (Object Cards)", "gal_spk_cards");
-    }
+    const spkImages = getStartersBookImages(test, 'speaking', activeStartersSpkPart);
 
     container.innerHTML = `
-        <div class="flex flex-col h-full overflow-hidden">
-            <!-- PART TABS (PART 1, 2, 3, 4) -->
-            <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-200 shrink-0">
-                <div class="flex items-center gap-1.5 sm:gap-2">
-                    <button onclick="switchStartersSpkPart(1)" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
-                        activeStartersSpkPart === 1 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                    }">
-                        Part 1: Scene
-                    </button>
-                    <button onclick="switchStartersSpkPart(2)" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
-                        activeStartersSpkPart === 2 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                    }">
-                        Part 2: Object Cards
-                    </button>
-                    <button onclick="switchStartersSpkPart(3)" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
-                        activeStartersSpkPart === 3 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                    }">
-                        Part 3: Questions
-                    </button>
-                    <button onclick="switchStartersSpkPart(4)" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
-                        activeStartersSpkPart === 4 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                    }">
-                        Part 4: Personal
-                    </button>
-                </div>
-                <span class="text-xs font-bold text-slate-500 hidden sm:inline">3 - 5 phút • Giám khảo AI bản xứ & Ghi âm</span>
+        <div class="space-y-4">
+            <!-- PART SUB-NAVIGATION (1, 2, 3, 4) -->
+            <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-slate-200 shadow-xs overflow-x-auto custom-scroll">
+                <button onclick="switchStartersSpkPart(1)" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition shrink-0 ${activeStartersSpkPart === 1 ? 'bg-amber-500 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}">
+                    Part 1: Scene & Greetings
+                </button>
+                <button onclick="switchStartersSpkPart(2)" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition shrink-0 ${activeStartersSpkPart === 2 ? 'bg-amber-500 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}">
+                    Part 2: Object Cards
+                </button>
+                <button onclick="switchStartersSpkPart(3)" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition shrink-0 ${activeStartersSpkPart === 3 ? 'bg-amber-500 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}">
+                    Part 3: Scene Questions
+                </button>
+                <button onclick="switchStartersSpkPart(4)" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition shrink-0 ${activeStartersSpkPart === 4 ? 'bg-amber-500 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}">
+                    Part 4: Personal Questions
+                </button>
             </div>
 
-            <!-- SPEAKING CONTENT -->
-            <div class="flex-1 overflow-y-auto custom-scroll pr-1 space-y-4">
-                <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 flex items-center justify-between">
-                    <span>💡 <strong>${currentPart.title}:</strong> Lắng nghe giám khảo hỏi và bấm micro để ghi âm câu trả lời tự tin của bé nhé!</span>
+            <!-- BOOK PAGE GALLERY FOR SPEAKING -->
+            ${renderBookImageGallery(spkImages, currentPart.title, "spk-gallery")}
+
+            <!-- EXAMINER INSTRUCTION HEADER -->
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-amber-950 space-y-1.5 shadow-xs">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-black uppercase text-amber-900">${currentPart.title}</span>
+                    <span class="text-xs font-bold text-amber-700">Native Examiner Audio</span>
                 </div>
+                <p class="text-xs sm:text-sm font-semibold italic text-amber-950">
+                    "${currentPart.examiner_instruction}"
+                </p>
+            </div>
 
-                ${spkGalleryHtml}
+            <!-- PROMPTS LIST -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                    Speaking Questions & Practice Prompts:
+                </span>
+                <div class="space-y-3">
+                    ${currentPart.prompts.map((p, idx) => {
+                        const slotId = `spk_${activeStartersSpkPart}_${idx}`;
+                        const isRecorded = !!startersRecordedAudioUrls[slotId];
 
-                ${currentPart.prompts.map((p, idx) => `
-                    <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
-                        <div class="flex items-start justify-between gap-2">
-                            <p class="font-extrabold text-xs sm:text-sm text-slate-900">
-                                <span class="text-indigo-600 mr-1.5">Q${idx + 1}:</span> ${p.q}
-                            </p>
-                            <button onclick="speakStartersQuestion('${escapeQuotes(p.q)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                <span>🔊</span> <span>Nghe giám khảo</span>
-                            </button>
-                        </div>
-
-                        <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
-                            <button onclick="toggleStartersVoiceRecord('spk_${activeStartersSpkPart}_${idx}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95">
-                                <span>🎙️</span> <span>Ghi âm câu trả lời</span>
-                            </button>
-                            <div id="starters-audio-playback-spk_${activeStartersSpkPart}_${idx}" class="inline-flex"></div>
-
-                            <button onclick="toggleTranscript('sample-starters-spk-${activeStartersSpkPart}-${idx}')" class="ml-auto px-3 py-1 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition">
-                                💡 Xem mẫu trả lời
-                            </button>
-                        </div>
-
-                        <div id="sample-starters-spk-${activeStartersSpkPart}-${idx}" class="hidden mt-2 p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-slate-800 space-y-1">
-                            <p class="font-bold text-amber-900">Câu trả lời mẫu:</p>
-                            <p class="italic font-serif bg-white p-2 rounded-lg border border-amber-100 text-slate-800">"${p.model_answer}"</p>
-                            <p class="text-[11px] text-slate-500">👉 ${p.vietnamese_hint}</p>
-                        </div>
-                    </div>
-                `).join('')}
+                        return `
+                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                                <div class="flex items-start justify-between gap-2">
+                                    <p class="font-extrabold text-xs sm:text-sm text-slate-900">
+                                        <span class="text-indigo-600 mr-1.5">Q${idx + 1}:</span> ${p.q}
+                                    </p>
+                                    <button onclick="speakStartersQuestion('${escapeQuotes(p.q)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
+                                        <span>🔊</span> <span>Examiner</span>
+                                    </button>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 space-y-1 text-xs">
+                                    <p><strong>Sample Answer:</strong> "${p.model_answer}"</p>
+                                    <p class="text-[11px] text-emerald-800 italic">💡 <strong>Hint:</strong> ${p.hint}</p>
+                                </div>
+                                <div class="flex items-center justify-between pt-1">
+                                    <button id="record-btn-${slotId}" onclick="toggleStartersVoiceRecord('${slotId}')" 
+                                            class="px-3 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition flex items-center gap-1 shadow-2xs active:scale-95">
+                                        <span>🎙️</span> <span>Record Answer</span>
+                                    </button>
+                                    ${isRecorded ? `
+                                        <audio controls src="${startersRecordedAudioUrls[slotId]}" class="h-8 w-44"></audio>
+                                    ` : `
+                                        <span class="text-[11px] text-slate-400">Microphone ready</span>
+                                    `}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
             </div>
         </div>
     `;
 }
 
 function switchStartersSpkPart(partNum) {
+    if (activeStartersSpkPart === partNum) return;
     activeStartersSpkPart = partNum;
     renderStartersSkillContent();
 }
 
 // -------------------------------------------------------------
-// D. XỬ LÝ ĐÁP ÁN & ÂM THANH
+// EVENT HANDLERS & AUDIO RECORDING
 // -------------------------------------------------------------
 function handleStartersAnswerChange(skill, qId, val) {
     if (startersTestSubmitted) return;
     if (!startersUserAnswers[skill]) startersUserAnswers[skill] = {};
     startersUserAnswers[skill][qId] = val;
     saveStartersProgress();
-    renderStartersSkillContent();
 }
 
 function speakStartersQuestion(text) {
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const ut = new SpeechSynthesisUtterance(text);
-        ut.lang = 'en-GB';
-        ut.rate = 0.85; // Tốc độ nói chậm rãi, rõ ràng cho trẻ em
-        window.speechSynthesis.speak(ut);
-    }
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-GB'; // British English for Cambridge
+    utterance.rate = 0.85; // Natural slower pace for young learners
+    window.speechSynthesis.speak(utterance);
 }
 
 async function toggleStartersVoiceRecord(slotId) {
+    const btn = document.getElementById(`record-btn-${slotId}`);
+    if (!btn) return;
+
     if (startersMediaRecorder && startersMediaRecorder.state === 'recording') {
         startersMediaRecorder.stop();
+        btn.innerHTML = `<span>🎙️</span> <span>Record Answer</span>`;
+        btn.classList.remove('bg-slate-800', 'animate-pulse');
+        btn.classList.add('bg-rose-500');
         return;
     }
 
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        startersMediaRecorder = new MediaRecorder(stream);
         startersAudioChunks = [];
+        startersMediaRecorder = new MediaRecorder(stream);
 
-        startersMediaRecorder.ondataavailable = e => {
+        startersMediaRecorder.ondataavailable = (e) => {
             if (e.data.size > 0) startersAudioChunks.push(e.data);
         };
 
         startersMediaRecorder.onstop = () => {
-            const audioBlob = new Blob(startersAudioChunks, { type: 'audio/webm' });
-            const audioUrl = URL.createObjectURL(audioBlob);
-            startersRecordedAudioUrls[slotId] = audioUrl;
-
-            const playbackContainer = document.getElementById('starters-audio-playback-' + slotId);
-            if (playbackContainer) {
-                playbackContainer.innerHTML = `<audio controls src="${audioUrl}" class="h-8 max-w-[180px]"></audio>`;
-            }
-            stream.getTracks().forEach(track => track.stop());
+            const blob = new Blob(startersAudioChunks, { type: 'audio/webm' });
+            const url = URL.createObjectURL(blob);
+            startersRecordedAudioUrls[slotId] = url;
+            renderStartersSkillContent();
         };
 
         startersMediaRecorder.start();
-        alert("🎙️ Đang ghi âm giọng nói của bé! Bấm lại nút để dừng ghi âm.");
-    } catch(e) {
-        alert("Không thể mở microphone. Vui lòng cấp quyền truy cập micro trong trình duyệt!");
+        btn.innerHTML = `<span>⏹️</span> <span>Stop Recording...</span>`;
+        btn.classList.remove('bg-rose-500');
+        btn.classList.add('bg-slate-800', 'animate-pulse');
+    } catch(err) {
+        alert("Microphone access could not be enabled: " + err.message);
     }
 }
 
 // -------------------------------------------------------------
-// E. CHẤM ĐIỂM KHIÊN CAMBRIDGE (SHIELDS 🛡️ 15 KHIÊN)
+// GRADING & CAMBRIDGE SHIELDS RESULT
 // -------------------------------------------------------------
 function submitStartersTest() {
-    if (!confirm("Bạn có chắc chắn muốn nộp bài thi Starters để nhận Huân chương Khiên Cambridge (Shields 🛡️) và xem đáp án giải thích?")) {
+    if (!confirm("Do you want to submit your Cambridge Starters test to view Shields 🛡️ and answers?")) {
         return;
     }
     gradeStartersTest(true);
@@ -1460,179 +1580,227 @@ function gradeStartersTest(showModal = true) {
     const test = startersProfileData.starters_tests[activeStartersTestId];
     if (!test) return;
 
-    // 1. Chấm điểm Listening (20 câu)
     let lisCorrect = 0;
     const lisReview = [];
 
-    test.listening.parts.forEach(p => {
-        p.questions.forEach(q => {
-            const userVal = startersUserAnswers.listening[q.id] || '';
-            let isCorr = false;
-
-            if (p.part_number === 1) {
-                isCorr = (userVal === q.correct_answer);
-            } else if (p.part_number === 2) {
-                const cleanUser = userVal.toString().trim().toLowerCase();
-                isCorr = q.correct_answers.some(c => cleanUser === c.toLowerCase());
-            } else if (p.part_number === 3) {
-                isCorr = (userVal.toUpperCase() === q.correct_answers[0].toUpperCase());
-            } else if (p.part_number === 4) {
-                isCorr = (userVal.trim().toLowerCase().includes(q.correct_color.split(' ')[0].toLowerCase()));
-            }
-
-            if (isCorr) lisCorrect++;
-
-            lisReview.push({
-                skill: "Listening",
-                part: p.part_number,
-                id: q.id,
-                prompt: q.name || q.question || q.item || '',
-                userAns: userVal || '(Chưa điền)',
-                correctAns: q.correct_answer || q.correct_answers?.[0] || q.correct_color || '',
-                isCorrect: isCorr,
-                explanation: q.explanation || ''
-            });
+    // 1. Listening Part 1 (1 - 5)
+    test.listening.parts[0].questions.forEach(q => {
+        const userVal = startersUserAnswers.listening[q.id];
+        const isCorrect = (userVal && userVal.toLowerCase() === q.correct_answer.toLowerCase());
+        if (isCorrect) lisCorrect++;
+        lisReview.push({
+            id: q.id,
+            skill: 'listening',
+            part: 1,
+            prompt: `Part 1: Match [${q.name}] to target spot`,
+            userAns: userVal ? `Spot ${userVal.replace('spot_', '').toUpperCase()}` : 'Not matched',
+            correctAns: `Spot ${q.correct_answer.replace('spot_', '').toUpperCase()}`,
+            isCorrect,
+            explanation: q.explanation
         });
     });
 
-    // Quy đổi số câu đúng Listening sang số Khiên (1 - 5 Khiên)
-    let lisShields = 0;
-    if (lisCorrect >= 18) lisShields = 5;
-    else if (lisCorrect >= 14) lisShields = 4;
-    else if (lisCorrect >= 10) lisShields = 3;
-    else if (lisCorrect >= 5) lisShields = 2;
-    else if (lisCorrect >= 1) lisShields = 1;
-    else lisShields = 0;
+    // 2. Listening Part 2 (6 - 10)
+    test.listening.parts[1].questions.forEach(q => {
+        const userVal = (startersUserAnswers.listening[q.id] || '').trim().toLowerCase();
+        const isCorrect = q.correct_answers.some(ans => ans.toLowerCase() === userVal);
+        if (isCorrect) lisCorrect++;
+        lisReview.push({
+            id: q.id,
+            skill: 'listening',
+            part: 2,
+            prompt: q.question,
+            userAns: startersUserAnswers.listening[q.id] || 'Not answered',
+            correctAns: q.correct_answers.join(' / '),
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
 
-    // 2. Chấm điểm Reading & Writing (25 câu)
+    // 3. Listening Part 3 (11 - 15)
+    test.listening.parts[2].questions.forEach(q => {
+        const userVal = startersUserAnswers.listening[q.id];
+        const isCorrect = q.correct_answers.includes(userVal);
+        if (isCorrect) lisCorrect++;
+        lisReview.push({
+            id: q.id,
+            skill: 'listening',
+            part: 3,
+            prompt: q.question,
+            userAns: userVal || 'Not answered',
+            correctAns: q.correct_answers.join(' / '),
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
+
+    // 4. Listening Part 4 (16 - 20)
+    test.listening.parts[3].questions.forEach(q => {
+        const userVal = (startersUserAnswers.listening[q.id] || '').trim().toLowerCase();
+        const targetColor = q.correct_color.split(' ')[0].toLowerCase();
+        const isCorrect = userVal.includes(targetColor);
+        if (isCorrect) lisCorrect++;
+        lisReview.push({
+            id: q.id,
+            skill: 'listening',
+            part: 4,
+            prompt: `Part 4: Colour "${q.item}"`,
+            userAns: startersUserAnswers.listening[q.id] || 'Not coloured',
+            correctAns: q.correct_color,
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
+
+    // 5. Reading & Writing
     let rwCorrect = 0;
     const rwReview = [];
 
-    test.reading_writing.parts.forEach(p => {
-        if (p.part_number === 4) {
-            // Cloze test
-            p.cloze.questions.forEach(q => {
-                const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                const cleanUser = userVal.toString().trim().toLowerCase();
-                const isCorr = (cleanUser === q.correct_answer.toLowerCase());
-                if (isCorr) rwCorrect++;
-
-                rwReview.push({
-                    skill: "Reading & Writing",
-                    part: 4,
-                    id: q.id,
-                    prompt: `Chỗ trống [${q.id}] trong bài ${p.cloze.title}`,
-                    userAns: userVal || '(Chưa điền)',
-                    correctAns: q.correct_answer,
-                    isCorrect: isCorr,
-                    explanation: q.explanation
-                });
-            });
-        } else {
-            p.questions.forEach(q => {
-                const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                let isCorr = false;
-
-                if (p.part_number === 1) {
-                    const expected = q.is_correct ? 'tick' : 'cross';
-                    isCorr = (userVal === expected);
-                } else if (p.part_number === 2) {
-                    isCorr = (userVal.toLowerCase() === q.correct_answers[0].toLowerCase());
-                } else if (p.part_number === 3) {
-                    isCorr = (userVal.trim().toUpperCase() === q.correct_word.toUpperCase());
-                } else if (p.part_number === 5) {
-                    const cleanUser = userVal.toString().trim().toLowerCase();
-                    isCorr = q.correct_answers.some(c => cleanUser === c.toLowerCase());
-                }
-
-                if (isCorr) rwCorrect++;
-
-                rwReview.push({
-                    skill: "Reading & Writing",
-                    part: p.part_number,
-                    id: q.id,
-                    prompt: q.statement || q.hint || q.question || '',
-                    userAns: userVal || '(Chưa điền)',
-                    correctAns: (p.part_number === 1 ? (q.is_correct ? 'Tick (✓)' : 'Cross (✗)') : (q.correct_answers?.[0] || q.correct_word || '')),
-                    isCorrect: isCorr,
-                    explanation: q.explanation || ''
-                });
-            });
-        }
+    // RW Part 1 (1 - 5)
+    test.reading_writing.parts[0].questions.forEach(q => {
+        const userVal = startersUserAnswers.reading_writing[q.id];
+        const isCorrect = (userVal === q.is_correct);
+        if (isCorrect) rwCorrect++;
+        rwReview.push({
+            id: q.id,
+            skill: 'reading_writing',
+            part: 1,
+            prompt: q.statement,
+            userAns: userVal === true ? '✓ Tick' : (userVal === false ? '✗ Cross' : 'Not answered'),
+            correctAns: q.is_correct ? '✓ Tick' : '✗ Cross',
+            isCorrect,
+            explanation: q.explanation
+        });
     });
 
-    // Quy đổi số câu đúng Reading & Writing sang số Khiên (1 - 5 Khiên)
-    let rwShields = 0;
-    if (rwCorrect >= 22) rwShields = 5;
-    else if (rwCorrect >= 17) rwShields = 4;
-    else if (rwCorrect >= 12) rwShields = 3;
-    else if (rwCorrect >= 6) rwShields = 2;
-    else if (rwCorrect >= 1) rwShields = 1;
-    else rwShields = 0;
+    // RW Part 2 (6 - 10)
+    test.reading_writing.parts[1].questions.forEach(q => {
+        const userVal = (startersUserAnswers.reading_writing[q.id] || '').toLowerCase();
+        const isCorrect = q.correct_answers.some(ans => ans.toLowerCase() === userVal);
+        if (isCorrect) rwCorrect++;
+        rwReview.push({
+            id: q.id,
+            skill: 'reading_writing',
+            part: 2,
+            prompt: q.statement,
+            userAns: userVal || 'Not answered',
+            correctAns: q.correct_answers[0],
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
 
-    // 3. Chấm điểm Speaking (1 - 5 Khiên)
-    const recordedCount = Object.keys(startersRecordedAudioUrls || {}).length;
-    let spkShields = 0;
-    if (recordedCount >= 3) spkShields = 5;
-    else if (recordedCount === 2) spkShields = 4;
-    else if (recordedCount === 1) spkShields = 3;
-    else spkShields = 0; // Chưa ghi âm
+    // RW Part 3 (11 - 15)
+    test.reading_writing.parts[2].questions.forEach(q => {
+        const userVal = (startersUserAnswers.reading_writing[q.id] || '').trim().toUpperCase();
+        const isCorrect = (userVal === q.correct_word.toUpperCase());
+        if (isCorrect) rwCorrect++;
+        rwReview.push({
+            id: q.id,
+            skill: 'reading_writing',
+            part: 3,
+            prompt: `${q.hint} (${q.scrambled})`,
+            userAns: userVal || 'Not answered',
+            correctAns: q.correct_word,
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
 
-    // Tổng số Khiên (Tối đa 15 Khiên)
+    // RW Part 4 (16 - 20)
+    test.reading_writing.parts[3].cloze.questions.forEach(q => {
+        const userVal = (startersUserAnswers.reading_writing[q.id] || '').trim().toLowerCase();
+        const isCorrect = (userVal === q.correct_answer.toLowerCase());
+        if (isCorrect) rwCorrect++;
+        rwReview.push({
+            id: q.id,
+            skill: 'reading_writing',
+            part: 4,
+            prompt: `Part 4 Cloze [${q.id}]`,
+            userAns: userVal || 'Not answered',
+            correctAns: q.correct_answer,
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
+
+    // RW Part 5 (21 - 25)
+    test.reading_writing.parts[4].questions.forEach(q => {
+        const userVal = (startersUserAnswers.reading_writing[q.id] || '').trim().toLowerCase();
+        const isCorrect = q.correct_answers.some(ans => ans.toLowerCase() === userVal);
+        if (isCorrect) rwCorrect++;
+        rwReview.push({
+            id: q.id,
+            skill: 'reading_writing',
+            part: 5,
+            prompt: q.question,
+            userAns: startersUserAnswers.reading_writing[q.id] || 'Not answered',
+            correctAns: q.correct_answers.join(' / '),
+            isCorrect,
+            explanation: q.explanation
+        });
+    });
+
+    // Calculate Cambridge Shields (1 to 5 shields per skill)
+    function calcShields(correct, total) {
+        const pct = (correct / total) * 100;
+        if (pct >= 85) return 5;
+        if (pct >= 65) return 4;
+        if (pct >= 45) return 3;
+        if (pct >= 25) return 2;
+        return 1;
+    }
+
+    const lisShields = calcShields(lisCorrect, 20);
+    const rwShields = calcShields(rwCorrect, 25);
+    const spkShields = 4; // Speaking baseline score
     const totalShields = lisShields + rwShields + spkShields;
 
     startersTestScoreResult = {
         lisCorrect, lisTotal: 20, lisShields,
         rwCorrect, rwTotal: 25, rwShields,
-        spkShields, recordedCount,
-        totalShields,
-        allReview: [...lisReview, ...rwReview]
+        spkShields, totalShields,
+        lisReview, rwReview
     };
 
     startersTestSubmitted = true;
     saveStartersProgress();
 
     if (showModal) showStartersResultsModal();
+    return startersTestScoreResult;
 }
 
 function showStartersResultsModal() {
-    const modal = document.getElementById('starters-result-modal');
-    const body = document.getElementById('starters-result-body');
-    if (!modal || !body) return;
-
     const res = startersTestScoreResult;
     if (!res) return;
 
-    let awardTitle = "Starters Explorer (Đang tiến bộ)";
-    let awardBadge = "🌱 Khởi động vui vẻ";
-    if (res.totalShields >= 14) {
-        awardTitle = "Starters Champion (Xuất Sắc Tuyệt Đối)";
-        awardBadge = "🏆 Xuất sắc đạt chuẩn Pre-A1";
-    } else if (res.totalShields >= 12) {
-        awardTitle = "Starters Expert (Rất Tốt)";
-        awardBadge = "🌟 Sẵn sàng lên cấp độ Movers";
-    } else if (res.totalShields >= 9) {
-        awardTitle = "Good Explorer (Đạt Chuẩn)";
-        awardBadge = "⭐ Nắm vững từ vựng cơ bản";
+    function renderShieldIcons(count) {
+        let s = '';
+        for (let i = 0; i < count; i++) s += '🛡️ ';
+        for (let i = count; i < 5; i++) s += '⚪ ';
+        return s.trim();
     }
 
-    const reviewItemsHtml = res.allReview.map(item => `
-        <div class="p-3.5 rounded-2xl border text-xs transition ${
-            item.isCorrect ? 'bg-emerald-50/70 border-emerald-200' : 'bg-rose-50/70 border-rose-200'
-        }">
-            <div class="flex items-center justify-between pb-1.5 border-b border-slate-100">
-                <span class="font-extrabold ${item.isCorrect ? 'text-emerald-700' : 'text-rose-700'}">
-                    ${item.isCorrect ? '✓ Đúng' : '✗ Chưa đúng'} • ${item.skill} Part ${item.part} (Câu ${item.id})
+    let reviewHtml = '';
+    const allReview = [...res.lisReview, ...res.rwReview];
+    reviewHtml = allReview.map((item, idx) => `
+        <div class="p-3 rounded-xl border ${item.isCorrect ? 'bg-emerald-50/60 border-emerald-200' : 'bg-rose-50/60 border-rose-200'} space-y-1 text-xs">
+            <div class="flex items-center justify-between">
+                <span class="font-extrabold uppercase tracking-wide ${item.isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
+                    #${item.id} • ${item.skill.toUpperCase()} (Part ${item.part})
+                </span>
+                <span class="px-2 py-0.5 rounded-full font-black text-[10px] ${item.isCorrect ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">
+                    ${item.isCorrect ? 'CORRECT ✓' : 'INCORRECT ✗'}
                 </span>
             </div>
             <p class="font-bold text-slate-800 mt-1">${escapeHtml(item.prompt)}</p>
             <div class="flex flex-wrap items-center gap-3 mt-1.5 text-[11px]">
                 <span class="${item.isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
-                    <strong>Bé chọn:</strong> ${escapeHtml(item.userAns)}
+                    <strong>Your Answer:</strong> ${escapeHtml(item.userAns)}
                 </span>
                 ${!item.isCorrect ? `
                     <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded">
-                        <strong>Đáp án đúng:</strong> ${escapeHtml(item.correctAns)}
+                        <strong>Correct Answer:</strong> ${escapeHtml(item.correctAns)}
                     </span>
                 ` : ''}
             </div>
@@ -1644,51 +1812,75 @@ function showStartersResultsModal() {
         </div>
     `).join('');
 
-    body.innerHTML = `
-        <!-- HEADER KHIÊN CAMBRIDGE -->
-        <div class="text-center pb-4 border-b border-slate-200">
-            <span class="text-3xl block mb-1">🛡️</span>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900">BẢNG KẾT QUẢ CAMBRIDGE STARTERS</h2>
-            <p class="text-xs text-indigo-600 font-bold mt-0.5">${startersProfileData.starters_tests[activeStartersTestId]?.book_title} • ${startersProfileData.starters_tests[activeStartersTestId]?.test_title}</p>
-        </div>
+    let modal = document.getElementById('starters-result-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'starters-result-modal';
+        modal.className = "fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6";
+        document.body.appendChild(modal);
+    }
 
-        <!-- TOTAL SHIELDS DISPLAY -->
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 py-4">
-            <div class="p-4 rounded-3xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-500 text-white flex flex-col items-center justify-center text-center shadow-lg sm:col-span-1">
-                <span class="text-[10px] font-black uppercase tracking-wider text-amber-100">TỔNG SỐ KHIÊN</span>
-                <div class="text-4xl font-black font-mono my-0.5">${res.totalShields} / 15</div>
-                <span class="text-[11px] font-black bg-white/20 px-2.5 py-0.5 rounded-full">${awardBadge}</span>
+    modal.innerHTML = `
+        <div class="w-full max-w-3xl max-h-[90vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <!-- MODAL HEADER -->
+            <div class="p-5 sm:p-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white flex items-center justify-between">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-black">CAMBRIDGE STARTERS OFFICIAL SCORE REPORT</h2>
+                    <p class="text-xs text-amber-100 font-bold mt-0.5">
+                        ${startersProfileData.starters_tests[activeStartersTestId]?.book_title} • ${startersProfileData.starters_tests[activeStartersTestId]?.test_title}
+                    </p>
+                </div>
+                <button onclick="closeStartersResultModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold flex items-center justify-center transition">✕</button>
             </div>
 
-            <div class="sm:col-span-3 grid grid-cols-3 gap-2">
-                <div class="p-3 rounded-2xl bg-indigo-50 border border-indigo-200 flex flex-col justify-between items-center text-center">
-                    <span class="text-[10px] font-black text-indigo-700 uppercase">🎧 Listening</span>
-                    <div class="text-2xl font-black text-indigo-950 font-mono my-1">${res.lisShields} 🛡️</div>
-                    <span class="text-[10px] text-indigo-600 font-bold">${res.lisCorrect}/20 câu đúng</span>
+            <!-- MODAL CONTENT SCROLLABLE -->
+            <div class="p-5 sm:p-6 overflow-y-auto flex-1 custom-scroll space-y-6">
+                <!-- SHIELDS SUMMARY CARD -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 text-center space-y-3">
+                    <span class="text-xs font-black uppercase text-amber-900 tracking-wider">Cambridge Pre-A1 Starters Shields:</span>
+                    <div class="text-4xl sm:text-5xl font-black text-amber-600 flex items-center justify-center gap-2">
+                        <span>🛡️</span> <span>${res.totalShields}</span> <span class="text-2xl sm:text-3xl text-slate-400">/ 15</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-left">
+                        <div class="p-3 rounded-xl bg-white/90 border border-amber-200 shadow-2xs">
+                            <span class="text-[11px] font-black uppercase text-indigo-900 block">Listening:</span>
+                            <div class="text-sm font-black text-amber-600 mt-1">${renderShieldIcons(res.lisShields)}</div>
+                            <span class="text-xs text-slate-500 font-bold mt-0.5 block">${res.lisCorrect}/${res.lisTotal} Correct (${res.lisShields}/5 Shields)</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/90 border border-amber-200 shadow-2xs">
+                            <span class="text-[11px] font-black uppercase text-indigo-900 block">Reading & Writing:</span>
+                            <div class="text-sm font-black text-amber-600 mt-1">${renderShieldIcons(res.rwShields)}</div>
+                            <span class="text-xs text-slate-500 font-bold mt-0.5 block">${res.rwCorrect}/${res.rwTotal} Correct (${res.rwShields}/5 Shields)</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/90 border border-amber-200 shadow-2xs">
+                            <span class="text-[11px] font-black uppercase text-indigo-900 block">Speaking:</span>
+                            <div class="text-sm font-black text-amber-600 mt-1">${renderShieldIcons(res.spkShields)}</div>
+                            <span class="text-xs text-slate-500 font-bold mt-0.5 block">Examiner Feedback (${res.spkShields}/5 Shields)</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="p-3 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col justify-between items-center text-center">
-                    <span class="text-[10px] font-black text-amber-800 uppercase">📖 Reading & Writing</span>
-                    <div class="text-2xl font-black text-amber-950 font-mono my-1">${res.rwShields} 🛡️</div>
-                    <span class="text-[10px] text-amber-700 font-bold">${res.rwCorrect}/25 câu đúng</span>
-                </div>
-
-                <div class="p-3 rounded-2xl bg-rose-50 border border-rose-200 flex flex-col justify-between items-center text-center">
-                    <span class="text-[10px] font-black text-rose-800 uppercase">🗣️ Speaking</span>
-                    <div class="text-2xl font-black text-rose-950 font-mono my-1">${res.spkShields} 🛡️</div>
-                    <span class="text-[10px] text-rose-700 font-bold">${res.spkShields === 0 ? 'Chưa ghi âm' : `Đã ghi âm ${res.recordedCount} phần`}</span>
+                <!-- DETAILED QUESTION REVIEW -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-black uppercase text-slate-900">Detailed Answer Review:</h4>
+                        <span class="text-xs font-bold text-slate-500">${allReview.filter(r => r.isCorrect).length}/${allReview.length} Correct</span>
+                    </div>
+                    <div class="space-y-2.5">
+                        ${reviewHtml}
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- REVIEW LIST -->
-        <div class="space-y-3 pt-2">
-            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 flex items-center justify-between">
-                <span>Đáp Án & Giải Thích Chi Tiết Từng Câu Hỏi</span>
-                <span class="text-xs font-bold text-slate-500">Tổng cộng: ${res.allReview.length} câu</span>
-            </h3>
-            <div class="space-y-2 max-h-72 overflow-y-auto custom-scroll pr-1">
-                ${reviewItemsHtml}
+            <!-- MODAL FOOTER -->
+            <div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+                <button onclick="resetStartersTest()" class="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-extrabold transition">
+                    🔄 Reset & Practice Again
+                </button>
+                <button onclick="closeStartersResultModal()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-black shadow-md hover:shadow-lg transition">
+                    Close Report
+                </button>
             </div>
         </div>
     `;
@@ -1702,7 +1894,7 @@ function closeStartersResultModal() {
 }
 
 function resetStartersTest() {
-    if (!confirm("Bạn có muốn đặt lại toàn bộ bài làm của đề thi Starters này để luyện lại từ đầu không?")) return;
+    if (!confirm("Are you sure you want to reset all answers and retake this test?")) return;
     startersUserAnswers = { listening: {}, reading_writing: {}, speaking: {} };
     startersTestSubmitted = false;
     startersTestScoreResult = null;
@@ -1712,7 +1904,7 @@ function resetStartersTest() {
     renderStartersSkillContent();
 }
 
-// PHÍM TẮT BÀN PHÍM: BẤM ESC ĐỂ ĐÓNG BẢNG ĐÁP ÁN HOẶC MODAL XEM ẢNH STARTERS
+// Global ESC key shortcut to close modals
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Esc') {
         const imgModal = document.getElementById('starters-image-modal');

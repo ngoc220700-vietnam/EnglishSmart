@@ -1,6 +1,6 @@
 // =========================================================================
-// CAMBRIDGE IELTS TEST ENGINE (4 KỸ NĂNG: LISTENING, READING, WRITING, SPEAKING)
-// Chấm điểm tự động chuẩn thang điểm IELTS 1.0 - 9.0 & Giải thích chi tiết
+// CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
+// Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
 
 let activeIeltsTestId = 'cam_1';
@@ -19,16 +19,16 @@ let ieltsUserAnswers = {
 
 let ieltsTestSubmitted = false;
 let ieltsTestScoreResult = null;
-let ieltsTimerSeconds = 2 * 3600 + 45 * 60; // 2 giờ 45 phút chuẩn thi thật
+let ieltsTimerSeconds = 2 * 3600 + 45 * 60; // 2 hours 45 minutes official exam duration
 let ieltsTimerInterval = null;
 
 let ieltsAudioPlaying = false;
 let ieltsAudioCurrentTime = 0;
-let ieltsAudioDuration = 1800; // 30 phút
+let ieltsAudioDuration = 1800; // 30 minutes
 let ieltsAudioInterval = null;
 let ieltsAudioSpeed = 1.0;
 
-// Bộ ghi âm Speaking (MediaRecorder)
+// Speaking Voice Recorder (MediaRecorder)
 let mediaRecorder = null;
 let audioChunks = [];
 let recordedAudioUrls = {};
@@ -40,7 +40,7 @@ const GEMINI_API_KEY_STORAGE = 'smart_gemini_api_key';
 let isGeminiEvaluating = false;
 let ieltsAiWritingResults = {}; // { [testId]: { task_1: result, task_2: result } }
 
-// Khởi tạo và khôi phục bài làm từ localStorage
+// Initialize and restore test progress from localStorage
 function initIeltsTestEngine() {
     try {
         const saved = localStorage.getItem('smart_ielts_answers_' + activeIeltsTestId);
@@ -78,7 +78,7 @@ function saveIeltsProgress() {
     } catch (e) {}
 }
 
-// Đồng hồ đếm ngược thời gian thi
+// Official Test Countdown Timer
 function startIeltsTimer() {
     if (ieltsTimerInterval) clearInterval(ieltsTimerInterval);
     updateIeltsTimerDisplay();
@@ -99,7 +99,7 @@ function updateIeltsTimerDisplay() {
     el.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 }
 
-// Chuyển đổi đề thi
+// Switch Test
 function switchIeltsTest(testId) {
     if (!ieltsProfileData.ielts_tests[testId]) return;
     activeIeltsTestId = testId;
@@ -122,11 +122,11 @@ function switchIeltsTest(testId) {
     renderIeltsTestView();
 }
 
-// Chuyển đổi giữa 4 kỹ năng (Listening, Reading, Writing, Speaking)
+// Switch between 4 skills (Listening, Reading, Writing, Speaking)
 function switchIeltsSkill(skill) {
     activeIeltsSkill = skill;
     
-    // Cập nhật giao diện nút kỹ năng
+    // Update skill navigation buttons
     const skills = ['listening', 'reading', 'writing', 'speaking'];
     skills.forEach(s => {
         const btn = document.getElementById('btn-ielts-skill-' + s);
@@ -142,7 +142,7 @@ function switchIeltsSkill(skill) {
     renderIeltsSkillContent();
 }
 
-// Render toàn bộ giao diện bài thi IELTS
+// Render entire IELTS test interface
 function renderIeltsTestView() {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     if (!test) return;
@@ -158,7 +158,7 @@ function renderIeltsTestView() {
     switchIeltsSkill(activeIeltsSkill);
 }
 
-// Render nội dung của kỹ năng đang chọn
+// Render active skill content
 function renderIeltsSkillContent() {
     const container = document.getElementById('ielts-content-area');
     if (!container) return;
@@ -225,10 +225,10 @@ function renderQuestionPalette(skill, totalQuestions = 40) {
         <div class="mt-3 p-3 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs shrink-0">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2 mb-2.5 border-b border-slate-100">
                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                    <span>🧭</span> <span>Bảng câu hỏi (${skill === 'listening' ? 'Listening 40 câu' : 'Reading 40 câu'}):</span>
+                    <span>🧭</span> <span>Question Palette (${skill === 'listening' ? 'Listening 40 Questions' : 'Reading 40 Questions'}):</span>
                 </span>
                 <span id="ielts-palette-counter-${skill}" class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
-                    Đã làm: ${answeredCount} / ${totalQuestions} câu
+                    Answered: ${answeredCount} / ${totalQuestions} questions
                 </span>
             </div>
             <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scroll">
@@ -263,7 +263,7 @@ function renderQuestionPalette(skill, totalQuestions = 40) {
         paletteHtml += `
             <button id="palette-btn-${skill}-${i}" onclick="jumpToIeltsQuestion('${skill}', ${i})" 
                     class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs flex items-center justify-center border transition active:scale-95 ${btnClass}"
-                    title="Chuyển đến câu ${i}">
+                    title="Jump to Question ${i}">
                 ${i}
             </button>
         `;
@@ -293,12 +293,12 @@ function updatePaletteAnsweredCounter(skill) {
     if (counterEl) {
         const answers = ieltsUserAnswers[skill] || {};
         const count = Object.keys(answers).filter(k => answers[k] && answers[k].toString().trim().length > 0).length;
-        counterEl.textContent = `Đã làm: ${count} / 40 câu`;
+        counterEl.textContent = `Answered: ${count} / 40 questions`;
     }
 }
 
 // =========================================================================
-// 1. GIAO DIỆN & LOGIC LISTENING
+// 1. LISTENING INTERFACE & LOGIC
 // =========================================================================
 function renderIeltsListeningView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
@@ -322,13 +322,13 @@ function renderIeltsListeningView(container) {
                         <input type="text" 
                                value="${escapeHtml(userAns)}" 
                                oninput="handleIeltsAnswerChange('listening', ${q.id}, this.value)"
-                               placeholder="Điền từ/số vào đây..." 
+                               placeholder="Type word/number here..." 
                                class="flex-1 max-w-xs px-3 py-1.5 rounded-xl border text-xs sm:text-sm font-semibold transition ${
                                    ieltsTestSubmitted 
                                    ? (isCorrect ? 'border-emerald-500 bg-emerald-50 text-emerald-800 ring-2 ring-emerald-200' : 'border-rose-500 bg-rose-50 text-rose-800 ring-2 ring-rose-200')
                                    : 'border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 bg-white'
                                }">
-                        ${ieltsTestSubmitted ? `<span class="text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đ/A: ' + q.correct_answers[0] + ')'}</span>` : ''}
+                        ${ieltsTestSubmitted ? `<span class="text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Correct' : '✗ Incorrect (Answer: ' + q.correct_answers[0] + ')'}</span>` : ''}
                     </div>
                 `;
             } else if (q.type === 'choice') {
@@ -352,7 +352,7 @@ function renderIeltsListeningView(container) {
                 });
                 inputWidget += `</div>`;
                 if (ieltsTestSubmitted) {
-                    inputWidget += `<div class="mt-1 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đáp án đúng: ' + q.correct_answers[0] + ')'}</div>`;
+                    inputWidget += `<div class="mt-1 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Correct' : '✗ Incorrect (Correct Answer: ' + q.correct_answers[0] + ')'}</div>`;
                 }
             }
 
@@ -366,7 +366,7 @@ function renderIeltsListeningView(container) {
                             ${ieltsTestSubmitted ? `
                                 <div class="mt-2.5 p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 leading-relaxed">
                                     <div class="font-bold text-amber-800 mb-1 flex items-center gap-1">
-                                        <span>🔍</span> <span>Dẫn chứng & Giải thích:</span>
+                                        <span>🔍</span> <span>Evidence & Explanation:</span>
                                     </div>
                                     <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence || ''}"</p>
                                     <p>${q.explanation || ''}</p>
@@ -411,8 +411,8 @@ function renderIeltsListeningView(container) {
                     </button>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-extrabold text-xs sm:text-sm text-white">IELTS Audio Player (Bản Chuẩn)</span>
-                            <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 px-2 py-0.5 rounded-full">30 Phút</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-white">IELTS Audio Player (Official Standard)</span>
+                            <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 px-2 py-0.5 rounded-full">30 Minutes</span>
                         </div>
                         <div class="flex items-center gap-2 text-xs text-indigo-200/80 font-mono mt-0.5">
                             <span id="ielts-time-cur">00:00</span> / <span id="ielts-time-dur">30:00</span>
@@ -427,8 +427,8 @@ function renderIeltsListeningView(container) {
 
                 <!-- CONTROLS: JUMP & SPEED -->
                 <div class="flex items-center gap-2 self-end md:self-auto">
-                    <button onclick="skipIeltsAudio(-10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition" title="Tua lại 10 giây">⏪ -10s</button>
-                    <button onclick="skipIeltsAudio(10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition" title="Tua tới 10 giây">⏩ +10s</button>
+                    <button onclick="skipIeltsAudio(-10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition" title="Rewind 10 seconds">⏪ -10s</button>
+                    <button onclick="skipIeltsAudio(10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition" title="Forward 10 seconds">⏩ +10s</button>
                     <button id="ielts-speed-btn" onclick="toggleIeltsAudioSpeed()" class="px-2.5 py-1.5 rounded-xl bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 text-xs font-bold transition">1.0x</button>
                 </div>
             </div>
@@ -436,7 +436,7 @@ function renderIeltsListeningView(container) {
             <!-- LISTENING PART TABS (PART 1, 2, 3, 4, ALL) -->
             <div class="flex flex-wrap items-center justify-between pb-2.5 mb-3 border-b border-slate-200 gap-2 shrink-0">
                 <div class="flex flex-wrap items-center gap-1.5">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Phần nghe:</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Listening Part:</span>
                     ${[1, 2, 3, 4].map(pNum => {
                         const qRange = pNum === 1 ? 'Q1-10' : pNum === 2 ? 'Q11-20' : pNum === 3 ? 'Q21-30' : 'Q31-40';
                         const isAct = activeListeningPart === pNum;
@@ -455,11 +455,11 @@ function renderIeltsListeningView(container) {
                         ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-200' 
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                     }">
-                        Tất cả (Q1-40)
+                        All Questions (Q1-40)
                     </button>
                 </div>
                 <div class="text-xs font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
-                    40 Câu hỏi • 30 Phút
+                    40 Questions • 30 Minutes
                 </div>
             </div>
 
@@ -474,7 +474,7 @@ function renderIeltsListeningView(container) {
     `;
 }
 
-// Xử lý Audio Player (HTML5 / Speech Synthesis Backup)
+// Audio Player Controller
 function toggleIeltsAudio() {
     ieltsAudioPlaying = !ieltsAudioPlaying;
     const btn = document.getElementById('ielts-play-btn');
@@ -491,7 +491,7 @@ function toggleIeltsAudio() {
             }
         }, 1000);
 
-        // Đọc đoạn mở đầu giả lập âm thanh phòng thi
+        // Play introductory exam room audio
         if ('speechSynthesis' in window && ieltsAudioCurrentTime < 10) {
             const ut = new SpeechSynthesisUtterance("You will hear a number of different recordings and you will have to answer questions on what you hear. Section 1.");
             ut.lang = 'en-GB';
@@ -539,7 +539,7 @@ function toggleTranscript(id) {
 }
 
 // =========================================================================
-// 2. GIAO DIỆN & LOGIC READING (SPLIT-SCREEN COMPUTER-DELIVERED IELTS)
+// 2. READING INTERFACE & LOGIC (SPLIT-SCREEN COMPUTER-DELIVERED IELTS)
 // =========================================================================
 function renderIeltsReadingView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
@@ -573,7 +573,7 @@ function renderIeltsReadingView(container) {
                 </div>
             `;
             if (ieltsTestSubmitted) {
-                inputWidget += `<div class="mt-1.5 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đáp án đúng: ' + q.correct_answers[0] + ')'}</div>`;
+                inputWidget += `<div class="mt-1.5 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Correct' : '✗ Incorrect (Correct Answer: ' + q.correct_answers[0] + ')'}</div>`;
             }
         } else if (q.type === 'choice') {
             inputWidget = `<div class="space-y-1.5 mt-2" id="choice-group-reading-${q.id}">`;
@@ -591,17 +591,17 @@ function renderIeltsReadingView(container) {
             });
             inputWidget += `</div>`;
             if (ieltsTestSubmitted) {
-                inputWidget += `<div class="mt-1.5 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đáp án đúng: ' + q.correct_answers[0] + ')'}</div>`;
+                inputWidget += `<div class="mt-1.5 text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Correct' : '✗ Incorrect (Correct Answer: ' + q.correct_answers[0] + ')'}</div>`;
             }
         } else if (q.type === 'fill') {
             inputWidget = `
                 <div class="mt-2 flex items-center gap-2">
-                    <input type="text" value="${escapeHtml(userAns)}" oninput="handleIeltsAnswerChange('reading', ${q.id}, this.value)" placeholder="Nhập câu trả lời..." class="flex-1 max-w-xs px-3 py-1.5 rounded-xl border text-xs font-semibold ${
+                    <input type="text" value="${escapeHtml(userAns)}" oninput="handleIeltsAnswerChange('reading', ${q.id}, this.value)" placeholder="Type answer here..." class="flex-1 max-w-xs px-3 py-1.5 rounded-xl border text-xs font-semibold ${
                         ieltsTestSubmitted 
                         ? (isCorrect ? 'border-emerald-500 bg-emerald-50 text-emerald-800' : 'border-rose-500 bg-rose-50 text-rose-800')
                         : 'border-slate-300 focus:border-indigo-500 bg-white'
                     }">
-                    ${ieltsTestSubmitted ? `<span class="text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Đúng' : '✗ Sai (Đ/A: ' + q.correct_answers[0] + ')'}</span>` : ''}
+                    ${ieltsTestSubmitted ? `<span class="text-xs font-bold ${isCorrect ? 'text-emerald-600' : 'text-rose-600'}">${isCorrect ? '✓ Correct' : '✗ Incorrect (Answer: ' + q.correct_answers[0] + ')'}</span>` : ''}
                 </div>
             `;
         }
@@ -616,7 +616,7 @@ function renderIeltsReadingView(container) {
                         ${ieltsTestSubmitted ? `
                             <div class="mt-2.5 p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 leading-relaxed">
                                 <div class="font-bold text-amber-800 mb-1 flex items-center gap-1">
-                                    <span>🔍</span> <span>Dẫn chứng bài đọc:</span>
+                                    <span>🔍</span> <span>Reading Evidence:</span>
                                 </div>
                                 <p class="italic text-slate-700 mb-1 bg-white/70 p-1.5 rounded border border-amber-100/60">"${q.evidence || ''}"</p>
                                 <p>${q.explanation || ''}</p>
@@ -636,7 +636,7 @@ function renderIeltsReadingView(container) {
             <!-- PASSAGE TABS (1, 2, 3) -->
             <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-200 shrink-0">
                 <div class="flex items-center gap-1.5">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Chọn bài đọc:</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 hidden sm:inline">Select Passage:</span>
                     ${red.passages.map((p, idx) => {
                         const qRange = idx === 0 ? 'Q1-13' : idx === 1 ? 'Q14-26' : 'Q27-40';
                         return `
@@ -651,7 +651,7 @@ function renderIeltsReadingView(container) {
                     }).join('')}
                 </div>
                 <div class="text-xs font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
-                    40 Câu hỏi • 60 Phút
+                    40 Questions • 60 Minutes
                 </div>
             </div>
 
@@ -683,7 +683,7 @@ function switchIeltsPassage(num) {
 }
 
 // =========================================================================
-// 3. GIAO DIỆN & LOGIC WRITING (TASK 1 & TASK 2) + GEMINI AI EXAMINER
+// 3. WRITING INTERFACE & LOGIC (TASK 1 & TASK 2) + GEMINI AI EXAMINER
 // =========================================================================
 
 function getGeminiApiKey() {
@@ -696,7 +696,7 @@ function openGeminiApiKeyModal() {
     const status = document.getElementById('gemini-key-status');
     if (input) input.value = getGeminiApiKey();
     if (status) {
-        status.textContent = getGeminiApiKey() ? "✅ Đã có Google Gemini API Key lưu trên thiết bị" : "Chưa có API Key";
+        status.textContent = getGeminiApiKey() ? "✅ Google Gemini API Key is saved on this device" : "No API Key configured";
         status.className = getGeminiApiKey() ? "text-[11px] font-bold min-h-[16px] text-emerald-600" : "text-[11px] font-bold min-h-[16px] text-amber-600";
     }
     if (modal) modal.classList.remove('hidden');
@@ -721,19 +721,19 @@ function saveGeminiApiKeyFromModal() {
     const key = input.value.trim();
     if (!key) {
         if (status) {
-            status.textContent = "❌ Vui lòng dán API Key của Google Gemini!";
+            status.textContent = "❌ Please enter your Google Gemini API Key!";
             status.className = "text-[11px] font-bold min-h-[16px] text-rose-500";
         }
         return;
     }
     localStorage.setItem(GEMINI_API_KEY_STORAGE, key);
     if (status) {
-        status.textContent = "✅ Đã lưu Google Gemini API Key thành công!";
+        status.textContent = "✅ Google Gemini API Key saved successfully!";
         status.className = "text-[11px] font-bold min-h-[16px] text-emerald-600";
     }
     setTimeout(() => {
         closeGeminiApiKeyModal();
-        alert("✅ Đã lưu Google Gemini API Key thành công! Bây giờ bạn có thể bấm nút AI Examiner để chấm bài viết.");
+        alert("✅ Google Gemini API Key saved successfully! You can now click the AI Examiner button to evaluate your essay.");
     }, 400);
 }
 
@@ -745,8 +745,8 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
         return `
             <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center text-xs text-slate-500">
                 <span class="text-base block mb-1">🤖</span>
-                <p class="font-bold text-slate-700">Chưa có kết quả chấm điểm của AI cho ${taskKey === 'task_1' ? 'Task 1' : 'Task 2'}</p>
-                <p class="text-[11px] text-slate-500 mt-0.5">Viết bài xong và bấm <strong>"AI Examiner Chấm & Sửa Bài"</strong> để nhận bảng điểm 4 tiêu chí & sửa lỗi chi tiết.</p>
+                <p class="font-bold text-slate-700">No AI evaluation result yet for ${taskKey === 'task_1' ? 'Task 1' : 'Task 2'}</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Complete your essay and click <strong>"AI Examiner Evaluation"</strong> to receive Band scores across all 4 criteria.</p>
             </div>
         `;
     }
@@ -768,15 +768,15 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
                         <div class="flex items-center gap-1.5">
                             <span class="text-xs font-black uppercase tracking-wider text-amber-300">IELTS Writing Band Score</span>
                             <span class="text-[10px] font-bold bg-indigo-500/30 text-indigo-200 px-2 py-0.5 rounded-full border border-indigo-400/30">
-                                ${result.is_builtin_engine ? '⚡ AI Examiner (Tích Hợp Sẵn)' : '🤖 Gemini 1.5 Flash'}
+                                ${result.is_builtin_engine ? '⚡ AI Examiner (Built-in Engine)' : '🤖 Gemini 1.5 Flash'}
                             </span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-extrabold text-white mt-0.5">Bảng Điểm & Nhận Xét 4 Tiêu Chí</h4>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-white mt-0.5">Band Score & 4-Criteria Assessment</h4>
                     </div>
                 </div>
                 ${result.general_advice ? `
                     <div class="text-[11px] text-amber-200 bg-amber-500/10 border border-amber-400/30 px-3 py-1.5 rounded-xl max-w-xs">
-                        💡 <strong>Lời khuyên:</strong> ${escapeHtml(result.general_advice)}
+                        💡 <strong>Strategy Advice:</strong> ${escapeHtml(result.general_advice)}
                     </div>
                 ` : ''}
             </div>
@@ -812,16 +812,16 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
             <!-- DETAILED ERRORS & CORRECTIONS -->
             ${errors.length > 0 ? `
                 <div class="space-y-2 pt-1">
-                    <span class="text-xs font-extrabold text-amber-300 block">🔍 Các Lỗi Cần Sửa (${errors.length} lỗi):</span>
+                    <span class="text-xs font-extrabold text-amber-300 block">🔍 Identified Issues (${errors.length} issues):</span>
                     <div class="space-y-2 max-h-48 overflow-y-auto custom-scroll pr-1 text-xs">
                         ${errors.map(err => `
                             <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 space-y-1">
                                 <div class="flex items-start gap-2">
-                                    <span class="text-rose-400 font-bold shrink-0">✗ Sai:</span>
+                                    <span class="text-rose-400 font-bold shrink-0">✗ Incorrect:</span>
                                     <span class="line-through text-rose-300 font-mono text-[11px]">${escapeHtml(err.original)}</span>
                                 </div>
                                 <div class="flex items-start gap-2">
-                                    <span class="text-emerald-400 font-bold shrink-0">✓ Đúng:</span>
+                                    <span class="text-emerald-400 font-bold shrink-0">✓ Correct:</span>
                                     <span class="text-emerald-300 font-mono font-bold text-[11px]">${escapeHtml(err.corrected)}</span>
                                 </div>
                                 <p class="text-[11px] text-slate-300 italic bg-white/5 p-1 rounded">💡 ${escapeHtml(err.explanation)}</p>
@@ -829,13 +829,13 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
                         `).join('')}
                     </div>
                 </div>
-            ` : '<p class="text-xs text-emerald-400 font-bold">🎉 Bài viết không có lỗi ngữ pháp lớn!</p>'}
+            ` : '<p class="text-xs text-emerald-400 font-bold">🎉 No critical grammatical errors detected!</p>'}
 
             <!-- IMPROVED BAND 8.5+ VERSION -->
             ${result.improved_version ? `
                 <div class="pt-2 border-t border-indigo-700/50">
                     <button onclick="toggleTranscript('ai-improved-${taskKey}')" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-xs shadow-sm flex items-center justify-between transition">
-                        <span>🌟 Xem Bài Viết Nâng Cấp Band 8.5+ Từ Ý Tưởng Của Bạn</span>
+                        <span>🌟 View Band 8.5+ Enhanced Model Essay</span>
                         <span>▼</span>
                     </button>
                     <div id="ai-improved-${taskKey}" class="hidden mt-2.5 p-3.5 rounded-2xl bg-emerald-950/80 border border-emerald-500/50 text-xs leading-relaxed text-emerald-100 space-y-2 max-h-60 overflow-y-auto custom-scroll">
@@ -844,7 +844,7 @@ function renderIeltsAiWritingCard(taskKey, result = null) {
                         </div>
                         ${upgrades.length > 0 ? `
                             <div class="pt-1.5">
-                                <span class="font-bold text-amber-300 text-[11px] block mb-1">💎 Từ vựng / Collocations học thuật nâng tầm bài viết:</span>
+                                <span class="font-bold text-amber-300 text-[11px] block mb-1">💎 Key Academic Collocations & Vocabulary:</span>
                                 <div class="flex flex-wrap gap-1">
                                     ${upgrades.map(u => `<span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded text-[10px] font-bold">${escapeHtml(u)}</span>`).join('')}
                                 </div>
@@ -869,7 +869,7 @@ function evaluateWritingLocally(taskNum, studentEssay, task) {
     else if (wordCount >= minWords * 0.5) trScore = 5.0;
     else trScore = 4.0;
 
-    // Kiểm tra cấu trúc đoạn văn (paragraphing)
+    // Check paragraphing structure
     const paragraphs = studentEssay.split(/\n+/).filter(p => p.trim().length > 0);
     if (paragraphs.length >= 3 && wordCount >= minWords) trScore += 0.5;
 
@@ -948,26 +948,26 @@ function evaluateWritingLocally(taskNum, studentEssay, task) {
             grammatical_accuracy: graScore
         },
         criteria_feedback: {
-            task_response: `Bài viết đạt ${wordCount}/${minWords} từ (${wordCount >= minWords ? 'đã đáp ứng yêu cầu độ dài' : 'chưa đủ số từ quy định'}). ${paragraphs.length >= 3 ? 'Bố cục bài có chia đoạn rõ ràng.' : 'Cần phân bổ cấu trúc thành ít nhất 3-4 đoạn văn (Mở bài, Thân bài 1, Thân bài 2, Kết luận).'}` ,
-            coherence_cohesion: `Đã sử dụng ${linkCount} từ/cụm từ liên kết học thuật. ${linkCount >= 4 ? 'Mạch lạc tốt, luồng tư duy chuyển tiếp tự nhiên giữa các câu.' : 'Cần bổ sung thêm các liên từ chỉ sự tương phản (However, In contrast) và bổ sung (Furthermore, In addition) để tăng tính chặt chẽ.'}`,
-            lexical_resource: `Mức độ đa dạng từ vựng: ${(varietyRatio * 100).toFixed(0)}%. ${awlCount > 0 ? `Đã dùng tốt các thuật ngữ học thuật như: ${matchedAwl.slice(0, 4).join(', ')}.` : 'Nên thay thế các từ ngữ thông dụng bằng từ vựng mang tính học thuật cao hơn (Academic Collocations).'}` ,
-            grammatical_accuracy: `Đã kết hợp câu đơn và câu phức (${complexCount} mệnh đề phức). Cần tiếp tục duy trì việc dùng mệnh đề quan hệ và các cấu trúc bị động để nâng cao tính đa dạng ngữ pháp.`
+            task_response: `Essay contains ${wordCount}/${minWords} words (${wordCount >= minWords ? 'meets the required word count' : 'below minimum word count'}). ${paragraphs.length >= 3 ? 'Clear paragraphing structure with well-developed ideas.' : 'Organize your response into at least 3-4 clear paragraphs (Introduction, Body 1, Body 2, Conclusion).'}` ,
+            coherence_cohesion: `Incorporated ${linkCount} academic cohesive devices. ${linkCount >= 4 ? 'Good logical flow and natural progression between sentences.' : 'Incorporate more transition markers (However, In contrast, Furthermore) to enhance connectivity.'}`,
+            lexical_resource: `Lexical diversity ratio: ${(varietyRatio * 100).toFixed(0)}%. ${awlCount > 0 ? `Good use of academic terminology such as: ${matchedAwl.slice(0, 4).join(', ')}.` : 'Replace informal words with higher-level academic collocations.'}` ,
+            grammatical_accuracy: `Good variety of simple and complex sentences (${complexCount} complex clauses). Continue utilizing relative clauses and passive constructions to boost grammatical range.`
         },
         detailed_errors: [
             {
-                original: "Sử dụng từ vựng chung chung hoặc lặp từ",
-                corrected: "Áp dụng các từ vựng học thuật nâng cao từ bài mẫu Band 9.0 bên dưới",
-                explanation: "Trong IELTS Writing, giám khảo đánh giá rất cao việc paraphrase và sử dụng Collocations tự nhiên."
+                original: "Overuse of informal vocabulary or repetitive phrasing",
+                corrected: "Apply sophisticated academic collocations from the Band 9.0 model answer below",
+                explanation: "In IELTS Writing, examiners look for precise academic paraphrasing and natural collocations."
             }
         ],
         improved_version: sampleText,
         key_upgrades: [
-            "illustrates significant changes (minh họa các biến động rõ rệt)",
-            "a substantial proportion of (một tỷ lệ đáng kể)",
-            "plays a pivotal role (đóng vai trò nòng cốt)",
-            "witnessed a dramatic surge (chứng kiến sự tăng trưởng vượt bậc)"
+            "illustrates significant changes",
+            "a substantial proportion of",
+            "plays a pivotal role",
+            "witnessed a dramatic surge"
         ],
-        general_advice: `Bạn đã hoàn thành tốt bài viết. Hãy đối chiếu với bài viết mẫu chuẩn Band 9.0 bên dưới để học cách dẫn dắt luận điểm và cấu trúc câu ăn điểm của chuyên gia Cambridge!`
+        general_advice: `Great effort on completing your response. Compare your essay with the Band 9.0 model answer below to analyze cohesive devices and syntactic structures.`
     };
 }
 
@@ -977,7 +977,7 @@ function applyWritingEvaluationResult(taskKey, parsedResult) {
     }
     ieltsAiWritingResults[activeIeltsTestId][taskKey] = parsedResult;
 
-    // Lưu điểm AI vào answers
+    // Save AI scores to answers
     if (!ieltsUserAnswers.writing) ieltsUserAnswers.writing = {};
     ieltsUserAnswers.writing[taskKey + '_ai_score'] = parsedResult.overall_band;
     saveIeltsProgress();
@@ -998,7 +998,7 @@ async function evaluateWritingWithGemini(taskNum) {
     const wordCount = countWords(studentEssay);
 
     if (wordCount < 25) {
-        alert("⚠️ Bài viết của bạn hiện tại có " + wordCount + " từ (quá ngắn). Vui lòng viết ít nhất 25 - 30 từ để Giám khảo AI có thể phân tích và chấm điểm chuẩn xác!");
+        alert("⚠️ Your essay currently contains " + wordCount + " words (too short). Please write at least 25-30 words so the AI Examiner can accurately evaluate your essay!");
         return;
     }
 
@@ -1007,7 +1007,7 @@ async function evaluateWritingWithGemini(taskNum) {
 
     if (evalBtn) {
         evalBtn.disabled = true;
-        evalBtn.innerHTML = `<span>⏳</span> <span>Giám khảo AI đang chấm điểm & phân tích...</span>`;
+        evalBtn.innerHTML = `<span>⏳</span> <span>AI Examiner is evaluating & analyzing essay...</span>`;
     }
 
     if (evalContainer) {
@@ -1015,23 +1015,23 @@ async function evaluateWritingWithGemini(taskNum) {
             <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 animate-pulse text-xs text-indigo-950 space-y-2">
                 <div class="flex items-center gap-2">
                     <span class="w-3 h-3 rounded-full bg-indigo-600 animate-ping"></span>
-                    <span class="font-extrabold text-indigo-900">Giám khảo IELTS AI đang phân tích bài thi...</span>
+                    <span class="font-extrabold text-indigo-900">IELTS AI Examiner is analyzing your submission...</span>
                 </div>
-                <p class="text-slate-600">Đang đối chiếu 4 tiêu chí: Task Response, Coherence & Cohesion, Lexical Resource, Grammatical Accuracy...</p>
+                <p class="text-slate-600">Evaluating 4 official criteria: Task Achievement, Coherence & Cohesion, Lexical Resource, Grammatical Accuracy...</p>
             </div>
         `;
     }
 
     const apiKey = getGeminiApiKey();
 
-    // TỐI ƯU HÓA: Nếu không có API Key, tự động dùng bộ phân tích IELTS Academic NLP nội bộ tức thì (Zero-Setup)
+    // Fallback to built-in IELTS Academic NLP evaluation if no API Key provided
     if (!apiKey) {
         setTimeout(() => {
             const result = evaluateWritingLocally(taskNum, studentEssay, task);
             applyWritingEvaluationResult(taskKey, result);
             if (evalBtn) {
                 evalBtn.disabled = false;
-                evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>`;
+                evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Evaluation</span>`;
             }
         }, 600);
         return;
@@ -1065,24 +1065,24 @@ Respond ONLY with a valid JSON object matching this exact format:
     "grammatical_accuracy": 6.5
   },
   "criteria_feedback": {
-    "task_response": "Nhận xét chi tiết tiếng Việt về Task Response...",
-    "coherence_cohesion": "Nhận xét chi tiết tiếng Việt về Coherence & Cohesion...",
-    "lexical_resource": "Nhận xét chi tiết tiếng Việt về Lexical Resource...",
-    "grammatical_accuracy": "Nhận xét chi tiết tiếng Việt về Grammatical Range & Accuracy..."
+    "task_response": "Detailed academic evaluation of Task Response...",
+    "coherence_cohesion": "Detailed academic evaluation of Coherence & Cohesion...",
+    "lexical_resource": "Detailed academic evaluation of Lexical Resource...",
+    "grammatical_accuracy": "Detailed academic evaluation of Grammatical Range & Accuracy..."
   },
   "detailed_errors": [
     {
-      "original": "cụm từ hoặc câu học sinh viết chưa chuẩn",
-      "corrected": "cách viết sửa lại chuẩn ngữ pháp hoặc từ vựng",
-      "explanation": "giải thích quy tắc ngữ pháp hoặc collocation bằng tiếng Việt"
+      "original": "original student phrase requiring improvement",
+      "corrected": "improved version with accurate grammar or lexical choice",
+      "explanation": "concise explanation of grammar rule or collocation"
     }
   ],
-  "improved_version": "Toàn bộ bài viết hoàn chỉnh được viết lại mượt mà, đạt chuẩn Band 8.5+ nâng tầm từ chính ý tưởng của học sinh...",
+  "improved_version": "Full improved essay written at Band 8.5+ standard based on the student's original arguments...",
   "key_upgrades": [
-    "Từ/cụm từ học thuật đắt giá 1 (nghĩa tiếng Việt)",
-    "Từ/cụm từ học thuật đắt giá 2 (nghĩa tiếng Việt)"
+    "Key academic collocation 1 (definition and usage)",
+    "Key academic collocation 2 (definition and usage)"
   ],
-  "general_advice": "Lời khuyên chiến lược bằng tiếng Việt để nâng band..."
+  "general_advice": "Strategic action points to achieve a higher Band score..."
 }`;
 
     try {
@@ -1107,27 +1107,27 @@ Respond ONLY with a valid JSON object matching this exact format:
 
         const data = await response.json();
         const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (!rawJsonText) throw new Error("Không nhận được dữ liệu phản hồi từ Gemini API.");
+        if (!rawJsonText) throw new Error("No response data received from Gemini API.");
 
         let parsedResult;
         try {
             const cleaned = rawJsonText.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
             parsedResult = JSON.parse(cleaned);
         } catch(e) {
-            throw new Error("Lỗi đọc định dạng kết quả AI: " + e.message);
+            throw new Error("Error parsing AI evaluation result: " + e.message);
         }
 
         applyWritingEvaluationResult(taskKey, parsedResult);
     } catch(err) {
-        console.warn("Lỗi Gemini API, tự động chuyển sang bộ chấm IELTS Academic nội bộ:", err);
-        // Fallback mượt mà sang bộ chấm cục bộ
+        console.warn("Gemini API notice, fallback to built-in IELTS Examiner:", err);
+        // Fallback to local evaluation engine
         const fallbackResult = evaluateWritingLocally(taskNum, studentEssay, task);
-        fallbackResult.general_advice = "⚡ Đã chấm bằng Hệ thống IELTS Academic Examiner nội bộ (tự động kích hoạt khi kết nối Gemini API bận).";
+        fallbackResult.general_advice = "⚡ Evaluated by Built-in IELTS Academic Examiner engine.";
         applyWritingEvaluationResult(taskKey, fallbackResult);
     } finally {
         if (evalBtn) {
             evalBtn.disabled = false;
-            evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>`;
+            evalBtn.innerHTML = `<span>🤖</span> <span>AI Examiner Evaluation</span>`;
         }
     }
 }
@@ -1150,17 +1150,17 @@ function renderIeltsWritingView(container) {
                     <button onclick="switchIeltsWritingTask(1)" class="px-4 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
                         activeWritingTask === 1 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                     }">
-                        📊 Task 1: Report (150 từ)
+                        📊 Task 1: Report (150 words)
                     </button>
                     <button onclick="switchIeltsWritingTask(2)" class="px-4 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition ${
                         activeWritingTask === 2 ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                     }">
-                        ✍️ Task 2: Essay (250 từ)
+                        ✍️ Task 2: Essay (250 words)
                     </button>
                 </div>
                 <div class="flex items-center gap-2 text-xs font-bold">
                     <span class="px-3 py-1 rounded-full ${isWordCountMet ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-amber-100 text-amber-800 border border-amber-300'}" id="writing-word-badge">
-                        📝 ${wordCount} / ${minWords} từ ${isWordCountMet ? '✓ Đạt' : '(Chưa đủ)'}
+                        📝 ${wordCount} / ${minWords} words ${isWordCountMet ? '✓ Met' : '(Short)'}
                     </span>
                 </div>
             </div>
@@ -1169,18 +1169,18 @@ function renderIeltsWritingView(container) {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 min-h-0 overflow-hidden">
                 <!-- PROMPT & CHART -->
                 <div class="h-full overflow-y-auto custom-scroll p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h4 class="font-extrabold text-sm text-slate-900 mb-2">${task.title || (activeWritingTask === 1 ? 'Task 1: Academic Report (150 từ)' : 'Task 2: Academic Essay (250 từ)')}</h4>
+                    <h4 class="font-extrabold text-sm text-slate-900 mb-2">${task.title || (activeWritingTask === 1 ? 'Task 1: Academic Report (150 words)' : 'Task 2: Academic Essay (250 words)')}</h4>
                     <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-3 whitespace-pre-line">${task.prompt}</p>
                     ${task.chart_svg ? `<div class="mb-3">${task.chart_svg}</div>` : ''}
 
-                    <!-- ACCORDION: BÀI MẪU BAND 8.5+ & 9.0 -->
+                    <!-- ACCORDION: BAND 8.5+ & 9.0 MODEL ANSWER -->
                     <div class="mt-4 pt-3 border-t border-slate-200">
                         <button onclick="toggleTranscript('writing-sample-${taskKey}')" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs shadow-sm flex items-center justify-between transition">
-                            <span>⭐ Xem Bài Viết Mẫu Band 9.0 & Phân Tích Tiêu Chí</span>
+                            <span>⭐ View Band 9.0 Model Answer & Analysis</span>
                             <span>▼</span>
                         </button>
                         <div id="writing-sample-${taskKey}" class="hidden mt-2.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-2">
-                            <p class="font-bold text-amber-900 uppercase">Bài mẫu đạt chuẩn Band 9.0:</p>
+                            <p class="font-bold text-amber-900 uppercase">Official Band 9.0 Model Answer:</p>
                             <div class="p-3 bg-white rounded-xl border border-amber-200/80 font-serif leading-relaxed whitespace-pre-line text-slate-800">
                                 ${task.sample_band_9 || task.sample_band_85 || task.model_answer || ''}
                             </div>
@@ -1192,7 +1192,7 @@ function renderIeltsWritingView(container) {
                 <div class="flex flex-col h-full overflow-hidden">
                     <textarea id="ielts-writing-textarea" 
                               oninput="handleWritingInput(this.value)"
-                              placeholder="Nhập bài viết của bạn tại đây (sử dụng từ nối học thuật, cấu trúc câu đa dạng, từ vựng theo chủ đề)..."
+                              placeholder="Type your essay here (use academic linking words, diverse sentence structures, topic vocabulary)..."
                               class="w-full h-44 sm:h-52 p-4 rounded-2xl border border-slate-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 text-xs sm:text-sm text-slate-900 leading-relaxed font-sans resize-none custom-scroll bg-white shrink-0">${escapeHtml(currentEssay)}</textarea>
 
                     <!-- AI ACTION CONTROLS -->
@@ -1200,10 +1200,10 @@ function renderIeltsWritingView(container) {
                         <button onclick="evaluateWritingWithGemini(${activeWritingTask})" 
                                 id="btn-gemini-eval-${taskKey}"
                                 class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-sky-600 hover:from-violet-700 hover:to-sky-700 text-white font-extrabold text-xs shadow-md transition active:scale-95 flex items-center gap-1.5">
-                            <span>🤖</span> <span>AI Examiner Chấm & Sửa Bài (Tự động)</span>
+                            <span>🤖</span> <span>AI Examiner Evaluation</span>
                         </button>
                         <button onclick="openGeminiApiKeyModal()" class="text-[11px] text-slate-400 hover:text-indigo-600 font-semibold transition flex items-center gap-1">
-                            <span>⚙️ Khóa Gemini (Tùy chọn)</span>
+                            <span>⚙️ Gemini Key (Optional)</span>
                         </button>
                     </div>
 
@@ -1233,12 +1233,12 @@ function handleWritingInput(val) {
     if (badge) {
         const isMet = wc >= minWords;
         badge.className = `px-3 py-1 rounded-full ${isMet ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-amber-100 text-amber-800 border border-amber-300'}`;
-        badge.textContent = `📝 ${wc} / ${minWords} từ ${isMet ? '✓ Đạt' : '(Chưa đủ)'}`;
+        badge.textContent = `📝 ${wc} / ${minWords} words ${isMet ? '✓ Met' : '(Short)'}`;
     }
 }
 
 // =========================================================================
-// 4. GIAO DIỆN & LOGIC SPEAKING (AUDIO EXAMINER & MICROPHONE RECORDER)
+// 4. SPEAKING INTERFACE & LOGIC (AUDIO EXAMINER & MICROPHONE RECORDER)
 // =========================================================================
 function renderIeltsSpeakingView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
@@ -1249,7 +1249,7 @@ function renderIeltsSpeakingView(container) {
         contentHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950 flex items-center justify-between">
-                    <span>💡 <strong>Part 1:</strong> Trả lời tự nhiên các câu hỏi thường nhật từ 2-4 câu đầy đủ cấu trúc.</span>
+                    <span>💡 <strong>Part 1:</strong> Answer everyday questions naturally with 2-4 complete sentences.</span>
                 </div>
                 ${spk.part_1.map((item, idx) => `
                     <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
@@ -1258,23 +1258,23 @@ function renderIeltsSpeakingView(container) {
                                 <span class="text-indigo-600 mr-1.5">Q${idx + 1}:</span> ${item.question}
                             </p>
                             <button onclick="speakExaminerQuestion('${escapeQuotes(item.question)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                <span>🔊</span> <span>Nghe giám khảo</span>
+                                <span>🔊</span> <span>Listen to Examiner</span>
                             </button>
                         </div>
 
                         <!-- RECORDER & MODEL ANSWER -->
                         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
                             <button id="rec-btn-p1-${idx}" onclick="toggleVoiceRecord('p1_${idx}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95">
-                                <span>🎙️</span> <span>Ghi âm câu trả lời</span>
+                                <span>🎙️</span> <span>Record Answer</span>
                             </button>
                             <div id="audio-playback-p1_${idx}" class="inline-flex"></div>
                             <button onclick="toggleTranscript('sample-spk-p1-${idx}')" class="ml-auto px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold border border-amber-200 transition">
-                                <span>💡</span> <span>Xem câu trả lời Band 8.5+</span>
+                                <span>💡</span> <span>View Band 8.5+ Sample Response</span>
                             </button>
                         </div>
 
                         <div id="sample-spk-p1-${idx}" class="hidden mt-3 p-3 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-1.5">
-                            <p class="font-bold text-amber-900">Mẫu trả lời xuất sắc:</p>
+                            <p class="font-bold text-amber-900">Band 8.5+ Sample Response:</p>
                             <p class="italic font-serif bg-white p-2.5 rounded-xl border border-amber-100">"${item.model_answer}"</p>
                             ${(item.key_vocab && item.key_vocab.length > 0) ? `
                                 <div class="flex flex-wrap gap-1 mt-1">
@@ -1292,8 +1292,8 @@ function renderIeltsSpeakingView(container) {
             <div class="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
                 <div class="p-4 rounded-2xl bg-gradient-to-tr from-amber-50 to-orange-50 border border-amber-300">
                     <div class="flex items-center justify-between pb-2 mb-2 border-b border-amber-200">
-                        <span class="text-xs font-black text-amber-900 uppercase">IELTS Cue Card (Thẻ Đề Bài)</span>
-                        <span class="text-xs font-bold bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded-full">1 Phút Chuẩn Bị • 2 Phút Nói</span>
+                        <span class="text-xs font-black text-amber-900 uppercase">IELTS Speaking Cue Card</span>
+                        <span class="text-xs font-bold bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded-full">1 Minute Preparation • 2 Minutes Speaking</span>
                     </div>
                     <h3 class="font-black text-sm sm:text-base text-slate-900 mb-2">${card.cue_card_title}</h3>
                     <p class="text-xs text-slate-700 font-semibold mb-2">You should say:</p>
@@ -1306,33 +1306,33 @@ function renderIeltsSpeakingView(container) {
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-bold text-slate-600 block">Thời gian chuẩn bị:</span>
+                            <span class="text-xs font-bold text-slate-600 block">Preparation Time:</span>
                             <span id="cue-prep-timer" class="font-mono text-base font-black text-indigo-700">01:00</span>
                         </div>
-                        <button onclick="startCueTimer('prep', 60)" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition">Bắt đầu 1p</button>
+                        <button onclick="startCueTimer('prep', 60)" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition">Start 1 min</button>
                     </div>
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-bold text-slate-600 block">Thời gian trình bày:</span>
+                            <span class="text-xs font-bold text-slate-600 block">Speaking Time:</span>
                             <span id="cue-speak-timer" class="font-mono text-base font-black text-emerald-700">02:00</span>
                         </div>
-                        <button onclick="startCueTimer('speak', 120)" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition">Bắt đầu 2p</button>
+                        <button onclick="startCueTimer('speak', 120)" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition">Start 2 min</button>
                     </div>
                 </div>
 
                 <!-- RECORDER FOR PART 2 -->
                 <div class="p-3 rounded-2xl bg-rose-50/60 border border-rose-200 flex flex-wrap items-center justify-between gap-2">
                     <button id="rec-btn-p2" onclick="toggleVoiceRecord('part_2')" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95">
-                        <span>🎙️</span> <span>Ghi âm bài nói 2 phút</span>
+                        <span>🎙️</span> <span>Record 2-Minute Speech</span>
                     </button>
                     <div id="audio-playback-part_2" class="inline-flex"></div>
                     <button onclick="toggleTranscript('sample-spk-p2')" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition">
-                        ⭐ Xem Bài Mẫu Band 8.5+
+                        ⭐ View Band 8.5+ Model Speech
                     </button>
                 </div>
 
                 <div id="sample-spk-p2" class="hidden p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-2">
-                    <p class="font-bold text-amber-900 uppercase">Bài phát biểu mẫu Band 8.5+:</p>
+                    <p class="font-bold text-amber-900 uppercase">Band 8.5+ Model Speech:</p>
                     <div class="p-3.5 bg-white rounded-xl border border-amber-200 font-serif whitespace-pre-line text-slate-800">
                         ${card.model_answer}
                     </div>
@@ -1343,7 +1343,7 @@ function renderIeltsSpeakingView(container) {
         contentHtml = `
             <div class="space-y-4">
                 <div class="p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950">
-                    💡 <strong>Part 3:</strong> Thảo luận học thuật mở rộng 2 chiều. Trả lời sâu sắc, nêu nguyên nhân, phân tích thực trạng và đưa ra giải pháp.
+                    💡 <strong>Part 3:</strong> In-depth two-way academic discussion. Express opinions, analyze causes, and provide reasoned justifications.
                 </div>
                 ${spk.part_3.map((item, idx) => `
                     <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
@@ -1352,22 +1352,22 @@ function renderIeltsSpeakingView(container) {
                                 <span class="text-indigo-600 mr-1.5">Q${idx + 1}:</span> ${item.question}
                             </p>
                             <button onclick="speakExaminerQuestion('${escapeQuotes(item.question)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                <span>🔊</span> <span>Nghe giám khảo</span>
+                                <span>🔊</span> <span>Listen to Examiner</span>
                             </button>
                         </div>
 
                         <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
                             <button id="rec-btn-p3-${idx}" onclick="toggleVoiceRecord('p3_${idx}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95">
-                                <span>🎙️</span> <span>Ghi âm câu trả lời</span>
+                                <span>🎙️</span> <span>Record Answer</span>
                             </button>
                             <div id="audio-playback-p3_${idx}" class="inline-flex"></div>
                             <button onclick="toggleTranscript('sample-spk-p3-${idx}')" class="ml-auto px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold border border-amber-200 transition">
-                                <span>💡</span> <span>Xem câu trả lời Band 8.5+</span>
+                                <span>💡</span> <span>View Band 8.5+ Sample Response</span>
                             </button>
                         </div>
 
                         <div id="sample-spk-p3-${idx}" class="hidden mt-3 p-3 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs leading-relaxed text-slate-800 space-y-1.5">
-                            <p class="font-bold text-amber-900">Phân tích học thuật Band 8.5+:</p>
+                            <p class="font-bold text-amber-900">Band 8.5+ Academic Analysis:</p>
                             <p class="italic font-serif bg-white p-2.5 rounded-xl border border-amber-100">"${item.model_answer}"</p>
                         </div>
                     </div>
@@ -1398,7 +1398,7 @@ function renderIeltsSpeakingView(container) {
                     </button>
                 </div>
                 <div class="text-xs font-bold text-slate-500 hidden sm:inline">
-                    11 - 14 phút • Giọng giám khảo bản xứ & Ghi âm trực tiếp
+                    11 - 14 Minutes • Native Examiner Audio & Microphone Recording
                 </div>
             </div>
 
@@ -1425,7 +1425,7 @@ function speakExaminerQuestion(text) {
     }
 }
 
-// Ghi âm trực tiếp giọng nói học viên (MediaRecorder API)
+// Microphone Recording student recording (MediaRecorder API)
 async function toggleVoiceRecord(slotId) {
     if (mediaRecorder && mediaRecorder.state === 'recording') {
         mediaRecorder.stop();
@@ -1454,11 +1454,11 @@ async function toggleVoiceRecord(slotId) {
                 `;
             }
 
-            // Đổi lại nhãn nút
+            // Reset button label
             const btn = document.querySelector(`[onclick="toggleVoiceRecord('${slotId}')"]`);
             if (btn) {
                 btn.className = "px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 font-bold text-xs flex items-center gap-1.5";
-                btn.innerHTML = `<span>✓</span> <span>Ghi âm lại</span>`;
+                btn.innerHTML = `<span>✓</span> <span>Re-record</span>`;
             }
 
             stream.getTracks().forEach(track => track.stop());
@@ -1466,18 +1466,18 @@ async function toggleVoiceRecord(slotId) {
 
         mediaRecorder.start();
 
-        // Đổi nhãn nút thành đang ghi âm
+        // Set button label to recording
         const btn = document.querySelector(`[onclick="toggleVoiceRecord('${slotId}')"]`);
         if (btn) {
             btn.className = "px-3 py-1.5 rounded-xl bg-rose-600 text-white font-bold text-xs flex items-center gap-1.5 animate-pulse shadow-md";
-            btn.innerHTML = `<span>⏹</span> <span>Đang ghi âm... (Bấm dừng)</span>`;
+            btn.innerHTML = `<span>⏹</span> <span>Recording... (Click to Stop)</span>`;
         }
     } catch (err) {
-        alert("Không thể truy cập microphone của bạn. Vui lòng cấp quyền truy cập micro trong trình duyệt!");
+        alert("Could not access microphone. Please allow microphone permissions in your browser!");
     }
 }
 
-// Đồng hồ đếm ngược Part 2
+// Part 2 countdown timer
 function startCueTimer(type, seconds) {
     const el = document.getElementById(type === 'prep' ? 'cue-prep-timer' : 'cue-speak-timer');
     if (!el) return;
@@ -1489,20 +1489,20 @@ function startCueTimer(type, seconds) {
         el.textContent = `${m.toString().padStart(2, '0')}:${rem.toString().padStart(2, '0')}`;
         if (s <= 0) {
             clearInterval(itv);
-            alert(type === 'prep' ? "⏰ Hết 1 phút chuẩn bị! Bạn hãy bắt đầu trình bày bài nói." : "⏰ Hết 2 phút nói!");
+            alert(type === 'prep' ? "⏰ 1 minute preparation time is up! Please begin speaking." : "⏰ 2 minutes speaking time is up!");
         }
     }, 1000);
 }
 
 // =========================================================================
-// 5. CHẤM ĐIỂM TỰ ĐỘNG & QUY ĐỔI SANG IELTS BAND SCORE 1.0 - 9.0
+// 5. AUTOMATIC GRADING & IELTS BAND CONVERSION 1.0 - 9.0
 // =========================================================================
 function selectIeltsTfngOption(skill, qId, opt) {
     if (ieltsTestSubmitted) return;
 
     handleIeltsAnswerChange(skill, qId, opt);
 
-    // Cập nhật ngay style các nút trong câu hỏi vừa chọn
+    // Update question styling on selection
     const btns = document.querySelectorAll(`.tfng-btn-${qId}`);
     const targetOpt = opt.trim().toUpperCase();
     btns.forEach(btn => {
@@ -1521,7 +1521,7 @@ function selectIeltsRadioOption(skill, qId, optKey) {
 
     handleIeltsAnswerChange(skill, qId, optKey);
 
-    // Cập nhật màu nhãn của radio
+    // Update radio label colour
     const labels = document.querySelectorAll(`.choice-lbl-${skill}-${qId}`);
     labels.forEach(lbl => {
         const inp = lbl.querySelector('input[type="radio"]');
@@ -1585,7 +1585,7 @@ function convertRawToIeltsBand(rawScore, isListening = true) {
 }
 
 function submitIeltsTest() {
-    if (!confirm("Bạn có chắc chắn muốn nộp bài thi IELTS và xem kết quả chấm điểm chi tiết cùng đáp án giải thích?")) {
+    if (!confirm("Are you sure you want to submit your IELTS test to view Band scores and detailed explanations?")) {
         return;
     }
 
@@ -1596,7 +1596,7 @@ function gradeIeltsTest(showModal = true) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     if (!test) return;
 
-    // 1. Chấm điểm Listening
+    // 1. Grade Listening
     let lisCorrect = 0;
     let lisTotal = 0;
     const lisReview = [];
@@ -1613,7 +1613,7 @@ function gradeIeltsTest(showModal = true) {
                 part: p.part_number,
                 id: q.id,
                 prompt: q.prompt || q.question || '',
-                userAns: userAns || '(Chưa điền)',
+                userAns: userAns || '(Not answered)',
                 correctAns: q.correct_answers[0],
                 isCorrect: isCorr,
                 evidence: q.evidence || '',
@@ -1622,7 +1622,7 @@ function gradeIeltsTest(showModal = true) {
         });
     });
 
-    // 2. Chấm điểm Reading
+    // 2. Grade Reading
     let redCorrect = 0;
     let redTotal = 0;
     const redReview = [];
@@ -1639,7 +1639,7 @@ function gradeIeltsTest(showModal = true) {
                 part: pIdx + 1,
                 id: q.id,
                 prompt: q.statement || q.prompt || q.question || '',
-                userAns: userAns || '(Chưa điền)',
+                userAns: userAns || '(Not answered)',
                 correctAns: q.correct_answers[0],
                 isCorrect: isCorr,
                 evidence: q.evidence || '',
@@ -1648,15 +1648,15 @@ function gradeIeltsTest(showModal = true) {
         });
     });
 
-    // Quy đổi ra Band điểm chính thức
-    // Tỷ lệ quy đổi điểm chuẩn Cambridge
+    // Convert to official Band score
+    // Cambridge official conversion table
     const lisNormalizedRaw = Math.round((lisCorrect / lisTotal) * 40);
     const redNormalizedRaw = Math.round((redCorrect / redTotal) * 40);
 
     const lisBand = convertRawToIeltsBand(lisNormalizedRaw, true);
     const redBand = convertRawToIeltsBand(redNormalizedRaw, false);
 
-    // 3. Tính điểm Writing (Nếu chưa viết thì 0.0, có AI chấm thì lấy điểm AI, nếu viết thì tính theo độ dài thực tế)
+    // 3. Grade Writing (0.0 if not written, use AI score if graded, or estimate based on word count)
     const t1Words = countWords(ieltsUserAnswers.writing?.task_1 || '');
     const t2Words = countWords(ieltsUserAnswers.writing?.task_2 || '');
     const t1Ai = ieltsUserAnswers.writing?.task_1_ai_score;
@@ -1665,7 +1665,7 @@ function gradeIeltsTest(showModal = true) {
     let isAiGradedWriting = false;
 
     if (t1Ai && t2Ai) {
-        // Chuẩn Cambridge: Task 2 chiếm 2/3 tổng điểm, Task 1 chiếm 1/3
+        // Cambridge standard: Task 2 weights 2/3, Task 1 weights 1/3
         const weighted = (t1Ai * 1 + t2Ai * 2) / 3;
         wriBand = Math.round(weighted * 2) / 2;
         isAiGradedWriting = true;
@@ -1678,7 +1678,7 @@ function gradeIeltsTest(showModal = true) {
     } else {
         const totalWords = t1Words + t2Words;
         if (totalWords === 0) {
-            wriBand = 0.0; // Chưa viết từ nào
+            wriBand = 0.0; // No words written
         } else if (totalWords < 30) {
             wriBand = 1.0;
         } else if (totalWords < 80) {
@@ -1694,11 +1694,11 @@ function gradeIeltsTest(showModal = true) {
         }
     }
 
-    // 4. Tính điểm Speaking (Nếu chưa ghi âm bài nào thì 0.0)
+    // 4. Grade Speaking (0.0 if not recorded)
     const recordedCount = Object.keys(recordedAudioUrls || {}).length;
     let spkBand = 0.0;
     if (recordedCount === 0) {
-        spkBand = 0.0; // Chưa ghi âm bài nào
+        spkBand = 0.0; // Not recorded 
     } else if (recordedCount === 1) {
         spkBand = 5.0;
     } else if (recordedCount >= 2 && recordedCount < 4) {
@@ -1707,7 +1707,7 @@ function gradeIeltsTest(showModal = true) {
         spkBand = 7.5;
     }
 
-    // 5. Tính Overall Band trên các kỹ năng học viên thực sự đã làm bài
+    // 5. Calculate Overall Band score
     const testedSkills = [];
     testedSkills.push({ name: 'Listening', band: lisBand });
     testedSkills.push({ name: 'Reading', band: redBand });
@@ -1721,9 +1721,9 @@ function gradeIeltsTest(showModal = true) {
     if (decimal >= 0.75) overallBand += 1.0;
     else if (decimal >= 0.25) overallBand += 0.5;
 
-    let overallSubtitle = `Tính trên ${testedSkills.length}/4 kỹ năng đã làm`;
+    let overallSubtitle = `Evaluated on ${testedSkills.length}/4 completed skills`;
     if (testedSkills.length === 4) {
-        overallSubtitle = "Đầy đủ 4 kỹ năng chuẩn Cambridge";
+        overallSubtitle = "Complete 4 skills official Cambridge format";
     }
 
     ieltsTestScoreResult = {
@@ -1746,7 +1746,7 @@ function gradeIeltsTest(showModal = true) {
     }
 }
 
-// Hiển thị modal kết quả điểm & giải thích chi tiết
+// Display modal score report & detailed explanations
 function showIeltsResultsModal() {
     if (!ieltsTestScoreResult) return;
     const modal = document.getElementById('ielts-result-modal');
@@ -1769,26 +1769,26 @@ function showIeltsResultsModal() {
                 <div class="flex items-start justify-between gap-2 mb-1.5">
                     <span class="font-bold text-slate-800">
                         <span class="px-2 py-0.5 rounded-full ${item.skill === 'Listening' ? 'bg-indigo-100 text-indigo-800' : 'bg-amber-100 text-amber-800'} text-[10px] mr-1.5 font-bold">${item.skill} P${item.part}</span>
-                        Câu ${item.id}: ${item.prompt}
+                        Question ${item.id}: ${item.prompt}
                     </span>
                     <span class="px-2 py-0.5 rounded-full font-bold text-[10px] shrink-0 ${item.isCorrect ? 'bg-emerald-200 text-emerald-900' : 'bg-rose-200 text-rose-900'}">
-                        ${item.isCorrect ? '✓ Đúng' : '✗ Sai'}
+                        ${item.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                     </span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] mb-2 font-mono">
                     <div class="p-1.5 rounded-lg bg-white border ${item.isCorrect ? 'border-emerald-200 text-emerald-900' : 'border-rose-200 text-rose-900'}">
-                        <strong>Bạn trả lời:</strong> ${escapeHtml(item.userAns)}
+                        <strong>Your Answer:</strong> ${escapeHtml(item.userAns)}
                     </div>
                     <div class="p-1.5 rounded-lg bg-white border border-slate-200 text-indigo-950 font-bold">
-                        <strong>Đáp án chuẩn Cambridge:</strong> ${item.correctAns}
+                        <strong>Official Answer:</strong> ${item.correctAns}
                     </div>
                 </div>
 
                 <div class="p-2.5 rounded-xl bg-white/90 border border-slate-200/80 text-[11px] text-slate-700">
-                    <p class="font-bold text-slate-900 mb-1">🔍 Dẫn chứng & Bằng chứng trong bài:</p>
+                    <p class="font-bold text-slate-900 mb-1">🔍 Reading / Audio Evidence:</p>
                     <p class="italic text-slate-600 bg-slate-50 p-1.5 rounded border border-slate-100 mb-1">"${item.evidence}"</p>
-                    <p class="text-slate-800">💡 <strong>Giải thích chi tiết:</strong> ${item.explanation}</p>
+                    <p class="text-slate-800">💡 <strong>Detailed Explanation:</strong> ${item.explanation}</p>
                 </div>
             </div>
         `;
@@ -1813,7 +1813,7 @@ function showIeltsResultsModal() {
                     <span class="text-[10px] font-bold text-indigo-700 uppercase">🎧 Listening</span>
                     <div class="flex items-baseline justify-between mt-1">
                         <span class="text-2xl font-black text-indigo-950 font-mono">${res.lisBand.toFixed(1)}</span>
-                        <span class="text-xs text-indigo-700 font-bold">${res.lisCorrect}/${res.lisTotal} câu đúng</span>
+                        <span class="text-xs text-indigo-700 font-bold">${res.lisCorrect}/${res.lisTotal} correct</span>
                     </div>
                 </div>
 
@@ -1821,19 +1821,19 @@ function showIeltsResultsModal() {
                     <span class="text-[10px] font-bold text-amber-800 uppercase">📖 Reading</span>
                     <div class="flex items-baseline justify-between mt-1">
                         <span class="text-2xl font-black text-amber-950 font-mono">${res.redBand.toFixed(1)}</span>
-                        <span class="text-xs text-amber-800 font-bold">${res.redCorrect}/${res.redTotal} câu đúng</span>
+                        <span class="text-xs text-amber-800 font-bold">${res.redCorrect}/${res.redTotal} correct</span>
                     </div>
                 </div>
 
                 <div class="p-3 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col justify-between">
                     <div class="flex items-center justify-between">
                         <span class="text-[10px] font-bold text-emerald-800 uppercase">✍️ Writing</span>
-                        ${res.isAiGradedWriting ? '<span class="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded-full font-black">AI Chấm 🤖</span>' : ''}
+                        ${res.isAiGradedWriting ? '<span class="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded-full font-black">AI Graded 🤖</span>' : ''}
                     </div>
                     <div class="flex items-baseline justify-between mt-1">
                         <span class="text-2xl font-black ${res.wriBand > 0 ? 'text-emerald-950' : 'text-slate-400'} font-mono">${res.wriBand.toFixed(1)}</span>
                         <span class="text-xs ${res.wriBand > 0 ? 'text-emerald-700' : 'text-slate-400'} font-bold">
-                            ${res.wriBand === 0 ? 'Chưa làm bài' : (res.isAiGradedWriting ? 'Gemini AI' : `${res.t1Words + res.t2Words} từ`)}
+                            ${res.wriBand === 0 ? 'Not completed' : (res.isAiGradedWriting ? 'Gemini AI' : `${res.t1Words + res.t2Words} words`)}
                         </span>
                     </div>
                 </div>
@@ -1843,7 +1843,7 @@ function showIeltsResultsModal() {
                     <div class="flex items-baseline justify-between mt-1">
                         <span class="text-2xl font-black ${res.spkBand > 0 ? 'text-fuchsia-950' : 'text-slate-400'} font-mono">${res.spkBand.toFixed(1)}</span>
                         <span class="text-xs ${res.spkBand > 0 ? 'text-fuchsia-700' : 'text-slate-400'} font-bold">
-                            ${res.spkBand === 0 ? 'Chưa ghi âm' : `Đã ghi âm ${res.recordedCount} phần`}
+                            ${res.spkBand === 0 ? 'Not recorded' : `Recorded ${res.recordedCount} parts`}
                         </span>
                     </div>
                 </div>
@@ -1853,8 +1853,8 @@ function showIeltsResultsModal() {
         <!-- REVIEW LIST -->
         <div class="space-y-3 pt-2">
             <h3 class="font-extrabold text-sm sm:text-base text-slate-900 flex items-center justify-between">
-                <span>Đáp Án & Giải Thích Chi Tiết Từng Câu Hỏi</span>
-                <span class="text-xs font-bold text-slate-500">Tổng cộng: ${res.allReview.length} câu</span>
+                <span>Detailed Answer Review & Explanations</span>
+                <span class="text-xs font-bold text-slate-500">Total: ${res.allReview.length} questions</span>
             </h3>
             <div class="space-y-2.5">
                 ${reviewItemsHtml}
@@ -1871,7 +1871,7 @@ function closeIeltsResultModal() {
 }
 
 function resetIeltsTest() {
-    if (!confirm("Bạn có muốn đặt lại toàn bộ bài làm để thi lại từ đầu không?")) return;
+    if (!confirm("Are you sure you want to reset all answers and retake this test?")) return;
     ieltsUserAnswers = { listening: {}, reading: {}, writing: { task_1: '', task_2: '' }, speaking: {} };
     ieltsTestSubmitted = false;
     ieltsTestScoreResult = null;
@@ -1903,7 +1903,7 @@ function escapeQuotes(text) {
 }
 
 // ==========================================
-// PHÍM TẮT BÀN PHÍM: BẤM ESC ĐỂ ĐÓNG BẢNG ĐÁP ÁN
+// KEYBOARD SHORTCUT: PRESS ESC TO CLOSE SCORE REPORT
 // ==========================================
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Esc') {
