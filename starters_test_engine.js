@@ -958,49 +958,104 @@ function renderStartersListeningView(container) {
         `;
     }
     else if (activeStartersLisPart === 3) {
-        // Part 3: Listen and tick the box A, B, C
-        const p3Images = getStartersBookImages(test, 'listening', 3);
+        // Part 3: Listen and tick the box A, B, C (Individual Cropped Question Images)
+        const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+        const parts = testId.split('_');
+        const bookNum = parseInt(parts[1]) || 1;
+        const testNum = parseInt(parts[3]) || 1;
+        const exampleImgSrc = `images/starters/book${bookNum}/test${testNum}_p3_example.jpg`;
+
         partHtml = `
             <div class="space-y-4">
-                ${renderBookImageGallery(p3Images, "Part 3 Book Page", "p3-gallery")}
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Part 3: Listen and tick the box (Questions 11 - 15)
-                    </span>
-                    <div class="space-y-3">
-                        ${currentPart.questions.map(q => {
-                            const userVal = startersUserAnswers.listening[q.id] || '';
-                            return `
-                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                    <div class="flex items-start justify-between gap-2">
-                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
-                                        <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" class="px-3 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                            <span>🔊</span> <span>Listen</span>
-                                        </button>
+                <!-- INSTRUCTIONS HEADER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">🎧 Part 3</span>
+                            <span class="font-extrabold text-sm text-amber-900">Listen and tick the box (Questions 11 - 15)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Instructions:</strong> Listen to the audio and click option A, B, or C for each question.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- EXAMPLE CARD -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50/70 to-orange-50/70 border border-amber-200/90 text-xs text-amber-950 space-y-3 shadow-xs">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">📘 Example</span>
+                            <span class="font-extrabold text-sm text-amber-900">Listen and tick the box (There is one example)</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-black text-xs">✓ Example Answer: A</span>
+                    </div>
+                    <div class="flex justify-center p-2 rounded-xl bg-white/95 border border-amber-200/80 shadow-2xs">
+                        <img src="${exampleImgSrc}" 
+                             onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${exampleImgSrc}';}" 
+                             alt="Part 3 Example" 
+                             class="max-h-[220px] w-auto max-w-full object-contain rounded-lg shadow-2xs">
+                    </div>
+                </div>
+
+                <!-- 5 INDIVIDUAL QUESTION CARDS -->
+                <div class="space-y-4">
+                    ${currentPart.questions.map((q, qIdx) => {
+                        const userVal = startersUserAnswers.listening[q.id] || '';
+                        const qImgSrc = `images/starters/book${bookNum}/test${testNum}_p3_q${qIdx + 1}.jpg`;
+
+                        return `
+                            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3.5 transition hover:shadow-md">
+                                <!-- Top Bar: Question Header & Audio Speaker -->
+                                <div class="flex items-start sm:items-center justify-between gap-3 flex-wrap">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-7 h-7 rounded-full bg-amber-500 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
+                                            ${q.id}
+                                        </span>
+                                        <span class="font-extrabold text-sm sm:text-base text-slate-900">${q.question}</span>
                                     </div>
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
-                                        ${q.options.map(opt => {
-                                            const optKey = opt.charAt(0);
-                                            const isChecked = (userVal === optKey);
+                                    <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" 
+                                            class="px-3.5 py-1.5 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1.5 transition active:scale-95 shadow-2xs shrink-0">
+                                        <span>🔊</span> <span>Listen</span>
+                                    </button>
+                                </div>
+
+                                <!-- The Question's Dedicated Cropped Image (Pictures A, B, C) -->
+                                <div class="flex justify-center p-2 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 shadow-2xs">
+                                    <img src="${qImgSrc}" 
+                                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${qImgSrc}';}" 
+                                         alt="Question ${q.id} Illustration" 
+                                         class="max-h-[260px] w-auto max-w-full object-contain rounded-lg shadow-xs">
+                                </div>
+
+                                <!-- Option Selector Buttons (A, B, C) -->
+                                <div class="space-y-1.5">
+                                    <span class="text-[11px] font-black uppercase tracking-wider text-slate-500 block">
+                                        Choose your answer:
+                                    </span>
+                                    <div class="grid grid-cols-3 gap-2.5 sm:gap-4">
+                                        ${['A', 'B', 'C'].map(opt => {
+                                            const isSelected = (userVal === opt);
                                             return `
-                                                <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${optKey}')"
-                                                        class="p-2.5 rounded-xl border text-left font-bold text-xs transition flex items-center gap-2 ${
-                                                            isChecked 
-                                                                ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' 
-                                                                : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                <button onclick="handleStartersAnswerChange('listening', ${q.id}, '${opt}')"
+                                                        class="py-3 px-3 rounded-xl border-2 font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 active:scale-95 shadow-2xs ${
+                                                            isSelected 
+                                                                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white border-amber-500 shadow-md ring-2 ring-amber-300' 
+                                                                : 'bg-white hover:bg-slate-50 text-slate-800 border-slate-200 hover:border-amber-300'
                                                         }">
-                                                    <span class="w-5 h-5 rounded-md flex items-center justify-center text-xs font-black shrink-0 ${isChecked ? 'bg-white text-indigo-600' : 'bg-slate-100 text-slate-600'}">
-                                                        ${isChecked ? '✓' : optKey}
+                                                    <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black ${
+                                                        isSelected ? 'bg-white text-orange-600' : 'bg-slate-100 text-slate-700'
+                                                    }">
+                                                        ${isSelected ? '✓' : opt}
                                                     </span>
-                                                    <span class="truncate">${opt}</span>
+                                                    <span>Option ${opt}</span>
                                                 </button>
                                             `;
                                         }).join('')}
                                     </div>
                                 </div>
-                            `;
-                        }).join('')}
-                    </div>
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>
         `;

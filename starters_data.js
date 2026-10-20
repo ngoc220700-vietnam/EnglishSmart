@@ -26,6 +26,50 @@ const startersTestProfiles = [
                 { id: 10, question: "10. What is the name of Tom's teacher? Mrs [______]", correct_answers: ["Bird", "BIRD", "bird"], explanation: "His teacher's name is Mrs Bird." }
             ]
         },
+        lis_p3: {
+            questions: [
+                {
+                    id: 11,
+                    question: "11. What is Anna taking to school?",
+                    options: ["A", "B", "C"],
+                    correct_answers: ["B"],
+                    audio_script: "Mum: Have you got your books for school, Anna, and some pens? - Anna: Yes, Mum. - Mum: And have you got your jacket? It's cold today. - Anna: No, Mum. But I don't want it and I'm not taking it!",
+                    explanation: "Anna is taking her books and pens, but not her jacket -> Answer B."
+                },
+                {
+                    id: 12,
+                    question: "12. Which is Bill's dad?",
+                    options: ["A", "B", "C"],
+                    correct_answers: ["C"],
+                    audio_script: "Woman: Where's your dad today, Bill? Is he playing basketball? - Bill: No, he's in the garden. - Woman: Is he cleaning the car? - Bill: No, he's painting the window. Look, there he is!",
+                    explanation: "Bill's dad is painting the window -> Answer C."
+                },
+                {
+                    id: 13,
+                    question: "13. What would Sam like to do?",
+                    options: ["A", "B", "C"],
+                    correct_answers: ["C"],
+                    audio_script: "Woman: Would you like to ride a horse today, Sam? - Sam: No, thanks. I don't like horses. - Woman: Would you like to play tennis? - Sam: No, can I go swimming with Dad, please?",
+                    explanation: "Sam would like to go swimming with Dad -> Answer C."
+                },
+                {
+                    id: 14,
+                    question: "14. Which is Jill's bedroom?",
+                    options: ["A", "B", "C"],
+                    correct_answers: ["B"],
+                    audio_script: "Man: Is that your bedroom, Jill, with the blue bed? - Jill: No, mine has got a yellow bed and a green chair next to it.",
+                    explanation: "Jill's bedroom has a yellow bed and a green chair -> Answer B."
+                },
+                {
+                    id: 15,
+                    question: "15. Which is Nick's brother?",
+                    options: ["A", "B", "C"],
+                    correct_answers: ["A"],
+                    audio_script: "Girl: Is that your brother with the baseball cap, Nick? - Nick: No, my brother has brown hair and he's reading a comic under the umbrella.",
+                    explanation: "Nick's brother has brown hair and is reading under the umbrella -> Answer A."
+                }
+            ]
+        },
         rw_p2: {
             examples: [
                 { statement: "A young child is waving.", answer: "yes" },
@@ -454,11 +498,11 @@ function generateStartersTest(profile, idx) {
 
     const part2Questions = profile.lis_p2.questions;
 
-    const part3Questions = [
+    const defaultPart3Questions = [
         {
             id: 11,
             question: "11. What is Pat's favourite animal?",
-            options: ["A. Monkey", "B. Elephant", "C. Giraffe"],
+            options: ["A", "B", "C"],
             correct_answers: ["B"],
             audio_script: "Boy: Do you like monkeys, Pat? - Pat: They are cute, but my favourite is the elephant!",
             explanation: "Pat confirms her favourite animal is the elephant -> Answer B."
@@ -466,7 +510,7 @@ function generateStartersTest(profile, idx) {
         {
             id: 12,
             question: "12. Which sport is Nick playing today?",
-            options: ["A. Tennis", "B. Football", "C. Swimming"],
+            options: ["A", "B", "C"],
             correct_answers: ["A"],
             audio_script: "Girl: Is Nick swimming in the pool? - Boy: No, he's on the court playing tennis with his sister.",
             explanation: "Nick is playing tennis on the court -> Answer A."
@@ -474,7 +518,7 @@ function generateStartersTest(profile, idx) {
         {
             id: 13,
             question: "13. What is May having for lunch?",
-            options: ["A. Burger and chips", "B. Fish and rice", "C. Chicken salad"],
+            options: ["A", "B", "C"],
             correct_answers: ["B"],
             audio_script: "Dad: Do you want chicken today, May? - May: No thanks, Dad. I'd love fish and rice, please.",
             explanation: "May chooses fish and rice -> Answer B."
@@ -482,7 +526,7 @@ function generateStartersTest(profile, idx) {
         {
             id: 14,
             question: "14. Where is Sam's puppy?",
-            options: ["A. In the bedroom", "B. Under the kitchen table", "C. In the garden under a bush"],
+            options: ["A", "B", "C"],
             correct_answers: ["C"],
             audio_script: "Mum: Sam, look in the garden! - Sam: Oh, the puppy is sleeping under the rose bush!",
             explanation: "The puppy is sleeping under the rose bush in the garden -> Answer C."
@@ -490,12 +534,14 @@ function generateStartersTest(profile, idx) {
         {
             id: 15,
             question: "15. What colour is Anna's new school bag?",
-            options: ["A. Purple and pink", "B. Blue and yellow", "C. Bright green"],
+            options: ["A", "B", "C"],
             correct_answers: ["A"],
             audio_script: "Girl: Did you get a green bag, Anna? - Anna: No, my new bag is purple and pink!",
             explanation: "Anna's new bag is purple and pink -> Answer A."
         }
     ];
+
+    const part3Questions = (profile.lis_p3 && profile.lis_p3.questions) ? profile.lis_p3.questions : defaultPart3Questions;
 
     const part4Questions = [
         { id: 16, item: "The balloon in the sky", correct_color: "Red", audio_script: "Examiner: Look at the balloon flying in the sky. Colour it red.", explanation: "Colour the balloon in the sky red." },

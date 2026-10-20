@@ -18,7 +18,7 @@ function Report-Assert($cond, $title, $detail = "") {
 }
 
 # ----------------------------------------------------
-# 1. VERIFY CROPPED STARTERS IMAGES (PART 1 & PART 2)
+# 1. VERIFY CROPPED STARTERS IMAGES (PART 1, PART 2, PART 3)
 # ----------------------------------------------------
 Write-Host "`n--- 1. Testing Starters Cropped Images ---" -ForegroundColor Yellow
 Add-Type -AssemblyName System.Drawing
@@ -65,6 +65,27 @@ foreach ($b in 1..4) {
 }
 Report-Assert ($foundPart2Cropped -eq $totalPart2Expected) "All $totalPart2Expected Part 2 cropped images exist and have valid dimensions" "Found $foundPart2Cropped / $totalPart2Expected"
 
+# 1C. Part 3 Cropped Images (60 Questions + 12 Examples = 72 images)
+$foundP3Questions = 0
+$foundP3Examples = 0
+foreach ($b in 1..4) {
+    foreach ($t in 1..3) {
+        $exPath = "images/starters/book$b/test${t}_p3_example.jpg"
+        if (Test-Path $exPath) { $foundP3Examples++ }
+        foreach ($q in 1..5) {
+            $qPath = "images/starters/book$b/test${t}_p3_q${q}.jpg"
+            if (Test-Path $qPath) {
+                $img = [System.Drawing.Image]::FromFile((Resolve-Path $qPath).Path)
+                $w = $img.Width; $h = $img.Height
+                $img.Dispose()
+                if ($w -ge 500 -and $h -ge 150) { $foundP3Questions++ }
+            }
+        }
+    }
+}
+Report-Assert ($foundP3Questions -eq 60) "All 60 Part 3 individual question images exist" "Found $foundP3Questions / 60"
+Report-Assert ($foundP3Examples -eq 12) "All 12 Part 3 example images exist" "Found $foundP3Examples / 12"
+
 # ----------------------------------------------------
 # 2. VERIFY STARTERS TEST ENGINE RENDERING LOGIC
 # ----------------------------------------------------
@@ -82,6 +103,10 @@ Report-Assert ($stEngine.Contains("How to match:") -and $stEngine.Contains("tap 
 Report-Assert ($stEngine.Contains("_cropped.jpg")) "Engine uses _cropped.jpg for illustrations"
 Report-Assert ($stEngine.Contains("currentPart.examples") -and $stEngine.Contains("forEach")) "Listening and Reading dynamically render authentic book examples outside picture"
 Report-Assert ($stEngine.Contains("Type name or number...")) "Listening Part 2 inputs use clean English placeholder"
+
+# Check Part 3 Individual Cropped Question & Option Selector Logic
+Report-Assert ($stEngine.Contains('test${testNum}_p3_q${qIdx + 1}.jpg')) "Part 3 dynamically loads dedicated cropped question image per question"
+Report-Assert ($stEngine.Contains('Choose your answer:') -and $stEngine.Contains('Option ${opt}')) "Part 3 renders large interactive A, B, C option selector buttons"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -142,10 +167,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v1")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v1")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v1")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v1")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v2")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v2")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v2")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v2")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {
