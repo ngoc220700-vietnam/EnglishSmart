@@ -162,6 +162,7 @@ Report-Assert ($foundRw3Examples -eq 12) "All 12 Reading & Writing Part 3 exampl
 # ----------------------------------------------------
 Write-Host "`n--- 2. Testing starters_test_engine.js ---" -ForegroundColor Yellow
 $stEngine = [System.IO.File]::ReadAllText("starters_test_engine.js", [System.Text.Encoding]::UTF8)
+$stData = [System.IO.File]::ReadAllText("starters_data.js", [System.Text.Encoding]::UTF8)
 
 # Check Part 1 tight image wrapper
 Report-Assert ($stEngine.Contains('id="starters-p1-wrapper"') -and $stEngine.Contains('relative inline-block max-w-full')) "Part 1 wraps image tightly to guarantee spots never float into margin"
@@ -196,6 +197,11 @@ Report-Assert ($stEngine.Contains('test${testNum}_rw3_example.jpg')) "Reading & 
 Report-Assert (-not $stEngine.Contains('rw3-gallery')) "Reading & Writing Part 3 removed full-page gallery dump"
 Report-Assert ($stEngine.Contains('handleStartersAppendLetter') -and $stEngine.Contains('handleStartersClearWord')) "Reading & Writing Part 3 includes letter tap helpers and clear function"
 Report-Assert (-not $stEngine.Contains('({$q.scrambled})')) "Reading & Writing Part 3 eliminated undefined scrambled letter badges"
+
+# Check Reading & Writing Part 4 Logic
+Report-Assert (-not $stEngine.Contains('const cloze = currentPart.cloze;')) "Reading & Writing Part 4 eliminated undefined cloze property crash"
+Report-Assert ($stEngine.Contains('Part 4: Read this. Choose a word from the box')) "Reading & Writing Part 4 displays authentic instructions and word bank"
+Report-Assert ($stData.Contains('startersRwPart4Data')) "Starters data contains authentic Reading & Writing Part 4 dataset for all 12 tests"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -256,10 +262,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v5")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v5")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v5")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v5")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v6")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v6")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v6")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v6")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {

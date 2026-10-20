@@ -653,6 +653,154 @@ const startersRwPart3Data = {
     }
 };
 
+// Authentic Cambridge Pre-A1 Starters Reading & Writing Part 4 Data (All 12 Tests)
+const startersRwPart4Data = {
+    "starters_1_test_1": {
+        title: "A chair",
+        example: { word: "legs" },
+        word_bank: ["legs", "dinner", "tablet", "book", "arm", "kitchen", "motorbike", "rug"],
+        questions: [
+            { id: 16, question: "16. In Mark's flat there are chairs next to the table in the [______].", correct_answers: ["kitchen"], explanation: "Chairs are placed around the dining table in the kitchen." },
+            { id: 17, question: "17. Mark's family sit and eat their [______] there.", correct_answers: ["dinner"], explanation: "The family sits down to eat dinner together." },
+            { id: 18, question: "18. Mark sits on his chair and reads his [______].", correct_answers: ["book"], explanation: "Mark enjoys reading a book." },
+            { id: 19, question: "19. Mark listens to the radio or plays on his [______].", correct_answers: ["tablet"], explanation: "Mark plays games on his electronic tablet." },
+            { id: 20, question: "20. There is a big red and blue [______] on the floor under his chair.", correct_answers: ["rug"], explanation: "A colorful rug lies beneath the chair on the floor." }
+        ]
+    },
+    "starters_1_test_2": {
+        title: "A living room",
+        example: { word: "house" },
+        word_bank: ["house", "piano", "kiwi", "kitchen", "television", "ruler", "pictures", "sofa"],
+        questions: [
+            { id: 16, question: "16. His living room is between the dining room and the [______].", correct_answers: ["kitchen"], explanation: "The living room is located between the dining room and the kitchen." },
+            { id: 17, question: "17. Ben's family watches [______] in the living room.", correct_answers: ["television", "TV"], explanation: "Ben's family watches television together in the living room." },
+            { id: 18, question: "18. Ben and his sister sit on the [______] and play games there.", correct_answers: ["sofa"], explanation: "Ben and his sister sit comfortably on the sofa to play games." },
+            { id: 19, question: "19. Ben's mum plays a [______] in the living room.", correct_answers: ["piano"], explanation: "Ben's mum plays musical tunes on the piano." },
+            { id: 20, question: "20. There are [______] of the family on the wall.", correct_answers: ["pictures"], explanation: "Framed pictures of the family hang on the living room wall." }
+        ]
+    },
+    "starters_1_test_3": {
+        title: "A beach",
+        example: { word: "sea" },
+        word_bank: ["sea", "pencil", "fish", "books", "hippo", "hats", "football", "sand"],
+        questions: [
+            { id: 16, question: "16. They wear [______] on their heads.", correct_answers: ["hats"], explanation: "People wear sun hats on their heads to protect from the sun." },
+            { id: 17, question: "17. Some people go to sleep and some sit and read [______] there.", correct_answers: ["books"], explanation: "Visitors sit by the sea and read books peacefully." },
+            { id: 18, question: "18. Children run on the [______] or play football with their friends.", correct_answers: ["sand"], explanation: "Children enjoy running on the warm beach sand." },
+            { id: 19, question: "19. Children run on the sand or play [______] with their friends.", correct_answers: ["football"], explanation: "Kids love playing football games together on the beach." },
+            { id: 20, question: "20. [______] live in the water and children like catching them.", correct_answers: ["Fish", "fish"], explanation: "Fish swim in the sea water." }
+        ]
+    },
+    "starters_2_test_1": {
+        title: "Mary's ducks",
+        example: { word: "farm" },
+        word_bank: ["farm", "trees", "songs", "water", "feet", "pencil", "bread", "goat"],
+        questions: [
+            { id: 16, question: "16. There are some chickens, and ducks and a [______].", correct_answers: ["goat"], explanation: "A goat lives on Mary's farm along with the chickens and ducks." },
+            { id: 17, question: "17. The ducks are brown and white and they have big orange [______].", correct_answers: ["feet"], explanation: "Ducks have bright orange webbed feet for walking and paddling." },
+            { id: 18, question: "18. Mary gives the ducks [______] in the morning.", correct_answers: ["bread"], explanation: "Mary feeds fresh pieces of bread to her ducks." },
+            { id: 19, question: "19. In the day, the ducks swim in the [______].", correct_answers: ["water"], explanation: "Ducks love swimming around in the farm pond water." },
+            { id: 20, question: "20. At night they sleep under the two big [______].", correct_answers: ["trees"], explanation: "The ducks rest peacefully underneath the shade of two large trees." }
+        ]
+    },
+    "starters_2_test_2": {
+        title: "Tom's kitchen",
+        example: { word: "house" },
+        word_bank: ["house", "alphabet", "chairs", "tail", "flowers", "sausages", "school", "lemonade"],
+        questions: [
+            { id: 16, question: "16. Tom's family sit on [______] and eat their food.", correct_answers: ["chairs"], explanation: "Family members sit on dining chairs around the table." },
+            { id: 17, question: "17. Tom likes eating [______] and chips.", correct_answers: ["sausages"], explanation: "Tom's favourite meal is tasty sausages with chips." },
+            { id: 18, question: "18. And his sister likes drinking [______].", correct_answers: ["lemonade"], explanation: "His sister enjoys drinking refreshing cold lemonade." },
+            { id: 19, question: "19. Tom has some eggs for breakfast and then he goes to [______].", correct_answers: ["school"], explanation: "After having breakfast in the morning, Tom heads to school." },
+            { id: 20, question: "20. There are some beautiful [______] from the garden on the kitchen table.", correct_answers: ["flowers"], explanation: "A vase with fresh colourful flowers brightens up the kitchen table." }
+        ]
+    },
+    "starters_2_test_3": {
+        title: "A school",
+        example: { word: "bus" },
+        word_bank: ["bus", "door", "football", "teacher", "bread", "playground", "glasses", "posters"],
+        questions: [
+            { id: 16, question: "16. She likes her school because it has a big [______].", correct_answers: ["playground"], explanation: "Eva loves the spacious outdoor school playground." },
+            { id: 17, question: "17. She plays [______] there with her friends.", correct_answers: ["football"], explanation: "Eva and her classmates kick the ball and play football." },
+            { id: 18, question: "18. Mrs Rice is their [______]. Eva loves her.", correct_answers: ["teacher"], explanation: "Mrs Rice is the caring and kind classroom teacher." },
+            { id: 19, question: "19. In Eva's classroom, there is a [______] and a big window.", correct_answers: ["door"], explanation: "The classroom features an entrance door and a wide bright window." },
+            { id: 20, question: "20. There are lots of [______] and a board on the wall.", correct_answers: ["posters"], explanation: "Colourful educational posters decorate the classroom walls." }
+        ]
+    },
+    "starters_3_test_1": {
+        title: "A donkey",
+        example: { word: "zoo" },
+        word_bank: ["zoo", "water", "ears", "boat", "tail", "carrots", "books", "legs"],
+        questions: [
+            { id: 16, question: "16. A donkey has two very long [______] on its head.", correct_answers: ["ears"], explanation: "Donkeys are known for their distinctively long upright ears." },
+            { id: 17, question: "17. At the end of its body a donkey has a small [______].", correct_answers: ["tail"], explanation: "A donkey swishes its small furry tail." },
+            { id: 18, question: "18. A donkey can walk and run on its four [______].", correct_answers: ["legs"], explanation: "The donkey stands firmly and trots on its four strong legs." },
+            { id: 19, question: "19. Donkeys drink [______].", correct_answers: ["water"], explanation: "Animals drink fresh cool water when thirsty." },
+            { id: 20, question: "20. They love eating [______] and they like apples, too.", correct_answers: ["carrots"], explanation: "Donkeys crunch on sweet orange carrots and apples." }
+        ]
+    },
+    "starters_3_test_2": {
+        title: "My bedroom",
+        example: { word: "bed" },
+        word_bank: ["bed", "books", "guitar", "meatballs", "chair", "drink", "drawings", "teddy"],
+        questions: [
+            { id: 16, question: "16. I sit on a [______] next to my desk.", correct_answers: ["chair"], explanation: "The child sits on a desk chair to draw and study." },
+            { id: 17, question: "17. I like doing funny [______] of robots with my crayons.", correct_answers: ["drawings"], explanation: "Colourful robot drawings made with crayons." },
+            { id: 18, question: "18. I like reading [______], too.", correct_answers: ["books"], explanation: "Reading interesting storybooks in the bedroom." },
+            { id: 19, question: "19. My favourite toy is my new [______].", correct_answers: ["teddy"], explanation: "A soft huggable teddy bear is the child's favourite toy." },
+            { id: 20, question: "20. I love music and I'm learning the [______].", correct_answers: ["guitar"], explanation: "Practising musical melodies on the guitar." }
+        ]
+    },
+    "starters_3_test_3": {
+        title: "Tom's cat",
+        example: { word: "house" },
+        word_bank: ["house", "eyes", "mouse", "food", "mat", "kites", "milk", "bathroom"],
+        questions: [
+            { id: 16, question: "16. It has a long tail and two green [______].", correct_answers: ["eyes"], explanation: "The cat looks attentively with two bright green eyes." },
+            { id: 17, question: "17. In the morning, the cat plays on the [______] on the floor in the living room with Tom.", correct_answers: ["mat"], explanation: "The cat loves curling up and rolling on the living room floor mat." },
+            { id: 18, question: "18. Its favourite toy is a [______].", correct_answers: ["mouse"], explanation: "The cat chases and pounces on a small toy mouse." },
+            { id: 19, question: "19. It drinks its [______] and eats its food in the garden.", correct_answers: ["milk"], explanation: "The cat laps up a saucer of fresh milk." },
+            { id: 20, question: "20. It drinks its milk and eats its [______] in the garden.", correct_answers: ["food"], explanation: "The pet finishes its tasty pet food bowl outside." }
+        ]
+    },
+    "starters_4_test_1": {
+        title: "Lucy's bedroom",
+        example: { word: "table" },
+        word_bank: ["table", "onions", "book", "games", "radio", "cupboard", "baby", "posters"],
+        questions: [
+            { id: 16, question: "16. There is a table with a lamp on it and she's got a [______] for her clothes.", correct_answers: ["cupboard"], explanation: "A wardrobe cupboard keeps all clothes neat and organized." },
+            { id: 17, question: "17. Lucy has got some cool [______] on the walls.", correct_answers: ["posters"], explanation: "Fun superhero and airplane posters cover the bedroom walls." },
+            { id: 18, question: "18. Lucy sits on her bed and plays [______] on her tablet.", correct_answers: ["games"], explanation: "Lucy taps the tablet screen playing digital games." },
+            { id: 19, question: "19. Lucy likes to listen to music on the [______] and draw pictures in her room.", correct_answers: ["radio"], explanation: "Catchy songs play through the bedroom radio." },
+            { id: 20, question: "20. In the evening, she reads a [______] in bed.", correct_answers: ["book"], explanation: "Reading a comforting bedtime storybook before falling asleep." }
+        ]
+    },
+    "starters_4_test_2": {
+        title: "My cousin Nick",
+        example: { word: "brothers" },
+        word_bank: ["brothers", "pear", "piano", "jeans", "television", "playground", "helicopter", "ice creams"],
+        questions: [
+            { id: 16, question: "16. He likes to wear T-shirts and [______].", correct_answers: ["jeans"], explanation: "Nick dresses casually in comfy cotton T-shirts and blue denim jeans." },
+            { id: 17, question: "17. We like to go to the [______] on our bikes.", correct_answers: ["playground"], explanation: "The cousins pedal their bicycles to the community playground." },
+            { id: 18, question: "18. Then, we get [______] - chocolate is our favourite!", correct_answers: ["ice creams", "ice cream"], explanation: "Enjoying cool delicious chocolate ice cream cones together." },
+            { id: 19, question: "19. In the evening, we watch [______] or talk to our friends on the computer.", correct_answers: ["television", "TV"], explanation: "Relaxing together in front of the television in the evening." },
+            { id: 20, question: "20. Nick likes playing the [______] too. We love music.", correct_answers: ["piano"], explanation: "Nick presses the keys playing nice melodies on the piano." }
+        ]
+    },
+    "starters_4_test_3": {
+        title: "Ben's pet",
+        example: { word: "cat" },
+        word_bank: ["cat", "pencils", "feet", "apples", "night", "football", "water", "garden"],
+        questions: [
+            { id: 16, question: "16. Kiwi lives in Ben's [______].", correct_answers: ["garden"], explanation: "Kiwi the pet mouse lives safely in a cage in the outdoor garden." },
+            { id: 17, question: "17. Kiwi has a brown body and very small [______].", correct_answers: ["feet"], explanation: "The little mouse scampers on tiny pink feet." },
+            { id: 18, question: "18. Kiwi likes drinking [______] and eating fruit.", correct_answers: ["water"], explanation: "Kiwi sips drops of clean water from its feeder bottle." },
+            { id: 19, question: "19. Its favourite fruit is [______].", correct_answers: ["apples", "apple"], explanation: "Crisp sweet apples are the pet's top favourite treat." },
+            { id: 20, question: "20. Kiwi sleeps in the day and plays at [______].", correct_answers: ["night"], explanation: "Mice are nocturnal, sleeping during daytime and running on wheels at night." }
+        ]
+    }
+};
+
 // Generator for standard Cambridge Pre-A1 Starters Tests
 function generateStartersTest(profile, idx) {
     const testNum = idx + 1;
@@ -771,13 +919,11 @@ function generateStartersTest(profile, idx) {
     const rwPart3Example = p3Config.example;
     const rwPart3Questions = p3Config.questions;
 
-    const rwPart4Questions = [
-        { id: 16, question: "16. In Mark's flat there are chairs next to the table in the [______].", correct_answers: ["kitchen", "KITCHEN"], explanation: "Chairs are placed around the dining table in the kitchen." },
-        { id: 17, question: "17. Mark's family sit and eat their [______] there.", correct_answers: ["dinner", "DINNER"], explanation: "The family sits down to eat dinner together." },
-        { id: 18, question: "18. Mark sits on his chair and reads his [______].", correct_answers: ["book", "BOOK"], explanation: "Mark enjoys reading a book." },
-        { id: 19, question: "19. Mark listens to the radio or plays on his [______].", correct_answers: ["tablet", "TABLET"], explanation: "Mark plays games on his electronic tablet." },
-        { id: 20, question: "20. There is a big red and blue [______] on the floor under his chair.", correct_answers: ["rug", "RUG"], explanation: "A colorful rug lies beneath the chair on the floor." }
-    ];
+    const p4Config = startersRwPart4Data[profile.id] || startersRwPart4Data["starters_1_test_1"];
+    const rwPart4Questions = p4Config.questions;
+    const rwPart4WordBank = p4Config.word_bank;
+    const rwPart4Example = p4Config.example;
+    const rwPart4Title = p4Config.title;
 
     const rwPart5Questions = [
         { id: 21, question: "21. Who is wearing a hat?", correct_answers: ["the boy", "boy", "a boy"], explanation: "In the picture, the young boy is wearing a sun hat." },
@@ -887,6 +1033,9 @@ function generateStartersTest(profile, idx) {
                     part_number: 4,
                     title: "Part 4: Read this. Choose a word from the box (5 questions)",
                     instruction: "Read the story and type the correct word in each gap (16 - 20).",
+                    story_title: rwPart4Title,
+                    example: rwPart4Example,
+                    word_bank: rwPart4WordBank,
                     questions: rwPart4Questions
                 },
                 {

@@ -1,4 +1,4 @@
-﻿// =========================================================================
+// =========================================================================
 // CAMBRIDGE STARTERS TEST ENGINE (PRE-A1 STARTERS 1 - 4)
 // OFFICIAL CAMBRIDGE SHIELDS SCORING (MAXIMUM 15 SHIELDS)
 // ALL 3 SKILLS: LISTENING - READING & WRITING - SPEAKING
@@ -1607,42 +1607,54 @@ function renderStartersReadingWritingView(container) {
         `;
     }
     else if (activeStartersRwPart === 4) {
-        // Part 4: Cloze text with Word bank
-        const cloze = currentPart.cloze;
+        // Part 4: Read this. Choose a word from the box (Questions 16 - 20)
+        const questions = currentPart.questions || [];
+        const wordBank = currentPart.word_bank || [];
+        const example = currentPart.example;
+
         partHtml = `
             <div class="space-y-4">
                 ${renderBookImageGallery(rwImages, "Part 4 Book Page", "rw4-gallery")}
-                <!-- WORD BANK -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Word Bank:
-                    </span>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        ${cloze.word_bank.map(w => `
-                            <div class="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                <span>${w.icon}</span> <span>${w.word}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
 
-                <!-- CLOZE PASSAGE -->
-                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
-                    <h3 class="text-base font-black text-slate-900">${cloze.title}</h3>
-                    <p class="text-sm font-medium leading-relaxed text-slate-800">
-                        ${cloze.text_template}
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 pt-3 border-t border-slate-100">
-                        ${cloze.questions.map(q => {
+                <!-- WORD BANK CHIPS -->
+                ${wordBank.length > 0 ? `
+                    <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase text-indigo-900 tracking-wide">
+                                ðŸ“¦ Word Bank:
+                            </span>
+                            ${example ? `<span class="text-[11px] font-bold text-slate-500">Example: <strong class="text-indigo-600 uppercase underline">${escapeHtml(example.word)}</strong></span>` : ''}
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            ${wordBank.map(w => `
+                                <div class="px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-xs font-bold text-slate-800 hover:text-indigo-900 transition flex items-center gap-1.5 shadow-2xs">
+                                    <span>${escapeHtml(w)}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                <!-- QUESTIONS (16 - 20) -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
+                        Part 4: Read this. Choose a word from the box. Write the correct word next to numbers 16 - 20.
+                    </span>
+                    <div class="space-y-3">
+                        ${questions.map(q => {
                             const userVal = startersUserAnswers.reading_writing[q.id] || '';
                             return `
-                                <div class="space-y-1">
-                                    <label class="text-[11px] font-black text-slate-600">[${q.id}]:</label>
-                                    <input type="text" 
-                                           value="${escapeHtml(userVal)}" 
-                                           oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                           placeholder="Word..."
-                                           class="w-full px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="space-y-1 flex-1">
+                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${escapeHtml(q.question)}</p>
+                                    </div>
+                                    <div class="w-full sm:w-44 shrink-0">
+                                        <input type="text" 
+                                               value="${escapeHtml(userVal)}" 
+                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
+                                               placeholder="Word..."
+                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
                                 </div>
                             `;
                         }).join('')}
@@ -2034,17 +2046,20 @@ function gradeStartersTest(showModal = true) {
     });
 
     // RW Part 4 (16 - 20)
-    test.reading_writing.parts[3].cloze.questions.forEach(q => {
+    const p4 = test.reading_writing.parts.find(p => p.part_number === 4) || test.reading_writing.parts[3];
+    const p4Questions = (p4 && p4.questions) ? p4.questions : ((p4 && p4.cloze) ? p4.cloze.questions : []);
+    p4Questions.forEach(q => {
         const userVal = (startersUserAnswers.reading_writing[q.id] || '').trim().toLowerCase();
-        const isCorrect = (userVal === q.correct_answer.toLowerCase());
+        const correctAnswers = q.correct_answers ? q.correct_answers.map(a => a.toLowerCase()) : (q.correct_answer ? [q.correct_answer.toLowerCase()] : []);
+        const isCorrect = correctAnswers.some(ans => ans === userVal);
         if (isCorrect) rwCorrect++;
         rwReview.push({
             id: q.id,
             skill: 'reading_writing',
             part: 4,
-            prompt: `Part 4 Cloze [${q.id}]`,
-            userAns: userVal || 'Not answered',
-            correctAns: q.correct_answer,
+            prompt: q.question || `Part 4: Question ${q.id}`,
+            userAns: startersUserAnswers.reading_writing[q.id] || 'Not answered',
+            correctAns: q.correct_answers ? q.correct_answers.join(' / ') : (q.correct_answer || ''),
             isCorrect,
             explanation: q.explanation
         });
