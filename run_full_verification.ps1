@@ -108,6 +108,29 @@ foreach ($item in $p4Pages) {
 }
 Report-Assert ($foundP4Cropped -eq 12) "All 12 Part 4 cropped scene images exist and have valid dimensions" "Found $foundP4Cropped / 12"
 
+# 1E. Reading & Writing Part 1 Cropped Images (60 Questions + 24 Examples = 84 images)
+$foundRw1Questions = 0
+$foundRw1Examples = 0
+foreach ($b in 1..4) {
+    foreach ($t in 1..3) {
+        foreach ($ex in 1..2) {
+            $exPath = "images/starters/book$b/test${t}_rw1_example${ex}.jpg"
+            if (Test-Path $exPath) { $foundRw1Examples++ }
+        }
+        foreach ($q in 1..5) {
+            $qPath = "images/starters/book$b/test${t}_rw1_q${q}.jpg"
+            if (Test-Path $qPath) {
+                $img = [System.Drawing.Image]::FromFile((Resolve-Path $qPath).Path)
+                $w = $img.Width; $h = $img.Height
+                $img.Dispose()
+                if ($w -ge 240 -and $h -ge 200) { $foundRw1Questions++ }
+            }
+        }
+    }
+}
+Report-Assert ($foundRw1Questions -eq 60) "All 60 Reading & Writing Part 1 question images exist" "Found $foundRw1Questions / 60"
+Report-Assert ($foundRw1Examples -eq 24) "All 24 Reading & Writing Part 1 example images exist" "Found $foundRw1Examples / 24"
+
 # ----------------------------------------------------
 # 2. VERIFY STARTERS TEST ENGINE RENDERING LOGIC
 # ----------------------------------------------------
@@ -135,6 +158,11 @@ Report-Assert ($stEngine.Contains('page_${lisP2 + 4}_cropped.jpg')) "Part 4 dyna
 Report-Assert ($stEngine.Contains('id="starters-p4-wrapper"') -and $stEngine.Contains('handleStartersP4SpotClick')) "Part 4 renders direct interactive object colouring hotspots on picture"
 Report-Assert (-not $stEngine.Contains('Questions 16 - 20: Listen & Apply Colour')) "Part 4 completely removes bottom descriptive question spoiler rows"
 Report-Assert ($stEngine.Contains('Click to listen to each question:') -and $stEngine.Contains('Question ${q.id}')) "Part 4 audio player provides individual listen buttons without spoiler text"
+
+# Check Reading & Writing Part 1 Cropped Image Card Logic
+Report-Assert ($stEngine.Contains('test${testNum}_rw1_q${q.id}.jpg')) "Reading & Writing Part 1 dynamically loads dedicated cropped question image per question"
+Report-Assert ($stEngine.Contains('test${testNum}_rw1_example1.jpg') -and $stEngine.Contains('test${testNum}_rw1_example2.jpg')) "Reading & Writing Part 1 displays authentic book examples"
+Report-Assert (-not $stEngine.Contains("q.icon || '🖼️'")) "Reading & Writing Part 1 removed broken image icon placeholder"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -195,10 +223,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v3")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v3")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v3")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v3")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v4")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v4")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v4")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v4")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {

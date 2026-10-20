@@ -1297,45 +1297,119 @@ function renderStartersReadingWritingView(container) {
     let partHtml = '';
 
     if (activeStartersRwPart === 1) {
-        // Part 1: Tick or Cross
+        // Part 1: Look and read. Put a tick or a cross (Individual Cropped Question Images)
+        const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+        const parts = testId.split('_');
+        const bookNum = parseInt(parts[1]) || 1;
+        const testNum = parseInt(parts[3]) || 1;
+        const ex1ImgSrc = `images/starters/book${bookNum}/test${testNum}_rw1_example1.jpg`;
+        const ex2ImgSrc = `images/starters/book${bookNum}/test${testNum}_rw1_example2.jpg`;
+
         partHtml = `
             <div class="space-y-4">
-                ${renderBookImageGallery(rwImages, "Part 1 Book Page", "rw1-gallery")}
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Part 1: Look and read. Put a tick (✓) or a cross (✗) in the box.
-                    </span>
-                    <div class="space-y-3">
-                        ${currentPart.questions.map(q => {
-                            const userVal = startersUserAnswers.reading_writing[q.id];
-                            return `
-                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <span class="text-2xl">${q.icon || '🖼️'}</span>
-                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.statement}</p>
+                <!-- INSTRUCTIONS HEADER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 text-xs text-teal-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-teal-600 text-white font-black text-[11px] uppercase tracking-wide">📖 Part 1</span>
+                            <span class="font-extrabold text-sm text-teal-900">Look and read. Put a tick (✓) or a cross (✗) in the box</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            👉 <strong>Instructions:</strong> Look at each picture and read the sentence. Click <strong>Tick (✓)</strong> if correct, or <strong>Cross (✗)</strong> if wrong!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AUTHENTIC EXAMPLES CARD -->
+                <div class="p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/80 border border-slate-200 shadow-xs space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full bg-slate-700 text-white font-black text-[10px] uppercase tracking-wider">
+                            Examples
+                        </span>
+                        <span class="text-xs font-bold text-slate-600">Sample questions:</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <!-- Example 1 -->
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between gap-3 shadow-2xs">
+                            <div class="flex items-center gap-3">
+                                <div class="w-20 h-20 shrink-0 rounded-lg bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center p-1">
+                                    <img src="${ex1ImgSrc}" 
+                                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${ex1ImgSrc}';}" 
+                                         alt="Example 1" class="max-h-full max-w-full object-contain rounded">
+                                </div>
+                                <span class="font-extrabold text-xs sm:text-sm text-slate-800">This is a foot.</span>
+                            </div>
+                            <span class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 font-black text-xs border border-emerald-300 flex items-center gap-1 shrink-0">
+                                <span>✓</span> <span>Tick</span>
+                            </span>
+                        </div>
+
+                        <!-- Example 2 -->
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between gap-3 shadow-2xs">
+                            <div class="flex items-center gap-3">
+                                <div class="w-20 h-20 shrink-0 rounded-lg bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center p-1">
+                                    <img src="${ex2ImgSrc}" 
+                                         onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${ex2ImgSrc}';}" 
+                                         alt="Example 2" class="max-h-full max-w-full object-contain rounded">
+                                </div>
+                                <span class="font-extrabold text-xs sm:text-sm text-slate-800">These are pianos.</span>
+                            </div>
+                            <span class="px-3 py-1.5 rounded-xl bg-rose-100 text-rose-800 font-black text-xs border border-rose-300 flex items-center gap-1 shrink-0">
+                                <span>✗</span> <span>Cross</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 QUESTIONS CARDS -->
+                <div class="space-y-3.5">
+                    ${currentPart.questions.map(q => {
+                        const userVal = startersUserAnswers.reading_writing[q.id];
+                        const qImgSrc = `images/starters/book${bookNum}/test${testNum}_rw1_q${q.id}.jpg`;
+
+                        return `
+                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm transition hover:shadow-md space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <!-- Left: Question Number + Cropped Illustration + Statement -->
+                                    <div class="flex items-center gap-3.5 sm:gap-4 flex-1">
+                                        <span class="w-8 h-8 rounded-full bg-teal-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
+                                            ${q.id}
+                                        </span>
+                                        <div class="w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-xl bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center p-1 shadow-2xs">
+                                            <img src="${qImgSrc}" 
+                                                 onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${qImgSrc}';}" 
+                                                 alt="Question ${q.id} Illustration" 
+                                                 class="max-h-full max-w-full object-contain rounded-lg">
+                                        </div>
+                                        <p class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+                                            ${q.statement}
+                                        </p>
                                     </div>
-                                    <div class="flex items-center gap-2 shrink-0">
+
+                                    <!-- Right: Tick / Cross Interactive Action Buttons -->
+                                    <div class="flex items-center gap-2.5 sm:gap-3 shrink-0 self-end sm:self-center">
                                         <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, true)"
-                                                class="px-4 py-2 rounded-xl border text-xs font-black transition flex items-center gap-1.5 ${
+                                                class="px-5 py-2.5 rounded-xl border-2 font-black text-xs sm:text-sm transition-all flex items-center gap-2 active:scale-95 shadow-2xs ${
                                                     userVal === true 
-                                                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs' 
-                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                        ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600 shadow-md ring-2 ring-emerald-300' 
+                                                        : 'bg-white hover:bg-emerald-50 text-slate-700 border-slate-200 hover:border-emerald-300'
                                                 }">
-                                            <span>✓</span> <span>Tick</span>
+                                            <span class="text-sm">✓</span> <span>Tick</span>
                                         </button>
                                         <button onclick="handleStartersAnswerChange('reading_writing', ${q.id}, false)"
-                                                class="px-4 py-2 rounded-xl border text-xs font-black transition flex items-center gap-1.5 ${
+                                                class="px-5 py-2.5 rounded-xl border-2 font-black text-xs sm:text-sm transition-all flex items-center gap-2 active:scale-95 shadow-2xs ${
                                                     userVal === false 
-                                                        ? 'bg-rose-600 text-white border-rose-600 shadow-xs' 
-                                                        : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
+                                                        ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white border-rose-600 shadow-md ring-2 ring-rose-300' 
+                                                        : 'bg-white hover:bg-rose-50 text-slate-700 border-slate-200 hover:border-rose-300'
                                                 }">
-                                            <span>✗</span> <span>Cross</span>
+                                            <span class="text-sm">✗</span> <span>Cross</span>
                                         </button>
                                     </div>
                                 </div>
-                            `;
-                        }).join('')}
-                    </div>
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>
         `;

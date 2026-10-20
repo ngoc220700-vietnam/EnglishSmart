@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE PRE-A1 STARTERS 1 - 4 COMPREHENSIVE TEST DATABASE
 // 12 FULL CAMBRIDGE PRACTICE TESTS (BOOKS 1 - 4)
 // 100% AUTHENTIC QUESTIONS & EXAMPLES DIRECTLY FROM SCANNED CAMBRIDGE BOOKS
@@ -118,6 +118,19 @@ const startersTestProfiles = [
                     audio_script: "Examiner: Now find the mother. - Girl: She's standing near the door and pointing at the floor. - Examiner: Yes. Look at the cake next to her feet. Colour it blue. - Girl: Blue? Yes, I'm colouring it blue.",
                     explanation: "Colour the cake next to the mother's feet blue."
                 }
+            ]
+        },
+        rw_p1: {
+            examples: [
+                { statement: "This is a foot.", answer: true, image_desc: "A foot" },
+                { statement: "These are pianos.", answer: false, image_desc: "Two guitars" }
+            ],
+            questions: [
+                { id: 1, image_desc: "A train", statement: "This is a train.", is_correct: true, correct_answer: "tick", explanation: "The image shows a train -> Tick." },
+                { id: 2, image_desc: "Sausages", statement: "These are sausages.", is_correct: true, correct_answer: "tick", explanation: "The image shows sausages -> Tick." },
+                { id: 3, image_desc: "T-shirts", statement: "These are skirts.", is_correct: false, correct_answer: "cross", explanation: "The image shows T-shirts, not skirts -> Cross." },
+                { id: 4, image_desc: "A bookcase", statement: "This is a lamp.", is_correct: false, correct_answer: "cross", explanation: "The image shows a bookcase, not a lamp -> Cross." },
+                { id: 5, image_desc: "A watch", statement: "This is a watch.", is_correct: true, correct_answer: "tick", explanation: "The image shows a watch -> Tick." }
             ]
         },
         rw_p2: {
@@ -612,13 +625,21 @@ function generateStartersTest(profile, idx) {
     const part4Questions = (profile.lis_p4 && profile.lis_p4.questions) ? profile.lis_p4.questions : defaultPart4Questions;
 
     // 2. READING & WRITING (5 PARTS)
-    const rwPart1Questions = [
-        { id: 1, image_desc: "A piano", statement: "These are pianos.", is_correct: false, correct_answer: "cross", explanation: "The image shows a single piano, not multiple pianos -> Cross." },
-        { id: 2, image_desc: "Sausages", statement: "These are sausages.", is_correct: true, correct_answer: "tick", explanation: "The image shows sausages -> Tick." },
-        { id: 3, image_desc: "A skirt", statement: "These are skirts.", is_correct: false, correct_answer: "cross", explanation: "The image shows a single skirt -> Cross." },
-        { id: 4, image_desc: "A lamp", statement: "This is a lamp.", is_correct: true, correct_answer: "tick", explanation: "The image shows a bedside lamp -> Tick." },
-        { id: 5, image_desc: "A watch", statement: "This is a watch.", is_correct: true, correct_answer: "tick", explanation: "The image shows a wristwatch -> Tick." }
+    const defaultRwPart1Examples = [
+        { statement: "This is a foot.", answer: true, image_desc: "A foot" },
+        { statement: "These are pianos.", answer: false, image_desc: "Two guitars" }
     ];
+
+    const defaultRwPart1Questions = [
+        { id: 1, image_desc: "A train", statement: "This is a train.", is_correct: true, correct_answer: "tick", explanation: "The image shows a train -> Tick." },
+        { id: 2, image_desc: "Sausages", statement: "These are sausages.", is_correct: true, correct_answer: "tick", explanation: "The image shows sausages -> Tick." },
+        { id: 3, image_desc: "T-shirts", statement: "These are skirts.", is_correct: false, correct_answer: "cross", explanation: "The image shows T-shirts, not skirts -> Cross." },
+        { id: 4, image_desc: "A bookcase", statement: "This is a lamp.", is_correct: false, correct_answer: "cross", explanation: "The image shows a bookcase, not a lamp -> Cross." },
+        { id: 5, image_desc: "A watch", statement: "This is a watch.", is_correct: true, correct_answer: "tick", explanation: "The image shows a watch -> Tick." }
+    ];
+
+    const rwPart1Examples = (profile.rw_p1 && profile.rw_p1.examples) ? profile.rw_p1.examples : defaultRwPart1Examples;
+    const rwPart1Questions = (profile.rw_p1 && profile.rw_p1.questions) ? profile.rw_p1.questions : defaultRwPart1Questions;
 
     const rwPart2Questions = profile.rw_p2.questions;
 
@@ -725,6 +746,7 @@ function generateStartersTest(profile, idx) {
                     part_number: 1,
                     title: "Part 1: Look and read. Put a tick or a cross (5 questions)",
                     instruction: "Look at each picture and read the sentence. Click Tick if correct, Cross if wrong.",
+                    examples: rwPart1Examples,
                     questions: rwPart1Questions
                 },
                 {
