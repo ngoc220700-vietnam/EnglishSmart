@@ -351,7 +351,7 @@ function getStartersBookImages(test, skill, partNum) {
         if (partNum === 1) return [`images/starters/book${bookNum}/page_${lisP1}_cropped.jpg`];
         if (partNum === 2) return [`images/starters/book${bookNum}/page_${lisP2}_cropped.jpg`];
         if (partNum === 3) return [`images/starters/book${bookNum}/page_${lisP2 + 2}.jpg`, `images/starters/book${bookNum}/page_${lisP2 + 3}.jpg`];
-        if (partNum === 4) return [`images/starters/book${bookNum}/page_${lisP2 + 4}.jpg`];
+        if (partNum === 4) return [`images/starters/book${bookNum}/page_${lisP2 + 4}_cropped.jpg`];
     } else if (skill === 'reading_writing') {
         if (partNum === 1) return [`images/starters/book${bookNum}/page_${rwP2 - 2}.jpg`, `images/starters/book${bookNum}/page_${rwP2 - 1}.jpg`];
         if (partNum === 2) return [`images/starters/book${bookNum}/page_${rwP2}_cropped.jpg`];
@@ -558,8 +558,15 @@ function setStartersP4Eraser(isEraser = true) {
     renderStartersSkillContent();
 }
 
-function applyColorToP4Item(qId) {
-    handleStartersAnswerChange('listening', qId, startersP4ActiveColor);
+function handleStartersP4SpotClick(qId) {
+    if (startersP4IsEraser) {
+        if (startersUserAnswers.listening && startersUserAnswers.listening[qId]) {
+            delete startersUserAnswers.listening[qId];
+        }
+    } else {
+        handleStartersAnswerChange('listening', qId, startersP4ActiveColor);
+    }
+    saveStartersProgress();
     renderStartersSkillContent();
 }
 
@@ -571,42 +578,42 @@ function undoStartersP4() {
     ctx.putImageData(prevState, 0, 0);
 }
 
-function clearStartersP4Canvas(bgImgSrc) {
+function clearStartersP4Canvas() {
     const canvas = document.getElementById('starters-p4-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     startersP4UndoStack = [];
-    if (bgImgSrc) {
-        initStartersP4ColoringCanvas(bgImgSrc);
-    }
 }
 
-function initStartersP4ColoringCanvas(bgImgSrc) {
+function initStartersP4ColoringCanvas() {
     const canvas = document.getElementById('starters-p4-canvas');
-    if (!canvas) return;
+    const img = document.getElementById('starters-p4-img');
+    if (!canvas || !img) return;
     const ctx = canvas.getContext('2d');
 
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.onload = () => {
-        canvas.width = img.naturalWidth || 900;
-        canvas.height = img.naturalHeight || 650;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        saveState();
-    };
-    img.onerror = () => {
-        img.src = 'https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + bgImgSrc;
-    };
-    img.src = bgImgSrc;
+    function syncDimensions() {
+        const w = img.naturalWidth || img.clientWidth || 800;
+        const h = img.naturalHeight || img.clientHeight || 600;
+        if (canvas.width !== w || canvas.height !== h) {
+            canvas.width = w;
+            canvas.height = h;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+        syncDimensions();
+    } else {
+        img.onload = syncDimensions;
+    }
 
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
 
     function saveState() {
-        if (startersP4UndoStack.length > 15) startersP4UndoStack.shift();
+        if (startersP4UndoStack.length > 20) startersP4UndoStack.shift();
         startersP4UndoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
     }
 
@@ -623,6 +630,8 @@ function initStartersP4ColoringCanvas(bgImgSrc) {
     }
 
     function startDraw(e) {
+        // Only draw if target is canvas itself
+        if (e.target !== canvas) return;
         e.preventDefault();
         saveState();
         isDrawing = true;
@@ -639,9 +648,9 @@ function initStartersP4ColoringCanvas(bgImgSrc) {
         if (startersP4IsEraser) {
             ctx.globalCompositeOperation = 'destination-out';
             ctx.strokeStyle = 'rgba(0,0,0,1)';
-            ctx.lineWidth = startersP4BrushSize * 1.5;
+            ctx.lineWidth = startersP4BrushSize * 1.6;
         } else {
-            ctx.globalCompositeOperation = 'multiply';
+            ctx.globalCompositeOperation = 'source-over';
             ctx.strokeStyle = startersP4ActiveHex;
             ctx.globalAlpha = 0.65;
             ctx.lineWidth = startersP4BrushSize;
@@ -1064,6 +1073,7 @@ function renderStartersListeningView(container) {
         // Part 4: INTERACTIVE COLORING CANVAS & CRAYON PALETTE
         const p4Images = getStartersBookImages(test, 'listening', 4);
         const p4ImgSrc = p4Images[0] || '';
+        const colouredCount = currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length;
 
         partHtml = `
             <div class="space-y-4">
@@ -1075,21 +1085,62 @@ function renderStartersListeningView(container) {
                             <span class="font-extrabold text-sm text-fuchsia-900">Listen and colour (Questions 16 - 20)</span>
                         </div>
                         <p class="text-slate-700 text-xs">
-                            👉 <strong>Instructions:</strong> Choose a crayon colour from the palette ➔ Colour directly on the canvas or click "Colour this item" below!
+                            👉 <strong>Instructions:</strong> Choose a crayon colour from the palette ➔ Tap the object directly on the picture to colour it!
                         </p>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                         <button onclick="undoStartersP4()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
                             <span>↩️</span> <span>Undo</span>
                         </button>
-                        <button onclick="clearStartersP4Canvas('${p4ImgSrc}')" class="px-3 py-1.5 rounded-xl bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
+                        <button onclick="clearStartersP4Canvas()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
                             <span>🗑️</span> <span>Clear</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- 1. CRAYON PALETTE & BRUSH TOOLS -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                <!-- 1. AUDIO PLAYER BAR (NO SPOILER TEXT!) -->
+                <div class="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-600 text-white font-black text-[10px] uppercase tracking-wider">
+                                🎧 Audio Track
+                            </span>
+                            <span class="text-xs font-extrabold text-slate-800">
+                                Click to listen to each question:
+                            </span>
+                        </div>
+                        <span class="px-3 py-1 rounded-xl bg-fuchsia-50 border border-fuchsia-200 text-fuchsia-900 font-extrabold text-xs">
+                            Coloured: <strong>${colouredCount} / 5</strong>
+                        </span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2">
+                        ${currentPart.example ? `
+                            <button onclick="speakStartersQuestion('${escapeQuotes(currentPart.example.audio_script)}')" 
+                                    class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold flex items-center gap-1.5 transition active:scale-95 shadow-2xs">
+                                <span>🔊</span> <span>Example</span>
+                            </button>
+                        ` : ''}
+
+                        ${currentPart.questions.map(q => {
+                            const userCol = startersUserAnswers.listening[q.id];
+                            return `
+                                <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" 
+                                        class="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition active:scale-95 shadow-2xs ${
+                                            userCol 
+                                                ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 font-black' 
+                                                : 'bg-violet-100 hover:bg-violet-200 text-violet-900'
+                                        }">
+                                    <span>🔊</span> <span>Question ${q.id}</span>
+                                    ${userCol ? '<span class="text-[11px] font-black">✓</span>' : ''}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                <!-- 2. CRAYON PALETTE & BRUSH TOOLS -->
+                <div class="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                     <div class="flex items-center justify-between flex-wrap gap-2">
                         <div class="flex items-center gap-2">
                             <span class="text-xs font-black uppercase text-slate-800">Crayon Palette:</span>
@@ -1100,13 +1151,13 @@ function renderStartersListeningView(container) {
                         </div>
                         <!-- BRUSH SIZES & ERASER -->
                         <div class="flex items-center gap-1.5">
-                            <button onclick="setStartersP4BrushSize(6); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 6 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                            <button onclick="setStartersP4BrushSize(6); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 6 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
                                 ✏️ Fine
                             </button>
-                            <button onclick="setStartersP4BrushSize(14); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 14 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                            <button onclick="setStartersP4BrushSize(14); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 14 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
                                 🖌️ Medium
                             </button>
-                            <button onclick="setStartersP4BrushSize(26); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 26 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
+                            <button onclick="setStartersP4BrushSize(26); setStartersP4Eraser(false);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4BrushSize === 26 && !startersP4IsEraser ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
                                 🖍️ Thick
                             </button>
                             <button onclick="setStartersP4Eraser(true);" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${startersP4IsEraser ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}">
@@ -1123,7 +1174,7 @@ function renderStartersListeningView(container) {
                                 <button onclick="setStartersP4Color('${c.name}', '${c.hex}')" 
                                         class="px-3 py-1.5 rounded-xl border flex items-center gap-2 text-xs font-bold transition active:scale-95 ${
                                             isSelected 
-                                                ? 'ring-3 ring-indigo-500 scale-105 shadow-md border-indigo-500 bg-indigo-50/40 text-slate-900' 
+                                                ? 'ring-3 ring-indigo-500 scale-105 shadow-md border-indigo-500 bg-indigo-50/40 text-slate-900 font-extrabold' 
                                                 : 'hover:bg-slate-50 border-slate-200 text-slate-700'
                                         }">
                                     <span class="w-4 h-4 rounded-full border border-white shadow-2xs" style="background-color: ${c.hex};"></span>
@@ -1134,79 +1185,76 @@ function renderStartersListeningView(container) {
                     </div>
                 </div>
 
-                <!-- 2. COLORING CANVAS CONTAINER -->
+                <!-- 3. COLORING CANVAS & INTERACTIVE OBJECT HOTSPOTS (TIGHT WRAPPER) -->
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
                     <div class="flex items-center justify-between text-xs font-black uppercase text-indigo-900 tracking-wide">
-                        <span>🎨 Colouring Canvas (Colour on the picture):</span>
+                        <span>🎨 Colouring Picture (Tap objects on the picture to colour):</span>
                         <button onclick="openStartersImageModal('${p4ImgSrc}', 'Part 4 Scene Picture')" class="px-2 py-0.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
                             🔍 Zoom Picture
                         </button>
                     </div>
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center">
-                        <canvas id="starters-p4-canvas" 
-                                width="900" 
-                                height="650" 
-                                class="w-full max-h-[560px] object-contain cursor-crosshair touch-none select-none"></canvas>
-                    </div>
-                </div>
 
-                <!-- 3. COLORING TARGET QUESTIONS (16 - 20) -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                            Questions 16 - 20: Listen & Apply Colour
-                        </span>
-                        <span class="text-[11px] font-bold text-slate-500">
-                            Coloured: ${currentPart.questions.filter(q => !!startersUserAnswers.listening[q.id]).length}/5
-                        </span>
-                    </div>
+                    <div class="flex justify-center p-2 rounded-2xl bg-slate-100/70 border border-slate-200 overflow-auto">
+                        <div id="starters-p4-wrapper" class="relative inline-block max-w-full rounded-xl overflow-hidden border border-slate-300 shadow-md bg-white select-none">
+                            <img id="starters-p4-img" 
+                                 src="${p4ImgSrc}" 
+                                 onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p4ImgSrc}';}" 
+                                 alt="Part 4 Illustration" 
+                                 class="block max-h-[580px] w-auto max-w-full object-contain mx-auto select-none pointer-events-none" />
 
-                    <div class="space-y-2.5">
-                        ${currentPart.questions.map((q, idx) => {
-                            const userCol = startersUserAnswers.listening[q.id] || '';
-                            const matchedHex = P4_PALETTE.find(p => p.name === userCol)?.hex || '#94a3b8';
+                            <canvas id="starters-p4-canvas" 
+                                    class="absolute inset-0 w-full h-full z-10 cursor-crosshair touch-none"></canvas>
 
-                            return `
-                                <div class="p-3 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
-                                    userCol ? 'bg-fuchsia-50/40 border-fuchsia-200' : 'bg-slate-50 border-slate-200'
-                                }">
-                                    <div class="flex items-center gap-3">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-7 h-7 rounded-xl bg-fuchsia-100 text-fuchsia-800 font-black text-xs flex items-center justify-center shrink-0">
-                                                ${q.id}
-                                            </span>
-                                            <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.item}</p>
-                                        </div>
-                                        <button onclick="speakStartersQuestion('${escapeQuotes(q.audio_script)}')" 
-                                                title="Listen audio" 
-                                                class="px-2.5 py-1 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-800 text-xs font-bold flex items-center gap-1 transition active:scale-95 shrink-0">
-                                            <span>🔊</span> <span>Listen</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="flex items-center gap-2 shrink-0">
-                                        ${userCol ? `
-                                            <div class="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-800 shadow-2xs">
-                                                <span class="w-3.5 h-3.5 rounded-full border border-white shadow-xs" style="background-color: ${matchedHex}"></span>
-                                                <span>Coloured: <strong>${userCol}</strong></span>
-                                            </div>
-                                        ` : `
-                                            <span class="text-xs font-bold text-slate-400">Not coloured</span>
-                                        `}
-                                        <button onclick="applyColorToP4Item(${q.id})" 
-                                                class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1">
-                                            <span>🎨</span> <span>Apply [${startersP4ActiveColor}]</span>
-                                        </button>
+                            <!-- Example Spot (Brown) -->
+                            ${currentPart.example && currentPart.example.spot ? `
+                                <div style="left: ${currentPart.example.spot.x}%; top: ${currentPart.example.spot.y}%;" 
+                                     class="absolute z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+                                    <div class="px-2.5 py-1 rounded-full text-white font-black text-[11px] border-2 border-white shadow-lg flex items-center gap-1 ring-2 ring-black/15" 
+                                         style="background-color: #78350f;">
+                                        <span>✓</span>
+                                        <span>Example [${currentPart.example.color || 'Brown'}]</span>
                                     </div>
                                 </div>
-                            `;
-                        }).join('')}
+                            ` : ''}
+
+                            <!-- Interactive Question Spots (16 - 20) -->
+                            ${currentPart.questions.map((q, idx) => {
+                                const spot = q.spot || { x: 28 + (idx % 2) * 44, y: 35 + Math.floor(idx / 2) * 25 };
+                                const userCol = startersUserAnswers.listening[q.id] || '';
+                                const colorObj = P4_PALETTE.find(p => p.name === userCol);
+                                const colHex = colorObj ? colorObj.hex : '#94a3b8';
+
+                                return `
+                                    <div style="left: ${spot.x}%; top: ${spot.y}%;" 
+                                         class="absolute z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+                                        <button onclick="handleStartersP4SpotClick(${q.id})" 
+                                                title="${userCol ? 'Coloured: ' + userCol + ' (Click to change)' : 'Click to colour with ' + startersP4ActiveColor}"
+                                                class="group relative flex items-center justify-center transition-all transform hover:scale-110 active:scale-95">
+                                            ${userCol ? `
+                                                <span class="px-2.5 py-1 rounded-full text-white font-black text-xs border-2 border-white shadow-lg flex items-center gap-1.5 transition-all ring-3 ring-black/15" 
+                                                      style="background-color: ${colHex};">
+                                                    <span>✓</span>
+                                                    <span>${userCol}</span>
+                                                </span>
+                                            ` : `
+                                                <span class="w-8 h-8 rounded-full bg-white/95 hover:bg-white text-indigo-950 font-black text-xs border-2 border-dashed border-indigo-500 shadow-md flex items-center justify-center transition-all group-hover:border-indigo-600 group-hover:ring-4 group-hover:ring-indigo-200">
+                                                    ${q.id}
+                                                </span>
+                                            `}
+                                            <span class="absolute -bottom-6 whitespace-nowrap px-2 py-0.5 rounded-md bg-slate-900/85 text-white text-[10px] font-bold opacity-0 group-hover:opacity-100 transition pointer-events-none z-30 shadow-xs">
+                                                ${userCol ? 'Click to recolour' : 'Colour with ' + startersP4ActiveColor}
+                                            </span>
+                                        </button>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
                     </div>
                 </div>
             </div>
         `;
 
-        setTimeout(() => initStartersP4ColoringCanvas(p4ImgSrc), 100);
+        setTimeout(() => initStartersP4ColoringCanvas(), 100);
     }
 
     container.innerHTML = `
@@ -1759,7 +1807,7 @@ function gradeStartersTest(showModal = true) {
             id: q.id,
             skill: 'listening',
             part: 4,
-            prompt: `Part 4: Colour "${q.item}"`,
+            prompt: `Part 4: Question ${q.id} (Colouring)`,
             userAns: startersUserAnswers.listening[q.id] || 'Not coloured',
             correctAns: q.correct_color,
             isCorrect,

@@ -70,6 +70,56 @@ const startersTestProfiles = [
                 }
             ]
         },
+        lis_p4: {
+            example: {
+                item: "The cake in the cupboard",
+                color: "Brown",
+                spot: { x: 77.1, y: 15.6 },
+                audio_script: "Examiner: Look at the picture. Can you see the cake in the cupboard? - Boy: Yes, I can. - Examiner: Colour it brown, please. - Boy: Brown? Okay."
+            },
+            questions: [
+                {
+                    id: 16,
+                    item: "The cake in the boy's hand",
+                    correct_color: "Pink",
+                    spot: { x: 61.1, y: 35.8 },
+                    audio_script: "Examiner: Look at the boy who is standing up. Can you see the cake in his hand? - Girl: Yes, I can. - Examiner: Colour the cake in his hand pink, please. - Girl: Pink? Okay, I'm colouring it pink now.",
+                    explanation: "Colour the cake in the boy's hand pink."
+                },
+                {
+                    id: 17,
+                    item: "The cake on the girl's plate",
+                    correct_color: "Yellow",
+                    spot: { x: 45.3, y: 54.8 },
+                    audio_script: "Examiner: Now look at the girl at the table. Can you see the cake on her plate? - Girl: Yes, she's eating dinner. - Examiner: Colour that cake yellow. - Girl: Yellow. Okay, that's done.",
+                    explanation: "Colour the cake on the girl's plate yellow."
+                },
+                {
+                    id: 18,
+                    item: "The cake on the mat in front of the door",
+                    correct_color: "Orange",
+                    spot: { x: 14.1, y: 57.0 },
+                    audio_script: "Examiner: Find the mat by the door. - Girl: Okay, I see the mat. Oh, there's a cake on it! - Examiner: That's right! Colour the cake on the mat orange. - Girl: Orange for the cake on the mat.",
+                    explanation: "Colour the cake on the mat in front of the door orange."
+                },
+                {
+                    id: 19,
+                    item: "The cake in front of the cat",
+                    correct_color: "Green",
+                    spot: { x: 41.4, y: 74.9 },
+                    audio_script: "Examiner: Can you see the cat under the table? - Girl: Yes, it's walking on the floor. - Examiner: There is a cake in front of the cat. Colour it green. - Girl: A green cake? That's funny! Okay.",
+                    explanation: "Colour the cake in front of the cat green."
+                },
+                {
+                    id: 20,
+                    item: "The cake next to the mother's feet",
+                    correct_color: "Blue",
+                    spot: { x: 14.5, y: 68.7 },
+                    audio_script: "Examiner: Now find the mother. - Girl: She's standing near the door and pointing at the floor. - Examiner: Yes. Look at the cake next to her feet. Colour it blue. - Girl: Blue? Yes, I'm colouring it blue.",
+                    explanation: "Colour the cake next to the mother's feet blue."
+                }
+            ]
+        },
         rw_p2: {
             examples: [
                 { statement: "A young child is waving.", answer: "yes" },
@@ -543,13 +593,23 @@ function generateStartersTest(profile, idx) {
 
     const part3Questions = (profile.lis_p3 && profile.lis_p3.questions) ? profile.lis_p3.questions : defaultPart3Questions;
 
-    const part4Questions = [
-        { id: 16, item: "The balloon in the sky", correct_color: "Red", audio_script: "Examiner: Look at the balloon flying in the sky. Colour it red.", explanation: "Colour the balloon in the sky red." },
-        { id: 17, item: "The cat sleeping on the sofa", correct_color: "Brown", audio_script: "Examiner: Can you see the cat on the sofa? Colour the cat brown.", explanation: "Colour the cat sleeping on the sofa brown." },
-        { id: 18, item: "The car next to the house", correct_color: "Blue", audio_script: "Examiner: Find the car next to the front door. Colour it blue.", explanation: "Colour the car next to the house blue." },
-        { id: 19, item: "The flower in the girl's hair", correct_color: "Yellow", audio_script: "Examiner: Now look at the flower in the girl's hair. Make it yellow.", explanation: "Colour the flower in the girl's hair yellow." },
-        { id: 20, item: "The apple on the kitchen table", correct_color: "Green", audio_script: "Examiner: Can you see the apple on the table? Colour it green.", explanation: "Colour the apple on the kitchen table green." }
+    const defaultPart4Example = {
+        item: "The cake in the cupboard",
+        color: "Brown",
+        spot: { x: 77.1, y: 15.6 },
+        audio_script: "Examiner: Look at the picture. Can you see the cake in the cupboard? - Boy: Yes, I can. - Examiner: Colour it brown, please. - Boy: Brown? Okay."
+    };
+
+    const defaultPart4Questions = [
+        { id: 16, item: "Item 1", correct_color: "Pink", spot: { x: 61.1, y: 35.8 }, audio_script: "Examiner: Can you see the boy? Look at the cake in his hand. Colour it pink.", explanation: "Colour the cake in the boy's hand pink." },
+        { id: 17, item: "Item 2", correct_color: "Yellow", spot: { x: 45.3, y: 54.8 }, audio_script: "Examiner: Now look at the girl at the table. Can you see the cake on her plate? Colour it yellow.", explanation: "Colour the cake on the girl's plate yellow." },
+        { id: 18, item: "Item 3", correct_color: "Orange", spot: { x: 14.1, y: 57.0 }, audio_script: "Examiner: Look at the mat by the door. There is a cake on it. Colour it orange.", explanation: "Colour the cake on the mat orange." },
+        { id: 19, item: "Item 4", correct_color: "Green", spot: { x: 41.4, y: 74.9 }, audio_script: "Examiner: Can you see the cat under the table? There is a cake in front of the cat. Colour it green.", explanation: "Colour the cake in front of the cat green." },
+        { id: 20, item: "Item 5", correct_color: "Blue", spot: { x: 14.5, y: 68.7 }, audio_script: "Examiner: Now find the mother. Look at the cake next to her feet. Colour it blue.", explanation: "Colour the cake next to the mother's feet blue." }
     ];
+
+    const part4Example = (profile.lis_p4 && profile.lis_p4.example) ? profile.lis_p4.example : defaultPart4Example;
+    const part4Questions = (profile.lis_p4 && profile.lis_p4.questions) ? profile.lis_p4.questions : defaultPart4Questions;
 
     // 2. READING & WRITING (5 PARTS)
     const rwPart1Questions = [
@@ -653,6 +713,7 @@ function generateStartersTest(profile, idx) {
                     part_number: 4,
                     title: "Part 4: Listen and colour (5 questions)",
                     instruction: "Listen carefully and choose the correct crayon to colour the objects in the picture.",
+                    example: part4Example,
                     questions: part4Questions
                 }
             ]

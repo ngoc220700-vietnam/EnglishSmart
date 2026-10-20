@@ -86,6 +86,28 @@ foreach ($b in 1..4) {
 Report-Assert ($foundP3Questions -eq 60) "All 60 Part 3 individual question images exist" "Found $foundP3Questions / 60"
 Report-Assert ($foundP3Examples -eq 12) "All 12 Part 3 example images exist" "Found $foundP3Examples / 12"
 
+# 1D. Part 4 Cropped Images (12 tests)
+$p4Pages = @(
+    @{ b = 1; p = 10 }, @{ b = 1; p = 23 }, @{ b = 1; p = 36 },
+    @{ b = 2; p = 10 }, @{ b = 2; p = 23 }, @{ b = 2; p = 36 },
+    @{ b = 3; p = 10 }, @{ b = 3; p = 24 }, @{ b = 3; p = 38 },
+    @{ b = 4; p = 10 }, @{ b = 4; p = 24 }, @{ b = 4; p = 38 }
+)
+$foundP4Cropped = 0
+foreach ($item in $p4Pages) {
+    $imgPath = "images/starters/book$($item.b)/page_$($item.p)_cropped.jpg"
+    if (Test-Path $imgPath) {
+        $img = [System.Drawing.Image]::FromFile((Resolve-Path $imgPath).Path)
+        $w = $img.Width; $h = $img.Height
+        $img.Dispose()
+        if ($w -ge 600 -and $h -ge 700) { $foundP4Cropped++ }
+        else { Report-Assert $false "Image $imgPath has invalid dimensions" "Width: $w, Height: $h" }
+    } else {
+        Report-Assert $false "Missing Part 4 cropped image: $imgPath"
+    }
+}
+Report-Assert ($foundP4Cropped -eq 12) "All 12 Part 4 cropped scene images exist and have valid dimensions" "Found $foundP4Cropped / 12"
+
 # ----------------------------------------------------
 # 2. VERIFY STARTERS TEST ENGINE RENDERING LOGIC
 # ----------------------------------------------------
@@ -107,6 +129,12 @@ Report-Assert ($stEngine.Contains("Type name or number...")) "Listening Part 2 i
 # Check Part 3 Individual Cropped Question & Option Selector Logic
 Report-Assert ($stEngine.Contains('test${testNum}_p3_q${qIdx + 1}.jpg')) "Part 3 dynamically loads dedicated cropped question image per question"
 Report-Assert ($stEngine.Contains('Choose your answer:') -and $stEngine.Contains('Option ${opt}')) "Part 3 renders large interactive A, B, C option selector buttons"
+
+# Check Part 4 Direct Object Colouring & No Spoiler Text Logic
+Report-Assert ($stEngine.Contains('page_${lisP2 + 4}_cropped.jpg')) "Part 4 dynamically loads cropped scene illustration"
+Report-Assert ($stEngine.Contains('id="starters-p4-wrapper"') -and $stEngine.Contains('handleStartersP4SpotClick')) "Part 4 renders direct interactive object colouring hotspots on picture"
+Report-Assert (-not $stEngine.Contains('Questions 16 - 20: Listen & Apply Colour')) "Part 4 completely removes bottom descriptive question spoiler rows"
+Report-Assert ($stEngine.Contains('Click to listen to each question:') -and $stEngine.Contains('Question ${q.id}')) "Part 4 audio player provides individual listen buttons without spoiler text"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -167,10 +195,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v2")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v2")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v2")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v2")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v3")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v3")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v3")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v3")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {
