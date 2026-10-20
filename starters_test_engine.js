@@ -348,7 +348,7 @@ function getStartersBookImages(test, skill, partNum) {
     }
 
     if (skill === 'listening') {
-        if (partNum === 1) return [`images/starters/book${bookNum}/page_${lisP1}.jpg`];
+        if (partNum === 1) return [`images/starters/book${bookNum}/page_${lisP1}_cropped.jpg`];
         if (partNum === 2) return [`images/starters/book${bookNum}/page_${lisP2}_cropped.jpg`];
         if (partNum === 3) return [`images/starters/book${bookNum}/page_${lisP2 + 2}.jpg`, `images/starters/book${bookNum}/page_${lisP2 + 3}.jpg`];
         if (partNum === 4) return [`images/starters/book${bookNum}/page_${lisP2 + 4}.jpg`];
@@ -362,7 +362,7 @@ function getStartersBookImages(test, skill, partNum) {
             `images/starters/book${bookNum}/page_${rwP2 + 4}.jpg`
         ];
     }
-    return [`images/starters/book${bookNum}/page_${lisP1}.jpg`];
+    return [`images/starters/book${bookNum}/page_${lisP1}_cropped.jpg`];
 }
 
 // =========================================================================
@@ -443,11 +443,27 @@ function clearStartersP1Connection(qId) {
 // Freehand line canvas for Part 1
 function initStartersP1Canvas() {
     const canvas = document.getElementById('starters-p1-canvas');
-    if (!canvas) return;
+    const img = document.getElementById('starters-p1-img');
+    if (!canvas || !img) return;
     const ctx = canvas.getContext('2d');
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
+
+    function resizeCanvas() {
+        const rect = img.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+            canvas.width = Math.round(rect.width);
+            canvas.height = Math.round(rect.height);
+        }
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+        resizeCanvas();
+    } else {
+        img.onload = resizeCanvas;
+    }
+    window.addEventListener('resize', resizeCanvas);
 
     function getPos(e) {
         const rect = canvas.getBoundingClientRect();
@@ -474,7 +490,7 @@ function initStartersP1Canvas() {
         e.preventDefault();
         const pos = getPos(e);
         ctx.strokeStyle = '#ef4444'; // Red crayon line
-        ctx.lineWidth = 5;
+        ctx.lineWidth = 4;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.beginPath();
@@ -673,12 +689,12 @@ function renderStartersListeningView(container) {
         const bgImages = getStartersBookImages(test, 'listening', 1);
         const p1ImgSrc = bgImages[0] || '';
         const spots = currentPart.spots || [
-            { id: "spot_1", x: 46, y: 40, label: "A" },
-            { id: "spot_2", x: 82, y: 44, label: "B" },
-            { id: "spot_3", x: 64, y: 44, label: "C" },
-            { id: "spot_4", x: 28, y: 39, label: "D" },
-            { id: "spot_5", x: 48, y: 58, label: "E" },
-            { id: "spot_6", x: 74, y: 54, label: "F" }
+            { id: "spot_1", x: 49, y: 42, description: "Boy flying a kite" },
+            { id: "spot_2", x: 20, y: 44, description: "Girl sitting at table" },
+            { id: "spot_3", x: 74, y: 47, description: "Boy fishing by water" },
+            { id: "spot_4", x: 58, y: 88, description: "Boy with blue helmet" },
+            { id: "spot_5", x: 82, y: 40, description: "Girl on the path" },
+            { id: "spot_6", x: 22, y: 58, description: "Boy in green shirt" }
         ];
 
         const selectedQ = currentPart.questions.find(q => q.id === startersP1SelectedQId) || currentPart.questions[0];
@@ -693,12 +709,12 @@ function renderStartersListeningView(container) {
                             <span class="font-extrabold text-sm text-amber-900">Listen and draw lines (5 questions)</span>
                         </div>
                         <p class="text-slate-700 text-xs">
-                            👉 <strong>Instructions:</strong> Drag name badges onto the target spots on the picture, or click a name then click a target spot.
+                            👉 <strong>How to match:</strong> Click a name above, then tap the matching person on the picture. Or drag the name badge directly onto the person.
                         </p>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                         <button onclick="clearStartersP1Canvas()" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs">
-                            <span>🧹</span> <span>Clear Lines</span>
+                            <span>🧹</span> <span>Clear Pencil Lines</span>
                         </button>
                     </div>
                 </div>
@@ -718,6 +734,8 @@ function renderStartersListeningView(container) {
                         ${currentPart.questions.map((q, idx) => {
                             const isSelected = (q.id === startersP1SelectedQId);
                             const connectedSpot = startersUserAnswers.listening[q.id] || '';
+                            const connectedSpotObj = spots.find(s => s.id === connectedSpot);
+                            const spotLabel = connectedSpotObj && connectedSpotObj.description ? connectedSpotObj.description : (connectedSpot ? `Person ${connectedSpot.replace('spot_', '')}` : '');
                             const col = P1_PALETTE[idx % P1_PALETTE.length];
 
                             return `
@@ -745,12 +763,12 @@ function renderStartersListeningView(container) {
 
                                     <div class="pt-1 border-t border-slate-200/60">
                                         ${connectedSpot ? `
-                                            <div class="flex items-center justify-between text-[11px] text-emerald-800 font-bold">
-                                                <span>✓ Matched to Spot ${connectedSpot.replace('spot_', '').toUpperCase()}</span>
-                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${q.id})" title="Remove" class="text-rose-600 hover:text-rose-800 ml-1 font-black">✕</button>
+                                            <div class="flex items-center justify-between text-[11px] text-emerald-800 font-bold truncate">
+                                                <span title="${spotLabel}">✓ ${spotLabel}</span>
+                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${q.id})" title="Remove" class="text-rose-600 hover:text-rose-800 ml-1 font-black shrink-0">✕</button>
                                             </div>
                                         ` : (isSelected ? `
-                                            <span class="text-[11px] text-amber-700 font-black animate-pulse">👉 Click a Spot</span>
+                                            <span class="text-[11px] text-amber-700 font-black animate-pulse">👉 Tap a person</span>
                                         ` : `
                                             <span class="text-[11px] text-slate-400 font-medium">Drag or Click</span>
                                         `)}
@@ -765,7 +783,7 @@ function renderStartersListeningView(container) {
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                     <div class="flex items-center justify-between flex-wrap gap-2">
                         <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
-                            <span>🎯</span> <span>Target Picture (Drop or click on spots to match [${selectedQ ? selectedQ.name : ''}]):</span>
+                            <span>🎯</span> <span>Target Picture (Tap or drop to match [${selectedQ ? selectedQ.name : ''}]):</span>
                         </span>
                         <div class="flex items-center gap-2">
                             <button onclick="openStartersImageModal('${p1ImgSrc}', 'Part 1 Scene Picture')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
@@ -775,52 +793,75 @@ function renderStartersListeningView(container) {
                     </div>
 
                     <!-- SCENE PICTURE WITH INTERACTIVE DROP HOTSPOTS & FREEHAND CANVAS -->
-                    <div id="starters-p1-stage" class="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-900/5 flex justify-center items-center select-none min-h-[420px]">
-                        <img src="${p1ImgSrc}" 
-                             onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p1ImgSrc}';}" 
-                             alt="Part 1 Scene" 
-                             class="w-full max-h-[580px] object-contain select-none pointer-events-none">
+                    <div id="starters-p1-stage" class="flex justify-center items-center p-3 rounded-2xl border border-slate-200 bg-slate-100/70 select-none overflow-x-auto">
+                        <div id="starters-p1-wrapper" class="relative inline-block max-w-full rounded-2xl overflow-hidden shadow-md border border-slate-300 bg-white">
+                            <img id="starters-p1-img" 
+                                 src="${p1ImgSrc}" 
+                                 onerror="if(!this.dataset.triedCdn){this.dataset.triedCdn='1';this.src='https://cdn.jsdelivr.net/gh/ngoc220700-vietnam/EnglishSmart@main/' + '${p1ImgSrc}';}" 
+                                 alt="Part 1 Scene" 
+                                 class="block max-h-[580px] w-auto max-w-full object-contain select-none pointer-events-none">
 
-                        <!-- FREEHAND DRAWING CANVAS OVERLAY -->
-                        <canvas id="starters-p1-canvas" 
-                                width="900" 
-                                height="650" 
-                                class="absolute inset-0 w-full h-full cursor-crosshair touch-none z-2"></canvas>
+                            <!-- FREEHAND DRAWING CANVAS OVERLAY -->
+                            <canvas id="starters-p1-canvas" 
+                                    class="absolute inset-0 w-full h-full cursor-crosshair touch-none z-2"></canvas>
 
-                        <!-- INTERACTIVE TARGET HOTSPOTS DIRECTLY ON PICTURE -->
-                        ${spots.map((spot, sIdx) => {
-                            const connectedQ = currentPart.questions.find(q => startersUserAnswers.listening[q.id] === spot.id);
-                            return `
-                                <div id="target-spot-${spot.id}"
-                                     data-spot-id="${spot.id}"
-                                     onclick="handleStartersSpotClick('${spot.id}')"
-                                     ondragover="event.preventDefault(); this.classList.add('scale-125', 'ring-4', 'ring-amber-400');"
-                                     ondragleave="this.classList.remove('scale-125', 'ring-4', 'ring-amber-400');"
-                                     ondrop="handleStartersSpotDrop(event, '${spot.id}')"
-                                     style="left: ${spot.x}%; top: ${spot.y}%;"
-                                     class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-200 z-10 group ${
-                                         connectedQ ? 'scale-110' : 'hover:scale-125'
-                                     }">
-                                    ${connectedQ ? `
-                                        <div class="px-2.5 py-1 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-xs shadow-lg flex items-center gap-1.5 border-2 border-white animate-bounce-once">
-                                            <span>🏷️ ${connectedQ.name}</span>
-                                            <button onclick="event.stopPropagation(); clearStartersP1Connection(${connectedQ.id})" 
-                                                    title="Remove match" 
-                                                    class="w-4 h-4 rounded-full bg-white/30 hover:bg-rose-600 text-white flex items-center justify-center text-[10px] font-black">
-                                                ✕
-                                            </button>
-                                        </div>
-                                    ` : `
-                                        <div class="relative flex items-center justify-center">
-                                            <span class="absolute w-8 h-8 rounded-full bg-amber-400/40 animate-ping"></span>
-                                            <div class="w-8 h-8 rounded-full bg-white/95 border-2 border-amber-500 text-amber-700 font-black text-xs shadow-md flex items-center justify-center backdrop-blur-xs group-hover:bg-amber-500 group-hover:text-white transition">
-                                                ${spot.label || (sIdx + 1)}
+                            <!-- SVG CONNECTING LINES OVERLAY -->
+                            <svg id="starters-p1-svg" class="absolute inset-0 w-full h-full pointer-events-none z-5">
+                                ${currentPart.questions.map((q, idx) => {
+                                    const sId = startersUserAnswers.listening[q.id];
+                                    if (!sId) return '';
+                                    const sp = spots.find(s => s.id === sId);
+                                    if (!sp) return '';
+                                    const col = P1_PALETTE[idx % P1_PALETTE.length];
+                                    const topX = 10 + idx * 20;
+                                    return `
+                                        <line x1="${topX}%" y1="0%" x2="${sp.x}%" y2="${sp.y}%" 
+                                              stroke="${col.hex}" stroke-width="3" stroke-dasharray="6,4" 
+                                              stroke-linecap="round" />
+                                        <circle cx="${sp.x}%" cy="${sp.y}%" r="5" fill="${col.hex}" />
+                                    `;
+                                }).join('')}
+                            </svg>
+
+                            <!-- INTERACTIVE CHARACTER TARGET SPOTS DIRECTLY ON CHARACTERS -->
+                            ${spots.map((spot, sIdx) => {
+                                const connectedQ = currentPart.questions.find(q => startersUserAnswers.listening[q.id] === spot.id);
+                                const col = connectedQ ? P1_PALETTE[(connectedQ.id - 1) % P1_PALETTE.length] : null;
+                                return `
+                                    <div id="target-spot-${spot.id}"
+                                         data-spot-id="${spot.id}"
+                                         onclick="handleStartersSpotClick('${spot.id}')"
+                                         ondragover="event.preventDefault(); this.classList.add('scale-125', 'ring-4', 'ring-amber-400');"
+                                         ondragleave="this.classList.remove('scale-125', 'ring-4', 'ring-amber-400');"
+                                         ondrop="handleStartersSpotDrop(event, '${spot.id}')"
+                                         style="left: ${spot.x}%; top: ${spot.y}%;"
+                                         class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-200 z-10 group ${
+                                             connectedQ ? 'scale-105' : 'hover:scale-125'
+                                         }">
+                                        ${connectedQ ? `
+                                            <div class="px-3 py-1.5 rounded-full ${col ? col.bg : 'bg-amber-500'} text-white font-black text-xs shadow-xl flex items-center gap-1.5 border-2 border-white animate-bounce-once">
+                                                <span>🏷️ ${connectedQ.name}</span>
+                                                <button onclick="event.stopPropagation(); clearStartersP1Connection(${connectedQ.id})" 
+                                                        title="Remove match" 
+                                                        class="w-4 h-4 rounded-full bg-white/30 hover:bg-rose-600 text-white flex items-center justify-center text-[10px] font-black transition">
+                                                    ✕
+                                                </button>
                                             </div>
-                                        </div>
-                                    `}
-                                </div>
-                            `;
-                        }).join('')}
+                                        ` : `
+                                            <div class="relative flex flex-col items-center group">
+                                                <span class="absolute w-8 h-8 rounded-full bg-amber-400/40 animate-ping"></span>
+                                                <div class="w-8 h-8 rounded-full bg-white/95 border-2 border-amber-500 text-amber-700 font-black text-xs shadow-lg flex items-center justify-center backdrop-blur-xs group-hover:bg-amber-500 group-hover:text-white transition">
+                                                    👤
+                                                </div>
+                                                <span class="mt-1 px-2 py-0.5 rounded-md bg-slate-900/85 text-white text-[10px] font-bold opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow pointer-events-none">
+                                                    ${spot.description || `Person ${sIdx + 1}`}
+                                                </span>
+                                            </div>
+                                        `}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1602,13 +1643,18 @@ function gradeStartersTest(showModal = true) {
         const userVal = startersUserAnswers.listening[q.id];
         const isCorrect = (userVal && userVal.toLowerCase() === q.correct_answer.toLowerCase());
         if (isCorrect) lisCorrect++;
+        const p1Spots = test.listening.parts[0].spots || [];
+        const userSpotObj = p1Spots.find(s => s.id === userVal);
+        const correctSpotObj = p1Spots.find(s => s.id === q.correct_answer);
+        const userDesc = userSpotObj ? userSpotObj.description : (userVal ? `Person ${userVal.replace('spot_', '')}` : 'Not matched');
+        const correctDesc = correctSpotObj ? correctSpotObj.description : `Person ${q.correct_answer.replace('spot_', '')}`;
         lisReview.push({
             id: q.id,
             skill: 'listening',
             part: 1,
-            prompt: `Part 1: Match [${q.name}] to target spot`,
-            userAns: userVal ? `Spot ${userVal.replace('spot_', '').toUpperCase()}` : 'Not matched',
-            correctAns: `Spot ${q.correct_answer.replace('spot_', '').toUpperCase()}`,
+            prompt: `Part 1: Match [${q.name}] to person in picture`,
+            userAns: userDesc,
+            correctAns: correctDesc,
             isCorrect,
             explanation: q.explanation
         });

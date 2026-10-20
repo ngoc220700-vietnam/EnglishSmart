@@ -1,4 +1,4 @@
-﻿// =========================================================================
+// =========================================================================
 // CAMBRIDGE PRE-A1 STARTERS 1 - 4 COMPREHENSIVE TEST DATABASE
 // 12 FULL CAMBRIDGE PRACTICE TESTS (BOOKS 1 - 4)
 // 100% AUTHENTIC QUESTIONS & EXAMPLES DIRECTLY FROM SCANNED CAMBRIDGE BOOKS
@@ -428,26 +428,27 @@ function generateStartersTest(profile, idx) {
 
     // 1. LISTENING (4 PARTS)
     const part1Spots = [
-        { id: "spot_1", x: 46, y: 40, label: "A" },
-        { id: "spot_2", x: 82, y: 44, label: "B" },
-        { id: "spot_3", x: 64, y: 44, label: "C" },
-        { id: "spot_4", x: 28, y: 39, label: "D" },
-        { id: "spot_5", x: 48, y: 58, label: "E" },
-        { id: "spot_6", x: 74, y: 54, label: "F" }
+        { id: "spot_1", x: 49, y: 42, description: "Boy flying a kite" },
+        { id: "spot_2", x: 20, y: 44, description: "Girl sitting at table" },
+        { id: "spot_3", x: 74, y: 47, description: "Boy fishing by water" },
+        { id: "spot_4", x: 58, y: 88, description: "Boy with blue helmet" },
+        { id: "spot_5", x: 82, y: 40, description: "Girl on the path" },
+        { id: "spot_6", x: 22, y: 58, description: "Boy in green shirt" }
     ];
 
     // Select 5 active names from profile.p1_names
     const activeNames = profile.p1_names.slice(0, 5);
     const part1Questions = activeNames.map((name, i) => {
         const spotId = `spot_${i + 1}`;
+        const desc = part1Spots[i] ? part1Spots[i].description : `Person ${i + 1}`;
         return {
             id: i + 1,
             type: "match",
             name: name,
             target_spot: spotId,
             correct_answer: spotId,
-            audio_prompt: `Can you see ${name}? Draw a line to Spot ${String.fromCharCode(65 + i)}.`,
-            explanation: `Audio prompt identifies ${name} at location Spot ${String.fromCharCode(65 + i)}.`
+            audio_prompt: `Can you see ${name}? Draw a line to ${name} (${desc}).`,
+            explanation: `Audio identifies ${name} as the ${desc}.`
         };
     });
 
