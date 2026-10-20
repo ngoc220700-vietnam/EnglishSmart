@@ -529,6 +529,130 @@ const startersTestProfiles = [
     }
 ];
 
+// Authentic Cambridge Pre-A1 Starters Reading & Writing Part 3 Data (All 12 Tests)
+const startersRwPart3Data = {
+    "starters_1_test_1": {
+        example: { word: "LIME", scrambled_letters: ["M", "I", "E", "L"] },
+        questions: [
+            { id: 11, scrambled_letters: ["A", "R", "E", "P"], correct_word: "PEAR", explanation: "P-E-A-R -> PEAR" },
+            { id: 12, scrambled_letters: ["E", "M", "N", "O", "L"], correct_word: "LEMON", explanation: "L-E-M-O-N -> LEMON" },
+            { id: 13, scrambled_letters: ["A", "G", "R", "N", "E", "O"], correct_word: "ORANGE", explanation: "O-R-A-N-G-E -> ORANGE" },
+            { id: 14, scrambled_letters: ["A", "N", "N", "B", "A", "A"], correct_word: "BANANA", explanation: "B-A-N-A-N-A -> BANANA" },
+            { id: 15, scrambled_letters: ["E", "P", "A", "E", "N", "L", "I", "P", "P"], correct_word: "PINEAPPLE", explanation: "P-I-N-E-A-P-P-L-E -> PINEAPPLE" }
+        ]
+    },
+    "starters_1_test_2": {
+        example: { word: "PEAR", scrambled_letters: ["A", "R", "P", "E"] },
+        questions: [
+            { id: 11, scrambled_letters: ["S", "H", "F", "I"], correct_word: "FISH", explanation: "F-I-S-H -> FISH" },
+            { id: 12, scrambled_letters: ["A", "D", "B", "E", "R"], correct_word: "BREAD", explanation: "B-R-E-A-D -> BREAD" },
+            { id: 13, scrambled_letters: ["I", "S", "C", "P", "H"], correct_word: "CHIPS", explanation: "C-H-I-P-S -> CHIPS" },
+            { id: 14, scrambled_letters: ["A", "M", "T", "O", "T", "O"], correct_word: "TOMATO", explanation: "T-O-M-A-T-O -> TOMATO" },
+            { id: 15, scrambled_letters: ["R", "G", "U", "B", "E", "R"], correct_word: "BURGER", explanation: "B-U-R-G-E-R -> BURGER" }
+        ]
+    },
+    "starters_1_test_3": {
+        example: { word: "BATH", scrambled_letters: ["T", "H", "B", "A"] },
+        questions: [
+            { id: 11, scrambled_letters: ["P", "M", "A", "L"], correct_word: "LAMP", explanation: "L-A-M-P -> LAMP" },
+            { id: 12, scrambled_letters: ["O", "A", "F", "S"], correct_word: "SOFA", explanation: "S-O-F-A -> SOFA" },
+            { id: 13, scrambled_letters: ["K", "L", "O", "C", "C"], correct_word: "CLOCK", explanation: "C-L-O-C-K -> CLOCK" },
+            { id: 14, scrambled_letters: ["M", "R", "O", "R", "I", "R"], correct_word: "MIRROR", explanation: "M-I-R-R-O-R -> MIRROR" },
+            { id: 15, scrambled_letters: ["O", "C", "P", "M", "U", "R", "T", "E"], correct_word: "COMPUTER", explanation: "C-O-M-P-U-T-E-R -> COMPUTER" }
+        ]
+    },
+    "starters_2_test_1": {
+        example: { word: "HAT", scrambled_letters: ["H", "T", "A"] },
+        questions: [
+            { id: 11, scrambled_letters: ["S", "K", "O", "S", "C"], correct_word: "SOCKS", explanation: "S-O-C-K-S -> SOCKS" },
+            { id: 12, scrambled_letters: ["O", "S", "B", "T", "O"], correct_word: "BOOTS", explanation: "B-O-O-T-S -> BOOTS" },
+            { id: 13, scrambled_letters: ["H", "T", "R", "I", "S"], correct_word: "SHIRT", explanation: "S-H-I-R-T -> SHIRT" },
+            { id: 14, scrambled_letters: ["S", "R", "S", "D", "E"], correct_word: "DRESS", explanation: "D-R-E-S-S -> DRESS" },
+            { id: 15, scrambled_letters: ["O", "E", "S", "R", "S", "R", "T", "U"], correct_word: "TROUSERS", explanation: "T-R-O-U-S-E-R-S -> TROUSERS" }
+        ]
+    },
+    "starters_2_test_2": {
+        example: { word: "ARM", scrambled_letters: ["M", "R", "A"] },
+        questions: [
+            { id: 11, scrambled_letters: ["R", "I", "H", "A"], correct_word: "HAIR", explanation: "H-A-I-R -> HAIR" },
+            { id: 12, scrambled_letters: ["C", "A", "F", "E"], correct_word: "FACE", explanation: "F-A-C-E -> FACE" },
+            { id: 13, scrambled_letters: ["E", "T", "F", "E"], correct_word: "FEET", explanation: "F-E-E-T -> FEET" },
+            { id: 14, scrambled_letters: ["N", "H", "D", "A"], correct_word: "HAND", explanation: "H-A-N-D -> HAND" },
+            { id: 15, scrambled_letters: ["T", "O", "H", "U", "M"], correct_word: "MOUTH", explanation: "M-O-U-T-H -> MOUTH" }
+        ]
+    },
+    "starters_2_test_3": {
+        example: { word: "HAT", scrambled_letters: ["A", "T", "H"] },
+        questions: [
+            { id: 11, scrambled_letters: ["O", "S", "K", "C"], correct_word: "SOCK", explanation: "S-O-C-K -> SOCK" },
+            { id: 12, scrambled_letters: ["R", "E", "D", "S", "S"], correct_word: "DRESS", explanation: "D-R-E-S-S -> DRESS" },
+            { id: 13, scrambled_letters: ["T", "H", "S", "I", "R"], correct_word: "SHIRT", explanation: "S-H-I-R-T -> SHIRT" },
+            { id: 14, scrambled_letters: ["S", "N", "A", "E", "J"], correct_word: "JEANS", explanation: "J-E-A-N-S -> JEANS" },
+            { id: 15, scrambled_letters: ["T", "A", "E", "C", "K", "J"], correct_word: "JACKET", explanation: "J-A-C-K-E-T -> JACKET" }
+        ]
+    },
+    "starters_3_test_1": {
+        example: { word: "BREAD", scrambled_letters: ["R", "A", "B", "D", "E"] },
+        questions: [
+            { id: 11, scrambled_letters: ["E", "C", "R", "I"], correct_word: "RICE", explanation: "R-I-C-E -> RICE" },
+            { id: 12, scrambled_letters: ["L", "K", "I", "M"], correct_word: "MILK", explanation: "M-I-L-K -> MILK" },
+            { id: 13, scrambled_letters: ["R", "E", "G", "R", "U", "B"], correct_word: "BURGER", explanation: "B-U-R-G-E-R -> BURGER" },
+            { id: 14, scrambled_letters: ["O", "M", "T", "A", "O", "T"], correct_word: "TOMATO", explanation: "T-O-M-A-T-O -> TOMATO" },
+            { id: 15, scrambled_letters: ["H", "E", "K", "N", "C", "I", "C"], correct_word: "CHICKEN", explanation: "C-H-I-C-K-E-N -> CHICKEN" }
+        ]
+    },
+    "starters_3_test_2": {
+        example: { word: "PEAR", scrambled_letters: ["E", "P", "R", "A"] },
+        questions: [
+            { id: 11, scrambled_letters: ["E", "L", "I", "M"], correct_word: "LIME", explanation: "L-I-M-E -> LIME" },
+            { id: 12, scrambled_letters: ["I", "I", "W", "K"], correct_word: "KIWI", explanation: "K-I-W-I -> KIWI" },
+            { id: 13, scrambled_letters: ["A", "G", "O", "M", "N"], correct_word: "MANGO", explanation: "M-A-N-G-O -> MANGO" },
+            { id: 14, scrambled_letters: ["E", "R", "A", "G", "N", "O"], correct_word: "ORANGE", explanation: "O-R-A-N-G-E -> ORANGE" },
+            { id: 15, scrambled_letters: ["W", "T", "M", "O", "L", "A", "E", "N", "R", "E"], correct_word: "WATERMELON", explanation: "W-A-T-E-R-M-E-L-O-N -> WATERMELON" }
+        ]
+    },
+    "starters_3_test_3": {
+        example: { word: "EAR", scrambled_letters: ["E", "A", "R"] },
+        questions: [
+            { id: 11, scrambled_letters: ["A", "D", "H", "N"], correct_word: "HAND", explanation: "H-A-N-D -> HAND" },
+            { id: 12, scrambled_letters: ["T", "O", "F", "O"], correct_word: "FOOT", explanation: "F-O-O-T -> FOOT" },
+            { id: 13, scrambled_letters: ["I", "H", "R", "A"], correct_word: "HAIR", explanation: "H-A-I-R -> HAIR" },
+            { id: 14, scrambled_letters: ["E", "S", "N", "O"], correct_word: "NOSE", explanation: "N-O-S-E -> NOSE" },
+            { id: 15, scrambled_letters: ["O", "H", "T", "U", "M"], correct_word: "MOUTH", explanation: "M-O-U-T-H -> MOUTH" }
+        ]
+    },
+    "starters_4_test_1": {
+        example: { word: "BUS", scrambled_letters: ["S", "U", "B"] },
+        questions: [
+            { id: 11, scrambled_letters: ["I", "B", "K", "E"], correct_word: "BIKE", explanation: "B-I-K-E -> BIKE" },
+            { id: 12, scrambled_letters: ["O", "B", "A", "T"], correct_word: "BOAT", explanation: "B-O-A-T -> BOAT" },
+            { id: 13, scrambled_letters: ["E", "P", "A", "N", "L"], correct_word: "PLANE", explanation: "P-L-A-N-E -> PLANE" },
+            { id: 14, scrambled_letters: ["T", "A", "R", "N", "I"], correct_word: "TRAIN", explanation: "T-R-A-I-N -> TRAIN" },
+            { id: 15, scrambled_letters: ["O", "T", "L", "I", "P", "E", "H", "R", "C", "E"], correct_word: "HELICOPTER", explanation: "H-E-L-I-C-O-P-T-E-R -> HELICOPTER" }
+        ]
+    },
+    "starters_4_test_2": {
+        example: { word: "BEAN", scrambled_letters: ["N", "E", "A", "B"] },
+        questions: [
+            { id: 11, scrambled_letters: ["R", "S", "E", "I", "F"], correct_word: "FRIES", explanation: "F-R-I-E-S -> FRIES" },
+            { id: 12, scrambled_letters: ["E", "B", "D", "A", "R"], correct_word: "BREAD", explanation: "B-R-E-A-D -> BREAD" },
+            { id: 13, scrambled_letters: ["S", "G", "A", "E", "P", "R"], correct_word: "GRAPES", explanation: "G-R-A-P-E-S -> GRAPES" },
+            { id: 14, scrambled_letters: ["U", "A", "E", "S", "S", "G", "A"], correct_word: "SAUSAGE", explanation: "S-A-U-S-A-G-E -> SAUSAGE" },
+            { id: 15, scrambled_letters: ["M", "O", "L", "E", "W", "E", "T", "R", "A", "N"], correct_word: "WATERMELON", explanation: "W-A-T-E-R-M-E-L-O-N -> WATERMELON" }
+        ]
+    },
+    "starters_4_test_3": {
+        example: { word: "KITE", scrambled_letters: ["I", "K", "E", "T"] },
+        questions: [
+            { id: 11, scrambled_letters: ["L", "L", "D", "O"], correct_word: "DOLL", explanation: "D-O-L-L -> DOLL" },
+            { id: 12, scrambled_letters: ["R", "I", "T", "N", "A"], correct_word: "TRAIN", explanation: "T-R-A-I-N -> TRAIN" },
+            { id: 13, scrambled_letters: ["P", "E", "N", "A", "L"], correct_word: "PLANE", explanation: "P-L-A-N-E -> PLANE" },
+            { id: 14, scrambled_letters: ["O", "O", "B", "R", "T"], correct_word: "ROBOT", explanation: "R-O-B-O-T -> ROBOT" },
+            { id: 15, scrambled_letters: ["O", "P", "E", "E", "L", "H", "R", "C", "T", "I"], correct_word: "HELICOPTER", explanation: "H-E-L-I-C-O-P-T-E-R -> HELICOPTER" }
+        ]
+    }
+};
+
 // Generator for standard Cambridge Pre-A1 Starters Tests
 function generateStartersTest(profile, idx) {
     const testNum = idx + 1;
@@ -643,13 +767,9 @@ function generateStartersTest(profile, idx) {
 
     const rwPart2Questions = profile.rw_p2.questions;
 
-    const rwPart3Questions = [
-        { id: 11, scrambled_letters: ["L", "E", "M", "O", "N"], correct_word: "LEMON", hint: "A yellow sour fruit", explanation: "L-E-M-O-N -> LEMON" },
-        { id: 12, scrambled_letters: ["B", "A", "N", "A", "N", "A"], correct_word: "BANANA", hint: "A long yellow fruit monkeys love", explanation: "B-A-N-A-N-A -> BANANA" },
-        { id: 13, scrambled_letters: ["A", "P", "P", "L", "E"], correct_word: "APPLE", hint: "A round red or green fruit", explanation: "A-P-P-L-E -> APPLE" },
-        { id: 14, scrambled_letters: ["O", "R", "A", "N", "G", "E"], correct_word: "ORANGE", hint: "A round sweet citrus fruit", explanation: "O-R-A-N-G-E -> ORANGE" },
-        { id: 15, scrambled_letters: ["G", "R", "A", "P", "E", "S"], correct_word: "GRAPES", hint: "Small purple or green fruit in bunches", explanation: "G-R-A-P-E-S -> GRAPES" }
-    ];
+    const p3Config = startersRwPart3Data[profile.id] || startersRwPart3Data["starters_1_test_1"];
+    const rwPart3Example = p3Config.example;
+    const rwPart3Questions = p3Config.questions;
 
     const rwPart4Questions = [
         { id: 16, question: "16. In Mark's flat there are chairs next to the table in the [______].", correct_answers: ["kitchen", "KITCHEN"], explanation: "Chairs are placed around the dining table in the kitchen." },
@@ -758,8 +878,9 @@ function generateStartersTest(profile, idx) {
                 },
                 {
                     part_number: 3,
-                    title: "Part 3: Look at the pictures. Write the words (5 questions)",
-                    instruction: "Rearrange the scrambled letters to spell the correct English vocabulary word.",
+                    title: "Part 3: Look at the pictures. Look at the letters. Write the words (5 questions)",
+                    instruction: "Look at each picture and letters. Rearrange the letters to write the correct word.",
+                    example: rwPart3Example,
                     questions: rwPart3Questions
                 },
                 {

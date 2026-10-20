@@ -1,4 +1,4 @@
-# Comprehensive Automated Verification Suite for IELTS & Starters Updates
+﻿# Comprehensive Automated Verification Suite for IELTS & Starters Updates
 Set-Location $PSScriptRoot
 [System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
 
@@ -131,6 +131,32 @@ foreach ($b in 1..4) {
 Report-Assert ($foundRw1Questions -eq 60) "All 60 Reading & Writing Part 1 question images exist" "Found $foundRw1Questions / 60"
 Report-Assert ($foundRw1Examples -eq 24) "All 24 Reading & Writing Part 1 example images exist" "Found $foundRw1Examples / 24"
 
+# 1F. Reading & Writing Part 3 Cropped Images (60 Questions + 12 Examples = 72 images)
+$foundRw3Questions = 0
+$foundRw3Examples = 0
+foreach ($b in 1..4) {
+    foreach ($t in 1..3) {
+        $exPath = "images/starters/book$b/test${t}_rw3_example.jpg"
+        if (Test-Path $exPath) {
+            $img = [System.Drawing.Image]::FromFile((Resolve-Path $exPath).Path)
+            $w = $img.Width; $h = $img.Height
+            $img.Dispose()
+            if ($w -ge 500 -and $h -ge 100) { $foundRw3Examples++ }
+        }
+        foreach ($q in 1..5) {
+            $qPath = "images/starters/book$b/test${t}_rw3_q${q}.jpg"
+            if (Test-Path $qPath) {
+                $img = [System.Drawing.Image]::FromFile((Resolve-Path $qPath).Path)
+                $w = $img.Width; $h = $img.Height
+                $img.Dispose()
+                if ($w -ge 500 -and $h -ge 100) { $foundRw3Questions++ }
+            }
+        }
+    }
+}
+Report-Assert ($foundRw3Questions -eq 60) "All 60 Reading & Writing Part 3 question strip images exist and have valid dimensions" "Found $foundRw3Questions / 60"
+Report-Assert ($foundRw3Examples -eq 12) "All 12 Reading & Writing Part 3 example images exist and have valid dimensions" "Found $foundRw3Examples / 12"
+
 # ----------------------------------------------------
 # 2. VERIFY STARTERS TEST ENGINE RENDERING LOGIC
 # ----------------------------------------------------
@@ -163,6 +189,13 @@ Report-Assert ($stEngine.Contains('Click to listen to each question:') -and $stE
 Report-Assert ($stEngine.Contains('test${testNum}_rw1_q${q.id}.jpg')) "Reading & Writing Part 1 dynamically loads dedicated cropped question image per question"
 Report-Assert ($stEngine.Contains('test${testNum}_rw1_example1.jpg') -and $stEngine.Contains('test${testNum}_rw1_example2.jpg')) "Reading & Writing Part 1 displays authentic book examples"
 Report-Assert (-not $stEngine.Contains("q.icon || '🖼️'")) "Reading & Writing Part 1 removed broken image icon placeholder"
+
+# Check Reading & Writing Part 3 Cropped Strip & Interactive Tile Logic
+Report-Assert ($stEngine.Contains('test${testNum}_rw3_q${qIdx + 1}.jpg')) "Reading & Writing Part 3 dynamically loads dedicated cropped strip per question"
+Report-Assert ($stEngine.Contains('test${testNum}_rw3_example.jpg')) "Reading & Writing Part 3 displays authentic book example strip"
+Report-Assert (-not $stEngine.Contains('rw3-gallery')) "Reading & Writing Part 3 removed full-page gallery dump"
+Report-Assert ($stEngine.Contains('handleStartersAppendLetter') -and $stEngine.Contains('handleStartersClearWord')) "Reading & Writing Part 3 includes letter tap helpers and clear function"
+Report-Assert (-not $stEngine.Contains('({$q.scrambled})')) "Reading & Writing Part 3 eliminated undefined scrambled letter badges"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -223,10 +256,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v4")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v4")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v4")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v4")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v5")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v5")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v5")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v5")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {

@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE STARTERS TEST ENGINE (PRE-A1 STARTERS 1 - 4)
 // OFFICIAL CAMBRIDGE SHIELDS SCORING (MAXIMUM 15 SHIELDS)
 // ALL 3 SKILLS: LISTENING - READING & WRITING - SPEAKING
@@ -1509,36 +1509,99 @@ function renderStartersReadingWritingView(container) {
         `;
     }
     else if (activeStartersRwPart === 3) {
-        // Part 3: Jumbled letters - Write the words
+        // Part 3: Look at the pictures. Look at the letters. Write the words (Individual Cropped Question Images)
+        const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+        const parts = testId.split('_');
+        const bookNum = parseInt(parts[1]) || 1;
+        const testNum = parseInt(parts[3]) || 1;
+        const exImgSrc = `images/starters/book${bookNum}/test${testNum}_rw3_example.jpg`;
+        const exData = currentPart.example || { word: "LIME", scrambled_letters: ["M", "I", "E", "L"] };
+
         partHtml = `
             <div class="space-y-4">
-                ${renderBookImageGallery(rwImages, "Part 3 Book Page", "rw3-gallery")}
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Part 3: Look at the pictures. Look at the letters. Write the words (Questions 11 - 15)
-                    </span>
-                    <div class="space-y-3">
-                        ${currentPart.questions.map(q => {
-                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                            return `
-                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                                    <div class="space-y-1">
-                                        <div class="flex items-center gap-2">
-                                            <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-mono font-black text-sm tracking-widest">${q.scrambled}</span>
-                                        </div>
-                                        <p class="text-xs text-slate-500 italic">${q.hint}</p>
-                                    </div>
-                                    <div class="w-full sm:w-48 shrink-0">
-                                        <input type="text" 
-                                               value="${escapeHtml(userVal)}" 
-                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value.toUpperCase())"
-                                               placeholder="Type word..."
-                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-mono font-black text-sm uppercase text-slate-900 tracking-widest focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                    </div>
-                                </div>
-                            `;
-                        }).join('')}
+                <!-- INSTRUCTIONS HEADER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white font-black text-[11px] uppercase tracking-wide">ðŸ“– Part 3</span>
+                            <span class="font-extrabold text-sm text-amber-900">Look at the pictures. Look at the letters. Write the words</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            ðŸ‘‰ <strong>Instructions:</strong> Look at each picture and its scrambled letters. Spell the word by typing in the box or clicking the letter tiles.
+                        </p>
                     </div>
+                    <span class="px-3 py-1 rounded-xl bg-white border border-amber-300 text-amber-900 font-black text-xs shrink-0 font-mono shadow-2xs">
+                        Questions 11 - 15 (5 marks)
+                    </span>
+                </div>
+
+                <!-- AUTHENTIC BOOK EXAMPLE -->
+                <div class="p-4 rounded-2xl bg-white border border-amber-200 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-xl bg-amber-500 text-white font-black text-xs uppercase tracking-wider">Example</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-slate-500">Correct spelling:</span>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-300 font-mono font-black text-emerald-800 text-sm tracking-widest uppercase">${exData.word}</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl flex items-center justify-center border border-slate-200 overflow-hidden">
+                        <img src="${exImgSrc}" alt="Part 3 Example" class="max-w-full h-auto rounded-lg shadow-xs" style="max-height: 150px;">
+                    </div>
+                </div>
+
+                <!-- QUESTIONS 11 - 15 (CROPPED STRIPS & INTERACTIVE INPUT) -->
+                <div class="space-y-4">
+                    ${currentPart.questions.map((q, qIdx) => {
+                        const userVal = startersUserAnswers.reading_writing[q.id] || '';
+                        const qImgSrc = `images/starters/book${bookNum}/test${testNum}_rw3_q${qIdx + 1}.jpg`;
+                        const wordLen = q.correct_word ? q.correct_word.length : (q.scrambled_letters ? q.scrambled_letters.length : 4);
+                        const letters = q.scrambled_letters || [];
+                        
+                        return `
+                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 rounded-xl bg-indigo-600 text-white font-black text-xs uppercase tracking-wider">Question ${q.id}</span>
+                                    <span class="text-xs font-black text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full font-mono">${wordLen} letters</span>
+                                </div>
+                                
+                                <!-- Cropped Question Strip -->
+                                <div class="p-3 bg-slate-50 rounded-xl flex items-center justify-center border border-slate-200 overflow-hidden">
+                                    <img src="${qImgSrc}" alt="Question ${q.id}" class="max-w-full h-auto rounded-lg shadow-xs" style="max-height: 150px;">
+                                </div>
+
+                                <!-- Input Box and Clickable Letter Tiles -->
+                                <div class="space-y-2 pt-1 max-w-lg mx-auto">
+                                    <div class="flex items-center gap-2">
+                                        <input type="text"
+                                               id="starters-rw3-input-${q.id}"
+                                               value="${escapeHtml(userVal)}"
+                                               maxlength="${wordLen + 2}"
+                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value.toUpperCase())"
+                                               placeholder="Type your word..."
+                                               class="flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border-2 border-slate-300 font-mono font-black text-base uppercase text-indigo-950 tracking-widest focus:outline-none focus:border-indigo-600 focus:bg-white focus:ring-4 focus:ring-indigo-100 transition-all text-center">
+                                        <button type="button"
+                                                onclick="handleStartersClearWord(${q.id})"
+                                                title="Clear word"
+                                                class="px-3.5 py-2.5 rounded-xl border border-slate-300 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs uppercase tracking-wider transition active:scale-95">
+                                            Clear
+                                        </button>
+                                    </div>
+                                    ${letters.length > 0 ? `
+                                        <div class="flex flex-wrap items-center justify-center gap-1.5 pt-1">
+                                            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide mr-1">Tap:</span>
+                                            ${letters.map(letter => `
+                                                <button type="button"
+                                                        onclick="handleStartersAppendLetter(${q.id}, '${letter}')"
+                                                        class="w-8 h-8 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 font-mono font-black text-amber-900 text-sm flex items-center justify-center shadow-2xs hover:scale-105 active:scale-95 transition">
+                                                    ${letter}
+                                                </button>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>
         `;
@@ -1752,6 +1815,32 @@ function handleStartersAnswerChange(skill, qId, val) {
     saveStartersProgress();
 }
 
+function handleStartersAppendLetter(qId, letter) {
+    if (startersTestSubmitted) return;
+    if (!startersUserAnswers.reading_writing) startersUserAnswers.reading_writing = {};
+    const current = startersUserAnswers.reading_writing[qId] || '';
+    const updated = (current + letter).toUpperCase();
+    startersUserAnswers.reading_writing[qId] = updated;
+    saveStartersProgress();
+    const input = document.getElementById(`starters-rw3-input-${qId}`);
+    if (input) {
+        input.value = updated;
+        input.focus();
+    }
+}
+
+function handleStartersClearWord(qId) {
+    if (startersTestSubmitted) return;
+    if (!startersUserAnswers.reading_writing) startersUserAnswers.reading_writing = {};
+    startersUserAnswers.reading_writing[qId] = '';
+    saveStartersProgress();
+    const input = document.getElementById(`starters-rw3-input-${qId}`);
+    if (input) {
+        input.value = '';
+        input.focus();
+    }
+}
+
 function speakStartersQuestion(text) {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -1936,7 +2025,7 @@ function gradeStartersTest(showModal = true) {
             id: q.id,
             skill: 'reading_writing',
             part: 3,
-            prompt: `${q.hint} (${q.scrambled})`,
+            prompt: `Part 3: Question ${q.id} (${q.correct_word ? q.correct_word.length + " letters" : "Write the word"})`,
             userAns: userVal || 'Not answered',
             correctAns: q.correct_word,
             isCorrect,
