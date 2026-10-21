@@ -812,6 +812,165 @@ const startersRwPart4Data = {
         ]
     }
 };
+const startersRwPart5Data = {
+    "starters_1_test_1": {
+        examples: [
+            { question: "Which animal is drinking?", answer: "the hippo" },
+            { question: "What are the children doing?", answer: "painting" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. Who is wearing a hat?", correct_answers: ["the boy", "boy", "a boy"], explanation: "In the picture, the young boy sitting on the stool is wearing a sun hat." },
+            { id: 22, scene: 2, question: "22. How many animals are drinking now?", correct_answers: ["2", "two", "TWO"], explanation: "There are two animals drinking at the water: the hippo and the giraffe." },
+            { id: 23, scene: 2, question: "23. What is jumping from the tree?", correct_answers: ["a monkey", "monkey", "the monkey"], explanation: "A playful monkey is jumping down from the tree branches." },
+            { id: 24, scene: 3, question: "24. Which child is not happy?", correct_answers: ["the girl", "girl", "a girl"], explanation: "The girl is crying because her paint spilled on the ground." },
+            { id: 25, scene: 3, question: "25. What is the boy doing? Smiling and [______]", correct_answers: ["waving", "WAVING"], explanation: "The boy is smiling and waving happily at the monkey." }
+        ]
+    },
+    "starters_1_test_2": {
+        examples: [
+            { question: "Where are the people?", answer: "in the living room" },
+            { question: "How many children are there?", answer: "two / 2" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What are the children playing?", correct_answers: ["a game", "game", "computer game"], explanation: "The boy and girl are sitting on the rug playing a game." },
+            { id: 22, scene: 2, question: "22. Who has got the ball now?", correct_answers: ["the dog", "dog", "a dog"], explanation: "The playful pet dog has picked up the ball in its mouth." },
+            { id: 23, scene: 2, question: "23. What is the boy holding?", correct_answers: ["a book", "book", "a comic"], explanation: "The boy is holding a book in his hand." },
+            { id: 24, scene: 3, question: "24. Where is the ball now?", correct_answers: ["under the sofa", "under sofa", "sofa", "under the chair"], explanation: "The red ball rolled under the living room sofa." },
+            { id: 25, scene: 3, question: "25. Who is pointing at the dog?", correct_answers: ["the girl", "girl", "the mother", "mum", "mom"], explanation: "The young girl is pointing her finger at the dog." }
+        ]
+    },
+    "starters_1_test_3": {
+        examples: [
+            { question: "What colour is the car?", answer: "yellow" },
+            { question: "Where is the duck?", answer: "in the water" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the girl holding?", correct_answers: ["a kite", "kite", "the kite"], explanation: "The girl is holding a colourful kite in her hands." },
+            { id: 22, scene: 2, question: "22. Where is the kite now?", correct_answers: ["in the tree", "tree", "in a tree"], explanation: "The kite got caught up in the branches of the big tree." },
+            { id: 23, scene: 2, question: "23. Who is climbing the tree?", correct_answers: ["the boy", "boy", "a boy"], explanation: "The brave boy is climbing up the tree trunk to rescue the kite." },
+            { id: 24, scene: 3, question: "24. What is the dog doing? Running after a [______]", correct_answers: ["ball", "BALL", "a ball"], explanation: "The excited dog is running across the grass chasing after a bouncing ball." },
+            { id: 25, scene: 3, question: "25. How many kites are in the sky now?", correct_answers: ["2", "two", "TWO"], explanation: "There are now two kites soaring high in the blue sky." }
+        ]
+    },
+    "starters_2_test_1": {
+        examples: [
+            { question: "What is behind the red car?", answer: "a bicycle / bike" },
+            { question: "How many cars are there?", answer: "4 / four" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the man in the green car doing? [______] the car", correct_answers: ["driving", "steering", "DRIVING"], explanation: "The man in the green car is driving down the street." },
+            { id: 22, scene: 2, question: "22. Where are the children going?", correct_answers: ["to the park", "park", "playground", "to park"], explanation: "The children are walking happily towards the entrance of the park." },
+            { id: 23, scene: 2, question: "23. What is the boy in the red car holding?", correct_answers: ["a ball", "ball"], explanation: "The boy sitting in the passenger seat is holding a round ball." },
+            { id: 24, scene: 3, question: "24. Who is waving at the cars?", correct_answers: ["a girl", "the girl", "girl"], explanation: "A cheerful young girl is standing on the pavement waving at the cars." },
+            { id: 25, scene: 3, question: "25. What colour is the bird on the fence?", correct_answers: ["blue", "BLUE"], explanation: "A bright blue bird is perched peacefully on top of the wooden fence." }
+        ]
+    },
+    "starters_2_test_2": {
+        examples: [
+            { question: "Where is the teacher?", answer: "next to the board" },
+            { question: "What is on the board?", answer: "numbers" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is on the table?", correct_answers: ["a box", "box", "the box"], explanation: "There is a cardboard box resting in the middle of the teacher's table." },
+            { id: 22, scene: 2, question: "22. What animal is coming out of the box?", correct_answers: ["a mouse", "mouse", "the mouse"], explanation: "A tiny grey mouse is peeking and climbing out of the box." },
+            { id: 23, scene: 2, question: "23. Who is standing on a chair?", correct_answers: ["the teacher", "teacher", "a teacher"], explanation: "The startled teacher jumped onto the chair in surprise." },
+            { id: 24, scene: 3, question: "24. Where is the mouse now?", correct_answers: ["under the desk", "under desk", "desk", "under the chair"], explanation: "The little mouse has scurried under one of the student desks." },
+            { id: 25, scene: 3, question: "25. What are the children doing?", correct_answers: ["laughing", "smiling", "LAUGHING"], explanation: "All the amused children are smiling and laughing at the funny situation." }
+        ]
+    },
+    "starters_2_test_3": {
+        examples: [
+            { question: "Where are the children?", answer: "on the beach" },
+            { question: "What is the father reading?", answer: "a book" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the boy wearing on his head?", correct_answers: ["a hat", "hat", "a cap"], explanation: "The young boy is wearing a sun hat on his head to protect from the sun." },
+            { id: 22, scene: 2, question: "22. What is in the water near the boat?", correct_answers: ["a dolphin", "dolphin", "fish", "a fish"], explanation: "A friendly dolphin is leaping gracefully in the water near the wooden boat." },
+            { id: 23, scene: 2, question: "23. What is the girl pointing at?", correct_answers: ["the boat", "boat", "the dolphin", "dolphin"], explanation: "The excited girl is pointing out towards the boat in the sea." },
+            { id: 24, scene: 3, question: "24. Who has caught a crab?", correct_answers: ["the boy", "boy", "a boy"], explanation: "The boy holds his small net showing that he caught a little crab." },
+            { id: 25, scene: 3, question: "25. Where is the mother sleeping?", correct_answers: ["under the umbrella", "under umbrella", "umbrella"], explanation: "The mother is relaxing and napping peacefully under the large beach umbrella." }
+        ]
+    },
+    "starters_3_test_1": {
+        examples: [
+            { question: "Where are the children?", answer: "in the bedroom" },
+            { question: "What is on the bed?", answer: "a teddy bear / teddy" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the girl playing with?", correct_answers: ["a camera", "camera", "toy camera"], explanation: "The girl is holding and pretending to take pictures with a toy camera." },
+            { id: 22, scene: 2, question: "22. Who is holding the teddy bear?", correct_answers: ["the boy", "boy", "a boy"], explanation: "The boy is hugging the soft brown teddy bear in his arms." },
+            { id: 23, scene: 2, question: "23. What is under the table?", correct_answers: ["a ball", "ball", "the ball"], explanation: "A round toy ball is resting on the floor under the table." },
+            { id: 24, scene: 3, question: "24. What is on the floor now?", correct_answers: ["clothes", "toys", "CLOTHES"], explanation: "There are scattered clothes and toys lying across the bedroom floor." },
+            { id: 25, scene: 3, question: "25. Who is opening the door?", correct_answers: ["the mother", "mum", "mother", "mom"], explanation: "Their mother is turning the door handle and walking into the messy room." }
+        ]
+    },
+    "starters_3_test_2": {
+        examples: [
+            { question: "Where is the mother?", answer: "in the kitchen" },
+            { question: "What is on the table?", answer: "a cake" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. How many plates are on the table?", correct_answers: ["three", "3", "THREE"], explanation: "There are three round ceramic plates placed neatly on the table." },
+            { id: 22, scene: 2, question: "22. Who is eating a piece of cake?", correct_answers: ["the boy", "boy", "a boy"], explanation: "The boy is happily eating a delicious slice of chocolate cake." },
+            { id: 23, scene: 2, question: "23. Where is the cat sitting?", correct_answers: ["on the floor", "floor", "on floor"], explanation: "The striped cat is sitting on the kitchen floor near the counter." },
+            { id: 24, scene: 3, question: "24. What has the cat knocked over?", correct_answers: ["a glass", "glass", "milk", "a cup"], explanation: "The curious cat jumped up and knocked over a tall glass of milk." },
+            { id: 25, scene: 3, question: "25. Who is cleaning the floor?", correct_answers: ["the mother", "mum", "mother", "mom"], explanation: "Mother has got a cloth and is wiping the spilled milk off the floor." }
+        ]
+    },
+    "starters_3_test_3": {
+        examples: [
+            { question: "Where are the children?", answer: "in the garden" },
+            { question: "What is in the tree?", answer: "apples" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the boy picking?", correct_answers: ["an apple", "apple", "apples"], explanation: "The boy reaches up into the branches to pick a ripe red apple." },
+            { id: 22, scene: 2, question: "22. How many apples are in the basket now?", correct_answers: ["four", "4", "FOUR"], explanation: "You can count four shiny apples resting inside the woven basket." },
+            { id: 23, scene: 2, question: "23. Who is sitting under the tree?", correct_answers: ["the grandfather", "grandpa", "grandfather", "the grandpa"], explanation: "Grandfather is relaxing in his folding chair under the shade of the apple tree." },
+            { id: 24, scene: 3, question: "24. What animal is running into the garden?", correct_answers: ["a dog", "dog", "the dog"], explanation: "A friendly pet dog comes barking and running through the garden gate." },
+            { id: 25, scene: 3, question: "25. What is the girl holding?", correct_answers: ["a flower", "flower", "a plant"], explanation: "The young girl is holding a pretty yellow flower she found in the grass." }
+        ]
+    },
+    "starters_4_test_1": {
+        examples: [
+            { question: "What is on the wall?", answer: "a clock" },
+            { question: "How many people are in the room?", answer: "four / 4" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the boy watching?", correct_answers: ["television", "TV", "the television", "the tv"], explanation: "The boy is sitting on the floor watching his favourite TV cartoon." },
+            { id: 22, scene: 2, question: "22. What is the dog playing with?", correct_answers: ["a shoe", "shoe", "the shoe", "a slipper"], explanation: "The naughty family dog has grabbed a leather shoe and is chewing on it." },
+            { id: 23, scene: 2, question: "23. Who is looking at the dog?", correct_answers: ["the girl", "girl", "a girl"], explanation: "The young girl noticed the dog and turned around to look at it." },
+            { id: 24, scene: 3, question: "24. Where is the shoe now?", correct_answers: ["under the chair", "under chair", "chair", "under the armchair"], explanation: "The shoe was left lying under the armchair." },
+            { id: 25, scene: 3, question: "25. What is the father holding?", correct_answers: ["a newspaper", "newspaper", "paper", "a paper"], explanation: "Father is holding today's folded newspaper in his hands." }
+        ]
+    },
+    "starters_4_test_2": {
+        examples: [
+            { question: "Where are the family?", answer: "at the zoo" },
+            { question: "What animal is in the cage?", answer: "a lion" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the boy giving to the monkey?", correct_answers: ["a banana", "banana", "the banana"], explanation: "The kind boy is handing a yellow banana across the enclosure railing to the monkey." },
+            { id: 22, scene: 2, question: "22. How many monkeys are on the rock?", correct_answers: ["three", "3", "THREE"], explanation: "There are three brown monkeys perched high on top of the big stone rock." },
+            { id: 23, scene: 2, question: "23. Who has taken the boy's hat?", correct_answers: ["a monkey", "monkey", "the monkey"], explanation: "A mischievous monkey snatched the boy's blue hat right off his head!" },
+            { id: 24, scene: 3, question: "24. Where is the monkey with the hat?", correct_answers: ["in the tree", "tree", "in a tree"], explanation: "The cheeky monkey climbed high up into the leafy tree while wearing the hat." },
+            { id: 25, scene: 3, question: "25. What is the girl taking a photo of?", correct_answers: ["the monkey", "monkey", "a monkey"], explanation: "The girl aims her digital camera up at the tree to take a photo of the funny monkey." }
+        ]
+    },
+    "starters_4_test_3": {
+        examples: [
+            { question: "Where are the people?", answer: "in the shop / supermarket" },
+            { question: "What is the mother holding?", answer: "a basket" }
+        ],
+        questions: [
+            { id: 21, scene: 1, question: "21. What is the boy putting in the basket?", correct_answers: ["bread", "a bread", "some bread"], explanation: "The helpful boy puts a fresh loaf of bread into his mother's shopping basket." },
+            { id: 22, scene: 2, question: "22. How many pineapples are on the shelf?", correct_answers: ["four", "4", "FOUR"], explanation: "There are four spiky pineapples arranged neatly in a row on the display shelf." },
+            { id: 23, scene: 2, question: "23. What is falling off the shelf?", correct_answers: ["oranges", "an orange", "orange"], explanation: "A stack of round oranges tumbled over and started rolling onto the supermarket floor." },
+            { id: 24, scene: 3, question: "24. Who is picking up the oranges?", correct_answers: ["the boy", "boy", "a boy"], explanation: "The polite boy bends down quickly to gather up all the fallen oranges." },
+            { id: 25, scene: 3, question: "25. What is the girl pointing at?", correct_answers: ["sweets", "candy", "ice cream", "sweet"], explanation: "The younger sister is excitedly pointing at colourful bags of sweets on the candy shelf." }
+        ]
+    }
+};
+
 function generateStartersTest(profile, idx) {
     const testNum = idx + 1;
 
@@ -936,13 +1095,9 @@ function generateStartersTest(profile, idx) {
     const rwPart4Title = p4Config.title;
     const rwPart4StoryText = p4Config.story_text;
 
-    const rwPart5Questions = [
-        { id: 21, question: "21. Who is wearing a hat?", correct_answers: ["the boy", "boy", "a boy"], explanation: "In the picture, the young boy is wearing a sun hat." },
-        { id: 22, question: "22. How many animals are drinking now?", correct_answers: ["2", "two", "TWO"], explanation: "Exactly two animals are drinking from the river." },
-        { id: 23, question: "23. What is jumping from the tree?", correct_answers: ["a monkey", "monkey", "the monkey"], explanation: "A monkey is leaping down from the tree branch." },
-        { id: 24, question: "24. Which child is not happy?", correct_answers: ["the girl", "girl", "a girl"], explanation: "The little girl looks upset because she dropped her snack." },
-        { id: 25, question: "25. What is the boy doing? Smiling and [______]", correct_answers: ["waving", "WAVING"], explanation: "The boy is smiling and waving his hand happily." }
-    ];
+    const p5Config = startersRwPart5Data[profile.id] || startersRwPart5Data["starters_1_test_1"];
+    const rwPart5Examples = p5Config.examples;
+    const rwPart5Questions = p5Config.questions;
 
     // 3. SPEAKING (4 PARTS)
     const speakingData = {
@@ -1054,6 +1209,7 @@ function generateStartersTest(profile, idx) {
                     part_number: 5,
                     title: "Part 5: Look at the pictures and write one-word answers (5 questions)",
                     instruction: "Answer each question with one word based on the story pictures.",
+                    examples: rwPart5Examples,
                     questions: rwPart5Questions
                 }
             ]

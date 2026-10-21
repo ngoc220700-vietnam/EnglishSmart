@@ -1713,33 +1713,131 @@ function renderStartersReadingWritingView(container) {
         `;
     }
     else if (activeStartersRwPart === 5) {
-        // Part 5: Picture story questions
+        // Part 5: Look at the pictures and write one-word answers (3 Scene Cards)
+        const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+        const parts = testId.split('_');
+        const bookNum = parseInt(parts[1]) || 1;
+        const testNum = parseInt(parts[3]) || 1;
+
+        const pic1Src = `images/starters/book${bookNum}/test${testNum}_rw5_pic1.jpg`;
+        const pic2Src = `images/starters/book${bookNum}/test${testNum}_rw5_pic2.jpg`;
+        const pic3Src = `images/starters/book${bookNum}/test${testNum}_rw5_pic3.jpg`;
+
+        const examples = currentPart.examples || [];
+        const questions = currentPart.questions || [];
+
+        const q21 = questions.find(q => q.id === 21);
+        const q22 = questions.find(q => q.id === 22);
+        const q23 = questions.find(q => q.id === 23);
+        const q24 = questions.find(q => q.id === 24);
+        const q25 = questions.find(q => q.id === 25);
+
+        function renderQuestionRow(q) {
+            if (!q) return '';
+            const userVal = startersUserAnswers.reading_writing[q.id] || '';
+            return `
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                    <div class="space-y-0.5 flex-1">
+                        <span class="text-[11px] font-black uppercase text-amber-600 tracking-wider">Question ${q.id}</span>
+                        <p class="font-extrabold text-sm sm:text-base text-slate-900">${escapeHtml(q.question)}</p>
+                    </div>
+                    <div class="w-full sm:w-56 shrink-0">
+                        <input type="text"
+                               value="${escapeHtml(userVal)}"
+                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
+                               placeholder="Type 1 word..."
+                               class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 font-black text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 uppercase tracking-wide">
+                    </div>
+                </div>
+            `;
+        }
+
         partHtml = `
-            <div class="space-y-4">
-                ${renderBookImageGallery(rwImages, "Part 5 Book Pages", "rw5-gallery")}
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Part 5: Look at the pictures and read the questions. Write one-word answers.
-                    </span>
-                    <div class="space-y-3">
-                        ${currentPart.questions.map(q => {
-                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                            return `
-                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                                    <div class="space-y-1 flex-1">
-                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${q.question}</p>
-                                        <p class="text-xs text-slate-500 italic">${q.clue}</p>
+            <div class="space-y-5">
+                <!-- INSTRUCTIONS BANNER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">Part 5</span>
+                            <span class="font-extrabold text-sm text-amber-900">Look at the pictures and read the questions (Questions 21 - 25)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            Look at the story pictures. Write one-word answers for each question.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SCENE 1 CARD -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500 text-white font-black text-xs flex items-center justify-center shadow-2xs">1</span>
+                            <span class="font-black text-sm text-slate-800 uppercase tracking-wider">Scene 1 &bull; Picture 1 of 3</span>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Examples & Q21</span>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-200 overflow-hidden bg-slate-50 max-w-2xl mx-auto shadow-2xs">
+                        <img src="${pic1Src}" alt="Scene 1" class="w-full h-auto object-contain block" />
+                    </div>
+
+                    ${examples.length > 0 ? `
+                        <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 space-y-2">
+                            <span class="text-[11px] font-black uppercase text-amber-900 tracking-wider block">Examples</span>
+                            <div class="space-y-1.5">
+                                ${examples.map(ex => `
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
+                                        <span class="font-bold text-slate-700">${escapeHtml(ex.question)}</span>
+                                        <span class="font-black text-amber-900 bg-white px-2.5 py-1 rounded-lg border border-amber-200 sm:self-auto self-start">${escapeHtml(ex.answer)}</span>
                                     </div>
-                                    <div class="w-full sm:w-44 shrink-0">
-                                        <input type="text" 
-                                               value="${escapeHtml(userVal)}" 
-                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                               placeholder="One word..."
-                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                    </div>
-                                </div>
-                            `;
-                        }).join('')}
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div class="space-y-3 pt-2">
+                        <span class="text-xs font-black uppercase text-slate-700 tracking-wider block">Questions</span>
+                        ${renderQuestionRow(q21)}
+                    </div>
+                </div>
+
+                <!-- SCENE 2 CARD -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500 text-white font-black text-xs flex items-center justify-center shadow-2xs">2</span>
+                            <span class="font-black text-sm text-slate-800 uppercase tracking-wider">Scene 2 &bull; Picture 2 of 3</span>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Questions 22 & 23</span>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-200 overflow-hidden bg-slate-50 max-w-2xl mx-auto shadow-2xs">
+                        <img src="${pic2Src}" alt="Scene 2" class="w-full h-auto object-contain block" />
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        ${renderQuestionRow(q22)}
+                        ${renderQuestionRow(q23)}
+                    </div>
+                </div>
+
+                <!-- SCENE 3 CARD -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500 text-white font-black text-xs flex items-center justify-center shadow-2xs">3</span>
+                            <span class="font-black text-sm text-slate-800 uppercase tracking-wider">Scene 3 &bull; Picture 3 of 3</span>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Questions 24 & 25</span>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-200 overflow-hidden bg-slate-50 max-w-2xl mx-auto shadow-2xs">
+                        <img src="${pic3Src}" alt="Scene 3" class="w-full h-auto object-contain block" />
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        ${renderQuestionRow(q24)}
+                        ${renderQuestionRow(q25)}
                     </div>
                 </div>
             </div>
