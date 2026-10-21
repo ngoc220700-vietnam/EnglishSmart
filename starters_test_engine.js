@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE STARTERS TEST ENGINE (PRE-A1 STARTERS 1 - 4)
 // OFFICIAL CAMBRIDGE SHIELDS SCORING (MAXIMUM 15 SHIELDS)
 // ALL 3 SKILLS: LISTENING - READING & WRITING - SPEAKING
@@ -41,6 +41,11 @@ function escapeHtml(text) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+}
+
+function escapeRegExp(string) {
+    if (!string) return '';
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 // 1. INITIALIZE TEST ENGINE
@@ -1608,56 +1613,100 @@ function renderStartersReadingWritingView(container) {
     }
     else if (activeStartersRwPart === 4) {
         // Part 4: Read this. Choose a word from the box (Questions 16 - 20)
+        const testId = (test && test.id) ? test.id : (activeStartersTestId || 'starters_1_test_1');
+        const parts = testId.split('_');
+        const bookNum = parseInt(parts[1]) || 1;
+        const testNum = parseInt(parts[3]) || 1;
+        const topicImgSrc = `images/starters/book${bookNum}/test${testNum}_rw4_topic.jpg`;
+        const wordsImgSrc = `images/starters/book${bookNum}/test${testNum}_rw4_words.jpg`;
+
         const questions = currentPart.questions || [];
         const wordBank = currentPart.word_bank || [];
+        const storyTitle = currentPart.story_title || (currentPart.title ? currentPart.title.replace('Part 4: ', '') : 'Story');
         const example = currentPart.example;
+        const storyText = currentPart.story_text || '';
+
+        // Build interactive cloze story HTML with inline fill-in-the-blank inputs
+        let renderedStoryHtml = escapeHtml(storyText);
+        if (example && example.word) {
+            const exRegex = new RegExp(`\\b${escapeRegExp(example.word)}\\s*\\(example\\)`, 'i');
+            renderedStoryHtml = renderedStoryHtml.replace(exRegex, `<strong class="text-indigo-600 underline font-black uppercase tracking-wide">${escapeHtml(example.word)}</strong> <span class="text-xs text-slate-400 font-semibold italic">(example)</span>`);
+        }
+        questions.forEach(q => {
+            const userVal = startersUserAnswers.reading_writing[q.id] || '';
+            const inputHtml = `
+                <span class="inline-flex items-center gap-1 mx-1 my-1 align-middle">
+                    <span class="text-[11px] font-black text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-md shadow-2xs">(${q.id})</span>
+                    <input type="text"
+                           id="starters_rw4_input_${q.id}"
+                           value="${escapeHtml(userVal)}"
+                           onfocus="activeStartersRw4InputId = ${q.id}"
+                           oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
+                           placeholder="word..."
+                           class="w-28 sm:w-36 px-2.5 py-1 text-xs sm:text-sm font-bold text-slate-900 bg-white border-2 border-dashed border-amber-400 focus:border-indigo-600 rounded-xl text-center lowercase tracking-wide focus:outline-none focus:ring-2 focus:ring-indigo-300 transition shadow-2xs" />
+                </span>
+            `.trim();
+            renderedStoryHtml = renderedStoryHtml.replace(`[${q.id}]`, inputHtml);
+        });
 
         partHtml = `
             <div class="space-y-4">
-                ${renderBookImageGallery(rwImages, "Part 4 Book Page", "rw4-gallery")}
-
-                <!-- WORD BANK CHIPS -->
-                ${wordBank.length > 0 ? `
-                    <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-black uppercase text-indigo-900 tracking-wide">
-                                ðŸ“¦ Word Bank:
-                            </span>
-                            ${example ? `<span class="text-[11px] font-bold text-slate-500">Example: <strong class="text-indigo-600 uppercase underline">${escapeHtml(example.word)}</strong></span>` : ''}
+                <!-- INSTRUCTIONS BANNER -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-xs text-amber-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[11px] uppercase tracking-wide">Part 4</span>
+                            <span class="font-extrabold text-sm text-amber-900">Read this. Choose a word from the box (Questions 16 - 20)</span>
                         </div>
-                        <div class="flex flex-wrap gap-2 pt-1">
-                            ${wordBank.map(w => `
-                                <div class="px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-xs font-bold text-slate-800 hover:text-indigo-900 transition flex items-center gap-1.5 shadow-2xs">
-                                    <span>${escapeHtml(w)}</span>
-                                </div>
-                            `).join('')}
+                        <p class="text-slate-700 text-xs">
+                            Look at the pictures and the words in the box. Type the correct word next to numbers 16 - 20.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- WORD BANK BOX (CROPPED PICTURE TILES + CLICKABLE CHIPS) -->
+                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wide flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            Word Bank
+                        </span>
+                        ${example ? `<span class="text-[11px] font-bold text-slate-500">Example: <strong class="text-indigo-600 uppercase underline">${escapeHtml(example.word)}</strong></span>` : ''}
+                    </div>
+
+                    <!-- Cropped Authentic Word Bank Tiles Image -->
+                    <div class="rounded-xl border border-slate-200 overflow-hidden bg-slate-50 max-w-2xl mx-auto shadow-2xs">
+                        <img src="${wordsImgSrc}" alt="Word Bank" class="w-full h-auto object-contain block" />
+                    </div>
+
+                    <!-- Tap to Insert Word Buttons -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+                        <span class="text-[11px] font-bold text-slate-400 mr-1">Tap word to fill:</span>
+                        ${wordBank.map(w => `
+                            <button type="button"
+                                    onclick="handleStartersInsertWordBank('${escapeQuotes(w)}')"
+                                    class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-amber-100 active:scale-95 border border-slate-300 hover:border-amber-400 text-xs font-black text-slate-800 hover:text-amber-950 transition shadow-2xs cursor-pointer">
+                                ${escapeHtml(w)}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- STORY PASSAGE WITH INLINE FILL-IN-THE-BLANK INPUTS -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pb-4 border-b border-slate-100">
+                        <div class="w-36 h-28 sm:w-44 sm:h-32 shrink-0 rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 shadow-2xs flex items-center justify-center">
+                            <img src="${topicImgSrc}" alt="${escapeHtml(storyTitle)}" class="w-full h-full object-contain p-1" />
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <span class="text-[11px] font-black uppercase text-amber-600 tracking-wider">Cambridge Starters Story</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">${escapeHtml(storyTitle)}</h3>
+                            <p class="text-xs text-slate-500 mt-1">Read the story below and fill in each blank with a word from the box.</p>
                         </div>
                     </div>
-                ` : ''}
 
-                <!-- QUESTIONS (16 - 20) -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wide block">
-                        Part 4: Read this. Choose a word from the box. Write the correct word next to numbers 16 - 20.
-                    </span>
-                    <div class="space-y-3">
-                        ${questions.map(q => {
-                            const userVal = startersUserAnswers.reading_writing[q.id] || '';
-                            return `
-                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                                    <div class="space-y-1 flex-1">
-                                        <p class="font-extrabold text-xs sm:text-sm text-slate-900">${escapeHtml(q.question)}</p>
-                                    </div>
-                                    <div class="w-full sm:w-44 shrink-0">
-                                        <input type="text" 
-                                               value="${escapeHtml(userVal)}" 
-                                               oninput="handleStartersAnswerChange('reading_writing', ${q.id}, this.value)"
-                                               placeholder="Word..."
-                                               class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-300 font-bold text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                    </div>
-                                </div>
-                            `;
-                        }).join('')}
+                    <div class="text-sm sm:text-base font-medium leading-loose text-slate-800 p-4 sm:p-6 rounded-xl bg-slate-50/70 border border-slate-100">
+                        ${renderedStoryHtml}
                     </div>
                 </div>
             </div>
@@ -1716,6 +1765,31 @@ function renderStartersReadingWritingView(container) {
             ${partHtml}
         </div>
     `;
+}
+
+let activeStartersRw4InputId = null;
+
+function handleStartersInsertWordBank(word) {
+    let targetQId = activeStartersRw4InputId;
+    if (!targetQId) {
+        for (let i = 16; i <= 20; i++) {
+            if (!startersUserAnswers.reading_writing[i]) {
+                targetQId = i;
+                break;
+            }
+        }
+    }
+    if (!targetQId) targetQId = 16;
+
+    handleStartersAnswerChange('reading_writing', targetQId, word);
+    const inputEl = document.getElementById(`starters_rw4_input_${targetQId}`);
+    if (inputEl) {
+        inputEl.value = word;
+        inputEl.focus();
+    }
+    if (targetQId < 20) {
+        activeStartersRw4InputId = targetQId + 1;
+    }
 }
 
 function switchStartersRwPart(partNum) {

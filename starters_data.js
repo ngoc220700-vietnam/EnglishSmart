@@ -658,6 +658,7 @@ const startersRwPart4Data = {
     "starters_1_test_1": {
         title: "A chair",
         example: { word: "legs" },
+        story_text: "Chairs have four legs (example). In Mark's flat there are chairs next to the table in the [16]. Mark's family sit and eat their [17] there. There's a chair in Mark's bedroom too. Mark sits on his chair and reads his [18], listens to his radio or plays on his [19]. There's a big red and blue [20] on the floor under his chair.",
         word_bank: ["legs", "dinner", "tablet", "book", "arm", "kitchen", "motorbike", "rug"],
         questions: [
             { id: 16, question: "16. In Mark's flat there are chairs next to the table in the [______].", correct_answers: ["kitchen"], explanation: "Chairs are placed around the dining table in the kitchen." },
@@ -670,6 +671,7 @@ const startersRwPart4Data = {
     "starters_1_test_2": {
         title: "A living room",
         example: { word: "house" },
+        story_text: "You find a living room in a house (example) or flat. Ben's living room has a door and two windows. His living room is between the dining room and the [16]. Ben's family watches [17] in the living room. Ben and his sister sit on the [18] and play games there. Ben's mum plays a [19] in the living room. There are [20] of the family on the wall.",
         word_bank: ["house", "piano", "kiwi", "kitchen", "television", "ruler", "pictures", "sofa"],
         questions: [
             { id: 16, question: "16. His living room is between the dining room and the [______].", correct_answers: ["kitchen"], explanation: "The living room is located between the dining room and the kitchen." },
@@ -682,6 +684,7 @@ const startersRwPart4Data = {
     "starters_1_test_3": {
         title: "A beach",
         example: { word: "sea" },
+        story_text: "Beaches are next to the sea (example). People like going to the beach. They wear [16] on their heads. Some people go to sleep and some sit and read [17] there. Children run on the [18] or play [19] with their friends. [20] live in the water and children like catching them. You can find beautiful shells on beaches too.",
         word_bank: ["sea", "pencil", "fish", "books", "hippo", "hats", "football", "sand"],
         questions: [
             { id: 16, question: "16. They wear [______] on their heads.", correct_answers: ["hats"], explanation: "People wear sun hats on their heads to protect from the sun." },
@@ -694,6 +697,7 @@ const startersRwPart4Data = {
     "starters_2_test_1": {
         title: "Mary's ducks",
         example: { word: "farm" },
+        story_text: "There are lots of animals on Mary's farm (example). There are some chickens, and ducks and a [16]. Mary likes the ducks. The ducks are brown and white and they have big orange [17]. Mary gives the ducks [18] in the morning. In the day, the ducks swim in the [19]. At night they sleep under the two big [20].",
         word_bank: ["farm", "trees", "songs", "water", "feet", "pencil", "bread", "goat"],
         questions: [
             { id: 16, question: "16. There are some chickens, and ducks and a [______].", correct_answers: ["goat"], explanation: "A goat lives on Mary's farm along with the chickens and ducks." },
@@ -706,6 +710,7 @@ const startersRwPart4Data = {
     "starters_2_test_2": {
         title: "Tom's kitchen",
         example: { word: "house" },
+        story_text: "Tom has a big kitchen in his house (example). Tom's family sit on [16] and eat their food. Tom likes eating [17] and chips, and his sister likes drinking [18]. Tom has some eggs for breakfast and then he goes to [19]. There are some beautiful [20] from the garden on the kitchen table.",
         word_bank: ["house", "alphabet", "chairs", "tail", "flowers", "sausages", "school", "lemonade"],
         questions: [
             { id: 16, question: "16. Tom's family sit on [______] and eat their food.", correct_answers: ["chairs"], explanation: "Family members sit on dining chairs around the table." },
@@ -718,6 +723,7 @@ const startersRwPart4Data = {
     "starters_2_test_3": {
         title: "A school",
         example: { word: "bus" },
+        story_text: "Eva goes to school by bus (example). She likes her school because it has a big [16]. She plays [17] there with her friends. Mrs Rice is their [18]. Eva loves her. In Eva's classroom, there is a [19] and a big window. There are lots of [20] and a board on the wall. Mrs Rice writes numbers and words on it.",
         word_bank: ["bus", "door", "football", "teacher", "bread", "playground", "glasses", "posters"],
         questions: [
             { id: 16, question: "16. She likes her school because it has a big [______].", correct_answers: ["playground"], explanation: "Eva loves the spacious outdoor school playground." },
@@ -730,6 +736,7 @@ const startersRwPart4Data = {
     "starters_3_test_1": {
         title: "A donkey",
         example: { word: "zoo" },
+        story_text: "A donkey is an animal. Some donkeys live in the zoo (example). Lots of donkeys are grey but some are brown. A donkey has two very long [16] on its head. At the end of its body a donkey has a small [17]. A donkey can walk and run on its four [18]. Donkeys drink [19]. They love eating [20] and they like apples, too.",
         word_bank: ["zoo", "water", "ears", "boat", "tail", "carrots", "books", "legs"],
         questions: [
             { id: 16, question: "16. A donkey has two very long [______] on its head.", correct_answers: ["ears"], explanation: "Donkeys are known for their distinctively long upright ears." },
@@ -742,6 +749,7 @@ const startersRwPart4Data = {
     "starters_3_test_2": {
         title: "My bedroom",
         example: { word: "bed" },
+        story_text: "I sleep in a big bed (example) in my bedroom. I've got a desk there, too. I sit on a [16] next to my desk. I like doing funny [17] of robots with my crayons. I like reading [18], too. I've got lots of toys. My favourite toy is my new [19]. I love music and I'm learning the [20]. I play it in my bedroom.",
         word_bank: ["bed", "books", "guitar", "meatballs", "chair", "drink", "drawings", "teddy"],
         questions: [
             { id: 16, question: "16. I sit on a [______] next to my desk.", correct_answers: ["chair"], explanation: "The child sits on a desk chair to draw and study." },
@@ -754,6 +762,7 @@ const startersRwPart4Data = {
     "starters_3_test_3": {
         title: "Tom's cat",
         example: { word: "house" },
+        story_text: "Tom's pet is a cat. It lives in the house (example) with Tom and his family. It has a long tail and two green [16]. In the morning, the cat plays on the [17] on the floor in the living room with Tom. Its favourite toy is a [18]. It drinks its [19] and eats its [20] in the garden.",
         word_bank: ["house", "eyes", "mouse", "food", "mat", "kites", "milk", "bathroom"],
         questions: [
             { id: 16, question: "16. It has a long tail and two green [______].", correct_answers: ["eyes"], explanation: "The cat looks attentively with two bright green eyes." },
@@ -766,6 +775,7 @@ const startersRwPart4Data = {
     "starters_4_test_1": {
         title: "Lucy's bedroom",
         example: { word: "table" },
+        story_text: "This is Lucy's bedroom. There is a table (example) with a lamp on it and she's got a [16] for her clothes. Lucy has got some cool [17] on the walls. Lucy sits on her bed and plays [18] on her tablet. Lucy likes to listen to music on the [19] and draw pictures in her room. In the evening, she reads a [20] in bed.",
         word_bank: ["table", "onions", "book", "games", "radio", "cupboard", "baby", "posters"],
         questions: [
             { id: 16, question: "16. There is a table with a lamp on it and she's got a [______] for her clothes.", correct_answers: ["cupboard"], explanation: "A wardrobe cupboard keeps all clothes neat and organized." },
@@ -778,6 +788,7 @@ const startersRwPart4Data = {
     "starters_4_test_2": {
         title: "My cousin Nick",
         example: { word: "brothers" },
+        story_text: "This is my cousin Nick. Nick lives in my street with his mum, dad and two brothers (example). He likes to wear T-shirts and [16]. We like to go to the [17] on our bikes. Then, we get [18] - chocolate is our favourite! In the evening, we watch [19] or talk to our friends on the computer. Nick likes playing the [20] too. We love music.",
         word_bank: ["brothers", "pear", "piano", "jeans", "television", "playground", "helicopter", "ice creams"],
         questions: [
             { id: 16, question: "16. He likes to wear T-shirts and [______].", correct_answers: ["jeans"], explanation: "Nick dresses casually in comfy cotton T-shirts and blue denim jeans." },
@@ -790,6 +801,7 @@ const startersRwPart4Data = {
     "starters_4_test_3": {
         title: "Ben's pet",
         example: { word: "cat" },
+        story_text: "Ben has two pets, a cat (example) and a mouse. The mouse's name is Kiwi. Kiwi lives in Ben's [16]. Kiwi has a brown body and very small [17]. Its tail and nose are pink. Kiwi likes drinking [18] and eating fruit. Its favourite fruit is [19]. Kiwi sleeps in the day and plays at [20].",
         word_bank: ["cat", "pencils", "feet", "apples", "night", "football", "water", "garden"],
         questions: [
             { id: 16, question: "16. Kiwi lives in Ben's [______].", correct_answers: ["garden"], explanation: "Kiwi the pet mouse lives safely in a cage in the outdoor garden." },
@@ -800,8 +812,6 @@ const startersRwPart4Data = {
         ]
     }
 };
-
-// Generator for standard Cambridge Pre-A1 Starters Tests
 function generateStartersTest(profile, idx) {
     const testNum = idx + 1;
 
@@ -924,6 +934,7 @@ function generateStartersTest(profile, idx) {
     const rwPart4WordBank = p4Config.word_bank;
     const rwPart4Example = p4Config.example;
     const rwPart4Title = p4Config.title;
+    const rwPart4StoryText = p4Config.story_text;
 
     const rwPart5Questions = [
         { id: 21, question: "21. Who is wearing a hat?", correct_answers: ["the boy", "boy", "a boy"], explanation: "In the picture, the young boy is wearing a sun hat." },
@@ -1034,6 +1045,7 @@ function generateStartersTest(profile, idx) {
                     title: "Part 4: Read this. Choose a word from the box (5 questions)",
                     instruction: "Read the story and type the correct word in each gap (16 - 20).",
                     story_title: rwPart4Title,
+                    story_text: rwPart4StoryText,
                     example: rwPart4Example,
                     word_bank: rwPart4WordBank,
                     questions: rwPart4Questions

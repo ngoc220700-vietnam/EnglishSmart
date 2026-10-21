@@ -157,6 +157,30 @@ foreach ($b in 1..4) {
 Report-Assert ($foundRw3Questions -eq 60) "All 60 Reading & Writing Part 3 question strip images exist and have valid dimensions" "Found $foundRw3Questions / 60"
 Report-Assert ($foundRw3Examples -eq 12) "All 12 Reading & Writing Part 3 example images exist and have valid dimensions" "Found $foundRw3Examples / 12"
 
+# 1G. Reading & Writing Part 4 Cropped Images (12 Topic + 12 Words = 24 images)
+$foundRw4Topics = 0
+$foundRw4Words = 0
+foreach ($b in 1..4) {
+    foreach ($t in 1..3) {
+        $topPath = "images/starters/book$b/test${t}_rw4_topic.jpg"
+        if (Test-Path $topPath) {
+            $img = [System.Drawing.Image]::FromFile((Resolve-Path $topPath).Path)
+            $w = $img.Width; $h = $img.Height
+            $img.Dispose()
+            if ($w -ge 300 -and $h -ge 150) { $foundRw4Topics++ }
+        }
+        $wordsPath = "images/starters/book$b/test${t}_rw4_words.jpg"
+        if (Test-Path $wordsPath) {
+            $img = [System.Drawing.Image]::FromFile((Resolve-Path $wordsPath).Path)
+            $w = $img.Width; $h = $img.Height
+            $img.Dispose()
+            if ($w -ge 600 -and $h -ge 250) { $foundRw4Words++ }
+        }
+    }
+}
+Report-Assert ($foundRw4Topics -eq 12) "All 12 Reading & Writing Part 4 topic illustration images exist and have valid dimensions" "Found $foundRw4Topics / 12"
+Report-Assert ($foundRw4Words -eq 12) "All 12 Reading & Writing Part 4 word bank illustration images exist and have valid dimensions" "Found $foundRw4Words / 12"
+
 # ----------------------------------------------------
 # 2. VERIFY STARTERS TEST ENGINE RENDERING LOGIC
 # ----------------------------------------------------
@@ -200,8 +224,10 @@ Report-Assert (-not $stEngine.Contains('({$q.scrambled})')) "Reading & Writing P
 
 # Check Reading & Writing Part 4 Logic
 Report-Assert (-not $stEngine.Contains('const cloze = currentPart.cloze;')) "Reading & Writing Part 4 eliminated undefined cloze property crash"
-Report-Assert ($stEngine.Contains('Part 4: Read this. Choose a word from the box')) "Reading & Writing Part 4 displays authentic instructions and word bank"
-Report-Assert ($stData.Contains('startersRwPart4Data')) "Starters data contains authentic Reading & Writing Part 4 dataset for all 12 tests"
+Report-Assert ($stEngine.Contains('test${testNum}_rw4_topic.jpg') -and $stEngine.Contains('test${testNum}_rw4_words.jpg')) "Reading & Writing Part 4 dynamically loads dedicated cropped topic and word bank images"
+Report-Assert ($stEngine.Contains('starters_rw4_input_${q.id}') -and $stEngine.Contains('handleStartersInsertWordBank')) "Reading & Writing Part 4 renders inline fill-in-the-blank inputs and tap-to-fill word bank"
+Report-Assert (-not $stEngine.Contains('Ã°Å¸â€œÂ¦') -and -not $stEngine.Contains('ÄÅ¸â€œÂ¦')) "Reading & Writing Part 4 eliminates font corruption emoji error"
+Report-Assert ($stData.Contains('story_text') -and $stData.Contains('startersRwPart4Data')) "Starters data contains authentic Reading & Writing Part 4 cloze stories for all 12 tests"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -262,10 +288,10 @@ foreach ($f in $coreFiles) {
 # ----------------------------------------------------
 Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yellow
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261020_v6")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261020_v6")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261020_v6")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261020_v6")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261021_v1")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261021_v1")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261021_v1")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261021_v1")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {
