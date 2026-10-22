@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
 // Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
@@ -18,6 +18,7 @@ let ieltsUserAnswers = {
 };
 
 let ieltsTestSubmitted = false;
+let ieltsTestStarted = false;
 let ieltsTestScoreResult = null;
 let ieltsTimerSeconds = 2 * 3600 + 45 * 60; // 2 hours 45 minutes official exam duration
 let ieltsTimerInterval = null;
@@ -59,19 +60,49 @@ function initIeltsTestEngine() {
         const savedSub = localStorage.getItem('smart_ielts_submitted_' + activeIeltsTestId);
         if (savedSub === 'true') {
             ieltsTestSubmitted = true;
+            ieltsTestStarted = true;
             gradeIeltsTest(false);
+        } else {
+            const savedStarted = localStorage.getItem('smart_ielts_started_' + activeIeltsTestId);
+            ieltsTestStarted = (savedStarted === 'true');
         }
     } catch (e) {
         console.warn('Could not load IELTS saved progress', e);
     }
 
+    if (ieltsTestStarted && !ieltsTestSubmitted) {
+        startIeltsTimer();
+    } else {
+        if (ieltsTimerInterval) clearInterval(ieltsTimerInterval);
+        updateIeltsTimerDisplay();
+    }
+    updateIeltsStartButtonUI();
+}
+
+function updateIeltsStartButtonUI() {
+    const btn = document.getElementById('btn-start-ielts-test');
+    if (!btn) return;
+    if (ieltsTestStarted || ieltsTestSubmitted) {
+        btn.classList.add('hidden');
+    } else {
+        btn.classList.remove('hidden');
+    }
+}
+
+function startIeltsTest() {
+    if (ieltsTestStarted) return;
+    ieltsTestStarted = true;
+    saveIeltsProgress();
     startIeltsTimer();
+    updateIeltsStartButtonUI();
+    renderIeltsSkillContent();
 }
 
 function saveIeltsProgress() {
     try {
         localStorage.setItem('smart_ielts_answers_' + activeIeltsTestId, JSON.stringify(ieltsUserAnswers));
         localStorage.setItem('smart_ielts_submitted_' + activeIeltsTestId, ieltsTestSubmitted.toString());
+        localStorage.setItem('smart_ielts_started_' + activeIeltsTestId, ieltsTestStarted.toString());
         if (ieltsAiWritingResults[activeIeltsTestId]) {
             localStorage.setItem('smart_ielts_ai_writing_' + activeIeltsTestId, JSON.stringify(ieltsAiWritingResults[activeIeltsTestId]));
         }
@@ -82,10 +113,17 @@ function saveIeltsProgress() {
 function startIeltsTimer() {
     if (ieltsTimerInterval) clearInterval(ieltsTimerInterval);
     updateIeltsTimerDisplay();
+    if (!ieltsTestStarted || ieltsTestSubmitted) return;
     ieltsTimerInterval = setInterval(() => {
-        if (ieltsTimerSeconds > 0 && !ieltsTestSubmitted) {
+        if (ieltsTimerSeconds > 0 && !ieltsTestSubmitted && ieltsTestStarted) {
             ieltsTimerSeconds--;
             updateIeltsTimerDisplay();
+            if (ieltsTimerSeconds % 10 === 0) saveIeltsProgress();
+            if (ieltsTimerSeconds === 0) {
+                clearInterval(ieltsTimerInterval);
+                alert("Time is up! Your IELTS test will now be graded.");
+                gradeIeltsTest(true);
+            }
         }
     }, 1000);
 }
@@ -163,6 +201,11 @@ function renderIeltsSkillContent() {
     const container = document.getElementById('ielts-content-area');
     if (!container) return;
 
+    if (!ieltsTestStarted && !ieltsTestSubmitted) {
+        renderIeltsStartScreen(container);
+        return;
+    }
+
     if (activeIeltsSkill === 'listening') {
         renderIeltsListeningView(container);
     } else if (activeIeltsSkill === 'reading') {
@@ -172,6 +215,71 @@ function renderIeltsSkillContent() {
     } else if (activeIeltsSkill === 'speaking') {
         renderIeltsSpeakingView(container);
     }
+}
+
+function renderIeltsStartScreen(container) {
+    const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
+    if (!test) return;
+
+    container.innerHTML = `
+        <div class="max-w-3xl mx-auto py-8 px-4 text-center space-y-6">
+            <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-indigo-600 to-sky-600 text-white flex items-center justify-center font-black text-4xl shadow-xl mx-auto ring-4 ring-indigo-100">
+                &#127891;
+            </div>
+            <div class="space-y-2">
+                <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-black text-xs uppercase tracking-wider border border-indigo-200">
+                    Cambridge Official Practice Test
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-800">${escapeHtml(test.title)}</h2>
+                <p class="text-sm text-slate-500 max-w-lg mx-auto">
+                    Standard 4-Skill Academic Examination: Listening, Reading, Writing, and Speaking with automatic band scoring and AI Examiner.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto text-left">
+                <div class="p-3.5 rounded-2xl bg-indigo-50/70 border border-indigo-100 space-y-1">
+                    <div class="text-base">&#127911;</div>
+                    <div class="font-extrabold text-xs text-indigo-950">Listening</div>
+                    <div class="text-[11px] text-slate-500">40 questions &bull; 30 mins</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 space-y-1">
+                    <div class="text-base">&#128214;</div>
+                    <div class="font-extrabold text-xs text-sky-950">Reading</div>
+                    <div class="text-[11px] text-slate-500">3 passages &bull; 60 mins</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-100 space-y-1">
+                    <div class="text-base">&#9997;&#65039;</div>
+                    <div class="font-extrabold text-xs text-amber-950">Writing</div>
+                    <div class="text-[11px] text-slate-500">2 tasks &bull; 60 mins</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-purple-50/70 border border-purple-100 space-y-1">
+                    <div class="text-base">&#127897;&#65039;</div>
+                    <div class="font-extrabold text-xs text-purple-950">Speaking</div>
+                    <div class="text-[11px] text-slate-500">3 parts &bull; AI Examiner</div>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 max-w-xl mx-auto space-y-1.5 text-left">
+                <div class="font-extrabold text-slate-800 flex items-center gap-1.5">
+                    <span>&#9201;&#65039;</span>
+                    <span>Total Exam Duration: 2 Hours 45 Minutes</span>
+                </div>
+                <ul class="list-disc list-inside space-y-1 text-slate-500 text-[11px]">
+                    <li>The countdown timer will begin immediately when you click <strong>Start Test</strong>.</li>
+                    <li>You can navigate freely between sections and questions during the test.</li>
+                    <li>Your answers are continuously auto-saved.</li>
+                </ul>
+            </div>
+
+            <div class="pt-2">
+                <button onclick="startIeltsTest()"
+                        class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-base sm:text-lg shadow-lg hover:shadow-xl transition active:scale-95 inline-flex items-center gap-2.5 cursor-pointer">
+                    <span>&#9654;&#65039;</span>
+                    <span>Start Test</span>
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 function switchIeltsListeningPart(num) {
@@ -1876,7 +1984,11 @@ function resetIeltsTest() {
     ieltsTestSubmitted = false;
     ieltsTestScoreResult = null;
     ieltsTimerSeconds = 2 * 3600 + 45 * 60;
+    ieltsTestStarted = false;
+    if (ieltsTimerInterval) clearInterval(ieltsTimerInterval);
     saveIeltsProgress();
+    updateIeltsTimerDisplay();
+    updateIeltsStartButtonUI();
     closeIeltsResultModal();
     renderIeltsSkillContent();
 }

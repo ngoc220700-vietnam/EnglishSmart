@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1097,6 +1097,10 @@
                                 <span class="text-xs font-bold text-amber-700">Time Left:</span>
                                 <span id="ielts-timer-display" class="text-xs sm:text-sm font-mono font-black text-amber-900">02:45:00</span>
                             </div>
+                            <!-- Start Test Button -->
+                            <button id="btn-start-ielts-test" onclick="startIeltsTest()" title="Bắt đầu tính giờ và làm bài thi" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs sm:text-sm font-black shadow-md hover:shadow-lg transition active:scale-95 flex items-center gap-1.5 animate-pulse cursor-pointer">
+                                <span>▶️ Bắt đầu</span>
+                            </button>
 
                             <!-- Gemini AI Settings Button -->
                             <button onclick="openGeminiApiKeyModal()" title="Cài đặt khóa Google Gemini AI Examiner (Miễn phí)" class="px-2.5 py-1.5 rounded-xl bg-violet-50 hover:bg-violet-100 text-violet-700 text-xs font-bold border border-violet-200 transition active:scale-95 flex items-center gap-1 shadow-2xs">
@@ -1202,6 +1206,11 @@
                                 <span class="text-xs font-bold text-amber-700">Thời gian:</span>
                                 <span id="starters-timer-display" class="text-xs sm:text-sm font-mono font-black text-amber-900">45:00</span>
                             </div>
+
+                            <!-- Start Test Button -->
+                            <button id="btn-start-starters-test" onclick="startStartersTest()" title="Bat dau lam bai thi" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white text-xs sm:text-sm font-black shadow-md hover:shadow-lg transition active:scale-95 flex items-center gap-1.5 animate-pulse cursor-pointer">
+                                <span>&#9654;&#65039; B&#7855;t &#273;&#7847;u</span>
+                            </button>
 
                             <!-- Full Screen Toggle -->
                             <button onclick="toggleStudyFullScreen()" title="Phóng to toàn màn hình thi thử" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-200 transition active:scale-95 flex items-center gap-1">
@@ -1409,10 +1418,10 @@
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js?v=20261019_v1"></script>
-    <script src="ielts_data.js?v=20261021_v2"></script>
-    <script src="ielts_test_engine.js?v=20261021_v2"></script>
-    <script src="starters_data.js?v=20261021_v2"></script>
-    <script src="starters_test_engine.js?v=20261021_v2"></script>
+    <script src="ielts_data.js?v=20261022_v1"></script>
+    <script src="ielts_test_engine.js?v=20261022_v1"></script>
+    <script src="starters_data.js?v=20261022_v1"></script>
+    <script src="starters_test_engine.js?v=20261022_v1"></script>
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>

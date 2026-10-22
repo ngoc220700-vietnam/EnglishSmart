@@ -24,6 +24,7 @@ let startersAudioChunks = [];
 let startersTimerInterval = null;
 let startersTimerSeconds = 45 * 60; // 45 minutes for Starters test
 let startersTestSubmitted = false;
+let startersTestStarted = false;
 let startersTestScoreResult = null;
 
 const STARTERS_STORAGE_KEY_PREFIX = 'smart_starters_progress_';
@@ -51,7 +52,32 @@ function escapeRegExp(string) {
 // 1. INITIALIZE TEST ENGINE
 function initStartersTestEngine() {
     loadStartersProgress();
+    if (startersTestStarted && !startersTestSubmitted) {
+        startStartersTimer();
+    } else {
+        if (startersTimerInterval) clearInterval(startersTimerInterval);
+        updateStartersTimerDisplay();
+    }
+    updateStartersStartButtonUI();
+}
+
+function updateStartersStartButtonUI() {
+    const btn = document.getElementById('btn-start-starters-test');
+    if (!btn) return;
+    if (startersTestStarted || startersTestSubmitted) {
+        btn.classList.add('hidden');
+    } else {
+        btn.classList.remove('hidden');
+    }
+}
+
+function startStartersTest() {
+    if (startersTestStarted) return;
+    startersTestStarted = true;
+    saveStartersProgress();
     startStartersTimer();
+    updateStartersStartButtonUI();
+    renderStartersSkillContent();
 }
 
 function loadStartersProgress() {
@@ -61,11 +87,14 @@ function loadStartersProgress() {
             const data = JSON.parse(saved);
             startersUserAnswers = data.answers || { listening: {}, reading_writing: {}, speaking: {} };
             startersTestSubmitted = !!data.submitted;
+            startersTestStarted = !!data.started;
+            if (startersTestSubmitted) startersTestStarted = true;
             startersTimerSeconds = (typeof data.timer === 'number') ? data.timer : 45 * 60;
             startersTestScoreResult = data.result || null;
         } else {
             startersUserAnswers = { listening: {}, reading_writing: {}, speaking: {} };
             startersTestSubmitted = false;
+            startersTestStarted = false;
             startersTimerSeconds = 45 * 60;
             startersTestScoreResult = null;
         }
@@ -79,6 +108,7 @@ function saveStartersProgress() {
         const data = {
             answers: startersUserAnswers,
             submitted: startersTestSubmitted,
+            started: startersTestStarted,
             timer: startersTimerSeconds,
             result: startersTestScoreResult
         };
@@ -108,7 +138,7 @@ function startStartersTimer() {
 }
 
 function updateStartersTimerDisplay() {
-    const badge = document.getElementById('starters-timer-badge');
+    const badge = document.getElementById('starters-timer-display') || document.getElementById('starters-timer-badge');
     if (!badge) return;
     const m = Math.floor(startersTimerSeconds / 60);
     const s = startersTimerSeconds % 60;
@@ -125,7 +155,13 @@ function switchStartersTest(testId) {
     activeStartersRwPart = 1;
     activeStartersSpkPart = 1;
     loadStartersProgress();
-    startStartersTimer();
+    if (startersTestStarted && !startersTestSubmitted) {
+        startStartersTimer();
+    } else {
+        if (startersTimerInterval) clearInterval(startersTimerInterval);
+        updateStartersTimerDisplay();
+    }
+    updateStartersStartButtonUI();
     renderStartersTestView();
 }
 
@@ -168,6 +204,11 @@ function renderStartersSkillContent() {
     const contentArea = document.getElementById('starters-content-area');
     if (!contentArea) return;
 
+    if (!startersTestStarted && !startersTestSubmitted) {
+        renderStartersStartScreen(contentArea);
+        return;
+    }
+
     if (activeStartersSkill === 'listening') {
         renderStartersListeningView(contentArea);
     } else if (activeStartersSkill === 'reading_writing') {
@@ -175,6 +216,66 @@ function renderStartersSkillContent() {
     } else if (activeStartersSkill === 'speaking') {
         renderStartersSpeakingView(contentArea);
     }
+}
+
+function renderStartersStartScreen(contentArea) {
+    const test = (typeof startersProfileData !== 'undefined' && startersProfileData.starters_tests) ? startersProfileData.starters_tests[activeStartersTestId] : null;
+    const testTitle = (test && test.title) ? test.title : 'Cambridge Pre-A1 Starters';
+
+    contentArea.innerHTML = `
+        <div class="max-w-3xl mx-auto py-8 px-4 text-center space-y-6">
+            <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-amber-400 to-orange-500 text-white flex items-center justify-center font-black text-4xl shadow-xl mx-auto ring-4 ring-amber-100">
+                &#128737;&#65039;
+            </div>
+            <div class="space-y-2">
+                <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs uppercase tracking-wider border border-amber-300">
+                    Cambridge Young Learners
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-800">${escapeHtml(testTitle)}</h2>
+                <p class="text-sm text-slate-500 max-w-lg mx-auto">
+                    Full 3-Skill Starters Test: Listening, Reading & Writing, and Speaking with official Cambridge Shields scoring (up to 15 Shields).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+                <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-1">
+                    <div class="text-base">&#127911;</div>
+                    <div class="font-extrabold text-xs text-amber-950">Listening</div>
+                    <div class="text-[11px] text-slate-600">4 parts &bull; 20 questions &bull; 5 Shields &#128737;&#65039;</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-orange-50/70 border border-orange-200 space-y-1">
+                    <div class="text-base">&#128214;</div>
+                    <div class="font-extrabold text-xs text-orange-950">Reading & Writing</div>
+                    <div class="text-[11px] text-slate-600">5 parts &bull; 25 questions &bull; 5 Shields &#128737;&#65039;</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+                    <div class="text-base">&#127897;&#65039;</div>
+                    <div class="font-extrabold text-xs text-emerald-950">Speaking</div>
+                    <div class="text-[11px] text-slate-600">4 parts &bull; Voice recording &bull; 5 Shields &#128737;&#65039;</div>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 max-w-xl mx-auto space-y-1.5 text-left">
+                <div class="font-extrabold text-slate-800 flex items-center gap-1.5">
+                    <span>&#9201;&#65039;</span>
+                    <span>Total Exam Duration: 45 Minutes</span>
+                </div>
+                <ul class="list-disc list-inside space-y-1 text-slate-500 text-[11px]">
+                    <li>Click <strong>Start Test</strong> to start your 45-minute practice.</li>
+                    <li>Take your time, look carefully at the pictures, and have fun!</li>
+                    <li>All your answers are saved automatically.</li>
+                </ul>
+            </div>
+
+            <div class="pt-2">
+                <button onclick="startStartersTest()"
+                        class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 hover:from-amber-600 hover:to-emerald-600 text-white font-black text-base sm:text-lg shadow-lg hover:shadow-xl transition active:scale-95 inline-flex items-center gap-2.5 cursor-pointer">
+                    <span>&#9654;&#65039;</span>
+                    <span>Start Test</span>
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 // -------------------------------------------------------------
@@ -2412,7 +2513,11 @@ function resetStartersTest() {
     startersTestSubmitted = false;
     startersTestScoreResult = null;
     startersTimerSeconds = 45 * 60;
+    startersTestStarted = false;
+    if (startersTimerInterval) clearInterval(startersTimerInterval);
     saveStartersProgress();
+    updateStartersTimerDisplay();
+    updateStartersStartButtonUI();
     closeStartersResultModal();
     renderStartersSkillContent();
 }
