@@ -101,11 +101,23 @@ function loadStartersProgress() {
                 startersTimerSeconds = STARTERS_TOTAL_SECONDS;
             }
             startersTestScoreResult = data.result || null;
+            // Progress saved before the timer fix (no version flag): a test auto-graded by a stale 0-second timer is re-opened fresh
+            if (data.ver !== 2) {
+                if (startersTestSubmitted && !(startersTimerSeconds > 0)) {
+                    startersTestSubmitted = false;
+                    startersTestStarted = false;
+                    startersTimerSeconds = STARTERS_TOTAL_SECONDS;
+                    startersTestScoreResult = null;
+                } else if (!startersTestSubmitted) {
+                    startersTestStarted = false;
+                    startersTimerSeconds = STARTERS_TOTAL_SECONDS;
+                }
+            }
         } else {
             startersUserAnswers = { listening: {}, reading_writing: {}, speaking: {} };
             startersTestSubmitted = false;
             startersTestStarted = false;
-            startersTimerSeconds = 45 * 60;
+            startersTimerSeconds = STARTERS_TOTAL_SECONDS;
             startersTestScoreResult = null;
         }
     } catch(e) {
@@ -118,6 +130,7 @@ function saveStartersProgress() {
         const data = {
             answers: startersUserAnswers,
             submitted: startersTestSubmitted,
+            ver: 2,
             started: startersTestStarted,
             timer: startersTimerSeconds,
             result: startersTestScoreResult

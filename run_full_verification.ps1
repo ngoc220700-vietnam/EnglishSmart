@@ -261,7 +261,7 @@ Report-Assert ($stData.Contains('startersRwPart5Data') -and $stData.Contains('rw
 
 Report-Assert ($stEngine.Contains('startersTestStarted') -and $stEngine.Contains('startStartersTest') -and $stEngine.Contains('renderStartersStartScreen')) "Starters engine requires Start Test button click before timer begins"
 Report-Assert ($stEngine.Contains('updateStartersStartButtonUI')) "Starters engine manages Start Test button state cleanly"
-Report-Assert ($stEngine.Contains('STARTERS_TOTAL_SECONDS = 45 * 60') -and $stEngine.Contains('typeof data.started !== ''boolean''')) "Starters engine uses official 45-minute duration and resets legacy saved timers"
+Report-Assert ($stEngine.Contains('STARTERS_TOTAL_SECONDS = 45 * 60') -and $stEngine.Contains('data.ver !== 2')) "Starters engine uses official 45-minute duration and resets legacy saved timers"
 
 # ----------------------------------------------------
 # 3. VERIFY IELTS DATA INTEGRITY & 20-TEST DIVERSITY
@@ -328,10 +328,10 @@ Write-Host "`n--- 5. Checking index.html Cache Busters ---" -ForegroundColor Yel
 $idxHtml = [System.IO.File]::ReadAllText("index.html", [System.Text.Encoding]::UTF8)
 Report-Assert ($idxHtml.Contains('id="btn-start-ielts-test"') -and $idxHtml.Contains('startIeltsTest()')) "index.html includes IELTS header Start Test button"
 Report-Assert ($idxHtml.Contains('id="btn-start-starters-test"') -and $idxHtml.Contains('startStartersTest()')) "index.html includes Starters header Start Test button"
-Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261022_v2")) "index.html loads updated ielts_data.js cache buster"
-Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261022_v2")) "index.html loads updated ielts_test_engine.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_data.js?v=20261022_v2")) "index.html loads updated starters_data.js cache buster"
-Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261022_v2")) "index.html loads updated starters_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_data.js?v=20261022_v3")) "index.html loads updated ielts_data.js cache buster"
+Report-Assert ($idxHtml.Contains("ielts_test_engine.js?v=20261022_v3")) "index.html loads updated ielts_test_engine.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_data.js?v=20261022_v3")) "index.html loads updated starters_data.js cache buster"
+Report-Assert ($idxHtml.Contains("starters_test_engine.js?v=20261022_v3")) "index.html loads updated starters_test_engine.js cache buster"
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 if ($allPassed) {
