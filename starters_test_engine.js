@@ -1,4 +1,4 @@
-﻿// =========================================================================
+// =========================================================================
 // CAMBRIDGE STARTERS TEST ENGINE (PRE-A1 STARTERS 1 - 4)
 // OFFICIAL CAMBRIDGE SHIELDS SCORING (MAXIMUM 15 SHIELDS)
 // ALL 3 SKILLS: LISTENING - READING & WRITING - SPEAKING
@@ -22,7 +22,8 @@ let startersMediaRecorder = null;
 let startersAudioChunks = [];
 
 let startersTimerInterval = null;
-let startersTimerSeconds = 45 * 60; // 45 minutes for Starters test
+const STARTERS_TOTAL_SECONDS = 45 * 60; // Official Cambridge Starters: Listening ~20 + Reading & Writing 20 + Speaking 3-5 = 45 minutes
+let startersTimerSeconds = STARTERS_TOTAL_SECONDS; // 45 minutes for Starters test
 let startersTestSubmitted = false;
 let startersTestStarted = false;
 let startersTestScoreResult = null;
@@ -89,7 +90,16 @@ function loadStartersProgress() {
             startersTestSubmitted = !!data.submitted;
             startersTestStarted = !!data.started;
             if (startersTestSubmitted) startersTestStarted = true;
-            startersTimerSeconds = (typeof data.timer === 'number') ? data.timer : 45 * 60;
+            startersTimerSeconds = (typeof data.timer === 'number') ? data.timer : STARTERS_TOTAL_SECONDS;
+            // Legacy progress saved by older builds (auto-running timer, no "started" flag): restore full official duration
+            if (typeof data.started !== 'boolean' && !startersTestSubmitted) {
+                startersTestStarted = false;
+                startersTimerSeconds = STARTERS_TOTAL_SECONDS;
+            }
+            // Safety: invalid or out-of-range timer values fall back to full official duration
+            if (!startersTestSubmitted && (!(startersTimerSeconds > 0) || startersTimerSeconds > STARTERS_TOTAL_SECONDS)) {
+                startersTimerSeconds = STARTERS_TOTAL_SECONDS;
+            }
             startersTestScoreResult = data.result || null;
         } else {
             startersUserAnswers = { listening: {}, reading_writing: {}, speaking: {} };
