@@ -1,9 +1,9 @@
-﻿// =========================================================================
+// =========================================================================
 // CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
 // Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
 
-let activeIeltsTestId = 'cam_1';
+let activeIeltsTestId = 'cam_1_test_1';
 let activeIeltsSkill = 'listening'; // 'listening' | 'reading' | 'writing' | 'speaking'
 let activeListeningPart = 1; // 1 | 2 | 3 | 4 | 0 (0 = all)
 let activeReadingPassage = 1;
@@ -43,6 +43,14 @@ let ieltsAiWritingResults = {}; // { [testId]: { task_1: result, task_2: result 
 
 // Initialize and restore test progress from localStorage
 function initIeltsTestEngine() {
+    if (typeof ieltsProfileData !== 'undefined' && ieltsProfileData.ielts_tests) {
+        if (!ieltsProfileData.ielts_tests[activeIeltsTestId]) {
+            const availableKeys = Object.keys(ieltsProfileData.ielts_tests);
+            if (availableKeys.length > 0) {
+                activeIeltsTestId = availableKeys[0];
+            }
+        }
+    }
     try {
         const saved = localStorage.getItem('smart_ielts_answers_' + activeIeltsTestId);
         if (saved) {
@@ -182,6 +190,14 @@ function switchIeltsSkill(skill) {
 
 // Render entire IELTS test interface
 function renderIeltsTestView() {
+    if (typeof ieltsProfileData !== 'undefined' && ieltsProfileData.ielts_tests) {
+        if (!ieltsProfileData.ielts_tests[activeIeltsTestId]) {
+            const availableKeys = Object.keys(ieltsProfileData.ielts_tests);
+            if (availableKeys.length > 0) {
+                activeIeltsTestId = availableKeys[0];
+            }
+        }
+    }
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     if (!test) return;
 
@@ -189,8 +205,17 @@ function renderIeltsTestView() {
     if (titleEl) titleEl.textContent = test.title;
 
     const fastSelect = document.getElementById('ielts-fast-test-select');
-    if (fastSelect && fastSelect.value !== activeIeltsTestId) {
-        fastSelect.value = activeIeltsTestId;
+    if (fastSelect) {
+        if (ieltsProfileData.units) {
+            const uKeys = Object.keys(ieltsProfileData.units);
+            const optKeys = Array.from(fastSelect.options).map(o => o.value);
+            if (optKeys.join(',') !== uKeys.join(',')) {
+                fastSelect.innerHTML = uKeys.map(k => `<option value="${k}">${ieltsProfileData.units[k].title}</option>`).join('');
+            }
+        }
+        if (fastSelect.value !== activeIeltsTestId) {
+            fastSelect.value = activeIeltsTestId;
+        }
     }
 
     switchIeltsSkill(activeIeltsSkill);
