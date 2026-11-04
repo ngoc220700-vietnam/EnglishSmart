@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
 // Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
@@ -152,7 +152,9 @@ function switchIeltsTest(testId) {
     if (typeof currentUnitKey !== 'undefined') {
         currentUnitKey = testId;
     }
-    if (testId.startsWith('cam_2_')) {
+    if (testId.startsWith('cam_3_')) {
+        localStorage.setItem('smart_ielts_active_book', 'cam_3');
+    } else if (testId.startsWith('cam_2_')) {
         localStorage.setItem('smart_ielts_active_book', 'cam_2');
     } else if (testId.startsWith('cam_1_')) {
         localStorage.setItem('smart_ielts_active_book', 'cam_1');
@@ -214,7 +216,8 @@ function renderIeltsTestView() {
     if (fastSelect) {
         const books = ieltsProfileData.books || {
             "cam_1": { id: "cam_1", title: "Cambridge IELTS 1", test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"] },
-            "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] }
+            "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] },
+            "cam_3": { id: "cam_3", title: "Cambridge IELTS 3", test_ids: ["cam_3_test_1"] }
         };
         const optKeys = Array.from(fastSelect.options).map(o => o.value);
         const allTestKeys = Object.keys(ieltsProfileData.units || {});
@@ -223,7 +226,7 @@ function renderIeltsTestView() {
             for (const bKey in books) {
                 const b = books[bKey];
                 const icon = bKey === 'cam_1' ? '📘' : '📙';
-                optHtml += `<optgroup label="${icon} ${b.title} (4 Tests)">`;
+                const tCount = b.test_ids ? b.test_ids.length : 4;`r`n                optHtml += `<optgroup label="${icon} ${b.title} (${tCount} ${tCount > 1 ? 'Tests' : 'Test'})">`;
                 const tIds = b.test_ids || [`${bKey}_test_1`, `${bKey}_test_2`, `${bKey}_test_3`, `${bKey}_test_4`];
                 tIds.forEach((tid, idx) => {
                     const u = (ieltsProfileData.units && ieltsProfileData.units[tid]) || {};

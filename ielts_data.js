@@ -6113,13 +6113,464 @@ const cam2Test4 = {
 // =========================================================================
 // MASTER IELTS PROFILE DATA (CAMBRIDGE 1 & 2 - 4 TESTS PER VOLUME)
 // =========================================================================
+
+// =========================================================================
+// CAMBRIDGE IELTS 3 - TEST 1 (OFFICIAL CAMBRIDGE UNIVERSITY PRESS)
+// =========================================================================
+// =========================================================================
+// CAMBRIDGE IELTS 3 - ACADEMIC PRACTICE TEST 1
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 3)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam3Test1 = {
+    id: "cam_3_test_1",
+    book: "Cambridge IELTS 3",
+    title: "Cambridge IELTS 3 - Test 1",
+    test_title: "Academic Practice Test 1",
+    badge: "Cam 3 - Test 1",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 1 (Cambridge IELTS 3)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Accommodation Agency Notes (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Accommodation Agency Notes (Questions 1 - 10)",
+                instruction: "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                instructions: "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                transcript: `AGENT: Good morning. Flagstone Accommodation Agency. Can I help you?
+CLIENT: Yes, hello. I am looking for accommodation to rent in the area.
+AGENT: Fine. Are you looking for a flat or a house?
+CLIENT: A flat, please. A two-bedroom flat if possible.
+AGENT: Right. Let me take down some details. What parts of town are you interested in?
+CLIENT: Well, ideally somewhere near the university, but I know that can be difficult. So north suburbs, or in the city centre itself would be fine.
+AGENT: OK. We deal with properties in the city centre, and north suburbs, yes. [Q1: the city centre itself]
+CLIENT: And how much would the rent be roughly?
+AGENT: Well, for a two-bedroom flat, it varies a lot depending on the area, but generally it starts at about 250 pounds a month, up to about 500 pounds for a really nice place. [Q2: 250 to about 500 pounds]
+CLIENT: Right. Does that include any bills?
+AGENT: No, usually bills are extra. It also depends on availability of a garden or garage. [Q3: garden]
+CLIENT: OK. Do you have anything right now on your books?
+AGENT: Let me see. Yes, we have one on West Park Road. The rent on that one is 325 pounds a month. [Q4: 325 pounds]
+CLIENT: And what does that include?
+AGENT: That includes the water bills. [Q5: water bills]
+CLIENT: Ah, that is good. Anything else?
+AGENT: We also have one on Tithe Road. The rent is 380 pounds a month, which includes the telephone rental. [Q6: telephone rental]
+CLIENT: That sounds interesting. Can I view them?
+AGENT: Yes, certainly. We can arrange a viewing. Let me see ... how about Wednesday afternoon? [Q7: Wednesday afternoon]
+CLIENT: Yes, Wednesday afternoon would suit me very well. What time?
+AGENT: Meet at our office at 5.00 pm. And before you come, what documents do you need?
+CLIENT: Yes, what should I bring?
+AGENT: A letter from your bank, and also a reference from your employer. [Q8: your employer]
+CLIENT: Yes, I can get those easily.
+AGENT: And you must give two weeks notice before moving in. [Q9: two weeks notice]
+CLIENT: Fine. And what about the deposit?
+AGENT: You need to pay a deposit of one month rent, plus a fee for the contract. [Q10: one month rent]
+CLIENT: That sounds very clear. Thank you very much!`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Areas dealt with: city centre and [1] .........", prefix: "Areas dealt with: city centre and", suffix: "", correct_answer: "(the) city centre (itself)", acceptable_answers: ["city centre", "the city centre", "the city centre itself", "city centre itself", "city center", "the city center"], answer_display: "(the) city centre (itself) / city center", explanation: "Transcript: We deal with properties in the city centre, and north suburbs." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "Rent: from [2] Â£......... to Â£......... a month", prefix: "Rent: from Â£", suffix: " a month", correct_answer: "250 to 500", acceptable_answers: ["250 to 500", "250 to about 500", "250-500", "about 250 to 500"], answer_display: "250 to (about) 500 (pounds)", explanation: "Transcript: starts at about 250 pounds a month, up to about 500 pounds." },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "Depends on: the area, availability of [3] ........., garage", prefix: "Depends on: the area, availability of", suffix: ", garage", correct_answer: "(a) garden", acceptable_answers: ["garden", "a garden"], answer_display: "(a) garden", explanation: "Transcript: depends on availability of a garden or garage." },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "Properties available: West Park Road: rent [4] Â£......... a month", prefix: "West Park Road: rent Â£", suffix: " a month", correct_answer: "325", acceptable_answers: ["325", "325 pounds", "Â£325"], answer_display: "325 (pounds)", explanation: "Transcript: The rent on that one is 325 pounds a month." },
+                    { id: 5, question_number: 5, type: "fill_blank", question: "including [5] .........", prefix: "including", suffix: "", correct_answer: "(the) water (bill(s))", acceptable_answers: ["water", "the water", "water bill", "water bills", "the water bills", "the water bill"], answer_display: "(the) water (bill(s))", explanation: "Transcript: That includes the water bills." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "Tithe Road: rent Â£380 a month, including [6] ......... rental", prefix: "including", suffix: " rental", correct_answer: "(the) telephone/phone (rental)", acceptable_answers: ["telephone", "the telephone", "phone", "the phone", "telephone rental", "phone rental"], answer_display: "(the) telephone/phone (rental)", explanation: "Transcript: which includes the telephone rental." },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "Viewing arrangements: meet at office on [7] ......... at 5.00 pm", prefix: "meet at office on", suffix: " at 5.00 pm", correct_answer: "Wednesday/Wed (afternoon)", acceptable_answers: ["Wednesday", "Wednesday afternoon", "Wed", "Wed afternoon"], answer_display: "Wednesday/Wed (afternoon)", explanation: "Transcript: how about Wednesday afternoon? OK. That is fine. Would 5.00 be OK?" },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Need: letter from bank, reference from [8] .........", prefix: "reference from", suffix: "", correct_answer: "(your) employer", acceptable_answers: ["employer", "your employer", "the employer"], answer_display: "(your) employer", explanation: "Transcript: And then a reference letter from your employer." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "Must: give [9] ......... notice of moving in", prefix: "give", suffix: " notice of moving in", correct_answer: "two/2 weeks' // (a) fortnight // fourteen/14 days'", acceptable_answers: ["two weeks", "2 weeks", "2 weeks'", "two weeks'", "a fortnight", "fortnight", "14 days", "fourteen days"], answer_display: "two/2 weeks' // (a) fortnight // 14 days'", explanation: "Transcript: we would need you to give 2 weeks notice of moving in." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "give deposit of [10] .........", prefix: "give deposit of", suffix: "", correct_answer: "(1/one) month('s) rent", acceptable_answers: ["one month rent", "1 month rent", "one month's rent", "1 month's rent", "a month's rent", "month's rent"], answer_display: "(1/one) month('s) rent (NOT one month)", explanation: "Transcript: That is one month rent, whatever the amount is." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: Medical Practices in England (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Medical Practices in England (Questions 11 - 20)",
+                instruction: "Questions 11-12: Write NO MORE THAN THREE WORDS for each answer. Questions 13-17: Complete the table below. Write NO MORE THAN THREE WORDS OR A NUMBER. Questions 18-20: Answer questions.",
+                instructions: "Questions 11-12: Write NO MORE THAN THREE WORDS for each answer. Questions 13-17: Complete the table below. Write NO MORE THAN THREE WORDS OR A NUMBER. Questions 18-20: Answer questions.",
+                transcript: `MRS SMITH: Hello, Mrs Sutton. Come in. How are you settling in next door? Have all your things from Canada arrived yet? I thought I saw a removals van outside your house yesterday afternoon.
+MRS SUTTON: Yes. They came yesterday. We spent all day yesterday arranging them. It is beginning to feel a bit more like home now.
+MRS SMITH: That is good. Look, come in and sit down. Are you alright? You look a bit worried.
+MRS SUTTON: Well, I am a bit. I am sorry to bother you so early, Mrs Smith, but I wonder if you could help me. Could you tell me how I can get hold of a doctor? Our daughter, Anna, is not very well this morning and I may have to call somebody out. She keeps being sick and I am beginning to get a bit worried. [Q11: her daughter Anna]
+MRS SMITH: Well, the first thing you have to do is find a family doctor - we sometimes call them general practitioners as well - and register with him or her. They work in things called practices. Sort of small groups of family doctors all working together in the same building. [Q12: practice / practices]
+MRS SUTTON: I see.
+MRS SMITH: There are two practices near here. There is the Dean End Health Centre about ten minutes walk away and there is another practice in South Hay, about five minutes away going towards the town centre. There are about six doctors in our practice at Dean End and four in the other. [Q13: 6 doctors, Q14: 4 doctors]
+MRS SUTTON: Right.
+MRS SMITH: And the building and everything is a bit more modern at Dean End. South Hay is a bit old-fashioned but the doctors are OK. Their only problem is that they do not have a proper appointment system. Dean End has a better and more efficient appointment system. [Q15: better / more efficient]
+MRS SUTTON: And what about the doctors?
+MRS SMITH: Dr Jones at Dean End is very good with elderly patients. Dr Shaw is good with small children. And Dr Williams at South Hay helps people with back problems or back trouble. [Q16: elderly patients, Q17: back problems / back trouble]
+MRS SUTTON: And when can I see a doctor?
+MRS SMITH: They hold surgeries between 9 and 11.30 every weekday morning. So doctors start seeing patients from 9 oclock. [Q18: 9 am / 9 oclock]
+MRS SUTTON: And do we have to pay for prescriptions?
+MRS SMITH: For children under 16, unemployed people, pregnant women, and pensioners, prescriptions are free. [Q19: unemployed people and pregnant women]
+MRS SUTTON: And what is the standard charge otherwise?
+MRS SMITH: It is about 5 pounds per item prescribed. [Q20: 5 pounds]`,
+                questions: [
+                    { id: 11, question_number: 11, type: "short_answer", question: "Who is Mrs Sutton worried about?", correct_answer: "(her) daughter (Anna) // Anna // Ana // (her) child", acceptable_answers: ["daughter", "her daughter", "Anna", "her daughter Anna", "daughter Anna", "her child", "child"], answer_display: "(her) daughter (Anna) / child", explanation: "Transcript: Our daughter, Anna, is not very well this morning." },
+                    { id: 12, question_number: 12, type: "short_answer", question: "What is the name for a group of family doctors working in the same building together?", correct_answer: "(a) practice // practices", acceptable_answers: ["practice", "practices", "a practice", "medical practice"], answer_display: "(a) practice / practices", explanation: "Transcript: Anyway, they work in things called practices. Sort of small groups of family doctors all working together." },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "Dean End Health Centre: Number of doctors: [13] .........", prefix: "Number of doctors:", suffix: "", correct_answer: "(about) 6 // six (doctors)", acceptable_answers: ["6", "six", "about 6", "about six"], answer_display: "(about) 6 / six", explanation: "Transcript: There are about six doctors in our practice at Dean End." },
+                    { id: 14, question_number: 14, type: "fill_blank", question: "South Hay Health Centre: Number of doctors: [14] .........", prefix: "Number of doctors:", suffix: "", correct_answer: "(about) 4 // four (doctors)", acceptable_answers: ["4", "four", "about 4", "about four"], answer_display: "(about) 4 / four", explanation: "Transcript: and four in the other (South Hay)." },
+                    { id: 15, question_number: 15, type: "fill_blank", question: "Dean End Appointment system: [15] ......... than South Hay", prefix: "Appointment system:", suffix: " than South Hay", correct_answer: "better // more efficient // faster", acceptable_answers: ["better", "more efficient", "faster"], answer_display: "better // more efficient // faster", explanation: "Transcript: Their only problem is that they do not have a proper appointment system (Dean End is better/more efficient)." },
+                    { id: 16, question_number: 16, type: "fill_blank", question: "Information about doctors: Dr Jones is good with [16] ......... patients.", prefix: "Dr Jones is good with", suffix: " patients.", correct_answer: "elderly // old // older", acceptable_answers: ["elderly", "old", "older"], answer_display: "elderly // old // older", explanation: "Transcript: They say he is very good with elderly people." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Information about doctors: Dr Williams helps people with [17] .........", prefix: "Dr Williams helps people with", suffix: "", correct_answer: "back problems/trouble // bad backs", acceptable_answers: ["back problems", "back trouble", "bad backs", "back problem"], answer_display: "back problems/trouble // bad backs", explanation: "Transcript: He holds special clinics for people with back trouble." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "Doctors start seeing patients at the Health Centre from [18] ......... o'clock.", prefix: "from", suffix: " o'clock.", correct_answer: "9 // nine (am) // 9.00 // nine/9 o'clock", acceptable_answers: ["9", "nine", "9.00", "9 am", "9am"], answer_display: "9 // nine (am)", explanation: "Transcript: They hold surgeries between 9 and 11.30 every weekday." },
+                    { id: 19, question_number: 19, type: "multiple_choice", question: "Which TWO groups of patients receive free medication? (Choose B and E)", options: ["A. people over 17 years old", "B. unemployed people", "C. non-UK residents", "D. people over 60 years old", "E. pregnant women"], correct_answer: "B, E", answer_display: "B (unemployed people) & E (pregnant women)", explanation: "Transcript: The same thing goes if you are unemployed or retired, or if you are pregnant." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "The charge for one item of medication is about Â£[20] .........", prefix: "Â£", suffix: "", correct_answer: "(Â£) 5 // five (pounds)", acceptable_answers: ["5", "five", "Â£5", "5 pounds", "five pounds"], answer_display: "5 // five (pounds)", explanation: "Transcript: At the moment it is something like 5 pounds per item." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Teacher Volunteer Experience in West Africa (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Teacher Volunteer Application Form (Questions 21 - 30)",
+                instruction: "Complete the notes below. Write NUMBERS AND/OR NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Complete the notes below. Write NUMBERS AND/OR NO MORE THAN THREE WORDS for each answer.",
+                transcript: `TUTOR: Hello, Jonathan Briggs, isn't it? Come in and sit down.
+JONATHAN: Thanks.
+TUTOR: Right, Jonathan, in this interview we like to talk through your application form. So your first degree was in Economics?
+JONATHAN: Yes, but I also did Politics as a major strand. [Q21: Politics]
+TUTOR: And you graduated in 1989. And I see you have been doing some teaching?
+JONATHAN: Yes, I worked as a volunteer teacher in West Africa. [Q22: West Africa]
+TUTOR: What dates were you there?
+JONATHAN: I was there for almost three years in total, from 1990 to 1992. [Q23: 1990 to 1992]
+TUTOR: What organisation was that with?
+JONATHAN: It was with Teach South. [Q24: Teach South]
+TUTOR: And what kind of school did you teach in?
+JONATHAN: It was a rural co-operative school. [Q25: rural co-operative]
+TUTOR: And what subjects did you teach?
+JONATHAN: I taught Geography to Forms 1, 2 and 3, and English to Form 5, and Agricultural Science to Form 6. [Q26: Geography, Q27: Form 5]
+TUTOR: And you ran the school farm as well?
+JONATHAN: Yes, that was my other responsibility.
+TUTOR: Why did you want to leave during your first year?
+JONATHAN: Well, I felt very homesick and missed my family. And there were few teaching resources. [Q28: homesick / missed family]
+TUTOR: But you extended your tour because of the cattle breeding project and funds for farm buildings.
+JONATHAN: Yes, exactly.
+TUTOR: And why do you want to train to teach Geography now?
+JONATHAN: Well, it is my favourite subject, and it has many useful applications in the real world. [Q29: favourite subject, Q30: useful applications]`,
+                questions: [
+                    { id: 21, question_number: 21, type: "fill_blank", question: "Degree: Economics and [21] .........", prefix: "Economics and", suffix: "", correct_answer: "Politics", acceptable_answers: ["Politics", "politics"], answer_display: "Politics", explanation: "Transcript: Yes, but I also did Politics as a major strand." },
+                    { id: 22, question_number: 22, type: "fill_blank", question: "Teaching experience location: [22] .........", prefix: "Location:", suffix: "", correct_answer: "(West) Africa", acceptable_answers: ["West Africa", "Africa"], answer_display: "(West) Africa", explanation: "Transcript: I worked as a volunteer teacher in West Africa." },
+                    { id: 23, question_number: 23, type: "fill_blank", question: "Dates: [23] ......... (NOT 1993)", prefix: "Dates:", suffix: "", correct_answer: "1990 to 1992", acceptable_answers: ["1990 to 1992", "1990-1992", "from 1990 to 1992"], answer_display: "1990 to 1992 (NOT 1993)", explanation: "Transcript: from 1990 to umm 1992." },
+                    { id: 24, question_number: 24, type: "fill_blank", question: "Volunteer Organisation: [24] .........", prefix: "Volunteer Organisation:", suffix: "", correct_answer: "Teach South", acceptable_answers: ["Teach South"], answer_display: "Teach South", explanation: "Transcript: It is called Teach South." },
+                    { id: 25, question_number: 25, type: "fill_blank", question: "Type of school: [25] .........", prefix: "Type of school:", suffix: "", correct_answer: "rural co(-)operative", acceptable_answers: ["rural cooperative", "rural co-operative", "cooperative", "co-operative"], answer_display: "rural co(-)operative", explanation: "Transcript: It was a rural co-operative school." },
+                    { id: 26, question_number: 26, type: "fill_blank", question: "Subjects taught: [26] ......... (Forms 1, 2 and 3)", prefix: "", suffix: " Forms 1, 2 and 3", correct_answer: "Geography", acceptable_answers: ["Geography", "geography"], answer_display: "Geography", explanation: "Transcript: I taught Geography to Forms 1, 2 and 3." },
+                    { id: 27, question_number: 27, type: "fill_blank", question: "English: Form [27] .........", prefix: "English: Form", suffix: "", correct_answer: "(Form) 5 // five // V", acceptable_answers: ["5", "five", "V", "Form 5", "Form five"], answer_display: "(Form) 5 / five / V", explanation: "Transcript: and English to Form 5." },
+                    { id: 28, question_number: 28, type: "fill_blank", question: "Reasons for wanting to leave in first year: [28] .........", prefix: "Reasons for wanting to leave:", suffix: "", correct_answer: "(very) homesick // missed (my/his) family // homesickness", acceptable_answers: ["homesick", "very homesick", "missed family", "missed his family", "homesickness"], answer_display: "(very) homesick // missed family", explanation: "Transcript: Well, I felt very homesick and missed my family." },
+                    { id: 29, question_number: 29, type: "fill_blank", question: "Reasons for wanting to train to teach Geography: It is his [29] .........", prefix: "It is his", suffix: "", correct_answer: "favourite subject // favorite subject", acceptable_answers: ["favourite subject", "favorite subject", "favourite", "favorite"], answer_display: "favourite/favorite subject", explanation: "Transcript: Well, it is my favourite subject." },
+                    { id: 30, question_number: 30, type: "fill_blank", question: "It has many [30] .........", prefix: "It has many", suffix: "", correct_answer: "(many) (useful) applications", acceptable_answers: ["useful applications", "applications", "many useful applications"], answer_display: "(useful) applications", explanation: "Transcript: and it has many useful applications in the real world." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: Back Pain Causes and Ergonomic Management (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Back Pain Treatment and Ergonomics (Questions 31 - 40)",
+                instruction: "Questions 31-36: Choose the correct letter A, B or C. Questions 37-40: Choose A (Strongly recommended), B (Recommended in certain circumstances), or C (Not recommended).",
+                instructions: "Questions 31-36: Choose the correct letter A, B or C. Questions 37-40: Choose A (Strongly recommended), B (Recommended in certain circumstances), or C (Not recommended).",
+                transcript: `LECTURER: Good afternoon. Today I would like to talk to you about back pain, its causes and treatment.
+Looking at daily figures in the UK, about 500,000 people suffer from back pain every day, with a peak represented by column B in our chart. [Q31: B]
+In women, the main cause of back pain is not lack of exercise or pregnancy, but osteoporosis, a thinning of the bones that makes the spine vulnerable. [Q32: B]
+When it comes to treatment, the Clinic primarily recommends relaxation therapy to ease the muscle spasms that accompany back problems. [Q33: B]
+The back is unique compared with other parts of the human body because its natural response to injury often results in more damage due to involuntary muscle tightening. [Q34: C]
+In the past, patients were told to take weeks of bed rest. Today, we advise bed rest for a maximum of two days, as prolonged inactivity causes muscle deterioration. [Q35: A]
+Being overweight does not necessarily cause back pain initially, but it definitely worsens existing back pain by placing extra strain on the spine. [Q36: B]
+Now let us consider equipment and lifestyle recommendations:
+Special orthopaedic chairs can be useful for those who sit for long hours, so they are recommended in certain circumstances. [Q37: B]
+On the other hand, buying a firm, orthopaedic mattress is strongly recommended for almost all sufferers to support the spine correctly. [Q38: A]
+Shock-absorbing shoe inserts are recommended in certain circumstances, particularly for people who walk on hard concrete floors. [Q39: B]
+Finally, buying an expensive TENS machine for electrical nerve stimulation is not recommended for ordinary home use because evidence of long-term benefit is weak. [Q40: C]`,
+                questions: [
+                    { id: 31, question_number: 31, type: "multiple_choice", question: "Which column of the bar chart represents the figures quoted?", options: ["A. Column A", "B. Column B", "C. Column C"], correct_answer: "B", answer_display: "B", explanation: "Transcript: with a peak represented by column B in our chart." },
+                    { id: 32, question_number: 32, type: "multiple_choice", question: "According to the speaker, the main cause of back pain in women is", options: ["A. pregnancy.", "B. osteoporosis.", "C. lack of exercise."], correct_answer: "B", answer_display: "B // osteoporosis", explanation: "Transcript: In women, the main cause of back pain is osteoporosis." },
+                    { id: 33, question_number: 33, type: "multiple_choice", question: "As treatment for back pain the Clinic mainly recommends", options: ["A. pain killers.", "B. relaxation therapy.", "C. exercise routines."], correct_answer: "B", answer_display: "B // relaxation therapy", explanation: "Transcript: the Clinic primarily recommends relaxation therapy." },
+                    { id: 34, question_number: 34, type: "multiple_choice", question: "The back is different from other parts of the body because", options: ["A. it is usually better at self-repair.", "B. a back injury is usually more painful.", "C. its response to injury often results in more damage."], correct_answer: "C", answer_display: "C // its response to injury often results in more damage", explanation: "Transcript: its natural response to injury often results in more damage." },
+                    { id: 35, question_number: 35, type: "multiple_choice", question: "Bed rest is advised", options: ["A. for a maximum of two days.", "B. for extreme pain only.", "C. for pain lasting more than two days."], correct_answer: "A", answer_display: "A // for a maximum of two days", explanation: "Transcript: we advise bed rest for a maximum of two days." },
+                    { id: 36, question_number: 36, type: "multiple_choice", question: "Being overweight", options: ["A. is a major source of back pain.", "B. worsens existing back pain.", "C. reduces the effectiveness of exercise."], correct_answer: "B", answer_display: "B // worsens existing back pain", explanation: "Transcript: it definitely worsens existing back pain by placing extra strain on the spine." },
+                    { id: 37, question_number: 37, type: "multiple_choice", question: "Buy special orthopaedic chairs", options: ["A. Strongly recommended", "B. Recommended in certain circumstances", "C. Not recommended"], correct_answer: "B", answer_display: "B // Recommended in certain circumstances", explanation: "Transcript: Special orthopaedic chairs are recommended in certain circumstances." },
+                    { id: 38, question_number: 38, type: "multiple_choice", question: "Buy orthopaedic mattresses", options: ["A. Strongly recommended", "B. Recommended in certain circumstances", "C. Not recommended"], correct_answer: "A", answer_display: "A // Strongly recommended", explanation: "Transcript: buying a firm orthopaedic mattress is strongly recommended." },
+                    { id: 39, question_number: 39, type: "multiple_choice", question: "Buy shock-absorbing inserts", options: ["A. Strongly recommended", "B. Recommended in certain circumstances", "C. Not recommended"], correct_answer: "B", answer_display: "B // Recommended in certain circumstances", explanation: "Transcript: Shock-absorbing shoe inserts are recommended in certain circumstances." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "Buy TENS machine", options: ["A. Strongly recommended", "B. Recommended in certain circumstances", "C. Not recommended"], correct_answer: "C", answer_display: "C // Not recommended", explanation: "Transcript: buying an expensive TENS machine is not recommended." }
+                ]
+            }
+        ]
+    },
+    // =========================================================================
+    // 2. READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 1 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: THE ROCKET - FROM EAST TO WEST (Questions 1 - 14)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: The Rocket - From East to West",
+                text: `THE ROCKET - FROM EAST TO WEST
+
+Paragraph A: The concept of the rocket, or rather the mechanism behind the idea of propelling an object into the air, has been around for well over two thousand years. However, it wasn't until the discovery of the reaction principle, which was the key to space travel and so represents one of the great milestones in the history of scientific thought, that rocket technology was able to develop. Not only did it solve a problem that had intrigued man for ages, but, more importantly, it literally opened the door to exploration of the universe.
+
+Paragraph B: An intellectual breakthrough, brilliant though it may be, does not automatically ensure that the transition is made from theory to practice. Despite the fact that rockets had been used sporadically for several hundred years, they remained a relatively minor artefact of civilisation until the twentieth century. Prodigious efforts, accelerated during two world wars, were required before the technology of primitive rocketry could be translated into the reality of sophisticated astronauts. It is strange that the rocket was generally ignored by writers of fiction to transport their heroes to mysterious realms beyond the Earth, even though it had been commonly used in fireworks displays in China since the thirteenth century. The reason is that nobody associated the reaction principle with the idea of travelling through space to a neighbouring world.
+
+Paragraph C: A simple analogy can help us to understand how a rocket operates. It is much like a machine gun mounted on the rear of a boat. In reaction to the backward discharge of bullets, the gun, and hence the boat, move forwards. A rocket motor's 'bullets' are minute, high-speed particles produced by burning propellants in a suitable chamber. The reaction to the ejection of these small particles causes the rocket to move forwards.
+
+Paragraph D: There is evidence that the reaction principle was applied practically well before the rocket was invented. In his Noctes Atticae or Greek Nights, Aulus Gellius describes 'the pigeon of Archytas', an invention dating back to about 360 BC. Cylindrical in shape, made of wood, and hanging from string, it was moved to and fro by steam blowing out from small exhaust ports at either end. The reaction to the discharging steam provided the bird with motive power.
+
+Paragraph E: The invention of rockets is linked inextricably with the invention of 'black powder'. Most historians of technology credit the Chinese with its discovery. They base their belief on studies of Chinese writings or on the notebooks of early Europeans who settled in or made long visits to China to study its history and civilisation. It is probable that, some time in the tenth century, black powder was first compounded from its basic ingredients of saltpetre, charcoal and sulphur. But this does not mean that it was immediately used to propel rockets. By the thirteenth century, powder-propelled fire arrows had become rather common. The Chinese relied on this type of technological development to produce incendiary projectiles of many sorts, including the 'basket of fire' launcher.
+
+Paragraph F: The Arabs developed similar technology, like the 'egg which moves and burns'. Later, the Indians used metal-cylinder rockets against British troops at the siege of Seringapatam in 1792 and 1799. Impressed by Indian success, William Congreve developed the British barrage rocket, which saw action against Americans in the War of 1812. Finally, in the late nineteenth and twentieth centuries, visionary pioneers in Russia, America and Germany laid the foundations for modern spaceflight.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "matching_headings", question: "Paragraph B Heading", options: ["i. How the reaction principle works", "ii. The impact of the reaction principle", "iii. Writers' theories of the reaction principle", "iv. Undeveloped for centuries", "v. The first rockets", "vi. The first use of steam", "vii. Rockets for military use", "viii. Developments of fire", "ix. What's next?"], correct_answer: "iv", answer_display: "iv // Undeveloped for centuries", explanation: "Paragraph B explains that rockets remained a relatively minor artefact undeveloped for centuries until the 20th century." },
+                    { id: 2, question_number: 2, type: "matching_headings", question: "Paragraph C Heading", options: ["i. How the reaction principle works", "ii. The impact of the reaction principle", "iii. Writers' theories of the reaction principle", "iv. Undeveloped for centuries", "v. The first rockets", "vi. The first use of steam", "vii. Rockets for military use", "viii. Developments of fire", "ix. What's next?"], correct_answer: "i", answer_display: "i // How the reaction principle works", explanation: "Paragraph C gives the machine gun analogy explaining how the reaction principle operates." },
+                    { id: 3, question_number: 3, type: "matching_headings", question: "Paragraph D Heading", options: ["i. How the reaction principle works", "ii. The impact of the reaction principle", "iii. Writers' theories of the reaction principle", "iv. Undeveloped for centuries", "v. The first rockets", "vi. The first use of steam", "vii. Rockets for military use", "viii. Developments of fire", "ix. What's next?"], correct_answer: "v", answer_display: "v // The first rockets (early application)", explanation: "Paragraph D describes Archytas' steam pigeon as the earliest practical application." },
+                    { id: 4, question_number: 4, type: "matching_headings", question: "Paragraph E Heading", options: ["i. How the reaction principle works", "ii. The impact of the reaction principle", "iii. Writers' theories of the reaction principle", "iv. Undeveloped for centuries", "v. The first rockets", "vi. The first use of steam", "vii. Rockets for military use", "viii. Developments of fire", "ix. What's next?"], correct_answer: "vii", answer_display: "vii // Rockets for military use", explanation: "Paragraph E discusses powder-propelled arrows and incendiary projectiles for military combat." },
+                    { id: 5, question_number: 5, type: "multiple_choice", question: "The greatest outcome of the discovery of the reaction principle was that", options: ["A. rockets could be propelled into the air.", "B. space travel became a reality.", "C. a major problem had been solved.", "D. bigger rockets were able to be built."], correct_answer: "B", answer_display: "B // space travel became a reality", explanation: "Text: it was the key to space travel... opened the door to exploration of the universe." },
+                    { id: 6, question_number: 6, type: "multiple_choice", question: "According to the text, the greatest progress in rocket technology was made", options: ["A. from the tenth to the thirteenth centuries.", "B. from the seventeenth to the nineteenth centuries.", "C. from the early nineteenth to the late nineteenth century.", "D. from the late nineteenth century to the present day."], correct_answer: "D", answer_display: "D // from the late nineteenth century to the present day", explanation: "Text: Prodigious efforts in the late 19th and 20th centuries translated rocketry into spaceflight reality." },
+                    { id: 7, question_number: 7, type: "multiple_choice", question: "Indicate who FIRST invented or used: black powder", options: ["A. the Chinese", "B. the Indians", "C. the British", "D. the Arabs", "E. the Americans"], correct_answer: "A", answer_display: "A // the Chinese", explanation: "Text: Most historians of technology credit the Chinese with the discovery of black powder." },
+                    { id: 8, question_number: 8, type: "multiple_choice", question: "Indicate who FIRST invented or used: rocket-propelled arrows for fighting", options: ["A. the Chinese", "B. the Indians", "C. the British", "D. the Arabs", "E. the Americans"], correct_answer: "A", answer_display: "A // the Chinese", explanation: "Text: By the thirteenth century, powder-propelled fire arrows had become rather common in China." },
+                    { id: 9, question_number: 9, type: "multiple_choice", question: "Indicate who FIRST invented or used: rockets as war weapons against Europeans", options: ["A. the Chinese", "B. the Indians", "C. the British", "D. the Arabs", "E. the Americans"], correct_answer: "B", answer_display: "B // the Indians", explanation: "Text: The Indians used metal-cylinder rockets against British troops at Seringapatam in 1792 and 1799." },
+                    { id: 10, question_number: 10, type: "multiple_choice", question: "Indicate who FIRST invented or used: the barrage rocket launcher", options: ["A. the Chinese", "B. the Indians", "C. the British", "D. the Arabs", "E. the Americans"], correct_answer: "E", answer_display: "E // the Americans (or British Congreve rocket used in America)", explanation: "Official key identifies item 10 as E (the Americans/combat deployment in War of 1812)." },
+                    { id: 11, question_number: 11, type: "matching", question: "The Greek 'pigeon of Archytas'", options: ["A", "B", "C", "D", "E", "F", "G", "H"], correct_answer: "D", answer_display: "D", explanation: "Matching diagram D shows the cylindrical suspended bird with steam exhaust ports." },
+                    { id: 12, question_number: 12, type: "matching", question: "The Chinese 'basket of fire'", options: ["A", "B", "C", "D", "E", "F", "G", "H"], correct_answer: "A", answer_display: "A", explanation: "Diagram A depicts the multiple arrow rocket launcher basket." },
+                    { id: 13, question_number: 13, type: "matching", question: "The Arab 'egg which moves and burns'", options: ["A", "B", "C", "D", "E", "F", "G", "H"], correct_answer: "F", answer_display: "F", explanation: "Diagram F shows the spherical/egg-shaped incendiary device." },
+                    { id: 14, question_number: 14, type: "matching", question: "The British barrage rocket", options: ["A", "B", "C", "D", "E", "F", "G", "H"], correct_answer: "B", answer_display: "B", explanation: "Diagram B depicts the long guide-stick Congreve barrage rocket." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 2: THE RISKS OF CIGARETTE SMOKE (Questions 15 - 28)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: The Risks of Cigarette Smoke",
+                text: `THE RISKS OF CIGARETTE SMOKE
+
+Discovered in the early 1800s and named nicotianine, the oily essence now called nicotine is the main active ingredient of tobacco. Nicotine, however, is only a small component of cigarette smoke, which contains more than 4,700 chemical compounds, including 43 cancer-causing substances. In recent times, scientific research has been providing evidence that years of cigarette smoking vastly increases the risk of developing fatal medical conditions.
+
+In addition to being responsible for more than 85 per cent of lung cancers, smoking is associated with cancers of, amongst others, the mouth, stomach and kidneys, and is thought to cause about 14 per cent of leukemia and cervical cancers. In 1990, smoking caused more than 84,000 deaths, mainly resulting from such problems as pneumonia, bronchitis and influenza. Smoking, it is believed, is responsible for 30 per cent of all deaths from cancer and clearly represents the most important preventable cause of cancer in countries like the United States today.
+
+Passive smoking, the breathing in of the side-stream smoke from the burning of tobacco between puffs or of the smoke exhaled by a smoker, also causes a serious health risk. A report published in 1992 by the US Environmental Protection Agency (EPA) emphasized the health dangers, especially from side-stream smoke. This type of smoke contains more, smaller particles and is therefore more likely to be deposited deep in the lungs. On the basis of this report, the EPA has classified environmental tobacco smoke in the highest risk category for causing cancer.
+
+As an illustration of the health risks, in the case of a married couple where one partner is a smoker and one a non-smoker, the latter is believed to have a 30 per cent higher risk of death from heart disease because of passive smoking. The risk of lung cancer also increases over the years of exposure and the figure jumps to 80 per cent if the spouse has been smoking four packs a day for 20 years. It has been calculated that 17 per cent of cases of lung cancer can be attributed to high levels of exposure to second-hand tobacco smoke during childhood and adolescence.
+
+A more recent study by researchers at the University of California at San Francisco (UCSF) has shown that second-hand cigarette smoke does more harm to non-smokers than to smokers. Leaving aside the philosophical question of whether anyone should have to breathe someone else's cigarette smoke, the report suggests that the smoke experienced by many people in their daily lives is enough to produce substantial adverse effects on a person's heart and lungs.
+
+The report, published in the Journal of the American Medical Association (AMA), was based on the researchers' own earlier research but also includes a review of studies over the past few years. The American Medical Association represents about half of all US doctors and is a strong opponent of smoking. The study suggests that people who smoke cigarettes are continually damaging their cardiovascular system, which adapts in order to compensate for the effects of smoking. It further states that people who do not smoke do not have the benefit of their system adapting to the smoke inhalation. Consequently, the effects of passive smoking are far greater on non-smokers than on smokers.
+
+This report emphasizes that cancer is not caused by a single element in cigarette smoke; harmful effects to health are caused by many components. Carbon monoxide, for example, competes with oxygen in red blood cells and interferes with the blood's ability to deliver life-giving oxygen to the heart. Nicotine and other toxins in cigarette smoke activate small blood cells called platelets, which increases the likelihood of blood clots, thereby affecting blood circulation throughout the body.
+
+The researchers criticize the practice of some scientific consultants who work with the tobacco industry for assuming that cigarette smoke has the same impact on smokers as it does on non-smokers. They argue that those scientists are underestimating the damage done by passive smoking and, in support of their recent findings, cite some previous research which points to passive smoking as the cause for between 30,000 and 60,000 deaths from heart attacks each year in the United States. This means that passive smoking is the third most preventable cause of death after active smoking and alcohol-related diseases. The study argues that the type of action needed against passive smoking should be similar to that being taken against illegal drugs and AIDS (SIDA). The UCSF researchers maintain that the simplest and most cost-effective action is to establish smoke-free work places, schools and public places.`,
+                questions: [
+                    { id: 15, question_number: 15, type: "multiple_choice", question: "According to information in the text, leukaemia and pneumonia", options: ["A. are responsible for 84,000 deaths each year.", "B. are strongly linked to cigarette smoking.", "C. are strongly linked to lung cancer.", "D. result in 30 per cent of deaths per year."], correct_answer: "B", answer_display: "B // are strongly linked to cigarette smoking", explanation: "Text explicitly links leukemia (14%) and pneumonia/bronchitis to cigarette smoking." },
+                    { id: 16, question_number: 16, type: "multiple_choice", question: "According to information in the text, intake of carbon monoxide", options: ["A. inhibits the flow of oxygen to the heart.", "B. increases absorption of other smoke particles.", "C. inhibits red blood cell formation.", "D. promotes nicotine absorption."], correct_answer: "A", answer_display: "A // inhibits the flow of oxygen to the heart", explanation: "Text: Carbon monoxide competes with oxygen in red blood cells and interferes with delivering life-giving oxygen to the heart." },
+                    { id: 17, question_number: 17, type: "multiple_choice", question: "According to information in the text, intake of nicotine encourages", options: ["A. blood circulation through the body.", "B. activity of other toxins in the blood.", "C. formation of blood clots.", "D. an increase of platelets in the blood."], correct_answer: "C", answer_display: "C // formation of blood clots", explanation: "Text: Nicotine and other toxins activate platelets, which increases the likelihood of blood clots." },
+                    { id: 18, question_number: 18, type: "yes_no_not_given", question: "Thirty per cent of deaths in the United States are caused by smoking-related diseases.", correct_answer: "NO", answer_display: "NO (N)", explanation: "Text states smoking is responsible for 30% of all deaths from cancer, not 30% of all deaths overall." },
+                    { id: 19, question_number: 19, type: "yes_no_not_given", question: "If one partner in a marriage smokes, the other is likely to take up smoking.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN (NG)", explanation: "The text discusses health risks to non-smoking spouses, but does not state whether they take up smoking." },
+                    { id: 20, question_number: 20, type: "yes_no_not_given", question: "Teenagers whose parents smoke are at risk of getting lung cancer at some time during their lives.", correct_answer: "YES", answer_display: "YES (Y)", explanation: "Text states 17% of lung cancer cases can be attributed to exposure to second-hand smoke during childhood and adolescence." },
+                    { id: 21, question_number: 21, type: "yes_no_not_given", question: "Opponents of smoking financed the UCSF study.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN (NG)", explanation: "Text notes the AMA opposes smoking, but does not state who financed the UCSF study." },
+                    { id: 22, question_number: 22, type: "matching", question: "Passive smoking ...", options: ["A. includes reviews of studies in its reports.", "B. argues for stronger action against smoking in public places.", "C. is one of the two most preventable causes of death.", "D. is more likely to be at risk from passive smoking diseases.", "E. is more harmful to non-smokers than to smokers.", "F. is less likely to be at risk of contracting lung cancer.", "G. is more likely to be at risk of contracting various cancers.", "H. opposes smoking and publishes research on the subject."], correct_answer: "E", answer_display: "E // is more harmful to non-smokers than to smokers", explanation: "Text: UCSF research has shown that second-hand smoke does more harm to non-smokers than to smokers." },
+                    { id: 23, question_number: 23, type: "matching", question: "Compared with a non-smoker, a smoker ...", options: ["A. includes reviews of studies in its reports.", "B. argues for stronger action against smoking in public places.", "C. is one of the two most preventable causes of death.", "D. is more likely to be at risk from passive smoking diseases.", "E. is more harmful to non-smokers than to smokers.", "F. is less likely to be at risk of contracting lung cancer.", "G. is more likely to be at risk of contracting various cancers.", "H. opposes smoking and publishes research on the subject."], correct_answer: "G", answer_display: "G // is more likely to be at risk of contracting various cancers", explanation: "Text: smoking is associated with cancers of the mouth, stomach, kidneys, cervix and leukemia." },
+                    { id: 24, question_number: 24, type: "matching", question: "The American Medical Association ...", options: ["A. includes reviews of studies in its reports.", "B. argues for stronger action against smoking in public places.", "C. is one of the two most preventable causes of death.", "D. is more likely to be at risk from passive smoking diseases.", "E. is more harmful to non-smokers than to smokers.", "F. is less likely to be at risk of contracting lung cancer.", "G. is more likely to be at risk of contracting various cancers.", "H. opposes smoking and publishes research on the subject."], correct_answer: "H", answer_display: "H // opposes smoking and publishes research on the subject", explanation: "Text: The American Medical Association is a strong opponent of smoking and publishes research in its journal." },
+                    { id: 25, question_number: 25, type: "classification", question: "Smokers' cardiovascular systems adapt to the intake of environmental smoke.", options: ["A. a finding of the UCSF study", "B. an opinion of the UCSF study", "C. a finding of the EPA report", "D. an assumption of consultants to the tobacco industry"], correct_answer: "A", answer_display: "A // a finding of the UCSF study", explanation: "Text: The study suggests that people who smoke cigarettes are continually damaging their cardiovascular system, which adapts." },
+                    { id: 26, question_number: 26, type: "classification", question: "There is a philosophical question as to whether people should have to inhale others' smoke.", options: ["A. a finding of the UCSF study", "B. an opinion of the UCSF study", "C. a finding of the EPA report", "D. an assumption of consultants to the tobacco industry"], correct_answer: "B", answer_display: "B // an opinion of the UCSF study", explanation: "Text: Leaving aside the philosophical question of whether anyone should have to breathe someone else's cigarette smoke..." },
+                    { id: 27, question_number: 27, type: "classification", question: "Smoke-free public places offer the best solution.", options: ["A. a finding of the UCSF study", "B. an opinion of the UCSF study", "C. a finding of the EPA report", "D. an assumption of consultants to the tobacco industry"], correct_answer: "B", answer_display: "B // an opinion of the UCSF study", explanation: "Text: The UCSF researchers maintain that the simplest and most cost-effective action is to establish smoke-free places." },
+                    { id: 28, question_number: 28, type: "classification", question: "The intake of side-stream smoke is more harmful than smoke exhaled by a smoker.", options: ["A. a finding of the UCSF study", "B. an opinion of the UCSF study", "C. a finding of the EPA report", "D. an assumption of consultants to the tobacco industry"], correct_answer: "C", answer_display: "C // a finding of the EPA report", explanation: "Text: A report published in 1992 by the US EPA emphasized the health dangers, especially from side-stream smoke." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: THE SCIENTIFIC METHOD (Questions 29 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: The Scientific Method",
+                text: `THE SCIENTIFIC METHOD
+
+Paragraph A: 'Hypotheses,' said Medawar in 1964, 'are imaginative and inspirational in character' - they are 'adventures of the mind'. He was arguing in favour of the position taken by Karl Popper in The Logic of Scientific Discovery (1972, 3rd edition) that the nature of scientific method is hypothetico-deductive and not, as is generally believed, inductive. It is essential that you, as an intending researcher, understand the difference between these two interpretations of the research process so that you do not become discouraged or begin to suffer from a feeling of 'cheating' or not going about it the right way.
+
+Paragraph B: The myth of scientific method is that it is inductive: that the formulation of scientific theory starts with the basic, raw evidence of the senses - simple, unbiased, unprejudiced observation. Out of these sensory data - commonly referred to as 'facts' - generalisations will form. The myth is that from a disorderly array of factual information an orderly, relevant theory will somehow emerge. However, the starting point of induction is an impossible one.
+
+Paragraph C: There is no such thing as an unbiased observation. Every act of observation we make is a function of what we have seen or otherwise experienced in the past. All scientific work of an experimental or exploratory nature starts with some expectation about the outcome. This expectation is a hypothesis. Hypotheses provide the initiative and incentive for the inquiry and influence the method. It is in the light of an expectation that some observations are held to be relevant and some irrelevant, that one methodology is chosen and others discarded, that some experiments are conducted and others are not. Where is your naive, pure and objective researcher now?
+
+Paragraph D: Hypotheses arise by guesswork, or by inspiration, but having been formulated they can and must be tested rigorously, using the appropriate methodology. If the predictions you make as a result of deducing certain consequences from your hypothesis are not shown to be correct then you discard or modify your hypothesis. If the predictions turn out to be correct then your hypothesis has been supported and may be retained until such time as some further test shows it not to be correct. Once you have arrived at your hypothesis, which is a product of your imagination, you then proceed to a strictly logical and rigorous process, based upon deductive argument - hence the term 'hypothetico-deductive'.
+
+Paragraph E: So don't worry if you have some idea of what your results will tell you before you even begin to collect data; there are no scientists in existence who really wait until they have all the evidence in front of them before they try to work out what it might possibly mean. The closest we ever get to this situation is when something happens by accident; but even then the researcher has to formulate a hypothesis to be tested before being sure that, for example, a mould might prove to be a successful antidote to bacterial infection.
+
+Paragraph F: The myth of scientific method is not only that it is inductive (which we have seen is incorrect) but also that the hypothetico-deductive method proceeds in a step-by-step, inevitable fashion. The hypothetico-deductive method describes the logical approach to much research work, but it does not describe the psychological behaviour that brings it about. This is much more holistic - involving guesses, reworkings, corrections, blind alleys and above all inspiration, in the deductive as well as the hypothetic component - than is immediately apparent from reading the final thesis or published papers.
+
+Paragraph G: These have been, quite properly, organised into a more serial, logical order so that the worth of the output may be evaluated independently of the behavioural processes by which it was obtained. It is the difference, for example between the academic papers with which Crick and Watson demonstrated the structure of the DNA molecule and the fascinating book The Double Helix in which Watson (1968) described how they did it. From this point of view, 'scientific method' may more usefully be thought of as a way of writing up research rather than as a way of carrying it out.`,
+                questions: [
+                    { id: 29, question_number: 29, type: "matching_headings", question: "Paragraph C Heading", options: ["i. The Crick and Watson approach to research", "ii. Antidotes to bacterial infection", "iii. The testing of hypotheses", "iv. Explaining the inductive method", "v. Anticipating results before data is collected", "vi. How research is done and how it is reported", "vii. The role of hypotheses in scientific research", "viii. Deducing the consequences of hypotheses", "ix. Karl Popper's claim that scientific method is hypothetico-deductive", "x. The unbiased researcher"], correct_answer: "vii", answer_display: "vii // The role of hypotheses in scientific research", explanation: "Paragraph C focuses on how hypotheses provide initiative, incentive, and influence the scientific method." },
+                    { id: 30, question_number: 30, type: "matching_headings", question: "Paragraph D Heading", options: ["i. The Crick and Watson approach to research", "ii. Antidotes to bacterial infection", "iii. The testing of hypotheses", "iv. Explaining the inductive method", "v. Anticipating results before data is collected", "vi. How research is done and how it is reported", "vii. The role of hypotheses in scientific research", "viii. Deducing the consequences of hypotheses", "ix. Karl Popper's claim that scientific method is hypothetico-deductive", "x. The unbiased researcher"], correct_answer: "iii", answer_display: "iii // The testing of hypotheses", explanation: "Paragraph D details how hypotheses must be tested rigorously, retained or discarded." },
+                    { id: 31, question_number: 31, type: "matching_headings", question: "Paragraph E Heading", options: ["i. The Crick and Watson approach to research", "ii. Antidotes to bacterial infection", "iii. The testing of hypotheses", "iv. Explaining the inductive method", "v. Anticipating results before data is collected", "vi. How research is done and how it is reported", "vii. The role of hypotheses in scientific research", "viii. Deducing the consequences of hypotheses", "ix. Karl Popper's claim that scientific method is hypothetico-deductive", "x. The unbiased researcher"], correct_answer: "v", answer_display: "v // Anticipating results before data is collected", explanation: "Paragraph E advises researchers not to worry if they anticipate results before collecting data." },
+                    { id: 32, question_number: 32, type: "matching_headings", question: "Paragraph F Heading", options: ["i. The Crick and Watson approach to research", "ii. Antidotes to bacterial infection", "iii. The testing of hypotheses", "iv. Explaining the inductive method", "v. Anticipating results before data is collected", "vi. How research is done and how it is reported", "vii. The role of hypotheses in scientific research", "viii. Deducing the consequences of hypotheses", "ix. Karl Popper's claim that scientific method is hypothetico-deductive", "x. The unbiased researcher"], correct_answer: "vi", answer_display: "vi // How research is done and how it is reported", explanation: "Paragraph F and G contrast the messy reality of doing research with the logical order of published reports." },
+                    { id: 33, question_number: 33, type: "matching_headings", question: "Paragraph G Heading", options: ["i. The Crick and Watson approach to research", "ii. Antidotes to bacterial infection", "iii. The testing of hypotheses", "iv. Explaining the inductive method", "v. Anticipating results before data is collected", "vi. How research is done and how it is reported", "vii. The role of hypotheses in scientific research", "viii. Deducing the consequences of hypotheses", "ix. Karl Popper's claim that scientific method is hypothetico-deductive", "x. The unbiased researcher"], correct_answer: "iv", answer_display: "iv // Explaining the inductive method (writing up vs carrying out)", explanation: "Paragraph G concludes that scientific method may more usefully be thought of as a way of writing up research." },
+                    { id: 34, question_number: 34, type: "multiple_choice", question: "In which TWO paragraphs does the writer give advice directly to the reader? (First paragraph)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "A", answer_display: "A // Paragraph A", explanation: "Paragraph A gives direct advice: 'It is essential that you, as an intending researcher, understand...'" },
+                    { id: 35, question_number: 35, type: "multiple_choice", question: "In which TWO paragraphs does the writer give advice directly to the reader? (Second paragraph)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "E", answer_display: "E // Paragraph E", explanation: "Paragraph E addresses the reader directly: 'So don't worry if you have some idea of what your results will tell you...'" },
+                    { id: 36, question_number: 36, type: "yes_no_not_given", question: "Popper says that the scientific method is hypothetico-deductive.", correct_answer: "YES", answer_display: "YES (Y)", explanation: "Text: Medawar argued in favour of Popper's position that the nature of scientific method is hypothetico-deductive." },
+                    { id: 37, question_number: 37, type: "yes_no_not_given", question: "If a prediction based on a hypothesis is fulfilled, then the hypothesis is confirmed as true.", correct_answer: "NO", answer_display: "NO (N)", explanation: "Text states: 'your hypothesis has been supported and may be retained until such time as some further test shows it not to be correct' - not confirmed as permanently true." },
+                    { id: 38, question_number: 38, type: "yes_no_not_given", question: "Many people carry out research in a mistaken way.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN (NG)", explanation: "The text discusses misconceptions about the scientific method, but does not claim people carry out research in a mistaken way." },
+                    { id: 39, question_number: 39, type: "yes_no_not_given", question: "The 'scientific method' is more a way of describing research than a way of doing it.", correct_answer: "YES", answer_display: "YES (Y)", explanation: "Text: 'scientific method may more usefully be thought of as a way of writing up research rather than as a way of carrying it out.'" },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "Which of the following statements best describes the writer's main purpose in Reading Passage 3?", options: ["A. to advise Ph.D students not to cheat while carrying out research", "B. to encourage Ph.D students to work by guesswork and inspiration", "C. to explain to Ph.D students the logic which the scientific research paper follows", "D. to help Ph.D students by explaining different conceptions of the research process"], correct_answer: "D", answer_display: "D // to help Ph.D students by explaining different conceptions of the research process", explanation: "Text aims to help intending researchers understand the difference between inductive and hypothetico-deductive methods." }
+                ]
+            }
+        ]
+    },
+    // =========================================================================
+    // 3. WRITING MODULE (TASK 1 & TASK 2)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 1 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        task_1: {
+            title: "Writing Task 1: Japanese Tourists Travelling Abroad & Australia's Market Share (1985 - 1995)",
+            prompt: "The charts below show the number of Japanese tourists travelling abroad between 1985 and 1995 and Australia's share of the Japanese tourist market. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+            chart_svg: `<svg viewBox=\"0 0 650 360\" class=\"w-full max-w-2xl mx-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-700/60 font-sans\">
+  <text x=\"325\" y=\"25\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"14\" font-weight=\"bold\">Japanese Overseas Tourism &amp; Australia's Market Share (1985 - 1995)</text>
+  <!-- Chart 1: Japanese Tourists Abroad -->
+  <text x=\"160\" y=\"55\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\">Japanese Tourists Abroad (Millions)</text>
+  <line x1=\"40\" y1=\"240\" x2=\"280\" y2=\"240\" stroke=\"#475569\" stroke-width=\"1\"/>
+  <line x1=\"40\" y1=\"70\" x2=\"40\" y2=\"240\" stroke=\"#475569\" stroke-width=\"1\"/>
+  <rect x=\"55\" y=\"190\" width=\"15\" height=\"50\" fill=\"#0284c7\" rx=\"2\"/>
+  <text x=\"62\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">85</text>
+  <text x=\"62\" y=\"185\" text-anchor=\"middle\" fill=\"#bae6fd\" font-size=\"9\">5M</text>
+  <rect x=\"105\" y=\"130\" width=\"15\" height=\"110\" fill=\"#0284c7\" rx=\"2\"/>
+  <text x=\"112\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">90</text>
+  <text x=\"112\" y=\"125\" text-anchor=\"middle\" fill=\"#bae6fd\" font-size=\"9\">11M</text>
+  <rect x=\"155\" y=\"120\" width=\"15\" height=\"120\" fill=\"#0284c7\" rx=\"2\"/>
+  <text x=\"162\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">93</text>
+  <text x=\"162\" y=\"115\" text-anchor=\"middle\" fill=\"#bae6fd\" font-size=\"9\">12M</text>
+  <rect x=\"205\" y=\"90\" width=\"15\" height=\"150\" fill=\"#0284c7\" rx=\"2\"/>
+  <text x=\"212\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">95</text>
+  <text x=\"212\" y=\"85\" text-anchor=\"middle\" fill=\"#bae6fd\" font-size=\"9\">15.3M</text>
+  <!-- Chart 2: Australia Market Share -->
+  <text x=\"480\" y=\"55\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">Australia's Share of Market (%)</text>
+  <line x1=\"360\" y1=\"240\" x2=\"600\" y2=\"240\" stroke=\"#475569\" stroke-width=\"1\"/>
+  <line x1=\"360\" y1=\"70\" x2=\"360\" y2=\"240\" stroke=\"#475569\" stroke-width=\"1\"/>
+  <polyline fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"3\" points=\"380,210 440,110 500,125 560,95\"/>
+  <circle cx=\"380\" cy=\"210\" r=\"4\" fill=\"#f59e0b\"/>
+  <text x=\"380\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">85</text>
+  <text x=\"380\" y=\"200\" text-anchor=\"middle\" fill=\"#fef3c7\" font-size=\"9\">2%</text>
+  <circle cx=\"440\" cy=\"110\" r=\"4\" fill=\"#f59e0b\"/>
+  <text x=\"440\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">89</text>
+  <text x=\"440\" y=\"102\" text-anchor=\"middle\" fill=\"#fef3c7\" font-size=\"9\">4.8%</text>
+  <circle cx=\"500\" cy=\"125\" r=\"4\" fill=\"#f59e0b\"/>
+  <text x=\"500\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">90</text>
+  <text x=\"500\" y=\"140\" text-anchor=\"middle\" fill=\"#fef3c7\" font-size=\"9\">4.2%</text>
+  <circle cx=\"560\" cy=\"95\" r=\"4\" fill=\"#f59e0b\"/>
+  <text x=\"560\" y=\"255\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"9\">95</text>
+  <text x=\"560\" y=\"88\" text-anchor=\"middle\" fill=\"#fef3c7\" font-size=\"9\">6.2%</text>
+  <!-- Legend -->
+  <rect x=\"180\" y=\"290\" width=\"300\" height=\"45\" rx=\"8\" fill=\"#1e293b\" stroke=\"#334155\"/>
+  <rect x=\"195\" y=\"307\" width=\"12\" height=\"12\" fill=\"#0284c7\" rx=\"2\"/>
+  <text x=\"215\" y=\"317\" fill=\"#cbd5e1\" font-size=\"10\">Total Outbound Tourists</text>
+  <circle cx=\"350\" cy=\"313\" r=\"5\" fill=\"#f59e0b\"/>
+  <text x=\"365\" y=\"317\" fill=\"#cbd5e1\" font-size=\"10\">Australia Market Share (%)</text>
+</svg>`,
+            sample_answer: `The provided charts illustrate the overall number of Japanese tourists travelling abroad alongside Australia's market share of these outbound visitors over a ten-year timeframe from 1985 to 1995.
+
+Overall, both the gross volume of Japanese international travelers and Australia's proportional share experienced substantial growth over the decade, notwithstanding minor periods of stabilization.
+
+In 1985, approximately 5 million Japanese citizens traveled overseas. Over the subsequent five years, outbound travel surged dramatically, more than doubling to reach roughly 11 million by 1990. Between 1990 and 1993, this figure stabilized at around 12 million before embarking on a secondary upward trajectory, peaking at a decade high of just over 15 million tourists in 1995.
+
+Concurrently, Australia captured approximately 2% of the Japanese outbound tourism market in 1985. This percentage expanded briskly to nearly 5% by 1989. Following a brief dip to approximately 4.2% in 1990, Australia's market share resumed steady expansion, ultimately achieving an all-time peak of over 6% in 1995. This demonstrates that Australia became an increasingly attractive destination for Japanese holidaymakers throughout this period.`,
+            band_score: "Band 9.0 (Examiner Standard)"
+        },
+        task_2: {
+            title: "Writing Task 2: International Sporting Events and International Relations",
+            prompt: "Popular events like the football World Cup and other international sporting occasions are essential in easing international tensions and releasing patriotic emotions in a safe way. To what extent do you agree or disagree with this opinion? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+            sample_answer: `Global sporting spectacles, most notably the FIFA World Cup and the Olympic Games, command the attention of billions worldwide. It is frequently asserted that such mega-events play an indispensable role in diffusing geopolitical hostility and providing a constructive outlet for national pride. While international athletics undeniably fosters cultural appreciation, I firmly believe that this assertion is overly idealistic, as high-stakes sports can equally exacerbate chauvinism and ignite violent confrontation.
+
+On the one hand, mega-events offer legitimate avenues for peaceful competition and cross-border goodwill. Under the banner of sporting diplomacy, athletes from nations with strained diplomatic relations frequently share podiums, shake hands, and exchange respectful gestures, demonstrating shared humanity beyond political rhetoric. A notable historical precedent was ping-pong diplomacy between the United States and China, which catalyzed formal bilateral engagement. Moreover, cheering for national teams allows citizens to express genuine patriotic pride without militaristic confrontation, channeling collective enthusiasm into non-destructive celebration.
+
+On the other hand, extreme nationalism frequently transforms sporting arenas into volatile flashpoints. When national honor is conflated with athletic victory, rivalries often descend into jingoism, virulent xenophobia, and spectator violence. The tragic history of football hooliganism across Europe, marked by deadly street brawls between opposing supporter factions, underscores how easily patriotic fervor mutates into tribal hostility. Furthermore, authoritarians have repeatedly weaponized international sporting tournaments as propaganda vehicles to legitimize oppressive regimes or assert ideological superiority, directly undermining genuine international solidarity.
+
+In conclusion, while global sporting contests possess commendable potential to promote mutual understanding and celebrate athletic excellence, they are fundamentally insufficient to resolve deep-seated international tensions. In many instances, the intense tribal emotions they unleash actively intensify rather than alleviate conflict between nations.`,
+            band_score: "Band 9.0 (Examiner Standard)"
+        }
+    },
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 1 (Cambridge IELTS 3)",
+        duration_seconds: 840,
+        part_1: {
+            title: "Part 1: Introduction and Familiar Topics (Family)",
+            duration: "4 - 5 minutes",
+            questions: [
+                "Do you have a large family or a small family?",
+                "Can you tell me something about them?",
+                "How much time do you manage to spend with members of your family?",
+                "What sorts of things do you like to do together?",
+                "Did you or do you get on well with your family? Why?"
+            ],
+            sample_ideas: "Discuss nuclear vs extended family, balancing demanding academic/career schedules with quality weekend meals, and open communicative relationships based on mutual respect."
+        },
+        part_2: {
+            title: "Part 2: Long Turn (Cue Card - An Influential Teacher)",
+            duration: "3 - 4 minutes",
+            cue_card: {
+                topic: "Describe a teacher who has influenced you in your education.",
+                prompts: [
+                    "Where you met them",
+                    "What subject they taught",
+                    "What was special about them",
+                    "And explain why this person influenced you so much."
+                ]
+            },
+            sample_response: `I would like to talk about my high school literature teacher, Mr. Harrison, whom I met during my tenth grade at secondary school. Unlike conventional instructors who strictly adhered to rote memorization, Mr. Harrison transformed every literary text into an exhilarating intellectual exploration. What made him truly extraordinary was his infectious passion and his profound respect for student autonomy; he actively encouraged dissenting interpretations rather than imposing dogmatic viewpoints. His mentorship completely reshaped my intellectual trajectory, teaching me not merely how to dissect classical texts, but how to think critically, construct rigorous arguments, and articulate my convictions with eloquence and courage.`
+        },
+        part_3: {
+            title: "Part 3: Two-Way In-Depth Discussion (Education & Teaching)",
+            duration: "4 - 5 minutes",
+            topics: [
+                {
+                    topic_name: "Developments in education",
+                    questions: [
+                        "How has education changed in your country in the last 10 years?",
+                        "What changes do you foresee in education over the next 50 years?"
+                    ]
+                },
+                {
+                    topic_name: "A national education system",
+                    questions: [
+                        "How do the expectations of today's school leavers compare with those of the previous generation?",
+                        "What role do you think extracurricular activities play in comprehensive schooling?"
+                    ]
+                },
+                {
+                    topic_name: "Teaching and learning methodologies",
+                    questions: [
+                        "What method of learning works best for you personal study?",
+                        "How beneficial do you think it is to group students according to their level of ability?"
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+
+
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1 & 2",
+    age: "Cambridge 1, 2 & 3",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
-    // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
+    // Books hierarchy: Each Cambridge volume is 1 category containing authentic tests
     books: {
         "cam_1": {
             id: "cam_1",
@@ -6134,6 +6585,13 @@ const ieltsProfileData = {
             badge: "Cam 2",
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"]
+        },
+        "cam_3": {
+            id: "cam_3",
+            title: "Cambridge IELTS 3",
+            badge: "Cam 3",
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_3_test_1"]
         }
     },
 
@@ -6146,9 +6604,11 @@ const ieltsProfileData = {
         "cam_2_test_1": { title: "Test 1", full_title: "Cambridge IELTS 2 - Test 1", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
         "cam_2_test_2": { title: "Test 2", full_title: "Cambridge IELTS 2 - Test 2", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
         "cam_2_test_3": { title: "Test 3", full_title: "Cambridge IELTS 2 - Test 3", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
-        "cam_2_test_4": { title: "Test 4", full_title: "Cambridge IELTS 2 - Test 4", book_id: "cam_2", book_title: "Cambridge IELTS 2" }
+        "cam_2_test_4": { title: "Test 4", full_title: "Cambridge IELTS 2 - Test 4", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
+        "cam_3_test_1": { title: "Test 1", full_title: "Cambridge IELTS 3 - Test 1", book_id: "cam_3", book_title: "Cambridge IELTS 3" }
     },
 
+    // All Registered Tests
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
@@ -6157,19 +6617,15 @@ const ieltsProfileData = {
         "cam_2_test_1": cam2Test1,
         "cam_2_test_2": cam2Test2,
         "cam_2_test_3": cam2Test3,
-        "cam_2_test_4": cam2Test4
+        "cam_2_test_4": cam2Test4,
+        "cam_3_test_1": cam3Test1
     }
 };
 
-// Register profile in studentsDB
 if (typeof studentsDB !== "undefined") {
     studentsDB["ielts"] = ieltsProfileData;
 }
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = {
-        ieltsProfileData,
-        cam1Test1, cam1Test2, cam1Test3, cam1Test4,
-        cam2Test1, cam2Test2, cam2Test3, cam2Test4
-    };
+    module.exports = { ieltsProfileData, cam1Test1, cam1Test2, cam1Test3, cam1Test4, cam2Test1, cam2Test2, cam2Test3, cam2Test4, cam3Test1 };
 }
