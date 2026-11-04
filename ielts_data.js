@@ -4123,28 +4123,2041 @@ In terms of logistics, what transport options would you recommend for travelling
 
 
 // =========================================================================
-// MASTER IELTS PROFILE DATA (CAMBRIDGE 1 & CAMBRIDGE 2 AUTHENTIC TESTS)
+// =========================================================================
+// CAMBRIDGE IELTS 2 - TESTS 3 & 4 (OFFICIAL CAMBRIDGE UNIVERSITY PRESS)
+// =========================================================================
+// =========================================================================
+// CAMBRIDGE IELTS 2 - ACADEMIC PRACTICE TEST 3
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 2)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam2Test3 = {
+    id: "cam_2_test_3",
+    book: "Cambridge IELTS 2",
+    title: "Cambridge IELTS 2 - Test 3",
+    test_title: "Academic Practice Test 3",
+    badge: "Cam 2 - Test 3",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 3",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: TV Viewing Habits & Commercial Survey (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                section_number: 1,
+                title: "Section 1: Television Viewing Habits Survey (Questions 1 - 10)",
+                audio_file: "cam2_extracted/Test 3 - Section 1.mp3",
+                context: "A market researcher is interviewing a customer about television viewing habits and preferences for a new commercial channel.",
+                questions: [
+                    {
+                        id: 1,
+                        question_number: 1,
+                        type: "multiple_choice",
+                        question: "The respondent works in ...",
+                        options: [
+                            "A. the professions",
+                            "B. business",
+                            "C. other"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The respondent explicitly confirms that he works in business when asked about his occupation."
+                    },
+                    {
+                        id: 2,
+                        question_number: 2,
+                        type: "multiple_choice",
+                        question: "The respondent has a salary of ...",
+                        options: [
+                            "A. 0 - Â£15,000 a year",
+                            "B. Â£15,000 - Â£35,000 a year",
+                            "C. over Â£35,000 a year"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The respondent chooses the top income tier, earning comfortably over Â£35,000 annually."
+                    },
+                    {
+                        id: 3,
+                        question_number: 3,
+                        type: "multiple_choice",
+                        question: "The respondent watches TV for ...",
+                        options: [
+                            "A. relaxation",
+                            "B. entertainment",
+                            "C. information"
+                        ],
+                        correct_answer: "A",
+                        explanation: "When asked what primarily draws him to watch television, he states that he uses it essentially to unwind and for relaxation after work."
+                    },
+                    {
+                        id: 4,
+                        question_number: 4,
+                        type: "multiple_choice",
+                        question: "Every day the respondent watches TV for ...",
+                        options: [
+                            "A. 30 minutes - 1 hour",
+                            "B. 1 hour - 2 hours",
+                            "C. more than 2 hours"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The respondent estimates his daily television viewing consumption at typically between 1 and 2 hours."
+                    },
+                    {
+                        id: 5,
+                        question_number: 5,
+                        type: "multiple_choice_multi",
+                        question: "The respondent mainly watches TV ... (Choose TWO letters A - E)",
+                        options: [
+                            "A. in the early morning",
+                            "B. around midday",
+                            "C. in the afternoon",
+                            "D. in the early evening",
+                            "E. at night"
+                        ],
+                        correct_answer: ["A", "E"],
+                        explanation: "The respondent notes he watches breakfast news in the early morning (A) and further programmes late at night before sleeping (E)."
+                    },
+                    {
+                        id: 6,
+                        question_number: 6,
+                        type: "multiple_choice_multi",
+                        question: "On the new channel, the respondent would like to see more ... (Choose TWO letters A - E)",
+                        options: [
+                            "A. children's programmes",
+                            "B. documentaries",
+                            "C. local service programmes",
+                            "D. travel programmes",
+                            "E. health programmes"
+                        ],
+                        correct_answer: ["A", "C"],
+                        explanation: "The respondent highlights that he wants dedicated children's shows for his family (A) and practical local service programmes for the municipal community (C)."
+                    },
+                    {
+                        id: 7,
+                        question_number: 7,
+                        type: "multiple_choice_multi",
+                        question: "The respondent would advise the new channel to ... (Choose TWO letters A - E)",
+                        options: [
+                            "A. spend more money on drama",
+                            "B. train their broadcasters to higher standards",
+                            "C. improve sound quality",
+                            "D. broadcast interviews with famous people",
+                            "E. talk more to customers"
+                        ],
+                        correct_answer: ["C", "E"],
+                        explanation: "His recommendations to the executives are specifically to upgrade technical audio/sound clarity (C) and engage in closer dialogues with viewers/customers (E)."
+                    },
+                    {
+                        id: 8,
+                        question_number: 8,
+                        type: "multiple_choice",
+                        question: "The respondent feels that adverts should occur every ...",
+                        options: [
+                            "A. 10 minutes",
+                            "B. 15 minutes",
+                            "C. 20 minutes"
+                        ],
+                        correct_answer: "B",
+                        explanation: "Regarding frequency of commercial advertising breaks, he feels an interval of every 15 minutes is reasonable and tolerable."
+                    },
+                    {
+                        id: 9,
+                        question_number: 9,
+                        type: "multiple_choice",
+                        question: "The respondent would like to attend special promotions if ...",
+                        options: [
+                            "A. expenses are paid",
+                            "B. he is invited specially",
+                            "C. they are held locally"
+                        ],
+                        correct_answer: "C",
+                        explanation: "He states that attending special promotional events is convenient for him provided that they are held locally in his neighborhood."
+                    },
+                    {
+                        id: 10,
+                        question_number: 10,
+                        type: "multiple_choice",
+                        question: "The respondent would like to receive ...",
+                        options: [
+                            "A. no mail",
+                            "B. requested mail",
+                            "C. all mail"
+                        ],
+                        correct_answer: "B",
+                        explanation: "He clarifies that he dislikes junk mail and prefers to receive only explicitly requested promotional letters and brochures."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 2: Students' Union & Radford City Facilities (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                section_number: 2,
+                title: "Section 2: Students' Union & Radford Facilities (Questions 11 - 20)",
+                audio_file: "cam2_extracted/Test 3 - Section 2.mp3",
+                context: "A student representative is introducing university freshmen to the functions of the Students' Union and municipal amenities in Radford town.",
+                questions: [
+                    {
+                        id: 11,
+                        question_number: 11,
+                        type: "multiple_choice_multi",
+                        question: "Which FOUR activities of the Union are mentioned by the speaker? (Questions 11 - 14: Choose FOUR letters A - G in any order)",
+                        options: [
+                            "A. raising money for good causes",
+                            "B. political campaigning",
+                            "C. running a newsagent's",
+                            "D. running a supermarket",
+                            "E. providing cheap tickets",
+                            "F. helping with accommodation",
+                            "G. providing catering services"
+                        ],
+                        correct_answer: ["A", "C", "E", "G"],
+                        explanation: "The speaker lists: charity fundraising for benevolent causes (A), operating a stationer/newsagent retail shop on campus (C), securing concessionary student ticket discounts (E), and providing food/cafeteria catering services (G)."
+                    },
+                    {
+                        id: 12,
+                        question_number: 12,
+                        type: "multiple_choice_multi",
+                        question: "Activity of the Union (Letter 2 of 4):",
+                        options: ["A", "C", "E", "G"],
+                        correct_answer: ["A", "C", "E", "G"],
+                        explanation: "Second activity mentioned among A, C, E, G."
+                    },
+                    {
+                        id: 13,
+                        question_number: 13,
+                        type: "multiple_choice_multi",
+                        question: "Activity of the Union (Letter 3 of 4):",
+                        options: ["A", "C", "E", "G"],
+                        correct_answer: ["A", "C", "E", "G"],
+                        explanation: "Third activity mentioned among A, C, E, G."
+                    },
+                    {
+                        id: 14,
+                        question_number: 14,
+                        type: "multiple_choice_multi",
+                        question: "Activity of the Union (Letter 4 of 4):",
+                        options: ["A", "C", "E", "G"],
+                        correct_answer: ["A", "C", "E", "G"],
+                        explanation: "Fourth activity mentioned among A, C, E, G."
+                    },
+                    {
+                        id: 15,
+                        question_number: 15,
+                        type: "multiple_choice_multi",
+                        question: "Which TWO of the following can you get advice about from the Union? (Questions 15 and 16: Choose TWO letters A - E in either order)",
+                        options: [
+                            "A. immigration",
+                            "B. grants",
+                            "C. medical problems",
+                            "D. personal problems",
+                            "E. legal matters"
+                        ],
+                        correct_answer: ["B", "E"],
+                        explanation: "The welfare officer provides specialized advisory assistance regarding student financial grants (B) and formal legal matters/disputes (E)."
+                    },
+                    {
+                        id: 16,
+                        question_number: 16,
+                        type: "multiple_choice_multi",
+                        question: "Advice provided by the Union (Letter 2 of 2):",
+                        options: ["B", "E"],
+                        correct_answer: ["B", "E"],
+                        explanation: "Second advice topic among B (grants) and E (legal matters)."
+                    },
+                    {
+                        id: 17,
+                        question_number: 17,
+                        type: "multiple_choice",
+                        question: "What is the location of the hi-tech fitness centre in Radford?",
+                        options: [
+                            "A. part of the Metro Tower building",
+                            "B. in the main square in the centre of the town",
+                            "C. some distance from the centre of the town"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The speaker clarifies that the state-of-the-art gym and fitness centre is situated on the outskirts, some distance from the city centre."
+                    },
+                    {
+                        id: 18,
+                        question_number: 18,
+                        type: "multiple_choice",
+                        question: "What is the location of the ice rink in Radford?",
+                        options: [
+                            "A. part of the Metro Tower building",
+                            "B. in the main square in the centre of the town",
+                            "C. some distance from the centre of the town"
+                        ],
+                        correct_answer: "A",
+                        explanation: "The ice skating rink is incorporated right inside the Metro Tower complex."
+                    },
+                    {
+                        id: 19,
+                        question_number: 19,
+                        type: "multiple_choice",
+                        question: "What is the location of the new cinema in Radford?",
+                        options: [
+                            "A. part of the Metro Tower building",
+                            "B. in the main square in the centre of the town",
+                            "C. some distance from the centre of the town"
+                        ],
+                        correct_answer: "A",
+                        explanation: "The modern multiplex cinema is likewise housed within the Metro Tower building."
+                    },
+                    {
+                        id: 20,
+                        question_number: 20,
+                        type: "multiple_choice",
+                        question: "What is the location of the Theatre Royal in Radford?",
+                        options: [
+                            "A. part of the Metro Tower building",
+                            "B. in the main square in the centre of the town",
+                            "C. some distance from the centre of the town"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The historic Theatre Royal overlooks the central town square in the very heart of Radford."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 3: Academic Dissertation Guidance (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                section_number: 3,
+                title: "Section 3: Dissertation Information & Timetable (Questions 21 - 30)",
+                audio_file: "cam2_extracted/Test 3 - Section 3.mp3",
+                context: "A student meets her supervisor, Dr Simon, to discuss the scheduling, requirements, and research methodologies for her final-year undergraduate dissertation.",
+                questions: [
+                    {
+                        id: 21,
+                        question_number: 21,
+                        type: "fill_in_the_blank",
+                        question: "DISSERTATION INFORMATION: Hand-in date: ..........",
+                        correct_answer: ["21 May", "21st May", "May 21", "May 21st", "21st of May"],
+                        explanation: "Dr Simon states that the absolute formal deadline for submission is 21 May."
+                    },
+                    {
+                        id: 22,
+                        question_number: 22,
+                        type: "fill_in_the_blank",
+                        question: "Length: .......... to words",
+                        correct_answer: ["18,000-20,000", "18000-20000", "18,000 to 20,000", "18000 to 20000", "18 to 20,000", "18-20,000"],
+                        explanation: "The official required length for the honours thesis is between 18,000 and 20,000 words."
+                    },
+                    {
+                        id: 23,
+                        question_number: 23,
+                        type: "fill_in_the_blank",
+                        question: "Extra programme offered on: ..........",
+                        correct_answer: ["research methods", "Research Methods"],
+                        explanation: "Dr Simon recommends that she attends the complementary departmental workshops on research methods."
+                    },
+                    {
+                        id: 24,
+                        question_number: 24,
+                        type: "fill_in_the_blank",
+                        question: "DISSERTATION TIMETABLE: 7 February: ..........",
+                        correct_answer: ["plan", "draft plan", "Draft plan", "a draft plan"],
+                        explanation: "By 7 February, students must submit their initial draft plan outlining chapters and research questions."
+                    },
+                    {
+                        id: 25,
+                        question_number: 25,
+                        type: "fill_in_the_blank",
+                        question: "February - March: ..........",
+                        correct_answer: ["research", "do research", "carry out research", "conduct research", "doing research"],
+                        explanation: "The period through February and March is exclusively designated for empirical data collection and carrying out research."
+                    },
+                    {
+                        id: 26,
+                        question_number: 26,
+                        type: "fill_in_the_blank",
+                        question: ".......... to May: Write up work",
+                        correct_answer: ["March to May", "March - May", "March", "end of March"],
+                        explanation: "Students must spend from late March until May drafting and writing up their final chapters."
+                    },
+                    {
+                        id: 27,
+                        question_number: 27,
+                        type: "multiple_choice",
+                        question: "What is Dr Simon's opinion on: Buying a computer?",
+                        options: [
+                            "A. if he is in favour",
+                            "B. if he has no strong opinion either way",
+                            "C. if he is against"
+                        ],
+                        correct_answer: "A",
+                        explanation: "Dr Simon strongly supports acquiring a personal computer to facilitate ongoing drafting, editing, and data storage."
+                    },
+                    {
+                        id: 28,
+                        question_number: 28,
+                        type: "multiple_choice",
+                        question: "What is Dr Simon's opinion on: Reading previous year's dissertations?",
+                        options: [
+                            "A. if he is in favour",
+                            "B. if he has no strong opinion either way",
+                            "C. if he is against"
+                        ],
+                        correct_answer: "A",
+                        explanation: "He actively encourages reviewing high-scoring dissertations from prior graduating cohorts as useful exemplars."
+                    },
+                    {
+                        id: 29,
+                        question_number: 29,
+                        type: "multiple_choice",
+                        question: "What is Dr Simon's opinion on: Using questionnaires as main research instrument?",
+                        options: [
+                            "A. if he is in favour",
+                            "B. if he has no strong opinion either way",
+                            "C. if he is against"
+                        ],
+                        correct_answer: "C",
+                        explanation: "Dr Simon advises caution and speaks against relying purely on questionnaires, as novice students frequently design biased surveys with low return rates."
+                    },
+                    {
+                        id: 30,
+                        question_number: 30,
+                        type: "multiple_choice",
+                        question: "What is Dr Simon's opinion on: Interviewing tutors?",
+                        options: [
+                            "A. if he is in favour",
+                            "B. if he has no strong opinion either way",
+                            "C. if he is against"
+                        ],
+                        correct_answer: "B",
+                        explanation: "Regarding scheduling interviews with academic staff, he remains neutral with no strong feelings either way, noting it depends on individual availability."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 4: Water Resources in Australia (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                section_number: 4,
+                title: "Section 4: Hydrology & Water Resources in Australia (Questions 31 - 40)",
+                audio_file: "cam2_extracted/Test 3 - Section 4.mp3",
+                context: "A university environmental science lecturer delivers a presentation on precipitation patterns, groundwater extraction, and dam reservoir utilization in Australia.",
+                questions: [
+                    {
+                        id: 31,
+                        question_number: 31,
+                        type: "multiple_choice",
+                        question: "The driest continent is ...",
+                        options: [
+                            "A. Australia",
+                            "B. Africa",
+                            "C. Antarctica"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The lecturer clarifies that while Australia is the driest inhabited continent, Antarctica is technically the driest continent on Earth due to negligible precipitation."
+                    },
+                    {
+                        id: 32,
+                        question_number: 32,
+                        type: "multiple_choice",
+                        question: "The evaporation rate in Australia is ...",
+                        options: [
+                            "A. lower than Africa",
+                            "B. higher than Africa",
+                            "C. about the same as Africa"
+                        ],
+                        correct_answer: "B",
+                        explanation: "Due to extreme heat and solar radiation across the interior, the evaporation rate in Australia is considerably higher than in Africa."
+                    },
+                    {
+                        id: 33,
+                        question_number: 33,
+                        type: "multiple_choice",
+                        question: "Rainfall in Australia hardly penetrates the soil because ...",
+                        options: [
+                            "A. the soil is too hard",
+                            "B. the soil is too hot",
+                            "C. plants use it up"
+                        ],
+                        correct_answer: "C",
+                        explanation: "Dense indigenous root systems and drought-adapted vegetation immediately absorb and use up precipitation before it can seep deep into the subsoil."
+                    },
+                    {
+                        id: 34,
+                        question_number: 34,
+                        type: "multiple_choice",
+                        question: "In sandy soils water can ...",
+                        options: [
+                            "A. evaporate quickly",
+                            "B. seep down to rock",
+                            "C. wash the soil away"
+                        ],
+                        correct_answer: "B",
+                        explanation: "Permeable sandy substrates allow precipitation to filter directly downward until it reaches underlying impermeable rock strata."
+                    },
+                    {
+                        id: 35,
+                        question_number: 35,
+                        type: "multiple_choice",
+                        question: "Water is mainly pumped up for ...",
+                        options: [
+                            "A. people to drink",
+                            "B. animals to drink",
+                            "C. watering crops"
+                        ],
+                        correct_answer: "B",
+                        explanation: "Subterranean artesian bores primarily pump groundwater to hydrate pastoral livestock and sheep herds."
+                    },
+                    {
+                        id: 36,
+                        question_number: 36,
+                        type: "multiple_choice",
+                        question: "Natural springs are located ...",
+                        options: [
+                            "A. in unexplored parts of Australia",
+                            "B. quite commonly over all Australia",
+                            "C. in a few areas of Australia"
+                        ],
+                        correct_answer: "C",
+                        explanation: "Geological fractures that produce perennial natural surface springs occur restrictedly across only a few specialized areas of the country."
+                    },
+                    {
+                        id: 37,
+                        question_number: 37,
+                        type: "multiple_choice",
+                        question: "Underground water supplies ...",
+                        options: [
+                            "A. 18% of Australia's water",
+                            "B. 48% of Australia's water",
+                            "C. 80% of Australia's water"
+                        ],
+                        correct_answer: "A",
+                        explanation: "Official hydrological statistics verify that subterranean aquifers supply approximately 18% of Australia's total water consumption."
+                    },
+                    {
+                        id: 38,
+                        question_number: 38,
+                        type: "multiple_choice_multi",
+                        question: "Which THREE of the following uses of dam water are mentioned? (Questions 38 - 40: Choose THREE letters A - E in any order)",
+                        options: [
+                            "A. providing water for livestock",
+                            "B. watering farmland",
+                            "C. providing water for industry",
+                            "D. controlling flood water",
+                            "E. producing hydro-electric power"
+                        ],
+                        correct_answer: ["B", "D", "E"],
+                        explanation: "The presentation highlights that major dams serve for agricultural irrigation / watering farmland (B), downstream flood mitigation (D), and hydroelectric energy generation (E)."
+                    },
+                    {
+                        id: 39,
+                        question_number: 39,
+                        type: "multiple_choice_multi",
+                        question: "Dam water utilization (Letter 2 of 3):",
+                        options: ["B", "D", "E"],
+                        correct_answer: ["B", "D", "E"],
+                        explanation: "Second use of dam water mentioned among B, D, E."
+                    },
+                    {
+                        id: 40,
+                        question_number: 40,
+                        type: "multiple_choice_multi",
+                        question: "Dam water utilization (Letter 3 of 3):",
+                        options: ["B", "D", "E"],
+                        correct_answer: ["B", "D", "E"],
+                        explanation: "Third use of dam water mentioned among B, D, E."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Reading Practice Test 3",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Absenteeism in Nursing (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Passage 1: Absenteeism in Nursing: A Longitudinal Study",
+                content: `Absence from work is a costly and disruptive problem for any organisation. The cost of absenteeism in Australia has been put at 1.8 million hours per day or $1400 million annually. The study reported here was conducted in the Prince William Hospital in Brisbane, Australia, where, prior to this time, few active steps had been taken to measure, understand or manage the occurrence of absenteeism.\n\nNursing Absenteeism\nA prevalent attitude amongst many nurses in the group selected for study was that there was no reward or recognition for not utilising the paid sick leave entitlement allowed them in their employment conditions. Therefore, they believed they may as well take the days off - sick or otherwise. Similar attitudes have been noted by James (1989), who noted that sick leave is seen by many workers as a right, like annual holiday leave.\n\nMiller and Norton (1986), in their survey of 865 nursing personnel, found that 73 per cent felt they should be rewarded for not taking sick leave, because some employees always used their sick leave. Further, 67 per cent of nurses felt that administration was not sympathetic to the problems shift work causes to employees' personal and social lives. Only 53 per cent of the respondents felt that every effort was made to schedule staff fairly.\n\nIn another longitudinal study of nurses working in two Canadian hospitals, Hacket Bycio and Guion (1989) examined the reasons why nurses took absence from work. The most frequent reason stated for absence was minor illness to self. Other causes, in decreasing order of frequency, were illness in family, family social function, work to do at home and bereavement.\n\nMethod\nIn an attempt to reduce the level of absenteeism amongst the 250 Registered and Enrolled Nurses in the present study, the Prince William management introduced three different, yet potentially complementary, strategies over 18 months.\n\nStrategy 1: Non-financial (material) incentives\nWithin the established wage and salary system it was not possible to use hospital funds to support this strategy. However, it was possible to secure incentives from local businesses, including free passes to entertainment parks, theatres, restaurants, etc. At the end of each roster period, the ward with the lowest absence rate would win the prize.\n\nStrategy 2: Flexible, fair rostering\nWhere possible, staff were given the opportunity to determine their working schedule within the limits of clinical needs.\n\nStrategy 3: Individual absenteeism and counselling\nEach month, managers would analyse the pattern of absence of staff with excessive sick leave (greater than ten days per year for full-time employees). Characteristic patterns of potential 'voluntary absenteeism' such as absence before and after days off, excessive weekend and night duty absence and multiple single days off were communicated to all ward nurses and then, as necessary, followed up by action.\n\nResults\nAbsence rates for the six months prior to the incentive scheme ranged from 3.69 per cent to 4.32 per cent. In the following six months they ranged between 2.87 per cent and 3.96 per cent. This represents a 20 per cent improvement. However, analysing the absence rates on a year-to-year basis, the overall absence rate was 3.60 per cent in the first year and 3.43 per cent in the following year. This represents a 5 per cent decrease from the first to the second year of the study. A significant decrease in absence over the two-year period could not be demonstrated.\n\nDiscussion\nThe non-financial incentive scheme did appear to assist in controlling absenteeism in the short term. As the scheme progressed it became harder to secure prizes and this contributed to the program's losing momentum and finally ceasing. There were mixed results across wards as well. For example, in wards with staff members who had long-term genuine illness, there was little chance of winning, and to some extent the staff on those wards were disempowered. Our experience would suggest that the long-term effects of incentive awards on absenteeism are questionable.\n\nOver the time of the study, staff were given a larger degree of control in their rosters. This led to significant improvements in communication between managers and staff. A similar effect was found from the implementation of the third strategy. Many of the nurses had not realised the impact their behaviour was having on the organisation and their colleagues but there were also staff members who felt that talking to them about their absenteeism was 'picking' on them and this usually had a negative effect on management-employee relationships.\n\nConclusion\nAlthough there has been some decrease in absence rates, no single strategy or combination of strategies has had a significant impact on absenteeism per se. Notwithstanding the disappointing results, it is our contention that the strategies were not in vain. A shared ownership of absenteeism and a collaborative approach to problem solving has facilitated improved cooperation and communication between management and staff. It is our belief that this improvement alone, while not tangibly measurable, has increased the ability of management to manage the effects of absenteeism more effectively since this study.`,
+                questions: [
+                    {
+                        id: 1,
+                        question_number: 1,
+                        type: "true_false_not_given",
+                        question: "The Prince William Hospital has been trying to reduce absenteeism amongst nurses for many years.",
+                        correct_answer: "NO",
+                        explanation: "The text states that 'prior to this time, few active steps had been taken to measure, understand or manage the occurrence of absenteeism', contradicting 'for many years'."
+                    },
+                    {
+                        id: 2,
+                        question_number: 2,
+                        type: "true_false_not_given",
+                        question: "Nurses in the Prince William Hospital study believed that there were benefits in taking as little sick leave as possible.",
+                        correct_answer: "NO",
+                        explanation: "The text says 'there was no reward or recognition for not utilising the paid sick leave entitlement... they believed they may as well take the days off'."
+                    },
+                    {
+                        id: 3,
+                        question_number: 3,
+                        type: "true_false_not_given",
+                        question: "Just over half the nurses in the 1986 study believed that management understood the effects that shift work had on them.",
+                        correct_answer: "NO",
+                        explanation: "Miller and Norton found that 67 per cent of nurses felt administration was NOT sympathetic to the problems shift work causes (only 33% felt understood, not 'just over half')."
+                    },
+                    {
+                        id: 4,
+                        question_number: 4,
+                        type: "true_false_not_given",
+                        question: "The Canadian study found that 'illness in the family' was a greater cause of absenteeism than 'work to do at home'.",
+                        correct_answer: "YES",
+                        explanation: "The Canadian study listed causes 'in decreasing order of frequency: minor illness to self, illness in family, family social function, work to do at home'."
+                    },
+                    {
+                        id: 5,
+                        question_number: 5,
+                        type: "true_false_not_given",
+                        question: "In relation to management attitude to absenteeism the study at the Prince William Hospital found similar results to the two 1989 studies.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The passage does not compare Prince William findings on management attitudes directly with the 1989 studies."
+                    },
+                    {
+                        id: 6,
+                        question_number: 6,
+                        type: "true_false_not_given",
+                        question: "The study at the Prince William Hospital aimed to find out the causes of absenteeism amongst 250 nurses.",
+                        correct_answer: "NO",
+                        explanation: "The study aimed 'to reduce the level of absenteeism' by introducing three management strategies, not merely to find out the causes."
+                    },
+                    {
+                        id: 7,
+                        question_number: 7,
+                        type: "true_false_not_given",
+                        question: "The study at the Prince William Hospital involved changes in management practices.",
+                        correct_answer: "YES",
+                        explanation: "Management introduced three strategies: material incentives, flexible rostering, and absence counselling, all representing changes in management practices."
+                    },
+                    {
+                        id: 8,
+                        question_number: 8,
+                        type: "fill_in_the_blank",
+                        question: "In the first strategy, wards with the lowest absenteeism in different periods would win prizes donated by (8) ..........",
+                        correct_answer: ["local businesses", "businesses"],
+                        explanation: "The passage notes: 'it was possible to secure incentives from local businesses, including free passes'."
+                    },
+                    {
+                        id: 9,
+                        question_number: 9,
+                        type: "fill_in_the_blank",
+                        question: "In the second strategy, staff were given more control over their (9) ..........",
+                        correct_answer: ["working schedule", "work schedule", "rostering", "roster", "rosters"],
+                        explanation: "Strategy 2 states: 'staff were given the opportunity to determine their working schedule within the limits of clinical needs'."
+                    },
+                    {
+                        id: 10,
+                        question_number: 10,
+                        type: "fill_in_the_blank",
+                        question: "In the third strategy, nurses who appeared to be taking (10) .......... sick leave or ...",
+                        correct_answer: ["excessive"],
+                        explanation: "Managers analysed the pattern of staff with 'excessive sick leave (greater than ten days per year)'."
+                    },
+                    {
+                        id: 11,
+                        question_number: 11,
+                        type: "fill_in_the_blank",
+                        question: "or (11) .......... were identified and counselled.",
+                        correct_answer: ["voluntary absence", "voluntary absenteeism"],
+                        explanation: "Characteristic patterns of potential 'voluntary absenteeism' were followed up by action and counselling."
+                    },
+                    {
+                        id: 12,
+                        question_number: 12,
+                        type: "fill_in_the_blank",
+                        question: "Initially, there was a (12) .......... per cent decrease in absenteeism.",
+                        correct_answer: ["twenty", "20"],
+                        explanation: "The results state: 'This represents a 20 per cent improvement [decrease in absence rates]' in the first six months."
+                    },
+                    {
+                        id: 13,
+                        question_number: 13,
+                        type: "fill_in_the_blank",
+                        question: "The second and third strategies generally resulted in better (13) .......... among staff.",
+                        correct_answer: ["communication"],
+                        explanation: "Both strategies led to 'significant improvements in communication between managers and staff'."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 2: The Motor Car (Questions 14 - 26)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Passage 2: The Motor Car",
+                content: `Paragraph A: There are now over 700 million motor vehicles in the world - and the number is rising by more than 40 million each year. The average distance driven by car users is growing too - from 8 km a day per person in western Europe in 1965 to 25 km a day in 1995. This dependence on motor vehicles has given rise to major problems, including environmental pollution, depletion of oil resources, traffic congestion and safety.\n\nParagraph B: While emissions from new cars are far less harmful than they used to be, city streets and motorways are becoming more crowded than ever, often with older trucks, buses and taxis, which emit excessive levels of smoke and fumes. This concentration of vehicles makes air quality in urban areas unpleasant and sometimes dangerous to breathe. Even Moscow has joined the list of capitals afflicted by congestion and traffic fumes. In Mexico City, vehicle pollution is a major health hazard.\n\nParagraph C: Until a hundred years ago, most journeys were in the 20 km range, the distance conveniently accessible by horse. Heavy freight could only be carried by water or rail. The invention of the motor vehicle brought personal mobility to the masses and made rapid freight delivery possible over a much wider area. Today about 90 per cent of inland freight in the United Kingdom is carried by road. Clearly the world cannot revert to the horse-drawn wagon. Can it avoid being locked into congested and polluting ways of transporting people and goods?\n\nParagraph D: In Europe most cities are still designed for the old modes of transport. Adaptation to the motor car has involved adding ring roads, one-way systems and parking lots. In the United States, more land is assigned to car use than to housing. Urban sprawl means that life without a car is next to impossible. Mass use of motor vehicles has also killed or injured millions of people. Other social effects have been blamed on the car such as alienation and aggressive human behaviour.\n\nParagraph E: A 1993 study by the European Federation for Transport and Environment found that car transport is seven times as costly as rail travel in terms of the external social costs it entails such as congestion, accidents, pollution, loss of cropland and natural habitats, depletion of oil resources, and so on. Yet cars easily surpass trains or buses as a flexible and convenient mode of personal transport. It is unrealistic to expect people to give up private cars in favour of mass transit.\n\nParagraph F: Technical solutions can reduce the pollution problem and increase the fuel efficiency of engines. But fuel consumption and exhaust emissions depend on which cars are preferred by customers and how they are driven. Many people buy larger cars than they need for daily purposes or waste fuel by driving aggressively. Besides, global car use is increasing at a faster rate than the improvement in emissions and fuel efficiency which technology is now making possible.\n\nParagraph G: One solution that has been put forward is the long-term solution of designing cities and neighbourhoods so that car journeys are not necessary - all essential services being located within walking distance or easily accessible by public transport. Not only would this save energy and cut carbon dioxide emissions, it would also enhance the quality of community life, putting the emphasis on people instead of cars. Good local government is already bringing this about in some places. But few democratic communities are blessed with the vision - and the capital - to make such profound changes in modern lifestyles.\n\nParagraph H: A more likely scenario seems to be a combination of mass transit systems for travel into and around cities, with small 'low emission' cars for urban use and larger hybrid or lean burn cars for use elsewhere. Electronically tolled highways might be used to ensure that drivers pay charges geared to actual road use. Better integration of transport systems is also highly desirable - and made more feasible by modern computers. But these are solutions for countries which can afford them. In most developing countries, old cars and old technologies continue to predominate.`,
+                questions: [
+                    {
+                        id: 14,
+                        question_number: 14,
+                        type: "matching",
+                        question: "Which paragraph contains: a comparison of past and present transportation methods?",
+                        correct_answer: "C",
+                        explanation: "Paragraph C compares journeys 100 years ago (horse, water, rail) with modern road transport taking 90% of UK inland freight."
+                    },
+                    {
+                        id: 15,
+                        question_number: 15,
+                        type: "matching",
+                        question: "Which paragraph contains: how driving habits contribute to road problems?",
+                        correct_answer: "F",
+                        explanation: "Paragraph F discusses how people 'waste fuel by driving aggressively' and buy larger vehicles than necessary."
+                    },
+                    {
+                        id: 16,
+                        question_number: 16,
+                        type: "matching",
+                        question: "Which paragraph contains: the relative merits of cars and public transport?",
+                        correct_answer: "E",
+                        explanation: "Paragraph E weighs the external social costs of cars vs trains, noting cars remain superior in flexibility and convenience."
+                    },
+                    {
+                        id: 17,
+                        question_number: 17,
+                        type: "matching",
+                        question: "Which paragraph contains: the writer's own prediction of future solutions?",
+                        correct_answer: "H",
+                        explanation: "Paragraph H outlines 'A more likely scenario seems to be a combination of mass transit systems... with small low emission cars'."
+                    },
+                    {
+                        id: 18,
+                        question_number: 18,
+                        type: "matching",
+                        question: "Which paragraph contains: the increasing use of motor vehicles?",
+                        correct_answer: "A",
+                        explanation: "Paragraph A states there are now over 700 million vehicles, rising by 40 million annually, with daily distance increasing from 8 to 25 km."
+                    },
+                    {
+                        id: 19,
+                        question_number: 19,
+                        type: "matching",
+                        question: "Which paragraph contains: the impact of the car on city development?",
+                        correct_answer: "D",
+                        explanation: "Paragraph D explains how cities added ring roads, parking lots, and in the US assigned more land to cars than to housing."
+                    },
+                    {
+                        id: 20,
+                        question_number: 20,
+                        type: "true_false_not_given",
+                        question: "Vehicle pollution is worse in European cities than anywhere else.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The text mentions European capitals and Mexico City, but does not assert that European cities have the worst pollution in the world."
+                    },
+                    {
+                        id: 21,
+                        question_number: 21,
+                        type: "true_false_not_given",
+                        question: "Transport by horse would be a useful alternative to motor vehicles.",
+                        correct_answer: "NO",
+                        explanation: "Paragraph C explicitly declares: 'Clearly the world cannot revert to the horse-drawn wagon'."
+                    },
+                    {
+                        id: 22,
+                        question_number: 22,
+                        type: "true_false_not_given",
+                        question: "Nowadays freight is not carried by water in the United Kingdom.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The text states that 'about 90 per cent of inland freight... is carried by road', but does not say water carries none of the remaining 10%."
+                    },
+                    {
+                        id: 23,
+                        question_number: 23,
+                        type: "true_false_not_given",
+                        question: "Most European cities were not designed for motor vehicles.",
+                        correct_answer: "YES",
+                        explanation: "Paragraph D states: 'In Europe most cities are still designed for the old modes of transport'."
+                    },
+                    {
+                        id: 24,
+                        question_number: 24,
+                        type: "true_false_not_given",
+                        question: "Technology alone cannot solve the problem of vehicle pollution.",
+                        correct_answer: "YES",
+                        explanation: "Paragraph F notes that global car use is expanding faster than technical emissions improvements and depends on consumer choices."
+                    },
+                    {
+                        id: 25,
+                        question_number: 25,
+                        type: "true_false_not_given",
+                        question: "People's choice of car and attitude to driving is a factor in the pollution problem.",
+                        correct_answer: "YES",
+                        explanation: "Paragraph F notes: 'emissions depend on which cars are preferred by customers and how they are driven'."
+                    },
+                    {
+                        id: 26,
+                        question_number: 26,
+                        type: "true_false_not_given",
+                        question: "Redesigning cities would be a short-term solution.",
+                        correct_answer: "NO",
+                        explanation: "Paragraph G calls redesigning cities and neighbourhoods 'the long-term solution'."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 3: Biometrics (Questions 27 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Passage 3: Biometrics: Security Systems",
+                content: `Paragraph A: Students who want to enter the University of Montreal's Athletic Complex need more than just a conventional ID card - their identities must be authenticated by an electronic hand scanner. In some California housing estates, a key alone is insufficient to get someone in the door; his or her voiceprint must also be verified. And soon, customers at some Japanese banks will have to present their faces for scanning before they can enter the building and withdraw their money.\n\nParagraph B: All of these are applications of biometrics, a little-known but fast-growing technology that involves the use of physical or biological characteristics to identify individuals. In use for more than a decade at some high-security government institutions in the United States and Canada, biometrics are now rapidly popping up in the everyday world. Already, more than 10,000 facilities, from prisons to day-care centres, monitor people's fingerprints or other physical parts to ensure that they are who they claim to be. Some 60 biometric companies around the world pulled in at least $22 million last year and that grand total is expected to mushroom to at least $50 million by 1999.\n\nParagraph C: Biometric security systems operate by storing a digitised record of some unique human feature. When an authorised user wishes to enter or use the facility, the system scans the person's corresponding characteristics and attempts to match them against those on record. Systems using fingerprints, hands, voices, irises, retinas and faces are already on the market. Others using typing patterns and even body odours are in various stages of development.\n\nParagraph D: Fingerprint scanners are currently the most widely deployed type of biometric application, thanks to their growing use over the last 20 years by law-enforcement agencies. Sixteen American states now use biometric fingerprint verification systems to check that people claiming welfare payments are genuine. In June, politicians in Toronto voted to do the same, with a pilot project beginning next year.\n\nParagraph E: To date, the most widely used commercial biometric system is the handkey, a type of hand scanner which reads the unique shape, size and irregularities of people's hands. Originally developed for nuclear power plants, the handkey received its big break when it was used to control access to the Olympic Village in Atlanta by more than 65,000 athletes, trainers and support staff. Now there are scores of other applications.\n\nParagraph F: Around the world, the market is growing rapidly. Malaysia, for example, is preparing to equip all of its airports with biometric face scanners to match passengers with luggage. And Japan's largest maker of cash dispensers is developing new machines that incorporate iris scanners. The first commercial biometric, a hand reader used by an American firm to monitor employee attendance, was introduced in 1974. But only in the past few years has the technology improved enough for the prices to drop sufficiently to make them commercially viable. 'When we started four years ago, I had to explain to everyone what a biometric is,' says one marketing expert. 'Now, there's much more awareness out there.'\n\nParagraph G: Not surprisingly, biometrics raise thorny questions about privacy and the potential for abuse. Some worry that governments and industry will be tempted to use the technology to monitor individual behaviour. 'If someone used your fingerprints to match your health-insurance records with a credit-card record showing you regularly bought lots of cigarettes and fatty foods,' says one policy analyst, 'you would see your insurance payments go through the roof.' In Toronto, critics of the welfare fingerprint plan complained that it would stigmatise recipients by forcing them to submit to a procedure widely identified with criminals.\n\nParagraph H: Nonetheless, support for biometrics is growing in Toronto as it is in many other communities. In an increasingly crowded and complicated world, biometrics may well be a technology whose time has come.`,
+                questions: [
+                    {
+                        id: 27,
+                        question_number: 27,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph B (List of Headings i - x):",
+                        options: [
+                            "i. Common objections",
+                            "ii. Who's planning what",
+                            "iii. This type sells best in the shops",
+                            "iv. The figures say it all",
+                            "v. Early trials",
+                            "vi. They can't get in without these",
+                            "vii. How does it work?",
+                            "viii. Fighting fraud",
+                            "ix. Systems to avoid",
+                            "x. Accepting the inevitable"
+                        ],
+                        correct_answer: "iv",
+                        explanation: "Paragraph B gives market revenue and deployment numbers ($22m rising to $50m, 10,000 facilities), matching 'iv. The figures say it all'."
+                    },
+                    {
+                        id: 28,
+                        question_number: 28,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph C:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "vii",
+                        explanation: "Paragraph C explains how biometric systems operate by digitising human features and matching scans, fitting 'vii. How does it work?'."
+                    },
+                    {
+                        id: 29,
+                        question_number: 29,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph D:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "viii",
+                        explanation: "Paragraph D discusses law enforcement and welfare verification to prevent false claims, matching 'viii. Fighting fraud'."
+                    },
+                    {
+                        id: 30,
+                        question_number: 30,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph E:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "iii",
+                        explanation: "Paragraph E focuses on the handkey as 'the most widely used commercial biometric system', fitting 'iii. This type sells best in the shops'."
+                    },
+                    {
+                        id: 31,
+                        question_number: 31,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph F:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "ii",
+                        explanation: "Paragraph F outlines international developments (Malaysia airports, Japanese cash dispensers), matching 'ii. Who's planning what'."
+                    },
+                    {
+                        id: 32,
+                        question_number: 32,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph G:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "i",
+                        explanation: "Paragraph G discusses civil liberty concerns, privacy intrusion, and stigma, matching 'i. Common objections'."
+                    },
+                    {
+                        id: 33,
+                        question_number: 33,
+                        type: "matching",
+                        question: "Choose the most suitable heading for Paragraph H:",
+                        options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+                        correct_answer: "x",
+                        explanation: "Paragraph H concludes that despite objections, adoption is inevitable as a technology whose time has come, fitting 'x. Accepting the inevitable'."
+                    },
+                    {
+                        id: 34,
+                        question_number: 34,
+                        type: "matching",
+                        question: "Match the group: sports students to the biometric system (A - F: A. fingerprint scanner, B. hand scanner, C. body odour, D. voiceprint, E. face scanner, F. typing pattern):",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "B",
+                        explanation: "Paragraph A states University of Montreal Athletic Complex students are authenticated by an electronic hand scanner (B)."
+                    },
+                    {
+                        id: 35,
+                        question_number: 35,
+                        type: "matching",
+                        question: "Match the group: Olympic athletes",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "B",
+                        explanation: "Paragraph E describes the handkey (hand scanner B) used for 65,000 Olympic athletes in Atlanta."
+                    },
+                    {
+                        id: 36,
+                        question_number: 36,
+                        type: "matching",
+                        question: "Match the group: airline passengers",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "E",
+                        explanation: "Paragraph F mentions Malaysian airports using biometric face scanners (E) to match passengers with luggage."
+                    },
+                    {
+                        id: 37,
+                        question_number: 37,
+                        type: "matching",
+                        question: "Match the group: welfare claimants",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "A",
+                        explanation: "Paragraph D specifies that American states use fingerprint verification systems (A) for welfare payment claimants."
+                    },
+                    {
+                        id: 38,
+                        question_number: 38,
+                        type: "matching",
+                        question: "Match the group: business employees",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "B",
+                        explanation: "Paragraph F mentions a hand reader (hand scanner B) used by an American firm to monitor employee attendance."
+                    },
+                    {
+                        id: 39,
+                        question_number: 39,
+                        type: "matching",
+                        question: "Match the group: home owners",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "D",
+                        explanation: "Paragraph A explains that in California housing estates, residents verify their identity via voiceprint (D)."
+                    },
+                    {
+                        id: 40,
+                        question_number: 40,
+                        type: "matching",
+                        question: "Match the group: bank customers",
+                        options: ["A", "B", "C", "D", "E", "F"],
+                        correct_answer: "E",
+                        explanation: "Paragraph A states customers at Japanese banks must present their faces for scanning (E) before entering to withdraw money."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 3",
+        duration_seconds: 3600,
+        task_1: {
+            task_number: 1,
+            title: "Task 1: UK Residents Overseas Visits Survey (1994 - 1998)",
+            instruction: "The first chart below shows the results of a survey which sampled a cross-section of 100,000 people asking if they travelled abroad and why they travelled for the period 1994-98. The second chart shows their destinations over the same period. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+            min_words: 150,
+            chart_svg: `<svg viewBox="0 0 600 320" class="w-full max-w-2xl mx-auto rounded-xl bg-slate-900 p-4 shadow-lg text-white font-sans"><text x="300" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#38bdf8">VISITS ABROAD BY UK RESIDENTS BY PURPOSE &amp; DESTINATION (1994-1998)</text><text x="300" y="44" text-anchor="middle" font-size="10" fill="#94a3b8">Sample: 100,000 UK Residents (Office for National Statistics)</text><g transform="translate(40, 70)"><rect x="0" y="0" width="240" height="220" fill="#1e293b" rx="8"/><text x="120" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#a78bfa">Purpose of Visit (1998)</text><text x="15" y="55" font-size="10" fill="#cbd5e1">Holiday: 20,700 (71.8%)</text><rect x="15" y="62" width="160" height="12" fill="#38bdf8" rx="3"/><text x="15" y="95" font-size="10" fill="#cbd5e1">Business: 3,957 (13.7%)</text><rect x="15" y="102" width="31" height="12" fill="#fbbf24" rx="3"/><text x="15" y="135" font-size="10" fill="#cbd5e1">Friends &amp; Relatives: 3,181 (11.0%)</text><rect x="15" y="142" width="25" height="12" fill="#34d399" rx="3"/><text x="15" y="175" font-size="10" fill="#cbd5e1">Other: 990 (3.4%)</text><rect x="15" y="182" width="8" height="12" fill="#f87171" rx="3"/></g><g transform="translate(320, 70)"><rect x="0" y="0" width="240" height="220" fill="#1e293b" rx="8"/><text x="120" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#f472b6">Destinations Visited (1998)</text><text x="15" y="65" font-size="10" fill="#cbd5e1">Western Europe: 24,519 (85.1%)</text><rect x="15" y="72" width="190" height="16" fill="#60a5fa" rx="3"/><text x="15" y="115" font-size="10" fill="#cbd5e1">Other Areas: 2,486 (8.6%)</text><rect x="15" y="122" width="20" height="16" fill="#fb923c" rx="3"/><text x="15" y="165" font-size="10" fill="#cbd5e1">North America: 1,823 (6.3%)</text><rect x="15" y="172" width="14" height="16" fill="#a3e635" rx="3"/><text x="120" y="208" text-anchor="middle" font-size="9" fill="#94a3b8">Total UK visits abroad: 28,828</text></g></svg>`,
+            model_answer: `The two tables delineate trends in foreign travel among a cross-sectional sample of 100,000 UK residents between 1994 and 1998, categorized by primary motivation and geographical destination.\n\nOverall, outbound international travel expanded consistently across the five-year period, rising from 22,072 visits in 1994 to 28,828 in 1998. Throughout this timeframe, holidaymaking remained the overwhelmingly predominant reason for travelling, while Western Europe represented the undisputed favourite destination for British travellers.\n\nIn terms of visit purpose, holidays consistently accounted for the lion's share of foreign journeys, growing from 15,246 in 1994 to 20,700 in 1998, representing more than 70% of total travel in every recorded year. Business trips also experienced steady growth, increasing from 3,155 to 3,957 visits. Journeys undertaken to visit friends and relatives rose moderately from 2,689 to 3,181, while trips for miscellaneous other reasons remained comparatively minimal and stable, hovering around 1,000 annually.\n\nRegarding overseas destinations, Western Europe dominated all other regions combined, attracting 19,371 British travellers in 1994 and climbing steadily to 24,519 by 1998. By contrast, long-haul travel to North America and other global areas registered much smaller volumes, though both grew markedly. Visits to North America nearly doubled from 919 to 1,823, while destinations in other regions increased from 1,782 to 2,486 over the surveyed period.`
+        },
+        task_2: {
+            task_number: 2,
+            title: "Task 2: Capital Punishment and Crime Control",
+            prompt: "Without capital punishment (the death penalty) our lives are less secure and crimes of violence increase. Capital punishment is essential to control violence in society. To what extent do you agree or disagree with this opinion? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+            min_words: 250,
+            model_answer: `The question of whether capital punishment is indispensable for curbing violent crime and preserving societal security remains one of the most intensely contested ethical and legal dilemmas of modern governance. While proponents argue that the supreme penalty deters potential perpetrators and ensures retributive justice, empirical criminological evidence demonstrates that capital punishment is neither necessary nor effective in suppressing violent crime.\n\nAdvocates of capital punishment frequently contend that the prospect of execution instills fear that dissuades individuals from committing premeditated murder or catastrophic acts of violence. From this perspective, the death penalty delivers proportional retribution for heinous offenses, providing closure to victims' families while permanently incapacitating dangerous offenders so they cannot menace the public again.\n\nHowever, sociological studies across numerous jurisdictions consistently refute the assertion that capital punishment exerts a superior deterrent effect compared to life imprisonment without parole. Most homicides are committed in states of acute emotional passion, severe psychological distress, or under the influence of narcotics, circumstances in which rational calculations of penal consequences rarely occur. Crucially, nations that have abolished capital punishmentâ€”such as Canada, the United Kingdom, and the majority of European Union member statesâ€”have not observed an upsurge in violent crime rates; indeed, many report violent crime indices substantially lower than retentionist states.\n\nFurthermore, the irrevocability of execution represents a fatal moral flaw in justice systems administered by fallible human institutions. Forensic advancements, notably DNA exonerations, have repeatedly uncovered wrongful convictions where innocent individuals had languished on death row. Once executed, judicial errors cannot be remedied. Modern penology should instead prioritize effective community policing, comprehensive mental health support, and genuine institutional rehabilitation rather than state-sanctioned retribution.\n\nIn conclusion, capital punishment is not essential for maintaining societal safety. True security is fostered through equitable justice systems, swift and certain apprehension of offenders, and humane penal policies that respect fundamental human rights.`
+        }
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 3",
+        duration_seconds: 840,
+        part_1: [
+            {
+                topic: "Television & Media",
+                question: "How many hours of television do you typically watch each week?",
+                model_answer: "I watch roughly six to eight hours weekly, predominantly on weekends. During standard working days, I restrict my viewing to brief evening documentary broadcasts or analytical current affairs podcasts."
+            },
+            {
+                topic: "Television & Media",
+                question: "Do you prefer watching international movies or local programmes?",
+                model_answer: "I appreciate both formats for different reasons. Local productions capture nuanced cultural expressions and domestic social humour, whereas foreign cinema offers broader geopolitical perspectives and cutting-edge visual storytelling."
+            },
+            {
+                topic: "Campus Life & Extracurriculars",
+                question: "Did you participate in any clubs or societies during your student years?",
+                model_answer: "Yes, I was an active member of our university's debate society and the environmental volunteering club. It provided invaluable training in collaborative leadership and public speaking."
+            },
+            {
+                topic: "Water & Natural Resources",
+                question: "Do people in your country pay conscious attention to conserving water?",
+                model_answer: "Public awareness is growing steadily, particularly during seasonal dry spells. Most households now install low-flow aerators and practice basic conservation, though agricultural irrigation efficiency still requires modernization."
+            }
+        ],
+        part_2: {
+            title: "Part 2: Long Turn / Cue Card (3 - 4 minutes)",
+            cue_card_title: "AN ENVIRONMENTAL GROUP",
+            prompt: "Describe an environmental group or organisation that you are interested in joining or learning about.",
+            cues: [
+                "the name of the group",
+                "what action they take to protect the environment",
+                "what membership involves (costs, activities)",
+                "and explain why you consider this group's work important."
+            ],
+            model_answer: "I would like to speak about 'Green Action', a student-founded conservation organization that operates across regional university campuses.\n\nGreen Action was established in the mid-1990s by a committed group of forestry and ecology undergraduates who wanted to move beyond theoretical campus debates and implement tangible ecological restoration. Their flagship initiatives include monthly community tree-planting campaigns along degraded river corridors and systematic clean-up drives targeting urban parklands and public beaches.\n\nMembership is designed to be highly accessible, with an annual student contribution of just Â£5 to cover safety equipment and seedling supplies. In return, members commit to attending at least two hands-on field events per year, such as planting native saplings or conducting microplastic surveys.\n\nWhat makes Green Action particularly noteworthy is their pragmatic grassroots ethos. Rather than engaging purely in symbolic demonstrations, they educate volunteers on indigenous plant biodiversity and collaborate with municipal water boards. Joining such an initiative provides both practical environmental stewardship and a healthy antidote to climate despair by fostering collective action."
+        },
+        part_3: [
+            {
+                theme: "Environmental Responsibility & Individual Action",
+                question: "Do you think individual lifestyle changes can make a meaningful difference to global climate change?",
+                model_answer: "Individual behavioural shiftsâ€”such as choosing public transit, minimizing single-use plastics, and adopting plant-rich dietsâ€”are essential because they collectively reduce aggregate consumer demand and cultivate widespread civic mindfulness. However, individual initiatives must be amplified by stringent corporate regulations and statutory renewable energy transitions."
+            },
+            {
+                theme: "Governmental Policy vs Market Incentives",
+                question: "Should governments impose higher carbon taxes on polluting industries, or offer financial subsidies for green innovation?",
+                model_answer: "A well-designed environmental policy requires a dual carrot-and-stick framework. Imposing robust carbon penalties compels heavy polluters to internalize external environmental costs, while targeted subsidies for clean technology accelerate commercial deployment of grid-scale batteries and green hydrogen."
+            },
+            {
+                theme: "Biometric Technology & Civil Liberties",
+                question: "How do you foresee biometric surveillance evolving over the coming decades?",
+                model_answer: "Biometric verification will almost certainly become ubiquitous in urban transit hubs, border checkpoints, and contactless banking. The overarching regulatory challenge will be establishing transparent statutory safeguards to guarantee that facial recognition and voice databases are not exploited for unwarranted citizen profiling or authoritarian overreach."
+            }
+        ]
+    }
+};
+
+
+
+// =========================================================================
+// CAMBRIDGE IELTS 2 - ACADEMIC PRACTICE TEST 4
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 2)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam2Test4 = {
+    id: "cam_2_test_4",
+    book: "Cambridge IELTS 2",
+    title: "Cambridge IELTS 2 - Test 4",
+    test_title: "Academic Practice Test 4",
+    badge: "Cam 2 - Test 4",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 4",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Mic House Agency - Repairs (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                section_number: 1,
+                title: "Section 1: Mic House Agency - Property Repairs (Questions 1 - 10)",
+                audio_file: "cam2_extracted/Test 4 - Section 1.mp3",
+                context: "A tenant calls the Mic House Agency to report several maintenance problems requiring repairs in her leased apartment.",
+                questions: [
+                    {
+                        id: 1,
+                        question_number: 1,
+                        type: "fill_in_the_blank",
+                        question: "Address: Apartment 2, (1) .......... , Newton",
+                        correct_answer: ["16 Rose Lane", "16, Rose Lane"],
+                        explanation: "The tenant states her rental address is Apartment 2, 16 Rose Lane in Newton."
+                    },
+                    {
+                        id: 2,
+                        question_number: 2,
+                        type: "fill_in_the_blank",
+                        question: "Date moved in: (2) ..........",
+                        correct_answer: ["27 June", "27th June", "June 27", "June 27th", "27th of June"],
+                        explanation: "She confirms she officially occupied the flat on the 27th of June."
+                    },
+                    {
+                        id: 3,
+                        question_number: 3,
+                        type: "fill_in_the_blank",
+                        question: "Cooker: Problem: (3) ..........",
+                        correct_answer: ["door broken", "broken door", "the door is broken"],
+                        explanation: "She reports that the main oven/cooker door is damaged and broken."
+                    },
+                    {
+                        id: 4,
+                        question_number: 4,
+                        type: "multiple_choice",
+                        question: "Cooker repair: When to be done? (A: immediately, B: following week, C: two or more weeks)",
+                        options: ["A", "B", "C"],
+                        correct_answer: "C",
+                        explanation: "The agent informs her that ordering replacement hinges and panels will take at least two or more weeks (C)."
+                    },
+                    {
+                        id: 5,
+                        question_number: 5,
+                        type: "fill_in_the_blank",
+                        question: "Windows: Problem: (5) ..........",
+                        correct_answer: ["no locks", "no locks on them", "need locks", "locks broken"],
+                        explanation: "She notes that the street-facing windows lack secure latching mechanisms and need locks."
+                    },
+                    {
+                        id: 6,
+                        question_number: 6,
+                        type: "fill_in_the_blank",
+                        question: "Item: (6) .......... ; Problem: flickers",
+                        correct_answer: ["bathroom light", "the bathroom light"],
+                        explanation: "She mentions that the overhead bathroom light flickers intermittently."
+                    },
+                    {
+                        id: 7,
+                        question_number: 7,
+                        type: "multiple_choice",
+                        question: "Bathroom light repair: When to be done? (A: immediately, B: following week, C: two or more weeks)",
+                        options: ["A", "B", "C"],
+                        correct_answer: "A",
+                        explanation: "Electrical faults pose immediate safety hazards, so the agent promises immediate attention (A)."
+                    },
+                    {
+                        id: 8,
+                        question_number: 8,
+                        type: "fill_in_the_blank",
+                        question: "Item: (8) .......... ; Problem: torn",
+                        correct_answer: ["kitchen curtains", "curtains in kitchen", "the kitchen curtains"],
+                        explanation: "The tenant requests replacement for the torn fabric kitchen curtains."
+                    },
+                    {
+                        id: 9,
+                        question_number: 9,
+                        type: "multiple_choice",
+                        question: "Kitchen curtains replacement: When to be done?",
+                        options: ["A", "B", "C"],
+                        correct_answer: "B",
+                        explanation: "The property agency schedules soft furnishing replacements for the following week (B)."
+                    },
+                    {
+                        id: 10,
+                        question_number: 10,
+                        type: "fill_in_the_blank",
+                        question: "Workman to call between (10) .......... and ..........",
+                        correct_answer: ["1 and 5", "1 pm and 5 pm", "1pm and 5pm", "1-5", "1.00 and 5.00"],
+                        explanation: "The agency confirms the technician will visit between 1 pm and 5 pm."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 2: Rainforest Lodge Excursions (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                section_number: 2,
+                title: "Section 2: Rainforest Lodge & Wilderness Excursions (Questions 11 - 20)",
+                audio_file: "cam2_extracted/Test 4 - Section 2.mp3",
+                context: "A tour manager briefs newly arrived ecotourists on lodging guidelines and excursion options at the Rainforest Lodge.",
+                questions: [
+                    {
+                        id: 11,
+                        question_number: 11,
+                        type: "multiple_choice",
+                        question: "At Rainforest Lodge there aren't any ...",
+                        options: [
+                            "A. telephones or TVs",
+                            "B. newspapers or TVs",
+                            "C. telephones or newspapers"
+                        ],
+                        correct_answer: "B",
+                        explanation: "To preserve the remote wilderness ambiance, the lodge does not supply television sets or daily newspapers (B)."
+                    },
+                    {
+                        id: 12,
+                        question_number: 12,
+                        type: "multiple_choice",
+                        question: "The guests are told to ...",
+                        options: [
+                            "A. carry their luggage to the cabin",
+                            "B. go straight to the restaurant",
+                            "C. wait an hour for dinner"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The host informs guests that luggage will be delivered to cabins while they can unpack and wait an hour before evening dinner is served (C)."
+                    },
+                    {
+                        id: 13,
+                        question_number: 13,
+                        type: "fill_in_the_blank",
+                        question: "Four-Wheel-Drive: tour to the (13) ..........",
+                        correct_answer: ["waterfalls", "waterfall", "water falls", "water-falls"],
+                        explanation: "The off-road vehicle excursion takes visitors directly up through rugged tracks to the scenic waterfalls."
+                    },
+                    {
+                        id: 14,
+                        question_number: 14,
+                        type: "fill_in_the_blank",
+                        question: "Crocodile Cruise: departs at (14) .......... daily",
+                        correct_answer: ["11", "11.00", "11 am", "11:00 am", "eleven"],
+                        explanation: "The river boat crocodile cruise departs each morning at 11.00 am."
+                    },
+                    {
+                        id: 15,
+                        question_number: 15,
+                        type: "fill_in_the_blank",
+                        question: "(15) .......... tour departs at sundown",
+                        correct_answer: ["Spotlight", "spotlight", "Spotlight tour"],
+                        explanation: "The nocturnal wildlife search tour is titled the Spotlight tour, beginning at sundown."
+                    },
+                    {
+                        id: 16,
+                        question_number: 16,
+                        type: "fill_in_the_blank",
+                        question: "What THREE items of clothing does the speaker recommend for the rainforest? (Item 1 of 3)",
+                        correct_answer: ["walking boots", "boots", "socks", "long trousers", "trousers"],
+                        explanation: "The guide explicitly insists on sturdy walking boots, thick socks, and long trousers."
+                    },
+                    {
+                        id: 17,
+                        question_number: 17,
+                        type: "fill_in_the_blank",
+                        question: "Clothing item (Item 2 of 3):",
+                        correct_answer: ["walking boots", "boots", "socks", "long trousers", "trousers"],
+                        explanation: "Second recommended item among boots, socks, long trousers."
+                    },
+                    {
+                        id: 18,
+                        question_number: 18,
+                        type: "fill_in_the_blank",
+                        question: "Clothing item (Item 3 of 3):",
+                        correct_answer: ["walking boots", "boots", "socks", "long trousers", "trousers"],
+                        explanation: "Third recommended item among boots, socks, long trousers."
+                    },
+                    {
+                        id: 19,
+                        question_number: 19,
+                        type: "fill_in_the_blank",
+                        question: "Which TWO things in the rainforest does the speaker give a warning about? (Thing 1 of 2)",
+                        correct_answer: ["snakes", "poisonous snakes", "venomous snakes", "certain plants", "plants"],
+                        explanation: "Visitors are cautioned against venomous snakes hiding along leaf litter and stinging poisonous plants."
+                    },
+                    {
+                        id: 20,
+                        question_number: 20,
+                        type: "fill_in_the_blank",
+                        question: "Hazard warning (Thing 2 of 2):",
+                        correct_answer: ["snakes", "poisonous snakes", "venomous snakes", "certain plants", "plants"],
+                        explanation: "Second hazard among snakes and poisonous plants."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 3: Study Skills Consultation (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                section_number: 3,
+                title: "Section 3: Student Advisory Consultation (Questions 21 - 30)",
+                audio_file: "cam2_extracted/Test 4 - Section 3.mp3",
+                context: "A university freshman named John consults a student academic counsellor regarding time management, lecture listening, and exam preparation strategies.",
+                questions: [
+                    {
+                        id: 21,
+                        question_number: 21,
+                        type: "multiple_choice",
+                        question: "These sessions with a counsellor are ...",
+                        options: [
+                            "A. compulsory for all students",
+                            "B. available to any students",
+                            "C. for science students only"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The counsellor confirms these guidance appointments are voluntary drop-in services open to all enrolled students across all disciplines (B)."
+                    },
+                    {
+                        id: 22,
+                        question_number: 22,
+                        type: "multiple_choice",
+                        question: "The counsellor says that new students have to ...",
+                        options: [
+                            "A. spend more time on the college premises",
+                            "B. get used to working independently",
+                            "C. work harder than they did at school"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The crucial academic transition undergraduates face is adapting to self-directed, independent study without constant teacher oversight (B)."
+                    },
+                    {
+                        id: 23,
+                        question_number: 23,
+                        type: "multiple_choice",
+                        question: "John complains that the resource centre ...",
+                        options: [
+                            "A. has limited opening hours",
+                            "B. has too few resources",
+                            "C. gets too crowded"
+                        ],
+                        correct_answer: "A",
+                        explanation: "John points out that closing at 5.00 pm curtails study opportunities for students attending full daytime lectures (A)."
+                    },
+                    {
+                        id: 24,
+                        question_number: 24,
+                        type: "multiple_choice",
+                        question: "The counsellor suggests to John that...",
+                        options: [
+                            "A. most other students can cope",
+                            "B. he needs to study all the time",
+                            "C. he should be able to fit in some leisure activities"
+                        ],
+                        correct_answer: "C",
+                        explanation: "She emphasizes that effective scheduling must include planned recreation and downtime to prevent burnout (C)."
+                    },
+                    {
+                        id: 25,
+                        question_number: 25,
+                        type: "multiple_choice",
+                        question: "Before being able to help John the counsellor needs to ...",
+                        options: [
+                            "A. talk with some of his lecturers",
+                            "B. consult his tutor",
+                            "C. get more information from him"
+                        ],
+                        correct_answer: "C",
+                        explanation: "She asks John to record a detailed diary of his daily study and personal routines to establish an accurate profile (C)."
+                    },
+                    {
+                        id: 26,
+                        question_number: 26,
+                        type: "fill_in_the_blank",
+                        question: "WRITING: Leave time to (26) ..........",
+                        correct_answer: ["check work", "check over work", "check errors", "revise", "revise work", "check your work"],
+                        explanation: "The counsellor stresses allocating the final 10-15 minutes of any written exam to proofread and check over errors."
+                    },
+                    {
+                        id: 27,
+                        question_number: 27,
+                        type: "fill_in_the_blank",
+                        question: "LISTENING: Try to (27) .......... lectures",
+                        correct_answer: ["record", "tape record", "audio record"],
+                        explanation: "She suggests recording lectures on audio tape so difficult concepts can be reviewed repeatedly."
+                    },
+                    {
+                        id: 28,
+                        question_number: 28,
+                        type: "fill_in_the_blank",
+                        question: "LISTENING: Check notes with (28) ..........",
+                        correct_answer: ["a friend", "friend"],
+                        explanation: "Comparing lecture notes with a trusted peer or friend helps identify missed points."
+                    },
+                    {
+                        id: 29,
+                        question_number: 29,
+                        type: "fill_in_the_blank",
+                        question: "READING: Choose topics of (29) ..........",
+                        correct_answer: ["general interest", "General interest"],
+                        explanation: "To cultivate reading speed and stamina, students should read broad articles of general interest beyond narrow textbooks."
+                    },
+                    {
+                        id: 30,
+                        question_number: 30,
+                        type: "fill_in_the_blank",
+                        question: "READING: Buy a good (30) ..........",
+                        correct_answer: ["dictionary", "learner dictionary", "English dictionary"],
+                        explanation: "She advises investing in a comprehensive learner's English dictionary."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 4: Road Rage & Driver Aggression (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                section_number: 4,
+                title: "Section 4: Investigation into Driver Aggression (Questions 31 - 40)",
+                audio_file: "cam2_extracted/Test 4 - Section 4.mp3",
+                context: "A postgraduate sociology student presents his research findings on the causes, prevalence, and behavioural manifestations of road rage incidents.",
+                questions: [
+                    {
+                        id: 31,
+                        question_number: 31,
+                        type: "multiple_choice",
+                        question: "John was first interested in the subject because of something ...",
+                        options: [
+                            "A. he had witnessed",
+                            "B. he had read about",
+                            "C. he had experienced"
+                        ],
+                        correct_answer: "B",
+                        explanation: "John mentions his research interest was initially triggered by a provocative magazine article he had read (B)."
+                    },
+                    {
+                        id: 32,
+                        question_number: 32,
+                        type: "multiple_choice",
+                        question: "The main research method was ...",
+                        options: [
+                            "A. interviews",
+                            "B. questionnaires",
+                            "C. observation"
+                        ],
+                        correct_answer: "A",
+                        explanation: "He conducted in-depth qualitative semi-structured interviews with motorists as his primary investigative tool (A)."
+                    },
+                    {
+                        id: 33,
+                        question_number: 33,
+                        type: "multiple_choice",
+                        question: "Which pie chart shows the proportion of men and women respondents?",
+                        options: [
+                            "A. Equal half men and half women (50/50)",
+                            "B. Three quarters men, one quarter women",
+                            "C. One third men, two thirds women"
+                        ],
+                        correct_answer: "A",
+                        explanation: "His respondent cohort consisted of an evenly balanced gender sample (Chart A)."
+                    },
+                    {
+                        id: 34,
+                        question_number: 34,
+                        type: "multiple_choice",
+                        question: "How many respondents were there?",
+                        options: [
+                            "A. 50 - 100",
+                            "B. 100 - 150",
+                            "C. 150 - 200"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The total sample size comprised 120 motorists, falling into the 100 - 150 bracket (B)."
+                    },
+                    {
+                        id: 35,
+                        question_number: 35,
+                        type: "multiple_choice",
+                        question: "The most common type of road rage incident involved ...",
+                        options: [
+                            "A. damage to property",
+                            "B. personal violence",
+                            "C. verbal abuse"
+                        ],
+                        correct_answer: "C",
+                        explanation: "Overwhelmingly, reported incidents involved shouting, swearing, and aggressive verbal altercations (C)."
+                    },
+                    {
+                        id: 36,
+                        question_number: 36,
+                        type: "multiple_choice",
+                        question: "Which group gave the advice: Avoid eye contact with other drivers? (A: mainly women, B: mainly men, C: both)",
+                        options: ["A", "B", "C"],
+                        correct_answer: "B",
+                        explanation: "Male motorists were significantly more likely to recommend averting gaze to avoid triggering confrontations (B)."
+                    },
+                    {
+                        id: 37,
+                        question_number: 37,
+                        type: "multiple_choice",
+                        question: "Which group gave the advice: Inform someone of your likely arrival time?",
+                        options: ["A", "B", "C"],
+                        correct_answer: "A",
+                        explanation: "Female drivers emphasized notifying relatives or colleagues about estimated travel arrival times as a precautionary measure (A)."
+                    },
+                    {
+                        id: 38,
+                        question_number: 38,
+                        type: "multiple_choice",
+                        question: "Which group gave the advice: Ensure car keys are ready when you return to the car?",
+                        options: ["A", "B", "C"],
+                        correct_answer: "C",
+                        explanation: "Both male and female drivers uniformly advocated keeping ignition keys in hand to minimize exposure in car parks (C)."
+                    },
+                    {
+                        id: 39,
+                        question_number: 39,
+                        type: "multiple_choice",
+                        question: "Which group gave the advice: Leave plenty of space when parking?",
+                        options: ["A", "B", "C"],
+                        correct_answer: "B",
+                        explanation: "Men predominantly highlighted leaving sufficient clearance around parked vehicles to avoid getting trapped (B)."
+                    },
+                    {
+                        id: 40,
+                        question_number: 40,
+                        type: "multiple_choice",
+                        question: "Which group gave the advice: Keep all doors locked?",
+                        options: ["A", "B", "C"],
+                        correct_answer: "C",
+                        explanation: "Both genders strongly endorsed keeping vehicle doors locked at all times when driving through dense traffic (C)."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Reading Practice Test 4",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Green Consumerism (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Passage 1: Green Wave Washes Over Mainstream Shopping",
+                content: `Research in Britain has shown that 'green consumers' continue to flourish as a significant group amongst shoppers. This suggests that politicians who claim environmentalism is yesterday's issue may be seriously misjudging the public mood.\n\nA report from Mintel, the market research organisation, says that despite recession and financial pressures, more people than ever want to buy environmentally friendly products and a 'green wave' has swept through consumerism, taking in people previously untouched by environmental concerns. The recently published report also predicts that the process will repeat itself with 'ethical' concerns, involving issues such as fair trade with the Third World and the social record of businesses. Companies will have to be more honest and open in response to this mood.\n\nMintel's survey, based on nearly 1,000 consumers, found that the proportion who look for green products and are prepared to pay more for them has climbed from 53 per cent in 1990 to around 60 per cent in 1994. On average, they will pay 13 per cent more for such products, although this percentage is higher among women, managerial and professional groups and those aged 35 to 44.\n\nBetween 1990 and 1994 the proportion of consumers claiming to be unaware of or unconcerned about green issues fell from 18 to 10 per cent but the number of green spenders among older people and manual workers has risen substantially. Regions such as Scotland have also caught up with the south of England in their environmental concerns. According to Mintel, the image of green consumerism as associated in the past with the more eccentric members of society has virtually disappeared. The consumer research manager for Mintel, Angela Hughes, said it had become firmly established as a mainstream market. She explained that as far as the average person is concerned environmentalism has not 'gone off the boil'. In fact, it has spread across a much wider range of consumer groups, ages and occupations.\n\nMintel's 1994 survey found that 13 per cent of consumers are 'very dark green', nearly always buying environmentally friendly products, 28 per cent are 'dark green', trying 'as far as possible' to buy such products, and 21 per cent are 'pale green' - tending to buy green products if they see them. Another 26 per cent are 'armchair greens'; they said they care about environmental issues but their concern does not affect their spending habits. Only 10 per cent say they do not care about green issues.\n\nFour in ten people are 'ethical spenders', buying goods which do not, for example, involve dealings with oppressive regimes. This figure is the same as in 1990, although the number of 'armchair ethicals' has risen from 28 to 35 per cent and only 22 per cent say they are unconcerned now, against 30 per cent in 1990. Hughes claims that in the twenty-first century, consumers will be encouraged to think more about the entire history of the products and services they buy, including the policies of the companies that provide them and that this will require a greater degree of honesty with consumers.\n\nAmong green consumers, animal testing is the top issue - 48 per cent said they would be deterred from buying a product if it had been tested on animals - followed by concerns regarding irresponsible selling, the ozone layer, river and sea pollution, forest destruction, recycling and factory farming. However, in 1990, suggesting that many consumers feel that Government and business have taken on the environmental agenda.`,
+                questions: [
+                    {
+                        id: 1,
+                        question_number: 1,
+                        type: "true_false_not_given",
+                        question: "The research findings report commercial rather than political trends.",
+                        correct_answer: "YES",
+                        explanation: "The text focuses on Mintel's consumer market survey regarding shopping spending habits rather than voting or political party developments."
+                    },
+                    {
+                        id: 2,
+                        question_number: 2,
+                        type: "true_false_not_given",
+                        question: "Being financially better off has made shoppers more sensitive to buying 'green'.",
+                        correct_answer: "NO",
+                        explanation: "The text notes that 'despite recession and financial pressures, more people than ever want to buy environmentally friendly products' and green spending rose among manual workers, contradicting the claim that increased wealth is required."
+                    },
+                    {
+                        id: 3,
+                        question_number: 3,
+                        type: "true_false_not_given",
+                        question: "The majority of shoppers are prepared to pay more for the benefit of the environment according to the research findings.",
+                        correct_answer: "YES",
+                        explanation: "Mintel found that the proportion prepared to pay more climbed to 'around 60 per cent in 1994', which constitutes a majority."
+                    },
+                    {
+                        id: 4,
+                        question_number: 4,
+                        type: "true_false_not_given",
+                        question: "Consumers' green shopping habits are influenced by Mintel's findings.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The text describes Mintel measuring consumer habits, but nowhere suggests consumers read Mintel reports to decide their shopping behavior."
+                    },
+                    {
+                        id: 5,
+                        question_number: 5,
+                        type: "true_false_not_given",
+                        question: "Mintel have limited their investigation to professional and managerial groups.",
+                        correct_answer: "NO",
+                        explanation: "The survey investigated nearly 1,000 consumers and highlighted that green consumerism 'spread across a much wider range of consumer groups, ages and occupations... and manual workers'."
+                    },
+                    {
+                        id: 6,
+                        question_number: 6,
+                        type: "true_false_not_given",
+                        question: "Mintel undertakes market surveys on an annual basis.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The passage compares data from 1990 and 1994, but does not state whether surveys are conducted strictly every single year."
+                    },
+                    {
+                        id: 7,
+                        question_number: 7,
+                        type: "multiple_choice",
+                        question: "Politicians may have 'misjudged the public mood' because ...",
+                        options: [
+                            "A. they are pre-occupied with the recession and financial problems.",
+                            "B. there is more widespread interest in the environment agenda than they anticipated.",
+                            "C. consumer spending has increased significantly as a result of 'green' pressure.",
+                            "D. shoppers are displeased with government policies on a range of issues."
+                        ],
+                        correct_answer: "B",
+                        explanation: "Politicians who claim environmentalism is yesterday's issue are wrong because widespread interest and commitment have deepened across mainstream society."
+                    },
+                    {
+                        id: 8,
+                        question_number: 8,
+                        type: "multiple_choice",
+                        question: "What is Mintel?",
+                        options: [
+                            "A. an environmentalist group",
+                            "B. a business survey organisation",
+                            "C. an academic research team",
+                            "D. a political organisation"
+                        ],
+                        correct_answer: "B",
+                        explanation: "The passage explicitly defines Mintel as 'the market research organisation'."
+                    },
+                    {
+                        id: 9,
+                        question_number: 9,
+                        type: "multiple_choice",
+                        question: "A consumer expressing concern for environmental issues without actively supporting such principles is...",
+                        options: [
+                            "A. an 'ethical spender'",
+                            "B. a 'very dark green' spender",
+                            "C. an 'armchair green'",
+                            "D. a 'pale green' spender"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The text identifies 'armchair greens' as those who 'said they care about environmental issues but their concern does not affect their spending habits'."
+                    },
+                    {
+                        id: 10,
+                        question_number: 10,
+                        type: "fill_in_the_blank",
+                        question: "Companies will be forced to practise greater (10) .......... in their dealings",
+                        correct_answer: ["honesty and openness", "honesty", "openness"],
+                        explanation: "The passage states: 'Companies will have to be more honest and open in response to this mood'."
+                    },
+                    {
+                        id: 11,
+                        question_number: 11,
+                        type: "fill_in_the_blank",
+                        question: "because of the increased awareness amongst (11) .......... of ethical issues.",
+                        correct_answer: ["consumers", "shoppers"],
+                        explanation: "This shift is driven directly by the growing expectations of mainstream consumers."
+                    },
+                    {
+                        id: 12,
+                        question_number: 12,
+                        type: "fill_in_the_blank",
+                        question: "supported by the growth in the number of (12) .......... identified in the most recent survey",
+                        correct_answer: ["armchair ethicals"],
+                        explanation: "The text highlights that the number of 'armchair ethicals' has climbed from 28 to 35 per cent."
+                    },
+                    {
+                        id: 13,
+                        question_number: 13,
+                        type: "fill_in_the_blank",
+                        question: "companies will have to think more carefully about their (13) ..........",
+                        correct_answer: ["social record", "policies"],
+                        explanation: "Ethical consumerism demands close scrutiny of 'the social record of businesses' and their supply chain ethics."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 2: Literacy & Picture Books (Questions 14 - 26)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Passage 2: Literacy Standards and the Role of Illustrated Books",
+                content: `Paragraph A: There is a great concern in Europe and North America about declining standards of literacy in schools. In Britain, the fact that 30 per cent of 16 year olds have a reading age of 14 or less has helped to prompt massive educational changes. The development of literacy has far-reaching effects on general intellectual development and thus anything which impedes the development of literacy is a serious matter for us all. So the hunt is on for the cause of the decline in literacy. The search so far has focused on socio-economic factors, or the effectiveness of 'traditional' versus 'modern' teaching techniques.\n\nParagraph B: The fruitless search for the cause of the increase in illiteracy is a tragic example of the saying 'They can't see the wood for the trees'. When teachers use picture books, they are simply continuing a long-established tradition that is accepted without question. And for the past two decades, illustrations in reading primers have become increasingly detailed and obtrusive, while language has become impoverished - sometimes to the point of extinction.\n\nParagraph C: Amazingly, there is virtually no empirical evidence to support the use of illustrations in teaching reading. On the contrary, a great deal of empirical evidence shows that pictures interfere in a damaging way with all aspects of learning to read. Despite this, from North America to the Antipodes, the first books that many school children receive are totally without text.\n\nParagraph D: A teacher's main concern is to help young beginner readers to develop not only the ability to recognise words, but the skills necessary to understand what these words mean. Even if a child is able to read aloud fluently, he or she may not be able to understand much of it: this is called 'barking at text'. The teacher's task of improving comprehension is made harder by influences outside the classroom. But the adverse effects of such things as television, video games, or limited language experiences at home, can be offset by experiencing 'rich' language at school.\n\nParagraph E: Instead, it is not unusual for a book of 30 or more pages to have only one sentence full of repetitive phrases. The artwork is often marvellous, but the pictures make the language redundant, and the children have no need to imagine anything when they read such books. Looking at a picture actively prevents children younger than nine from creating a mental image, and can make it difficult for older children. In order to learn how to comprehend, they need to practise making their own meaning in response to text. They need to have their innate powers of imagination trained.\n\nParagraph F: As they grow older, many children turn aside from books without pictures, and it is a situation made more serious as our culture becomes more visual. It is hard to wean children off picture books when pictures have played a major part throughout their formative reading experiences, and when there is competition for their attention from so many other sources of entertainment. The least intelligent are most vulnerable, but tests show that even intelligent children are being affected. The response of educators has been to extend the use of pictures in books and to simplify the language, even at senior levels. The Universities of Oxford and Cambridge recently held joint conferences to discuss the noticeably rapid decline in literacy among their undergraduates.\n\nParagraph G: Pictures are also used to help motivate children to read because they are beautiful and eye-catching. But motivation to read should be provided by listening to stories well read, where children imagine in response to the story. Then, as they start to read, they have this experience to help them understand the language. If we present pictures to save children the trouble of developing these creative skills, then I think we are making a great mistake.\n\nParagraph H: Academic journals ranging from educational research, psychology, language learning, psycholinguistics, and so on cite experiments which demonstrate how detrimental pictures are for beginner readers. Here is a brief selection:\n\nParagraph I: The research results of the Canadian educationalist Dale Willows were clear and consistent: pictures affected speed and accuracy and the closer the pictures were to the words, the slower and more inaccurate the child's reading became. She claims that when children come to a word they already know, then the pictures are unnecessary and distracting. If they do not know a word and look to the picture for a clue to its meaning, they may well be misled by aspects of the pictures which are not closely related to the meaning of the word they are trying to understand.\n\nParagraph J: Jay Samuels, an American psychologist, found that poor readers given no pictures learnt significantly more words than those learning to read with books with pictures. He examined the work of other researchers who had reported problems with the use of pictures and who found that a word without a picture was superior to a word plus a picture. When children were given words and pictures, those who seemed to ignore the pictures and pointed at the words learnt more words than the children who pointed at the pictures, but they still learnt fewer words than the children who had no illustrated stimuli at all.`,
+                questions: [
+                    {
+                        id: 14,
+                        question_number: 14,
+                        type: "multiple_choice",
+                        question: "Readers are said to 'bark' at a text when ...",
+                        options: [
+                            "A. they read too loudly.",
+                            "B. there are too many repetitive words.",
+                            "C. they are discouraged from using their imagination.",
+                            "D. they have difficulty assessing its meaning."
+                        ],
+                        correct_answer: "D",
+                        explanation: "Paragraph D explains: 'Even if a child is able to read aloud fluently, he or she may not be able to understand much of it: this is called barking at text'."
+                    },
+                    {
+                        id: 15,
+                        question_number: 15,
+                        type: "multiple_choice",
+                        question: "The text suggests that...",
+                        options: [
+                            "A. pictures in books should be less detailed.",
+                            "B. pictures can slow down reading progress.",
+                            "C. picture books are best used with younger readers.",
+                            "D. pictures make modern books too expensive."
+                        ],
+                        correct_answer: "B",
+                        explanation: "The author cites Willows and Samuels showing that illustrations impede reading acquisition and slow down progress."
+                    },
+                    {
+                        id: 16,
+                        question_number: 16,
+                        type: "multiple_choice",
+                        question: "University academics are concerned because ...",
+                        options: [
+                            "A. young people are showing less interest in higher education.",
+                            "B. students cannot understand modern academic texts.",
+                            "C. academic books are too childish for their undergraduates.",
+                            "D. there has been a significant change in student literacy."
+                        ],
+                        correct_answer: "D",
+                        explanation: "Paragraph F states Oxford and Cambridge held joint conferences 'to discuss the noticeably rapid decline in literacy among their undergraduates'."
+                    },
+                    {
+                        id: 17,
+                        question_number: 17,
+                        type: "multiple_choice",
+                        question: "The youngest readers will quickly develop good reading skills if they ...",
+                        options: [
+                            "A. learn to associate the words in a text with pictures.",
+                            "B. are exposed to modern teaching techniques.",
+                            "C. are encouraged to ignore pictures in the text.",
+                            "D. learn the art of telling stories."
+                        ],
+                        correct_answer: "C",
+                        explanation: "Paragraph J notes that 'children who seemed to ignore the pictures and pointed at the words learnt more words'."
+                    },
+                    {
+                        id: 18,
+                        question_number: 18,
+                        type: "true_false_not_given",
+                        question: "It is traditionally accepted that children's books should contain few pictures.",
+                        correct_answer: "NO",
+                        explanation: "Paragraph B says: 'When teachers use picture books, they are simply continuing a long-established tradition that is accepted without question'."
+                    },
+                    {
+                        id: 19,
+                        question_number: 19,
+                        type: "true_false_not_given",
+                        question: "Teachers aim to teach both word recognition and word meaning.",
+                        correct_answer: "YES",
+                        explanation: "Paragraph D states: 'A teacher's main concern is to help young beginner readers to develop not only the ability to recognise words, but the skills necessary to understand what these words mean'."
+                    },
+                    {
+                        id: 20,
+                        question_number: 20,
+                        type: "true_false_not_given",
+                        question: "Older readers are having difficulty in adjusting to texts without pictures.",
+                        correct_answer: "YES",
+                        explanation: "Paragraph F notes: 'As they grow older, many children turn aside from books without pictures... It is hard to wean children off picture books'."
+                    },
+                    {
+                        id: 21,
+                        question_number: 21,
+                        type: "true_false_not_given",
+                        question: "Literacy has improved as a result of recent academic conferences.",
+                        correct_answer: "NOT GIVEN",
+                        explanation: "The passage notes conferences were held to discuss declining literacy, but makes no claim that literacy has improved as a result."
+                    },
+                    {
+                        id: 22,
+                        question_number: 22,
+                        type: "matching",
+                        question: "Which paragraph states: The decline of literacy is seen in groups of differing ages and abilities?",
+                        correct_answer: "F",
+                        explanation: "Paragraph F notes that vulnerable less intelligent children, intelligent pupils, and university undergraduates are all affected."
+                    },
+                    {
+                        id: 23,
+                        question_number: 23,
+                        type: "matching",
+                        question: "Which paragraph states: Reading methods currently in use go against research findings?",
+                        correct_answer: "C",
+                        explanation: "Paragraph C notes that while empirical research proves pictures interfere with learning, schools continue supplying textless picture primers."
+                    },
+                    {
+                        id: 24,
+                        question_number: 24,
+                        type: "matching",
+                        question: "Which paragraph states: Readers able to ignore pictures are claimed to make greater progress?",
+                        correct_answer: "J",
+                        explanation: "Paragraph J highlights Samuels' research showing that children ignoring pictures learned significantly more words."
+                    },
+                    {
+                        id: 25,
+                        question_number: 25,
+                        type: "matching",
+                        question: "Which paragraph states: Illustrations in books can give misleading information about word meaning?",
+                        correct_answer: "I",
+                        explanation: "Paragraph I explains that pupils looking to pictures for clues 'may well be misled by aspects of the pictures'."
+                    },
+                    {
+                        id: 26,
+                        question_number: 26,
+                        type: "multiple_choice",
+                        question: "Choose the most suitable title for the whole of Reading Passage 2 (A - E):",
+                        options: [
+                            "A. The global decline in reading levels",
+                            "B. Concern about recent educational developments",
+                            "C. The harm that picture books can cause",
+                            "D. Research carried out on children's literature",
+                            "E. An examination of modern reading styles"
+                        ],
+                        correct_answer: "C",
+                        explanation: "The central thesis argued persistently throughout every paragraph is that picture books cause serious harm to children's literacy acquisition."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 3: The Human Genome Project (Questions 27 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Passage 3: The Human Genome Project",
+                content: `It has been called the Holy Grail of modern biology. Costing more than Â£2 billion, it is the most ambitious scientific project since the Apollo programme that landed a man on the moon. And it will take longer to accomplish than the lunar missions, for it will not be complete until early next century. Even before it is finished, according to those involved, this project should open up new understanding of and new treatments for many of the ailments that afflict humanity. As a result of the Human Genome Project, there will be new hope of liberation from the shadows of cancer, heart disease, autoimmune diseases such as rheumatoid arthritis, and some psychiatric illnesses.\n\nThe objective of the Human Genome Project is simple to state, but audacious in scope: to map and analyse every single gene within the double helix of humanity's DNA. The project will reveal a new human anatomy - not the bones, muscles and sinews, but the complete genetic blueprint for a human being. Those working on the Human Genome Project claim that the new genetical anatomy will transform medicine and reduce human suffering in the twenty-first century. But others see the future through a darker glass, and fear that the project may open the door to a world peopled by Frankenstein's monsters and disfigured by a new eugenics.\n\nThe genetic inheritance a baby receives from its parents at the moment of conception fixes much of its later development, determining characteristics as varied as whether it will have blue eyes or suffer from a life-threatening illness such as cystic fibrosis. The human genome is the compendium of all these inherited genetic instructions. Written out along the double helix of DNA are the chemical letters of the genetic text. It is an extremely long text, for the human genome contains more than 3 billion letters: On the printed page it would fill about 7,000 volumes. Yet, within little more than a decade, the position of every letter and its relation to its neighbours will have been tracked down, analysed and recorded.\n\nConsidering how many letters there are in the human genome, nature is an excellent proof-reader. But sometimes there are mistakes. An error in a single 'word' - a gene - can give rise to the crippling condition of cystic fibrosis, the commonest genetic disorder among Caucasians. Errors in the genetic recipe for haemoglobin, the protein that gives blood its characteristic red colour and which carries oxygen from the lungs to the rest of the body, give rise to the most common single-gene disorder in the world: thalassaemia. More than 4,000 such single-gene defects are known to afflict humanity. The majority of them are fatal; the majority of the victims are children.\n\nNone of the single-gene disorders is a disease in the conventional sense, for which it would be possible to administer a curative drug: the defect is pre-programmed into every cell of the sufferer's body. But there is hope of progress. In 1986, American researchers identified the genetic defect underlying one type of muscular dystrophy. In 1989, a team of American and Canadian biologists announced that they had found the site of the gene which, when defective, gives rise to cystic fibrosis. Indeed, they had analysed the sequence of letters within it and had identified the mistake responsible for the condition. At the least, these scientific advances may offer a way of screening parents who might be at risk of transmitting a single-gene defect to any children that they conceive. Foetuses can be tested while in the womb, and if found free of the genetic defect, the parents will be relieved of worry and stress, knowing that they will be delivered of a baby free from the disorder.\n\nIn the mid-1980s, the idea gained currency within the scientific world that the techniques which were successfully deciphering disorder-related genes could be applied to a larger project: if science can learn the genetic spelling of cystic fibrosis, why not attempt to find out how to spell 'human'? Momentum quickly built up behind the Human Genome Project and its objective of 'sequencing' the entire genome - writing out all the letters in their correct order.\n\nBut the consequences of the Human Genome Project go far beyond a narrow focus on disease. Some of its supporters have made claims of great extravagance - that the Project will bring us to understand, at the most fundamental level, what it is to be human. Yet many people are concerned that such an emphasis on humanity's genetic constitution may distort our sense of values, and lead us to forget that human life is more than just the expression of a genetic program written in the chemistry of DNA.\n\nIf properly applied, the new knowledge generated by the Human Genome Project may free humanity from the terrible scourge of diverse diseases. But if the new knowledge is not used wisely, it also holds the threat of creating new forms of discrimination and new methods of oppression. Many characteristics, such as height and intelligence, result not from the action of genes alone, but from subtle interactions between genes and the environment. What would be the implications if humanity were to understand, with precision, the genetic constitution which, given the same environment, will predispose one person towards a higher intelligence than another individual whose genes were differently shuffled?\n\nOnce before in this century, the relentless curiosity of scientific researchers brought to light forces of nature in the power of the atom, the mastery of which has shaped the destiny of nations and overshadowed all our lives. The Human Genome Project holds the promise that, ultimately, we may be able to alter our genetic inheritance if we so choose. But there is the central moral problem: how can we ensure that when we choose, we choose correctly? That such a potential is a promise and not a threat? We need only look at the past to understand the danger.`,
+                questions: [
+                    {
+                        id: 27,
+                        question_number: 27,
+                        type: "fill_in_the_blank",
+                        question: "The passage compares the Project in scale to the (27) ..........",
+                        correct_answer: ["Apollo programme", "Apollo space programme", "Apollo program", "Apollo"],
+                        explanation: "Paragraph 1 states: 'it is the most ambitious scientific project since the Apollo programme that landed a man on the moon'."
+                    },
+                    {
+                        id: 28,
+                        question_number: 28,
+                        type: "fill_in_the_blank",
+                        question: "The possible completion date of the Project is (28) ..........",
+                        correct_answer: ["early next century", "next century"],
+                        explanation: "Paragraph 1 notes: 'it will not be complete until early next century'."
+                    },
+                    {
+                        id: 29,
+                        question_number: 29,
+                        type: "fill_in_the_blank",
+                        question: "To write out the human genome on paper would require (29) .......... books.",
+                        correct_answer: ["7,000", "7000", "about 7,000"],
+                        explanation: "Paragraph 3 explains: 'On the printed page it would fill about 7,000 volumes'."
+                    },
+                    {
+                        id: 30,
+                        question_number: 30,
+                        type: "fill_in_the_blank",
+                        question: "A genetic problem cannot be treated with drugs because strictly speaking it is not a (30) ..........",
+                        correct_answer: ["disease"],
+                        explanation: "Paragraph 5 asserts: 'None of the single-gene disorders is a disease in the conventional sense, for which it would be possible to administer a curative drug'."
+                    },
+                    {
+                        id: 31,
+                        question_number: 31,
+                        type: "fill_in_the_blank",
+                        question: "Research into genetic defects had its first success in the discovery of the cause of one form of (31) ..........",
+                        correct_answer: ["muscular dystrophy"],
+                        explanation: "Paragraph 5 notes: 'In 1986, American researchers identified the genetic defect underlying one type of muscular dystrophy'."
+                    },
+                    {
+                        id: 32,
+                        question_number: 32,
+                        type: "fill_in_the_blank",
+                        question: "The second success of research into genetic defects was to find the cause of (32) ..........",
+                        correct_answer: ["cystic fibrosis"],
+                        explanation: "Paragraph 5 notes: 'In 1989, a team of American and Canadian biologists announced that they had found the site of the gene which... gives rise to cystic fibrosis'."
+                    },
+                    {
+                        id: 33,
+                        question_number: 33,
+                        type: "multiple_choice",
+                        question: "Classify statement: The Project will provide a new understanding of major diseases. (A: writer's fears, B: other people's fears, C: writer's reporting of facts, D: writer's reporting of long-term hopes)",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "D",
+                        explanation: "The author expresses optimistic aspirations that the project offers 'new hope of liberation from the shadows of cancer, heart disease' (D)."
+                    },
+                    {
+                        id: 34,
+                        question_number: 34,
+                        type: "multiple_choice",
+                        question: "Classify statement: All the components which make up DNA are to be recorded and studied.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "C",
+                        explanation: "This describes the factual scientific goal of sequencing all 3 billion chemical base pairs (C)."
+                    },
+                    {
+                        id: 35,
+                        question_number: 35,
+                        type: "multiple_choice",
+                        question: "Classify statement: Genetic monsters may be created.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "B",
+                        explanation: "Paragraph 2 explicitly states: 'others see the future through a darker glass, and fear that the project may open the door to a world peopled by Frankenstein's monsters' (B)."
+                    },
+                    {
+                        id: 36,
+                        question_number: 36,
+                        type: "multiple_choice",
+                        question: "Classify statement: The correct order and inter-relation of all genetic data in all DNA will be mapped.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "C",
+                        explanation: "The author reports the factual scientific objective of recording every letter and its relation to neighbours (C)."
+                    },
+                    {
+                        id: 37,
+                        question_number: 37,
+                        type: "multiple_choice",
+                        question: "Classify statement: Parents will no longer worry about giving birth to defective offspring.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "D",
+                        explanation: "Paragraph 5 outlines the long-term medical aspiration that genetic screening will relieve prospective parents of anxiety (D)."
+                    },
+                    {
+                        id: 38,
+                        question_number: 38,
+                        type: "multiple_choice",
+                        question: "Classify statement: Being 'human' may be defined solely in terms of describable physical data.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "B",
+                        explanation: "Paragraph 7 reports public concerns that humanity's essence might be reduced to purely deterministic physical DNA chemistry (B)."
+                    },
+                    {
+                        id: 39,
+                        question_number: 39,
+                        type: "multiple_choice",
+                        question: "Classify statement: People may be discriminated against in new ways.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "A",
+                        explanation: "The author directly warns: 'if the new knowledge is not used wisely, it also holds the threat of creating new forms of discrimination and new methods of oppression' (A)."
+                    },
+                    {
+                        id: 40,
+                        question_number: 40,
+                        type: "multiple_choice",
+                        question: "Classify statement: From past experience humans may not use this new knowledge wisely.",
+                        options: ["A", "B", "C", "D"],
+                        correct_answer: "A",
+                        explanation: "The author draws a sobering historical parallel with atomic physics, expressing personal caution that humanity must look to the past to understand the danger (A)."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 4",
+        duration_seconds: 3600,
+        task_1: {
+            task_number: 1,
+            title: "Task 1: Imprisonment Rates in Five Countries (1930 - 1980)",
+            instruction: "The chart below shows the figures for imprisonment in five countries between 1930 and 1980. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+            min_words: 150,
+            chart_svg: `<svg viewBox="0 0 600 320" class="w-full max-w-2xl mx-auto rounded-xl bg-slate-900 p-4 shadow-lg text-white font-sans"><text x="300" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#38bdf8">PRISON POPULATION IN FIVE COUNTRIES (1930 - 1980)</text><text x="300" y="42" text-anchor="middle" font-size="10" fill="#94a3b8">Numbers in thousands (Great Britain, Australia, New Zealand, United States, Canada)</text><line x1="60" y1="260" x2="560" y2="260" stroke="#475569" stroke-width="2"/><line x1="60" y1="60" x2="60" y2="260" stroke="#475569" stroke-width="2"/><text x="45" y="265" font-size="9" fill="#94a3b8">0</text><text x="40" y="215" font-size="9" fill="#94a3b8">40</text><text x="40" y="165" font-size="9" fill="#94a3b8">80</text><text x="35" y="115" font-size="9" fill="#94a3b8">120</text><text x="110" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1930</text><text x="195" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1940</text><text x="280" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1950</text><text x="365" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1960</text><text x="450" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1970</text><text x="530" y="278" font-size="10" font-weight="bold" fill="#cbd5e1">1980</text><g transform="translate(140, 50)"><rect x="0" y="0" width="10" height="10" fill="#f59e0b"/><text x="15" y="9" font-size="9" fill="#e2e8f0">United States</text><rect x="100" y="0" width="10" height="10" fill="#ef4444"/><text x="115" y="9" font-size="9" fill="#e2e8f0">Canada</text><rect x="180" y="0" width="10" height="10" fill="#3b82f6"/><text x="195" y="9" font-size="9" fill="#e2e8f0">Great Britain</text><rect x="270" y="0" width="10" height="10" fill="#10b981"/><text x="285" y="9" font-size="9" fill="#e2e8f0">Australia/NZ</text></g></svg>`,
+            model_answer: `The bar chart illustrates the imprisonment figures across five industrialized nationsâ€”Great Britain, Australia, New Zealand, the United States, and Canadaâ€”at ten-year intervals between 1930 and 1980.\n\nOverall, the data demonstrates considerable fluctuation across most surveyed countries without a uniform global trajectory. Nevertheless, the United States maintained significantly higher prison populations than any other nation throughout the entire fifty-year span, while Great Britain experienced an unrelenting upward climb in incarcerated individuals.\n\nIn the United States, the prisoner tally commenced at approximately 100,000 in 1930 before jumping to a peak of nearly 135,000 in 1940. Following a temporary dip to roughly 110,000 in 1950, it rose steadily back to 135,000 by 1980. Canada started with the second-highest figures, hovering around 120,000 in 1930 and peaking at 130,000 in 1940. Thereafter, Canadian imprisonment dropped sharply, falling steadily to settle at 90,000 by 1980.\n\nBy contrast, Great Britain registered a steady and sustained escalation, rising from a modest 30,000 inmates in 1930 to reach approximately 85,000 by 1980, surpassing all nations except the US. In Australia and New Zealand, prison populations remained relatively low and stable, generally varying between 40,000 and 70,000 over the half-century period.`
+        },
+        task_2: {
+            task_number: 2,
+            title: "Task 2: Working Mothers and Juvenile Problems",
+            prompt: "The position of women in society has changed markedly in the last twenty years. Many of the problems young people now experience, such as juvenile delinquency, arise from the fact that many married women now work and are not at home to care for their children. To what extent do you agree or disagree with this opinion? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+            min_words: 250,
+            model_answer: `The profound transformation in female socio-economic participation over the past few decades has sparked intense debate concerning its repercussions on family stability and adolescent development. While some observers assert that the proliferation of dual-income households and working mothers directly fosters youth delinquency through lack of parental supervision, I firmly disagree that maternal employment is the primary catalyst for adolescent behavioural issues.\n\nTo attribute juvenile delinquency primarily to working mothers oversimplifies complex sociological phenomena. Delinquency stems from a confluence of systemic socioeconomic stressors, including neighborhood deprivation, exposure to substance abuse, dysfunctional domestic relationships, and toxic peer pressures, rather than maternal career participation itself. Indeed, numerous studies in developmental psychology demonstrate that parental involvement is determined by the quality of emotional connection, active communication, and psychological warmth, rather than the raw quantity of hours physically spent under the same roof. Dedicated professional mothers often spend enriching, distraction-free time with their children outside working hours, cultivating mutual respect and emotional maturity.\n\nFurthermore, female workforce participation confers immense developmental advantages on children. Second incomes prevent families from sliding into financial hardship, enabling parents to afford high-quality nutrition, healthcare, and enriching extracurricular activities that foster cognitive and social competence. Moreover, working mothers serve as empowering role models, teaching daughters independence and demonstrating to sons the importance of gender equality and domestic collaboration.\n\nCrucially, childrearing must not be viewed as the exclusive responsibility of mothers. Modern fathers increasingly share domestic responsibilities, while high-quality early childhood learning centers provide structured peer socialization that enhances interpersonal empathy.\n\nIn conclusion, blaming working mothers for juvenile misconduct is anachronistic and ungrounded. Society should instead support working families through subsidized childcare, flexible working arrangements, and community adolescent mentorship programs.`
+        }
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 4",
+        duration_seconds: 840,
+        part_1: [
+            {
+                topic: "Shopping Habits",
+                question: "Do you prefer buying products in physical retail stores or shopping online?",
+                model_answer: "I generally prefer digital e-commerce platforms for routine staples and electronics due to competitive pricing and effortless home delivery. However, for clothing and fresh produce, physical shops remain superior because tactile examination ensures quality."
+            },
+            {
+                topic: "Reading & Books",
+                question: "What genres of books do you enjoy reading in your spare time?",
+                model_answer: "I am drawn toward non-fiction literature, especially economic history, behavioral psychology, and biographies of visionary technologists, as they offer analytical frameworks for understanding real-world societal shifts."
+            },
+            {
+                topic: "Driving & Daily Transport",
+                question: "Do you drive a vehicle, and what do you think of traffic conditions in your city?",
+                model_answer: "I drive primarily during weekends. Urban congestion during weekday peak rush hours has become increasingly taxing, prompting me to commute via rapid transit whenever feasible."
+            },
+            {
+                topic: "Daily Transport",
+                question: "How can municipal authorities encourage safer and less stressful driving?",
+                model_answer: "City planners should optimize signal synchronization, separate bike lanes, and enforce transparent traffic penalties to diminish driver anxiety and reckless aggression."
+            }
+        ],
+        part_2: {
+            title: "Part 2: Long Turn / Cue Card (3 - 4 minutes)",
+            cue_card_title: "BUYING A BOOK",
+            prompt: "Describe an English language writing or educational book that you purchased or were recommended to help with your academic studies.",
+            cues: [
+                "the title and level of the book",
+                "who wrote it and what topics it covers",
+                "where and how you purchased it",
+                "and explain how this book has assisted your academic progress."
+            ],
+            model_answer: "I would like to describe a textbook titled 'Writing Academic English', authored by Alice Oshima and Ann Hogue, which was recommended by my university English lecturer.\n\nThe volume is specifically tailored for upper-intermediate to advanced English language learners preparing for tertiary academic coursework. It delivers comprehensive guidance on essay structuring, logical paragraph cohesion, synthesis of source materials, and academic register.\n\nI purchased the physical paperback copy at a specialist university bookshop located near the central library. The cost was roughly Â£20, which represented exceptional value considering the depth of practical practice tasks and annotated model answers included in the appendices.\n\nThis text proved transformative for my writing competence. Prior to working through its exercises, my essays frequently lacked formal transition signals and clear topic sentences. By systematically studying its units on argumentative frameworks and sentence variety, I gained the ability to craft compelling analytical essays that meet rigorous university academic criteria."
+        },
+        part_3: [
+            {
+                theme: "Literacy & Digital Media",
+                question: "Do you believe digital multimedia and social media are causing a decline in reading attention spans?",
+                model_answer: "Digital platforms unquestionably incentivize fragmented, rapid scanning through algorithmic feeds. However, digital tools also democratize access to vast global open-access libraries; the critical educational objective is cultivating disciplined 'deep reading' routines alongside digital agility."
+            },
+            {
+                theme: "Gender Roles & Modern Workforce",
+                question: "How have evolving workplace dynamics influenced traditional family structures over recent decades?",
+                model_answer: "The normalization of dual-career households has dissolved rigid patriarchal divisions of labor. Modern domestic partnerships increasingly prioritize equitable chore sharing and collaborative parenting, fostering more democratic, resilient family units."
+            },
+            {
+                theme: "Ethics in Genetic Science",
+                question: "What ethical responsibilities do genetic researchers bear when developing advanced genome technologies?",
+                model_answer: "Scientists and international policymakers must enforce stringent ethical boundaries to prevent genetic profiling from enabling insurance discrimination or reproductive eugenics. Therapeutic gene editing targeting fatal hereditary conditions must be prioritized over cosmetic enhancement."
+            }
+        ]
+    }
+};
+
+
+
+// =========================================================================
+// MASTER IELTS PROFILE DATA (CAMBRIDGE 1 & 2 - 4 TESTS PER VOLUME)
 // =========================================================================
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
     age: "Cambridge 1 & 2",
-    curriculum: "Cambridge IELTS Official Practice Tests (Listening | Reading | Writing | Speaking)",
-    units: {
-        "cam_1_test_1": { title: "Cambridge IELTS 1 - Test 1" },
-        "cam_1_test_2": { title: "Cambridge IELTS 1 - Test 2" },
-        "cam_1_test_3": { title: "Cambridge IELTS 1 - Test 3" },
-        "cam_1_test_4": { title: "Cambridge IELTS 1 - Test 4" },
-        "cam_2_test_1": { title: "Cambridge IELTS 2 - Test 1" },
-        "cam_2_test_2": { title: "Cambridge IELTS 2 - Test 2" }
+    curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
+    
+    // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
+    books: {
+        "cam_1": {
+            id: "cam_1",
+            title: "Cambridge IELTS 1",
+            badge: "Cam 1",
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"]
+        },
+        "cam_2": {
+            id: "cam_2",
+            title: "Cambridge IELTS 2",
+            badge: "Cam 2",
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"]
+        }
     },
+
+    // Units map for direct engine compatibility
+    units: {
+        "cam_1_test_1": { title: "Test 1", full_title: "Cambridge IELTS 1 - Test 1", book_id: "cam_1", book_title: "Cambridge IELTS 1" },
+        "cam_1_test_2": { title: "Test 2", full_title: "Cambridge IELTS 1 - Test 2", book_id: "cam_1", book_title: "Cambridge IELTS 1" },
+        "cam_1_test_3": { title: "Test 3", full_title: "Cambridge IELTS 1 - Test 3", book_id: "cam_1", book_title: "Cambridge IELTS 1" },
+        "cam_1_test_4": { title: "Test 4", full_title: "Cambridge IELTS 1 - Test 4", book_id: "cam_1", book_title: "Cambridge IELTS 1" },
+        "cam_2_test_1": { title: "Test 1", full_title: "Cambridge IELTS 2 - Test 1", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
+        "cam_2_test_2": { title: "Test 2", full_title: "Cambridge IELTS 2 - Test 2", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
+        "cam_2_test_3": { title: "Test 3", full_title: "Cambridge IELTS 2 - Test 3", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
+        "cam_2_test_4": { title: "Test 4", full_title: "Cambridge IELTS 2 - Test 4", book_id: "cam_2", book_title: "Cambridge IELTS 2" }
+    },
+
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
         "cam_1_test_3": cam1Test3,
         "cam_1_test_4": cam1Test4,
         "cam_2_test_1": cam2Test1,
-        "cam_2_test_2": cam2Test2
+        "cam_2_test_2": cam2Test2,
+        "cam_2_test_3": cam2Test3,
+        "cam_2_test_4": cam2Test4
     }
 };
 
@@ -4154,5 +6167,9 @@ if (typeof studentsDB !== "undefined") {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = { ieltsProfileData, cam1Test1, cam1Test2, cam1Test3, cam1Test4, cam2Test1, cam2Test2 };
+    module.exports = {
+        ieltsProfileData,
+        cam1Test1, cam1Test2, cam1Test3, cam1Test4,
+        cam2Test1, cam2Test2, cam2Test3, cam2Test4
+    };
 }

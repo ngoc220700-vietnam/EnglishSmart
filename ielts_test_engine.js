@@ -152,6 +152,11 @@ function switchIeltsTest(testId) {
     if (typeof currentUnitKey !== 'undefined') {
         currentUnitKey = testId;
     }
+    if (testId.startsWith('cam_2_')) {
+        localStorage.setItem('smart_ielts_active_book', 'cam_2');
+    } else if (testId.startsWith('cam_1_')) {
+        localStorage.setItem('smart_ielts_active_book', 'cam_1');
+    }
     if (typeof studentProgress !== 'undefined' && studentProgress['ielts']) {
         studentProgress['ielts'] = { unitKey: testId, index: 0 };
     }
@@ -207,12 +212,26 @@ function renderIeltsTestView() {
 
     const fastSelect = document.getElementById('ielts-fast-test-select');
     if (fastSelect) {
-        if (ieltsProfileData.units) {
-            const uKeys = Object.keys(ieltsProfileData.units);
-            const optKeys = Array.from(fastSelect.options).map(o => o.value);
-            if (optKeys.join(',') !== uKeys.join(',')) {
-                fastSelect.innerHTML = uKeys.map(k => `<option value="${k}">${ieltsProfileData.units[k].title}</option>`).join('');
+        const books = ieltsProfileData.books || {
+            "cam_1": { id: "cam_1", title: "Cambridge IELTS 1", test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"] },
+            "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] }
+        };
+        const optKeys = Array.from(fastSelect.options).map(o => o.value);
+        const allTestKeys = Object.keys(ieltsProfileData.units || {});
+        if (optKeys.join(',') !== allTestKeys.join(',')) {
+            let optHtml = '';
+            for (const bKey in books) {
+                const b = books[bKey];
+                const icon = bKey === 'cam_1' ? '📘' : '📙';
+                optHtml += `<optgroup label="${icon} ${b.title} (4 Tests)">`;
+                const tIds = b.test_ids || [`${bKey}_test_1`, `${bKey}_test_2`, `${bKey}_test_3`, `${bKey}_test_4`];
+                tIds.forEach((tid, idx) => {
+                    const u = (ieltsProfileData.units && ieltsProfileData.units[tid]) || {};
+                    optHtml += `<option value="${tid}">${u.full_title || `${b.title} - Test ${idx + 1}`}</option>`;
+                });
+                optHtml += `</optgroup>`;
             }
+            fastSelect.innerHTML = optHtml;
         }
         if (fastSelect.value !== activeIeltsTestId) {
             fastSelect.value = activeIeltsTestId;
