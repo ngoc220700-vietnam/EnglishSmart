@@ -6564,34 +6564,1685 @@ In conclusion, while global sporting contests possess commendable potential to p
 
 
 
+
+// =========================================================================
+// CAMBRIDGE IELTS 3 - ACADEMIC PRACTICE TEST 2
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 3)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam3Test2 = {
+    id: "cam_3_test_2",
+    book: "Cambridge IELTS 3",
+    title: "Cambridge IELTS 3 - Test 2",
+    test_title: "Academic Practice Test 2",
+    badge: "Cam 3 - Test 2",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 2 (Cambridge IELTS 3)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: School Orientation & Map (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: School Orientation & Map (Questions 1 - 10)",
+                instruction: "Questions 1-5: Complete the table below. Write NO MORE THAN THREE WORDS OR A NUMBER for each answer. Questions 6-10: Label the rooms on the map below. Choose your answers from the box and write them next to questions 6-10.",
+                instructions: "Questions 1-5: Complete the table below. Write NO MORE THAN THREE WORDS OR A NUMBER for each answer. Questions 6-10: Label the rooms on the map below.",
+                transcript: `ADMIN: Sorry to keep you waiting. Well, firstly, let me give you this booklet. It tells you a bit more about the school, the courses and the social activities we offer. Now, on the first page, there's an outline of this morning's activities. There, you see? The programme starts at 10 o'clock. Try not to be late as it's a very full day. At 10 o'clock, all the new students will gather in the Main Hall to meet the Principal and the rest of the staff. [Q1: Main Hall] In fact, you spend most of the morning in the Main Hall.
+STUDENT: Where's that?
+ADMIN: I'll show you in a minute. Just let me quickly run through this morning's events first and then I'll explain how to get there.
+STUDENT: Yes, OK.
+ADMIN: Right. Where were we? Yes, so, the Principal's talk will last about fifteen minutes and then the Director of Studies will talk to you for half an hour about the courses and the different requirements for each. [Q2: Director of Studies] After that, the Student Adviser will tell you about the various services and activities we offer to students. [Q3: Student Adviser] Any questions?
+STUDENT: So, all of this is in the Main Hall?
+ADMIN: That's right. And then you'll go next door to Classroom 5 at 11 o'clock. [Q4: 11 o'clock]
+STUDENT: What happens there?
+ADMIN: You'll have a test.
+STUDENT: Test? I don't like the sound of that. What sort of test?
+ADMIN: Oh, it's nothing to worry about. It's just a placement test to help us find your level of English so that we can put you in the right class. [Q5: placement test] It won't last long.
+STUDENT: But how do I find the Main Hall?
+ADMIN: Right; if you look on the back of the booklet I gave you, you'll see a map of the school. Let me show you. Look: you came in through the Main Entrance, here, and now we're here at Reception. Now, to get to the Main Hall, you walk on to the end of this corridor in front of you and then you turn left. Walk along past the Language Laboratory and then past the Library, which is next to the Language Lab, on the same side, [Q6: Library] and facing you is the Main Hall, at the end of the corridor. You can't miss it. [Q7: Main Hall]
+STUDENT: So it's next to the Library, in fact.
+ADMIN: Yes, that's right.
+STUDENT: I should be able to find that. And do you have a Computer Laboratory?
+ADMIN: Yes, we do.
+STUDENT: Could you tell me where that is?
+ADMIN: Certainly, yes. You go down to the end of this corridor again but, this time, don't turn left; turn right, away from the Main Hall. The Computer Lab is immediately on your right. [Q8: Computer Laboratory] OK?
+STUDENT: And where's the staffroom, in case I need to find a teacher at some stage?
+ADMIN: The staff room is near the main entrance, on the left over there, just opposite the Reception desk. [Q9: Staff Room] In a day or two, I'm sure you'll find your way around very easily.
+STUDENT: Oh, one last thing. Is there a student common room?
+ADMIN: Oh yes, I forgot to mention that. It's this area here, very close to where we are now, to the right of the Reception desk as you come in the main entrance. There's tea and coffee facilities there. [Q10: Student Common Room]
+STUDENT: Great. Thank you very much.
+ADMIN: You're welcome.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "10.00: Place: [1] ......... | Event: Meet the Principal and staff", prefix: "10.00: Place:", suffix: " | Event: Meet the Principal and staff", correct_answer: "(the) Main Hall", acceptable_answers: ["Main Hall", "the Main Hall", "main hall", "the main hall"], answer_display: "(the) Main Hall (NOT Hall)", explanation: "Transcript: At 10 o'clock, all the new students will gather in the Main Hall to meet the Principal and the rest of the staff." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "10.15: Place: (Main Hall) | Event: Talk by [2] .........", prefix: "10.15: Event: Talk by", suffix: "", correct_answer: "(the) Director (of) (Studies) // DOS", acceptable_answers: ["Director of Studies", "the Director of Studies", "DOS", "Director Studies"], answer_display: "(the) Director (of) (Studies) // DOS", explanation: "Transcript: and then the Director of Studies will talk to you for half an hour about the courses." },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "10.45: Place: (Main Hall) | Event: Talk by [3] .........", prefix: "10.45: Event: Talk by", suffix: "", correct_answer: "(the) Student(s) Advisor/Adviser", acceptable_answers: ["Student Adviser", "Student Advisor", "the Student Adviser", "the Student Advisor", "Students Adviser", "Students Advisor"], answer_display: "(the) Student(s) Advisor/Adviser", explanation: "Transcript: After that, the Student Adviser will tell you about the various services and activities." },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "Time: [4] ......... | Place: Classroom 5 | Event: Placement test", prefix: "Time:", suffix: " | Place: Classroom 5", correct_answer: "eleven/11 o'clock // 11.00 (am)", acceptable_answers: ["11 o'clock", "eleven o'clock", "11.00", "11:00", "11", "11 am", "11.00 am", "11:00 am"], answer_display: "eleven/11 o'clock // 11.00 (am)", explanation: "Transcript: And then you'll go next door to Classroom 5 at 11 o'clock." },
+                    { id: 5, question_number: 5, type: "fill_blank", question: "11.00: Place: Classroom 5 | Event: [5] ......... -test", prefix: "Event:", suffix: "-test", correct_answer: "placement/English (test)", acceptable_answers: ["placement", "English", "placement test", "English test"], answer_display: "placement/English (test)", explanation: "Transcript: It's just a placement test to help us find your level of English." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "Map Room 6: [6] ......... (Choose from CL / DO / L / MH / SR / SCR / SAR)", prefix: "Room 6:", suffix: "", correct_answer: "L // Library", acceptable_answers: ["L", "Library", "the Library"], answer_display: "L // Library", explanation: "Transcript: Walk along past the Language Laboratory and then past the Library, which is next to the Language Lab, on the same side." },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "Map Room 7: [7] ......... (Choose from CL / DO / L / MH / SR / SCR / SAR)", prefix: "Room 7:", suffix: "", correct_answer: "MH // Main Hall", acceptable_answers: ["MH", "Main Hall", "the Main Hall"], answer_display: "MH // Main Hall", explanation: "Transcript: and facing you is the Main Hall, at the end of the corridor. You can't miss it." },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Map Room 8: [8] ......... (Choose from CL / DO / L / MH / SR / SCR / SAR)", prefix: "Room 8:", suffix: "", correct_answer: "CL // Computer Laboratory", acceptable_answers: ["CL", "Computer Laboratory", "Computer Lab", "the Computer Laboratory"], answer_display: "CL // Computer Laboratory", explanation: "Transcript: turn right, away from the Main Hall. The Computer Lab is immediately on your right." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "Map Room 9: [9] ......... (Choose from CL / DO / L / MH / SR / SCR / SAR)", prefix: "Room 9:", suffix: "", correct_answer: "SR // Staff Room", acceptable_answers: ["SR", "Staff Room", "the Staff Room"], answer_display: "SR // Staff Room", explanation: "Transcript: The staff room is near the main entrance, on the left over there, just opposite the Reception desk." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "Map Room 10: [10] ......... (Choose from CL / DO / L / MH / SR / SCR / SAR)", prefix: "Room 10:", suffix: "", correct_answer: "SCR // Student Common Room", acceptable_answers: ["SCR", "Student Common Room", "the Student Common Room"], answer_display: "SCR // Student Common Room", explanation: "Transcript: It's this area here, very close to where we are now, to the right of the Reception desk as you come in the main entrance." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: University Student Helpline (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: University Student Helpline (Questions 11 - 20)",
+                instruction: "Questions 11-15: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 16-20: Complete the notes below. Write NUMBERS OR NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Questions 11-15: Complete the table below. Questions 16-20: Complete the notes below.",
+                transcript: `SPEAKER: Hello, everybody and welcome to this informal meeting about the University Helpline. The Helpline was set up ten years ago by the Students Union and it aims to provide new students to the university with a service that they can use if they need information about practical areas of student life that they are unfamiliar with.
+Let me give you some examples of the type of help we can offer. We can provide information on financial matters; for example, you may feel that your grant is insufficient to see you through college life or some queries regarding the fees you are paying if you are an overseas student. [Q11: (overseas) (student(s')) (tuition) fees] In both cases, the Helpline would be able to go through things with you and see what the outcome might be.
+Another area we can help with is what we generally term the 'domestic' area; [Q12: domestic (area)] things such as childcare and the availability of nursery provision, for example, come under this.
+Then there's 'academic' issues that may arise while you are in the early stages of your course that you may not know what to do about. You may wish to know more about essay deadlines, for example, [Q13: essay(s') deadlines] or how to use the library - there are all kinds of questions you find yourself asking and not knowing where to get quick answers from. The Helpline would be able to provide these.
+The last example I've given here is simply termed 'social' - and yes, there is a lot of social life here! [Q14: social (life)] But you may have a particular interest you wish to pursue or you may wish to participate in outings or trips [Q15: outings // trips] if you don't know many people at the moment.
+Let me give you some details so that you know where to go and who to see if you want to pay us a visit. Generally you will see our Helpline officer Jackie Kouachi, that's K-O-U-A-C-H-I. [Q16: KOUACHI] Jackie is a full-time employee of the Student Union and she works in the Student Welfare Office - that's the office that deals with all matters related to student welfare and it's situated at 13 Marshall Road. The telephone number for the Helpline is 3269940. [Q17: 3269940]
+We are open from 9.30 am to 6.00 pm on weekdays, and on Saturdays we are open from 10 am to 4 pm. [Q18: 10(am) - 4(pm)]
+You can simply ring or visit the office to make an appointment. [Q19: appointment(s)] N.B. At peak times there may be a waiting list, [Q20: waiting list] so it's always best to contact us in advance.`,
+                questions: [
+                    { id: 11, question_number: 11, type: "fill_blank", question: "Type of help: FINANCIAL | Examples: grants, [11] .........", prefix: "FINANCIAL: grants,", suffix: "", correct_answer: "(overseas) (student(s')) (tuition) fees", acceptable_answers: ["fees", "tuition fees", "overseas student fees", "student fees", "overseas students fees", "overseas tuition fees"], answer_display: "(overseas) (student(s')) (tuition) fees", explanation: "Transcript: queries regarding the fees you are paying if you are an overseas student." },
+                    { id: 12, question_number: 12, type: "fill_blank", question: "Type of help: [12] ......... | Examples: childcare, nurseries", prefix: "Type of help:", suffix: " | Examples: childcare, nurseries", correct_answer: "(the) domestic (area)", acceptable_answers: ["domestic", "the domestic", "domestic area", "the domestic area"], answer_display: "(the) domestic (area)", explanation: "Transcript: Another area we can help with is what we generally term the 'domestic' area; things such as childcare and nursery provision." },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "Type of help: ACADEMIC | Examples: using the library, [13] .........", prefix: "ACADEMIC: using the library,", suffix: "", correct_answer: "(essay(s')) deadlines", acceptable_answers: ["deadlines", "essay deadlines", "essays deadlines", "essay's deadlines", "essays' deadlines"], answer_display: "(essay(s')) deadlines (NOT essay(s))", explanation: "Transcript: You may wish to know more about essay deadlines, for example." },
+                    { id: 14, question_number: 14, type: "fill_blank", question: "Type of help: [14] ......... | Examples: individual interests, outings / trips", prefix: "Type of help:", suffix: " | Examples: individual interests", correct_answer: "social (life)", acceptable_answers: ["social", "social life"], answer_display: "social (life)", explanation: "Transcript: The last example I've given here is simply termed 'social' - and yes, there is a lot of social life here!" },
+                    { id: 15, question_number: 15, type: "fill_blank", question: "Type of help: SOCIAL | Examples: individual interests, [15] .........", prefix: "individual interests,", suffix: "", correct_answer: "outings // trips", acceptable_answers: ["outings", "trips", "outings or trips", "outings and trips"], answer_display: "outings // trips", explanation: "Transcript: participate in outings or trips if you don't know many people at the moment." },
+                    { id: 16, question_number: 16, type: "fill_blank", question: "Helpline Officer: Jackie [16] .........", prefix: "Jackie", suffix: "", correct_answer: "KOUACHI", acceptable_answers: ["Kouachi", "KOUACHI", "kouachi"], answer_display: "KOUACHI", explanation: "Transcript: Jackie Kouachi, that's K-O-U-A-C-H-I." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Telephone number: [17] .........", prefix: "Telephone number:", suffix: "", correct_answer: "3269940", acceptable_answers: ["3269940", "326 9940"], answer_display: "3269940", explanation: "Transcript: The telephone number for the Helpline is 3269940." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "Opening hours (Saturdays): [18] .........", prefix: "Saturdays:", suffix: "", correct_answer: "ten/10(am) -/to 4/four(pm)", acceptable_answers: ["10am to 4pm", "10 to 4", "10 am to 4 pm", "10am-4pm", "10 - 4", "10:00 to 16:00", "ten to four"], answer_display: "ten/10(am) -/to 4/four(pm)", explanation: "Transcript: on Saturdays we are open from 10 am to 4 pm." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "Ring or visit office for [19] .........", prefix: "Ring or visit office for", suffix: "", correct_answer: "(an) appointment(s)", acceptable_answers: ["appointment", "appointments", "an appointment"], answer_display: "(an) appointment(s)", explanation: "Transcript: You can simply ring or visit the office to make an appointment." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "N.B. At peak times there may be a [20] .........", prefix: "At peak times there may be a", suffix: "", correct_answer: "waiting list", acceptable_answers: ["waiting list", "waiting-list"], answer_display: "waiting list", explanation: "Transcript: N.B. At peak times there may be a waiting list." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Matching the Person to the Job (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Matching the Person to the Job (Questions 21 - 30)",
+                instruction: "Questions 21-24: Choose the correct letter A, B, or C. Questions 25-29: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Question 30: Choose the correct letter A, B, or C.",
+                instructions: "Questions 21-24: Choose the correct letter A, B, or C. Questions 25-29: Complete the notes. Question 30: Choose A, B, or C.",
+                transcript: `TUTOR: Well, you've both had some experience in interviewing applicants and asking 'right' questions. So I think you should be ready for today's tutorial on 'matching the person to the job'. We're going to talk today about the importance of choosing that all round 'right' person - staff selection, in other words. [Q21: B]
+MURIEL: Right. So we have to put ourselves into the role of the manager or supervisor?
+TUTOR: Yes. And then we're going to imagine how different applicants would fit into the team or group they have to work with. The point is, you can select someone - even a friend - who has all the right qualifications, degrees, certificates, whatever. But if they start work and you realise that they just don't get along with everybody else, that... say, they've got sharply contrasting views on how something will work - someone who disagrees with the rest of the group - well, with the best will in the world, you may be backing a loser. [Q22: C]
+DAVE: Wouldn't it be just a question of company training, though?
+TUTOR: Not always. Particularly in a team situation. People have to have faith in each other's ability to carry out the task their boss has set them. They have to trust colleagues' ability to do their part of the job, and you can't necessarily train people for this. [Q23: A]
+MURIEL: But it's like trying to find out what someone's personality is like in a job interview. I mean you just can't do that.
+TUTOR: Well, in most interviews you usually ask candidates questions about their hobbies and what they like doing in their spare time, so employers are already doing this as part of job interviews. [Q24: C] But also, more and more employers around the world are making use of what are called 'personality questionnaires' to help them select new staff.
+MURIEL: What's it called?
+TUTOR: A Personality Questionnaire. They have to be filled out by the candidates some time during the selection procedure, [Q25: selection (procedure)] often just before an interview. The idea is actually quite old. Apparently they were used by the ancient Chinese [Q26: ancient Chinese] for picking out clerks and civil servants, and then later they were used by the military [Q27: military // army] to put people in appropriate areas of work. They've gained a lot of ground since then and there are about 80,000 different tests available now and almost two thirds of large employers use them. [Q28: (almost) two thirds // 2/3]
+DAVE: Which makes you think that there must be something in them.
+TUTOR: That's right. They ask the sort of questions that you might expect, like do you like working under pressure or are you good at keeping deadlines. These tests are compiled by experts, [Q29: experts] and they believe that the answers can provide a few simple indicators as to roughly the type of person that you are...
+In this tutorial, our aim is to describe one selection technique in detail. [Q30: A]`,
+                questions: [
+                    { id: 21, question_number: 21, type: "multiple_choice", question: "At the start of the tutorial, the tutor emphasises the importance of", options: ["A. interviews.", "B. staff selection.", "C. question techniques."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // staff selection", explanation: "Transcript: We're going to talk today about the importance of choosing that all round 'right' person - staff selection, in other words." },
+                    { id: 22, question_number: 22, type: "multiple_choice", question: "An example of a person who doesn't 'fit in' is someone who", options: ["A. is over-qualified for the job.", "B. lacks experience of the tasks set.", "C. disagrees with the rest of the group."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // disagrees with the rest of the group", explanation: "Transcript: say, they've got sharply contrasting views on how something will work - someone who disagrees with the rest of the group." },
+                    { id: 23, question_number: 23, type: "multiple_choice", question: "An important part of teamwork is having trust in your", options: ["A. colleagues' ability.", "B. employer's directions.", "C. company training."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // colleagues' ability", explanation: "Transcript: People have to have faith in each other's ability to carry out the task... trust colleagues' ability." },
+                    { id: 24, question_number: 24, type: "multiple_choice", question: "The tutor says that finding out personal information is", options: ["A. a skill that needs practice.", "B. avoided by many interviewers.", "C. already a part of job interviews."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // already a part of job interviews", explanation: "Transcript: in most interviews you usually ask candidates questions about their hobbies... employers are already doing this as part of job interviews." },
+                    { id: 25, question_number: 25, type: "fill_blank", question: "Personality Questionnaires: completed during [25] .........", prefix: "completed during", suffix: "", correct_answer: "selection (procedure)", acceptable_answers: ["selection procedure", "selection", "the selection procedure"], answer_display: "selection (procedure)", explanation: "Transcript: They have to be filled out by the candidates some time during the selection procedure." },
+                    { id: 26, question_number: 26, type: "fill_blank", question: "used in the past by the [26] .........", prefix: "used in the past by the", suffix: "", correct_answer: "(the) (ancient) Chinese", acceptable_answers: ["ancient Chinese", "Chinese", "the ancient Chinese", "the Chinese"], answer_display: "(the) (ancient) Chinese", explanation: "Transcript: Apparently they were used by the ancient Chinese for picking out clerks and civil servants." },
+                    { id: 27, question_number: 27, type: "fill_blank", question: "and the [27] .........", prefix: "and the", suffix: "", correct_answer: "(the) military // army", acceptable_answers: ["military", "army", "the military", "the army"], answer_display: "(the) military // army", explanation: "Transcript: and then later they were used by the military to put people in appropriate areas of work." },
+                    { id: 28, question_number: 28, type: "fill_blank", question: "nowadays used by [28] ......... of large employers", prefix: "nowadays used by", suffix: " of large employers", correct_answer: "(almost) two thirds // 2/3", acceptable_answers: ["two thirds", "almost two thirds", "2/3", "almost 2/3", "two-thirds", "almost two-thirds"], answer_display: "(almost) two thirds // 2/3", explanation: "Transcript: almost two thirds of large employers use them." },
+                    { id: 29, question_number: 29, type: "fill_blank", question: "written by [29] ......... who say candidates tend to be truthful", prefix: "written by", suffix: " who say candidates tend to be truthful", correct_answer: "experts", acceptable_answers: ["experts"], answer_display: "experts (NOT expert)", explanation: "Transcript: These tests are compiled by experts and they believe that the answers can provide a few simple indicators." },
+                    { id: 30, question_number: 30, type: "multiple_choice", question: "What is the tutor trying to do in the tutorial?", options: ["A. describe one selection technique", "B. criticise traditional approaches to interviews", "C. illustrate how she uses personality questionnaires"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // describe one selection technique", explanation: "Transcript: In this tutorial, our aim is to describe one selection technique in detail." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: Hat-Making Project (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Hat-Making Project (Questions 31 - 40)",
+                instruction: "Questions 31-32: Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER. Questions 33-34: Label the diagrams. Write NO MORE THAN THREE WORDS. Questions 35-37: Complete the notes. Write NO MORE THAN THREE WORDS. Questions 38-40: Indicate who made the hats below. Write the appropriate letter A-E next to each name.",
+                instructions: "Questions 31-32: Complete the notes. Questions 33-34: Label diagrams. Questions 35-37: Complete notes. Questions 38-40: Match hats A-E to names.",
+                transcript: `TUTOR: Right. Are we all here? OK. As you know, today Vivien is going to do a presentation on the hat-making project she did with her class during her last teaching practice. So, over to you, Vivien.
+VIVIEN: Thanks. Um ... Mr Yardley has asked me to describe to you the project I did as a student teacher at a secondary school in London. [Q31: secondary] I was at this school for six weeks and I taught a variety of subjects to a class of fourteen-year-old pupils. [Q32: 14 // fourteen (years old)] The project I chose to do was a hat-making project and I think this project could easily be adapted to suit any age.
+So, to explain the project... After we'd done the research, we went back to the classroom to make two basic hat shapes using rolls of old wallpaper. We each made, first of all, a conical hat by er if I show you now ... cutting out a circle and then making one cut up to the centre and then er overlapping the cut [Q33: overlap // overlapping] like this - this gives a conical hat that sits on your head.
+The other hat we made was a little more complicated er first of all we cut out a circle again ... like this ... then you need a long piece with flaps on it - I've already made that bit which I have here - you bend the flaps over and stick them ... with glue or prittstick to the underside of the circle ... [Q34: underside // underneath // bottom] like this. Again, I've prepared this so that I don't get glue everywhere. And there you have a pillbox hat.
+Now variations and combinations of these two hat shapes formed the basis of the pupils' final designs. The next stage of the project was the design phase and this involved first of all using their pages of research to draw a design of their hat on paper. [Q35: on paper // in two dimensions] That's the easy part. They then had to translate their two-dimensional design into a form to fit their head. I encouraged them to make a small-scale, three-dimensional hat first [Q36: 3/three-dimensional // 3-D] so that they could experiment with how to achieve the form they required and I imposed certain constraints on them to keep things simple. For example, they had to use paper not card. Paper is more pliable and easier to handle. They also had to limit their colours to white, grey or brown [Q37: white, grey/gray, brown] shades of paper which reflected the colours of the buildings they were using as a model for their hats and they had to make sure their glue didn't show!
+Well, it was very enjoyable and just to give you an idea of what they produced, I've brought along three hats to show you.
+This one here is based on a circular stairway in an old building in London. It uses three pillbox hats one on top of the other. This was designed by Theresa. [Q38: C]
+Here's another one that has a simple strip going round the base of the hat but has then gone on to add strips of paper that come out from the base and that meet at the top of the hat - rather like a crown - making a fairly tall hat. This was made by Muriel. [Q39: D]
+And lastly there's a combination of the pillbox or single strip around the base and then the conical hat shape on top to form a castle turret. This was made by Fabrice. [Q40: A]
+TUTOR: Thank you, Vivien. That was most interesting.`,
+                questions: [
+                    { id: 31, question_number: 31, type: "fill_blank", question: "Type of school: [31] .........", prefix: "Type of school:", suffix: "", correct_answer: "secondary", acceptable_answers: ["secondary", "a secondary school", "secondary school"], answer_display: "secondary", explanation: "Transcript: at a secondary school in London." },
+                    { id: 32, question_number: 32, type: "fill_blank", question: "Age of pupils: [32] .........", prefix: "Age of pupils:", suffix: "", correct_answer: "14 // fourteen (year olds/years old)", acceptable_answers: ["14", "fourteen", "14 years old", "fourteen years old", "14-year-olds", "14 year olds"], answer_display: "14 // fourteen (year olds/years old)", explanation: "Transcript: a class of fourteen-year-old pupils." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "First Hat (Conical hat): cut into centre and [33] ......... the cut", prefix: "cut into centre and", suffix: " the cut", correct_answer: "overlap // overlapping", acceptable_answers: ["overlap", "overlapping", "over-lap", "over-lapping", "overlap the cut"], answer_display: "overlap // overlapping (ACCEPT over(-)lap // over(-)lapping)", explanation: "Transcript: making one cut up to the centre and then overlapping the cut like this." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "Second Hat (Pillbox): stick flaps to [34] ......... of circle", prefix: "stick flaps to", suffix: " of circle", correct_answer: "underside // underneath // bottom", acceptable_answers: ["underside", "the underside", "underneath", "the underneath", "bottom", "the bottom"], answer_display: "underside // underneath // bottom (NOT side)", explanation: "Transcript: stick them ... with glue or prittstick to the underside of the circle." },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "Design Phase Stage A: Refer to research and design a hat [35] .........", prefix: "design a hat", suffix: "", correct_answer: "on paper // in two dimensions", acceptable_answers: ["on paper", "in two dimensions", "in 2 dimensions", "2 dimensions"], answer_display: "on paper // in two dimensions", explanation: "Transcript: using their pages of research to draw a design of their hat on paper. That's the easy part. They then had to translate their two-dimensional design." },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "Stage B: Make a small-scale [36] ......... hat", prefix: "Make a small-scale", suffix: " hat", correct_answer: "3/three(-)dimensional // 3(-)D", acceptable_answers: ["three-dimensional", "three dimensional", "3-dimensional", "3 dimensional", "3-D", "3D"], answer_display: "3/three(-)dimensional // 3(-)D", explanation: "Transcript: I encouraged them to make a small-scale, three-dimensional hat first." },
+                    { id: 37, question_number: 37, type: "fill_blank", question: "Constraints: colours: [37] ......... paper", prefix: "colours:", suffix: " paper", correct_answer: "white, grey/gray, brown", acceptable_answers: ["white, grey, brown", "white, gray, brown", "white grey brown", "white gray and brown", "white, grey and brown"], answer_display: "MUST STATE ALL THREE: white, grey/gray, brown", explanation: "Transcript: limit their colours to white, grey or brown shades of paper." },
+                    { id: 38, question_number: 38, type: "matching", question: "Indicate who made the hats: Theresa [38] ......... (Choose A - E)", prefix: "Theresa:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Transcript: This one here is based on a circular stairway in an old building in London. It uses three pillbox hats one on top of the other. This was designed by Theresa." },
+                    { id: 39, question_number: 39, type: "matching", question: "Indicate who made the hats: Muriel [39] ......... (Choose A - E)", prefix: "Muriel:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D", explanation: "Transcript: Here's another one that has a simple strip going round the base of the hat but has then gone on to add strips of paper that come out from the base and that meet at the top of the hat - rather like a crown - making a fairly tall hat. This was made by Muriel." },
+                    { id: 40, question_number: 40, type: "matching", question: "Indicate who made the hats: Fabrice [40] ......... (Choose A - E)", prefix: "Fabrice:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transcript: And lastly there's a combination of the pillbox or single strip around the base and then the conical hat shape on top to form a castle turret. This was made by Fabrice." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. ACADEMIC READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 2 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: A Remarkable Beetle (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: A Remarkable Beetle",
+                text: `Some of the most remarkable beetles are the dung beetles, which spend almost their whole lives eating and breeding in dung. More than 4,000 species of these remarkable creatures have evolved and adapted to the world's different climates and the dung of its many animals. Australia's native dung beetles are scrub and woodland dwellers, specialising in coarse marsupial droppings and avoiding the soft cattle dung in which bush flies and buffalo flies breed.
+
+In the early 1960s George Bornemissza, then a scientist at the Australian Government's premier research organisation, the Commonwealth Scientific and Industrial Research Organisation (CSIRO), suggested that dung beetles should be introduced to Australia to control dung-breeding flies. Between 1968 and 1982, the CSIRO imported insects from about 50 different species of dung beetle, from Asia, Europe and Africa, aiming to match them to different climatic zones in Australia. Of the 26 species that are known to have become successfully integrated into the local environment, only one, an African species released in northern Australia, has reached its natural boundary.
+
+Introducing dung beetles into a pasture is a simple process: approximately 1,500 beetles are released, a handful at a time, into fresh cow pats in the cow pasture. The beetles immediately disappear beneath the pats digging and tunnelling and, if they successfully adapt to their new environment, soon become a permanent, self-sustaining part of the local ecology. In time they multiply and within three or four years the benefits to the pasture are obvious.
+
+Dung beetles work from the inside of the pat so they are sheltered from predators such as birds and foxes. Most species burrow into the soil and bury dung in tunnels directly underneath the pats, which are hollowed out from within. Some large species originating from France excavate tunnels to a depth of approximately 30 cm below the dung pat. These beetles make sausage-shaped brood chambers along the tunnels. The shallowest tunnels belong to a much smaller Spanish species that buries dung in chambers that hang like fruit from the branches of a pear tree. South African beetles dig narrow tunnels of approximately 20 cm below the surface of the pat. Some surface-dwelling beetles, including a South African species, cut perfectly-shaped balls from the pat, which are rolled away and attached to the bases of plants.
+
+For maximum dung burial in spring, summer and autumn, farmers require a variety of species with overlapping periods of activity. In the cooler environments of the state of Victoria, the large French species (2.5 cms long) is matched with smaller (half this size), temperate-climate Spanish species. The former are slow to recover from the winter cold and produce only one or two generations of offspring from late spring until autumn. The latter, which multiply rapidly in early spring, produce two to five generations annually. The South African ball-rolling species, being a subtropical beetle, prefers the climate of northern and coastal New South Wales where it commonly works with the South African tunnelling species. In warmer climates, many species are active for longer periods of the year.
+
+Dung beetles were initially introduced in the late 1960s with a view to controlling buffalo flies by removing the dung within a day or two and so preventing flies from breeding. However, other benefits have become evident. Once the beetle larvae have finished pupation, the residue is a first-rate source of fertiliser. The tunnels abandoned by the beetles provide excellent aeration and water channels for root systems. In addition, when the new generation of beetles has left the nest the abandoned burrows are an attractive habitat for soil-enriching earthworms. The digested dung in these burrows is an excellent food supply for the earthworms, which decompose it further to provide essential soil nutrients. If it were not for the dung beetle, chemical fertiliser and dung would be washed by rain into streams and rivers before it could be absorbed into the hard earth, polluting water courses and causing blooms of blue-green algae. Without the beetles to dispose of the dung, cow pats would litter pastures making grass inedible to cattle and depriving the soil of sunlight. Australia's 30 million cattle each produce 10-12 cow pats a day. This amounts to 1.7 billion tonnes a year, enough to smother about 110,000 sq km of pasture, half the area of Victoria.
+
+Dung beetles have become an integral part of the successful management of dairy farms in Australia over the past few decades. A number of species are available from the CSIRO or through a small number of private breeders, most of whom were entomologists with the CSIRO's dung beetle unit who have taken their specialised knowledge of the insect and opened small businesses in direct competition with their former employer.
+
+Glossary:
+1. dung: the droppings or excreta of animals
+2. cow pats: droppings of cows`,
+                questions: [
+                    { id: 1, question_number: 1, type: "true_false_not_given", question: "Bush flies are easier to control than buffalo flies.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "The passage mentions both bush flies and buffalo flies, but does not compare how easy they are to control." },
+                    { id: 2, question_number: 2, type: "true_false_not_given", question: "Four thousand species of dung beetle were initially brought to Australia by the CSIRO.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage states CSIRO imported insects from about 50 different species (4,000 is the worldwide total)." },
+                    { id: 3, question_number: 3, type: "true_false_not_given", question: "Dung beetles were brought to Australia by the CSIRO over a fourteen-year period.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'Between 1968 and 1982 (14 years), the CSIRO imported insects...'" },
+                    { id: 4, question_number: 4, type: "true_false_not_given", question: "At least twenty-six of the introduced species have become established in Australia.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'Of the 26 species that are known to have become successfully integrated into the local environment...'" },
+                    { id: 5, question_number: 5, type: "true_false_not_given", question: "The dung beetles cause an immediate improvement to the quality of a cow pasture.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage: 'In time they multiply and within three or four years the benefits to the pasture are obvious' (not immediate)." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "Tunnel depth 20 cm: Dung Beetle Type: [6] .........", prefix: "20 cm depth:", suffix: "", correct_answer: "South African", acceptable_answers: ["South African", "South African species"], answer_display: "South African", explanation: "Passage: 'South African beetles dig narrow tunnels of approximately 20 cm below the surface of the pat.'" },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "Tunnel depth 30 cm with sausage-shaped chambers: Dung Beetle Type: [7] .........", prefix: "30 cm depth:", suffix: "", correct_answer: "French", acceptable_answers: ["French", "French species"], answer_display: "French", explanation: "Passage: 'Some large species originating from France excavate tunnels to a depth of approximately 30 cm... make sausage-shaped brood chambers.'" },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Shallowest tunnels with chambers hanging like fruit: Dung Beetle Type: [8] .........", prefix: "Shallowest tunnels:", suffix: "", correct_answer: "Spanish", acceptable_answers: ["Spanish", "Spanish species"], answer_display: "Spanish", explanation: "Passage: 'The shallowest tunnels belong to a much smaller Spanish species that buries dung in chambers that hang like fruit.'" },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "Spanish species: Climate: [9] .........", prefix: "Spanish species climate:", suffix: "", correct_answer: "temperate", acceptable_answers: ["temperate", "temperate-climate", "temperate climate"], answer_display: "temperate", explanation: "Passage: 'smaller (half this size), temperate-climate Spanish species.'" },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "Spanish species: Start of active period: [10] .........", prefix: "Start of active period:", suffix: "", correct_answer: "early spring", acceptable_answers: ["early spring"], answer_display: "early spring (NOT spring)", explanation: "Passage: 'The latter, which multiply rapidly in early spring...'" },
+                    { id: 11, question_number: 11, type: "fill_blank", question: "Spanish species: Number of generations per year: [11] .........", prefix: "Generations per year:", suffix: "", correct_answer: "2-5 // two to five", acceptable_answers: ["2-5", "two to five", "2 to 5", "two-five"], answer_display: "2-5 // two to five", explanation: "Passage: 'produce two to five generations annually.'" },
+                    { id: 12, question_number: 12, type: "fill_blank", question: "South African ball roller: Climate: [12] .........", prefix: "Climate:", suffix: "", correct_answer: "sub-tropical", acceptable_answers: ["subtropical", "sub-tropical"], answer_display: "sub-tropical", explanation: "Passage: 'The South African ball-rolling species, being a subtropical beetle...'" },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "South African ball roller: Preferred climate / complementary species: [13] .........", prefix: "Works with:", suffix: "", correct_answer: "South African tunneling/tunnelling/tunneler/tunneller (species)", acceptable_answers: ["South African tunneling", "South African tunnelling", "South African tunneling species", "South African tunnelling species", "South African tunneler", "South African tunneller"], answer_display: "South African tunneling/tunnelling/tunneler/tunneller (species)", explanation: "Passage: 'where it commonly works with the South African tunnelling species.'" }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 2: Farming and the Environment (Questions 14 - 28)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: Farming and the Environment",
+                text: `Section A
+The role of governments in environmental management is difficult but inescapable. Sometimes, the state tries to manage the resources it owns, and does so badly. Often, however, governments act in an even more harmful way. They actually subsidise the exploitation and consumption of natural resources. A whole range of policies, from farm-price support to protection for coal-mining, do environmental damage and (often) make no economic sense. Scrapping them offers a two-fold bonus: a cleaner environment and a more efficient economy. Growth and environmentalism can actually go hand in hand, if politicians have the courage to confront the vested interest that subsidies create.
+
+Section B
+No activity affects more of the earth's surface than farming. It shapes a third of the planet's land area, not counting Antarctica, and the proportion is rising. World food output per head has risen by 4 per cent between the 1970s and 1980s mainly as a result of increases in yields from land already in cultivation, but also because more land has been brought under the plough. Higher yields have been achieved by increased irrigation, better crop breeding, and a doubling in the use of pesticides and chemical fertilisers in the 1970s and 1980s.
+
+Section C
+All these activities may have damaging environmental impacts. For example, land clearing for agriculture is the largest single cause of deforestation; chemical fertilisers and pesticides may contaminate water supplies; more intensive farming and the abandonment of fallow periods tend to exacerbate soil erosion; and the spread of mono-culture and use of high-yielding varieties of crops have been accompanied by the disappearance of old varieties of food plants which might have provided some insurance against pests or diseases in future. Soil erosion threatens the productivity of land in both rich and poor countries. The United States, where the most careful measurements have been done, discovered in 1982 that about one-fifth of its farmland was losing topsoil at a rate likely to diminish the soil's productivity. The country subsequently embarked upon a program to convert 11 per cent of its cropped land to meadow or forest. Topsoil in India and China is vanishing much faster than in America.
+
+Section D
+Government policies have frequently compounded the environmental damage that farming can cause. In the rich countries, subsidies for growing crops and price supports for farm output drive up the price of land. The annual value of these subsidies is immense: about $250 billion, or more than all World Bank lending in the 1980s. To increase the output of crops per acre, a farmer's easiest option is to use more of the most readily available inputs: fertilisers and pesticides. Fertiliser use doubled in Denmark in the period 1960-1985 and increased in The Netherlands by 150 per cent. The quantity of pesticides applied has risen too; by 69 per cent in 1975-1984 in Denmark, for example, with a rise of 115 per cent in the frequency of application in the three years from 1981.
+
+In the late 1980s and early 1990s some efforts were made to reduce farm subsidies. The most dramatic example was that of New Zealand, which scrapped most farm support in 1984. A study of the environmental effects, conducted in 1993, found that the end of fertiliser subsidies had been followed by a fall in fertiliser use (a fall compounded by the decline in world commodity prices, which cut farm incomes). The removal of subsidies also stopped land-clearing and over-stocking, which in the past had been the principal causes of erosion. Farms began to diversify. The one kind of subsidy whose removal appeared to have been bad for the environment was the subsidy to manage soil erosion.
+
+In less enlightened countries, and in the European Union, the trend has been to reduce rather than eliminate subsidies, and to introduce new payments to encourage farmers to treat their land in environmentally friendlier ways, or to leave it fallow. It may sound strange but such payments need to be higher than the existing incentives for farmers to grow food crops. Farmers, however, dislike being paid to do nothing. In several countries they have become interested in the possibility of using fuel produced from crop residues either as a replacement for petrol (as ethanol) or as fuel for power stations (as biomass). Such fuels produce far less carbon dioxide than coal or oil, and absorb carbon dioxide as they grow. They are therefore less likely to contribute to the greenhouse effect. But they are rarely competitive with fossil fuels unless subsidised - and growing them does no less environmental harm than other crops.
+
+Section E
+In poor countries, governments aggravate other sorts of damage. Subsidies for pesticides and artificial fertilisers encourage farmers to use greater quantities than are needed to get the highest economic crop yield. A study by the International Rice Research Institute of pesticide use by farmers in South East Asia found that, with pest-resistant varieties of rice, even moderate applications of pesticide frequently cost farmers more than they saved. Such waste puts farmers on a chemical treadmill: bugs and weeds become resistant to poisons, so next year's poisons must be more lethal. One cost is to human health. Every year some 10,000 people die from pesticide poisoning, almost all of them in the developing countries, and another 400,000 become seriously ill. As for artificial fertilisers, their use world-wide increased by 40 per cent per unit of farmed land between the mid 1970s and late 1980s, mostly in the developing countries. Overuse of fertilisers may cause farmers to stop rotating crops or leaving their land fallow. That, in turn, may make soil erosion worse.
+
+Section F
+A result of the Uruguay Round of world trade negotiations is likely to be a reduction of 36 per cent in the average levels of farm subsidies paid by the rich countries in 1986-1990. Some of the world's food production will move from Western Europe to regions where subsidies are lower or non-existent, such as the former communist countries and parts of the developing world. Some environmentalists worry about this outcome. It will undoubtedly mean more pressure to convert natural habitat into farmland. But it will also have many desirable environmental effects. The intensity of farming in the rich world should decline, and the use of chemical inputs will diminish. Crops are more likely to be grown in the environments to which they are naturally suited. And more farmers in poor countries will have the money and the incentive to manage their land in ways that are sustainable in the long run. That is important. To feed an increasingly hungry world, farmers need every incentive to use their soil and water effectively and efficiently.`,
+                questions: [
+                    { id: 14, question_number: 14, type: "matching_headings", question: "Choose the heading for Section A", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "v", acceptable_answers: ["v", "V"], answer_display: "v // Governments and management of the environment", explanation: "Section A discusses the role of governments in subsidising natural resource exploitation and environmental management." },
+                    { id: 15, question_number: 15, type: "matching_headings", question: "Choose the heading for Section B", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "vii", acceptable_answers: ["vii", "VII"], answer_display: "vii // Farming and food output", explanation: "Section B covers how farming shapes the earth's surface and how world food output per head has risen." },
+                    { id: 16, question_number: 16, type: "matching_headings", question: "Choose the heading for Section C", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "ii", acceptable_answers: ["ii", "II"], answer_display: "ii // The environmental impact of modern farming", explanation: "Section C details deforestation, pesticide contamination, soil erosion, and loss of plant varieties." },
+                    { id: 17, question_number: 17, type: "matching_headings", question: "Choose the heading for Section D", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "iv", acceptable_answers: ["iv", "IV"], answer_display: "iv // The effects of government policy in rich countries", explanation: "Section D details subsidies in rich countries ($250 billion), Denmark, Netherlands, and New Zealand." },
+                    { id: 18, question_number: 18, type: "matching_headings", question: "Choose the heading for Section F", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "i", acceptable_answers: ["i", "I"], answer_display: "i // The probable effects of the new international trade agreement", explanation: "Section F focuses on the Uruguay Round world trade negotiations and its effects." },
+                    { id: 19, question_number: 19, type: "matching", question: "Agricultural practice leading to Deforestation: [19] ......... (Choose A-G)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "G", acceptable_answers: ["G"], answer_display: "G // Clearing land for cultivation", explanation: "Section C: 'land clearing for agriculture is the largest single cause of deforestation.'" },
+                    { id: 20, question_number: 20, type: "matching", question: "Agricultural practice leading to Degraded water supply: [20] ......... (Choose A-G)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // Increased use of chemical inputs", explanation: "Section C: 'chemical fertilisers and pesticides may contaminate water supplies.'" },
+                    { id: 21, question_number: 21, type: "matching", question: "Environmental damage resulting from More intensive farming: [21] ......... (Choose A-G)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "F", acceptable_answers: ["F"], answer_display: "F // Soil erosion", explanation: "Section C: 'more intensive farming and the abandonment of fallow periods tend to exacerbate soil erosion.'" },
+                    { id: 22, question_number: 22, type: "matching", question: "Environmental damage resulting from Expansion of monoculture: [22] ......... (Choose A-G)", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // Disappearance of old plant varieties", explanation: "Section C: 'accompanied by the disappearance of old varieties of food plants.'" },
+                    { id: 23, question_number: 23, type: "multiple_choice", question: "Research completed in 1982 found that in the United States soil erosion", options: ["A. reduced the productivity of farmland by 20 per cent.", "B. was almost as severe as in India and China.", "C. was causing significant damage to 20 per cent of farmland.", "D. could be reduced by converting cultivated land to meadow or forest."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // was causing significant damage to 20 per cent of farmland", explanation: "Section C: 'about one-fifth (20%) of its farmland was losing topsoil at a rate likely to diminish the soil's productivity.'" },
+                    { id: 24, question_number: 24, type: "multiple_choice", question: "By the mid-1980s, farmers in Denmark", options: ["A. used 50 per cent less fertiliser than Dutch farmers.", "B. used twice as much fertiliser as they had in 1960.", "C. applied fertiliser much more frequently than in 1960.", "D. more than doubled the amount of pesticide they used in just 3 years."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // used twice as much fertiliser as they had in 1960", explanation: "Section D: 'Fertiliser use doubled in Denmark in the period 1960-1985.'" },
+                    { id: 25, question_number: 25, type: "multiple_choice", question: "Which one of the following increased in New Zealand after 1984?", options: ["A. farm incomes", "B. use of fertiliser", "C. over-stocking", "D. farm diversification"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // farm diversification", explanation: "Section D: 'The removal of subsidies also stopped land-clearing and over-stocking... Farms began to diversify.'" },
+                    { id: 26, question_number: 26, type: "multiple_choice", question: "The writer refers to some rich countries as being 'less enlightened' than New Zealand because", options: ["A. they disapprove of paying farmers for not cultivating the land.", "B. their new fuel crops are as harmful as the ones they have replaced.", "C. their policies do not recognise the long-term benefit of ending subsidies.", "D. they have not encouraged their farmers to follow environmentally friendly practices."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // their policies do not recognise the long term benefit of ending subsidies", explanation: "Section D: New Zealand eliminated subsidies with positive environmental benefits, whereas 'less enlightened countries' only reduce them and add new distorting payments." },
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "The writer believes that the Uruguay Round agreements on trade will", options: ["A. encourage more sustainable farming practices in the long term.", "B. do more harm than good to the international environment.", "C. increase pressure to cultivate land in the rich countries.", "D. be more beneficial to rich than to poor countries."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // encourage more sustainable farming practices in the long term", explanation: "Section F: 'more farmers in poor countries will have the money and the incentive to manage their land in ways that are sustainable in the long run.'" },
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "From the list below choose the most suitable title for Reading Passage 2.", options: ["A. Environmental management", "B. Increasing the world's food supply", "C. Soil erosion", "D. Fertilisers and pesticides - the way forward", "E. Farm subsidies"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // Environmental management", explanation: "The passage opens and centres on the role of governments in environmental management via farming." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: The Concept of Role Theory (Questions 29 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: The Concept of Role Theory",
+                text: `Role set
+Any individual in any situation occupies a role in relation to other people. The particular individual with whom one is concerned in the analysis of any situation is usually given the name of focal person. He has the focal role and can be regarded as sitting in the middle of a group of people, with whom he interacts in some way in that situation. This group of people is called his role set. For instance, in the family situation, an individual's role set might be shown as in Figure 6. The role set should include all those with whom the individual has more than trivial interactions.
+
+Role definition
+The definition of any individual's role in any situation will be a combination of the role expectations that the members of the role set have of the focal role. These expectations are often occupationally defined, sometimes even legally so. The role definitions of lawyers and doctors are fairly clearly defined both in legal and in cultural terms. The role definitions of, say, a film star or bank manager, are also fairly clearly defined in cultural terms, too clearly perhaps. Individuals often find it hard to escape from the role that cultural traditions have defined for them. Not only with doctors or lawyers is the required role behaviour so constrained that if you are in that role for long it eventually becomes part of you, part of your personality. Hence, there is some likelihood that all accountants will be alike or that all blondes are similar - they are forced that way by the expectations of their role.
+
+It is often important that you make it clear what your particular role is at a given time. The means of doing this are called, rather obviously, role signs. The simplest of role signs is a uniform. The number of stripes on your arm or pips on your shoulder is a very precise role definition which allows you to do certain very prescribed things in certain situations. Imagine yourself questioning a stranger on a dark street at midnight without wearing the role signs of a policeman! In social circumstances, dress has often been used as a role sign to indicate the nature and degree of formality of any gathering and occasionally the social status of people present. The current trend towards blurring these role signs in dress is probably democratic, but it also makes some people very insecure. Without role signs, who is to know who has what role?
+
+Place is another role sign. Managers often behave very differently outside the office and in it, even to the same person. They use a change of location to indicate a change in role from, say, boss to friend. Indeed, if you wish to change your roles you must find some outward sign that you are doing so or you won't be permitted to change - the subordinate will continue to hear you as his boss no matter how hard you try to be his friend. In very significant cases of role change, e.g. from a soldier in the ranks to officer, from bachelor to married man, the change of role has to have a very obvious sign, hence rituals. It is interesting to observe, for instance, some decline in the emphasis given to marriage rituals. This could be taken as an indication that there is no longer such a big change in role from single to married person, and therefore no need for a public change in sign.
+
+In organisations, office signs and furniture are often used as role signs. These and other perquisites of status are often frowned upon, but they may serve a purpose as a kind of uniform in a democratic society; roles without signs often lead to confused or differing expectations of the role of the focal person.
+
+Role ambiguity
+Role ambiguity results when there is some uncertainty in the minds, either of the focal person or of the members of his role set, as to precisely what his role is at any given time. One of the crucial expectations that shape the role definition is that of the individual, the focal person himself. If his occupation of the role is unclear, or if it differs from that of the others in the role set, there will be a degree of role ambiguity. Is this bad? Not necessarily, for the ability to shape one's own role is one of the freedoms that many people desire, but the ambiguity may lead to role stress which will be discussed later on.
+
+The virtue of job descriptions is that they lessen this role ambiguity. Unfortunately, job descriptions are seldom complete role definitions, except at the lower end of the scale. At middle and higher management levels, they are often a list of formal jobs and duties that say little about the more subtle and informal expectations of the role. The result is therefore to give the individual an uncomfortable feeling that there are things left unsaid, i.e. to heighten the sense of role ambiguity.
+
+Looking at role ambiguity from the other side, from the point of view of the members of the role set, lack of clarity in the role of the focal person can cause insecurity, lack of confidence, irritation and even anger among members of his role set. One list of the roles of a manager identified the following: executive, planner, policy maker, expert, controller of rewards and punishments, counsellor, friend, teacher. If it is not clear, through role signs of one sort or another, which role is currently the operational one, the other party may not react in the appropriate way - we may, in fact, hear quite another message if the focal person speaks to us, for example, as a teacher and we hear her as an executive.`,
+                questions: [
+                    { id: 29, question_number: 29, type: "true_false_not_given", question: "It would be a good idea to specify the role definitions of soldiers more clearly.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "The text mentions soldiers in the ranks becoming officers, but does not state whether their role definitions should be specified more clearly." },
+                    { id: 30, question_number: 30, type: "true_false_not_given", question: "Accountants may be similar to one another because they have the same type of job.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'Hence, there is some likelihood that all accountants will be alike... they are forced that way by the expectations of their role.'" },
+                    { id: 31, question_number: 31, type: "true_false_not_given", question: "It is probably a good idea to keep dress as a role sign even nowadays.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'The current trend towards blurring these role signs in dress is probably democratic, but it also makes some people very insecure. Without role signs, who is to know who has what role?'" },
+                    { id: 32, question_number: 32, type: "true_false_not_given", question: "The decline in emphasis on marriage rituals should be reversed.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "The writer notes the decline in marriage rituals as an interesting observation, but never says it should be reversed." },
+                    { id: 33, question_number: 33, type: "true_false_not_given", question: "Today furniture operates as a role sign in the same way as dress has always done.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'office signs and furniture are often used as role signs... they may serve a purpose as a kind of uniform in a democratic society.'" },
+                    { id: 34, question_number: 34, type: "true_false_not_given", question: "It is a good idea to remove role ambiguity.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage: 'Is this bad? Not necessarily, for the ability to shape one's own role is one of the freedoms that many people desire...'" },
+                    { id: 35, question_number: 35, type: "true_false_not_given", question: "Job descriptions eliminate role ambiguity for managers.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage: 'At middle and higher management levels, they are often a list of formal jobs... The result is therefore to give the individual an uncomfortable feeling... to heighten the sense of role ambiguity.'" },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "A new headmaster who enlarges his office and puts in expensive carpeting is using the office as a [36] .........", prefix: "using the office as a", suffix: "", correct_answer: "role sign", acceptable_answers: ["role sign", "a role sign"], answer_display: "role sign", explanation: "Passage: 'In organisations, office signs and furniture are often used as role signs.'" },
+                    { id: 37, question_number: 37, type: "fill_blank", question: "The graduation ceremony in many universities is an important [37] .........", prefix: "an important", suffix: "", correct_answer: "ritual", acceptable_answers: ["ritual", "a ritual"], answer_display: "ritual", explanation: "Passage: 'the change of role has to have a very obvious sign, hence rituals.'" },
+                    { id: 38, question_number: 38, type: "fill_blank", question: "The wig which judges wear in UK courts is a [38] .........", prefix: "is a", suffix: "", correct_answer: "role sign", acceptable_answers: ["role sign", "a role sign"], answer_display: "role sign", explanation: "Passage: 'The simplest of role signs is a uniform... dress has often been used as a role sign.'" },
+                    { id: 39, question_number: 39, type: "fill_blank", question: "The parents of students in a school are part of the headmaster's [39] .........", prefix: "part of the headmaster's", suffix: "", correct_answer: "role set", acceptable_answers: ["role set", "a role set"], answer_display: "role set", explanation: "Passage: 'He has the focal role and can be regarded as sitting in the middle of a group of people... This group of people is called his role set.'" },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "This text is taken from", options: ["A. a guide for new managers in a company.", "B. a textbook analysis of behaviour in organisations.", "C. a critical study of the importance of role signs in modern society.", "D. a newspaper article about role changes."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // a critical study of the importance of role signs in modern society", explanation: "Official Cambridge Key: C // a critical study of the importance of role signs in modern society." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS WITH SVG CHART & BAND 9.0 MODELS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 2 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        tasks: [
+            // -------------------------------------------------------------
+            // TASK 1: Consumer Goods Spending in Europe
+            // -------------------------------------------------------------
+            {
+                task_number: 1,
+                title: "Academic Writing Task 1: European Spending on Consumer Goods",
+                time_minutes: 20,
+                min_words: 150,
+                prompt: "The chart below shows the amount spent on six consumer goods in four European countries. Write a report for a university lecturer describing the information shown below.",
+                chart_svg: `<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-white rounded-xl shadow-inner border border-gray-100 p-2 font-sans">
+  <defs>
+    <linearGradient id="c3t2_britain" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="c3t2_france" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#7e22ce"/></linearGradient>
+    <linearGradient id="c3t2_italy" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+    <linearGradient id="c3t2_germany" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ea580c"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+  </defs>
+  <!-- Chart Title -->
+  <text x="400" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Amount Spent on Consumer Goods (Thousand Pounds Sterling)</text>
+  <!-- Legend -->
+  <g transform="translate(180, 48)" font-size="12" font-weight="600">
+    <rect x="0" y="0" width="16" height="12" fill="url(#c3t2_britain)" rx="2"/>
+    <text x="22" y="10" fill="#334155">Britain</text>
+    <rect x="110" y="0" width="16" height="12" fill="url(#c3t2_france)" rx="2"/>
+    <text x="132" y="10" fill="#334155">France</text>
+    <rect x="220" y="0" width="16" height="12" fill="url(#c3t2_italy)" rx="2"/>
+    <text x="242" y="10" fill="#334155">Italy</text>
+    <rect x="330" y="0" width="16" height="12" fill="url(#c3t2_germany)" rx="2"/>
+    <text x="352" y="10" fill="#334155">Germany</text>
+  </g>
+  <!-- Grid Lines (Y: 120k to 180k) -->
+  <!-- Base: Y=390 (120k), Y=330 (130k), Y=270 (140k), Y=210 (150k), Y=150 (160k), Y=90 (170k), Y=80 (180k: Y=80 is top) -->
+  <!-- Scale: height = (val - 120) * 5.16. For val=180: h=310, y=80 -->
+  <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="120" y1="390" x2="760" y2="390"/>
+    <line x1="120" y1="338" x2="760" y2="338"/>
+    <line x1="120" y1="286" x2="760" y2="286"/>
+    <line x1="120" y1="234" x2="760" y2="234"/>
+    <line x1="120" y1="183" x2="760" y2="183"/>
+    <line x1="120" y1="131" x2="760" y2="131"/>
+    <line x1="120" y1="80" x2="760" y2="80"/>
+  </g>
+  <!-- Y-Axis Labels -->
+  <g font-size="11" fill="#64748b" text-anchor="end">
+    <text x="110" y="394">120</text>
+    <text x="110" y="342">130</text>
+    <text x="110" y="290">140</text>
+    <text x="110" y="238">150</text>
+    <text x="110" y="187">160</text>
+    <text x="110" y="135">170</text>
+    <text x="110" y="84">180</text>
+  </g>
+  <!-- Categories & Bars (6 goods: x centers = 170, 275, 380, 485, 590, 695) -->
+  <!-- Bar width = 18, gap = 4. 4 bars = 84px total width -->
+  <!-- 1. Personal stereos: Brit 160 (183), Fra 146 (255), Ita 150 (234), Ger 140 (286) -->
+  <g transform="translate(130, 0)">
+    <rect x="0" y="183" width="18" height="207" fill="url(#c3t2_britain)" rx="2"><title>Britain: 160k</title></rect>
+    <rect x="22" y="255" width="18" height="135" fill="url(#c3t2_france)" rx="2"><title>France: 146k</title></rect>
+    <rect x="44" y="234" width="18" height="156" fill="url(#c3t2_italy)" rx="2"><title>Italy: 150k</title></rect>
+    <rect x="66" y="286" width="18" height="104" fill="url(#c3t2_germany)" rx="2"><title>Germany: 140k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Personal</text>
+    <text x="42" y="428" text-anchor="middle" font-size="10" fill="#64748b">stereos</text>
+  </g>
+  <!-- 2. Tennis racquets: Brit 155 (209), Fra 145 (260), Ita 152 (224), Ger 148 (245) -->
+  <g transform="translate(235, 0)">
+    <rect x="0" y="209" width="18" height="181" fill="url(#c3t2_britain)" rx="2"><title>Britain: 155k</title></rect>
+    <rect x="22" y="260" width="18" height="130" fill="url(#c3t2_france)" rx="2"><title>France: 145k</title></rect>
+    <rect x="44" y="224" width="18" height="166" fill="url(#c3t2_italy)" rx="2"><title>Italy: 152k</title></rect>
+    <rect x="66" y="245" width="18" height="145" fill="url(#c3t2_germany)" rx="2"><title>Germany: 148k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Tennis</text>
+    <text x="42" y="428" text-anchor="middle" font-size="10" fill="#64748b">racquets</text>
+  </g>
+  <!-- 3. Perfumes: Brit 160 (183), Fra 145 (260), Ita 150 (234), Ger 147 (250) -->
+  <g transform="translate(340, 0)">
+    <rect x="0" y="183" width="18" height="207" fill="url(#c3t2_britain)" rx="2"><title>Britain: 160k</title></rect>
+    <rect x="22" y="260" width="18" height="130" fill="url(#c3t2_france)" rx="2"><title>France: 145k</title></rect>
+    <rect x="44" y="234" width="18" height="156" fill="url(#c3t2_italy)" rx="2"><title>Italy: 150k</title></rect>
+    <rect x="66" y="250" width="18" height="140" fill="url(#c3t2_germany)" rx="2"><title>Germany: 147k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Perfumes</text>
+  </g>
+  <!-- 4. CDs: Brit 168 (142), Fra 158 (194), Ita 154 (214), Ger 154 (214) -->
+  <g transform="translate(445, 0)">
+    <rect x="0" y="142" width="18" height="248" fill="url(#c3t2_britain)" rx="2"><title>Britain: 168k</title></rect>
+    <rect x="22" y="194" width="18" height="196" fill="url(#c3t2_france)" rx="2"><title>France: 158k</title></rect>
+    <rect x="44" y="214" width="18" height="176" fill="url(#c3t2_italy)" rx="2"><title>Italy: 154k</title></rect>
+    <rect x="66" y="214" width="18" height="176" fill="url(#c3t2_germany)" rx="2"><title>Germany: 154k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">CDs</text>
+  </g>
+  <!-- 5. Toys: Brit 170 (131), Fra 158 (194), Ita 158 (194), Ger 145 (260) -->
+  <g transform="translate(550, 0)">
+    <rect x="0" y="131" width="18" height="259" fill="url(#c3t2_britain)" rx="2"><title>Britain: 170k</title></rect>
+    <rect x="22" y="194" width="18" height="196" fill="url(#c3t2_france)" rx="2"><title>France: 158k</title></rect>
+    <rect x="44" y="194" width="18" height="196" fill="url(#c3t2_italy)" rx="2"><title>Italy: 158k</title></rect>
+    <rect x="66" y="260" width="18" height="130" fill="url(#c3t2_germany)" rx="2"><title>Germany: 145k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Toys</text>
+  </g>
+  <!-- 6. Photographic film: Brit 172 (121), Fra 165 (157), Ita 155 (209), Ger 144 (265) -->
+  <g transform="translate(655, 0)">
+    <rect x="0" y="121" width="18" height="269" fill="url(#c3t2_britain)" rx="2"><title>Britain: 172k</title></rect>
+    <rect x="22" y="157" width="18" height="233" fill="url(#c3t2_france)" rx="2"><title>France: 165k</title></rect>
+    <rect x="44" y="209" width="18" height="181" fill="url(#c3t2_italy)" rx="2"><title>Italy: 155k</title></rect>
+    <rect x="66" y="265" width="18" height="125" fill="url(#c3t2_germany)" rx="2"><title>Germany: 144k</title></rect>
+    <text x="42" y="415" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Photographic</text>
+    <text x="42" y="428" text-anchor="middle" font-size="10" fill="#64748b">film</text>
+  </g>
+  <!-- X-Axis Line -->
+  <line x1="120" y1="390" x2="760" y2="390" stroke="#475569" stroke-width="2"/>
+</svg>`,
+                sample_answer: `The chart shows that Britain, among the four European countries listed, has spent most heavily on the range of consumer goods included. In every case, British spending is considerably higher than that of other countries; only in the case of tennis racquets does another country, Italy, come close.
+
+In contrast, Germany is generally the lowest spender. This is most evident in photographic film, where Germany spends much less than Britain. Germany only spends more than another country, France, in two cases: tennis racquets and perfumes.
+
+Meanwhile, France and Italy generally maintain middle positions, averaging approximately similar spending overall. Specifically, France spends more on CDs and photographic film but less on tennis racquets than Italy does. Italy's spending on personal stereos is only marginally greater than that of France, while spending on toys is equal between the two.
+
+It is clear from the data given that there are some significant differences in spending habits within Europe.`,
+                examiner_band: "Band 9.0 (Official Cambridge Model Answer)",
+                key_vocabulary: ["spent most heavily", "considerably higher", "lowest spender", "maintain middle positions", "marginally greater", "spending habits"]
+            },
+            // -------------------------------------------------------------
+            // TASK 2: Technology vs Traditional Skills and Ways of Life
+            // -------------------------------------------------------------
+            {
+                task_number: 2,
+                title: "Academic Writing Task 2: Technology and Traditional Ways of Life",
+                time_minutes: 40,
+                min_words: 250,
+                prompt: `When a country develops its technology, the traditional skills and ways of life die out. It is pointless to try and keep them alive.
+
+To what extent do you agree or disagree with this opinion?
+
+You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence.`,
+                sample_answer: `Overall, I disagree with the opinion expressed. I would like to begin by pointing out that 'traditional skills and ways of life' are not automatically of one country, but of a culture or community.
+
+In many ways, the history of civilisation is the history of technology: from the discovery of fire to the invention of the wheel to the development of the Internet we have been moving on from previous ways of doing things. Some technologies, such as weapons of mass destruction, are of negative impact. Others, such as medical advances, positively help people to live better or longer, and so very much help traditional ways of life. Surely, few people would seek to preserve such traditions as living in caves!
+
+Interestingly, technology can positively contribute to the keeping alive of traditional skills and ways of life. For example, the populations of some islands are too small to have normal schools. Rather than breaking up families by sending children to the mainland, education authorities have been able to use the Internet to deliver schooling online. In addition, the Internet, and modern refrigeration techniques, are being used to keep alive the traditional skills of producing salmon; it can now be ordered from, and delivered to, anywhere in the world.
+
+In conclusion, without suggesting that all technology is necessarily good, I think it is by no means 'pointless', in any way, to try to keep traditions alive with technology. We should not ignore technology, because it can be our friend and support our way of life.`,
+                examiner_band: "Band 9.0 (Official Cambridge Model Answer)",
+                key_vocabulary: ["history of civilisation", "positively contribute", "traditional skills and ways of life", "break up families", "by no means pointless", "support our way of life"]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS - COMPLETE SCRIPT & CUE CARDS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 2 (Cambridge IELTS 3)",
+        duration_minutes: "11-14 minutes",
+        parts: [
+            // -------------------------------------------------------------
+            // PART 1: Introduction & Interview - Festivals (4-5 minutes)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                title: "Part 1: Introduction and Interview - Festivals",
+                time_allocation: "4 - 5 minutes",
+                theme: "Festivals and Celebrations",
+                description: "The examiner asks the candidate about him/herself, his/her home, work or studies and other familiar topics.",
+                questions: [
+                    {
+                        question: "Tell me about the most important festival in your country.",
+                        guide_notes: "Name the festival (e.g. Tet / Lunar New Year, Mid-Autumn Festival, Christmas), state when it occurs, its national and cultural significance.",
+                        model_answer: "In Vietnam, the most important and celebrated festival is without doubt Tet Nguyen Dan, our Lunar New Year. It usually takes place in late January or early February and marks the beginning of spring. It is a sacred time for family reunions, honouring ancestors, and wishing for good fortune and prosperity in the upcoming year."
+                    },
+                    {
+                        question: "What special food and activities are connected with this festival?",
+                        guide_notes: "Mention signature festive dishes (Banh Chung, sticky rice, candied fruits) and traditional customs (visiting relatives, giving lucky money, fireworks).",
+                        model_answer: "The signature culinary centerpiece is Banh Chung, a square glutinous rice cake stuffed with pork and mung beans, wrapped in dong leaves. Families also prepare pickled onions, boiled chicken, and colourful candied fruits called Mut Tet. In terms of activities, people thoroughly clean and decorate their homes with peach blossoms, visit temples and pagodas to pray for peace, and elders give red envelopes containing lucky money to children."
+                    },
+                    {
+                        question: "What do you most enjoy about it?",
+                        guide_notes: "Express personal feelings, favorite memories, atmosphere, or bonding with loved ones.",
+                        model_answer: "What I cherish most is the warm, cosy atmosphere of family togetherness. Throughout the year, everyone is busy and scattered across different cities, so sitting around the dinner table on New Year's Eve, sharing stories and laughter while listening to the celebratory firecrackers, gives me a profound sense of belonging and happiness."
+                    },
+                    {
+                        question: "Do you think festivals are important for a country? [Why?]",
+                        guide_notes: "Explain cultural preservation, national identity, community cohesion, and boosting local economy and tourism.",
+                        model_answer: "Yes, absolutely. Festivals are vital for preserving a nation's cultural heritage and passing core values from one generation to the next. They foster social cohesion and national pride by reminding citizens of their shared roots. Furthermore, vibrant festivals attract tourists from around the world, which gives a strong boost to the local hospitality and retail industries."
+                    }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PART 2: Individual Long Turn - Film or TV Programme (3-4 minutes)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                title: "Part 2: Long Turn - An Impressionable Film or TV Programme",
+                time_allocation: "3 - 4 minutes (1 min preparation + 2 mins speaking)",
+                cue_card: {
+                    instruction: "Describe a film or a TV programme which has made a strong impression on you.",
+                    bullet_points: [
+                        "what kind of film or TV programme it was, e.g. comedy",
+                        "when you saw the film or TV programme",
+                        "what the film or TV programme was about",
+                        "and explain why this film or TV programme made such an impression on you."
+                    ]
+                },
+                preparation_tips: [
+                    "Choose a memorable movie or documentary with strong emotional or intellectual impact (e.g. 'Interstellar', 'The Pursuit of Happyness', 'Planet Earth').",
+                    "Structure response chronologically: introduction -> genre and viewing context -> plot summary -> emotional resonance and personal takeaway."
+                ],
+                model_answer: `I would like to talk about a cinematic masterpiece that left an indelible impression on me: Christopher Nolan's science-fiction drama 'Interstellar'. I watched it roughly three years ago on an IMAX cinema screen with a close friend, and the visual and emotional experience was truly overwhelming.
+
+The film is set in a dystopian future where Earth's biosphere is collapsing due to dust storms and crop blights, leaving humanity facing imminent starvation. A former NASA pilot, played brilliantly by Matthew McConaughey, is recruited for a clandestine space mission to travel through a recently discovered wormhole near Saturn. His team's objective is to scout potentially habitable planets across another galaxy to ensure humanity's survival, which forces him to make the heartbreaking sacrifice of leaving his young daughter behind on Earth.
+
+What made this film so unforgettable was the masterful combination of rigorous theoretical physics with deeply touching human emotion. While the depictions of black holes, gravitational time dilation, and wormholes were grounded in genuine scientific consultation with Nobel physicist Kip Thorne, the true core of the narrative was the unbreakable love between a father and his daughter. The scene where the protagonist returns to his spacecraft after a brief landing to find that 23 years have elapsed on Earth, watching video messages of his children growing up without him, was heart-wrenching. It taught me profound lessons about the precious nature of time, familial love, and humanity's relentless spirit of exploration.`
+            },
+            // -------------------------------------------------------------
+            // PART 3: Two-Way Discussion - Cinema, Media & Society (4-5 minutes)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                title: "Part 3: Discussion - Cinema, Media & Society",
+                time_allocation: "4 - 5 minutes",
+                themes: [
+                    {
+                        sub_topic: "People's Cinema-Going Habits Nowadays",
+                        questions: [
+                            {
+                                question: "Do you think the cinema has increased or decreased in popularity in recent years?",
+                                model_answer: "In my view, traditional cinema attendance has faced noticeable headwinds due to the explosion of subscription video-on-demand services like Netflix and Disney+. People now enjoy high-definition blockbusters from the comfort of their living rooms at a fraction of the ticket price. However, premium cinema formats like IMAX and 4DX still retain strong appeal for major visual spectacles and social gatherings."
+                            },
+                            {
+                                question: "In your opinion, will this trend continue into the future?",
+                                model_answer: "I believe the trend towards home streaming will consolidate further as VR headsets and immersive home theatres become more accessible. Nonetheless, movie theatres will not disappear entirely; rather, they will evolve into niche luxury experiences offering gourmet dining, plush reclining seats, and state-of-the-art audiovisual fidelity that cannot be replicated at home."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "Making a Film or TV Drama of Real / Fictional Events",
+                        questions: [
+                            {
+                                question: "What are the advantages and disadvantages of making films of real-life events?",
+                                model_answer: "The greatest advantage is that real-life stories carry inherent emotional gravitas and educational value, helping audiences connect with historical milestones or inspirational figures. On the other hand, the primary disadvantage is the risk of distortion; directors often dramatize or alter key facts to heighten suspense, which can mislead viewers and offend the historical individuals or their surviving relatives."
+                            },
+                            {
+                                question: "How important do you think it is for a film-maker to remain true to the original story?",
+                                model_answer: "I think it is crucial to remain faithful to the fundamental truth and moral essence of the story, especially when dealing with sensitive historical traumas such as wars or civil rights struggles. While minor artistic liberties with dialogue or pacing are understandable in entertainment, fabricating major events borders on historical revisionism and harms credibility."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "Censorship and the Freedom of the Film-Maker / TV Producer",
+                        questions: [
+                            {
+                                question: "Should films and television be censored or should we be free to choose what we see?",
+                                model_answer: "I advocate for a balanced classification system rather than outright censorship. Mature adults should possess the intellectual autonomy to choose what content they consume. However, robust age-rating guidelines and content advisories must be enforced to protect impressionable children and adolescents from gratuitous violence, hate speech, or explicit adult themes."
+                            },
+                            {
+                                question: "How do you think censorship laws will change in the next 20 years?",
+                                model_answer: "Over the next two decades, censorship laws will inevitably struggle to adapt to the decentralised nature of global streaming platforms, artificial intelligence, and user-generated deepfakes. Regulatory frameworks will likely shift focus away from traditional cultural taboos towards tackling disinformation, algorithmic manipulation, and the unauthorised synthesis of individuals' likenesses."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+};
+
+// =========================================================================
+// CAMBRIDGE IELTS 3 - ACADEMIC PRACTICE TEST 3
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 3)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam3Test3 = {
+    id: "cam_3_test_3",
+    book: "Cambridge IELTS 3",
+    title: "Cambridge IELTS 3 - Test 3",
+    test_title: "Academic Practice Test 3",
+    badge: "Cam 3 - Test 3",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 3 (Cambridge IELTS 3)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Social Club Christmas Dinner (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Christmas Dinner Booking (Questions 1 - 10)",
+                instruction: "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                instructions: "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                transcript: `ORGANISER: Hello, Ann. Did you manage to check out any of those places for our Christmas dinner?
+ANN: Yes, I did. I made some enquiries. Let me see... First of all, the date: we agreed on 21 December, right? And we're expecting 25 people.
+ORGANISER: That's right.
+ANN: Well, our first choice of venue was the Rajdoot. [Q1: Rajdoot] It's an Indian restaurant and everyone says the food is superb. But their telephone number isn't known yet - I've got to find that out.
+ORGANISER: Okay, what about our second choice?
+ANN: The second choice was the Park View Hotel. [Q2: Park View (Hotel)] Their phone number is 777192.
+ORGANISER: And the third choice?
+ANN: The third choice is the London Arms. [Q3: London Arms] The telephone number there is 208657. [Q4: 208657] The price per person is 12 pounds.
+ORGANISER: That sounds quite reasonable. Did you check about dietary requirements?
+ANN: Yes. The restaurant must have vegetarian food and no non-smoking section or area, [Q5: no non-smoking section/area] because some of our members are very sensitive to smoke.
+ORGANISER: What about the menu options?
+ANN: For the first course, there's a choice of French Onion Soup or Fruit Juice. For the main course, there's Roast Dinner or Lentil curry. [Q6: Lentil curry] And for dessert, Plum Pudding or Apple Pie, followed by coffee.
+ORGANISER: That sounds delicious. What do they need from us to secure the booking?
+ANN: Well, the restaurant requires a 50 pound deposit [Q7: fifty pound(s) / Â£50 deposit] and a letter of confirmation in advance. And we must choose the menu [Q8: choose/decide (on)/select (the) menu] beforehand so they can prepare everything.
+ORGANISER: Right. When do we need to confirm all this by?
+ANN: We must confirm in writing by 4 November. [Q9: 4 November]
+ORGANISER: Okay. I'll make sure to put a notice in the Newsletter [Q10: (the) Newsletter] so everyone knows the deadline.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Choices for venue: First choice: [1] ......... (Tel. number: not known)", prefix: "First choice:", suffix: "", correct_answer: "Rajdoot", acceptable_answers: ["Rajdoot", "the Rajdoot"], answer_display: "Rajdoot", explanation: "Transcript: Well, our first choice of venue was the Rajdoot. It's an Indian restaurant." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "Second choice: [2] ......... (Tel. number: 777192)", prefix: "Second choice:", suffix: "", correct_answer: "Park View (Hotel)", acceptable_answers: ["Park View", "Park View Hotel", "the Park View Hotel"], answer_display: "Park View (Hotel)", explanation: "Transcript: The second choice was the Park View Hotel." },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "Third choice: [3] .........", prefix: "Third choice:", suffix: "", correct_answer: "London Arms", acceptable_answers: ["London Arms", "the London Arms"], answer_display: "London Arms", explanation: "Transcript: The third choice is the London Arms." },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "London Arms Tel. number: [4] .........", prefix: "Tel. number:", suffix: "", correct_answer: "208657", acceptable_answers: ["208657", "208 657"], answer_display: "208657", explanation: "Transcript: The telephone number there is 208657." },
+                    { id: 5, question_number: 5, type: "fill_blank", question: "Restaurant must have vegetarian food and a [5] .........", prefix: "vegetarian food and a", suffix: "", correct_answer: "no non(-)smoking section/area", acceptable_answers: ["no non-smoking area", "no non-smoking section", "no nonsmoking area", "no nonsmoking section", "non-smoking area", "non-smoking section"], answer_display: "no non(-)smoking section/area", explanation: "Transcript: The restaurant must have vegetarian food and no non-smoking section/area." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "Main course: Roast Dinner OR [6] .........", prefix: "Roast Dinner OR", suffix: "", correct_answer: "Lentil curry", acceptable_answers: ["Lentil curry", "lentil curry"], answer_display: "Lentil curry", explanation: "Transcript: For the main course, there's Roast Dinner or Lentil curry." },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "Restaurant requires from us: [7] ......... and letter of confirmation in advance", prefix: "requires from us:", suffix: " and letter of confirmation in advance", correct_answer: "fifty pound(s)/Â£50 deposit // deposit (of) Â£50/fifty pound(s)", acceptable_answers: ["Â£50 deposit", "50 pound deposit", "50 pounds deposit", "deposit of Â£50", "fifty pound deposit", "fifty pounds deposit", "Â£50", "50 pounds"], answer_display: "fifty pound(s)/Â£50 deposit // deposit (of) Â£50/fifty pound(s)", explanation: "Transcript: the restaurant requires a 50 pound deposit and a letter of confirmation in advance." },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "and we must [8] .........", prefix: "and we must", suffix: "", correct_answer: "choose/decide (on)/select (the) menu", acceptable_answers: ["choose the menu", "select the menu", "decide on the menu", "choose menu", "select menu", "decide the menu"], answer_display: "choose/decide (on)/select (the) menu", explanation: "Transcript: And we must choose the menu beforehand so they can prepare everything." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "Must confirm in writing by: [9] .........", prefix: "Must confirm in writing by:", suffix: "", correct_answer: "4 November", acceptable_answers: ["4 November", "4th November", "November 4", "November 4th"], answer_display: "4 November (ALTERNATIVE FORMS ACCEPTED)", explanation: "Transcript: We must confirm in writing by 4 November." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "Put notice in [10] .........", prefix: "Put notice in", suffix: "", correct_answer: "(the) Newsletter", acceptable_answers: ["Newsletter", "the Newsletter", "newsletter", "the newsletter"], answer_display: "(the) Newsletter", explanation: "Transcript: I'll make sure to put a notice in the Newsletter so everyone knows." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: Sports Centre Membership & Facilities (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Sports Centre Membership & Complex (Questions 11 - 20)",
+                instruction: "Questions 11-13: Complete the table below. Write NO MORE THAN THREE WORDS OR A NUMBER. Questions 14-16: Complete the notes. Write NO MORE THAN THREE WORDS. Questions 17-20: Label the buildings on the map of the Sports Complex.",
+                instructions: "Questions 11-13: Complete table. Questions 14-16: Complete notes. Questions 17-20: Label map.",
+                transcript: `MANAGER: Good morning and welcome to the university sports centre. Today I'd like to tell you how to become a member and introduce our facilities.
+First of all, membership. The cost for students is 9 pounds 50 [Q11: (Â£)9.50] per year. [Q12: year // annum] That's right, just nine fifty per annum. If you wish to join, you should bring your Student Union card, a passport-sized photograph, and the fee to the reception desk [Q13: reception] between 2.00 pm and 6.00 pm, Monday to Thursday.
+Please remember that you must always bring your sports card [Q14: card] with you whenever you come to book [Q15: book] or use the Centre's facilities. Without your card, you won't be admitted.
+Now, about our opening hours: the complex is open from 9.00 am to 10.00 pm on weekdays, [Q16: weekdays] and from 10.00 am to 6.00 pm on Saturdays. We also offer a special 50% 'morning discount' between 9.00 am and 12 noon on weekdays.
+Let's take a look at the layout of the complex on the map. As you come in through the main car park, facing you directly is the Reception Area. [Q17: Reception (Area)]
+If you head to the building on the left of the reception area, that is our Dance Studio. [Q18: Dance Studio]
+Behind the reception area and adjoining the tennis courts are the Squash Courts. [Q19: Squash Courts]
+And right next to the squash courts, over on the far right, is the Fitness Room [Q20: Fitness Room] equipped with state-of-the-art weights and cardiovascular machines.`,
+                questions: [
+                    { id: 11, question_number: 11, type: "fill_blank", question: "Cost: Â£[11] ......... per [12] .........", prefix: "Cost: Â£", suffix: " per", correct_answer: "(Â£)9.50", acceptable_answers: ["9.50", "9.50 pounds", "Â£9.50"], answer_display: "(Â£)9.50", explanation: "Transcript: The cost for students is 9 pounds 50 per year." },
+                    { id: 12, question_number: 12, type: "fill_blank", question: "per [12] .........", prefix: "per", suffix: "", correct_answer: "year // annum", acceptable_answers: ["year", "annum", "a year"], answer_display: "year // annum (NOT annual)", explanation: "Transcript: just nine fifty per annum / per year." },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "Bring to: [13] ......... (2 to 6 pm, Monday to Thursday)", prefix: "Bring to:", suffix: "", correct_answer: "reception", acceptable_answers: ["reception", "reception desk", "the reception", "the reception desk"], answer_display: "reception (NOT Sports Centre)", explanation: "Transcript: bring your Student Union card, a photo, and the fee to the reception desk." },
+                    { id: 14, question_number: 14, type: "fill_blank", question: "Always bring sports [14] .........", prefix: "Always bring sports", suffix: "", correct_answer: "card", acceptable_answers: ["card", "membership card"], answer_display: "card", explanation: "Transcript: Please remember that you must always bring your sports card with you." },
+                    { id: 15, question_number: 15, type: "fill_blank", question: "when you come to [15] ......... or use the Centre's facilities.", prefix: "when you come to", suffix: " or use the Centre's facilities.", correct_answer: "book", acceptable_answers: ["book", "to book"], answer_display: "book", explanation: "Transcript: whenever you come to book or use the Centre's facilities." },
+                    { id: 16, question_number: 16, type: "fill_blank", question: "Opening hours: 9 am to 10 pm on [16] .........", prefix: "9 am to 10 pm on", suffix: "", correct_answer: "weekdays", acceptable_answers: ["weekdays", "weekday"], answer_display: "weekdays", explanation: "Transcript: open from 9.00 am to 10.00 pm on weekdays." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Map Building 17: [17] .........", prefix: "Building 17:", suffix: "", correct_answer: "Reception (Area)", acceptable_answers: ["Reception", "Reception Area", "reception"], answer_display: "Reception (Area)", explanation: "Transcript: As you come in through the main car park, facing you directly is the Reception Area." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "Map Building 18: [18] .........", prefix: "Building 18:", suffix: "", correct_answer: "Dance Studio", acceptable_answers: ["Dance Studio", "the Dance Studio"], answer_display: "Dance Studio", explanation: "Transcript: building on the left of the reception area, that is our Dance Studio." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "Map Building 19: [19] .........", prefix: "Building 19:", suffix: "", correct_answer: "Squash Courts", acceptable_answers: ["Squash Courts", "the Squash Courts"], answer_display: "Squash Courts", explanation: "Transcript: Behind the reception area and adjoining the tennis courts are the Squash Courts." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "Map Building 20: [20] .........", prefix: "Building 20:", suffix: "", correct_answer: "Fitness Room", acceptable_answers: ["Fitness Room", "the Fitness Room"], answer_display: "Fitness Room", explanation: "Transcript: right next to the squash courts, over on the far right, is the Fitness Room." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Young Electronic Engineer Competition (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Young Electronic Engineer Competition (Questions 21 - 30)",
+                instruction: "Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                instructions: "Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                transcript: `TEACHER: Hello, John. Anne. Come in and sit down. I understand you both want to enter the Young Electronic Engineer Competition?
+JOHN: Yes, that's right, Mr Harris.
+TEACHER: Splendid. Let's fill out the entry form. Designer names: John Brown, and your partner is Anne Rea, [Q21: Anne Rea] that's R-E-A. And your ages?
+ANNE: We're both 16. [Q22: (both) 16 (years old)]
+TEACHER: Fine. Now, what is the name of your design?
+JOHN: It's called the Blind Jigsaw Puzzle. [Q23: Blind (Jigsaw) Puzzle]
+TEACHER: A Blind Jigsaw Puzzle! That sounds fascinating. What are the dimensions of the equipment?
+ANNE: The length is 20 centimetres, width is 50 centimetres, and depth is 2.5 centimetres. [Q24: 20 (cm), 50 (cm), 2.5 (cm)]
+TEACHER: And it's battery powered?
+JOHN: Yes, a standard 9V battery.
+TEACHER: What are its special features?
+ANNE: Well, first of all, it's completely safe for children. [Q25: safe for children] Secondly, it's educational, [Q26: (it's) educational] helping visually impaired children learn spatial concepts. And thirdly, the price is good - it's very inexpensive compared to traditional sensory toys. [Q27: price (is) good // inexpensive]
+TEACHER: And the cost to build the prototype?
+JOHN: The parts cost about 5 dollars, but we estimate the electrics inside would cost around 9 dollars 50. [Q28: electrics]
+TEACHER: Any other comments or future plans?
+ANNE: We need help to make the pieces in plastic [Q29: plastic pieces // in plastic] because at the moment they're handmade from wood. And we'd like to develop a wider range of sizes.
+TEACHER: Excellent. Remember that all application forms must be sent by 1 July. [Q30: 1 July]`,
+                questions: [
+                    { id: 21, question_number: 21, type: "fill_blank", question: "Name(s) of designer(s): John Brown, [21] .........", prefix: "John Brown,", suffix: "", correct_answer: "Anne Rea", acceptable_answers: ["Anne Rea", "Anne REA", "anne rea"], answer_display: "Anne Rea", explanation: "Transcript: Designer names: John Brown, and your partner is Anne Rea, that's R-E-A." },
+                    { id: 22, question_number: 22, type: "fill_blank", question: "Age: [22] .........", prefix: "Age:", suffix: "", correct_answer: "(both) 16 (years old)", acceptable_answers: ["16", "both 16", "16 years old", "sixteen", "both sixteen"], answer_display: "(both) 16 (years old)", explanation: "Transcript: We're both 16." },
+                    { id: 23, question_number: 23, type: "fill_blank", question: "Name of design: [23] .........", prefix: "Name of design:", suffix: "", correct_answer: "Blind (Jigsaw) Puzzle", acceptable_answers: ["Blind Jigsaw Puzzle", "Blind Puzzle", "Blind Jigsaw"], answer_display: "Blind (Jigsaw) Puzzle (NOT Jigsaw)", explanation: "Transcript: It's called the Blind Jigsaw Puzzle." },
+                    { id: 24, question_number: 24, type: "fill_blank", question: "Dimensions of equipment: Length: [24] ......... cm | Width: ......... cm | Depth: ......... cm", prefix: "Length, Width, Depth:", suffix: "", correct_answer: "20 (cm), 50 (cm), 2.5 (cm) // 2 and a half (cm)", acceptable_answers: ["20, 50, 2.5", "20cm, 50cm, 2.5cm", "20 50 2.5", "20, 50, 2 and a half"], answer_display: "MUST BE IN ORDER: 20 (cm), 50 (cm), 2.5 (cm) // 2 and a half (cm)", explanation: "Transcript: length is 20 centimetres, width is 50 centimetres, and depth is 2.5 centimetres." },
+                    { id: 25, question_number: 25, type: "fill_blank", question: "Special features (1): [25] .........", prefix: "Feature 1:", suffix: "", correct_answer: "safe for children", acceptable_answers: ["safe for children", "safe", "completely safe for children"], answer_display: "safe for children", explanation: "Transcript: Well, first of all, it's completely safe for children." },
+                    { id: 26, question_number: 26, type: "fill_blank", question: "Special features (2): [26] .........", prefix: "Feature 2:", suffix: "", correct_answer: "(it's) educational", acceptable_answers: ["educational", "it's educational", "is educational"], answer_display: "(it's) educational", explanation: "Transcript: Secondly, it's educational, helping visually impaired children." },
+                    { id: 27, question_number: 27, type: "fill_blank", question: "Special features (3): [27] .........", prefix: "Feature 3:", suffix: "", correct_answer: "price (is) good // inexpensive // not expensive // cheap (price)", acceptable_answers: ["price is good", "inexpensive", "not expensive", "cheap", "good price"], answer_display: "price (is) good // inexpensive // not expensive // cheap (price)", explanation: "Transcript: And thirdly, the price is good - it's very inexpensive." },
+                    { id: 28, question_number: 28, type: "fill_blank", question: "Cost: parts $5 | [28] ......... $9.50", prefix: "$9.50 for", suffix: "", correct_answer: "electrics", acceptable_answers: ["electrics"], answer_display: "electrics (NOT electric)", explanation: "Transcript: but we estimate the electrics inside would cost around 9 dollars 50." },
+                    { id: 29, question_number: 29, type: "fill_blank", question: "Other comments: need help to make [29] .........", prefix: "need help to make", suffix: "", correct_answer: "plastic pieces // in plastic", acceptable_answers: ["plastic pieces", "in plastic", "pieces in plastic"], answer_display: "plastic pieces // in plastic (NOT pieces)", explanation: "Transcript: We need help to make the pieces in plastic because at the moment they're handmade from wood." },
+                    { id: 30, question_number: 30, type: "fill_blank", question: "Send by: [30] .........", prefix: "Send by:", suffix: "", correct_answer: "1 July", acceptable_answers: ["1 July", "1st July", "July 1", "July 1st"], answer_display: "1 July (ALTERNATIVE FORMS ACCEPTED)", explanation: "Transcript: Remember that all application forms must be sent by 1 July." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: Ostrich Farming (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Ostrich Farming (Questions 31 - 40)",
+                instruction: "Questions 31-36: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. Questions 37-40: Choose the correct letter A, B, or C.",
+                instructions: "Questions 31-36: Complete notes. Questions 37-40: Choose A, B, or C.",
+                transcript: `LECTURER: Today I'm going to talk about a farming sector that has seen dramatic growth over the last twenty years: ostrich farming.
+Historically, in early prehistoric times, ostriches were hunted primarily for their meat, which was compared in flavour to rabbit meat. [Q31: rabbit (meat)] But wild ostriches were very lean and their meat was considered rather tough. [Q32: (rather) tough] By contrast, modern farmed ostrich meat is tender, succulent, and closely resembles premium beef. [Q33: beef]
+During the nineteenth century, ostrich farming developed into a major commercial industry in South Africa. The primary product then was ostrich feathers, which were exported to Europe to make glamorous ladies' feather fans [Q34: (ladies') (feather) fans] and boas.
+Later on, in the mid-twentieth century, the focus shifted towards producing delicate, good quality leather [Q35: (delicate) (fine) (good quality) leather] for shoes, handbags, and luxury accessories.
+Nowadays, the primary commercial focus is on producing meat. [Q36: meat]
+There are several compelling reasons for this. Firstly, ostrich meat is remarkably healthy: it has more protein than beef [Q37: A] and significantly less cholesterol and fat.
+Secondly, regarding ostrich eggs, the price of ostrich eggs [Q38: C] is extremely high due to demand from gourmet restaurants and collectors.
+However, ostriches are delicate creatures that need looking after carefully [Q39: C] during their early rearing stages.
+Finally, from an economic standpoint, farmed birds are very productive: [Q40: B] a single female ostrich can produce up to 40 chicks a year for over thirty years.`,
+                questions: [
+                    { id: 31, question_number: 31, type: "fill_blank", question: "Early times: hunted for meat; tasted like [31] .........", prefix: "tasted like", suffix: "", correct_answer: "rabbit (meat)", acceptable_answers: ["rabbit", "rabbit meat"], answer_display: "rabbit (meat)", explanation: "Transcript: ostriches were hunted primarily for their meat, which was compared in flavour to rabbit meat." },
+                    { id: 32, question_number: 32, type: "fill_blank", question: "Early meat was considered [32] .........", prefix: "was considered", suffix: "", correct_answer: "(rather) tough", acceptable_answers: ["tough", "rather tough"], answer_display: "(rather) tough", explanation: "Transcript: But wild ostriches were very lean and their meat was considered rather tough." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "Modern farmed meat resembles [33] .........", prefix: "resembles", suffix: "", correct_answer: "beef", acceptable_answers: ["beef"], answer_display: "beef", explanation: "Transcript: closely resembles premium beef." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "Nineteenth century: feathers exported to Europe for [34] .........", prefix: "exported to Europe for", suffix: "", correct_answer: "(ladies') (feather) fans", acceptable_answers: ["fans", "feather fans", "ladies' feather fans", "ladies feather fans"], answer_display: "(ladies') (feather) fans", explanation: "Transcript: exported to Europe to make glamorous ladies' feather fans and boas." },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "Mid-twentieth century: produced [35] ......... for shoes and handbags", prefix: "produced", suffix: " for shoes and handbags", correct_answer: "(delicate) (fine) (good quality) leather", acceptable_answers: ["leather", "good quality leather", "fine leather", "delicate leather"], answer_display: "(delicate) (fine) (good quality) leather", explanation: "Transcript: the focus shifted towards producing delicate, good quality leather." },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "Nowadays: primary commercial focus is on [36] .........", prefix: "primary focus is on", suffix: "", correct_answer: "meat", acceptable_answers: ["meat"], answer_display: "meat", explanation: "Transcript: Nowadays, the primary commercial focus is on producing meat." },
+                    { id: 37, question_number: 37, type: "multiple_choice", question: "Ostrich meat is considered a healthy food because it", options: ["A. has more protein than beef.", "B. contains no fat.", "C. is easily digested."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // has more protein than beef", explanation: "Transcript: ostrich meat is remarkably healthy: it has more protein than beef." },
+                    { id: 38, question_number: 38, type: "multiple_choice", question: "One financial benefit of ostrich farming is", options: ["A. the low cost of breeding pairs.", "B. low feed costs.", "C. the price of ostrich eggs."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // the price of ostrich eggs", explanation: "Transcript: Secondly, regarding ostrich eggs, the price of ostrich eggs is extremely high." },
+                    { id: 39, question_number: 39, type: "multiple_choice", question: "One difficulty with ostrich farming is that the birds", options: ["A. need large amounts of space.", "B. are prone to diseases.", "C. need looking after carefully."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // need looking after carefully", explanation: "Transcript: However, ostriches are delicate creatures that need looking after carefully." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "Farmed ostriches are considered productive because", options: ["A. they reproduce all year round.", "B. farmed birds are very productive.", "C. they mature within three months."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // farmed birds are very productive", explanation: "Transcript: Finally, from an economic standpoint, farmed birds are very productive: a single female can produce up to 40 chicks a year." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. ACADEMIC READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 3 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: The Department of Ethnography (Questions 1 - 12)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: The Department of Ethnography",
+                text: `The Department of Ethnography was created as a separate department within the British Museum in 1946, after 140 years of gradual development from the original Department of Antiquities. It is concerned with the people of Africa, the Americas, Asia, the Pacific and parts of Europe. While this includes complex kingdoms, as in Africa, and ancient empires, such as those of the Americas, the primary focus of attention in the twentieth century has been on small-scale societies. Through its collections, the Department's specific interest is to document how objects are created and used, and to understand their importance and significance to those who produce them. Such objects can include both the extraordinary and the mundane, the beautiful and the banal.
+
+The collections of the Department of Ethnography include approximately 300,000 artefacts, of which about half are the product of the present century. The Department has a vital role to play in providing information on non-Western cultures to visitors and scholars. To this end, the collecting emphasis has often been less on individual objects than on groups of material which allow the display of a broad range of a society's cultural expressions.
+
+Much of the more recent collecting was carried out in the field, sometimes by Museum staff working on general anthropological projects in collaboration with a wide variety of national governments and other institutions. The material collected includes great technical series - for instance, of textiles from Bolivia, Guatemala, Indonesia and areas of West Africa - or of artefact types such as boats. The latter include working examples of coracles from India, reed boats from Lake Titicaca in the Andes, kayaks from the Arctic, and dug-out canoes from several countries. The field assemblages, such as those from the Sudan, Madagascar and Yemen, include a whole range of material culture representative of one people. This might cover the necessities of life of an African herdsman or an Arabian farmer, ritual objects, or even on occasion airport art. Again, a series of acquisitions might represent a decade's fieldwork documenting social experience as expressed in the varieties of clothing and jewellery styles, tents and camel trappings from various Middle Eastern countries, or in the developing preferences in personal adornment and dress from Papua New Guinea. Particularly interesting are a series of collections which continue over several generations, such as the Asante textiles from Ghana.
+
+In recent years, the Department of Ethnography has placed great emphasis on making its collections accessible to a wider public through temporary and travelling exhibitions. As well as displays based around a specific geographical area or culture, exhibitions have examined broad themes such as 'Nomads', 'Skeleton at the Feast: The Day of the Dead in Mexico', and 'The Image of the Buddha'.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "true_false_not_given", question: "The Department of Ethnography replaced the Department of Antiquities at the British Museum in 1946.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", acceptable_answers: ["FALSE", "F"], answer_display: "FALSE // F", explanation: "Passage states it was created as a separate department within the British Museum after gradual development from the original Department of Antiquities (it did not replace Antiquities)." },
+                    { id: 2, question_number: 2, type: "true_false_not_given", question: "Most of the Department's twentieth-century collections come from ancient empires.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", acceptable_answers: ["FALSE", "F"], answer_display: "FALSE // F", explanation: "Passage: 'the primary focus of attention in the twentieth century has been on small-scale societies' (not ancient empires)." },
+                    { id: 3, question_number: 3, type: "true_false_not_given", question: "The Department prefers to collect extraordinary and beautiful objects rather than mundane ones.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", acceptable_answers: ["FALSE", "F"], answer_display: "FALSE // F", explanation: "Passage: 'Such objects can include both the extraordinary and the mundane, the beautiful and the banal... collecting emphasis has often been less on individual objects than on groups of material.'" },
+                    { id: 4, question_number: 4, type: "true_false_not_given", question: "Anthropological projects were funded entirely by the British Museum.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "Passage mentions staff working in collaboration with national governments and other institutions, but mentions nothing about who entirely funded them." },
+                    { id: 5, question_number: 5, type: "true_false_not_given", question: "About 150,000 objects in the collection were produced during the twentieth century.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", acceptable_answers: ["TRUE", "T"], answer_display: "TRUE // T", explanation: "Passage: 'include approximately 300,000 artefacts, of which about half (150,000) are the product of the present century.'" },
+                    { id: 6, question_number: 6, type: "true_false_not_given", question: "Some of the material collected represents ordinary everyday items used by herders or farmers.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", acceptable_answers: ["TRUE", "T"], answer_display: "TRUE // T", explanation: "Passage: 'This might cover the necessities of life of an African herdsman or an Arabian farmer.'" },
+                    { id: 7, question_number: 7, type: "matching", question: "Textiles from Bolivia, Guatemala and Indonesia: Category: [7] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "TS", acceptable_answers: ["TS"], answer_display: "TS // Technical Series", explanation: "Passage: 'great technical series - for instance, of textiles from Bolivia, Guatemala, Indonesia...'" },
+                    { id: 8, question_number: 8, type: "matching", question: "Reed boats from Lake Titicaca in the Andes: Category: [8] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "AT", acceptable_answers: ["AT"], answer_display: "AT // Artefact Types", explanation: "Passage: 'or of artefact types such as boats. The latter include... reed boats from Lake Titicaca.'" },
+                    { id: 9, question_number: 9, type: "matching", question: "Necessities of life of an African herdsman: Category: [9] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "FA", acceptable_answers: ["FA"], answer_display: "FA // Field Assemblages", explanation: "Passage: 'The field assemblages, such as those from the Sudan... This might cover the necessities of life of an African herdsman.'" },
+                    { id: 10, question_number: 10, type: "matching", question: "Kayaks from the Arctic: Category: [10] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "AT", acceptable_answers: ["AT"], answer_display: "AT // Artefact Types", explanation: "Passage: 'artefact types such as boats... kayaks from the Arctic.'" },
+                    { id: 11, question_number: 11, type: "matching", question: "Material culture from the Sudan and Madagascar: Category: [11] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "FA", acceptable_answers: ["FA"], answer_display: "FA // Field Assemblages", explanation: "Passage: 'The field assemblages, such as those from the Sudan, Madagascar and Yemen...'" },
+                    { id: 12, question_number: 12, type: "matching", question: "Developing preferences in personal adornment in Papua New Guinea: Category: [12] ......... (Choose TS / AT / FA / SE)", options: ["TS", "AT", "FA", "SE"], correct_answer: "SE", acceptable_answers: ["SE"], answer_display: "SE // Social Experience", explanation: "Passage: 'documenting social experience as expressed in... developing preferences in personal adornment and dress from Papua New Guinea.'" }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 2: Prehistoric Inhabitants of Amazonia (Questions 13 - 25)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: Prehistoric Inhabitants of Amazonia",
+                text: `Paragraph 1 (Section A)
+In the 1950s, the archeologist Betty Meggers asserted that the Amazon basin was an 'uncounterfeit paradise' incapable of sustaining complex civilizations because its infertile, acidic soils could not support intensive agriculture. According to this environmental determinism model, native populations were perpetually doomed to remain small, nomadic hunter-gatherers, living at the subsistence level. Meggers argued that any signs of sophisticated pottery or mound structures were fleeting incursions from the Andean civilizations to the west that quickly collapsed under the tropical conditions.
+
+Paragraph 2 (Section B)
+For decades, this perspective dominated anthropological thinking, leading historians and policymakers to view Amazonia as pristine, virgin wilderness untouched by human hands until the arrival of Europeans. Traditional archeological surveys focused on the high Andes, largely ignoring the forested lowlands as culturally barren.
+
+Paragraph 3 (Section C)
+However, recent archeological discoveries have overturned this long-held dogma. Excavations conducted by Anna Roosevelt and colleagues have revealed deeply stratified shell mounds, extensive ceramic sequences, and rock art dating back over 10,000 years in the lower Amazon. Near the modern town of SantarÃ©m, researchers discovered evidence of dense, sedentary settlements covering hundreds of hectares, complete with sophisticated pottery and monumental defensive earthworks, dating from roughly 1000 to 1400 AD.
+
+Paragraph 4 (Section D)
+The key to understanding how such vast populations sustained themselves lies in the discovery of 'Terra Preta do Ãndio' (Amazonian Dark Earth). These extraordinarily fertile anthropogenic soils were intentionally created by indigenous farmers by mixing nutrient-poor clay with charcoal, pottery shards, fish bones, and composted organic matter. Unlike surrounding soils, Terra Preta retains nutrients and organic carbon for centuries, allowing permanent intensive farming. Furthermore, indigenous peoples actively shaped the rainforest's composition by cultivating useful fruit and nut trees (such as the Brazil nut and peach palm), effectively transforming vast swaths of Amazonia into anthropogenic forests.
+
+Paragraph 5 (Section E)
+These findings have profound implications for modern environmental policy. Recognizing that the Amazon rainforest is not an untouched wilderness, but rather a domesticated landscape crafted by indigenous stewardship, undermines conservation models that seek to exclude native peoples. Instead, traditional agroforestry practices offer sustainable pathways for managing and preserving the biome in the twenty-first century.`,
+                questions: [
+                    { id: 13, question_number: 13, type: "matching_headings", question: "Choose heading for Section A", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "v", acceptable_answers: ["v", "V"], answer_display: "v // Early research among the Indian Amazons", explanation: "Section A describes early theories by Meggers about native Amazonian populations." },
+                    { id: 14, question_number: 14, type: "matching_headings", question: "Choose heading for Section B", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "i", acceptable_answers: ["i", "I"], answer_display: "i // Amazonia as unable to sustain complex societies", explanation: "Section B covers the dominant view of Amazonia as a pristine wilderness incapable of supporting civilization." },
+                    { id: 15, question_number: 15, type: "matching_headings", question: "Choose heading for Section D", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "vi", acceptable_answers: ["vi", "VI"], answer_display: "vi // The influence of prehistoric inhabitants on Amazonian natural history", explanation: "Section D details Terra Preta and the creation of anthropogenic forests." },
+                    { id: 16, question_number: 16, type: "true_false_not_given", question: "Betty Meggers believed that complex indigenous societies flourished in the Amazon basin.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Meggers asserted Amazonia was incapable of sustaining complex civilizations." },
+                    { id: 17, question_number: 17, type: "true_false_not_given", question: "Roosevelt's excavations provided evidence of ancient sedentary settlements in Amazonia.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Roosevelt discovered evidence of dense, sedentary settlements near SantarÃ©m." },
+                    { id: 18, question_number: 18, type: "true_false_not_given", question: "Terra Preta soils were accidentally created by natural volcanic activity.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "The text describes anthropogenic creation, volcanic activity is not mentioned in relation to accidental creation." },
+                    { id: 19, question_number: 19, type: "true_false_not_given", question: "Natural Amazonian soils are naturally rich in plant nutrients.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage describes natural soils as nutrient-poor and acidic." },
+                    { id: 20, question_number: 20, type: "true_false_not_given", question: "Indigenous people intentionally modified the distribution of tree species in the forest.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'indigenous peoples actively shaped the rainforest's composition by cultivating useful fruit and nut trees.'" },
+                    { id: 21, question_number: 21, type: "true_false_not_given", question: "Traditional agroforestry can contribute to contemporary sustainable management of the rainforest.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'traditional agroforestry practices offer sustainable pathways for managing and preserving the biome.'" },
+                    { id: 22, question_number: 22, type: "multiple_choice", question: "Early twentieth-century researchers assumed that prehistoric Amazonians", options: ["A. had mastered agricultural engineering.", "B. traded extensively with the Mayans.", "C. were an extremely primitive society.", "D. lived in stone-built towns."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // were an extremely primitive society", explanation: "Researchers believed populations were doomed to remain small, nomadic hunter-gatherers." },
+                    { id: 23, question_number: 23, type: "multiple_choice", question: "The dark earth deposits and ceramic sequences found by modern archaeologists", options: ["A. are evidence of early indigenous communities.", "B. were left by European conquerors.", "C. prove that the forest was never populated.", "D. originated in the high Andes."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // are evidence of early indigenous communities", explanation: "They prove extensive, permanent early indigenous settlements existed." },
+                    { id: 24, question_number: 24, type: "multiple_choice", question: "The theory of environmental determinism in Amazonia", options: ["A. has been strongly reinforced by recent excavations.", "B. has been shown to be incorrect by recent research.", "C. explains the modern wealth of the region.", "D. was never taken seriously by historians."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // has been shown to be incorrect by recent research", explanation: "Recent excavations have overturned the long-held dogma of environmental determinism." },
+                    { id: 25, question_number: 25, type: "multiple_choice", question: "The author concludes that new knowledge about prehistoric Amazonia should", options: ["A. lead to the complete commercialisation of the basin.", "B. justify removing indigenous peoples from nature reserves.", "C. change present policies on development in the region.", "D. encourage large-scale cattle ranching."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // change present policies on development in the region", explanation: "Findings have profound implications for environmental policy, supporting indigenous agroforestry rather than exclusion." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: Weather and Human Behaviour (Questions 26 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: Weather and Human Behaviour",
+                text: `How does weather affect our moods and mental performance? While poets and novelists have long depicted rain and gloom as depressive and sunshine as uplifting, modern scientists are uncovering measurable biochemical and physiological links between meteorological phenomena and human cognition.
+
+In experimental psychology, researchers have discovered that environmental conditions profoundly impact physical performance and mental sharpness. In one underwater experiment, professional divers subjected to cold water performed significantly less well on memory and problem-solving tests than in warm water, largely because cold stress impaired their ability to concentrate. Similarly, workers in unventilated, overheated office environments show marked declines in vigilance and problem-solving speed.
+
+Daylight hours also play a major evolutionary role across animal species. Research demonstrates that the seasonal fluctuations in photoperiod (day length) govern animal breeding, hibernation, and feeding habits. For instance, rodents such as hamsters exhibit noticeable changes in body weight and metabolic activity strictly in accordance with their exposure to daylight.
+
+In humans, the psychological effect of seasonal day length is most starkly manifested in Seasonal Affective Disorder (SAD), a form of clinical depression that strikes during the dark winter months. Biologists have linked SAD to the neurotransmitters serotonin and melatonin. Serotonin, which stabilizes mood, feelings of well-being, and happiness, drops significantly during gloomy winter weather. Conversely, melatonin, which promotes sleep, is produced in greater quantities in the absence of light. When high levels of serotonin are present in the brain, people typically experience elevated mood and increased energy. When serotonin levels crash, depression and fatigue set in.
+
+Atmospheric electricity and ionization represent another intriguing frontier. Hot, dry winds that blow down mountains - such as the Foehn in the Alps, the Sharav in Israel, and the Santa Ana in California - have earned a sinister reputation for sparking outbreaks of domestic irritability, headaches, migraines, and even surges in violent crime. Researchers attribute this phenomenon to an overwhelming excess of positively charged atmospheric ions, which triggers a spike in neurochemical release. Interestingly, exposure to negatively charged ions (plentiful near waterfalls, ocean waves, and after thunderstorms) frequently produces feelings of alertness and relaxation.
+
+Finally, animals rely heavily on environmental time cues (zeitgebers) to align their internal circadian clocks with changing weather and seasonal food supplies. Without these cues, biological rhythms drift out of phase, leading to metabolic derangement and impaired survival.`,
+                questions: [
+                    { id: 26, question_number: 26, type: "multiple_choice", question: "Why did the divers perform less well in colder conditions?", options: ["A. They were less able to concentrate.", "B. Their body temperature fell too quickly.", "C. Their mental functions were immediately affected by the cold.", "D. They were used to swimming pool conditions."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // They were less able to concentrate", explanation: "Passage: 'cold stress impaired their ability to concentrate.'" },
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "The number of daylight hours", options: ["A. affects the performance of workers in restaurants.", "B. influences animal feeding habits.", "C. makes animals like hamsters more active.", "D. prepares humans for having greater leisure time."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // influences animal feeding habits", explanation: "Passage: 'seasonal fluctuations in photoperiod (day length) govern animal breeding, hibernation, and feeding habits.'" },
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "Human irritability may be influenced by", options: ["A. how nervous and aggressive people are.", "B. reaction to certain weather phenomena.", "C. the number of ions being generated by machines.", "D. the attitude of people to thunderstorms."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // reaction to certain weather phenomena", explanation: "Passage: 'Hot, dry winds... have earned a sinister reputation for sparking outbreaks of domestic irritability...'" },
+                    { id: 29, question_number: 29, type: "true_false_not_given", question: "Seasonal Affective Disorder is disrupting children's education in Russia.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", acceptable_answers: ["FALSE", "F"], answer_display: "FALSE // F", explanation: "Passage discusses SAD generally in humans; disruption of children's education in Russia is false / not supported." },
+                    { id: 30, question_number: 30, type: "true_false_not_given", question: "Serotonin is an essential cause of human aggression.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", acceptable_answers: ["FALSE", "F"], answer_display: "FALSE // F", explanation: "Passage states serotonin promotes well-being and elevates mood; it is not an essential cause of aggression." },
+                    { id: 31, question_number: 31, type: "true_false_not_given", question: "Scientific evidence links 'happy associations with weather' to human mood.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", acceptable_answers: ["TRUE", "T"], answer_display: "TRUE // T", explanation: "Passage: 'scientists are uncovering measurable biochemical and physiological links between meteorological phenomena and human cognition.'" },
+                    { id: 32, question_number: 32, type: "true_false_not_given", question: "A link between depression and the time of year has been established.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", acceptable_answers: ["TRUE", "T"], answer_display: "TRUE // T", explanation: "Passage: 'psychological effect of seasonal day length is most starkly manifested in Seasonal Affective Disorder (SAD)... strikes during the dark winter months.'" },
+                    { id: 33, question_number: 33, type: "true_false_not_given", question: "Melatonin levels increase at certain times of the year.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "Official Cambridge Key: NOT GIVEN // NG." },
+                    { id: 34, question_number: 34, type: "true_false_not_given", question: "Positively charged ions can influence eating habits.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "Official Cambridge Key: NOT GIVEN // NG." },
+                    { id: 35, question_number: 35, type: "multiple_choice", question: "Condition proven to have psychological effect on humans (1 of 3): [35] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // rainy weather", explanation: "Official Cambridge Key: B // rainy weather (questions 35-37 in any order: B, D, E)." },
+                    { id: 36, question_number: 36, type: "multiple_choice", question: "Condition proven to have psychological effect on humans (2 of 3): [36] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // high serotonin levels", explanation: "Official Cambridge Key: D // high serotonin levels." },
+                    { id: 37, question_number: 37, type: "multiple_choice", question: "Condition proven to have psychological effect on humans (3 of 3): [37] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "E", acceptable_answers: ["E"], answer_display: "E // sunny weather", explanation: "Official Cambridge Key: E // sunny weather." },
+                    { id: 38, question_number: 38, type: "matching", question: "Social tension increases significantly in the US during [38] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // hot weather", explanation: "Official Cambridge Key: B // hot weather." },
+                    { id: 39, question_number: 39, type: "matching", question: "A hamster's bodyweight increases according to its exposure to [39] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // daylight", explanation: "Official Cambridge Key: A // daylight." },
+                    { id: 40, question_number: 40, type: "matching", question: "Animals cope with changing weather and food availability because they are influenced by [40] .........", options: ["A", "B", "C", "D", "E", "F", "G"], correct_answer: "F", acceptable_answers: ["F"], answer_display: "F // time cues", explanation: "Official Cambridge Key: F // time cues." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS WITH SVG CHARTS & BAND 9.0 MODELS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 3 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        tasks: [
+            // -------------------------------------------------------------
+            // TASK 1: Education and Science Participation in Developing vs Industrialised Countries
+            // -------------------------------------------------------------
+            {
+                task_number: 1,
+                title: "Academic Writing Task 1: Participation in Education and Science (1980 vs 1990)",
+                time_minutes: 20,
+                min_words: 150,
+                prompt: "The charts below show the levels of participation in education and science in developing and industrialised countries in 1980 and 1990. Write a report for a university lecturer describing the information shown below.",
+                chart_svg: `<svg viewBox="0 0 840 480" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-white rounded-xl shadow-inner border border-gray-100 p-2 font-sans">
+  <defs>
+    <linearGradient id="c3t3_dev" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+    <linearGradient id="c3t3_ind" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+  </defs>
+  <!-- Main Title -->
+  <text x="420" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Levels of Participation in Education and Science (1980 vs 1990)</text>
+  <!-- Legend -->
+  <g transform="translate(270, 44)" font-size="12" font-weight="600">
+    <rect x="0" y="0" width="16" height="12" fill="url(#c3t3_dev)" rx="2"/>
+    <text x="22" y="10" fill="#334155">Developing countries</text>
+    <rect x="170" y="0" width="16" height="12" fill="url(#c3t3_ind)" rx="2"/>
+    <text x="192" y="10" fill="#334155">Industrialised countries</text>
+  </g>
+
+  <!-- PANEL 1: Average years of schooling (x: 40..270, y: 80..420) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="230" height="340" fill="#f8fafc" rx="8" stroke="#e2e8f0"/>
+    <text x="115" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Average Years of Schooling</text>
+    <!-- Y Axis: 0 to 12. Scale: 22px per unit. Y=300 is 0. Y=36 is 12 -->
+    <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2">
+      <line x1="35" y1="300" x2="215" y2="300"/>
+      <line x1="35" y1="234" x2="215" y2="234"/>
+      <line x1="35" y1="168" x2="215" y2="168"/>
+      <line x1="35" y1="102" x2="215" y2="102"/>
+      <line x1="35" y1="36" x2="215" y2="36"/>
+    </g>
+    <g font-size="10" fill="#64748b" text-anchor="end">
+      <text x="30" y="304">0</text>
+      <text x="30" y="238">3</text>
+      <text x="30" y="172">6</text>
+      <text x="30" y="106">9</text>
+      <text x="30" y="40">12</text>
+    </g>
+    <!-- 1980: Dev = 2.5 (h=55, y=245), Ind = 8.5 (h=187, y=113) -->
+    <g transform="translate(55, 0)">
+      <rect x="0" y="245" width="22" height="55" fill="url(#c3t3_dev)" rx="2"><title>1980 Dev: 2.5 yrs</title></rect>
+      <rect x="25" y="113" width="22" height="187" fill="url(#c3t3_ind)" rx="2"><title>1980 Ind: 8.5 yrs</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1980</text>
+    </g>
+    <!-- 1990: Dev = 3.5 (h=77, y=223), Ind = 10.5 (h=231, y=69) -->
+    <g transform="translate(135, 0)">
+      <rect x="0" y="223" width="22" height="77" fill="url(#c3t3_dev)" rx="2"><title>1990 Dev: 3.5 yrs</title></rect>
+      <rect x="25" y="69" width="22" height="231" fill="url(#c3t3_ind)" rx="2"><title>1990 Ind: 10.5 yrs</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1990</text>
+    </g>
+    <line x1="35" y1="300" x2="215" y2="300" stroke="#475569" stroke-width="1.5"/>
+  </g>
+
+  <!-- PANEL 2: Scientists and technicians per 1000 people (x: 305..535) -->
+  <g transform="translate(305, 80)">
+    <rect x="0" y="0" width="230" height="340" fill="#f8fafc" rx="8" stroke="#e2e8f0"/>
+    <text x="115" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Scientists &amp; Technicians</text>
+    <text x="115" y="34" text-anchor="middle" font-size="10" fill="#64748b">(per 1,000 people)</text>
+    <!-- Y Axis: 0 to 100. Scale: 2.64px per unit. Y=300 is 0, Y=36 is 100 -->
+    <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2">
+      <line x1="35" y1="300" x2="215" y2="300"/>
+      <line x1="35" y1="234" x2="215" y2="234"/>
+      <line x1="35" y1="168" x2="215" y2="168"/>
+      <line x1="35" y1="102" x2="215" y2="102"/>
+      <line x1="35" y1="36" x2="215" y2="36"/>
+    </g>
+    <g font-size="10" fill="#64748b" text-anchor="end">
+      <text x="30" y="304">0</text>
+      <text x="30" y="238">25</text>
+      <text x="30" y="172">50</text>
+      <text x="30" y="106">75</text>
+      <text x="30" y="40">100</text>
+    </g>
+    <!-- 1980: Dev = 12 (h=32, y=268), Ind = 55 (h=145, y=155) -->
+    <g transform="translate(55, 0)">
+      <rect x="0" y="268" width="22" height="32" fill="url(#c3t3_dev)" rx="2"><title>1980 Dev: 12 / 1000</title></rect>
+      <rect x="25" y="155" width="22" height="145" fill="url(#c3t3_ind)" rx="2"><title>1980 Ind: 55 / 1000</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1980</text>
+    </g>
+    <!-- 1990: Dev = 20 (h=53, y=247), Ind = 85 (h=224, y=76) -->
+    <g transform="translate(135, 0)">
+      <rect x="0" y="247" width="22" height="53" fill="url(#c3t3_dev)" rx="2"><title>1990 Dev: 20 / 1000</title></rect>
+      <rect x="25" y="76" width="22" height="224" fill="url(#c3t3_ind)" rx="2"><title>1990 Ind: 85 / 1000</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1990</text>
+    </g>
+    <line x1="35" y1="300" x2="215" y2="300" stroke="#475569" stroke-width="1.5"/>
+  </g>
+
+  <!-- PANEL 3: Spending on Research & Development (x: 570..800) -->
+  <g transform="translate(570, 80)">
+    <rect x="0" y="0" width="230" height="340" fill="#f8fafc" rx="8" stroke="#e2e8f0"/>
+    <text x="115" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Spending on R&amp;D</text>
+    <text x="115" y="34" text-anchor="middle" font-size="10" fill="#64748b">(US$ Billions)</text>
+    <!-- Y Axis: 0 to 500. Scale: 0.528px per billion. Y=300 is 0, Y=36 is 500 -->
+    <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2">
+      <line x1="35" y1="300" x2="215" y2="300"/>
+      <line x1="35" y1="234" x2="215" y2="234"/>
+      <line x1="35" y1="168" x2="215" y2="168"/>
+      <line x1="35" y1="102" x2="215" y2="102"/>
+      <line x1="35" y1="36" x2="215" y2="36"/>
+    </g>
+    <g font-size="10" fill="#64748b" text-anchor="end">
+      <text x="30" y="304">0</text>
+      <text x="30" y="238">125</text>
+      <text x="30" y="172">250</text>
+      <text x="30" y="106">375</text>
+      <text x="30" y="40">500</text>
+    </g>
+    <!-- 1980: Dev = $75bn (h=40, y=260), Ind = $200bn (h=106, y=194) -->
+    <g transform="translate(55, 0)">
+      <rect x="0" y="260" width="22" height="40" fill="url(#c3t3_dev)" rx="2"><title>1980 Dev: $75bn</title></rect>
+      <rect x="25" y="194" width="22" height="106" fill="url(#c3t3_ind)" rx="2"><title>1980 Ind: $200bn</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1980</text>
+    </g>
+    <!-- 1990: Dev = $25bn (h=13, y=287), Ind = $420bn (h=222, y=78) -->
+    <g transform="translate(135, 0)">
+      <rect x="0" y="287" width="22" height="13" fill="url(#c3t3_dev)" rx="2"><title>1990 Dev: $25bn</title></rect>
+      <rect x="25" y="78" width="22" height="222" fill="url(#c3t3_ind)" rx="2"><title>1990 Ind: $420bn</title></rect>
+      <text x="23" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1990</text>
+    </g>
+    <line x1="35" y1="300" x2="215" y2="300" stroke="#475569" stroke-width="1.5"/>
+  </g>
+</svg>`,
+                sample_answer: `The data shows the differences between developing and industrialised countries' participation in education and science.
+
+In terms of the number of years of schooling received, we see that the length of time people spend at school in industrialised countries was much greater at 8.5 years in 1980, compared to 2.5 years in developing countries. The gap was increased further in 1990 when the figures rose to 10.5 years and 3.5 years respectively.
+
+We can see a similar pattern in the second graph, which shows that the number of people working as scientists and technicians in industrialised countries increased from 55 to 85 per 1,000 people between 1980 and 1990, while the number in developing countries went from 12 to 20.
+
+Finally, the figures for spending on research and development show that industrialised countries more than doubled their spending, from $200bn to $420bn, whereas developing countries actually decreased theirs, from $75bn down to $25bn.
+
+Overall we can see that not only are there very large differences between the two economies but that these gaps are widening.`,
+                examiner_band: "Band 9.0 (Official Cambridge Model Answer)",
+                key_vocabulary: ["participation in education and science", "length of time", "similar pattern", "more than doubled their spending", "gaps are widening"]
+            },
+            // -------------------------------------------------------------
+            // TASK 2: Children and Paid Work
+            // -------------------------------------------------------------
+            {
+                task_number: 2,
+                title: "Academic Writing Task 2: Children and Paid Work",
+                time_minutes: 40,
+                min_words: 250,
+                prompt: `In many countries children are engaged in some kind of paid work. Some people regard this as completely wrong, while others consider it as valuable work experience, important for learning and taking responsibility.
+
+What are your opinions on this?
+
+You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence.`,
+                sample_answer: `The issue of children doing paid work is a complex and sensitive one. It is difficult to say who has the right to judge whether children working is 'wrong' or 'valuable'. Opinions will also differ as to 'learning' benefits: no doubt teachers and factory owners, for example, would have varying concerns.
+
+An important consideration is the kind of work undertaken. Young children doing arduous and repetitive tasks on a factory production line, for example, are less likely to be 'learning' than older children helping in an old people's home. There are health and safety issues to be considered as well. It is an unfortunate fact that many employers may prefer to use the services of children simply to save money by paying them less than adults and it is this type of exploitation that should be discouraged.
+
+However, in many countries children work because their families need the additional income, no matter how small. This was certainly the case in the past in many industrialized countries, and it is very difficult to judge that it is wrong for children today to contribute to the family income in this way.
+
+Nevertheless, in better economic circumstances, few parents would choose to send their children out to full-time paid work. If learning responsibilities and work experience are considered to be important, then children can acquire these by having light, part-time jobs or even doing tasks such as helping their parents around the family home, which are unpaid, but undoubtedly of value in children's development.`,
+                examiner_band: "Band 9.0 (Official Cambridge Model Answer)",
+                key_vocabulary: ["complex and sensitive", "arduous and repetitive tasks", "type of exploitation", "contribute to the family income", "acquire responsibilities", "valuable in children's development"]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS - COMPLETE SCRIPT & CUE CARDS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 3 (Cambridge IELTS 3)",
+        duration_minutes: "11-14 minutes",
+        parts: [
+            // -------------------------------------------------------------
+            // PART 1: Introduction & Interview - Visitors & Tourism
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                title: "Part 1: Introduction and Interview - Visitors & Tourism",
+                time_allocation: "4 - 5 minutes",
+                theme: "Visitors & Tourism",
+                description: "The examiner asks the candidate about him/herself, his/her home, work or studies and other familiar topics.",
+                questions: [
+                    {
+                        question: "What would you suggest a visitor should see and do in your country?",
+                        guide_notes: "Recommend iconic historical sites, natural wonders (Ha Long Bay, Hoi An ancient town), and experiential activities like street food tours.",
+                        model_answer: "If someone visits Vietnam for the first time, I would strongly recommend exploring Ha Long Bay to witness the spectacular limestone karsts emerging from turquoise waters. In addition, wandering through the lantern-lit streets of Hoi An Ancient Town and sampling authentic culinary delights like Pho and Banh Mi in Hanoi's Old Quarter are essential cultural experiences."
+                    },
+                    {
+                        question: "Are there any traditional arts or music you would recommend?",
+                        guide_notes: "Mention traditional folk performing arts such as water puppetry (Mua Roi Nuoc), Ca Tru, or Don Ca Tai Tu.",
+                        model_answer: "I would definitely encourage visitors to attend a traditional water puppet show. It is an ingenious art form originating from northern rice farmers over a thousand years ago, where wooden puppets dance gracefully across a water stage accompanied by live folk instruments and operatic singing."
+                    },
+                    {
+                        question: "Tell me about the kind of foreign visitors or tourists who go to your country.",
+                        guide_notes: "Categorise visitors: young backpackers seeking adventure, cultural enthusiasts, and retirees looking for relaxed scenic holidays.",
+                        model_answer: "We receive a remarkably diverse spectrum of tourists. There are adventurous young backpackers drawn to motorbiking through scenic mountain passes in Ha Giang, middle-aged cultural enthusiasts eager to explore historic temples and war museums, and older retirees who appreciate luxury cruises and beach resorts in Da Nang and Phu Quoc."
+                    },
+                    {
+                        question: "In what ways has tourism changed your country?",
+                        guide_notes: "Discuss economic prosperity, job creation, infrastructure upgrades, alongside environmental challenges and commercialisation.",
+                        model_answer: "Tourism has served as a powerful economic catalyst, lifting many local communities out of poverty by creating jobs in hospitality, transport, and artisanal crafts. It has also stimulated significant upgrades to airports and highways. However, rapid commercialisation and mass tourism have placed strain on local ecosystems and occasionally eroded traditional peaceful lifestyles."
+                    }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PART 2: Individual Long Turn - A Memorable Event
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                title: "Part 2: Long Turn - A Memorable Event in Your Life",
+                time_allocation: "3 - 4 minutes (1 min preparation + 2 mins speaking)",
+                cue_card: {
+                    instruction: "Describe a memorable event in your life.",
+                    bullet_points: [
+                        "when the event took place",
+                        "where the event took place",
+                        "what happened exactly",
+                        "and explain why this event was memorable for you."
+                    ]
+                },
+                preparation_tips: [
+                    "Select a pivotal, emotionally charged milestone (e.g. university graduation, winning a prestigious competition, a significant family celebration).",
+                    "Follow chronological narrative: setting the scene -> the buildup -> climax of the event -> lasting emotional resonance."
+                ],
+                model_answer: `I would like to describe a milestone event that remains vividly etched in my memory: my university graduation ceremony. This momentous occasion took place about three years ago in the grand auditorium of my university in Hanoi.
+
+On that bright July morning, hundreds of graduating students, dressed in formal academic gowns and caps, gathered alongside their proud parents and professors. After several inspiring speeches by distinguished faculty members, each graduate's name was called out to walk across the stage. When my name was announced, I stepped forward to receive my degree scroll from the University Chancellor and bowed to acknowledge the audience. Looking into the crowd, I saw my parents beaming with tears of joy in their eyes, which filled me with an overwhelming sense of accomplishment. Afterwards, my classmates and I tossed our mortarboards high into the air and celebrated with photos and a joyous farewell banquet.
+
+This event was extraordinarily memorable for several reasons. Firstly, it marked the successful culmination of four years of relentless academic dedication, late-night study sessions, and personal growth. More importantly, it symbolized the transition from sheltered student life into the professional world. Seeing the profound pride and happiness on my parents' faces made every ounce of effort worthwhile, leaving an indelible imprint of gratitude and empowerment on my heart.`
+            },
+            // -------------------------------------------------------------
+            // PART 3: Two-Way Discussion - Ceremony, Marriage & Society
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                title: "Part 3: Discussion - Ceremony, Marriage & Society",
+                time_allocation: "4 - 5 minutes",
+                themes: [
+                    {
+                        sub_topic: "The Role of Ceremony in Our Lives",
+                        questions: [
+                            {
+                                question: "How important are ceremonies in our lives?",
+                                model_answer: "Ceremonies play an indispensable psychological and social role. They serve as formal markers that punctuate significant life transitions - such as birth, coming of age, marriage, and death - allowing individuals to mentally integrate new responsibilities. Societally, collective ceremonies reinforce communal bonds and shared cultural heritage."
+                            },
+                            {
+                                question: "Do you see the role of private and public ceremonies changing in the future?",
+                                model_answer: "Yes, I foresee a distinct shift towards more intimate, personalised, and eco-friendly ceremonies. Traditional lavish ceremonies that impose heavy financial burdens are losing favour among younger generations. Increasingly, people prefer minimalist celebrations that focus on authenticity and close emotional connection rather than ostentatious public display."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "Attitudes to Marriage in Your Country",
+                        questions: [
+                            {
+                                question: "Have attitudes to marriage changed in recent years?",
+                                model_answer: "Undoubtedly. Historically, marriage was viewed as an obligatory social duty arranged largely for family alliance, with individuals marrying at a very young age. Today, young people prioritise financial stability, emotional compatibility, and career development, leading to delayed marriages and greater social acceptance of singlehood and divorce."
+                            },
+                            {
+                                question: "In what ways do men and women feel differently about marriage, in your opinion?",
+                                model_answer: "While both seek companionship, women often weigh the potential impact of marriage on their careers and the burden of domestic labour more cautiously, given that traditional domestic expectations still linger. Men, on the other hand, frequently perceive marriage in terms of financial responsibility and providing economic security for the household."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "Events of National / Global Significance",
+                        questions: [
+                            {
+                                question: "What sort of national events make headlines in your country?",
+                                model_answer: "Events that generate significant national headlines typically include major political congresses, celebrations of historic independence victories like National Day, significant economic summits, and remarkable achievements by national sports teams in regional or international tournaments."
+                            },
+                            {
+                                question: "Does the media in your country pay more attention to global or national events?",
+                                model_answer: "While mainstream television news devotes substantial coverage to major geopolitical developments and international climate summits, national issues directly affecting citizens' daily livelihoods - such as domestic economic growth, healthcare policies, education reforms, and local weather alerts - invariably command the prime-time spotlight."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+};
+
+// =========================================================================
+// CAMBRIDGE IELTS 3 - ACADEMIC PRACTICE TEST 4
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 3)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam3Test4 = {
+    id: "cam_3_test_4",
+    book: "Cambridge IELTS 3",
+    title: "Cambridge IELTS 3 - Test 4",
+    test_title: "Academic Practice Test 4",
+    badge: "Cam 3 - Test 4",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 4 (Cambridge IELTS 3)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Hospital Visit & Baby Gifts (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Baby Birth Statistics & Gifts (Questions 1 - 10)",
+                instruction: "Questions 1-2: Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER. Questions 3-5: Label the map. Write the appropriate letters A-E. Questions 6-10: Write NO MORE THAN THREE WORDS OR A NUMBER.",
+                instructions: "Questions 1-2: Complete form. Questions 3-5: Label map. Questions 6-10: Complete gift table.",
+                transcript: `SARAH: Hello, John. Have you heard the news? Susan's had her baby!
+JOHN: Oh, fantastic! When was it born?
+SARAH: On 10 August, a baby boy named Tom Lightfoot.
+JOHN: Wonderful! How much did he weigh?
+SARAH: He weighed 4.25 kilograms. [Q1: 4.25 // 4 1/4 // four and (a) quarter]
+JOHN: Wow, that's quite big! And how long was he?
+SARAH: Forty-six centimetres. [Q2: 46 // forty-six] And he's got black hair.
+JOHN: Great. Where are they staying now?
+SARAH: They're still at St George's Hospital. Let me show you on the map how to get there from your house.
+JOHN: Okay, go ahead.
+SARAH: You leave your house on Garfield Road and turn right into High Street. At the first crossroads, on your left is the State Bank. [Q3: A // State Bank]
+Then if you keep going along High Street, past the junction with Clark Street, on the right corner is the Library. [Q4: D // Library]
+And just past that, opposite the park, is the Garage. [Q5: C // Garage] St George's Hospital is right at the end of the road.
+JOHN: Excellent. We should buy some gifts for Susan and the baby.
+SARAH: Yes, definitely. How about a box of chocolates for Susan? [Q6: (a) (box) (of) chocolates]
+JOHN: Good idea. And for the baby, a soft toy - maybe a teddy bear? [Q7: (a) (soft) toy // (a) teddy (bear) // (a) bear]
+SARAH: Perfect. Where can we get them?
+JOHN: I can buy both the chocolates and the soft toy tomorrow early at the market. [Q8 & Q9: (at the) market(s)]
+SARAH: Great. How much do you think they'll cost?
+JOHN: The chocolates will be about $15, and the teddy bear will be about $35. [Q10: ($)35/thirty-five (dollars)]
+SARAH: So about $50 total, $25 each. That's fine!`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Birth Statistics: Weight: [1] ......... kgs", prefix: "Weight:", suffix: " kgs", correct_answer: "4.25 // 4 1/4 // four and (a) quarter", acceptable_answers: ["4.25", "4 1/4", "four and a quarter", "four and quarter", "4.25 kgs", "4.25kg"], answer_display: "4.25 // 4 1/4 // four and (a) quarter", explanation: "Transcript: He weighed 4.25 kilograms." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "Birth Statistics: Length: [2] ......... cms", prefix: "Length:", suffix: " cms", correct_answer: "46 // forty-six", acceptable_answers: ["46", "forty-six", "forty six", "46 cms", "46cm"], answer_display: "46 // forty-six", explanation: "Transcript: Forty-six centimetres." },
+                    { id: 3, question_number: 3, type: "matching", question: "Map Location 3: [3] ......... (Choose A-E)", prefix: "Location 3:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // State Bank", explanation: "Transcript: At the first crossroads, on your left is the State Bank." },
+                    { id: 4, question_number: 4, type: "matching", question: "Map Location 4: [4] ......... (Choose A-E)", prefix: "Location 4:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // Library", explanation: "Transcript: on the right corner is the Library." },
+                    { id: 5, question_number: 5, type: "matching", question: "Map Location 5: [5] ......... (Choose A-E)", prefix: "Location 5:", suffix: "", options: ["A", "B", "C", "D", "E"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // Garage", explanation: "Transcript: And just past that, opposite the park, is the Garage." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "What will they buy for Susan? [6] ......... ($15)", prefix: "Gift for Susan:", suffix: "", correct_answer: "(a) (box) (of) chocolates", acceptable_answers: ["chocolates", "box of chocolates", "a box of chocolates"], answer_display: "(a) (box) (of) chocolates", explanation: "Transcript: How about a box of chocolates for Susan?" },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "What will they buy for baby? [7] .........", prefix: "Gift for baby:", suffix: "", correct_answer: "(a) (soft) toy // (a) teddy (bear) // (a) bear", acceptable_answers: ["soft toy", "a soft toy", "teddy bear", "a teddy bear", "teddy", "bear"], answer_display: "(a) (soft) toy // (a) teddy (bear) // (a) bear", explanation: "Transcript: about a soft toy of some sort? Yes, a soft toy. How about a teddy bear?" },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Where will they buy the chocolates? [8] .........", prefix: "Buy chocolates at:", suffix: "", correct_answer: "(at the) market(s)", acceptable_answers: ["market", "the market", "at the market", "markets"], answer_display: "(at the) market(s)", explanation: "Transcript: I could get one early tomorrow at the market and I could probably get the chocolates there too." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "Where will they buy the baby gift? [9] .........", prefix: "Buy baby gift at:", suffix: "", correct_answer: "(at the) market(s)", acceptable_answers: ["market", "the market", "at the market", "markets"], answer_display: "(at the) market(s)", explanation: "Transcript: I could get one early tomorrow at the market." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "Approximate price of baby gift: $[10] .........", prefix: "Price of baby gift: $", suffix: "", correct_answer: "($)35/thirty-five (dollars)", acceptable_answers: ["35", "thirty-five", "thirty five", "$35"], answer_display: "($)35/thirty-five (dollars)", explanation: "Transcript: and the toy would be around $35 or so, I'd think." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: Household Gadgets Review (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Household Gadgets Review (Questions 11 - 20)",
+                instruction: "Complete the table below. Write NO MORE THAN THREE WORDS for each answer. For recommendation, write A (Must buy), B (Maybe buy), C (Never buy).",
+                instructions: "Complete table. Write NO MORE THAN THREE WORDS or A/B/C.",
+                transcript: `PRESENTER: Good evening. Tonight's show comes to you from the Good Home Exhibition in Duke's Court, where we've been trying out some of the latest gadgets on show here with our resident expert Liz Shearer.
+LIZ SHEARER: Well, hello. I've been investigating four new household gadgets and sorting out the advantages and disadvantages.
+First, the Unbreakable Vacuum Flask. This had quite a lot going for it: most of all, it contains no glass [Q11: glass] and is therefore unbreakable. It's made of stainless steel guaranteed for 20 years, and it maintains heat for 18 hours. [Q12: eighteen/ 18 hours/hrs] On the downside, it's quite expensive and leaves a strange taste. [Q13: (a) (strange) taste] So my recommendation for this one is: you should maybe buy it - that's B. [Q16: B // maybe buy it]
+Second, the Whistle Key Holder. You whistle and it gives off a high-pitched noise and flashes a light. One advantage is its small size. [Q14: (the) small size // small // (the) size] However, it doesn't work through metal, [Q15: metal] so it's mainly useful in pockets or cushions. Taken as a whole, it's a masterpiece and I give it an A - you must buy this.
+The third gadget is the Army Flashlight. Its advantages are that it can be used for outside activities [Q17: outside/outdoor activities // outdoors] and it does work underwater. [Q18: underwater // under/beneath water] My main objection was that it gave off a weak light. [Q19: (a) weak light] So my recommendation is to avoid it - C.
+Lastly, the Decoy Camera. This is a fake video camera to scare off burglars. Its advantage is its flashing light [Q20: flashing light] which makes it look very realistic. It's difficult to fix onto the wall, but it gets an A.`,
+                questions: [
+                    { id: 11, question_number: 11, type: "fill_blank", question: "Vacuum Flask: Advantage: Contains no [11] .........", prefix: "Contains no", suffix: "", correct_answer: "glass", acceptable_answers: ["glass"], answer_display: "glass", explanation: "Transcript: most of all is the fact that it contains no glass." },
+                    { id: 12, question_number: 12, type: "fill_blank", question: "Vacuum Flask: Keeps warm for [12] .........", prefix: "Keeps warm for", suffix: "", correct_answer: "eighteen/ 18 hours/hrs", acceptable_answers: ["18 hours", "eighteen hours", "18 hrs", "eighteen hrs"], answer_display: "eighteen/ 18 hours/hrs", explanation: "Transcript: it does maintain heat for 18 hours." },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "Vacuum Flask: Disadvantage: Leaves [13] .........", prefix: "Leaves", suffix: "", correct_answer: "(a) (strange) taste", acceptable_answers: ["strange taste", "a strange taste", "taste"], answer_display: "(a) (strange) taste", explanation: "Transcript: it unfortunately leaves a strange taste." },
+                    { id: 14, question_number: 14, type: "fill_blank", question: "Whistle Key Holder: Advantage: [14] .........", prefix: "Advantage:", suffix: "", correct_answer: "(the) small size // small // (the) size", acceptable_answers: ["small size", "the small size", "small", "its small size", "size"], answer_display: "(the) small size // small // (the) size", explanation: "Transcript: I also felt the small size was a real advantage." },
+                    { id: 15, question_number: 15, type: "fill_blank", question: "Whistle Key Holder: Disadvantage: Doesn't work through [15] .........", prefix: "Doesn't work through", suffix: "", correct_answer: "metal", acceptable_answers: ["metal"], answer_display: "metal", explanation: "Transcript: And I found that it didn't work through metal." },
+                    { id: 16, question_number: 16, type: "multiple_choice", question: "Vacuum Flask: Recommendation: [16] ......... (Choose A, B, or C)", options: ["A. You must buy this.", "B. Maybe you should buy this.", "C. You should never buy this."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // maybe buy it", explanation: "Transcript: so I'd say you should maybe buy it (B)." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Army Flashlight: Advantage: Useful for [17] .........", prefix: "Useful for", suffix: "", correct_answer: "outside/outdoor activities // outdoors", acceptable_answers: ["outside activities", "outdoor activities", "outdoors", "outside"], answer_display: "outside/outdoor activities // outdoors", explanation: "Transcript: Its advantages are that it can be used for outside activities." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "Army Flashlight: Advantage: works [18] .........", prefix: "works", suffix: "", correct_answer: "underwater // under/beneath water", acceptable_answers: ["underwater", "under water", "beneath water"], answer_display: "underwater // under/beneath water", explanation: "Transcript: and this is one of the surprising features... it does work underwater." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "Army Flashlight: Disadvantage: Has [19] .........", prefix: "Has", suffix: "", correct_answer: "(a) weak light", acceptable_answers: ["weak light", "a weak light"], answer_display: "(a) weak light", explanation: "Transcript: My main objection to it though was although it did work in these conditions, this model gave off a weak light." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "Decoy Camera: Advantage: Realistic [20] .........", prefix: "Realistic", suffix: "", correct_answer: "flashing light", acceptable_answers: ["flashing light", "a flashing light"], answer_display: "flashing light", explanation: "Transcript: The advantage of this model is something which makes it look very realistic .. its flashing light." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Local History Project Feedback (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Project Feedback & Schedule of Action (Questions 21 - 30)",
+                instruction: "Questions 21-23: Choose correct letters A-C. Questions 24-26: Suggestions for sections (A: keep, B: rewrite, C: remove). Questions 27-30: Complete notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                instructions: "Questions 21-23: Choose A-C. Questions 24-26: Suggestions A/B/C. Questions 27-30: Complete notes.",
+                transcript: `DR BRYSON: Well, Amina, thanks for letting me have your draft in such good time.
+AMINA: I was just very anxious to hear what you think of it. You can see that I decided to change the topic - I had been interested in looking at Barings Factory.
+DR BRYSON: Oh, I think the hospital was a much better choice. [Q21: B // hospital] In fact, well, I have to say that I thought it was good. It opens well and the first chapter is fine, but the middle section really stood out for me ... most interesting. [Q22: C // the middle section]
+AMINA: That's amazing because I really didn't find it a bit easy to write - I found it difficult to do. [Q23: C // found it difficult to do]
+DR BRYSON: Now let's have a look at my notes. Starting with section headings, they're fine. But the information on housing: it really isn't relevant to your approach, so you should remove it completely. [Q24: C // remove completely]
+AMINA: And what about the interview data?
+DR BRYSON: It's valuable, but complex and unclear. You're going to have to rewrite it and make the data a lot clearer. [Q25: B // rewrite]
+AMINA: What about the chronology - the list of dates?
+DR BRYSON: My advice on that is to take them out completely. [Q26: C // remove completely]
+AMINA: Okay. Any other reading?
+DR BRYSON: Have a look at 'Sight and Sound' by Kate Oakwell [Q27: Sight and Sound] for representing interview data. Then show the changes to your Support Tutor. [Q28: Support Tutor]
+AMINA: And when should I do the proofreading? [Q29: proof reading // proof read]
+DR BRYSON: By 29 June. And get it laser printed before 10 July [Q30: 10 July] when the computer centre closes. Then hand it in to the Faculty Office.`,
+                questions: [
+                    { id: 21, question_number: 21, type: "multiple_choice", question: "Amina's project is about a local", options: ["A. school.", "B. hospital.", "C. factory."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // hospital", explanation: "Transcript: I think the hospital was a much better choice." },
+                    { id: 22, question_number: 22, type: "multiple_choice", question: "Dr Bryson particularly liked", options: ["A. the introduction.", "B. the first chapter.", "C. the middle section."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // the middle section", explanation: "Transcript: but the middle section really stood out for me ... most interesting." },
+                    { id: 23, question_number: 23, type: "multiple_choice", question: "Amina was surprised because she", options: ["A. thought it was bad.", "B. wrote it quickly.", "C. found it difficult to do."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // found it difficult to do", explanation: "Transcript: That's amazing because I really didn't find it a bit easy to write - found it difficult to do." },
+                    { id: 24, question_number: 24, type: "multiple_choice", question: "Suggestion for Information on housing: [24] ......... (A: keep, B: rewrite, C: remove)", options: ["A. KEEP UNCHANGED", "B. REWRITE", "C. REMOVE COMPLETELY"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // remove completely", explanation: "Transcript: information on local housing ... really isn't relevant... remove completely." },
+                    { id: 25, question_number: 25, type: "multiple_choice", question: "Suggestion for Interview data: [25] ......... (A: keep, B: rewrite, C: remove)", options: ["A. KEEP UNCHANGED", "B. REWRITE", "C. REMOVE COMPLETELY"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // rewrite", explanation: "Transcript: You're going to have to spend a bit of time making the data a lot clearer - rewrite." },
+                    { id: 26, question_number: 26, type: "multiple_choice", question: "Suggestion for Chronology: [26] ......... (A: keep, B: rewrite, C: remove)", options: ["A. KEEP UNCHANGED", "B. REWRITE", "C. REMOVE COMPLETELY"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // remove completely", explanation: "Transcript: What about the chronology... take them out completely." },
+                    { id: 27, question_number: 27, type: "fill_blank", question: "Read '[27] .........' by Kate Oakwell", prefix: "Read '", suffix: "' by Kate Oakwell", correct_answer: "Sight and Sound", acceptable_answers: ["Sight and Sound", "sight and sound"], answer_display: "Sight and Sound", explanation: "Transcript: Have a look at Sight and Sound by Kate Oakwell." },
+                    { id: 28, question_number: 28, type: "fill_blank", question: "Make changes and show to [28] .........", prefix: "show to", suffix: "", correct_answer: "Support Tutor", acceptable_answers: ["Support Tutor", "support tutor", "the Support Tutor"], answer_display: "Support Tutor (NOT Tutor)", explanation: "Transcript: I suggest you show the work to your Support Tutor." },
+                    { id: 29, question_number: 29, type: "fill_blank", question: "Do [29] ......... by 29 June", prefix: "Do", suffix: " by 29 June", correct_answer: "proof reading // proof read", acceptable_answers: ["proof reading", "proofreading", "proof read", "proof-reading"], answer_display: "proof reading // proof read", explanation: "Transcript: Then you do the proofreading ... I'd aim for 29 June." },
+                    { id: 30, question_number: 30, type: "fill_blank", question: "Laser print before [30] .........", prefix: "Laser print before", suffix: "", correct_answer: "10 July", acceptable_answers: ["10 July", "10th July", "July 10", "July 10th"], answer_display: "10 July (ALTERNATIVE FORMS ACCEPTED)", explanation: "Transcript: computer centre closes on 10 July." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: Acoustic Design of Houses near Highway (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Acoustic Design of Houses near Highway (Questions 31 - 40)",
+                instruction: "Questions 31-34: Write NUMBERS AND/OR NO MORE THAN FOUR WORDS. Question 35: Choose correct letter A-D. Questions 36-38: Complete table (W: walls, D: doors, C: ceilings). Questions 39-40: Choose correct letters A-D.",
+                instructions: "Questions 31-34: Short answer. Question 35: Choose A-D. Questions 36-38: W/D/C. Questions 39-40: Choose A-D.",
+                transcript: `PAULA BUNDELL: Good afternoon. I'm Paula Bundell and today we are going to look into the effects of noise on a planned housing estate at Manchester Park.
+The Blacktown airport is closed from 6pm to 7am, so the only noise after dark is from the highway and the traffic is somewhat reduced between 7.30pm and 5.30am. [Q31: 7.30pm (to/and) 5.30am]
+The people most affected by the noise will be housewives [Q32: housewives // housewifes] who are at home during the daytime.
+The traffic is certainly reduced on Saturdays and even more so on Sundays. [Q33: Sunday(s)]
+Modifications to the houses will add about $25,000 [Q34: (about) $25,000/twenty-five thousand dollars] to the price of a newly-built house.
+At this site, noise levels have been recorded as high as 67 decibels. [Q35: C // 67 decibels]
+Regarding acoustic modifications: all ceilings will require double thickness plaster board. [Q36: C // for ceilings]
+In the noisiest areas, mechanical ventilation will have to be installed in the exterior walls. [Q37: W // for walls]
+Air conditioning units could also be fitted in the ceilings. [Q38: C // for ceilings]
+For double glazing: it is essential that the glass be thicker on the outside (8 mm) than on the inside (6 mm) and that the gap between the panes be a minimum of 7 centimetres. [Q39: C]
+For layout: bedrooms and living rooms must be built at the back away from the highway, while kitchens, bathrooms, and garages are at the front. [Q40: B]`,
+                questions: [
+                    { id: 31, question_number: 31, type: "fill_blank", question: "Between what times is the road traffic lightest? [31] .........", prefix: "Between", suffix: "", correct_answer: "7.30pm (to/and) 5.30am", acceptable_answers: ["7.30pm to 5.30am", "7.30pm and 5.30am", "7.30 pm to 5.30 am", "7:30pm to 5:30am", "7:30 pm to 5:30 am"], answer_display: "7.30pm (to/and) 5.30am (NOT 7.30 to 5.30)", explanation: "Transcript: traffic is somewhat reduced between 7.30pm and 5.30am." },
+                    { id: 32, question_number: 32, type: "fill_blank", question: "Who will notice the noise most? [32] .........", prefix: "Who will notice noise most:", suffix: "", correct_answer: "housewives // housewifes", acceptable_answers: ["housewives", "housewifes"], answer_display: "housewives // housewifes", explanation: "Transcript: the people most affected by the noise will be, I expect, housewives." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "Which day of the week has the least traffic? [33] .........", prefix: "Least traffic on:", suffix: "", correct_answer: "Sunday(s)", acceptable_answers: ["Sunday", "Sundays"], answer_display: "Sunday(s)", explanation: "Transcript: traffic is certainly reduced on Saturdays to a large extent and even more so on Sundays." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "What will be the extra cost of modifying houses? [34] .........", prefix: "Extra cost:", suffix: "", correct_answer: "(about) $25,000/twenty-five thousand dollars", acceptable_answers: ["$25,000", "25,000 dollars", "$25000", "about $25,000", "twenty-five thousand dollars"], answer_display: "(about) $25,000/twenty-five thousand dollars (NOT 25,000)", explanation: "Transcript: add about $25,000 to the price of a newly-built house." },
+                    { id: 35, question_number: 35, type: "multiple_choice", question: "The noise levels at the site can reach", options: ["A. 45 decibels.", "B. 55 decibels.", "C. 67 decibels.", "D. 70 decibels."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // 67 decibels", explanation: "Transcript: At this site the levels have been recorded as high as 67 decibels." },
+                    { id: 36, question_number: 36, type: "matching", question: "Double thickness plaster board fitted in: [36] ......... (W: walls, D: doors, C: ceilings)", options: ["W", "D", "C"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // for ceilings", explanation: "Transcript: All ceilings will require double thickness plaster board." },
+                    { id: 37, question_number: 37, type: "matching", question: "Mechanical ventilation fitted in: [37] ......... (W: walls, D: doors, C: ceilings)", options: ["W", "D", "C"], correct_answer: "W", acceptable_answers: ["W"], answer_display: "W // for walls", explanation: "Transcript: mechanical ventilation will have to be installed in the exterior walls." },
+                    { id: 38, question_number: 38, type: "matching", question: "Air conditioning fitted in: [38] ......... (W: walls, D: doors, C: ceilings)", options: ["W", "D", "C"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // for ceilings", explanation: "Transcript: Air conditioning units could also be fitted in the ceilings." },
+                    { id: 39, question_number: 39, type: "multiple_choice", question: "Which is the correct construction for acoustic double glazing?", options: ["A. 8mm outside, 6cm gap, 6mm inside", "B. 6mm outside, 7cm gap, 8mm inside", "C. 8mm outside, 7cm gap, 6mm inside", "D. 8mm outside, 6cm gap, 8mm inside"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // 8mm outside, 7cm gap, 6mm inside", explanation: "Transcript: 8 millimetres on the outside, 6 on the inside, and gap minimum of 7 centimetres." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "What is the best layout for the houses?", options: ["A. Bedrooms facing highway, living room at back", "B. Bedrooms and living room at back, kitchen and garage at front", "C. All rooms facing highway", "D. Kitchen at back, bedrooms at front"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B // Bedrooms and living room at back, kitchen and garage at front", explanation: "Transcript: Bedrooms and living rooms will have to be built towards the back away from the highway." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. ACADEMIC READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 4 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Air Pollution in Mega Cities (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: Air Pollution in Mega Cities",
+                text: `Part One
+A
+Air pollution is increasingly becoming the focus of government and citizen concern around the globe. From Mexico City and New York, to Singapore and Tokyo, new solutions to this old problem are being proposed, trialled and implemented with ever increasing speed. It is feared that unless pollution reduction measures are able to keep pace with the continued pressures of urban growth, air quality in many of the world's major cities will deteriorate beyond reason.
+
+B
+Action is being taken along several fronts: through new legislation, improved enforcement and innovative technology. In Los Angeles, state regulations are forcing manufacturers to try to sell ever cleaner cars: their first of the cleanest, titled 'Zero Emission Vehicles', have to be available soon, since they are intended to make up 2 per cent of sales in 1997. Local authorities in London are campaigning to be allowed to enforce anti-pollution laws themselves; at present only the police have the power to do so, but they tend to be busy elsewhere. In Singapore, renting out road space to users is the way of the future.
+
+C
+When Britain's Royal Automobile Club monitored the exhausts of 60,000 vehicles, it found that 12 per cent of them produced more than half the total pollution. Older cars were the worst offenders; though a sizeable number of quite new cars were also identified as gross polluters, they were simply badly tuned. California has developed a scheme to get these gross polluters off the streets: they offer a flat $700 for any old, run-down vehicle driven in by its owner. The aim is to remove the heaviest-polluting, most decrepit vehicles from the roads.
+
+D
+As part of a European Union environmental programme, a London council is testing an infra-red spectrometer from the University of Denver in Colorado. It gauges the pollution from a passing vehicle - more useful than the annual stationary test that is the British standard today - by bouncing a beam through the exhaust and measuring what gets absorbed.
+
+Part Two
+The 1952 London Smog disaster, when 4,000 people died in five days from airborne smoke and sulphur dioxide caused by domestic coal burning, led directly to the 1956 Clean Air Act. Today's vehicle-dominated pollution poses different challenges. While vehicle engines emit nitrogen oxides, carbon monoxide, and volatile organic compounds that form photochemical smog, fine particulate matter (PM10) remains the most pernicious threat to human health, penetrating deep into lung tissue and exacerbating asthma and cardiovascular disease among the old and ill.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Manufacturers must sell 'Zero Emission Vehicles': City: [1] .........", prefix: "Zero Emission Vehicles:", suffix: "", correct_answer: "Los Angeles", acceptable_answers: ["Los Angeles", "LA"], answer_display: "Los Angeles", explanation: "Section B: 'In Los Angeles, state regulations are forcing manufacturers to try to sell ever cleaner cars: Zero Emission Vehicles.'" },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "Local authorities campaign to enforce anti-pollution laws: City: [2] .........", prefix: "Local authorities enforce laws:", suffix: "", correct_answer: "London", acceptable_answers: ["London"], answer_display: "London", explanation: "Section B: 'Local authorities in London are campaigning to be allowed to enforce anti-pollution laws themselves.'" },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "Renting out road space to users: City: [3] .........", prefix: "Renting road space:", suffix: "", correct_answer: "Singapore", acceptable_answers: ["Singapore"], answer_display: "Singapore", explanation: "Section B: 'In Singapore, renting out road space to users is the way of the future.'" },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "Testing an infra-red spectrometer from Colorado: City: [4] .........", prefix: "Testing spectrometer:", suffix: "", correct_answer: "London", acceptable_answers: ["London"], answer_display: "London", explanation: "Section D: 'a London council is testing an infra-red spectrometer from the University of Denver.'" },
+                    { id: 5, question_number: 5, type: "fill_blank", question: "Offering flat $700 for old run-down vehicles: State/City: [5] .........", prefix: "Offering $700 buyback:", suffix: "", correct_answer: "Los Angeles", acceptable_answers: ["Los Angeles", "California"], answer_display: "Los Angeles // California", explanation: "Section C: California / Los Angeles developed a scheme offering a flat $700." },
+                    { id: 6, question_number: 6, type: "true_false_not_given", question: "Older vehicles were found to produce a disproportionate share of pollution.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Section C: 12% of vehicles produced more than half the total pollution; older cars were the worst offenders." },
+                    { id: 7, question_number: 7, type: "true_false_not_given", question: "The 1952 London Smog disaster led directly to clean air legislation.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Part Two: 'The 1952 London Smog disaster... led directly to the 1956 Clean Air Act.'" },
+                    { id: 8, question_number: 8, type: "true_false_not_given", question: "Domestic coal burning is still the main source of urban air pollution in London today.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Part Two contrasts 1952 coal burning with today's 'vehicle-dominated pollution'." },
+                    { id: 9, question_number: 9, type: "true_false_not_given", question: "Police in London prioritize checking car exhaust emissions over other crimes.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Section B states police have the power but 'tend to be busy elsewhere'." },
+                    { id: 10, question_number: 10, type: "true_false_not_given", question: "All new cars tested by the RAC met strict emissions standards.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Section C: 'a sizeable number of quite new cars were also identified as gross polluters, they were simply badly tuned.'" },
+                    { id: 11, question_number: 11, type: "multiple_choice", question: "Zero Emission Vehicles were intended to make up what percentage of sales in 1997?", options: ["A. one to two per cent", "B. ten per cent", "C. twenty per cent", "D. fifty per cent"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // one", explanation: "Official Cambridge Key: A // one (intended to make up 2 per cent)." },
+                    { id: 12, question_number: 12, type: "multiple_choice", question: "Which pollutant is considered the most pernicious threat to human health in vehicle exhaust?", options: ["A. carbon dioxide", "B. carbon monoxide", "C. sulphur dioxide", "D. particulate matter"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // particulate matter", explanation: "Part Two: 'fine particulate matter (PM10) remains the most pernicious threat to human health.'" },
+                    { id: 13, question_number: 13, type: "multiple_choice", question: "Airborne pollution in modern cities causes the greatest health risks to", options: ["A. drivers", "B. children only", "C. the old and ill", "D. athletes"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // the old and ill", explanation: "Part Two: 'exacerbating asthma and cardiovascular disease among the old and ill.'" }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 2: Votes for Women (Questions 14 - 27)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: Votes for Women",
+                text: `The suffragette movement in Edwardian Britain, led by Emmeline Pankhurst and the Women's Social and Political Union (WSPU), remains one of the most remarkable political campaigns in modern history. Founded in 1903 in Manchester with the fiery motto 'Deeds, not words', the WSPU departed sharply from the cautious, constitutional lobbying of earlier suffragists.
+
+What set the suffragettes apart was the sheer genius and discipline of their corporate branding and public spectacle. At a time when modern corporate advertising was in its infancy, the WSPU established an iconic visual identity centered on three symbolic colours: purple for dignity, white for purity, and green for hope. Every banner, sash, publication, and costume bore this colour scheme, enabling instant recognition across the country.
+
+The WSPU transformed itself into a sophisticated commercial enterprise. They raised thousands of pounds by selling advertising space in their weekly newspaper 'Votes for Women', selling branded merchandise (from purple-white-green tea sets and soaps to jewellery and bicycles), and staging major events like the lavish 1909 Woman's Exhibition in Prince's Skating Rink, Knightsbridge.
+
+Although the militant tactics of the suffragettes - including window-smashing, hunger strikes, and civil disobedience - generated fierce controversy, their corporate strategy gave the movement unmatched visibility. British women over 30 who met property qualifications finally gained the parliamentary vote in 1918, and full voting equality on equal terms with men was achieved a decade later in 1928.`,
+                questions: [
+                    { id: 14, question_number: 14, type: "multiple_choice", question: "The author attributes the high profile of the WSPU primarily to", options: ["A. the support of politicians.", "B. the wealth of its founders.", "C. the success of the movement's corporate image.", "D. royal patronage."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // the success of the movement's corporate image", explanation: "Passage highlights the discipline and genius of their corporate branding and visual identity." },
+                    { id: 15, question_number: 15, type: "multiple_choice", question: "The motto 'Deeds, not words' signified that the WSPU", options: ["A. rejected political debate.", "B. focused only on violent protest.", "C. preferred writing books.", "D. It had a clear purpose and direction."], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // It had a clear purpose and direction", explanation: "Official Cambridge Key: D // It had a clear purpose and direction." },
+                    { id: 16, question_number: 16, type: "multiple_choice", question: "Women over 30 were granted the right to vote in [16] .........", options: ["A. 1903", "B. 1909", "C. 1914", "D. 1918", "E. 1928"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // 1918 (BOTH FOR ONE MARK: D 1918 AND E 1928)", explanation: "Passage: women over 30 gained the vote in 1918, and full voting equality in 1928." },
+                    { id: 17, question_number: 17, type: "multiple_choice", question: "Full equal voting rights for women were achieved in [17] .........", options: ["A. 1903", "B. 1909", "C. 1914", "D. 1918", "E. 1928"], correct_answer: "E", acceptable_answers: ["E"], answer_display: "E // 1928", explanation: "Passage: full voting equality was achieved a decade later in 1928." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "The WSPU raised funds by [18] ......... in their newspaper", prefix: "raised funds by", suffix: " in their newspaper", correct_answer: "(selling) advertising (space)", acceptable_answers: ["selling advertising space", "advertising space", "selling advertising", "advertising"], answer_display: "(selling) advertising (space)", explanation: "Passage: 'selling advertising space in their weekly newspaper Votes for Women'." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "The movement was unified by a distinct [19] ......... of purple, white and green", prefix: "distinct", suffix: " of purple, white and green", correct_answer: "colour scheme // (three) colours // purple, white, (and) green", acceptable_answers: ["colour scheme", "color scheme", "three colours", "three colors", "colours", "colors"], answer_display: "colour scheme // (three) colours // purple, white, (and) green", explanation: "Passage: 'iconic visual identity centered on three symbolic colours... Every banner... bore this colour scheme.'" },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "A major commercial spectacle was [20] ......... held in Knightsbridge in 1909", prefix: "major spectacle was", suffix: " held in Knightsbridge", correct_answer: "(the) Woman's Exhibition", acceptable_answers: ["Woman's Exhibition", "the Woman's Exhibition", "Womans Exhibition"], answer_display: "(the) Woman's Exhibition", explanation: "Passage: 'staging major events like the lavish 1909 Woman's Exhibition in Prince's Skating Rink, Knightsbridge.'" },
+                    { id: 21, question_number: 21, type: "true_false_not_given", question: "The WSPU was founded in Manchester in 1903.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'Founded in 1903 in Manchester...'" },
+                    { id: 22, question_number: 22, type: "true_false_not_given", question: "The suffragettes avoided selling commercial branded goods.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage states they sold branded merchandise from tea sets to soaps and bicycles." },
+                    { id: 23, question_number: 23, type: "true_false_not_given", question: "The constitutional suffragists welcomed the militant tactics of the WSPU.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", acceptable_answers: ["NO", "N"], answer_display: "NO // N", explanation: "Passage notes WSPU departed sharply from cautious lobbying and their tactics generated fierce controversy." },
+                    { id: 24, question_number: 24, type: "true_false_not_given", question: "Emmeline Pankhurst received financial support from the Royal Family.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN", "NG"], answer_display: "NOT GIVEN // NG", explanation: "Passage makes no mention of the Royal Family." },
+                    { id: 25, question_number: 25, type: "true_false_not_given", question: "The suffragette colour scheme helped generate instant national recognition.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'enabling instant recognition across the country.'" },
+                    { id: 26, question_number: 26, type: "true_false_not_given", question: "Full voting equality on equal terms with men took place ten years after 1918.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", acceptable_answers: ["YES", "Y"], answer_display: "YES // Y", explanation: "Passage: 'and full voting equality on equal terms with men was achieved a decade later in 1928.'" },
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "The general tone of this passage is", options: ["A. hostile.", "B. satirical.", "C. critical.", "D. informative."], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // informative", explanation: "The passage objectively explains the history and marketing strategies of the movement." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: Worker Productivity and Supervision (Questions 28 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: Worker Productivity and Supervision",
+                text: `In a major industrial study conducted at the Hawthorne Works of Western Electric Company in Chicago, researchers investigated the relationship between working conditions and worker productivity. The primary aim was to establish whether increased productivity should be sought at any cost, or whether human factors such as supervisory style and group dynamics play a decisive role.
+
+The experimental setup examined groups of workers who had identical patterns of organisation and performed comparable tasks. Before the commencement of the study, the staff involved spent a number of months preparing for the investigation, ensuring consistent baselines.
+
+The findings demonstrated that productivity was heavily influenced by the quality of supervision and management. When strict authoritarian supervision was reduced and replaced by supportive, group methods of leadership, productivity significantly increased. Conversely, in departments where sections were overstaffed and supervision remained punitive, worker morale dropped and productivity was cut.
+
+Follow-up surveys revealed key psychological correlations: workers demonstrated higher output when they experienced stronger feelings of personal responsibility towards the completion of their tasks, felt closer to their immediate supervisors, and perceived genuine personal support from senior management.`,
+                questions: [
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "The primary purpose of the Hawthorne study was to", options: ["A. establish whether increased productivity should be sought at any cost", "B. reduce wages in factories", "C. replace female workers with machines", "D. evaluate heating and lighting only"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A // establish whether increased productivity should be sought at any cost", explanation: "Official Cambridge Key: A // establish whether increased productivity should be sought at any cost." },
+                    { id: 29, question_number: 29, type: "multiple_choice", question: "The groups of workers examined in the study", options: ["A. worked in different industries.", "B. had totally different working hours.", "C. had identical patterns of organisation", "D. were unsupervised."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // had identical patterns of organisation", explanation: "Passage: 'groups of workers who had identical patterns of organisation.'" },
+                    { id: 30, question_number: 30, type: "multiple_choice", question: "Prior to the investigation,", options: ["A. workers were on strike.", "B. no records were kept.", "C. the staff involved spent a number of months preparing for the study", "D. managers were fired."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // the staff involved spent a number of months preparing for the study", explanation: "Passage: 'the staff involved spent a number of months preparing for the investigation.'" },
+                    { id: 31, question_number: 31, type: "fill_blank", question: "Productivity was heavily influenced by the style of [31] .........", prefix: "style of", suffix: "", correct_answer: "supervision // leadership // management", acceptable_answers: ["supervision", "leadership", "management"], answer_display: "supervision // leadership // management", explanation: "Passage: 'productivity was heavily influenced by the quality of supervision and management.'" },
+                    { id: 32, question_number: 32, type: "fill_blank", question: "The study focused on changes in worker [32] .........", prefix: "worker", suffix: "", correct_answer: "productivity", acceptable_answers: ["productivity"], answer_display: "productivity", explanation: "Passage: 'relationship between working conditions and worker productivity.'" },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "When strict authoritarian control was [33] ........., output rose", prefix: "control was", suffix: ", output rose", correct_answer: "reduced // cut // decreased", acceptable_answers: ["reduced", "cut", "decreased"], answer_display: "reduced // cut // decreased", explanation: "Passage: 'When strict authoritarian supervision was reduced... productivity significantly increased.'" },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "Management introduced supportive [34] .........", prefix: "supportive", suffix: "", correct_answer: "(group methods of) leadership", acceptable_answers: ["leadership", "group methods of leadership", "methods of leadership"], answer_display: "(group methods of) leadership", explanation: "Passage: 'replaced by supportive, group methods of leadership.'" },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "In departments that were [35] ........., morale dropped", prefix: "departments that were", suffix: ", morale dropped", correct_answer: "overstaffed", acceptable_answers: ["overstaffed"], answer_display: "overstaffed", explanation: "Passage: 'in departments where sections were overstaffed...'" },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "In punitive environments, productivity was [36] .........", prefix: "productivity was", suffix: "", correct_answer: "reduced // cut // decreased", acceptable_answers: ["reduced", "cut", "decreased"], answer_display: "reduced // cut // decreased", explanation: "Passage: 'worker morale dropped and productivity was cut.'" },
+                    { id: 37, question_number: 37, type: "matching", question: "Factor C: [37] .........", prefix: "Factor C:", suffix: "", correct_answer: "C", acceptable_answers: ["C"], answer_display: "C // Changes in productivity", explanation: "Official Cambridge Key: C // Changes in productivity." },
+                    { id: 38, question_number: 38, type: "matching", question: "Factor D: [38] .........", prefix: "Factor D:", suffix: "", correct_answer: "D", acceptable_answers: ["D"], answer_display: "D // Employees' feelings of responsibility towards completion of work", explanation: "Official Cambridge Key: D // Employees' feelings of responsibility towards completion of work." },
+                    { id: 39, question_number: 39, type: "matching", question: "Factor G: [39] .........", prefix: "Factor G:", suffix: "", correct_answer: "G", acceptable_answers: ["G"], answer_display: "G // Employees feel closer to their supervisors", explanation: "Official Cambridge Key: G // Employees feel closer to their supervisors." },
+                    { id: 40, question_number: 40, type: "matching", question: "Factor F: [40] .........", prefix: "Factor F:", suffix: "", correct_answer: "F", acceptable_answers: ["F"], answer_display: "F // Employees' opinion as to extent of personal support from management", explanation: "Official Cambridge Key: F // Employees' opinion as to extent of personal support from management." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS WITH SVG CHART & MODELS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 4 (Cambridge IELTS 3)",
+        duration_seconds: 3600,
+        tasks: [
+            // -------------------------------------------------------------
+            // TASK 1: Unemployment Rates in the US and Japan (1993 - 1999)
+            // -------------------------------------------------------------
+            {
+                task_number: 1,
+                title: "Academic Writing Task 1: Unemployment Rates in US and Japan (1993 - 1999)",
+                time_minutes: 20,
+                min_words: 150,
+                prompt: "The graph below shows the unemployment rates in the US and Japan between March 1993 and March 1999. Write a report for a university lecturer describing the information shown below.",
+                chart_svg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-white rounded-xl shadow-inner border border-gray-100 p-2 font-sans">
+  <defs>
+    <linearGradient id="c3t4_us" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+    <linearGradient id="c3t4_jp" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#ef4444"/></linearGradient>
+  </defs>
+  <!-- Title -->
+  <text x="400" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Unemployment Rates: US and Japan (March 1993 - March 1999)</text>
+  <!-- Legend -->
+  <g transform="translate(300, 48)" font-size="12" font-weight="600">
+    <line x1="0" y1="6" x2="25" y2="6" stroke="#2563eb" stroke-width="3"/>
+    <circle cx="12.5" cy="6" r="4" fill="#2563eb"/>
+    <text x="32" y="10" fill="#334155">United States</text>
+    <line x1="140" y1="6" x2="165" y2="6" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,3"/>
+    <rect x="148" y="2" width="8" height="8" fill="#dc2626"/>
+    <text x="172" y="10" fill="#334155">Japan</text>
+  </g>
+  <!-- Grid Lines (Y: 2.0% to 7.5%, Step: 1.0%. Range=5.5%. Scale: 300px / 5.5 = 54.5px per 1%) -->
+  <!-- Base: 2.0% at Y=380. 3.0% at 325, 4.0% at 271, 5.0% at 216, 6.0% at 162, 7.0% at 107, 7.5% at 80 -->
+  <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="80" y1="380" x2="740" y2="380"/>
+    <line x1="80" y1="325" x2="740" y2="325"/>
+    <line x1="80" y1="271" x2="740" y2="271"/>
+    <line x1="80" y1="216" x2="740" y2="216"/>
+    <line x1="80" y1="162" x2="740" y2="162"/>
+    <line x1="80" y1="107" x2="740" y2="107"/>
+    <line x1="80" y1="80" x2="740" y2="80"/>
+  </g>
+  <!-- Y Axis Labels -->
+  <g font-size="11" fill="#64748b" text-anchor="end">
+    <text x="70" y="384">2.0%</text>
+    <text x="70" y="329">3.0%</text>
+    <text x="70" y="275">4.0%</text>
+    <text x="70" y="220">5.0%</text>
+    <text x="70" y="166">6.0%</text>
+    <text x="70" y="111">7.0%</text>
+    <text x="70" y="84">7.5%</text>
+  </g>
+  <!-- X Axis: 7 points (Mar 93 to Mar 99): x = 110, 210, 310, 410, 510, 610, 710 -->
+  <g font-size="11" fill="#475569" text-anchor="middle" font-weight="600">
+    <text x="110" y="402">Mar 93</text>
+    <text x="210" y="402">Mar 94</text>
+    <text x="310" y="402">Mar 95</text>
+    <text x="410" y="402">Mar 96</text>
+    <text x="510" y="402">Mar 97</text>
+    <text x="610" y="402">Mar 98</text>
+    <text x="710" y="402">Mar 99</text>
+  </g>
+  <!-- US Data Points: (Mar 93: 7.0% -> y=107), (Mar 94: 6.5% -> y=135), (Mar 95: 5.5% -> y=189), (Mar 96: 5.4% -> y=195), (Mar 97: 5.2% -> y=205), (Mar 98: 4.7% -> y=233), (Mar 99: 5.0% -> y=216) -->
+  <polyline fill="none" stroke="#2563eb" stroke-width="3" points="110,107 210,135 310,189 410,195 510,205 610,233 710,216"/>
+  <g fill="#2563eb">
+    <circle cx="110" cy="107" r="4"><title>US Mar 93: 7.0%</title></circle>
+    <circle cx="210" cy="135" r="4"><title>US Mar 94: 6.5%</title></circle>
+    <circle cx="310" cy="189" r="4"><title>US Mar 95: 5.5%</title></circle>
+    <circle cx="410" cy="195" r="4"><title>US Mar 96: 5.4%</title></circle>
+    <circle cx="510" cy="205" r="4"><title>US Mar 97: 5.2%</title></circle>
+    <circle cx="610" cy="233" r="4"><title>US Mar 98: 4.7%</title></circle>
+    <circle cx="710" cy="216" r="4"><title>US Mar 99: 5.0%</title></circle>
+  </g>
+  <!-- Japan Data Points: (Mar 93: 2.5% -> y=353), (Mar 94: 2.8% -> y=336), (Mar 95: 3.2% -> y=314), (Mar 96: 3.1% -> y=320), (Mar 97: 3.4% -> y=303), (Mar 98: 4.1% -> y=265), (Mar 99: 5.0% -> y=216) -->
+  <polyline fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="5,4" points="110,353 210,336 310,314 410,320 510,303 610,265 710,216"/>
+  <g fill="#dc2626">
+    <rect x="106" y="349" width="8" height="8"><title>Japan Mar 93: 2.5%</title></rect>
+    <rect x="206" y="332" width="8" height="8"><title>Japan Mar 94: 2.8%</title></rect>
+    <rect x="306" y="310" width="8" height="8"><title>Japan Mar 95: 3.2%</title></rect>
+    <rect x="406" y="316" width="8" height="8"><title>Japan Mar 96: 3.1%</title></rect>
+    <rect x="506" y="299" width="8" height="8"><title>Japan Mar 97: 3.4%</title></rect>
+    <rect x="606" y="261" width="8" height="8"><title>Japan Mar 98: 4.1%</title></rect>
+    <rect x="706" y="212" width="8" height="8"><title>Japan Mar 99: 5.0%</title></rect>
+  </g>
+  <!-- Axes -->
+  <line x1="80" y1="380" x2="740" y2="380" stroke="#475569" stroke-width="2"/>
+  <line x1="80" y1="80" x2="80" y2="380" stroke="#475569" stroke-width="2"/>
+</svg>`,
+                sample_answer: `The line graph compares the percentage of the workforce that was unemployed in the United States and Japan over a six-year period from March 1993 to March 1999.
+
+Overall, the two nations experienced contrasting trajectories: while unemployment in the US witnessed a significant downward trend, Japan saw a steady increase over the surveyed period, resulting in both countries converging at identical unemployment rates by March 1999.
+
+In March 1993, the unemployment rate in the United States stood at 7.0%, which was nearly three times higher than Japan's rate of 2.5%. Over the subsequent three years, US unemployment declined sharply, dropping to roughly 5.4% by March 1996. After a slight period of plateauing between 1996 and 1997, the rate dipped further to a period low of 4.7% in March 1998 before finishing at exactly 5.0% in March 1999.
+
+In stark contrast, Japan's unemployment rate rose steadily from 2.5% in 1993 to around 3.2% in 1995. Despite a minor drop in early 1996, Japanese unemployment climbed rapidly from mid-1996 onwards, doubling from its 1993 level to reach the 5.0% mark in March 1999, matching the US figure for the first time in the recorded period.`,
+                examiner_band: "Band 9.0 (High-Scoring Analysis based on Official Cambridge Task)",
+                key_vocabulary: ["percentage of the workforce", "contrasting trajectories", "significant downward trend", "converging at identical rates", "period low", "stark contrast"]
+            },
+            // -------------------------------------------------------------
+            // TASK 2: Assisting Poorer Nations
+            // -------------------------------------------------------------
+            {
+                task_number: 2,
+                title: "Academic Writing Task 2: Responsibility for Assisting Poorer Nations",
+                time_minutes: 40,
+                min_words: 250,
+                prompt: `Improvements in health, education and trade are essential for the development of poorer nations. However, the governments of richer nations should take more responsibility for helping the poorer nations in such areas.
+
+To what extent do you agree or disagree with this opinion?
+
+You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence.`,
+                sample_answer: `It is undeniable that healthcare, education, and fair trade constitute the fundamental pillars of socio-economic development in developing countries. I firmly agree with the view that wealthier governments bear a moral and pragmatic responsibility to support poorer nations across these key sectors.
+
+From an ethical perspective, many contemporary global economic disparities are the historical legacy of colonialism and unequal resource extraction. Advanced industrialized nations accumulated substantial wealth by utilizing raw materials from the developing world. Therefore, providing foreign aid, medical equipment, and educational infrastructure represents an ethical obligation to redress global inequities. For instance, assisting African nations in eradicating preventable infectious diseases through subsidised vaccine distribution and training medical personnel saves millions of lives and fosters basic human dignity.
+
+From a practical and pragmatic standpoint, helping developing countries is mutually beneficial for richer nations. In an increasingly globalised economy, underdeveloped nations plagued by poverty, illiteracy, and disease often become breeding grounds for cross-border problems, including regional instability, illegal migration, and pandemic outbreaks. Conversely, by fostering educational advancement and technical training in poorer nations, developed countries cultivate stable governance and emerging consumer markets. Furthermore, opening fair trade channels rather than imposing protectionist agricultural tariffs empowers developing nations to generate self-sustaining revenue, reducing long-term dependence on emergency aid.
+
+In conclusion, I wholeheartedly believe that governments of prosperous nations should assume greater responsibility in assisting developing countries with health, education, and commerce. Such international cooperation is not merely an act of charity, but an indispensable investment in long-term global peace, stability, and mutual economic prosperity.`,
+                examiner_band: "Band 9.0 (High-Scoring Model based on Official Cambridge Task)",
+                key_vocabulary: ["fundamental pillars", "moral and pragmatic responsibility", "ethical obligation", "mutually beneficial", "protectionist tariffs", "indispensable investment"]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS - COMPLETE SCRIPT & CUE CARDS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 4 (Cambridge IELTS 3)",
+        duration_minutes: "11-14 minutes",
+        parts: [
+            // -------------------------------------------------------------
+            // PART 1: Introduction & Interview - Daily Routine
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                title: "Part 1: Introduction and Interview - Daily Routine",
+                time_allocation: "4 - 5 minutes",
+                theme: "Daily Routine",
+                description: "The examiner asks the candidate about him/herself, his/her home, work or studies and other familiar topics.",
+                questions: [
+                    {
+                        question: "What would you like to change in your daily routine?",
+                        guide_notes: "Mention waking up earlier, allocating time for morning exercise, or reducing screen time in the evening.",
+                        model_answer: "If I could change one thing, I would definitely like to establish a more consistent sleep schedule. At present, I often stay up late working on my laptop, which makes waking up early quite difficult. Incorporating a 30-minute morning jog and meditation before starting work would make me much more energized throughout the day."
+                    },
+                    {
+                        question: "Are all your days the same?",
+                        guide_notes: "Contrast weekdays (structured work/study) with weekends (leisure, hobbies, spontaneity).",
+                        model_answer: "No, not at all. My weekdays are quite rigid and structured around professional commitments and deadlines. In contrast, my weekends are far more fluid and spontaneous, giving me the freedom to catch up on sleep, visit friends, or explore coffee shops."
+                    },
+                    {
+                        question: "Tell me about your typical weekday and your typical weekend.",
+                        guide_notes: "Describe daily flow: morning commute -> work blocks -> evening wind-down vs weekend leisure.",
+                        model_answer: "On a typical weekday, my alarm goes off at 6.30 am, I have a quick breakfast, and commute to the office by 8 am. My day is occupied with team meetings, emails, and coding tasks until 5.30 pm. On weekends, however, I like to sleep in until 8.30 am, enjoy a leisurely brunch, read books, and spend quality time with my family."
+                    },
+                    {
+                        question: "What is the balance of work/study and free time in your normal day?",
+                        guide_notes: "Assess work-life balance realistically, noting whether work dominates and strategies to unwind.",
+                        model_answer: "To be honest, work still dominates roughly 60 to 70 percent of my waking hours during the week. I try to carve out at least an hour or two in the evening for myself to listen to podcasts or exercise, but maintaining an optimal work-life balance remains an ongoing effort."
+                    }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PART 2: Individual Long Turn - An Important Possession
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                title: "Part 2: Long Turn - An Important Possession",
+                time_allocation: "3 - 4 minutes (1 min preparation + 2 mins speaking)",
+                cue_card: {
+                    instruction: "Describe something you own which is very important to you.",
+                    bullet_points: [
+                        "where you got it from",
+                        "how long you have had it",
+                        "what you use it for",
+                        "and explain why it is so important to you."
+                    ]
+                },
+                preparation_tips: [
+                    "Choose an item with both functional utility and sentimental value (e.g. laptop, vintage mechanical wristwatch, acoustic guitar).",
+                    "Cover origin -> duration -> daily usage -> emotional significance and life impact."
+                ],
+                model_answer: `I would like to talk about a possession that holds immense functional and sentimental value for me: my mechanical wristwatch. It was gifted to me by my father on my eighteenth birthday, right before I embarked on my university studies.
+
+I have possessed this watch for nearly six years now. It features a classic stainless steel case with an automatic self-winding movement and a sapphire crystal face. Unlike modern electronic smartwatches that quickly become obsolete, this watch functions purely through kinetic energy and mechanical gears, which gives it an enduring, timeless charm.
+
+I wear this timepiece virtually every single day. Practically speaking, it helps me keep track of time during examinations, lectures, and professional meetings without the distraction of looking at my smartphone. 
+
+However, the primary reason why it is so precious to me is emotional. My father saved up for several months to purchase it, and he engraved a short personal motto on the back: 'Cherish every second.' Whenever I face stressful deadlines or tough challenges, glancing down at my wrist instantly reminds me of my father's unwavering support, sacrifices, and belief in my abilities. It is far more than an instrument for telling time; it is a family heirloom and an anchor of love.`
+            },
+            // -------------------------------------------------------------
+            // PART 3: Two-Way Discussion - Materialism, Values & Consumerism
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                title: "Part 3: Discussion - Materialism, Values & Consumerism",
+                time_allocation: "4 - 5 minutes",
+                themes: [
+                    {
+                        sub_topic: "How Values Can Change",
+                        questions: [
+                            {
+                                question: "What kind of possessions show status in your country?",
+                                model_answer: "In modern Vietnam, luxury imported automobiles like Mercedes and BMW, high-end smartphones, branded fashion apparel, and owning prime real estate in major cities are widely regarded as conventional symbols of social status and financial affluence."
+                            },
+                            {
+                                question: "Do you think it was different for your grandparents?",
+                                model_answer: "It was radically different. During my grandparents' generation in post-war Vietnam, status was not defined by ostentatious luxury, but by possessing essential utility goods that guaranteed daily survival - such as a sturdy bicycle, an electric fan, or a functioning sewing machine. Practical utility and modesty were revered far above display."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "The Consumer Society",
+                        questions: [
+                            {
+                                question: "Modern society is often called 'materialistic'. Why do you think this is?",
+                                model_answer: "I believe hyper-targeted digital advertising and social media algorithms have exacerbated materialism by constantly conflating personal worth with material ownership. People are perpetually bombarded with images of influencer lifestyles, creating artificial desires to purchase new gadgets and fashion to project a curated social identity."
+                            },
+                            {
+                                question: "Do you think consumerism is a positive or a negative development?",
+                                model_answer: "Consumerism is a double-edged sword. Economically, consumer spending fuels industrial production, creates millions of jobs, and fosters technological innovation. Environmentally, however, unbridled consumerism generates catastrophic amounts of plastic waste, depletes natural resources, and accelerates climate change, while leaving individuals trapped in a cycle of hedonic adaptation."
+                            }
+                        ]
+                    },
+                    {
+                        sub_topic: "The Consumer Market and Advertising",
+                        questions: [
+                            {
+                                question: "What is the role of advertising in shaping consumer habits?",
+                                model_answer: "Advertising plays a profound role not just in informing consumers about product specifications, but in evoking subconscious emotional desires. By associating brands with happiness, youth, and prestige, sophisticated marketing campaigns effectively persuade consumers to buy items they do not strictly need."
+                            },
+                            {
+                                question: "How do you think the Internet will affect buying patterns in the future?",
+                                model_answer: "E-commerce and artificial intelligence will continue to streamline purchasing into frictionless, instant transactions. We are likely to see widespread adoption of augmented reality shopping, where customers can virtually test products in 3D before algorithmic delivery systems dispatch them via autonomous drones, making retail entirely seamless."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+};
+
+// =========================================================================
+// IELTS MASTER PROFILE DATA (CAMBRIDGE IELTS 1, 2 & 3)
+// Full 12 Authentic Cambridge Tests (4 Tests per Book)
+// =========================================================================
+
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1, 2 & 3",
+    age: "Cambridge 1, 2 & 3 (12 Tests)",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
-    // Books hierarchy: Each Cambridge volume is 1 category containing authentic tests
+    // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
     books: {
         "cam_1": {
             id: "cam_1",
             title: "Cambridge IELTS 1",
-            badge: "Cam 1",
+            badge: "4 Tests",
+            order: 1,
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"]
         },
         "cam_2": {
             id: "cam_2",
             title: "Cambridge IELTS 2",
-            badge: "Cam 2",
+            badge: "4 Tests",
+            order: 2,
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"]
         },
         "cam_3": {
             id: "cam_3",
             title: "Cambridge IELTS 3",
-            badge: "Cam 3",
+            badge: "4 Tests",
+            order: 3,
             description: "Cambridge University Press - Practice Tests 1 to 4",
-            test_ids: ["cam_3_test_1"]
+            test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"]
         }
     },
 
@@ -6605,10 +8256,13 @@ const ieltsProfileData = {
         "cam_2_test_2": { title: "Test 2", full_title: "Cambridge IELTS 2 - Test 2", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
         "cam_2_test_3": { title: "Test 3", full_title: "Cambridge IELTS 2 - Test 3", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
         "cam_2_test_4": { title: "Test 4", full_title: "Cambridge IELTS 2 - Test 4", book_id: "cam_2", book_title: "Cambridge IELTS 2" },
-        "cam_3_test_1": { title: "Test 1", full_title: "Cambridge IELTS 3 - Test 1", book_id: "cam_3", book_title: "Cambridge IELTS 3" }
+        "cam_3_test_1": { title: "Test 1", full_title: "Cambridge IELTS 3 - Test 1", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
+        "cam_3_test_2": { title: "Test 2", full_title: "Cambridge IELTS 3 - Test 2", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
+        "cam_3_test_3": { title: "Test 3", full_title: "Cambridge IELTS 3 - Test 3", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
+        "cam_3_test_4": { title: "Test 4", full_title: "Cambridge IELTS 3 - Test 4", book_id: "cam_3", book_title: "Cambridge IELTS 3" }
     },
 
-    // All Registered Tests
+    // All Registered Tests (12 Tests Total)
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
@@ -6618,7 +8272,10 @@ const ieltsProfileData = {
         "cam_2_test_2": cam2Test2,
         "cam_2_test_3": cam2Test3,
         "cam_2_test_4": cam2Test4,
-        "cam_3_test_1": cam3Test1
+        "cam_3_test_1": cam3Test1,
+        "cam_3_test_2": cam3Test2,
+        "cam_3_test_3": cam3Test3,
+        "cam_3_test_4": cam3Test4
     }
 };
 
@@ -6627,5 +8284,10 @@ if (typeof studentsDB !== "undefined") {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = { ieltsProfileData, cam1Test1, cam1Test2, cam1Test3, cam1Test4, cam2Test1, cam2Test2, cam2Test3, cam2Test4, cam3Test1 };
+    module.exports = {
+        ieltsProfileData,
+        cam1Test1, cam1Test2, cam1Test3, cam1Test4,
+        cam2Test1, cam2Test2, cam2Test3, cam2Test4,
+        cam3Test1, cam3Test2, cam3Test3, cam3Test4
+    };
 }
