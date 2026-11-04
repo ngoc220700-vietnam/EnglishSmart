@@ -1,4 +1,4 @@
-// =========================================================================
+﻿// =========================================================================
 // CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
 // Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
@@ -225,8 +225,9 @@ function renderIeltsTestView() {
             let optHtml = '';
             for (const bKey in books) {
                 const b = books[bKey];
-                const icon = bKey === 'cam_1' ? '📘' : '📙';
-                const tCount = b.test_ids ? b.test_ids.length : 4;`r`n                optHtml += `<optgroup label="${icon} ${b.title} (${tCount} ${tCount > 1 ? 'Tests' : 'Test'})">`;
+                const icon = bKey === 'cam_1' ? '\uD83D\uDCD8' : (bKey === 'cam_2' ? '\uD83D\uDCD9' : '\uD83D\uDCD7');
+                const tCount = b.test_ids ? b.test_ids.length : 4;
+                optHtml += `<optgroup label="${icon} ${b.title} (${tCount} ${tCount > 1 ? 'Tests' : 'Test'})">`;
                 const tIds = b.test_ids || [`${bKey}_test_1`, `${bKey}_test_2`, `${bKey}_test_3`, `${bKey}_test_4`];
                 tIds.forEach((tid, idx) => {
                     const u = (ieltsProfileData.units && ieltsProfileData.units[tid]) || {};
