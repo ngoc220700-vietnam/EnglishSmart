@@ -1410,8 +1410,8 @@
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js?v=20261019_v1"></script>
-    <script src="ielts_data.js?v=20261104_cam2_all4_final"></script>
-    <script src="ielts_test_engine.js?v=20261104_cam2_all4_final"></script>
+    <script src="ielts_data.js?v=20261104_restore_fix"></script>
+    <script src="ielts_test_engine.js?v=20261104_restore_fix"></script>
     <script src="starters_data.js?v=20261022_v3"></script>
     <script src="starters_test_engine.js?v=20261022_v3"></script>
 
@@ -2206,90 +2206,63 @@
                 "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", badge: "Cam 2", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] }
             };
 
-            let activeBookKey = localStorage.getItem('smart_ielts_active_book') || 'cam_1';
-            if (currentUnitKey && currentUnitKey.startsWith('cam_2_')) {
-                activeBookKey = 'cam_2';
-            } else if (currentUnitKey && currentUnitKey.startsWith('cam_1_')) {
-                activeBookKey = 'cam_1';
-            }
-
             const wrapper = document.createElement('div');
-            wrapper.className = "w-full space-y-3";
+            wrapper.className = "flex flex-col gap-3 w-full";
 
-            // 1. Book Categories Tabs (Má»—i Cambridge lÃ  1 má»¥c)
-            const bookTabs = document.createElement('div');
-            bookTabs.className = "grid grid-cols-2 gap-2 pb-1";
+            const bookKeys = Object.keys(books);
+            bookKeys.forEach((bKey) => {
+                const book = books[bKey];
+                const isCam2 = (bKey === 'cam_2');
+                const bookBox = document.createElement('div');
+                bookBox.className = isCam2 
+                    ? "bg-amber-50/70 border border-amber-200/90 rounded-2xl p-2.5 shadow-2xs"
+                    : "bg-indigo-50/70 border border-indigo-200/90 rounded-2xl p-2.5 shadow-2xs";
 
-            for (const bKey in books) {
-                const bObj = books[bKey];
-                const isBActive = (bKey === activeBookKey);
-                const bBtn = document.createElement('button');
-                bBtn.type = 'button';
-                bBtn.className = isBActive
-                    ? "px-3 py-2.5 rounded-xl text-left bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black text-xs shadow-md shadow-indigo-200 border-2 border-indigo-400 ring-2 ring-indigo-200/50 transition cursor-pointer"
-                    : "px-3 py-2.5 rounded-xl text-left bg-white hover:bg-slate-50 text-slate-700 hover:text-indigo-700 font-bold text-xs border border-slate-200 shadow-2xs transition cursor-pointer";
+                const header = document.createElement('div');
+                header.className = "flex items-center justify-between mb-2 px-1";
+                const icon = isCam2 ? '📙' : '📘';
+                const badgeColor = isCam2 ? 'bg-amber-200 text-amber-900' : 'bg-indigo-200 text-indigo-900';
+                const headerColor = isCam2 ? 'text-amber-950' : 'text-indigo-950';
 
-                bBtn.innerHTML = 
-                    <div class="flex items-center gap-1.5">
-                        <span class="text-sm"></span>
-                        <span class="truncate"></span>
-                    </div>
-                    <div class="text-[10px]  font-normal mt-0.5">Má»¥c 4 Ä‘á» thi</div>
-                ;
+                header.innerHTML = '<div class="flex items-center gap-1.5 font-black text-xs ' + headerColor + '">' +
+                    '<span>' + icon + '</span>' +
+                    '<span class="truncate">' + book.title + '</span>' +
+                    '</div>' +
+                    '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full ' + badgeColor + '">4 Tests</span>';
+                bookBox.appendChild(header);
 
-                bBtn.onclick = () => {
-                    localStorage.setItem('smart_ielts_active_book', bKey);
-                    activeBookKey = bKey;
-                    const testIds = bObj.test_ids || [${bKey}_test_1, ${bKey}_test_2, ${bKey}_test_3, ${bKey}_test_4];
-                    selectUnit(testIds[0]);
-                };
+                const testGrid = document.createElement('div');
+                testGrid.className = "grid grid-cols-2 gap-1.5";
 
-                bookTabs.appendChild(bBtn);
-            }
-            wrapper.appendChild(bookTabs);
+                const tIds = book.test_ids || [bKey + '_test_1', bKey + '_test_2', bKey + '_test_3', bKey + '_test_4'];
+                tIds.forEach((tId, idx) => {
+                    const isTActive = (tId === currentUnitKey);
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = isTActive
+                        ? (isCam2 
+                            ? "px-2.5 py-2 rounded-xl text-xs font-black text-white bg-amber-600 shadow-md ring-2 ring-amber-300 border border-amber-500 transition cursor-pointer flex items-center justify-center gap-1"
+                            : "px-2.5 py-2 rounded-xl text-xs font-black text-white bg-indigo-600 shadow-md ring-2 ring-indigo-300 border border-indigo-500 transition cursor-pointer flex items-center justify-center gap-1")
+                        : "px-2.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 hover:text-indigo-600 border border-slate-200 shadow-2xs transition cursor-pointer flex items-center justify-center gap-1";
 
-            // 2. Active Book Label & Test Grid (Äá»• ra 4 test)
-            const activeBookObj = books[activeBookKey] || books['cam_1'];
-            const subHeader = document.createElement('div');
-            subHeader.className = "text-[11px] font-extrabold text-slate-600 flex items-center justify-between px-1 pt-1";
-            subHeader.innerHTML = 
-                <span>Äá»€ THI :</span>
-                <span class="text-[10px] bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded-full">4 Tests</span>
-            ;
-            wrapper.appendChild(subHeader);
+                    btn.innerHTML = '<span>📝</span> <span>Test ' + (idx + 1) + '</span>';
+                    btn.onclick = () => selectUnit(tId);
+                    testGrid.appendChild(btn);
+                });
 
-            const testGrid = document.createElement('div');
-            testGrid.className = "grid grid-cols-2 lg:grid-cols-1 gap-2";
-
-            const tIds = activeBookObj.test_ids || [${activeBookKey}_test_1, ${activeBookKey}_test_2, ${activeBookKey}_test_3, ${activeBookKey}_test_4];
-            tIds.forEach((tId, idx) => {
-                const uInfo = ieltsData.units[tId] || { title: Test  };
-                const isTActive = (tId === currentUnitKey);
-
-                const tBtn = document.createElement('button');
-                tBtn.type = 'button';
-                tBtn.className = isTActive
-                    ? "px-3.5 py-2.5 rounded-xl text-left bg-indigo-50 text-indigo-950 font-black text-xs sm:text-sm border-2 border-indigo-500 shadow-md ring-2 ring-indigo-200 transition cursor-pointer flex items-center justify-between"
-                    : "px-3.5 py-2.5 rounded-xl text-left bg-white hover:bg-slate-50 text-slate-700 hover:text-indigo-800 font-bold text-xs sm:text-sm border border-slate-200/90 shadow-2xs transition cursor-pointer flex items-center justify-between";
-
-                tBtn.innerHTML = 
-                    <div class="flex items-center gap-2 truncate">
-                        <span class="text-[11px] font-black px-1.5 py-0.5 rounded ">Test </span>
-                        <span class="truncate text-xs"> - Test </span>
-                    </div>
-                    
-                ;
-
-                tBtn.onclick = () => selectUnit(tId);
-                testGrid.appendChild(tBtn);
+                bookBox.appendChild(testGrid);
+                wrapper.appendChild(bookBox);
             });
 
-            wrapper.appendChild(testGrid);
             unitContainer.appendChild(wrapper);
         }
+
         function renderUnitButtons() {
             unitContainer.innerHTML = '';
-            if (currentStudentKey === 'ielts') { renderIeltsBooksAndTests(); return; }
+            if (currentStudentKey === 'ielts') {
+                renderIeltsBooksAndTests();
+                return;
+            }
             const units = studentsDB[currentStudentKey].units;
             for (const unitKey in units) {
                 const unit = units[unitKey];
