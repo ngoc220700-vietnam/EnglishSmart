@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1068,10 +1068,16 @@
                                 <span class="text-xs">📚</span>
                                 <span class="text-[11px] font-extrabold text-indigo-700 hidden sm:inline">Chọn đề:</span>
                                 <select id="ielts-fast-test-select" onchange="switchIeltsTest(this.value)" class="text-xs font-black bg-transparent text-indigo-900 border-none outline-none cursor-pointer py-0.5">
-                                    <option value="cam_1_test_1">Cambridge IELTS 1 - Test 1</option>
-                                    <option value="cam_1_test_2">Cambridge IELTS 1 - Test 2</option>
-                                    <option value="cam_1_test_3">Cambridge IELTS 1 - Test 3</option>
-                                    <option value="cam_1_test_4">Cambridge IELTS 1 - Test 4</option>
+                                    <optgroup label="Cambridge IELTS 1">
+                                        <option value="cam_1_test_1">Cambridge IELTS 1 - Test 1</option>
+                                        <option value="cam_1_test_2">Cambridge IELTS 1 - Test 2</option>
+                                        <option value="cam_1_test_3">Cambridge IELTS 1 - Test 3</option>
+                                        <option value="cam_1_test_4">Cambridge IELTS 1 - Test 4</option>
+                                    </optgroup>
+                                    <optgroup label="Cambridge IELTS 2">
+                                        <option value="cam_2_test_1">Cambridge IELTS 2 - Test 1</option>
+                                        <option value="cam_2_test_2">Cambridge IELTS 2 - Test 2</option>
+                                    </optgroup>
                                 </select>
                             </div>
 
@@ -1402,8 +1408,8 @@
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js?v=20261019_v1"></script>
-    <script src="ielts_data.js?v=20261022_v3"></script>
-    <script src="ielts_test_engine.js?v=20261022_v3"></script>
+    <script src="ielts_data.js?v=20261104_cam2_v1"></script>
+    <script src="ielts_test_engine.js?v=20261104_cam2_v1"></script>
     <script src="starters_data.js?v=20261022_v3"></script>
     <script src="starters_test_engine.js?v=20261022_v3"></script>
 
@@ -1810,7 +1816,7 @@
 
             if (currentStudentKey === 'ielts') {
                 if (switcherBar) switcherBar.classList.add('hidden');
-                if (lessonsLabel) lessonsLabel.textContent = '📚 ĐỀ THI CAMBRIDGE 1 (4 TESTS):';
+                if (lessonsLabel) lessonsLabel.textContent = "\uD83D\uDCDA B\u1ED8 \u0110\u1EC0 THI CAMBRIDGE IELTS:";
                 if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
                 if (typeof switchIeltsTest === 'function') switchIeltsTest(currentUnitKey);
@@ -2330,7 +2336,7 @@
 
             if (currentStudentKey === 'ielts') {
                 if (switcherBar) switcherBar.classList.add('hidden');
-                if (lessonsLabel) lessonsLabel.textContent = '📚 ĐỀ THI CAMBRIDGE 1 (4 TESTS):';
+                if (lessonsLabel) lessonsLabel.textContent = "\uD83D\uDCDA B\u1ED8 \u0110\u1EC0 THI CAMBRIDGE IELTS:";
                 if (speedBtn) speedBtn.classList.add('hidden');
                 setStudyMode('ielts_test');
                 if (typeof switchIeltsTest === 'function') switchIeltsTest(currentUnitKey);

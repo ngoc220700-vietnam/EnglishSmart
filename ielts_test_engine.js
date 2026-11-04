@@ -202,7 +202,8 @@ function renderIeltsTestView() {
     if (!test) return;
 
     const titleEl = document.getElementById('ielts-exam-title');
-    if (titleEl) titleEl.textContent = test.title;
+    const displayTitle = test.title.includes(test.book || 'Cambridge') ? test.title : `${test.book || 'Cambridge IELTS'} - ${test.title}`;
+    if (titleEl) titleEl.textContent = displayTitle;
 
     const fastSelect = document.getElementById('ielts-fast-test-select');
     if (fastSelect) {
@@ -246,16 +247,19 @@ function renderIeltsStartScreen(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
     if (!test) return;
 
+    const displayTitle = test.title.includes(test.book || 'Cambridge') ? test.title : `${test.book || 'Cambridge IELTS'} - ${test.title}`;
+    const badgeLabel = test.badge || (test.book ? `${test.book} - Practice Test` : 'Cambridge Official Practice Test');
+
     container.innerHTML = `
         <div class="max-w-3xl mx-auto py-8 px-4 text-center space-y-6">
             <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-indigo-600 to-sky-600 text-white flex items-center justify-center font-black text-4xl shadow-xl mx-auto ring-4 ring-indigo-100">
-                &#127891;
+                🎓
             </div>
             <div class="space-y-2">
                 <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-black text-xs uppercase tracking-wider border border-indigo-200">
-                    Cambridge Official Practice Test
+                    ${escapeHtml(badgeLabel)}
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-800">${escapeHtml(test.title)}</h2>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-800">${escapeHtml(displayTitle)}</h2>
                 <p class="text-sm text-slate-500 max-w-lg mx-auto">
                     Standard 4-Skill Academic Examination: Listening, Reading, Writing, and Speaking with automatic band scoring and AI Examiner.
                 </p>
@@ -299,8 +303,8 @@ function renderIeltsStartScreen(container) {
             <div class="pt-2">
                 <button onclick="startIeltsTest()"
                         class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-base sm:text-lg shadow-lg hover:shadow-xl transition active:scale-95 inline-flex items-center gap-2.5 cursor-pointer">
-                    <span>&#9654;&#65039;</span>
-                    <span>Start Test</span>
+                    <span>▶️</span>
+                    <span>Bắt Đầu Làm Bài Thi (Start Test)</span>
                 </button>
             </div>
         </div>

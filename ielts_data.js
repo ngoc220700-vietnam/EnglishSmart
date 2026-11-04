@@ -1343,22 +1343,2808 @@ const cam1Test3 = normalizeCamTest(cam1Test3Raw, 3);
 const cam1Test4 = normalizeCamTest(cam1Test4Raw, 4);
 
 // Master IELTS Profile Data (Filtered strictly to Cambridge 1 with 4 Tests)
+// =========================================================================
+// CAMBRIDGE IELTS 2 - TESTS 1 & 2 (OFFICIAL CAMBRIDGE UNIVERSITY PRESS)
+// =========================================================================
+// =========================================================================
+// CAMBRIDGE IELTS 2 - ACADEMIC PRACTICE TEST 1
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 2)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam2Test1 = {
+    id: "cam_2_test_1",
+    book: "Cambridge IELTS 2",
+    title: "Cambridge IELTS 2 - Test 1",
+    test_title: "Academic Practice Test 1",
+    badge: "Cam 2 - Test 1",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 1 (Cambridge IELTS 2)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Video Library Application Form (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Video Library Application Form (Questions 1 - 10)",
+                instruction: "Questions 1-5: Complete the form below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer. Questions 6-8: Circle THREE letters A-F. Questions 9-10: Write NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Questions 1-5: Complete the form below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer. Questions 6-8: Circle THREE letters A-F. Questions 9-10: Write NO MORE THAN THREE WORDS for each answer.",
+                transcript: `LOUISE: Oh hello, I'd like to join the video library.
+MR MAX: OK. Would you like to fill in the application form now?
+LOUISE: Yes, I can do it now.
+MR MAX: Hold on and I'll get a form. Now, I'll just ask you a few questions and then I'll get you to sign at the bottom.
+LOUISE: Right.
+MR MAX: What's your full name?
+LOUISE: Louise Cynthia Jones. [EXAMPLE: Surname: Jones]
+MR MAX: Jones?
+LOUISE: Yes, that's right.
+MR MAX: OK, and what's your address?
+LOUISE: Apartment 1, 72 Black Street, Highbridge.
+MR MAX: Black Street, that's just around the corner, isn't it?
+LOUISE: Yes.
+MR MAX: OK, so the post code is 2085, right?
+LOUISE: Yes, 2085.
+MR MAX: Mm. And your telephone number? I need both home and work.
+LOUISE: Home is 9835 6712 and work is 9456 1309. Do you need any ID or anything like that?
+MR MAX: Yes, we need your driver's licence number, that is if you have one.
+LOUISE: Yes, I know it off by heart, it's an easy one, 2020BD. Do you need to see it?
+MR MAX: Yes, I'm afraid I do.
+LOUISE: Mm ... here.
+MR MAX: Right, thanks. And could you tell me your date of birth please?
+LOUISE: 25 July 1977.
+MR MAX: That's the most important part out of the way, but could I just ask you a few questions for a survey we're conducting?
+LOUISE: OK.
+MR MAX: What kind of videos do you prefer to watch? Have a look at this list.
+LOUISE: Well, I love anything that makes me laugh. I just love to hear jokes and funny punch lines. I'm not very keen on westerns, although my father likes them, but I'm a real softie, so anything with a bit of a love story is good for me. It doesn't matter how old. Not musicals though, they're too much!
+MR MAX: Anything else?
+LOUISE: I'm completely taken by documentaries of the great outdoors, you know the sort, animals, plants and far away places. I saw a wonderful one on dolphins last week. It was amazing.
+MR MAX: Now, I think that's all from me, except I need you to sign here on the line. Here's a pen. Oh, and I nearly forgot, the membership fee. $25, refundable if you leave the library for any reason.
+LOUISE: There you are. And do I sign here?
+MR MAX: Yes, that's it. You can borrow videos now, if you like, but your card won't be ready until next week. You can come and pick it up when you bring your first videos back. That is if you want to take some now.
+LOUISE: Yes, I'd like to. I'll have a look around.
+MR MAX: Fine.`,
+                audio_script: `LOUISE: Oh hello, I'd like to join the video library... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 1,
+                        type: "fill",
+                        prompt: "Address: Apartment 1, 72 _____ Street, Highbridge",
+                        correct_answers: ["Black", "black"],
+                        evidence: "LOUISE: Apartment 1, 72 Black Street, Highbridge.",
+                        explanation: "Louise clearly states her address as Apartment 1, 72 Black Street."
+                    },
+                    {
+                        id: 2,
+                        type: "fill",
+                        prompt: "Post code: _____",
+                        correct_answers: ["2085"],
+                        evidence: "MR MAX: OK, so the post code is 2085, right? LOUISE: Yes, 2085.",
+                        explanation: "The post code confirmed by both speakers is 2085."
+                    },
+                    {
+                        id: 3,
+                        type: "fill",
+                        prompt: "Telephone: 9835 6712 (home) | _____ (work)",
+                        correct_answers: ["9456 1309", "94561309"],
+                        evidence: "LOUISE: Home is 9835 6712 and work is 9456 1309.",
+                        explanation: "Louise gives her work telephone number as 9456 1309."
+                    },
+                    {
+                        id: 4,
+                        type: "fill",
+                        prompt: "Driver's licence number: _____",
+                        correct_answers: ["2020BD", "2020 BD", "2020bd"],
+                        evidence: "LOUISE: Yes, I know it off by heart, it's an easy one, 2020BD.",
+                        explanation: "Louise states her driver's licence number is 2020BD."
+                    },
+                    {
+                        id: 5,
+                        type: "fill",
+                        prompt: "Date of birth: Day: 25th Month: _____ Year: 1977",
+                        correct_answers: ["July", "july"],
+                        evidence: "LOUISE: 25 July 1977.",
+                        explanation: "Louise states her date of birth is 25 July 1977."
+                    },
+                    {
+                        id: 6,
+                        type: "choice",
+                        prompt: "What types of films does Louise like? (First preference)",
+                        options: [
+                            "A. Action",
+                            "B. Comedies",
+                            "C. Musicals",
+                            "D. Romance",
+                            "E. Westerns",
+                            "F. Wildlife"
+                        ],
+                        correct_answers: ["B", "Comedies"],
+                        evidence: "LOUISE: Well, I love anything that makes me laugh. I just love to hear jokes and funny punch lines.",
+                        explanation: "Films that make her laugh with jokes and funny punch lines are Comedies (Option B)."
+                    },
+                    {
+                        id: 7,
+                        type: "choice",
+                        prompt: "What types of films does Louise like? (Second preference)",
+                        options: [
+                            "A. Action",
+                            "B. Comedies",
+                            "C. Musicals",
+                            "D. Romance",
+                            "E. Westerns",
+                            "F. Wildlife"
+                        ],
+                        correct_answers: ["D", "Romance"],
+                        evidence: "LOUISE: ...anything with a bit of a love story is good for me.",
+                        explanation: "Films with a love story represent Romance (Option D)."
+                    },
+                    {
+                        id: 8,
+                        type: "choice",
+                        prompt: "What types of films does Louise like? (Third preference)",
+                        options: [
+                            "A. Action",
+                            "B. Comedies",
+                            "C. Musicals",
+                            "D. Romance",
+                            "E. Westerns",
+                            "F. Wildlife"
+                        ],
+                        correct_answers: ["F", "Wildlife"],
+                        evidence: "LOUISE: I'm completely taken by documentaries of the great outdoors, you know the sort, animals, plants and far away places.",
+                        explanation: "Documentaries about animals, plants and the great outdoors correspond to Wildlife (Option F)."
+                    },
+                    {
+                        id: 9,
+                        type: "fill",
+                        prompt: "How much does it cost to join the library?",
+                        correct_answers: ["$25", "25 dollars", "twenty-five dollars", "25", "$25 (refundable)", "twenty five dollars"],
+                        evidence: "MR MAX: Oh, and I nearly forgot, the membership fee. $25, refundable if you leave the library for any reason.",
+                        explanation: "The membership fee is $25 (refundable)."
+                    },
+                    {
+                        id: 10,
+                        type: "fill",
+                        prompt: "When will Louise's card be ready?",
+                        correct_answers: ["next week", "in a week", "in one week", "the following week"],
+                        evidence: "MR MAX: ...your card won't be ready until next week. You can come and pick it up when you bring your first videos back.",
+                        explanation: "The card will be ready next week."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 2: Expedition Across Attora Mountains (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Expedition Across Attora Mountains (Questions 11 - 20)",
+                instruction: "Questions 11-13: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Questions 14-15: Circle the correct letters A-C. Questions 16-18: Circle THREE letters A-F. Questions 19-20: Circle TWO letters A-E.",
+                instructions: "Questions 11-13: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Questions 14-15: Circle the correct letters A-C. Questions 16-18: Circle THREE letters A-F. Questions 19-20: Circle TWO letters A-E.",
+                transcript: `INTERVIEWER: A dream came true in 1995, when over 96 days of the spring and summer, an expedition of four men undertook what they believe to have been the first and only complete end-to-end crossing of Morocco's Attora mountains. I talked to Charles Owen, the leader of the expedition group, about the trip. Charles, how much planning went on beforehand?
+CHARLES: Well, as you know, I run these walking trips across the mountains for tourists and over the years, I've collected maps and other data to prepare what I call a 'route book' for this trip and this book basically shows the route across the mountains that we took.
+INTERVIEWER: You actually broke records while you were out there, didn't you?
+CHARLES: Mmm. Yes, it was 900 miles in total and we managed to climb 32 peaks that were over 3000 metres high, including Toubkal, which is of course the highest in North Africa. We weren't actually out to make a name for ourselves - it just happened really.
+INTERVIEWER: What was the weather like?
+CHARLES: It got us right from day one and we were pretty taken aback really to find that it rained on quite a number of days, and so we were forced to start re-planning our route almost from the outset. One of the obvious problems is the heavy snow which blocks the mountain passes, so you have to make considerable detours. When we were on the way to Imilchil, for example, the snow forced us into a northern bypass which was new to us, but anyway, either way we would have been rewarded because we fell upon amazing, high meadows, huge gorges and wonderful snow-capped mountains. The scenery was as fine as any we saw on the trip and that was how it was every time - having to take another pass was never a disappointment.
+INTERVIEWER: It was in many ways a social trip, wasn't it?
+CHARLES: Yes, yes ... we'd arranged to meet up with friends at various points on the journey. I mean this was actually one of the purposes of the trip ... and we managed to keep all these dates, which is amazing really considering the detours we made. An old friend acted as a sort of transport organiser for everyone and the Hotel Ali in Marrakech was a good social base - I'd really recommend it, although I can't remember who runs it. Anyway, groups of friends actually joined us for three-week stints and others just linked up with us. Some, whom we hadn't met before the trip at all, tagged on for short bursts - people from the area - who just came along for the ride. But outside the major visitor areas like Toubkal we only met one other group of travellers like ourselves in the whole 96 days.
+INTERVIEWER: Were there any bad moments?
+CHARLES: We took two, I must say, long-suffering donkeys with us to help transport water and tents and things. I suppose if we were to do it all again we'd probably hire donkeys along the way. Taza and Tamri, as we called them after the last places in the trip, well, they made quite a unique journey between them, and ... but it was continuously demanding for them. On both the really high summits, they took diversions that were quite out of character and I can only assume that it must have been due to tiredness.
+INTERVIEWER: Well, thank you ... And Charles has put together a video about this journey and continues to lead groups to the Attora mountains, so if you want further information ...`,
+                audio_script: `INTERVIEWER: A dream came true in 1995... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 11,
+                        type: "fill",
+                        prompt: "Prepared a _____ for the trip",
+                        correct_answers: ["route book", "route-book"],
+                        evidence: "CHARLES: ...I've collected maps and other data to prepare what I call a 'route book' for this trip...",
+                        explanation: "Charles prepared a route book for the expedition."
+                    },
+                    {
+                        id: 12,
+                        type: "fill",
+                        prompt: "Total length of trip: _____",
+                        correct_answers: ["900 miles", "nine hundred miles"],
+                        evidence: "CHARLES: Mmm. Yes, it was 900 miles in total...",
+                        explanation: "The total length was 900 miles (or nine hundred miles). Note: '900' alone without unit is not accepted."
+                    },
+                    {
+                        id: 13,
+                        type: "fill",
+                        prompt: "Climbed highest peak in _____",
+                        correct_answers: ["North Africa", "N Africa", "north africa"],
+                        evidence: "CHARLES: ...including Toubkal, which is of course the highest in North Africa.",
+                        explanation: "Toubkal is the highest peak in North Africa."
+                    },
+                    {
+                        id: 14,
+                        type: "choice",
+                        prompt: "What took the group by surprise?",
+                        options: [
+                            "A. the amount of rain",
+                            "B. the number of possible routes",
+                            "C. the length of the journey"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "CHARLES: ...we were pretty taken aback really to find that it rained on quite a number of days...",
+                        explanation: "Being 'taken aback' means being surprised by the amount of rain (Option A)."
+                    },
+                    {
+                        id: 15,
+                        type: "choice",
+                        prompt: "How did Charles feel about having to change routes?",
+                        options: [
+                            "A. He reluctantly accepted it.",
+                            "B. He was irritated by the diversion.",
+                            "C. It made no difference to his enjoyment."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "CHARLES: ...having to take another pass was never a disappointment.",
+                        explanation: "Taking another pass was never a disappointment, meaning it made no difference to his enjoyment (Option C)."
+                    },
+                    {
+                        id: 16,
+                        type: "choice",
+                        prompt: "What does Charles say about his friends? (Select first true statement)",
+                        options: [
+                            "A. He met them at one stage on the trip.",
+                            "B. They kept all their meeting arrangements.",
+                            "C. One of them helped arrange the transport.",
+                            "D. One of them owned the hotel they stayed in.",
+                            "E. Some of them travelled with him.",
+                            "F. Only one group lasted the 96 days."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "CHARLES: ...we'd arranged to meet up with friends at various points on the journey... and we managed to keep all these dates...",
+                        explanation: "Keeping all these dates means they kept all their meeting arrangements (B)."
+                    },
+                    {
+                        id: 17,
+                        type: "choice",
+                        prompt: "What does Charles say about his friends? (Select second true statement)",
+                        options: [
+                            "A. He met them at one stage on the trip.",
+                            "B. They kept all their meeting arrangements.",
+                            "C. One of them helped arrange the transport.",
+                            "D. One of them owned the hotel they stayed in.",
+                            "E. Some of them travelled with him.",
+                            "F. Only one group lasted the 96 days."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "CHARLES: An old friend acted as a sort of transport organiser for everyone...",
+                        explanation: "One of his friends helped arrange transport (C)."
+                    },
+                    {
+                        id: 18,
+                        type: "choice",
+                        prompt: "What does Charles say about his friends? (Select third true statement)",
+                        options: [
+                            "A. He met them at one stage on the trip.",
+                            "B. They kept all their meeting arrangements.",
+                            "C. One of them helped arrange the transport.",
+                            "D. One of them owned the hotel they stayed in.",
+                            "E. Some of them travelled with him.",
+                            "F. Only one group lasted the 96 days."
+                        ],
+                        correct_answers: ["E"],
+                        evidence: "CHARLES: Anyway, groups of friends actually joined us for three-week stints and others just linked up with us.",
+                        explanation: "Some friends travelled with him for three-week stints (E)."
+                    },
+                    {
+                        id: 19,
+                        type: "choice",
+                        prompt: "What does Charles say about the donkeys? (First statement)",
+                        options: [
+                            "A. He rode them when he was tired.",
+                            "B. He named them after places.",
+                            "C. One of them died.",
+                            "D. They behaved unpredictably.",
+                            "E. They were very small."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "CHARLES: Taza and Tamri, as we called them after the last places in the trip...",
+                        explanation: "He named them Taza and Tamri after places (Option B)."
+                    },
+                    {
+                        id: 20,
+                        type: "choice",
+                        prompt: "What does Charles say about the donkeys? (Second statement)",
+                        options: [
+                            "A. He rode them when he was tired.",
+                            "B. He named them after places.",
+                            "C. One of them died.",
+                            "D. They behaved unpredictably.",
+                            "E. They were very small."
+                        ],
+                        correct_answers: ["D"],
+                        evidence: "CHARLES: On both the really high summits, they took diversions that were quite out of character...",
+                        explanation: "Taking diversions that were out of character means they behaved unpredictably (Option D)."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 3: University Studies & Strategies (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: University Studies & Strategies (Questions 21 - 30)",
+                instruction: "Questions 21-25: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 26-30: Write NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Questions 21-25: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 26-30: Write NO MORE THAN THREE WORDS for each answer.",
+                transcript: `JANE: Hi Tim!
+TIM: Jane. How are you?
+JANE: Fine. I'd been wondering when I'd run into you. Have you been here long?
+TIM: I arrived yesterday, on Sunday. How about you?
+JANE: I got here a few days ago, on Saturday. No - wait a minute, what's today? - Sorry, Friday, not Saturday.
+TIM: But we didn't have to be here till today.
+JANE: Yes, I know, but I wanted to get my things moved into my room, and just take a look around. So, did you decide to do English in the end?
+TIM: No, I changed my mind and opted for history instead. And you're doing biology, if I remember correctly.
+JANE: Yes, although to start with I couldn't decide between that and geography.
+TIM: How much reading have you got? I was given an amazingly long list of books to read. See!
+JANE: Wow, it does look pretty long.
+TIM: Well, I counted 57. I could hardly believe it! What's your list like?
+JANE: Well, it's not as long as yours, but it's still pretty big. There are 43. I don't know how I'm going to get through them all.
+TIM: Well you don't have to read them all this week! You just have to stay ahead of the lectures and seminars. Have you got your class schedule yet?
+JANE: Yep. It came with the reading list. When's your first lecture?
+TIM: Tuesday. How about you?
+JANE: The day after. It's my busiest day; I've got two lectures in the morning and one in the afternoon.
+JANE: It's going to be different from school, isn't it!
+TIM: Yeah, particularly the lectures. Have you got any special strategy for listening to lectures?
+JANE: Well I'm going to use a cassette recorder and record them all.
+TIM: What! Are you allowed to?
+JANE: Sure. Lots of people do it nowadays. It means you can listen to the lectures all over again later, and make really good notes.
+TIM: I couldn't do that. I like to take notes as I'm listening. I usually find I get all the important points. Reading is different of course. My approach is to skim the book first to see what's important and what isn't. It saves hours of time.
+JANE: But what if you miss something?
+TIM: You don't mean you're going to read every word, do you?
+JANE: Well, that's what I usually do.
+TIM: Well, that's up to you, but I think you're crazy!
+JANE: What's your first lecture on, anyway?
+TIM: Oh, it's a lecture on the French Revolution.
+JANE: The French Revolution! How boring!
+TIM: It's not boring at all! It was an amazing period of history. It changed everything in Europe. So what's your first lecture about?
+JANE: It's about animal behaviour. It sounds really interesting.
+TIM: Look, I was on my way to the library. I'm going to get some of these books out and start reading for the first essay I've got to write.
+JANE: And what have you got to write about?
+TIM: Well, you'll never believe it, I think our professor must have a sense of humour. He's given us the title "Why study history?"
+JANE: That's a good one. When you find the answer, let me know!
+TIM: I'm going to enjoy writing it. Have you been given any writing assignments yet?
+JANE: Yes, I've got to write about animal language.
+TIM: Hmm! That sounds a challenge. I suppose you'll be off to the zoo to do field research.`,
+                audio_script: `JANE: Hi Tim! ... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 21,
+                        type: "fill",
+                        prompt: "Day of arrival: Tim: Sunday | Jane: _____",
+                        correct_answers: ["Friday", "on Friday", "friday"],
+                        evidence: "JANE: ...Sorry, Friday, not Saturday.",
+                        explanation: "Jane corrects herself and confirms she arrived on Friday."
+                    },
+                    {
+                        id: 22,
+                        type: "fill",
+                        prompt: "Subject: Tim: History | Jane: _____",
+                        correct_answers: ["Biology", "biology"],
+                        evidence: "TIM: And you're doing biology, if I remember correctly. JANE: Yes...",
+                        explanation: "Jane is studying Biology."
+                    },
+                    {
+                        id: 23,
+                        type: "fill",
+                        prompt: "Number of books to read: Tim: _____ | Jane: 43",
+                        correct_answers: ["57", "fifty-seven", "57 books", "fifty-seven books"],
+                        evidence: "TIM: Well, I counted 57. I could hardly believe it!",
+                        explanation: "Tim has 57 books on his reading list."
+                    },
+                    {
+                        id: 24,
+                        type: "fill",
+                        prompt: "Number of books to read: Tim: 57 | Jane: _____",
+                        correct_answers: ["43", "forty-three", "43 books", "forty-three books"],
+                        evidence: "JANE: ...There are 43. I don't know how I'm going to get through them all.",
+                        explanation: "Jane has 43 books on her reading list."
+                    },
+                    {
+                        id: 25,
+                        type: "fill",
+                        prompt: "Day of first lecture: Tim: Tuesday | Jane: _____",
+                        correct_answers: ["Wednesday", "Wed", "wednesday"],
+                        evidence: "TIM: Tuesday. How about you? JANE: The day after. It's my busiest day...",
+                        explanation: "The day after Tuesday is Wednesday. Note: 'the day after' is not accepted."
+                    },
+                    {
+                        id: 26,
+                        type: "fill",
+                        prompt: "What is Jane's study strategy in lectures?",
+                        correct_answers: [
+                            "record them",
+                            "record lectures",
+                            "records them",
+                            "records lectures",
+                            "she records them",
+                            "she records lectures",
+                            "use a cassette recorder",
+                            "cassette recorder",
+                            "tape recorder",
+                            "recording",
+                            "she uses a recorder"
+                        ],
+                        evidence: "JANE: Well I'm going to use a cassette recorder and record them all.",
+                        explanation: "Jane's strategy is to record the lectures using a cassette recorder."
+                    },
+                    {
+                        id: 27,
+                        type: "fill",
+                        prompt: "What is Tim's study strategy for reading?",
+                        correct_answers: [
+                            "skimming",
+                            "skim reading",
+                            "skims books",
+                            "skim the book",
+                            "skim the book first",
+                            "he skims books"
+                        ],
+                        evidence: "TIM: ...My approach is to skim the book first to see what's important and what isn't.",
+                        explanation: "Tim's approach to reading is skimming / to skim the book first."
+                    },
+                    {
+                        id: 28,
+                        type: "fill",
+                        prompt: "What is the subject of Tim's first lecture?",
+                        correct_answers: [
+                            "French Revolution",
+                            "The French Revolution",
+                            "the French Revolution",
+                            "french revolution"
+                        ],
+                        evidence: "TIM: Oh, it's a lecture on the French Revolution.",
+                        explanation: "Tim's first lecture is on the French Revolution."
+                    },
+                    {
+                        id: 29,
+                        type: "fill",
+                        prompt: "What is the title of Tim's first essay?",
+                        correct_answers: [
+                            "Why study history",
+                            "Why study history?",
+                            "Why study history ?"
+                        ],
+                        evidence: "TIM: ...He's given us the title 'Why study history?'",
+                        explanation: "The essay title is 'Why study history?'."
+                    },
+                    {
+                        id: 30,
+                        type: "fill",
+                        prompt: "What is the subject of Jane's first essay?",
+                        correct_answers: [
+                            "animal language",
+                            "the language of animals"
+                        ],
+                        evidence: "JANE: Yes, I've got to write about animal language.",
+                        explanation: "Jane has to write about animal language (NOT just 'language')."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 4: Further Education Courses & Careers (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Further Education Courses & Careers (Questions 31 - 40)",
+                instruction: "Questions 31-35: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 36-40: Complete the table below. Write the appropriate letters A-G against Questions 36-40.",
+                instructions: "Questions 31-35: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 36-40: Complete the table below. Write the appropriate letters A-G against Questions 36-40.",
+                transcript: `LECTURER: Welcome to further education Information Week. This is the Physical Education Faculty's session and I'm the Head of the Faculty. During the course of this morning we hope to give you a clear idea of what we offer in our training programs and we will look at the types of courses and the entry requirements, if any, for those courses. Some of these courses are open to school leavers, but for some you need previous qualifications, or relevant successful employment.
+So firstly, the Physical Fitness Instructor's course is offered as a six-month certificate course which includes an important component of personal fitness but there are no specific entry requirements.
+For Sports Administrators we provide a four-month certificate course but you should be aware that this is designed for those who are in employment. This employment must be current and related to sports administration.
+For the Sports Psychologist course we offer a one-year diploma course, but this diploma course is available only to those who already hold a degree in psychology, so you need to make sure you have that before you apply to do this course.
+Now . . . for Physical Education Teachers we offer a four-year degree in education. This degree course is designed for preparing students to teach in primary and secondary schools and needs no prior qualifications as it is entered directly by school leavers.
+And lastly for the Recreation Officer's course we offer a six-month certificate. Entry to this course normally includes applicants of a wide range of ages and experiences, but we do not insist on any prerequisites for this course.
+Remember that this is a vocational training institute. We train you so that you can take up a particular kind of job. So it is important that you know the main roles of the jobs - what the work is like and what kind of qualities you need to succeed at them.
+A Physical Fitness Instructor works in health and fitness centres preparing individual programs for ordinary members of the public. Physical Fitness Instructors prepare routines of exercises to suit the individual client's age and level of fitness.
+Sports Administrators run clubs and sporting associations. Their duties include such things as booking playing fields with local councils and organising the schedule of games or events for the club, so they need good organisational skills.
+Sports Psychologists spend time with professional athletes helping them approach competition with a positive mental attitude to enable them to achieve their personal best. They do this by improving motivation and concentration or assisting with stress management.
+Physical Education or PE Teachers instruct young students in how to exercise, play sport, and do other recreational activities correctly and safely. PE teachers help the development of co-ordination, balance, posture, and flexibility with things like simple catching and throwing skills. They are not expected to be experts in all sports, but must be able to show students the basic techniques involved in a wide range of activities.
+Recreation Officers often find themselves working for local government authorities and local groups. Their aim is to raise people's awareness of healthy lifestyles and improved general fitness through arranging recreational activities for groups of all ages from the very young to the elderly.
+There are many other job opportunities which our graduates can look forward to. If you are interested in any of these ...`,
+                audio_script: `LECTURER: Welcome to further education Information Week... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 31,
+                        type: "fill",
+                        prompt: "Sports Administrator: Type of course: duration and level: _____",
+                        correct_answers: [
+                            "4-month certificate",
+                            "four-month certificate",
+                            "4 month certificate",
+                            "four month certificate",
+                            "4-month cert",
+                            "four-month cert course"
+                        ],
+                        evidence: "LECTURER: For Sports Administrators we provide a four-month certificate course...",
+                        explanation: "The course is a four-month certificate course."
+                    },
+                    {
+                        id: 32,
+                        type: "fill",
+                        prompt: "Sports Administrator: Entry requirements: _____ in sports administration",
+                        correct_answers: [
+                            "employment",
+                            "current employment",
+                            "job"
+                        ],
+                        evidence: "LECTURER: ...designed for those who are in employment. This employment must be current and related to sports administration.",
+                        explanation: "The requirement is current employment or job in sports administration."
+                    },
+                    {
+                        id: 33,
+                        type: "fill",
+                        prompt: "Sports Psychologist: Type of course: duration and level: _____",
+                        correct_answers: [
+                            "1-year diploma",
+                            "one-year diploma",
+                            "1 year diploma",
+                            "one year diploma"
+                        ],
+                        evidence: "LECTURER: For the Sports Psychologist course we offer a one-year diploma course...",
+                        explanation: "It is a one-year diploma course."
+                    },
+                    {
+                        id: 34,
+                        type: "fill",
+                        prompt: "Physical Education Teacher: Entry requirements: _____",
+                        correct_answers: [
+                            "none",
+                            "no qualifications",
+                            "no prior qualifications",
+                            "no quals"
+                        ],
+                        evidence: "LECTURER: ...and needs no prior qualifications as it is entered directly by school leavers.",
+                        explanation: "It needs none / no prior qualifications."
+                    },
+                    {
+                        id: 35,
+                        type: "fill",
+                        prompt: "Recreation Officer: Type of course: duration and level: _____",
+                        correct_answers: [
+                            "6-month certificate",
+                            "six-month certificate",
+                            "6 month certificate",
+                            "six month certificate",
+                            "6-month cert",
+                            "six-month cert course"
+                        ],
+                        evidence: "LECTURER: And lastly for the Recreation Officer's course we offer a six-month certificate.",
+                        explanation: "The Recreation Officer's course is a six-month certificate."
+                    },
+                    {
+                        id: 36,
+                        type: "choice",
+                        prompt: "Physical Fitness Instructor - Main role:",
+                        options: [
+                            "A. the coaching of teams",
+                            "B. the support of elite athletes",
+                            "C. guidance of ordinary individuals",
+                            "D. community health",
+                            "E. the treatment of injuries",
+                            "F. arranging matches and venues",
+                            "G. the rounded development of children"
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "LECTURER: A Physical Fitness Instructor works in health and fitness centres preparing individual programs for ordinary members of the public.",
+                        explanation: "Preparing programs for ordinary members of the public corresponds to C (guidance of ordinary individuals)."
+                    },
+                    {
+                        id: 37,
+                        type: "choice",
+                        prompt: "Sports Administrator - Main role:",
+                        options: [
+                            "A. the coaching of teams",
+                            "B. the support of elite athletes",
+                            "C. guidance of ordinary individuals",
+                            "D. community health",
+                            "E. the treatment of injuries",
+                            "F. arranging matches and venues",
+                            "G. the rounded development of children"
+                        ],
+                        correct_answers: ["F"],
+                        evidence: "LECTURER: ...booking playing fields with local councils and organising the schedule of games or events...",
+                        explanation: "Booking fields and organising schedules corresponds to F (arranging matches and venues)."
+                    },
+                    {
+                        id: 38,
+                        type: "choice",
+                        prompt: "Sports Psychologist - Main role:",
+                        options: [
+                            "A. the coaching of teams",
+                            "B. the support of elite athletes",
+                            "C. guidance of ordinary individuals",
+                            "D. community health",
+                            "E. the treatment of injuries",
+                            "F. arranging matches and venues",
+                            "G. the rounded development of children"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "LECTURER: Sports Psychologists spend time with professional athletes helping them approach competition with a positive mental attitude...",
+                        explanation: "Helping professional athletes corresponds to B (the support of elite athletes)."
+                    },
+                    {
+                        id: 39,
+                        type: "choice",
+                        prompt: "Physical Education Teacher - Main role:",
+                        options: [
+                            "A. the coaching of teams",
+                            "B. the support of elite athletes",
+                            "C. guidance of ordinary individuals",
+                            "D. community health",
+                            "E. the treatment of injuries",
+                            "F. arranging matches and venues",
+                            "G. the rounded development of children"
+                        ],
+                        correct_answers: ["G"],
+                        evidence: "LECTURER: PE teachers help the development of co-ordination, balance, posture, and flexibility with things like simple catching and throwing skills.",
+                        explanation: "Helping develop co-ordination, posture and skills in young students corresponds to G (the rounded development of children)."
+                    },
+                    {
+                        id: 40,
+                        type: "choice",
+                        prompt: "Recreation Officer - Main role:",
+                        options: [
+                            "A. the coaching of teams",
+                            "B. the support of elite athletes",
+                            "C. guidance of ordinary individuals",
+                            "D. community health",
+                            "E. the treatment of injuries",
+                            "F. arranging matches and venues",
+                            "G. the rounded development of children"
+                        ],
+                        correct_answers: ["D"],
+                        evidence: "LECTURER: Their aim is to raise people's awareness of healthy lifestyles and improved general fitness through arranging recreational activities for groups of all ages...",
+                        explanation: "Raising awareness of healthy lifestyles and general fitness across all ages corresponds to D (community health)."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. ACADEMIC READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 1 (Cambridge IELTS 2)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Airports on Water (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: Airports on Water",
+                content: `AIRPORTS ON WATER
+
+River deltas are difficult places for map makers. The river builds them up, the sea wears them down; their outlines are always changing. The changes in China's Pearl River delta, however, are more dramatic than these natural fluctuations. An island six kilometres long and with a total area of 1248 hectares is being created there. And the civil engineers are as interested in performance as in speed and size. This is a bit of the delta that they want to endure.
+
+The new island of Chek Lap Kok, the site of Hong Kong's new airport, is 83% complete. The giant dumper trucks rumbling across it will have finished their job by the middle of this year and the airport itself will be built at a similarly breakneck pace.
+
+As Chek Lap Kok rises, however, another new Asian island is sinking back into the sea. This is a 520-hectare island built in Osaka Bay, Japan, that serves as the platform for the new Kansai airport. Chek Lap Kok was built in a different way, and thus hopes to avoid the same sinking fate.
+
+The usual way to reclaim land is to pile sand rock on to the seabed. When the seabed oozes with mud, this is rather like placing a textbook on a wet sponge: the weight squeezes the water out, causing both water and sponge to settle lower. The settlement is rarely even: different parts sink at different rates. So buildings, pipes, roads and so on tend to buckle and crack. You can engineer around these problems, or you can engineer them out. Kansai took the first approach; Chek Lap Kok is taking the second.
+
+The differences are both political and geological. Kansai was supposed to be built just one kilometre offshore, where the seabed is quite solid. Fishermen protested, and the site was shifted a further five kilometres. That put it in deeper water (around 20 metres) and above a seabed that consisted of 20 metres of soft alluvial silt and mud deposits. Worse, below it was a not-very-firm glacial deposit hundreds of metres thick.
+
+The Kansai builders recognised that settlement was inevitable. Sand was driven into the seabed to strengthen it before the landfill was piled on top, in an attempt to slow the process; but this has not been as effective as had been hoped. To cope with settlement, Kansai's giant terminal is supported on 900 pillars. Each of them can be individually jacked up, allowing wedges to be added underneath. That is meant to keep the building level. But it could be a tricky task.
+
+Conditions are different at Chek Lap Kok. There was some land there to begin with, the original little island of Chek Lap Kok and a smaller outcrop called Lam Chau. Between them, these two outcrops of hard, weathered granite make up a quarter of the new island's surface area. Unfortunately, between the islands there was a layer of soft mud, 27 metres thick in places.
+
+According to Frans Uiterwijk, a Dutchman who is the project's reclamation director, it would have been possible to leave this mud below the reclaimed land, and to deal with the resulting settlement by the Kansai method. But the consortium that won the contract for the island opted for a more aggressive approach. It assembled the world's largest fleet of dredgers, which sucked up 150m cubic metres of clay and mud and dumped it in deeper waters. At the same time, sand was dredged from the waters and piled on top of the layer of stiff clay that the massive dredging had laid bare.
+
+Nor was the sand the only thing used. The original granite island which had hills up to 120 metres high was drilled and blasted into boulders no bigger than two metres in diameter. This provided 70m cubic metres of granite to add to the island's foundations. Because the heap of boulders does not fill the space perfectly, this represents the equivalent of 105m cubic metres of landfill. Most of the rock will become the foundations for the airport's runways and its taxiways. The sand dredged from the waters will also be used to provide a two-metre capping layer over the granite platform. This makes it easier for utilities to dig trenches - granite is unyielding stuff. Most of the terminal buildings will be placed above the site of the existing island. Only a limited amount of pile-driving is needed to support building foundations above softer areas.
+
+The completed island will be six to seven metres above sea level. In all, 350m cubic metres of material will have been moved. And much of it, like the overloads, has to be moved several times before reaching its final resting place. For example, there has to be a motorway capable of carrying 150-tonne dump-trucks; and there has to be a raised area for the 15,000 construction workers. These are temporary; they will be removed when the airport is finished.
+
+The airport, though, is here to stay. To protect it, the new coastline is being bolstered with a formidable twelve kilometres of sea defences. The brunt of a typhoon will be deflected by the neighbouring island of Lantau; the sea walls should guard against the rest. Gentler but more persistent bad weather - the downpours of the summer monsoon - is also being taken into account. A mat-like material called geotextile is being laid across the island to separate the rock and sand layers. That will stop sand particles from being washed into the rock voids, and so causing further settlement. This island is being built never to be sunk.`,
+                text: `AIRPORTS ON WATER... (Same as content)`,
+                questions: [
+                    {
+                        id: 1,
+                        type: "choice",
+                        prompt: "Classify the statement: having an area of over 1000 hectares",
+                        options: [
+                            "A. Chek Lap Kok airport only",
+                            "B. Kansai airport only",
+                            "C. Both airports"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "Paragraph 1 & 3: 'An island six kilometres long and with a total area of 1248 hectares is being created there [Chek Lap Kok]... 520-hectare island built in Osaka Bay, Japan, that serves as the platform for the new Kansai airport.'",
+                        explanation: "Chek Lap Kok has an area of 1248 hectares (over 1000 hectares), whereas Kansai is only 520 hectares. Thus, Option A."
+                    },
+                    {
+                        id: 2,
+                        type: "choice",
+                        prompt: "Classify the statement: built in a river delta",
+                        options: [
+                            "A. Chek Lap Kok airport only",
+                            "B. Kansai airport only",
+                            "C. Both airports"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "Paragraph 1: 'The changes in China's Pearl River delta, however, are more dramatic than these natural fluctuations. An island... is being created there.'",
+                        explanation: "Chek Lap Kok is located in the Pearl River delta. Kansai is built in Osaka Bay (open sea). Thus, Option A."
+                    },
+                    {
+                        id: 3,
+                        type: "choice",
+                        prompt: "Classify the statement: built in the open sea",
+                        options: [
+                            "A. Chek Lap Kok airport only",
+                            "B. Kansai airport only",
+                            "C. Both airports"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "Paragraph 3 & 5: 'This is a 520-hectare island built in Osaka Bay, Japan... Fishermen protested, and the site was shifted a further five kilometres. That put it in deeper water...'",
+                        explanation: "Kansai is located 5 km offshore in the open waters of Osaka Bay. Thus, Option B."
+                    },
+                    {
+                        id: 4,
+                        type: "choice",
+                        prompt: "Classify the statement: built by reclaiming land",
+                        options: [
+                            "A. Chek Lap Kok airport only",
+                            "B. Kansai airport only",
+                            "C. Both airports"
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph 4: 'The usual way to reclaim land is to pile sand rock on to the seabed... Kansai took the first approach; Chek Lap Kok is taking the second.'",
+                        explanation: "Both airports were built on reclaimed land. Thus, Option C."
+                    },
+                    {
+                        id: 5,
+                        type: "choice",
+                        prompt: "Classify the statement: built using conventional methods of reclamation",
+                        options: [
+                            "A. Chek Lap Kok airport only",
+                            "B. Kansai airport only",
+                            "C. Both airports"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "Paragraph 4 & 6: 'The usual way to reclaim land is to pile sand rock on to the seabed... Kansai took the first approach... Sand was driven into the seabed to strengthen it before the landfill was piled on top...'",
+                        explanation: "Kansai used the conventional method of piling sand rock on the seabed, whereas Chek Lap Kok used an aggressive dredging method. Thus, Option B."
+                    },
+                    {
+                        id: 6,
+                        type: "fill",
+                        prompt: "Diagram B label (6): Cross-section of Chek Lap Kok - Upper surface feature: _____",
+                        correct_answers: ["runways and taxiways", "runways and its taxiways"],
+                        evidence: "Paragraph 9: 'Most of the rock will become the foundations for the airport's runways and its taxiways.'",
+                        explanation: "The top surface of the rock platform provides foundations for the runways and taxiways."
+                    },
+                    {
+                        id: 7,
+                        type: "fill",
+                        prompt: "Diagram B label (7): Cross-section of Chek Lap Kok - Location above original island: _____",
+                        correct_answers: ["terminal building site", "terminal building"],
+                        evidence: "Paragraph 9: 'Most of the terminal buildings will be placed above the site of the existing island.'",
+                        explanation: "The site above the original island is the terminal building site."
+                    },
+                    {
+                        id: 8,
+                        type: "fill",
+                        prompt: "Diagram B label (8): Layer between rock and surface capping: _____",
+                        correct_answers: ["sand"],
+                        evidence: "Paragraph 9: 'The sand dredged from the waters will also be used to provide a two-metre capping layer over the granite platform.'",
+                        explanation: "Sand is used as the two-metre capping layer."
+                    },
+                    {
+                        id: 9,
+                        type: "fill",
+                        prompt: "Diagram B label (9): Base layer beneath the landfill: _____",
+                        correct_answers: ["stiff clay"],
+                        evidence: "Paragraph 8: '...sand was dredged from the waters and piled on top of the layer of stiff clay that the massive dredging had laid bare.'",
+                        explanation: "Beneath the dredged sand is the layer of stiff clay."
+                    },
+                    {
+                        id: 10,
+                        type: "fill",
+                        prompt: "The island will be partially protected from storms by (10) _____ and also by (11) _____.",
+                        correct_answers: ["Lantau Island", "Lantau island", "sea walls"],
+                        evidence: "Paragraph 11: 'The brunt of a typhoon will be deflected by the neighbouring island of Lantau; the sea walls should guard against the rest.'",
+                        explanation: "The island is protected by Lantau Island and sea walls (Questions 10 & 11 can be in either order)."
+                    },
+                    {
+                        id: 11,
+                        type: "fill",
+                        prompt: "The island will be partially protected from storms by (10) _____ and also by (11) _____.",
+                        correct_answers: ["sea walls", "Lantau Island", "Lantau island"],
+                        evidence: "Paragraph 11: 'The brunt of a typhoon will be deflected by the neighbouring island of Lantau; the sea walls should guard against the rest.'",
+                        explanation: "The island is protected by sea walls and Lantau Island (Questions 10 & 11 can be in either order)."
+                    },
+                    {
+                        id: 12,
+                        type: "fill",
+                        prompt: "Further settlement caused by (12) _____ will be prevented by the use of (13) _____.",
+                        correct_answers: ["rainfall", "downpours", "monsoon"],
+                        evidence: "Paragraph 11: 'Gentler but more persistent bad weather - the downpours of the summer monsoon - is also being taken into account... stop sand particles from being washed into the rock voids, and so causing further settlement.'",
+                        explanation: "Further settlement caused by rainfall / downpours."
+                    },
+                    {
+                        id: 13,
+                        type: "fill",
+                        prompt: "will be prevented by the use of (13) _____.",
+                        correct_answers: ["geotextile"],
+                        evidence: "Paragraph 11: 'A mat-like material called geotextile is being laid across the island to separate the rock and sand layers.'",
+                        explanation: "Geotextile is laid to stop sand from washing into rock voids and causing settlement."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 2: Changing our Understanding of Health (Questions 14 - 27)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: Changing our Understanding of Health",
+                content: `CHANGING OUR UNDERSTANDING OF HEALTH
+
+A
+The concept of health holds different meanings for different people and groups. These meanings of health have also changed over time. This change is no more evident than in Western society today, when notions of health and health promotion are being challenged and expanded in new ways.
+
+B
+For much of recent Western history, health has been viewed in the physical sense only. That is, good health has been connected to the smooth mechanical operation of the body, while ill health has been attributed to a breakdown in this machine. Health in this sense has been defined as the absence of disease or illness and is seen in medical terms. According to this view, creating health for people means providing medical care to treat or prevent disease and illness. During this period, there was an emphasis on providing clean water, improved sanitation and housing.
+
+C
+In the late 1940s the World Health Organisation challenged this physically and medically oriented view of health. They stated that 'health is a complete state of physical, mental and social well-being and is not merely the absence of disease' (WHO, 1946). Health and the person were seen more holistically (mind/body/spirit) and not just in physical terms.
+
+D
+The 1970s was a time of focusing on the prevention of disease and illness by emphasising the importance of the lifestyle and behaviour of the individual. Specific behaviours which were seen to increase risk of disease, such as smoking, lack of fitness and unhealthy eating habits, were targeted. Creating health meant providing not only medical health care, but health promotion programs and policies which would help people maintain healthy behaviours and lifestyles. While this individualistic healthy lifestyles approach to health worked for some (the wealthy members of society), people experiencing poverty, unemployment, underemployment or little control over the conditions of their daily lives benefited little from this approach. This was largely because both the healthy lifestyles approach and the medical approach to health largely ignored the social and environmental conditions affecting the health of people.
+
+E
+During 1980s and 1990s there has been a growing swing away from seeing lifestyle risks as the root cause of poor health. While lifestyle factors still remain important, health is being viewed also in terms of the social, economic and environmental contexts in which people live. This broad approach to health is called the socio-ecological view of health. The broad socio-ecological view of health was endorsed at the first International Conference of Health Promotion held in 1986, Ottawa, Canada, where people from 38 countries agreed and declared that:
+"The fundamental conditions and resources for health are peace, shelter, education, food, a viable income, a stable eco-system, sustainable resources, social justice and equity. Improvement in health requires a secure foundation in these basic requirements." (WHO, 1986)
+It is clear from this statement that the creation of health is about much more than encouraging healthy individual behaviours and lifestyles and providing appropriate medical care. Therefore, the creation of health must include addressing issues such as poverty, pollution, urbanisation, natural resource depletion, social alienation and poor working conditions. The social, economic and environmental contexts which contribute to the creation of health do not operate separately or independently of each other. Rather, they are interacting and interdependent, and it is the complex interrelationships between them which determine the conditions that promote health. A broad socio-ecological view of health suggests that the promotion of health must include a strong social, economic and environmental focus.
+
+F
+At the Ottawa Conference in 1986, a charter was developed which outlined new directions for health promotion based on the socio-ecological view of health. This charter, known as the Ottawa Charter for Health Promotion, remains as the backbone of health action today. In exploring the scope of health promotion it states that:
+"Good health is a major resource for social, economic and personal development and an important dimension of quality of life. Political, economic, social, cultural, environmental, behavioural and biological factors can all favour health or be harmful to it." (WHO, 1986)
+The Ottawa Charter brings practical meaning and action to this broad notion of health promotion. It presents fundamental strategies and approaches in achieving health for all. The overall philosophy of health promotion which guides these fundamental strategies and approaches is one of 'enabling people to increase control over and to improve their health' (WHO, 1986).`,
+                text: `CHANGING OUR UNDERSTANDING OF HEALTH... (Same as content)`,
+                questions: [
+                    {
+                        id: 14,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph B",
+                        options: [
+                            "i. Ottawa International Conference on Health Promotion",
+                            "ii. Holistic approach to health",
+                            "iii. The primary importance of environmental factors",
+                            "iv. Healthy lifestyles approach to health",
+                            "v. Changes in concepts of health in Western society",
+                            "vi. Prevention of diseases and illness",
+                            "vii. Ottawa Charter for Health Promotion",
+                            "viii. Definition of health in medical terms",
+                            "ix. Socio-ecological view of health"
+                        ],
+                        correct_answers: ["viii"],
+                        evidence: "Paragraph B: 'Health in this sense has been defined as the absence of disease or illness and is seen in medical terms.'",
+                        explanation: "Paragraph B defines health in traditional physical and medical terms (Heading viii)."
+                    },
+                    {
+                        id: 15,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph C",
+                        options: [
+                            "i. Ottawa International Conference on Health Promotion",
+                            "ii. Holistic approach to health",
+                            "iii. The primary importance of environmental factors",
+                            "iv. Healthy lifestyles approach to health",
+                            "v. Changes in concepts of health in Western society",
+                            "vi. Prevention of diseases and illness",
+                            "vii. Ottawa Charter for Health Promotion",
+                            "viii. Definition of health in medical terms",
+                            "ix. Socio-ecological view of health"
+                        ],
+                        correct_answers: ["ii"],
+                        evidence: "Paragraph C: 'Health and the person were seen more holistically (mind/body/spirit) and not just in physical terms.'",
+                        explanation: "Paragraph C describes the holistic approach to health (Heading ii)."
+                    },
+                    {
+                        id: 16,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph D",
+                        options: [
+                            "i. Ottawa International Conference on Health Promotion",
+                            "ii. Holistic approach to health",
+                            "iii. The primary importance of environmental factors",
+                            "iv. Healthy lifestyles approach to health",
+                            "v. Changes in concepts of health in Western society",
+                            "vi. Prevention of diseases and illness",
+                            "vii. Ottawa Charter for Health Promotion",
+                            "viii. Definition of health in medical terms",
+                            "ix. Socio-ecological view of health"
+                        ],
+                        correct_answers: ["iv"],
+                        evidence: "Paragraph D: 'The 1970s was a time of focusing on the prevention of disease and illness by emphasising the importance of the lifestyle and behaviour of the individual... healthy lifestyles approach to health...'",
+                        explanation: "Paragraph D focuses on the healthy lifestyles approach to health (Heading iv)."
+                    },
+                    {
+                        id: 17,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph E",
+                        options: [
+                            "i. Ottawa International Conference on Health Promotion",
+                            "ii. Holistic approach to health",
+                            "iii. The primary importance of environmental factors",
+                            "iv. Healthy lifestyles approach to health",
+                            "v. Changes in concepts of health in Western society",
+                            "vi. Prevention of diseases and illness",
+                            "vii. Ottawa Charter for Health Promotion",
+                            "viii. Definition of health in medical terms",
+                            "ix. Socio-ecological view of health"
+                        ],
+                        correct_answers: ["ix"],
+                        evidence: "Paragraph E: 'This broad approach to health is called the socio-ecological view of health.'",
+                        explanation: "Paragraph E elaborates on the socio-ecological view of health (Heading ix)."
+                    },
+                    {
+                        id: 18,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph F",
+                        options: [
+                            "i. Ottawa International Conference on Health Promotion",
+                            "ii. Holistic approach to health",
+                            "iii. The primary importance of environmental factors",
+                            "iv. Healthy lifestyles approach to health",
+                            "v. Changes in concepts of health in Western society",
+                            "vi. Prevention of diseases and illness",
+                            "vii. Ottawa Charter for Health Promotion",
+                            "viii. Definition of health in medical terms",
+                            "ix. Socio-ecological view of health"
+                        ],
+                        correct_answers: ["vii"],
+                        evidence: "Paragraph F: 'This charter, known as the Ottawa Charter for Health Promotion, remains as the backbone of health action today.'",
+                        explanation: "Paragraph F details the Ottawa Charter for Health Promotion (Heading vii)."
+                    },
+                    {
+                        id: 19,
+                        type: "fill",
+                        prompt: "In which year did the World Health Organisation define health in terms of mental, physical and social well-being?",
+                        correct_answers: ["1946"],
+                        evidence: "Paragraph C: 'They stated that 'health is a complete state of physical, mental and social well-being and is not merely the absence of disease' (WHO, 1946).'",
+                        explanation: "The WHO definition was declared in 1946."
+                    },
+                    {
+                        id: 20,
+                        type: "fill",
+                        prompt: "Which members of society benefited most from the healthy lifestyles approach to health?",
+                        correct_answers: [
+                            "the wealthy",
+                            "wealthy members",
+                            "the wealthy members",
+                            "wealthy members of society",
+                            "the wealthy members of society"
+                        ],
+                        evidence: "Paragraph D: 'While this individualistic healthy lifestyles approach to health worked for some (the wealthy members of society)...'",
+                        explanation: "The wealthy members of society benefited most from this approach."
+                    },
+                    {
+                        id: 21,
+                        type: "fill",
+                        prompt: "Name the three broad areas which relate to people's health, according to the socio-ecological view of health.",
+                        correct_answers: [
+                            "social, economic, environmental",
+                            "social economic environmental",
+                            "social, economic and environmental"
+                        ],
+                        evidence: "Paragraph E: '...health is being viewed also in terms of the social, economic and environmental contexts in which people live.'",
+                        explanation: "The three broad areas are social, economic, and environmental."
+                    },
+                    {
+                        id: 22,
+                        type: "fill",
+                        prompt: "During which decade were lifestyle risks seen as the major contributors to poor health?",
+                        correct_answers: [
+                            "1970s",
+                            "the 1970s"
+                        ],
+                        evidence: "Paragraph D: 'The 1970s was a time of focusing on the prevention of disease and illness by emphasising the importance of the lifestyle and behaviour of the individual.'",
+                        explanation: "Lifestyle risks were targeted specifically during the 1970s."
+                    },
+                    {
+                        id: 23,
+                        type: "ynng",
+                        prompt: "Doctors have been instrumental in improving living standards in Western society.",
+                        correct_answers: ["NOT GIVEN"],
+                        evidence: "Paragraph B mentions providing clean water, sanitation and housing, but does not state that doctors specifically were instrumental in improving living standards.",
+                        explanation: "The text does not mention whether doctors were instrumental in improving living standards."
+                    },
+                    {
+                        id: 24,
+                        type: "ynng",
+                        prompt: "The approach to health during the 1970s included the introduction of health awareness programs.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph D: 'Creating health meant providing not only medical health care, but health promotion programs and policies which would help people maintain healthy behaviours and lifestyles.'",
+                        explanation: "Health promotion programs were introduced to raise awareness and help people maintain healthy lifestyles. Statement is YES."
+                    },
+                    {
+                        id: 25,
+                        type: "ynng",
+                        prompt: "The socio-ecological view of health recognises that lifestyle habits and the provision of adequate health care are critical factors governing health.",
+                        correct_answers: ["NO"],
+                        evidence: "Paragraph E: 'It is clear from this statement that the creation of health is about much more than encouraging healthy individual behaviours and lifestyles and providing appropriate medical care... broad socio-ecological view of health suggests that the promotion of health must include a strong social, economic and environmental focus.'",
+                        explanation: "The socio-ecological view argues that health creation is about much more than just lifestyle and medical care—it requires social, economic and environmental foundations. Statement contradicts the passage (NO)."
+                    },
+                    {
+                        id: 26,
+                        type: "ynng",
+                        prompt: "The principles of the Ottawa Charter are considered to be out of date in the 1990s.",
+                        correct_answers: ["NO"],
+                        evidence: "Paragraph F: 'This charter, known as the Ottawa Charter for Health Promotion, remains as the backbone of health action today.'",
+                        explanation: "The charter remains the backbone of health action today, so it is not out of date. Statement is NO."
+                    },
+                    {
+                        id: 27,
+                        type: "ynng",
+                        prompt: "In recent years a number of additional countries have subscribed to the Ottawa Charter.",
+                        correct_answers: ["NOT GIVEN"],
+                        evidence: "Paragraph E mentions people from 38 countries agreed in 1986, but there is no mention of whether additional countries subscribed in recent years.",
+                        explanation: "The text does not state whether additional countries joined later. Statement is NOT GIVEN."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 3: Children's Thinking (Questions 28 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: Children's Thinking",
+                content: `CHILDREN'S THINKING
+
+One of the most eminent of psychologists, Clark Hull, claimed that the essence of reasoning lies in the putting together of two 'behaviour segments' in some novel way, never actually performed before, so as to reach a goal.
+
+Two followers of Clark Hull, Howard and Tracey Kendler, devised a test for children that was explicitly based on Clark Hull's principles. The children were given the task of learning to operate a machine so as to get a toy. In order to succeed they had to go through a two-stage sequence. The children were trained on each stage separately. The stages consisted merely of pressing the correct one of two buttons to get a marble; and of inserting the marble into a small hole to release the toy.
+
+The Kendlers found that the children could learn the separate bits readily enough. Given the task of getting a marble by pressing the button they could get the marble; given the task of getting a toy when a marble was handed to them, they could use the marble. (All they had to do was put it in a hole.) But they did not for the most part 'integrate', to use the Kendlers' terminology. They did not press the button to get the marble and then proceed without further help to use the marble to get the toy. So the Kendlers concluded that they were incapable of deductive reasoning.
+
+The mystery at first appears to deepen when we learn, from another psychologist, Michael Cole, and his colleagues, that adults in an African culture apparently cannot do the Kendlers' task either. But it lessens, on the other hand, when we learn that a task was devised which was strictly analogous to the Kendlers' one but much easier for the African males to handle.
+
+Instead of the button-pressing machine, Cole used a locked box and two differently coloured match-boxes, one of which contained a key that would open the box. Notice that there are still two behaviour segments — 'open the right match-box to get the key' and 'use the key to open the box' - so the task seems formally to be the same. But psychologically it is quite different. Now the subject is dealing not with a strange machine but with familiar meaningful objects; and it is clear to him what he is meant to do. It then turns out that the difficulty of 'integration' is greatly reduced.
+
+Recent work by Simon Hewson is of great interest here for it shows that, for young children, too, the difficulty lies not in the inferential processes which the task demands, but in certain perplexing features of the apparatus and the procedure. When these are changed in ways which do not at all affect the inferential nature of the problem, then five-year-old children solve the problem as well as college students did in the Kendlers' own experiments.
+
+Hewson made two crucial changes. First, he replaced the button-pressing mechanism in the side panels by drawers in these panels which the child could open and shut. This took away the mystery from the first stage of training. Then he helped the child to understand that there was no 'magic' about the specific marble which, during the second stage of training, the experimenter handed to him so that he could pop it in the hole and get the reward.
+
+A child understands nothing, after all, about how a marble put into a hole can open a little door. How is he to know that any other marble of similar size will do just as well? Yet he must assume that if he is to solve the problem. Hewson made the functional equivalence of different marbles clear by playing a 'swapping game' with the children.
+
+The two modifications together produced a jump in success rates from 30 per cent to 90 per cent for five-year-olds and from 35 per cent to 72.5 per cent for four-year-olds. For three-year-olds, for reasons that are still in need of clarification, no improvement — rather a slight drop in performance - resulted from the change.
+
+We may conclude, then, that children experience very real difficulty when faced with the Kendler apparatus; but this difficulty cannot be taken as proof that they are incapable of deductive reasoning.`,
+                text: `CHILDREN'S THINKING... (Same as content)`,
+                questions: [
+                    {
+                        id: 28,
+                        type: "choice",
+                        prompt: "Classify: is cited as famous in the field of psychology.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["CH"],
+                        evidence: "Paragraph 1: 'One of the most eminent of psychologists, Clark Hull...'",
+                        explanation: "'Eminent' means famous and respected. Thus, CH (Clark Hull)."
+                    },
+                    {
+                        id: 29,
+                        type: "choice",
+                        prompt: "Classify: demonstrated that the two-stage experiment involving button-pressing and inserting a marble into a hole poses problems for certain adults as well as children.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["MC"],
+                        evidence: "Paragraph 4: '...we learn, from another psychologist, Michael Cole, and his colleagues, that adults in an African culture apparently cannot do the Kendlers' task either.'",
+                        explanation: "Michael Cole and colleagues demonstrated this with adults in an African culture. Thus, MC."
+                    },
+                    {
+                        id: 30,
+                        type: "choice",
+                        prompt: "Classify: devised an experiment that investigated deductive reasoning without the use of any marbles.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["MC"],
+                        evidence: "Paragraph 5: 'Instead of the button-pressing machine, Cole used a locked box and two differently coloured match-boxes, one of which contained a key that would open the box.'",
+                        explanation: "Michael Cole used match-boxes and a key, without any marbles. Thus, MC."
+                    },
+                    {
+                        id: 31,
+                        type: "choice",
+                        prompt: "Classify: appears to have proved that a change in the apparatus dramatically improves the performance of children of certain ages.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["SH"],
+                        evidence: "Paragraph 6 & 9: 'Recent work by Simon Hewson... produced a jump in success rates from 30 per cent to 90 per cent for five-year-olds and from 35 per cent to 72.5 per cent for four-year-olds.'",
+                        explanation: "Simon Hewson proved that changing the apparatus dramatically improved performance for 4- and 5-year-olds. Thus, SH."
+                    },
+                    {
+                        id: 32,
+                        type: "choice",
+                        prompt: "Classify: used a machine to measure inductive reasoning that replaced button-pressing with drawer-opening.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["SH"],
+                        evidence: "Paragraph 7: 'Hewson made two crucial changes. First, he replaced the button-pressing mechanism in the side panels by drawers in these panels which the child could open and shut.'",
+                        explanation: "Simon Hewson replaced button-pressing with drawers. Thus, SH."
+                    },
+                    {
+                        id: 33,
+                        type: "choice",
+                        prompt: "Classify: experimented with things that the subjects might have been expected to encounter in everyday life, rather than with a machine.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["MC"],
+                        evidence: "Paragraph 5: '...Cole used a locked box and two differently coloured match-boxes... Now the subject is dealing not with a strange machine but with familiar meaningful objects...'",
+                        explanation: "Michael Cole used familiar everyday objects (match-boxes and a key). Thus, MC."
+                    },
+                    {
+                        id: 34,
+                        type: "choice",
+                        prompt: "Classify: compared the performance of five-year-olds with college students, using the same apparatus with both sets of subjects.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["HTK"],
+                        evidence: "Paragraph 6: '...five-year-old children solve the problem as well as college students did in the Kendlers' own experiments.'",
+                        explanation: "The Kendlers had previously tested both five-year-olds and college students with their apparatus. Thus, HTK."
+                    },
+                    {
+                        id: 35,
+                        type: "choice",
+                        prompt: "Classify: is cited as having demonstrated that earlier experiments into children's ability to reason deductively may have led to the wrong conclusions.",
+                        options: [
+                            "CH. Clark Hull",
+                            "HTK. Howard and Tracy Kendler",
+                            "MC. Michael Cole and colleagues",
+                            "SH. Simon Hewson"
+                        ],
+                        correct_answers: ["SH"],
+                        evidence: "Paragraph 6 & 10: 'Recent work by Simon Hewson... children experience very real difficulty when faced with the Kendler apparatus; but this difficulty cannot be taken as proof that they are incapable of deductive reasoning.'",
+                        explanation: "Simon Hewson showed that the Kendlers' conclusion that children cannot reason deductively was flawed. Thus, SH."
+                    },
+                    {
+                        id: 36,
+                        type: "ynng",
+                        prompt: "Howard and Tracey Kendler studied under Clark Hull.",
+                        correct_answers: ["NOT GIVEN"],
+                        evidence: "Paragraph 2 states they were 'Two followers of Clark Hull', but does not state whether they directly studied under him.",
+                        explanation: "Being a follower of someone's principles does not necessarily mean studying under them. Statement is NOT GIVEN."
+                    },
+                    {
+                        id: 37,
+                        type: "ynng",
+                        prompt: "The Kendlers trained their subjects separately in the two stages of their experiment, but not in how to integrate the two actions.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph 2 & 3: 'The children were trained on each stage separately... But they did not for the most part 'integrate', to use the Kendlers' terminology.'",
+                        explanation: "The children were trained on each stage separately, but not on integration. Statement is YES."
+                    },
+                    {
+                        id: 38,
+                        type: "ynng",
+                        prompt: "Michael Cole and his colleagues demonstrated that adult performance on inductive reasoning tasks depends on features of the apparatus and procedure.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph 4 & 5: 'Cole used a locked box and two differently coloured match-boxes... it turns out that the difficulty of 'integration' is greatly reduced.'",
+                        explanation: "Cole demonstrated that changing to familiar objects enabled adults to perform the task successfully. Statement is YES."
+                    },
+                    {
+                        id: 39,
+                        type: "ynng",
+                        prompt: "All Hewson's experiments used marbles of the same size.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph 8: 'How is he to know that any other marble of similar size will do just as well? ...Hewson made the functional equivalence of different marbles clear by playing a 'swapping game' with the children.'",
+                        explanation: "Hewson used marbles of similar/same size in the swapping game. Statement is YES."
+                    },
+                    {
+                        id: 40,
+                        type: "ynng",
+                        prompt: "Hewson's modifications resulted in a higher success rate for children of all ages.",
+                        correct_answers: ["NO"],
+                        evidence: "Paragraph 9: 'For three-year-olds, for reasons that are still in need of clarification, no improvement — rather a slight drop in performance - resulted from the change.'",
+                        explanation: "For three-year-olds, there was no improvement (a slight drop), so it was NOT for children of all ages. Statement is NO."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. ACADEMIC WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 1 (Cambridge IELTS 2)",
+        duration_seconds: 3600,
+        task_1: {
+            task_number: 1,
+            title: "Task 1: Consumer Durables Owned in Britain (1972 - 1983)",
+            prompt: `You should spend about 20 minutes on this task.
+
+The table below shows the consumer durables (telephone, refrigerator, etc.) owned in Britain from 1972 to 1983.
+Write a report for a university lecturer describing the information shown below.
+Write at least 150 words.
+
+Table: Percentage of British households with consumer durables:
+• central heating: 1972 (39%), 1974 (43%), 1976 (48%), 1978 (52%), 1979 (55%), 1981 (59%), 1982 (60%), 1983 (64%)
+• television: 1972 (93%), 1974 (95%), 1976 (96%), 1978 (96%), 1979 (97%), 1981 (97%), 1982 (97%), 1983 (98%)
+• video: 1983 (18%) [introduced in 1983]
+• vacuum cleaner: 1972 (87%), 1974 (89%), 1976 (92%), 1978 (92%), 1979 (93%), 1981 (94%), 1982 (95%), 1983 (95%)
+• refrigerator: 1972 (73%), 1974 (81%), 1976 (88%), 1978 (91%), 1979 (92%), 1981 (93%), 1982 (93%), 1983 (94%)
+• washing machine: 1972 (66%), 1974 (68%), 1976 (71%), 1978 (75%), 1979 (74%), 1981 (78%), 1982 (79%), 1983 (80%)
+• dishwasher: 1978 (3%), 1979 (3%), 1981 (4%), 1982 (4%), 1983 (5%)
+• telephone: 1972 (42%), 1974 (50%), 1976 (54%), 1978 (60%), 1979 (67%), 1981 (75%), 1982 (76%), 1983 (77%)`,
+            min_words: 150,
+            chart_svg: `<svg viewBox="0 0 700 280" class="w-full h-auto bg-slate-900 rounded-2xl p-4 text-white font-sans shadow-md">
+                <text x="350" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#38bdf8">Ownership of Consumer Durables in Britain (1972 - 1983)</text>
+                <line x1="160" y1="40" x2="160" y2="250" stroke="#475569" stroke-width="1"/>
+                <line x1="160" y1="250" x2="680" y2="250" stroke="#475569" stroke-width="1"/>
+                <!-- Rows for durables -->
+                <g font-size="11" fill="#cbd5e1">
+                    <text x="150" y="60" text-anchor="end">Television</text>
+                    <rect x="160" y="48" width="465" height="14" fill="#3b82f6" rx="3"/>
+                    <text x="635" y="60" fill="#93c5fd" font-size="10">93% → 98%</text>
+
+                    <text x="150" y="85" text-anchor="end">Vacuum Cleaner</text>
+                    <rect x="160" y="73" width="451" height="14" fill="#6366f1" rx="3"/>
+                    <text x="620" y="85" fill="#a5b4fc" font-size="10">87% → 95%</text>
+
+                    <text x="150" y="110" text-anchor="end">Refrigerator</text>
+                    <rect x="160" y="98" width="446" height="14" fill="#06b6d4" rx="3"/>
+                    <text x="615" y="110" fill="#67e8f9" font-size="10">73% → 94%</text>
+
+                    <text x="150" y="135" text-anchor="end">Washing Machine</text>
+                    <rect x="160" y="123" width="380" height="14" fill="#10b981" rx="3"/>
+                    <text x="550" y="135" fill="#6ee7b7" font-size="10">66% → 80%</text>
+
+                    <text x="150" y="160" text-anchor="end">Telephone</text>
+                    <rect x="160" y="148" width="365" height="14" fill="#f59e0b" rx="3"/>
+                    <text x="535" y="160" fill="#fcd34d" font-size="10">42% → 77% (+35%)</text>
+
+                    <text x="150" y="185" text-anchor="end">Central Heating</text>
+                    <rect x="160" y="173" width="304" height="14" fill="#ec4899" rx="3"/>
+                    <text x="475" y="185" fill="#f472b6" font-size="10">39% → 64% (+25%)</text>
+
+                    <text x="150" y="210" text-anchor="end">Video (1983)</text>
+                    <rect x="160" y="198" width="85" height="14" fill="#8b5cf6" rx="3"/>
+                    <text x="255" y="210" fill="#c4b5fd" font-size="10">18%</text>
+
+                    <text x="150" y="235" text-anchor="end">Dishwasher</text>
+                    <rect x="160" y="223" width="24" height="14" fill="#64748b" rx="3"/>
+                    <text x="195" y="235" fill="#94a3b8" font-size="10">3% → 5%</text>
+                </g>
+            </svg>`,
+            sample_essay: `The chart shows that the percentage of British households with a range of consumer durables steadily increased between 1972 and 1983. The greatest increase was in telephone ownership, rising from 42% in 1972 to 77% in 1983. Next came central-heating ownership, rising from 37% of households in 1972 to 64% in 1983. The percentage of households with a refrigerator rose 21% over the same period and of those with a washing machine by 14%. Households with vacuum-cleaners, televisions and dishwashers increased by 8%, 5% and 2% respectively. In 1983, the year of their introduction, 18% of households had a video recorder.
+
+The significant social changes reflected in the statistics are that over the period the proportion of British houses with central heating rose from one to two thirds, and of those with a phone from under a half to over three-quarters. Together with the big increases in the ownership of washing machines and refrigerators, they are evidence of both rising living standards and the trend to lifestyles based on comfort and convenience.`,
+            band_9_model: `The chart shows that the percentage of British households with a range of consumer durables steadily increased between 1972 and 1983. The greatest increase was in telephone ownership, rising from 42% in 1972 to 77% in 1983. Next came central-heating ownership, rising from 37% of households in 1972 to 64% in 1983. The percentage of households with a refrigerator rose 21% over the same period and of those with a washing machine by 14%. Households with vacuum-cleaners, televisions and dishwashers increased by 8%, 5% and 2% respectively. In 1983, the year of their introduction, 18% of households had a video recorder.
+
+The significant social changes reflected in the statistics are that over the period the proportion of British houses with central heating rose from one to two thirds, and of those with a phone from under a half to over three-quarters. Together with the big increases in the ownership of washing machines and refrigerators, they are evidence of both rising living standards and the trend to lifestyles based on comfort and convenience.`
+        },
+        task_2: {
+            task_number: 2,
+            title: "Task 2: Fatherhood vs. Motherhood in Child-Rearing",
+            prompt: `You should spend about 40 minutes on this task.
+
+Present a written argument or case to an educated reader with no specialist knowledge of the following topic.
+
+"Fatherhood ought to be emphasised as much as motherhood. The idea that women are solely responsible for deciding whether or not to have babies leads on to the idea that they are also responsible for bringing the children up."
+
+To what extent do you agree or disagree?
+You should write at least 250 words.
+You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence.`,
+            min_words: 250,
+            sample_essay: `I believe that child-rearing should be the responsibility of both parents and that, whilst the roles within that partnership may be different, they are nevertheless equal in importance. In some societies, it has been made easier over the years for single parents to raise children on their own. However, this does not mean that the traditional family, with both parents providing emotional support and role-models for their children, is not the most satisfactory way of bringing up children.
+
+Of crucial importance, in my opinion, is how we define 'responsible for bringing the children up'. At its simplest, it could mean giving the financial support necessary to provide a home, food and clothes and making sure the child is safe and receives an adequate education. This would be the basic definition.
+
+There is, however, another possible way of defining that part of the quotation. That would say it is not just the father's responsibility to provide the basics for his children, while his wife involves herself in the everyday activity of bringing them up. Rather, he should share those daily duties, spend as much time as his job allows with his children, play with them, read to them, help directly with their education, participate very fully in their lives and encourage them to share his.
+
+It is this second, fuller, concept of 'fatherhood' that I am in favour of, although I also realise how difficult it is to achieve sometimes. The economic and employment situation in many countries means that jobs are getting more, not less, stressful, requiring long hours and perhaps long journeys to work as well. Therefore it may remain for many a desirable ideal rather than an achievable reality.`,
+            band_9_model: `I believe that child-rearing should be the responsibility of both parents and that, whilst the roles within that partnership may be different, they are nevertheless equal in importance. In some societies, it has been made easier over the years for single parents to raise children on their own. However, this does not mean that the traditional family, with both parents providing emotional support and role-models for their children, is not the most satisfactory way of bringing up children.
+
+Of crucial importance, in my opinion, is how we define 'responsible for bringing the children up'. At its simplest, it could mean giving the financial support necessary to provide a home, food and clothes and making sure the child is safe and receives an adequate education. This would be the basic definition.
+
+There is, however, another possible way of defining that part of the quotation. That would say it is not just the father's responsibility to provide the basics for his children, while his wife involves herself in the everyday activity of bringing them up. Rather, he should share those daily duties, spend as much time as his job allows with his children, play with them, read to them, help directly with their education, participate very fully in their lives and encourage them to share his.
+
+It is this second, fuller, concept of 'fatherhood' that I am in favour of, although I also realise how difficult it is to achieve sometimes. The economic and employment situation in many countries means that jobs are getting more, not less, stressful, requiring long hours and perhaps long journeys to work as well. Therefore it may remain for many a desirable ideal rather than an achievable reality.`
+        }
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 1 (Cambridge IELTS 2)",
+        duration_seconds: 840,
+        part_1: [
+            {
+                topic: "Communication & E-mail",
+                question: "How do you normally communicate with your friends and family?",
+                model_answer: "I predominantly communicate via instant messaging applications and email, as they offer immediate connectivity regardless of geographic distance.",
+                key_vocab: ["instant messaging", "predominantly", "geographic distance", "connectivity"]
+            },
+            {
+                topic: "Communication & E-mail",
+                question: "Do you prefer sending written messages or speaking directly on the phone?",
+                model_answer: "For urgent matters, I prefer direct phone conversations due to their immediacy and nuanced tone. However, for detailed information or daily pleasantries, written messages provide convenience and a clear paper trail.",
+                key_vocab: ["immediacy", "nuanced tone", "paper trail", "convenience"]
+            },
+            {
+                topic: "Cinema & Entertainment",
+                question: "How frequently do you go to the cinema or watch films at home?",
+                model_answer: "I watch films at home almost every weekend using on-demand streaming services, and occasionally visit the cinema once or twice a month to experience blockbuster releases on the giant screen.",
+                key_vocab: ["on-demand streaming", "blockbuster releases", "cinematic immersion"]
+            },
+            {
+                topic: "Cinema & Entertainment",
+                question: "What types of films do you find most captivating?",
+                model_answer: "I am particularly captivated by thought-provoking documentaries and historical dramas, as they broaden my worldly perspective and stimulate analytical reflection.",
+                key_vocab: ["thought-provoking", "historical dramas", "analytical reflection", "perspective"]
+            }
+        ],
+        part_2: {
+            title: "Part 2: Long Turn / Cue Card (3 - 4 minutes)",
+            cue_card_title: "Information Gathering: ELECTRONIC MAIL (Language School Enquiry)",
+            cue_points: [
+                "What electronic mail (e-mail) is and how it functions",
+                "How much it costs for students at this school",
+                "How to obtain an e-mail address and where it is located on campus",
+                "What equipment is needed at home and whether any training courses are available"
+            ],
+            cues: [
+                "What electronic mail (e-mail) is and how it functions",
+                "How much it costs for students at this school",
+                "How to obtain an e-mail address and where it is located on campus",
+                "What equipment is needed at home and whether any training courses are available"
+            ],
+            model_answer: `Good morning. I would like to enquire about obtaining an electronic mail account through the language school's student services.
+
+Firstly, could you clarify what e-mail entails and whether access is free of charge for enrolled students? I understand that e-mail allows us to transmit messages over telephone networks from computer to computer, and I am keen to confirm the registration procedure. To obtain an address, I gather that I simply need to complete an application form and lodge it directly with Student Services.
+
+Furthermore, I would like to know where students can access these facilities on campus—such as in the independent learning centre or the main computer laboratory. If I wish to access my account from home, I understand that a modem and telephone line connection are required. Finally, I would appreciate details regarding the Friday afternoon introductory courses so that I can develop proficient digital communication skills.`
+        },
+        part_3: [
+            {
+                theme: "Evolution of Digital Communication",
+                question: "How has electronic mail transformed global communication compared to conventional postal letters?",
+                model_answer: "Electronic mail has eradicated geographical barriers, reducing communication turnaround from weeks to seconds. This instantaneous exchange has accelerated international commerce, facilitated academic cross-pollination, and fundamentally altered workplace productivity."
+            },
+            {
+                theme: "Technology and Social Isolation",
+                question: "Do you believe excessive reliance on digital messaging creates emotional distance between individuals?",
+                model_answer: "While digital communication broadens our social network quantitatively, it can dilute qualitative interpersonal depth. Text-based exchanges lack non-verbal cues such as facial expressions and vocal intonation, occasionally leading to emotional disconnection and superficial relationships."
+            },
+            {
+                theme: "Parental Roles & Gender Equality",
+                question: "Why is it important for fathers to be equally involved in child-rearing in contemporary society?",
+                model_answer: "Equal paternal involvement fosters balanced psychological and emotional development in children while dismantling patriarchal assumptions that childcare is solely maternal. Shared parenting also enables mothers to pursue career aspirations without bearing a disproportionate domestic burden."
+            },
+            {
+                theme: "Parental Roles & Workplace Flexibility",
+                question: "Should corporate employers provide flexible working hours and parental leave for fathers as well as mothers?",
+                model_answer: "Unquestionably. Equitable parental leave policies acknowledge the vital role of fathers during the formative months of a child's life. Progressive organisations that champion flexible arrangements benefit from heightened employee loyalty, reduced burnout, and a more equitable workforce."
+            }
+        ]
+    }
+};
+
+
+
+// =========================================================================
+// CAMBRIDGE IELTS 2 - ACADEMIC PRACTICE TEST 2
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 2)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam2Test2 = {
+    id: "cam_2_test_2",
+    book: "Cambridge IELTS 2",
+    title: "Cambridge IELTS 2 - Test 2",
+    test_title: "Academic Practice Test 2",
+    badge: "Cam 2 - Test 2",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 2 (Cambridge IELTS 2)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Insurance Application Form (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Insurance Application Form (Questions 1 - 10)",
+                instruction: "Questions 1-2: Circle the correct letters A-C. Questions 3-6: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 7-10: Complete the form below. Write NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Questions 1-2: Circle the correct letters A-C. Questions 3-6: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 7-10: Complete the form below. Write NO MORE THAN THREE WORDS for each answer.",
+                transcript: `DIANE: Good morning. Diane Davies. Can I help you?
+GAVIN: Yes, I'd like to get some insurance for the contents of my home.
+DIANE: Fine. When did you move into the house?
+GAVIN: A couple of weeks ago, and it's an apartment actually. I was told by the landlord that it would be a good idea to get some insurance for the furniture and other personal possessions.
+DIANE: Fine. Well, let's get some details. What kind of apartment is it?
+GAVIN: It's a two-bedroom apartment.
+DIANE: What floor is it on?
+GAVIN: Why do you need to know that?
+DIANE: Because it affects the cost of the insurance. An apartment on the ground floor isn't as protected as others and there's more chance of a break-in.
+GAVIN: Really? I didn't know that. It's on the third, no, ... second floor.
+DIANE: Second ... and how much is the rent?
+GAVIN: It's $615 per month.
+DIANE: Good, and where is it located?
+GAVIN: In Biggins St, South Hills.
+DIANE: I see. And what things did you want to insure?
+GAVIN: Well, what do you recommend?
+DIANE: Well, the most important things are those which you would normally find in a home. Things like the television, fridge and so on.
+GAVIN: I see. Well, I've got a fridge and a stereo system which I've just bought from a friend.
+DIANE: And how much did you pay for the fridge?
+GAVIN: Er, $450.
+DIANE: 50 or 15?
+GAVIN: 50, and the stereo system cost $1,150.
+DIANE: Have you got a television?
+GAVIN: Yes, but it's very old and not worth much.
+DIANE: OK. Well, is there anything else you want to insure?
+GAVIN: Yes, I've got a couple of watches and my CDs and books.
+DIANE: How much do you think they're worth?
+GAVIN: The watches are worth $1,000 ...
+DIANE: For both of them?
+GAVIN: No, each one and, all together, the CDs and books cost me about $400.
+DIANE: OK, so the value of everything you want to insure is $4,000.
+GAVIN: How much will the insurance cost?
+DIANE: Let me see, $4,000 divided by ... plus 10% ... right, so this kind of insurance, er, that's Private Contents insurance, it comes to $184.00 for a twelve-month period.
+GAVIN: $184.00. Well, that sounds pretty good. OK, I'll take that policy.
+GAVIN: Can I arrange the policy over the phone?
+DIANE: Sure, just let me get the details down. So that's Mr ...
+GAVIN: Gavin Murray, that's M-U-R-R-A-Y.
+DIANE: And the address is?
+GAVIN: It's 16C Biggins Street, South Hills.
+DIANE: OK (writing) 16C Biggins Street, South Hills?
+GAVIN: That's right, it's two words, 'South Hills'.
+DIANE: And your date of birth is?
+GAVIN: 12 November 1980.
+DIANE: And your contact number?
+GAVIN: Home phone number is 9872 4855.
+DIANE: Right... and er,... you're Australian?
+GAVIN: No ... I was born in London, although my mother is from Tasmania.
+DIANE: Really? Whereabouts?
+GAVIN: Hobart.
+DIANE: I see ... interesting place. Now, are you working at the moment?
+GAVIN: No, I'm a full-time student at Sydney University.
+DIANE: Right, good.`,
+                audio_script: `DIANE: Good morning. Diane Davies. Can I help you?... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 1,
+                        type: "choice",
+                        prompt: "Gavin's apartment is located on the ...",
+                        options: [
+                            "A. ground floor.",
+                            "B. second floor.",
+                            "C. third floor."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "GAVIN: It's on the third, no, ... second floor. DIANE: Second...",
+                        explanation: "Gavin corrects himself to state his apartment is on the second floor (Option B)."
+                    },
+                    {
+                        id: 2,
+                        type: "choice",
+                        prompt: "The monthly rent for Gavin's apartment is ...",
+                        options: [
+                            "A. $615.",
+                            "B. $650.",
+                            "C. $655."
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "GAVIN: It's $615 per month.",
+                        explanation: "The monthly rent is $615 (Option A)."
+                    },
+                    {
+                        id: 3,
+                        type: "fill",
+                        prompt: "ITEM: _____ | VALUE: $450",
+                        correct_answers: ["fridge", "refrigerator", "a fridge", "a refrigerator"],
+                        evidence: "GAVIN: I see. Well, I've got a fridge... DIANE: And how much did you pay for the fridge? GAVIN: Er, $450.",
+                        explanation: "The item worth $450 is the fridge/refrigerator."
+                    },
+                    {
+                        id: 4,
+                        type: "fill",
+                        prompt: "ITEM: _____ | VALUE: $1,150",
+                        correct_answers: ["stereo", "stereo system", "a stereo system", "a stereo"],
+                        evidence: "GAVIN: 50, and the stereo system cost $1,150.",
+                        explanation: "The stereo system costs $1,150."
+                    },
+                    {
+                        id: 5,
+                        type: "fill",
+                        prompt: "ITEM: CDs and _____ | VALUE: $400",
+                        correct_answers: ["books"],
+                        evidence: "GAVIN: ...all together, the CDs and books cost me about $400.",
+                        explanation: "The CDs and books together cost $400."
+                    },
+                    {
+                        id: 6,
+                        type: "fill",
+                        prompt: "Total annual cost of insurance: $_____",
+                        correct_answers: ["184", "184.00", "$184", "$184.00", "184 dollars"],
+                        evidence: "DIANE: ...it comes to $184.00 for a twelve-month period.",
+                        explanation: "The total annual cost is $184.00 (NOT per month)."
+                    },
+                    {
+                        id: 7,
+                        type: "fill",
+                        prompt: "Name: Mr Gavin _____",
+                        correct_answers: ["Murray", "murray"],
+                        evidence: "GAVIN: Gavin Murray, that's M-U-R-R-A-Y.",
+                        explanation: "Gavin spells his surname as Murray."
+                    },
+                    {
+                        id: 8,
+                        type: "fill",
+                        prompt: "Address: (8) _____ Biggins Street",
+                        correct_answers: ["16C", "16c"],
+                        evidence: "GAVIN: It's 16C Biggins Street, South Hills.",
+                        explanation: "The street number is 16C."
+                    },
+                    {
+                        id: 9,
+                        type: "fill",
+                        prompt: "Address: 16C Biggins Street, (9) _____",
+                        correct_answers: ["South Hills", "south hills"],
+                        evidence: "GAVIN: That's right, it's two words, 'South Hills'.",
+                        explanation: "The district/suburb is South Hills."
+                    },
+                    {
+                        id: 10,
+                        type: "fill",
+                        prompt: "Nationality: _____",
+                        correct_answers: ["English", "British", "english", "british"],
+                        evidence: "GAVIN: No ... I was born in London, although my mother is from Tasmania.",
+                        explanation: "Since he was born in London, his nationality is English or British."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 2: Smith House Accommodation Guide (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Smith House Accommodation Guide (Questions 11 - 20)",
+                instruction: "Question 11: Circle the correct letter A-D. Questions 12-14: Complete the explanation of the room number. Write NO MORE THAN THREE WORDS for each answer. Questions 15-17: Complete the sentences below. Write NO MORE THAN THREE WORDS for each answer. Questions 18-20: Complete the notice below. Write NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Question 11: Circle the correct letter A-D. Questions 12-14: Complete the explanation of the room number. Write NO MORE THAN THREE WORDS for each answer. Questions 15-17: Complete the sentences below. Write NO MORE THAN THREE WORDS for each answer. Questions 18-20: Complete the notice below. Write NO MORE THAN THREE WORDS for each answer.",
+                transcript: `COLLEGE PRESIDENT: Well, good morning, everyone, it's good to see you all here. Welcome to Smith House. Smith House as you may or may not know is one of the oldest residential colleges of the university. As you can see, the building you're in now which contains this main lounge, the dining room, the recreation room, the kitchen and the offices was part of the original old house, built in the 1840s to be used by the family of George Smith. That's of course how the house and college got their names. The original house was converted into a residential college for the university in 1940 and since then has continued to be added on to and modernised.
+You'll notice when you receive your room allocation in a few minutes that your room number either begins with the letter N, S, or W like this one here. The first letter refers to the three wings of the college which come away from this main building. Of course the letters represent the three directions - in this case - north, south and west. Each wing has two floors, and so the next number you see is either one, or in this case two, and this indicates which floor your room is on. The number after that is your individual room number. So it's quite simple to find any room by going to the right wing, then floor, and then room number.
+You'll also notice, when you receive your orientation pack shortly, that there are two keys. One is the key to your room and only you have that key - and the other is a key to the front door which you've just come through here from the street. This door is closed and locked at 8 pm every night and opened again at 7 am. You'll need your key if you're coming back to the college between those times. We ask all students to always enter and leave the college through the front door. You will notice at the end of each corridor that there is another door but these are fire doors and are kept locked from the outside. They should only be opened from the inside in case of emergency.
+In your fees you've paid a laundry fee which covers the cleaning of bed linen and towels. All bed linen and towels are clearly embossed with the name Smith House so it's easily identifiable. If you want your other laundry to be done by the college this can be arranged for a small extra fee.
+There are only a few rules here at Smith House and we have these rules so that we can all live comfortably together. The most important rule is that there must be no noise after 9 pm. There is also no smoking in the rooms or anywhere inside the college but smoking is permitted on the balconies.
+All meals are served in the dining room. Meal times are listed in your orientation pack. Please read these carefully as meal times cannot be changed and if you arrive late I'm sorry to say you'll just go hungry.
+If you're unsure about things, each floor has an elected 'floor senior' who is usually a student in their third or fourth year of study who's been at Smith House for a while. The floor seniors will introduce themselves later today and answer any questions you have. But for now I'm going to hand you over to Marney who is going to give you the orientation packs and keys. Thanks Marney.`,
+                audio_script: `COLLEGE PRESIDENT: Well, good morning, everyone... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 11,
+                        type: "choice",
+                        prompt: "Smith House was originally built as ...",
+                        options: [
+                            "A. a residential college.",
+                            "B. a family house.",
+                            "C. a university.",
+                            "D. an office block."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "COLLEGE PRESIDENT: ...was part of the original old house, built in the 1840s to be used by the family of George Smith.",
+                        explanation: "It was originally built as a private family house for George Smith (Option B)."
+                    },
+                    {
+                        id: 12,
+                        type: "fill",
+                        prompt: "Room number diagram (N 2 34): N represents: (12) _____ wing",
+                        correct_answers: ["north", "N"],
+                        evidence: "COLLEGE PRESIDENT: The first letter refers to the three wings... north, south and west.",
+                        explanation: "The letter N stands for north wing."
+                    },
+                    {
+                        id: 13,
+                        type: "fill",
+                        prompt: "Room number diagram (N 2 34): 2 represents: (13) _____",
+                        correct_answers: [
+                            "second floor",
+                            "2nd floor",
+                            "floor number",
+                            "second",
+                            "floor"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: ...and this indicates which floor your room is on.",
+                        explanation: "The second digit represents the second floor (or floor number)."
+                    },
+                    {
+                        id: 14,
+                        type: "fill",
+                        prompt: "Room number diagram (N 2 34): 34 represents: personal (14) _____.",
+                        correct_answers: [
+                            "room number",
+                            "room",
+                            "number"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: The number after that is your individual room number.",
+                        explanation: "The final two digits represent the personal room number."
+                    },
+                    {
+                        id: 15,
+                        type: "fill",
+                        prompt: "Students need a front door key between (15) _____.",
+                        correct_answers: [
+                            "8 pm and 7 am",
+                            "8pm and 7am",
+                            "8 pm - 7 am",
+                            "8.00 pm and 7.00 am"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: This door is closed and locked at 8 pm every night and opened again at 7 am. You'll need your key if you're coming back to the college between those times.",
+                        explanation: "The front door is locked between 8 pm and 7 am."
+                    },
+                    {
+                        id: 16,
+                        type: "fill",
+                        prompt: "In an emergency, students should use (16) _____.",
+                        correct_answers: [
+                            "fire doors",
+                            "the fire doors",
+                            "emergency doors",
+                            "the emergency doors"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: ...there is another door but these are fire doors... They should only be opened from the inside in case of emergency.",
+                        explanation: "In an emergency, students use the fire doors / emergency doors."
+                    },
+                    {
+                        id: 17,
+                        type: "fill",
+                        prompt: "Fees also cover some (17) _____ charges.",
+                        correct_answers: ["laundry", "washing"],
+                        evidence: "COLLEGE PRESIDENT: In your fees you've paid a laundry fee which covers the cleaning of bed linen and towels.",
+                        explanation: "The fees cover laundry / washing charges."
+                    },
+                    {
+                        id: 18,
+                        type: "fill",
+                        prompt: "Smoking only allowed on (18) _____.",
+                        correct_answers: [
+                            "balconies",
+                            "the balconies",
+                            "balconys",
+                            "the balconys"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: There is also no smoking in the rooms or anywhere inside the college but smoking is permitted on the balconies.",
+                        explanation: "Smoking is only permitted on the balconies."
+                    },
+                    {
+                        id: 19,
+                        type: "fill",
+                        prompt: "No changes can be made to (19) _____.",
+                        correct_answers: ["meal times", "meal-times", "mealtimes"],
+                        evidence: "COLLEGE PRESIDENT: Please read these carefully as meal times cannot be changed...",
+                        explanation: "Meal times cannot be changed."
+                    },
+                    {
+                        id: 20,
+                        type: "fill",
+                        prompt: "If you have any questions, ask the (20) _____.",
+                        correct_answers: [
+                            "floor senior",
+                            "floor seniors",
+                            "elected floor senior",
+                            "elected floor seniors"
+                        ],
+                        evidence: "COLLEGE PRESIDENT: If you're unsure about things, each floor has an elected 'floor senior'... answer any questions you have.",
+                        explanation: "Students should ask their elected floor senior(s)."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 3: Children Learning Through Media (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Children Learning Through Media (Questions 21 - 30)",
+                instruction: "Questions 21-25: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 26-30: Write the appropriate letters A-C against questions 26-30. Situation options: A. individual children, B. five or six children, C. whole class.",
+                instructions: "Questions 21-25: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Questions 26-30: Write the appropriate letters A-C against questions 26-30. Situation options: A. individual children, B. five or six children, C. whole class.",
+                transcript: `LYNNE: That essay we have to write ... the one on how children learn through the media ... how are you planning to write it?
+ROBIN: Well, I've given it some thought and I think that the best way to approach it is to divide the essay into two parts. First of all, we'd have to look at some examples of each type of media ...
+LYNNE: Yes, what they are ... then we could describe how we can use each medium so that children can learn something from each one.
+ROBIN: Exactly. Maybe we could draw up a table and look at examples of each medium in turn. Let's see, the different forms of media would be ... the print media ...
+LYNNE: Here you'd have things like books and newspapers, that sort of thing ...
+ROBIN: Um, and included in these are the pictorial forms of print media, like maps ...
+LYNNE: Yes, maps are really just formal pictures, aren't they? And then there are what we call the audio forms of media ... where children can listen. CDs and radios are probably the best examples, because a lot of children have access to these especially radios.
+ROBIN: And this would lead into the audio-visual media, which can be seen as well as heard ... film, television ... and we mustn't forget videos.
+LYNNE: Yes, but there's a final category as well ... computers, that make up the so-called electronic media. In the United Kingdom and Australia, they say that one in three families has a computer now.
+ROBIN: Yes, I believe it. Well that's a good list to start with ... we're really getting somewhere with this essay now ... so let's move on to when each type of medium could be used. I guess we could start by trying to identify the best situation for each type of media.
+LYNNE: What do you mean?
+ROBIN: I'm talking about whether each medium should be used with different sized groups. For example, we could look at pictures, and ask whether they're more useful for an individual child, a few children together or a full class - in this case, I'd say pictures are best with individual children, because they give them an opportunity to let their imaginations run wild.
+LYNNE: Yes, I see ...
+ROBIN: Let's take tapes next. Although tapes look ideal for individual children, I feel they're best suited to small group work. This way, children don't feel isolated, because they can get help from their friends. Computers are the same ... I think they're better with small numbers of children and they're hardly ever useful with a whole class. Videos, however, are ideal for use with everyone present in the class, especially when children have individual activity sheets to help them focus their minds on what's in the video.
+LYNNE: And what about books, what would you recommend for them? Books are ideal for children to use by themselves. I know they're used with groups in schools, but I wouldn't recommend it. Other pictorial media like maps, though, are different ... I'd always plan group work around those ... give the children a chance to interact and to share ideas.
+ROBIN: I agree ... teachers often just leave maps on the wall for children to look at when they have some free time, but kids really enjoy using them for problem solving.
+LYNNE: Yes, different people have different ideas I suppose ...
+ROBIN: Yes, and different teachers recommend different tools for different age groups ...`,
+                audio_script: `LYNNE: That essay we have to write... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 21,
+                        type: "fill",
+                        prompt: "Print media examples: books, (21) _____",
+                        correct_answers: ["newspaper", "newspapers"],
+                        evidence: "LYNNE: Here you'd have things like books and newspapers, that sort of thing...",
+                        explanation: "Examples of print media given are books and newspapers."
+                    },
+                    {
+                        id: 22,
+                        type: "fill",
+                        prompt: "Pictures examples: (22) _____",
+                        correct_answers: ["map", "maps"],
+                        evidence: "ROBIN: ...pictorial forms of print media, like maps... LYNNE: Yes, maps are really just formal pictures, aren't they?",
+                        explanation: "Maps are given as pictorial examples."
+                    },
+                    {
+                        id: 23,
+                        type: "fill",
+                        prompt: "Audio (listening) examples: CDs, (23) _____",
+                        correct_answers: ["radio", "radios"],
+                        evidence: "LYNNE: CDs and radios are probably the best examples...",
+                        explanation: "Audio media examples are CDs and radios."
+                    },
+                    {
+                        id: 24,
+                        type: "fill",
+                        prompt: "Audio-visual examples: film, (24) _____, videos",
+                        correct_answers: ["television", "TV", "television / TV"],
+                        evidence: "ROBIN: ...film, television ... and we mustn't forget videos.",
+                        explanation: "Audio-visual media includes film, television/TV and videos."
+                    },
+                    {
+                        id: 25,
+                        type: "fill",
+                        prompt: "Electronic media examples: (25) _____",
+                        correct_answers: ["computer", "computers"],
+                        evidence: "LYNNE: Yes, but there's a final category as well ... computers, that make up the so-called electronic media.",
+                        explanation: "Computers make up electronic media."
+                    },
+                    {
+                        id: 26,
+                        type: "choice",
+                        prompt: "In which situation are TAPES most useful?",
+                        options: [
+                            "A. individual children",
+                            "B. five or six children (small group)",
+                            "C. whole class"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "ROBIN: Let's take tapes next... I feel they're best suited to small group work [five or six children].",
+                        explanation: "Robin recommends tapes for small group work (B: five or six children)."
+                    },
+                    {
+                        id: 27,
+                        type: "choice",
+                        prompt: "In which situation are COMPUTERS most useful?",
+                        options: [
+                            "A. individual children",
+                            "B. five or six children (small group)",
+                            "C. whole class"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "ROBIN: Computers are the same ... I think they're better with small numbers of children...",
+                        explanation: "Computers are best with small numbers of children (B: five or six children)."
+                    },
+                    {
+                        id: 28,
+                        type: "choice",
+                        prompt: "In which situation are VIDEOS most useful?",
+                        options: [
+                            "A. individual children",
+                            "B. five or six children (small group)",
+                            "C. whole class"
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "ROBIN: Videos, however, are ideal for use with everyone present in the class...",
+                        explanation: "Videos are ideal for everyone in the class (C: whole class)."
+                    },
+                    {
+                        id: 29,
+                        type: "choice",
+                        prompt: "In which situation are BOOKS most useful?",
+                        options: [
+                            "A. individual children",
+                            "B. five or six children (small group)",
+                            "C. whole class"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "LYNNE: Books are ideal for children to use by themselves.",
+                        explanation: "Books are best used by children individually (A: individual children)."
+                    },
+                    {
+                        id: 30,
+                        type: "choice",
+                        prompt: "In which situation are WALL MAPS most useful?",
+                        options: [
+                            "A. individual children",
+                            "B. five or six children (small group)",
+                            "C. whole class"
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "LYNNE: Other pictorial media like maps, though, are different ... I'd always plan group work around those...",
+                        explanation: "Maps are recommended for group work (B: five or six children)."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // SECTION 4: British Agriculture Lecture (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: British Agriculture Lecture (Questions 31 - 40)",
+                instruction: "Question 31: Choose the correct letter A-D. Questions 32-33: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Questions 34-39: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Question 40: Choose the correct letter A-C.",
+                instructions: "Question 31: Choose the correct letter A-D. Questions 32-33: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Questions 34-39: Complete the table below. Write NO MORE THAN THREE WORDS for each answer. Question 40: Choose the correct letter A-C.",
+                transcript: `LECTURER: I hope that this first session, which I've called An Introduction to British Agriculture, will provide a helpful background to the farm visits you'll be doing next week.
+I think I should start by emphasising that agriculture still accounts for a very important part of this country's economy. We are used to hearing the UK's society and economy described as being 'industrial' or even 'post-industrial', but we mustn't let this blind us to the fact that agriculture and its supporting industries still account for around 20% of our Gross National Product.
+This figure is especially impressive, I think, when you bear in mind how very small a percentage of the UK workforce is employed in agriculture. This is not a recent development - you would have to go back to 1750 or so to find a majority of the workforce in this country working in agriculture. By the middle of the next century, in 1850 that is, it had fallen sharply to 10%, and then to 3% by the middle of the twentieth century.
+And now just 2% of the workforce contribute 20% of GNP. How is this efficiency achieved? Well, my own view is that it owes a great deal to a history, over the last 50 or 60 years, of intelligent support by the state, mainly taking the form of helping farmers to plan ahead. Then the two other factors I should mention, both very important, are the high level of training amongst the agricultural workforce. And secondly, the recognition by farmers of the value of investing in technology.
+Now, although the UK is a fairly small country, the geology and climate vary a good deal from region to region. For our purposes today we can divide the country broadly into three - I've marked them on the map here.
+The region you'll get to know best, of course, is the north, where we are at present. The land here is generally hilly, and the soils thin. The climate up here, and you've already had evidence of this, is generally cool and wet. As you will see next week, the typical farm here in the North is a small, family-run concern, producing mainly wool and timber for the market.
+If we contrast that with the Eastern region, over here, the east is flatter and more low-lying, with fertile soils and a mixed climate. Average farm-size is much bigger in the east, and farms are likely to be managed strictly on commercial lines. As for crops, well, the east is the UK's great cereal-producing region. However, increasingly significant areas are now also given over to high quality vegetables for supply direct to the supermarkets.
+The third broad region is the west, where it's a different story again. The climate is warmer than in the north and much wetter than in the east. The resulting rich soils in the west provide excellent pasture, and the farms there are quite large, typically around 800 hectares. The main products are milk, cheese and meat.
+So, clearly, there are marked differences between regions. But this does not prevent quite a strong sense of solidarity amongst the farming community as a whole, right across the country. This solidarity comes in part from the need to present a united front in dealing with other powerful interest-groups, such as government or the media. It also owes something to the close co-operation between all the agricultural training colleges, through which the great majority of farmers pass at the beginning of their careers. And a third factor making for solidarity is the national structure of the Farmers' Union, of which virtually all farmers are members.
+Finally in this short talk, I would like to say a little about the challenges facing farmers in the next ...`,
+                audio_script: `LECTURER: I hope that this first session... (Same as transcript)`,
+                questions: [
+                    {
+                        id: 31,
+                        type: "choice",
+                        prompt: "What percentage of the workforce was employed in agriculture by the mid-20th century?",
+                        options: [
+                            "A. 3%",
+                            "B. 10%",
+                            "C. 20%",
+                            "D. 50%"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "LECTURER: By the middle of the next century, in 1850 that is, it had fallen sharply to 10%, and then to 3% by the middle of the twentieth century.",
+                        explanation: "In the middle of the 20th century, the percentage had fallen to 3% (Option A)."
+                    },
+                    {
+                        id: 32,
+                        type: "fill",
+                        prompt: "Key efficiency factors: The high level of (32) _____ amongst the agricultural workforce",
+                        correct_answers: ["training"],
+                        evidence: "LECTURER: ...the high level of training amongst the agricultural workforce.",
+                        explanation: "The lecturer mentions the high level of training."
+                    },
+                    {
+                        id: 33,
+                        type: "fill",
+                        prompt: "Key efficiency factors: Farmers' recognition of the value of investing in (33) _____",
+                        correct_answers: ["technology", "tecknology", "teknology"],
+                        evidence: "LECTURER: And secondly, the recognition by farmers of the value of investing in technology.",
+                        explanation: "Investing in technology is the second major factor."
+                    },
+                    {
+                        id: 34,
+                        type: "fill",
+                        prompt: "Regional table - North: Climate is (34) _____ (both words required)",
+                        correct_answers: ["cool and wet", "cool, wet", "cool wet"],
+                        evidence: "LECTURER: The climate up here... is generally cool and wet.",
+                        explanation: "The climate in the north is cool and wet."
+                    },
+                    {
+                        id: 35,
+                        type: "fill",
+                        prompt: "Regional table - North: Produces mainly (35) _____ (both words required)",
+                        correct_answers: ["wool and timber", "wool, timber", "wool timber"],
+                        evidence: "LECTURER: ...producing mainly wool and timber for the market.",
+                        explanation: "The north produces mainly wool and timber."
+                    },
+                    {
+                        id: 36,
+                        type: "fill",
+                        prompt: "Regional table - East: Land characteristic: (36) _____ soils",
+                        correct_answers: [
+                            "fertile soil",
+                            "fertile soils",
+                            "fertile land",
+                            "fertile earth",
+                            "fertile ground",
+                            "fertile"
+                        ],
+                        evidence: "LECTURER: ...the east is flatter and more low-lying, with fertile soils and a mixed climate.",
+                        explanation: "The eastern region has fertile soils/land/ground."
+                    },
+                    {
+                        id: 37,
+                        type: "fill",
+                        prompt: "Regional table - East: Fresh produce supplied directly to supermarkets: (37) _____",
+                        correct_answers: [
+                            "vegetables",
+                            "high quality vegetables",
+                            "vegs",
+                            "high-quality vegetables"
+                        ],
+                        evidence: "LECTURER: However, increasingly significant areas are now also given over to high quality vegetables for supply direct to the supermarkets.",
+                        explanation: "High quality vegetables are grown for direct supermarket supply."
+                    },
+                    {
+                        id: 38,
+                        type: "fill",
+                        prompt: "Regional table - West: Climate is (38) _____ (both words required)",
+                        correct_answers: ["warm and wet", "warm, wet", "warm wet"],
+                        evidence: "LECTURER: The climate is warmer than in the north and much wetter than in the east.",
+                        explanation: "The climate in the west is warm and wet."
+                    },
+                    {
+                        id: 39,
+                        type: "fill",
+                        prompt: "Regional table - West: Average farm size is typically around (39) _____ hectares",
+                        correct_answers: ["800", "eight hundred", "800 hectares", "eight hundred hectares"],
+                        evidence: "LECTURER: ...and the farms there are quite large, typically around 800 hectares.",
+                        explanation: "Farms in the west are around 800 hectares."
+                    },
+                    {
+                        id: 40,
+                        type: "choice",
+                        prompt: "Farmers have a strong sense of solidarity across the country because ...",
+                        options: [
+                            "A. the media supports their interests.",
+                            "B. they belong to a national Farmers' Union.",
+                            "C. they share identical regional climates."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "LECTURER: And a third factor making for solidarity is the national structure of the Farmers' Union, of which virtually all farmers are members.",
+                        explanation: "The national structure of the Farmers' Union creates nationwide solidarity (Option B)."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. ACADEMIC READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 2 (Cambridge IELTS 2)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Implementing the Cycle of Success: A Case Study (Q1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: Implementing the Cycle of Success: A Case Study",
+                content: `IMPLEMENTING THE CYCLE OF SUCCESS: A CASE STUDY
+
+Within Australia, Australian Hotels Inc (AHI) operates nine hotels and employs over 2000 permanent full-time staff, 300 permanent part-time employees and 100 casual staff. One of its latest ventures, the Sydney Airport hotel (SAH), opened in March 1995. The hotel is the closest to Sydney Airport and is designed to provide the best available accommodation, food and beverage and meeting facilities in Sydney's southern suburbs. Similar to many international hotel chains, however, AHI has experienced difficulties in Australia in providing long-term profits for hotel owners, as a result of the country's high labour-cost structure. In order to develop an economically viable hotel organisation model, AHI decided to implement some new policies and practices at SAH.
+
+The first of the initiatives was an organisational structure with only three levels of management - compared to the traditional seven. Partly as a result of this change, there are 25 per cent fewer management positions, enabling a significant saving. This change also has other implications. Communication, both up and down the organisation, has greatly improved. Decision-making has been forced down in many cases to front-line employees. As a result, guest requests are usually met without reference to a supervisor, improving both customer and employee satisfaction.
+
+The hotel also recognised that it would need a different approach to selecting employees who would fit in with its new policies. In its advertisements, the hotel stated a preference for people with some 'service' experience in order to minimise traditional work practices being introduced into the hotel. Over 7000 applicants filled in application forms for the 120 jobs initially offered at SAH. The balance of the positions at the hotel (30 management and 40 shift leader positions) were predominantly filled by transfers from other AHI properties.
+
+A series of tests and interviews were conducted with potential employees, which eventually left 280 applicants competing for the 120 advertised positions. After the final interview, potential recruits were divided into three categories. Category A was for applicants exhibiting strong leadership qualities, Category C was for applicants perceived to be followers, and Category B was for applicants with both leader and follower qualities. Department heads and shift leaders then composed prospective teams using a combination of people from all three categories. Once suitable teams were formed, offers of employment were made to team members.
+
+Another major initiative by SAH was to adopt a totally multi-skilled workforce. Although there may be some limitations with highly technical jobs such as cooking or maintenance, wherever possible, employees at SAH are able to work in a wide variety of positions. A multi-skilled workforce provides far greater management flexibility during peak and quiet times to transfer employees to needed positions. For example, when office staff are away on holidays during quiet periods of the year, employees in either food or beverage or housekeeping departments can temporarily transfer to office duties.
+
+The most crucial way, however, of improving the labour cost structure at SAH was to find better, more productive ways of providing customer service. SAH management concluded this would first require a process of 'benchmarking'. The prime objective of the benchmarking process was to compare a range of service delivery processes across a range of criteria using teams made up of employees from different departments within the hotel which interacted with each other. This process resulted in performance measures that greatly enhanced SAH's ability to improve productivity and quality.
+
+The front office team discovered through this project that a high proportion of AHI Club member reservations were incomplete. As a result, the service provided to these guests was below the standard promised to them as part of their membership agreement. Reducing the number of incomplete reservations greatly improved guest perceptions of service.
+
+In addition, a program modelled on an earlier project called 'Take Charge' was implemented. Essentially, Take Charge provides an effective feedback loop from both customers and employees. Customer comments, both positive and negative, are recorded by staff. These are collated regularly to identify opportunities for improvement. Just as importantly, employees are requested to note down their own suggestions for improvement. (AHI has set an expectation that employees will submit at least three suggestions for every one they receive from a customer.)
+
+Employee feedback is reviewed daily and suggestions are implemented within 48 hours, if possible, or a valid reason is given for non-implementation. If suggestions require analysis or data collection, the Take Charge team has 30 days in which to address the issue and come up with recommendations.
+
+Although quantitative evidence of AHI's initiatives at SAH are limited at present, anecdotal evidence clearly suggests that these practices are working. Indeed AHI is progressively rolling out these initiatives in other hotels in Australia, whilst numerous overseas visitors have come to see how the program works.`,
+                text: `IMPLEMENTING THE CYCLE OF SUCCESS... (Same as content)`,
+                questions: [
+                    {
+                        id: 1,
+                        type: "choice",
+                        prompt: "The high costs of running AHI's hotels are related to their ...",
+                        options: [
+                            "A. management.",
+                            "B. size.",
+                            "C. staff.",
+                            "D. policies."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph 1: '...difficulties in Australia in providing long-term profits for hotel owners, as a result of the country's high labour-cost structure.'",
+                        explanation: "High labour-cost structure refers directly to staff costs (Option C)."
+                    },
+                    {
+                        id: 2,
+                        type: "choice",
+                        prompt: "SAH's new organisational structure requires ...",
+                        options: [
+                            "A. 75% of the old management positions.",
+                            "B. 25% of the old management positions.",
+                            "C. 25% more management positions.",
+                            "D. 5% fewer management positions."
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "Paragraph 2: 'Partly as a result of this change, there are 25 per cent fewer management positions, enabling a significant saving.'",
+                        explanation: "25% fewer positions means it requires 75% of the old management positions (Option A)."
+                    },
+                    {
+                        id: 3,
+                        type: "choice",
+                        prompt: "The SAH's approach to organisational structure required changing practices in ...",
+                        options: [
+                            "A. industrial relations.",
+                            "B. firing staff.",
+                            "C. hiring staff.",
+                            "D. marketing."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph 3: 'The hotel also recognised that it would need a different approach to selecting employees who would fit in with its new policies.'",
+                        explanation: "Selecting employees is hiring staff (Option C)."
+                    },
+                    {
+                        id: 4,
+                        type: "choice",
+                        prompt: "The total number of jobs advertised at the SAH was ...",
+                        options: [
+                            "A. 70.",
+                            "B. 120.",
+                            "C. 170.",
+                            "D. 280."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "Paragraph 3: 'Over 7000 applicants filled in application forms for the 120 jobs initially offered at SAH.'",
+                        explanation: "There were 120 advertised jobs (Option B)."
+                    },
+                    {
+                        id: 5,
+                        type: "choice",
+                        prompt: "Categories A, B and C were used to select ...",
+                        options: [
+                            "A. front office staff.",
+                            "B. new teams.",
+                            "C. department heads.",
+                            "D. new managers."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "Paragraph 4: 'Department heads and shift leaders then composed prospective teams using a combination of people from all three categories.'",
+                        explanation: "The categories were used to compose prospective teams (Option B)."
+                    },
+                    {
+                        id: 6,
+                        type: "fill",
+                        prompt: "Teams of employees were selected from different hotel departments to participate in a (6) _____ exercise.",
+                        correct_answers: ["benchmarking"],
+                        evidence: "Paragraph 6: 'SAH management concluded this would first require a process of 'benchmarking'.' ",
+                        explanation: "They participated in a benchmarking exercise."
+                    },
+                    {
+                        id: 7,
+                        type: "fill",
+                        prompt: "The information collected was used to compare (7) _____ processes...",
+                        correct_answers: [
+                            "service delivery",
+                            "a range of service delivery"
+                        ],
+                        evidence: "Paragraph 6: '...was to compare a range of service delivery processes across a range of criteria...'",
+                        explanation: "The processes compared were service delivery processes."
+                    },
+                    {
+                        id: 8,
+                        type: "fill",
+                        prompt: "...which, in turn, led to the development of (8) _____ that would be used to increase the hotel's capacity...",
+                        correct_answers: [
+                            "performance measures",
+                            "measures"
+                        ],
+                        evidence: "Paragraph 6: 'This process resulted in performance measures that greatly enhanced SAH's ability to improve productivity and quality.'",
+                        explanation: "It led to the development of performance measures."
+                    },
+                    {
+                        id: 9,
+                        type: "fill",
+                        prompt: "...to increase the hotel's capacity to improve (9) _____ as well as quality.",
+                        correct_answers: ["productivity"],
+                        evidence: "Paragraph 6: '...ability to improve productivity and quality.'",
+                        explanation: "Capacity to improve productivity as well as quality."
+                    },
+                    {
+                        id: 10,
+                        type: "fill",
+                        prompt: "Also, an older program known as (10) _____ was introduced at SAH.",
+                        correct_answers: ["Take Charge", "'Take Charge'", "Take Charge program"],
+                        evidence: "Paragraph 8: 'In addition, a program modelled on an earlier project called 'Take Charge' was implemented.'",
+                        explanation: "The project was called 'Take Charge'."
+                    },
+                    {
+                        id: 11,
+                        type: "fill",
+                        prompt: "In this program, (11) _____ is sought from customers and staff.",
+                        correct_answers: ["feedback"],
+                        evidence: "Paragraph 8: 'Essentially, Take Charge provides an effective feedback loop from both customers and employees.'",
+                        explanation: "Feedback is sought from customers and staff."
+                    },
+                    {
+                        id: 12,
+                        type: "fill",
+                        prompt: "Wherever possible (12) _____ suggestions are implemented within 48 hours.",
+                        correct_answers: [
+                            "employee",
+                            "employee's",
+                            "employees'",
+                            "staff"
+                        ],
+                        evidence: "Paragraph 9: 'Employee feedback is reviewed daily and suggestions are implemented within 48 hours...'",
+                        explanation: "Employee / staff suggestions are implemented within 48 hours."
+                    },
+                    {
+                        id: 13,
+                        type: "fill",
+                        prompt: "Other suggestions are investigated for their feasibility for a period of up to (13) _____.",
+                        correct_answers: ["30 days"],
+                        evidence: "Paragraph 9: '...the Take Charge team has 30 days in which to address the issue and come up with recommendations.'",
+                        explanation: "The team has a period of up to 30 days."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 2: The Language Barrier to Communication (Q14 - 26)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: The Language Barrier to Communication",
+                content: `THE LANGUAGE BARRIER TO COMMUNICATION
+
+The discovery that language can be a barrier to communication is quickly made by all who travel, study, govern or sell. Whether the activity is tourism, research, government, policing, business, or data dissemination, the lack of a common language can severely impede progress or can halt it altogether. 'Common language' here usually means a foreign language, but the same point applies in principle to any encounter with unfamiliar dialects or styles within a single language. 'They don't talk the same language' has a major metaphorical meaning alongside its literal one.
+
+Although communication problems of this kind must happen thousands of times each day, very few become public knowledge. Publicity comes only when a failure to communicate has major consequences, such as strikes, lost orders, legal problems, or fatal accidents - even, at times, war. One reported instance of communication failure took place in 1970, when several Americans ate a species of poisonous mushroom. No remedy was known, and two of the people died within days. A radio report of the case was heard by a chemist who knew of a treatment that had been successfully used in 1959 and published in 1963. Why had the American doctors not heard of it seven years later? Presumably because the report of the treatment had been published only in journals written in European languages other than English.
+
+Several comparable cases have been reported. But isolated examples do not give an impression of the size of the problem — something that can come only from studies of the use or avoidance of foreign-language materials and contacts in different communicative situations. In the English-speaking scientific world, for example, surveys of books and documents consulted in libraries and other information agencies have shown that very little foreign-language material is ever consulted. Library requests in the field of science and technology showed that only 13 per cent were for foreign language periodicals. Studies of the sources cited in publications lead to a similar conclusion: the use of foreign-language sources is often found to be as low as 10 per cent.
+
+The language barrier presents itself in stark form to firms who wish to market their products in other countries. British industry, in particular, has in recent decades often been criticised for its linguistic insularity — for its assumption that foreign buyers will be happy to communicate in English, and that awareness of other languages is not therefore a priority. In the 1960s, over two-thirds of British firms dealing with non-English-speaking customers were using English for outgoing correspondence; many had their sales literature only in English; and as many as 40 per cent employed no-one able to communicate in the customers' languages. A similar problem was identified in other English-speaking countries, notably the USA, Australia and New Zealand. And non-English-speaking countries were by no means exempt - although the widespread use of English as an alternative language made them less open to the charge of insularity.
+
+The criticism and publicity given to this problem since the 1960s seems to have greatly improved the situation. Industrial training schemes have promoted an increase in linguistic and cultural awareness. Many firms now have their own translation services; to take just one example in Britain, Rowntree Mackintosh now publish their documents in six languages (English, French, German, Dutch, Italian and Xhosa). Some firms run part-time language courses in the languages of the countries with which they are most involved; some produce their own technical glossaries, to ensure consistency when material is being translated. It is now much more readily appreciated that marketing efforts can be delayed, damaged, or disrupted by a failure to take account of the linguistic needs of the customer.
+
+The changes in awareness have been most marked in English-speaking countries, where the realisation has gradually dawned that by no means everyone in the world knows English well enough to negotiate in it. This is especially a problem when English is not an official language of public administration, as in most parts of the Far East, Russia, Eastern Europe, the Arab world, Latin America and French-speaking Africa. Even in cases where foreign customers can speak English quite well, it is often forgotten that they may not be able to understand it to the required level - bearing in mind the regional and social variation which permeates speech and which can cause major problems of listening comprehension. In securing understanding, how 'we' speak to 'them' is just as important, it appears, as how 'they' speak to 'us'.`,
+                text: `THE LANGUAGE BARRIER TO COMMUNICATION... (Same as content)`,
+                questions: [
+                    {
+                        id: 14,
+                        type: "fill",
+                        prompt: "Language problems may come to the attention of the public when they have (14) _____, such as fatal accidents or social problems.",
+                        correct_answers: [
+                            "major consequences"
+                        ],
+                        evidence: "Paragraph 2: 'Publicity comes only when a failure to communicate has major consequences, such as strikes, lost orders, legal problems, or fatal accidents...'",
+                        explanation: "Publicity comes when they have major consequences."
+                    },
+                    {
+                        id: 15,
+                        type: "fill",
+                        prompt: "Evidence of the extent of the language barrier has been gained from (15) _____ of materials used by scientists such as books and periodicals.",
+                        correct_answers: ["surveys"],
+                        evidence: "Paragraph 3: '...surveys of books and documents consulted in libraries and other information agencies have shown that very little foreign-language material is ever consulted.'",
+                        explanation: "Evidence has been gained from surveys."
+                    },
+                    {
+                        id: 16,
+                        type: "fill",
+                        prompt: "An example of British linguistic insularity is the use of English for materials such as (16) _____.",
+                        correct_answers: ["sales literature"],
+                        evidence: "Paragraph 4: '...many had their sales literature only in English; and as many as 40 per cent employed no-one able to communicate in the customers' languages.'",
+                        explanation: "British firms had their sales literature only in English."
+                    },
+                    {
+                        id: 17,
+                        type: "fill",
+                        prompt: "An example of a part of the world where people may have difficulty in negotiating English is (17) _____.",
+                        correct_answers: [
+                            "Eastern Europe",
+                            "Far East",
+                            "Russia",
+                            "Arab world",
+                            "Latin America",
+                            "French-speaking Africa"
+                        ],
+                        evidence: "Paragraph 6: '...as in most parts of the Far East, Russia, Eastern Europe, the Arab world, Latin America and French-speaking Africa.'",
+                        explanation: "Acceptable regions include Eastern Europe, Far East, Russia, Arab world, Latin America, or French-speaking Africa."
+                    },
+                    {
+                        id: 18,
+                        type: "choice",
+                        prompt: "According to the passage, 'They don't talk the same language' (paragraph 1), can refer to problems in ...",
+                        options: [
+                            "A. understanding metaphor.",
+                            "B. learning foreign languages.",
+                            "C. understanding dialect or style.",
+                            "D. dealing with technological change."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph 1: '...the same point applies in principle to any encounter with unfamiliar dialects or styles within a single language. 'They don't talk the same language' has a major metaphorical meaning...'",
+                        explanation: "It refers to problems in understanding dialect or style (Option C)."
+                    },
+                    {
+                        id: 19,
+                        type: "choice",
+                        prompt: "The case of the poisonous mushrooms (paragraph 2) suggests that American doctors ...",
+                        options: [
+                            "A. should pay more attention to radio reports.",
+                            "B. only read medical articles if they are in English.",
+                            "C. are sometimes unwilling to try foreign treatments.",
+                            "D. do not always communicate effectively with their patients."
+                        ],
+                        correct_answers: ["B"],
+                        evidence: "Paragraph 2: 'Why had the American doctors not heard of it seven years later? Presumably because the report of the treatment had been published only in journals written in European languages other than English.'",
+                        explanation: "Doctors did not know about it because it was not in English (Option B)."
+                    },
+                    {
+                        id: 20,
+                        type: "choice",
+                        prompt: "According to the writer, the linguistic insularity of British businesses ...",
+                        options: [
+                            "A. later spread to other countries.",
+                            "B. had a negative effect on their business.",
+                            "C. is not as bad now as it used to be in the past.",
+                            "D. made non-English-speaking companies turn to other markets."
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph 5: 'The criticism and publicity given to this problem since the 1960s seems to have greatly improved the situation.'",
+                        explanation: "The situation has greatly improved compared to the past (Option C)."
+                    },
+                    {
+                        id: 21,
+                        type: "fill",
+                        prompt: "Main ways British companies have tried to solve the language barrier (1/4): _____",
+                        correct_answers: [
+                            "industrial training",
+                            "industrial training schemes",
+                            "training schemes"
+                        ],
+                        evidence: "Paragraph 5: 'Industrial training schemes have promoted an increase in linguistic and cultural awareness.'",
+                        explanation: "One method is industrial training schemes (Questions 21-24 in any order)."
+                    },
+                    {
+                        id: 22,
+                        type: "fill",
+                        prompt: "Main ways British companies have tried to solve the language barrier (2/4): _____",
+                        correct_answers: [
+                            "translation services",
+                            "translation service"
+                        ],
+                        evidence: "Paragraph 5: 'Many firms now have their own translation services...'",
+                        explanation: "Another method is translation services."
+                    },
+                    {
+                        id: 23,
+                        type: "fill",
+                        prompt: "Main ways British companies have tried to solve the language barrier (3/4): _____",
+                        correct_answers: [
+                            "language courses",
+                            "part-time language courses"
+                        ],
+                        evidence: "Paragraph 5: 'Some firms run part-time language courses in the languages of the countries with which they are most involved...'",
+                        explanation: "Another method is part-time language courses."
+                    },
+                    {
+                        id: 24,
+                        type: "fill",
+                        prompt: "Main ways British companies have tried to solve the language barrier (4/4): _____",
+                        correct_answers: [
+                            "technical glossaries",
+                            "glossaries"
+                        ],
+                        evidence: "Paragraph 5: '...some produce their own technical glossaries, to ensure consistency when material is being translated.'",
+                        explanation: "Another method is technical glossaries."
+                    },
+                    {
+                        id: 25,
+                        type: "choice",
+                        prompt: "According to the writer, English-speaking people need to be aware that ...",
+                        options: [
+                            "A. some foreigners have never met an English-speaking person.",
+                            "B. many foreigners have no desire to learn English.",
+                            "C. foreign languages may pose a greater problem in the future.",
+                            "D. English-speaking foreigners may have difficulty understanding English."
+                        ],
+                        correct_answers: ["D"],
+                        evidence: "Paragraph 6: 'Even in cases where foreign customers can speak English quite well, it is often forgotten that they may not be able to understand it to the required level...'",
+                        explanation: "Foreigners who speak English may still have difficulty understanding nuanced or dialectal English (Option D)."
+                    },
+                    {
+                        id: 26,
+                        type: "choice",
+                        prompt: "A suitable title for this passage would be ...",
+                        options: [
+                            "A. Overcoming the language barrier",
+                            "B. How to survive an English-speaking world",
+                            "C. Global understanding - the key to personal progress",
+                            "D. The need for a common language"
+                        ],
+                        correct_answers: ["A"],
+                        evidence: "The passage discusses the problems of language barriers in science and industry, and details the steps companies are taking to overcome them.",
+                        explanation: "The central theme is overcoming the language barrier (Option A)."
+                    }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 3: What Is a Port City? (Questions 27 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: What Is a Port City?",
+                content: `WHAT IS A PORT CITY?
+
+The port city provides a fascinating and rich understanding of the movement of people and goods around the world. We understand a port as a centre of land-sea exchange, and as a major source of livelihood and a major force for cultural mixing. But do ports all produce a range of common urban characteristics which justify classifying port cities together under a single generic label? Do they have enough in common to warrant distinguishing them from other kinds of cities?
+
+A
+A port must be distinguished from a harbour. They are two very different things. Most ports have poor harbours, and many fine harbours see few ships. Harbour is a physical concept, a shelter for ships; port is an economic concept, a centre of land-sea exchange which requires good access to a hinterland even more than a sea-linked foreland. It is landward access, which is productive of goods for export and which demands imports, that is critical. Poor harbours can be improved with breakwaters and dredging if there is a demand for a port. Madras and Colombo are examples of harbours expensively improved by enlarging, dredging and building breakwaters.
+
+B
+Port cities become industrial, financial and service centres and political capitals because of their water connections and the urban concentration which arises there and later draws to it railways, highways and air routes. Water transport means cheap access, the chief basis of all port cities. Many of the world's biggest cities, for example, London, New York, Shanghai, Istanbul, Buenos Aires, Tokyo, Jakarta, Calcutta, Philadelphia and San Francisco began as ports - that is, with land-sea exchange as their major function - but they have since grown disproportionately in other respects so that their port functions are no longer dominant. They remain different kinds of places from non-port cities and their port functions account for that difference.
+
+C
+Port functions, more than anything else, make a city cosmopolitan. A port city is open to the world. In it races, cultures, and ideas, as well as goods from a variety of places, jostle, mix and enrich each other and the life of the city. The smell of the sea and the harbour, the sound of boat whistles or the moving tides are symbols of their multiple links with a wide world, samples of which are present in microcosm within their own urban areas.
+
+D
+Sea ports have been transformed by the advent of powered vessels, whose size and draught have increased. Many formerly important ports have become economically and physically less accessible as a result. By-passed by most of their former enriching flow of exchange, they have become cultural and economic backwaters or have acquired the character of museums of the past. Examples of these are Charleston, Salem, Bristol, Plymouth, Surat, Galle, Melaka, Soochow, and a long list of earlier prominent port cities in Southeast Asia, Africa and Latin America.
+
+E
+Much domestic port trade has not been recorded. What evidence we have suggests that domestic trade was greater at all periods than external trade. Shanghai, for example, did most of its trade with other Chinese ports and inland cities. Calcutta traded mainly with other parts of India and so on. Most of any city's population is engaged in providing goods and services for the city itself. Trade outside the city is its basic function. But each basic worker requires food, housing, clothing and other such services. Estimates of the ratio of basic to service workers range from 1:4 to 1:8.
+
+F
+No city can be simply a port but must be involved in a variety of other activities. The port function of the city draws to it raw materials and distributes them in many other forms. Ports take advantage of the need for breaking up the bulk material where water and land transport meet and where loading and unloading costs can be minimised by refining raw materials or turning them into finished goods. The major examples here are oil refining and ore refining, which are commonly located at ports. It is not easy to draw a line around what is and is not a port function. All ports handle, unload, sort, alter, process, repack, and reship most of what they receive. A city may still be regarded as a port city when it becomes involved in a great range of functions not immediately involved with ships or docks.
+
+G
+Cities which began as ports retain the chief commercial and administrative centre of the city close to the waterfront. The centre of New York is in lower Manhattan between two river mouths, the City of London is on the Thames, Shanghai along the Bund. This proximity to water is also true of Boston, Philadelphia, Bombay, Calcutta, Madras, Singapore, Bangkok, Hong Kong and Yokohama, where the commercial, financial, and administrative centres are still grouped around their harbours even though each city has expanded into a metropolis. Even a casual visitor cannot mistake them as anything but port cities.`,
+                text: `WHAT IS A PORT CITY?... (Same as content)`,
+                questions: [
+                    {
+                        id: 27,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph B",
+                        options: [
+                            "i. A truly international environment",
+                            "ii. Once a port city, always a port city",
+                            "iii. Good ports make huge profits",
+                            "iv. How the port changes a city's infrastructure",
+                            "v. Reasons for the decline of ports",
+                            "vi. Relative significance of trade and service industry",
+                            "vii. Ports and harbours",
+                            "viii. The demands of the oil industry"
+                        ],
+                        correct_answers: ["ii"],
+                        evidence: "Paragraph B: '...their port functions are no longer dominant. They remain different kinds of places from non-port cities and their port functions account for that difference.'",
+                        explanation: "Paragraph B discusses how cities that began as ports remain distinct port cities (Heading ii: Once a port city, always a port city)."
+                    },
+                    {
+                        id: 28,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph C",
+                        options: [
+                            "i. A truly international environment",
+                            "ii. Once a port city, always a port city",
+                            "iii. Good ports make huge profits",
+                            "iv. How the port changes a city's infrastructure",
+                            "v. Reasons for the decline of ports",
+                            "vi. Relative significance of trade and service industry",
+                            "vii. Ports and harbours",
+                            "viii. The demands of the oil industry"
+                        ],
+                        correct_answers: ["i"],
+                        evidence: "Paragraph C: 'Port functions, more than anything else, make a city cosmopolitan. A port city is open to the world. In it races, cultures, and ideas... mix and enrich each other...'",
+                        explanation: "Paragraph C highlights cosmopolitan and diverse global mixing (Heading i: A truly international environment)."
+                    },
+                    {
+                        id: 29,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph D",
+                        options: [
+                            "i. A truly international environment",
+                            "ii. Once a port city, always a port city",
+                            "iii. Good ports make huge profits",
+                            "iv. How the port changes a city's infrastructure",
+                            "v. Reasons for the decline of ports",
+                            "vi. Relative significance of trade and service industry",
+                            "vii. Ports and harbours",
+                            "viii. The demands of the oil industry"
+                        ],
+                        correct_answers: ["v"],
+                        evidence: "Paragraph D: '...powered vessels, whose size and draught have increased. Many formerly important ports have become economically and physically less accessible... cultural and economic backwaters...'",
+                        explanation: "Paragraph D details why historical ports declined when modern ships outgrew them (Heading v: Reasons for the decline of ports)."
+                    },
+                    {
+                        id: 30,
+                        type: "choice",
+                        prompt: "Choose the most suitable heading for Paragraph E",
+                        options: [
+                            "i. A truly international environment",
+                            "ii. Once a port city, always a port city",
+                            "iii. Good ports make huge profits",
+                            "iv. How the port changes a city's infrastructure",
+                            "v. Reasons for the decline of ports",
+                            "vi. Relative significance of trade and service industry",
+                            "vii. Ports and harbours",
+                            "viii. The demands of the oil industry"
+                        ],
+                        correct_answers: ["vi"],
+                        evidence: "Paragraph E: 'Most of any city's population is engaged in providing goods and services for the city itself... Estimates of the ratio of basic to service workers range from 1:4 to 1:8.'",
+                        explanation: "Paragraph E discusses the ratio and significance of domestic trade vs service industry (Heading vi)."
+                    },
+                    {
+                        id: 31,
+                        type: "choice",
+                        prompt: "Match description: required considerable harbour development",
+                        options: [
+                            "A. Bombay and Buenos Aires",
+                            "B. Hong Kong and Salem",
+                            "C. Istanbul and Jakarta",
+                            "D. Madras and Colombo",
+                            "E. New York and Bristol",
+                            "F. Plymouth and Melaka",
+                            "G. Singapore and Yokohama",
+                            "H. Surat and London"
+                        ],
+                        correct_answers: ["D"],
+                        evidence: "Paragraph A: 'Madras and Colombo are examples of harbours expensively improved by enlarging, dredging and building breakwaters.'",
+                        explanation: "Madras and Colombo required expensive harbour engineering (Option D)."
+                    },
+                    {
+                        id: 32,
+                        type: "choice",
+                        prompt: "Match description: began as ports but other facilities later dominated",
+                        options: [
+                            "A. Bombay and Buenos Aires",
+                            "B. Hong Kong and Salem",
+                            "C. Istanbul and Jakarta",
+                            "D. Madras and Colombo",
+                            "E. New York and Bristol",
+                            "F. Plymouth and Melaka",
+                            "G. Singapore and Yokohama",
+                            "H. Surat and London"
+                        ],
+                        correct_answers: ["C"],
+                        evidence: "Paragraph B: 'Many of the world's biggest cities, for example, London, New York, Shanghai, Istanbul, Buenos Aires, Tokyo, Jakarta... began as ports... but they have since grown disproportionately in other respects...'",
+                        explanation: "Istanbul and Jakarta began as ports but developed dominant other facilities (Option C)."
+                    },
+                    {
+                        id: 33,
+                        type: "choice",
+                        prompt: "Match description: lost their prominence when large ships could not be accommodated",
+                        options: [
+                            "A. Bombay and Buenos Aires",
+                            "B. Hong Kong and Salem",
+                            "C. Istanbul and Jakarta",
+                            "D. Madras and Colombo",
+                            "E. New York and Bristol",
+                            "F. Plymouth and Melaka",
+                            "G. Singapore and Yokohama",
+                            "H. Surat and London"
+                        ],
+                        correct_answers: ["F"],
+                        evidence: "Paragraph D: 'Sea ports have been transformed by the advent of powered vessels, whose size and draught have increased... Examples of these are Charleston, Salem, Bristol, Plymouth, Surat, Galle, Melaka...'",
+                        explanation: "Plymouth and Melaka declined due to modern vessel size (Option F)."
+                    },
+                    {
+                        id: 34,
+                        type: "choice",
+                        prompt: "Match description: maintain their business centres near the port waterfront",
+                        options: [
+                            "A. Bombay and Buenos Aires",
+                            "B. Hong Kong and Salem",
+                            "C. Istanbul and Jakarta",
+                            "D. Madras and Colombo",
+                            "E. New York and Bristol",
+                            "F. Plymouth and Melaka",
+                            "G. Singapore and Yokohama",
+                            "H. Surat and London"
+                        ],
+                        correct_answers: ["G"],
+                        evidence: "Paragraph G: '...This proximity to water is also true of Boston, Philadelphia, Bombay, Calcutta, Madras, Singapore, Bangkok, Hong Kong and Yokohama, where the commercial, financial, and administrative centres are still grouped around their harbours...'",
+                        explanation: "Singapore and Yokohama maintain their commercial centres along the waterfront (Option G)."
+                    },
+                    {
+                        id: 35,
+                        type: "ynng",
+                        prompt: "Cities cease to be port cities when other functions dominate.",
+                        correct_answers: ["NO"],
+                        evidence: "Paragraph B: '...port functions are no longer dominant. They remain different kinds of places from non-port cities and their port functions account for that difference.'",
+                        explanation: "They do not cease to be port cities; their port heritage still defines them. Statement is NO."
+                    },
+                    {
+                        id: 36,
+                        type: "ynng",
+                        prompt: "In the past, many port cities did more trade within their own country than with overseas ports.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph E: 'What evidence we have suggests that domestic trade was greater at all periods than external trade.'",
+                        explanation: "Domestic trade exceeded external trade at all periods. Statement is YES."
+                    },
+                    {
+                        id: 37,
+                        type: "ynng",
+                        prompt: "Most people in a port city are engaged in international trade and finance.",
+                        correct_answers: ["NO"],
+                        evidence: "Paragraph E: 'Most of any city's population is engaged in providing goods and services for the city itself.'",
+                        explanation: "Most citizens provide local goods and services, not international trade. Statement is NO."
+                    },
+                    {
+                        id: 38,
+                        type: "ynng",
+                        prompt: "Ports attract many subsidiary and independent industries.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph F: 'The major examples here are oil refining and ore refining, which are commonly located at ports... A city may still be regarded as a port city when it becomes involved in a great range of functions...'",
+                        explanation: "Ports attract refining and diverse processing industries. Statement is YES."
+                    },
+                    {
+                        id: 39,
+                        type: "ynng",
+                        prompt: "Ports have to establish a common language of trade.",
+                        correct_answers: ["NOT GIVEN"],
+                        evidence: "Paragraph C discusses cosmopolitan culture and mixing of races, but nowhere does it say ports must establish a common language.",
+                        explanation: "The passage does not state that a common language must be established. Statement is NOT GIVEN."
+                    },
+                    {
+                        id: 40,
+                        type: "ynng",
+                        prompt: "Ports often have river connections.",
+                        correct_answers: ["YES"],
+                        evidence: "Paragraph G mentions centres between two river mouths (New York) and on the Thames (London), and Paragraph B mentions water connections drawing railways and highways.",
+                        explanation: "Port cities typically have prominent river and canal water connections. Statement is YES."
+                    }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. ACADEMIC WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 2 (Cambridge IELTS 2)",
+        duration_seconds: 3600,
+        task_1: {
+            task_number: 1,
+            title: "Task 1: Leisure Time by Gender and Employment Status (1998 - 1999)",
+            prompt: `You should spend about 20 minutes on this task.
+
+The chart below shows the amount of leisure time enjoyed by men and women of different employment status in a typical week in 1998-99.
+Write a report for a university lecturer describing the information shown below.
+Write at least 150 words.
+
+Data Summary (Hours of leisure per week in 1998-1999):
+• Employed full-time: Males = 50 hours, Females = 37 hours
+• Employed part-time: Males = (no data), Females = 40 hours
+• Unemployed: Males = 85 hours, Females = 74 hours
+• Retired: Males = 84 hours, Females = 74 hours
+• Housewives: Females = 50 hours (no data for househusbands)`,
+            min_words: 150,
+            chart_svg: `<svg viewBox="0 0 700 320" class="w-full h-auto bg-slate-900 rounded-2xl p-4 text-white font-sans shadow-md">
+                <text x="350" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#38bdf8">Leisure Time in a Typical Week: By Sex and Employment Status (1998-99)</text>
+                <line x1="80" y1="50" x2="80" y2="260" stroke="#475569" stroke-width="1"/>
+                <line x1="80" y1="260" x2="660" y2="260" stroke="#475569" stroke-width="1"/>
+                <!-- Y-axis ticks -->
+                <text x="70" y="260" text-anchor="end" font-size="10" fill="#94a3b8">0</text>
+                <text x="70" y="210" text-anchor="end" font-size="10" fill="#94a3b8">25</text>
+                <text x="70" y="160" text-anchor="end" font-size="10" fill="#94a3b8">50</text>
+                <text x="70" y="110" text-anchor="end" font-size="10" fill="#94a3b8">75</text>
+                <text x="70" y="60" text-anchor="end" font-size="10" fill="#94a3b8">100h</text>
+                <!-- Group 1: Employed Full-time -->
+                <rect x="110" y="160" width="30" height="100" fill="#3b82f6" rx="3"/>
+                <rect x="145" y="186" width="30" height="74" fill="#ec4899" rx="3"/>
+                <text x="142" y="280" text-anchor="middle" font-size="10" fill="#cbd5e1">Employed FT</text>
+                <!-- Group 2: Employed Part-time -->
+                <rect x="235" y="180" width="30" height="80" fill="#ec4899" rx="3"/>
+                <text x="250" y="280" text-anchor="middle" font-size="10" fill="#cbd5e1">Employed PT</text>
+                <!-- Group 3: Unemployed -->
+                <rect x="325" y="90" width="30" height="170" fill="#3b82f6" rx="3"/>
+                <rect x="360" y="112" width="30" height="148" fill="#ec4899" rx="3"/>
+                <text x="357" y="280" text-anchor="middle" font-size="10" fill="#cbd5e1">Unemployed</text>
+                <!-- Group 4: Retired -->
+                <rect x="440" y="92" width="30" height="168" fill="#3b82f6" rx="3"/>
+                <rect x="475" y="112" width="30" height="148" fill="#ec4899" rx="3"/>
+                <text x="472" y="280" text-anchor="middle" font-size="10" fill="#cbd5e1">Retired</text>
+                <!-- Group 5: Housewives -->
+                <rect x="565" y="160" width="30" height="100" fill="#ec4899" rx="3"/>
+                <text x="580" y="280" text-anchor="middle" font-size="10" fill="#cbd5e1">Housewives</text>
+                <!-- Legend -->
+                <rect x="280" y="300" width="12" height="12" fill="#3b82f6" rx="2"/>
+                <text x="300" y="310" font-size="11" fill="#cbd5e1">Males</text>
+                <rect x="360" y="300" width="12" height="12" fill="#ec4899" rx="2"/>
+                <text x="380" y="310" font-size="11" fill="#cbd5e1">Females</text>
+            </svg>`,
+            sample_essay: `The chart shows the number of hours of leisure enjoyed by men and women in a typical week in 1998-9, according to gender and employment status.
+
+Among those employed full-time, men on average had fifty hours of leisure, whereas women had approximately thirty-seven hours. There were no figures given for male part-time workers, but female part-timers had forty hours of leisure time, only slightly more than women in full-time employment, perhaps reflecting their work in the home.
+
+In the unemployed and retired categories, leisure time showed an increase for both sexes, as might have been expected. Here too, men enjoyed more leisure time - over eighty hours, compared with seventy hours for women, perhaps once again reflecting the fact that women spend more time working in the home than men.
+
+Lastly, housewives enjoyed approximately fifty-four hours of leisure, on average. There were no figures given for househusbands! Overall, the chart demonstrates that in the categories for which statistics on male leisure time were available, men enjoyed at least ten hours of extra leisure time.`,
+            band_9_model: `The chart shows the number of hours of leisure enjoyed by men and women in a typical week in 1998-9, according to gender and employment status.
+
+Among those employed full-time, men on average had fifty hours of leisure, whereas women had approximately thirty-seven hours. There were no figures given for male part-time workers, but female part-timers had forty hours of leisure time, only slightly more than women in full-time employment, perhaps reflecting their work in the home.
+
+In the unemployed and retired categories, leisure time showed an increase for both sexes, as might have been expected. Here too, men enjoyed more leisure time - over eighty hours, compared with seventy hours for women, perhaps once again reflecting the fact that women spend more time working in the home than men.
+
+Lastly, housewives enjoyed approximately fifty-four hours of leisure, on average. There were no figures given for househusbands! Overall, the chart demonstrates that in the categories for which statistics on male leisure time were available, men enjoyed at least ten hours of extra leisure time.`
+        },
+        task_2: {
+            task_number: 2,
+            title: "Task 2: Prevention vs. Cure in National Healthcare Expenditure",
+            prompt: `You should spend about 40 minutes on this task.
+
+Present a written argument or case to an educated reader with no specialist knowledge of the following topic.
+
+"Prevention is better than cure."
+Out of a country's health budget, a large proportion should be diverted from treatment to spending on health education and preventative measures.
+
+To what extent do you agree or disagree with this statement?
+You should write at least 250 words.
+You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence.`,
+            min_words: 250,
+            sample_essay: `Of course it goes without saying that prevention is better than cure. That is why, in recent years, there has been a growing body of opinion in favour of putting more resources into health education and preventive measures. The argument is that ignorance of, for example, basic hygiene or the dangers of an unhealthy diet or lifestyle needs to be combatted by special nationwide publicity campaigns, as well as longer-term health education.
+
+Obviously, there is a strong human argument for catching any medical condition as early as possible. There is also an economic argument for doing so. Statistics demonstrate the cost-effectiveness of treating a condition in the early stages, rather than delaying until more expensive and prolonged treatment is necessary. Then there are social or economic costs, perhaps in terms of loss of earnings for the family concerned or unemployed benefit paid by the state.
+
+So far so good, but the difficulties start when we try to define what the 'proportion' of the budget should be, particularly if the funds will be 'diverted from treatment'. Decisions on exactly how much of the total health budget should be spent in this way are not a matter for the non-specialist, but should be made on the basis of an accepted health service model.
+
+This is the point at which real problems occur - the formulation of the model. How do we accurately measure which health education campaigns are effective in both medical and financial terms? How do we agree about the medical efficacy of various screening programmes, for example, when the medical establishment itself does not agree? A very rigorous process of evaluation is called for, so that we can make informed decisions.`,
+            band_9_model: `Of course it goes without saying that prevention is better than cure. That is why, in recent years, there has been a growing body of opinion in favour of putting more resources into health education and preventive measures. The argument is that ignorance of, for example, basic hygiene or the dangers of an unhealthy diet or lifestyle needs to be combatted by special nationwide publicity campaigns, as well as longer-term health education.
+
+Obviously, there is a strong human argument for catching any medical condition as early as possible. There is also an economic argument for doing so. Statistics demonstrate the cost-effectiveness of treating a condition in the early stages, rather than delaying until more expensive and prolonged treatment is necessary. Then there are social or economic costs, perhaps in terms of loss of earnings for the family concerned or unemployed benefit paid by the state.
+
+So far so good, but the difficulties start when we try to define what the 'proportion' of the budget should be, particularly if the funds will be 'diverted from treatment'. Decisions on exactly how much of the total health budget should be spent in this way are not a matter for the non-specialist, but should be made on the basis of an accepted health service model.
+
+This is the point at which real problems occur - the formulation of the model. How do we accurately measure which health education campaigns are effective in both medical and financial terms? How do we agree about the medical efficacy of various screening programmes, for example, when the medical establishment itself does not agree? A very rigorous process of evaluation is called for, so that we can make informed decisions.`
+        }
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 2 (Cambridge IELTS 2)",
+        duration_seconds: 840,
+        part_1: [
+            {
+                topic: "Music & Concerts",
+                question: "What musical genres do you most enjoy listening to?",
+                model_answer: "I thoroughly enjoy acoustic folk and classical symphonies, as their nuanced arrangements offer a peaceful auditory retreat after demanding working hours.",
+                key_vocab: ["acoustic folk", "nuanced arrangements", "auditory retreat"]
+            },
+            {
+                topic: "Music & Concerts",
+                question: "Have you ever attended a live music concert or festival?",
+                model_answer: "Yes, I attended an open-air philharmonic concert last summer. The collective energy of the audience coupled with live acoustics made it an unforgettable sensory spectacle.",
+                key_vocab: ["open-air concert", "collective energy", "sensory spectacle"]
+            },
+            {
+                topic: "Leisure & Free Time",
+                question: "How do you typically spend your free time during weekends?",
+                model_answer: "I divide my leisure time between restorative outdoor recreation—such as cycling in suburban parks—and immersing myself in historical non-fiction literature.",
+                key_vocab: ["restorative recreation", "suburban parks", "non-fiction literature"]
+            },
+            {
+                topic: "Leisure & Free Time",
+                question: "Do you feel people in your country have enough leisure time nowadays?",
+                model_answer: "Regrettably, modern working culture often encroaches upon personal downtime. Long commutes and pervasive digital connectivity mean many professionals struggle to achieve genuine relaxation.",
+                key_vocab: ["encroaches upon", "pervasive connectivity", "workplace pressures"]
+            }
+        ],
+        part_2: {
+            title: "Part 2: Long Turn / Cue Card (3 - 4 minutes)",
+            cue_card_title: "Information Gathering: CONCERT (Examiner Interview)",
+            cue_points: [
+                "The type of concert and its location (e.g. rock/folk/jazz at city stadium)",
+                "The ticket cost and transport arrangements to and from the venue",
+                "The size of the audience and length of the performance",
+                "The examiner's personal impressions and overall opinion"
+            ],
+            cues: [
+                "The type of concert and its location (e.g. rock/folk/jazz at city stadium)",
+                "The ticket cost and transport arrangements to and from the venue",
+                "The size of the audience and length of the performance",
+                "The examiner's personal impressions and overall opinion"
+            ],
+            model_answer: `Good afternoon. I would like to enquire about the live concert you attended recently.
+
+Could you tell me what genre of music was featured and where the concert was staged? I understand it was held at the municipal stadium. Regarding admission fees, could you specify how much the tickets cost? 
+
+In terms of logistics, what transport options would you recommend for travelling to and from the stadium, particularly given that parking is notoriously difficult? Furthermore, could you describe the atmosphere and the audience size—did the crowd participate actively throughout the three-hour performance? Finally, I would love to hear your overall verdict on the event and whether you would recommend it to others.`
+        },
+        part_3: [
+            {
+                theme: "Live Music vs. Recorded Audio",
+                question: "Why do many people prefer attending live concerts despite the high cost and inconvenience?",
+                model_answer: "Live performances provide an irreplaceable visceral connection between artist and audience. The communal resonance of sharing musical euphoria with thousands of fellow enthusiasts cannot be replicated through headphones."
+            },
+            {
+                theme: "Public Funding for the Arts",
+                question: "Should municipal governments subsidise cultural musical events for the public?",
+                model_answer: "Without a doubt. Cultural enrichment should not be the exclusive privilege of affluent demographics. Public subsidies ensure accessible ticket prices, foster civic cohesion, and preserve intangible artistic heritage."
+            },
+            {
+                theme: "Preventative Healthcare and Society",
+                question: "To what extent can public health education campaigns reduce national medical expenses?",
+                model_answer: "Preventative education yields profound compound dividends. By cultivating awareness regarding balanced nutrition, routine exercise, and early symptom detection, governments can significantly alleviate the crushing financial burdens imposed by chronic lifestyle-induced diseases."
+            },
+            {
+                theme: "Gender Equity in Domestic Work",
+                question: "Why do working women often have less leisure time than their male counterparts?",
+                model_answer: "Sociological studies consistently highlight the 'second shift' phenomenon, wherein working women shoulder a disproportionate share of domestic maintenance and childcare after standard working hours, curtailing their discretionary leisure."
+            }
+        ]
+    }
+};
+
+
+
+// =========================================================================
+// MASTER IELTS PROFILE DATA (CAMBRIDGE 1 & CAMBRIDGE 2 AUTHENTIC TESTS)
+// =========================================================================
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1",
-    curriculum: "Cambridge IELTS 1 Academic Practice Tests (4 Full Tests: Listening | Reading | Writing | Speaking)",
+    age: "Cambridge 1 & 2",
+    curriculum: "Cambridge IELTS Official Practice Tests (Listening | Reading | Writing | Speaking)",
     units: {
         "cam_1_test_1": { title: "Cambridge IELTS 1 - Test 1" },
         "cam_1_test_2": { title: "Cambridge IELTS 1 - Test 2" },
         "cam_1_test_3": { title: "Cambridge IELTS 1 - Test 3" },
-        "cam_1_test_4": { title: "Cambridge IELTS 1 - Test 4" }
+        "cam_1_test_4": { title: "Cambridge IELTS 1 - Test 4" },
+        "cam_2_test_1": { title: "Cambridge IELTS 2 - Test 1" },
+        "cam_2_test_2": { title: "Cambridge IELTS 2 - Test 2" }
     },
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
         "cam_1_test_3": cam1Test3,
-        "cam_1_test_4": cam1Test4
+        "cam_1_test_4": cam1Test4,
+        "cam_2_test_1": cam2Test1,
+        "cam_2_test_2": cam2Test2
     }
 };
 
@@ -1368,5 +4154,5 @@ if (typeof studentsDB !== "undefined") {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = { ieltsProfileData, cam1Test1, cam1Test2, cam1Test3, cam1Test4 };
+    module.exports = { ieltsProfileData, cam1Test1, cam1Test2, cam1Test3, cam1Test4, cam2Test1, cam2Test2 };
 }
