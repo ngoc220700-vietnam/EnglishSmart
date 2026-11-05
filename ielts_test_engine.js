@@ -225,7 +225,7 @@ function renderIeltsTestView() {
             let optHtml = '';
             for (const bKey in books) {
                 const b = books[bKey];
-                const icon = bKey === 'cam_1' ? '\uD83D\uDCD8' : (bKey === 'cam_2' ? '\uD83D\uDCD9' : '\uD83D\uDCD7');
+                const icon = bKey === 'cam_1' ? '\uD83D\uDCD8' : (bKey === 'cam_2' ? '\uD83D\uDCD9' : (bKey === 'cam_3' ? '\uD83D\uDCD7' : '\uD83D\uDCD5'));
                 const tCount = b.test_ids ? b.test_ids.length : 4;
                 optHtml += `<optgroup label="${icon} ${b.title} (${tCount} ${tCount > 1 ? 'Tests' : 'Test'})">`;
                 const tIds = b.test_ids || [`${bKey}_test_1`, `${bKey}_test_2`, `${bKey}_test_3`, `${bKey}_test_4`];

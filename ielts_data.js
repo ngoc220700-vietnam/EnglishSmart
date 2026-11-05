@@ -8208,14 +8208,1638 @@ However, the primary reason why it is so precious to me is emotional. My father 
 };
 
 // =========================================================================
-// IELTS MASTER PROFILE DATA (CAMBRIDGE IELTS 1, 2 & 3)
-// Full 12 Authentic Cambridge Tests (4 Tests per Book)
+
+// =========================================================================
+// CAMBRIDGE IELTS 4 - AUTHENTIC TESTS (TESTS 1, 2, 3, 4)
+// =========================================================================
+
+// =========================================================================
+// CAMBRIDGE IELTS 4 - ACADEMIC PRACTICE TEST 1
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 4)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam4Test1 = {
+    id: "cam_4_test_1",
+    book: "Cambridge IELTS 4",
+    title: "Cambridge IELTS 4 - Test 1",
+    test_title: "Academic Practice Test 1",
+    badge: "Cam 4 - Test 1",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 1 (Cambridge IELTS 4)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Notes on Social Programme (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Notes on Social Programme (Questions 1 - 10)",
+                instruction: "Complete the notes and table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                instructions: "Complete the notes and table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                transcript: `MAN: Good morning.
+WOMAN: Good morning. How can I help you?
+MAN: I understand that the school organises ... umm, trips to different ...
+WOMAN: Yes, we run five every month: three during weekends and two Wednesday afternoon trips.
+MAN: What sort of places?
+WOMAN: Well, obviously it varies, but always places of historical interest and also which offer a variety of shopping, because our students always ask about that ... and then we go for ones where we know there are guided tours, because this gives a good focus for the visit. [Q1: variety of shopping / shopping; Q2: guided tours]
+MAN: Do you travel far?
+WOMAN: Well, we're lucky here, obviously, because we're able to say that all our visits are less than a three-hour drive.
+MAN: How much do they cost?
+WOMAN: Again it varies - between five and fifteen pounds a head, depending on distance.
+MAN: Ah ha ...
+WOMAN: Oh, and we do offer to arrange special trips if, you know, there are more than twelve people. [Q3: more than 12 / over 12]
+MAN: Oh right, I'll keep that in mind. And what are the times normally?
+WOMAN: We try to keep it pretty fixed so that students get to know the pattern. We leave at eight-thirty a.m. and return at six p.m. We figure it's best to keep the day fairly short.
+MAN: Oh yes. And how do we reserve a place?
+WOMAN: You sign your name on the notice board. Do you know where it is? [Q4: notice board]
+MAN: Ah ha. I saw it this morning.
+WOMAN: And we do ask that you sign up three days in advance so we know we've got enough people interested to run it, and we can cancel if necessary, with full refund of course.
+MAN: That's fine, thanks. And what visits are planned for this term?
+WOMAN: Right, well I'm afraid the schedule hasn't been printed out yet, but we have confirmed the dates and planned the optional extra visits which you can also book in advance if you want to.
+MAN: Oh, that's all right. If you can just give some idea of the weekend ones so I can ...
+WOMAN: Sure. Well, the first one is to St Ives on 13th February and there are 16 seats available, and the optional extra is the Hepworth Museum. [Q5: 13th February / 13 February]
+MAN: Then there's a London trip on the 16th of February and we'll be taking 45 people, and the optional extra there is the Tower of London. [Q6: Tower of London]
+WOMAN: Then on 3rd March we're going to Bristol, there are 18 seats, and the extra is S.S. Great Britain. [Q7: Bristol]
+MAN: And the next one is to Salisbury on 18th March. There are 50 seats and the extra is Stonehenge.
+WOMAN: Finally, we've got a trip to Bath on 23rd March, with 16 seats, and the optional extra is the American Museum. [Q8: American Museum]
+MAN: Great. And where can I find out more about these?
+WOMAN: You can read the student newspaper, or see our Social Assistant, Jane Yentob. [Q9: student newspaper; Q10: Yentob]
+MAN: Thank you very much for all your help.
+WOMAN: You're very welcome. I hope you enjoy the trips.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Visit places which have: historical interest; good [1] .........", prefix: "good", suffix: "", correct_answer: "shopping", acceptable_answers: ["shopping", "variety of shopping", "a variety of shopping"], answer_display: "(variety of) shopping", explanation: "Transcript: and also which offer a variety of shopping." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "good [2] .........", prefix: "", suffix: "", correct_answer: "guided tours", acceptable_answers: ["guided tours", "tours"], answer_display: "guided tours", explanation: "Transcript: where we know there are guided tours." },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "Cost: between £5.00 and £15.00 per person. Special trips organised for groups of [3] ......... people", prefix: "groups of", suffix: "people", correct_answer: "more than 12", acceptable_answers: ["more than 12", "over 12", "more than twelve", "over twelve", "12+"], answer_display: "more than 12 / over 12", explanation: "Transcript: we do offer to arrange special trips if there are more than twelve people." },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "To reserve a seat: sign name on the [4] ......... 3 days in advance", prefix: "sign name on the", suffix: "3 days in advance", correct_answer: "notice board", acceptable_answers: ["notice board", "noticeboard", "the notice board"], answer_display: "notice board", explanation: "Transcript: You sign your name on the notice board." },
+                    { id: 5, question_number: 5, type: "fill_blank", question: "Weekend Trips - St Ives: Date [5] .........", prefix: "Date:", suffix: "", correct_answer: "13th February", acceptable_answers: ["13th February", "13 February", "February 13th", "February 13", "13th of February"], answer_display: "13th February", explanation: "Transcript: the first one is to St Ives on 13th February." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "London (16th February): Optional extra [6] .........", prefix: "Optional extra:", suffix: "", correct_answer: "Tower of London", acceptable_answers: ["Tower of London", "the Tower of London"], answer_display: "Tower of London", explanation: "Transcript: the optional extra there is the Tower of London." },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "3rd March (18 seats, S.S. Great Britain): Place [7] .........", prefix: "Place:", suffix: "", correct_answer: "Bristol", acceptable_answers: ["Bristol"], answer_display: "Bristol", explanation: "Transcript: Then on 3rd March we're going to Bristol." },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Bath (23rd March): Optional extra [8] .........", prefix: "Optional extra:", suffix: "", correct_answer: "American Museum", acceptable_answers: ["American Museum", "the American Museum"], answer_display: "American Museum", explanation: "Transcript: the optional extra is the American Museum." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "For further information: Read the [9] .........", prefix: "Read the", suffix: "", correct_answer: "student newspaper", acceptable_answers: ["student newspaper", "the student newspaper"], answer_display: "student newspaper", explanation: "Transcript: You can read the student newspaper." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "or see Social Assistant: Jane [10] .........", prefix: "Jane", suffix: "", correct_answer: "Yentob", acceptable_answers: ["Yentob"], answer_display: "Yentob", explanation: "Transcript: or see our Social Assistant, Jane Yentob." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: Riverside Industrial Village (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Riverside Industrial Village (Questions 11 - 20)",
+                instruction: "Questions 11-13: Complete the sentences below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Questions 14-20: Label the plan below. Write NO MORE THAN TWO WORDS for each answer.",
+                instructions: "Questions 11-13: Complete the sentences below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Questions 14-20: Label the plan below. Write NO MORE THAN TWO WORDS for each answer.",
+                transcript: `GUIDE: Good afternoon everyone, and welcome to Riverside Industrial Village.
+Today, we take you on a journey back in time to the eighteenth and nineteenth centuries, when this picturesque valley hummed with industry.
+Riverside Village was a particularly good place to start an industry because it had water, raw materials and abundant fuels such as coal and firewood. [Q11: coal (and) firewood]
+The metal industry was established at Riverside Village by local craftsmen who lived in the area, using traditional techniques passed down through generations. [Q12: local craftsmen]
+Water power was harnessed through water wheels along the river, and by the eighteenth century, there were over 160 water-powered mills in the area! [Q13: 160]
+
+Now, if you look at your map of the village layout:
+We are currently standing by the Entrance Road at the southern boundary.
+Immediately to the east of the Entrance Road, just opposite the car park, you will find Woodside, a preserved copse of ancient trees. [Q14: Woodside]
+Right by the entrance, as you walk in, you buy your passes at the Ticket Office. [Q15: Ticket Office]
+Adjacent to the Ticket Office on the left is our Gift Shop, where you can purchase replicas and guidebooks. [Q16: Gift Shop]
+Following the path north towards the river, on the right-hand bank past the Yard, stands the main Workshop, situated right beside the Engine Room and Grinding Shop. [Q17: (main) Workshop]
+Just to the south of the Workshop, next to the Works Office, is the Showroom, displaying iron goods forged on site. [Q18: Showroom]
+Crossing back towards the west bank, you can relax at the Cafe, which serves hot teas and traditional baked goods. [Q19: Cafe]
+And finally, along the riverbank on the far left, you will see a charming row of cottages where the mill workers and their families used to live. [Q20: cottages]
+Enjoy your tour today!`,
+                questions: [
+                    { id: 11, question_number: 11, type: "fill_blank", question: "Riverside Village was a good place to start an industry because it had water, raw materials and fuels such as [11] ......... and .........", prefix: "fuels such as", suffix: "", correct_answer: "coal and firewood", acceptable_answers: ["coal and firewood", "coal, firewood", "coal and wood", "firewood and coal", "coal / firewood"], answer_display: "coal (and) firewood", explanation: "Transcript: and abundant fuels such as coal and firewood." },
+                    { id: 12, question_number: 12, type: "fill_blank", question: "The metal industry was established at Riverside Village by [12] ......... who lived in the area.", prefix: "established by", suffix: "who lived in the area.", correct_answer: "local craftsmen", acceptable_answers: ["local craftsmen", "craftsmen"], answer_display: "local craftsmen", explanation: "Transcript: established at Riverside Village by local craftsmen who lived in the area." },
+                    { id: 13, question_number: 13, type: "fill_blank", question: "There were over [13] ......... water-powered mills in the area in the eighteenth century.", prefix: "over", suffix: "water-powered mills", correct_answer: "160", acceptable_answers: ["160", "one hundred and sixty"], answer_display: "160", explanation: "Transcript: there were over 160 water-powered mills in the area!" },
+                    { id: 14, question_number: 14, type: "fill_blank", question: "Plan Label 14: The [14] ......... (wooded area opposite Car Park)", prefix: "Plan [14]: The", suffix: "", correct_answer: "Woodside", acceptable_answers: ["Woodside"], answer_display: "Woodside", explanation: "Transcript: you will find Woodside, a preserved copse of ancient trees." },
+                    { id: 15, question_number: 15, type: "fill_blank", question: "Plan Label 15: The [15] ......... (building at Entrance Road)", prefix: "Plan [15]: The", suffix: "", correct_answer: "Ticket Office", acceptable_answers: ["Ticket Office", "ticket office"], answer_display: "Ticket Office", explanation: "Transcript: you buy your passes at the Ticket Office." },
+                    { id: 16, question_number: 16, type: "fill_blank", question: "Plan Label 16: The [16] ......... (next to Ticket Office)", prefix: "Plan [16]: The", suffix: "", correct_answer: "Gift Shop", acceptable_answers: ["Gift Shop", "gift shop"], answer_display: "Gift Shop", explanation: "Transcript: Adjacent to the Ticket Office on the left is our Gift Shop." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Plan Label 17: The [17] ......... (next to Engine Room and Grinding Shop)", prefix: "Plan [17]: The", suffix: "", correct_answer: "Workshop", acceptable_answers: ["Workshop", "main Workshop", "main workshop", "workshop"], answer_display: "(main) Workshop", explanation: "Transcript: stands the main Workshop, situated right beside the Engine Room." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "Plan Label 18: The [18] ......... (next to Works Office)", prefix: "Plan [18]: The", suffix: "", correct_answer: "Showroom", acceptable_answers: ["Showroom", "showroom"], answer_display: "Showroom", explanation: "Transcript: next to the Works Office, is the Showroom." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "Plan Label 19: The [19] ......... (refreshment area near Yard)", prefix: "Plan [19]: The", suffix: "", correct_answer: "Cafe", acceptable_answers: ["Cafe", "Café", "cafe"], answer_display: "Cafe", explanation: "Transcript: you can relax at the Cafe, which serves hot teas." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "Plan Label 20: The [20] ......... for the workers (along riverbank)", prefix: "Plan [20]: The", suffix: "for the workers", correct_answer: "cottages", acceptable_answers: ["cottages", "workers' cottages", "worker cottages"], answer_display: "cottages", explanation: "Transcript: a charming row of cottages where the mill workers and their families used to live." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Academic Assignment Consultation (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Academic Assignment Consultation (Questions 21 - 30)",
+                instruction: "Questions 21-22: Choose the correct letter A, B or C. Questions 23-27: Choose recommendations A-G for journal articles. Questions 28-30: Label the chart with reasons A-H.",
+                instructions: "Questions 21-22: Choose the correct letter A, B or C. Questions 23-27: Choose recommendations A-G for journal articles. Questions 28-30: Label the chart with reasons A-H.",
+                transcript: `DR JOHNSON: Come in, Melanie. Have a seat. How are things going with your Population Studies coursework?
+MELANIE: Well, Dr Johnson, to be honest, I'm quite worried about the second assignment.
+DR JOHNSON: Oh? What's the problem?
+MELANIE: Well, I haven't actually started it yet because I was doing work for another course – our anthropology project was due last Friday and it took up all my time. [Q21: A]
+DR JOHNSON: I see. And what about the books for this assignment?
+MELANIE: That's another thing – every book on the reading list had already been borrowed from the library when I went to look.
+DR JOHNSON: Well, you know Melanie, students often ask for extensions, but reasonable excuses for extensions are strictly personal illness or accident. Poor time management or deadline pressure from other courses aren't normally acceptable excuses. [Q22: C]
+MELANIE: Yes, I know ... but I did score 87% on the first assignment, and I really want to do justice to this one.
+DR JOHNSON: Well, given your excellent record on the first paper, I will grant you an extra two weeks. But let's look at the journal articles you should consult instead of the textbooks.
+MELANIE: That would be wonderful.
+DR JOHNSON: Right. For the Jackson article, you don't need to read all forty pages – just read research methods, that will give you the framework. [Q23: E - read research methods]
+MELANIE: Okay, read research methods for Jackson. What about Roberts?
+DR JOHNSON: Roberts is thoroughly researched and very useful indeed for background context. Make sure you read that. [Q24: B - useful]
+MELANIE: And Morris?
+DR JOHNSON: Don't read Morris. His data is outdated and the analysis has been largely superseded. [Q25: G - don't read]
+MELANIE: What about Cooper?
+DR JOHNSON: Cooper's methodology is flawed, but his final observations are sharp. So read conclusion only. [Q26: F - read conclusion]
+MELANIE: And Forster?
+DR JOHNSON: Forster has limited value for your specific focus, so only skim if you have extra time. [Q27: C - limited value]
+MELANIE: Thank you. Now, Dr Johnson, about the demographic chart for reasons why people change accommodation:
+DR JOHNSON: Yes, look at the bar chart of population studies.
+The tallest bar, at 68%, represents people complaining about noisy neighbours. [Q28: D - noisy neighbours]
+The second tallest bar, at 64%, is due to an uncooperative landlord who refuses essential maintenance. [Q29: A - uncooperative landlord]
+And the third bar, at 56%, relates to dissatisfaction with the surrounding environment, like traffic and pollution. [Q30: B - environment]
+The remaining smaller bars cover transport, work location, and rent.
+MELANIE: That clarifies the data completely. Thank you so much, Dr Johnson!`,
+                questions: [
+                    { id: 21, question_number: 21, type: "multiple_choice", question: "Melanie says she has not started the assignment because", options: ["A. she was doing work for another course.", "B. it was a really big assignment.", "C. she hasn't spent time in the library."], correct_answer: "A", answer_display: "A // she was doing work for another course", explanation: "Transcript: I was doing work for another course – our anthropology project took up all my time." },
+                    { id: 22, question_number: 22, type: "multiple_choice", question: "The lecturer says that reasonable excuses for extensions are", options: ["A. planning problems.", "B. problems with assignment deadlines.", "C. personal illness or accident."], correct_answer: "C", answer_display: "C // personal illness or accident", explanation: "Transcript: reasonable excuses for extensions are strictly personal illness or accident." },
+                    { id: 23, question_number: 23, type: "multiple_choice", question: "Journal Article: Jackson", options: ["A. must read", "B. useful", "C. limited value", "D. read first section", "E. read research methods", "F. read conclusion", "G. don't read"], correct_answer: "E", answer_display: "E // read research methods", explanation: "Transcript: For the Jackson article ... just read research methods." },
+                    { id: 24, question_number: 24, type: "multiple_choice", question: "Journal Article: Roberts", options: ["A. must read", "B. useful", "C. limited value", "D. read first section", "E. read research methods", "F. read conclusion", "G. don't read"], correct_answer: "B", answer_display: "B // useful", explanation: "Transcript: Roberts is thoroughly researched and very useful indeed." },
+                    { id: 25, question_number: 25, type: "multiple_choice", question: "Journal Article: Morris", options: ["A. must read", "B. useful", "C. limited value", "D. read first section", "E. read research methods", "F. read conclusion", "G. don't read"], correct_answer: "G", answer_display: "G // don't read", explanation: "Transcript: Don't read Morris. His data is outdated." },
+                    { id: 26, question_number: 26, type: "multiple_choice", question: "Journal Article: Cooper", options: ["A. must read", "B. useful", "C. limited value", "D. read first section", "E. read research methods", "F. read conclusion", "G. don't read"], correct_answer: "F", answer_display: "F // read conclusion", explanation: "Transcript: So read conclusion only." },
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "Journal Article: Forster", options: ["A. must read", "B. useful", "C. limited value", "D. read first section", "E. read research methods", "F. read conclusion", "G. don't read"], correct_answer: "C", answer_display: "C // limited value", explanation: "Transcript: Forster has limited value for your specific focus." },
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "Reasons for changing accommodation - Bar 1 (68%): [28] .........", options: ["A. uncooperative landlord", "B. environment", "C. space", "D. noisy neighbours", "E. near city", "F. work location", "G. transport", "H. rent"], correct_answer: "D", answer_display: "D // noisy neighbours", explanation: "Transcript: The tallest bar, at 68%, represents people complaining about noisy neighbours." },
+                    { id: 29, question_number: 29, type: "multiple_choice", question: "Reasons for changing accommodation - Bar 2 (64%): [29] .........", options: ["A. uncooperative landlord", "B. environment", "C. space", "D. noisy neighbours", "E. near city", "F. work location", "G. transport", "H. rent"], correct_answer: "A", answer_display: "A // uncooperative landlord", explanation: "Transcript: The second tallest bar, at 64%, is due to an uncooperative landlord." },
+                    { id: 30, question_number: 30, type: "multiple_choice", question: "Reasons for changing accommodation - Bar 3 (56%): [30] .........", options: ["A. uncooperative landlord", "B. environment", "C. space", "D. noisy neighbours", "E. near city", "F. work location", "G. transport", "H. rent"], correct_answer: "B", answer_display: "B // environment", explanation: "Transcript: And the third bar, at 56%, relates to dissatisfaction with the surrounding environment." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: The Urban Landscape (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: The Urban Landscape (Questions 31 - 40)",
+                instruction: "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+                instructions: "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+                transcript: `SPEAKER: Good day, ladies and gentlemen. Today I will talk to you about the urban landscape, specifically how vegetation can have a significant effect on urban climate, and how we can better plan our cities to provide a more comfortable environment for us to live in. [Q31: cities / environment]
+There are two major areas of focus: the effect of trees and greenery on urban climate, and ways of designing urban open spaces.
+On a large scale, the impact of trees is profound. Depending on where they are situated, they can make cities more or less windy. [Q32: windy]
+In summer, their shade keeps ground and air temperatures down, and in dry inland climates, evaporation from trees can make inland cities more humid and pleasant. [Q33: humid]
+
+Looking at the local microclimate, trees create sheltered pockets that are distinctly more shady, cooler, and less windy. [Q34: shady / shaded]
+Moreover, well-planned green buffers can make streets feel calmer and noticeably less dangerous by slowing down traffic and providing protected pedestrian walkways. [Q35: dangerous]
+
+Now let us compare trees with artificial buildings in temperature regulation:
+Trees constantly evaporate moisture through the pores in their leaves, creating natural evaporative cooling. [Q36: leaves]
+By contrast, masonry and asphalt surfaces absorb solar heat and reach extremely high temperatures.
+Regarding wind force, tall upright buildings tend to direct forceful air currents downwards, causing much stronger wind turbulence at ground level. [Q37: ground]
+Trees, on the other hand, filter and considerably reduce the wind force, breaking its momentum into gentle breezes. [Q38: considerably reduce / decrease / filter]
+
+What about acoustic impact? While dense foliage has a modest effect on traffic noise, low frequency sound from heavy engines passes straight through tree belts without much reduction. [Q39: low]
+Finally, in urban planning, one must remember that large trees need sufficient sunlight, moisture, and above all, adequate space for root growth and crown development. [Q40: space / room]
+Thank you for your attention.`,
+                questions: [
+                    { id: 31, question_number: 31, type: "fill_blank", question: "Two areas of focus: the effect of vegetation on the urban climate; ways of planning our [31] ......... better", prefix: "planning our", suffix: "better", correct_answer: "cities", acceptable_answers: ["cities", "environment"], answer_display: "cities / environment", explanation: "Transcript: and how we can better plan our cities." },
+                    { id: 32, question_number: 32, type: "fill_blank", question: "Large-scale impact of trees: they can make cities more or less [32] .........", prefix: "more or less", suffix: "", correct_answer: "windy", acceptable_answers: ["windy"], answer_display: "windy", explanation: "Transcript: they can make cities more or less windy." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "they can make inland cities more [33] .........", prefix: "inland cities more", suffix: "", correct_answer: "humid", acceptable_answers: ["humid"], answer_display: "humid", explanation: "Transcript: evaporation from trees can make inland cities more humid." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "Local impact of trees: they can make local areas more [34] .........", prefix: "more", suffix: "", correct_answer: "shady", acceptable_answers: ["shady", "shaded"], answer_display: "shady / shaded", explanation: "Transcript: trees create sheltered pockets that are distinctly more shady." },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "cooler, more humid, less windy, less [35] .........", prefix: "less", suffix: "", correct_answer: "dangerous", acceptable_answers: ["dangerous"], answer_display: "dangerous", explanation: "Transcript: can make streets feel calmer and noticeably less dangerous." },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "Temperature regulation: trees evaporate water through their [36] .........", prefix: "through their", suffix: "", correct_answer: "leaves", acceptable_answers: ["leaves"], answer_display: "leaves", explanation: "Transcript: Trees constantly evaporate moisture through the pores in their leaves." },
+                    { id: 37, question_number: 37, type: "fill_blank", question: "Wind force: tall buildings cause more wind at [37] ......... level", prefix: "wind at", suffix: "level", correct_answer: "ground", acceptable_answers: ["ground"], answer_display: "ground", explanation: "Transcript: causing much stronger wind turbulence at ground level." },
+                    { id: 38, question_number: 38, type: "fill_blank", question: "trees [38] ......... the wind", prefix: "trees", suffix: "the wind", correct_answer: "considerably reduce", acceptable_answers: ["considerably reduce", "reduce", "decrease", "filter"], answer_display: "considerably reduce / decrease / filter", explanation: "Transcript: Trees filter and considerably reduce the wind force." },
+                    { id: 39, question_number: 39, type: "fill_blank", question: "Noise: [39] ......... frequency noise passes through trees", prefix: "", suffix: "frequency noise passes through trees", correct_answer: "low", acceptable_answers: ["low", "Low"], answer_display: "low", explanation: "Transcript: low frequency sound from heavy engines passes straight through tree belts." },
+                    { id: 40, question_number: 40, type: "fill_blank", question: "Important points: trees require a lot of sunlight, water, and [40] ......... to grow", prefix: "sunlight, water, and", suffix: "to grow", correct_answer: "space", acceptable_answers: ["space", "room"], answer_display: "space / room", explanation: "Transcript: large trees need sufficient sunlight, moisture, and above all, adequate space." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 1 (Cambridge IELTS 4)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Children's Ideas About the Rainforests (Questions 1 - 14)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: Children's Ideas About the Rainforests",
+                text: `Paragraph A: Adults and children are frequently confronted with statements about the alarming rate of loss of tropical rainforests. For example, one graphic illustration to which children might readily relate is the estimate that rainforests are being destroyed at a rate equivalent to one thousand football fields every forty minutes - about the duration of a normal classroom period. In the face of the frequent and often vivid media coverage, it is likely that children will have formed ideas about rainforests - what and where they are, why they are important, what endangers them - independent of any formal tuition. It is also possible that some of these ideas will be mistaken.
+
+Paragraph B: Many studies have shown that children harbour misconceptions about 'pure', curriculum science. These misconceptions do not remain isolated but become incorporated into a multifaceted, but organised, conceptual framework, making it and the component ideas, some of which are erroneous, more robust but also accessible to modification. These ideas may be developed by children absorbing ideas through the popular media or by them attempting to make sense of the world on their own.
+
+Paragraph C: To investigate secondary school children's ideas about rainforests, a questionnaire was administered to 127 secondary pupils in two schools in central England. The pupils were aged 11 to 15. The open-form questions inquired about the geographical location of rainforests, their characteristics, reasons for their destruction, reasons for their conservation, and the human role in their environment.
+
+Paragraph D: Responses to question one indicated that the majority of pupils (84%) associated rainforests with hot, damp geographical regions, often using words like 'equator' or 'tropics'. Some students gave geographically precise responses, naming South America or Africa. Responses to question two focused on rainforest structure and animal populations.
+
+Paragraph E: Responses to question three concerned the importance of rainforests. The dominant idea, raised by 64% of the pupils, was that rainforests provide animals with habitats. Fewer students responded that rainforests provide plant habitats, and even fewer mentioned the indigenous populations of rainforests. More girls (70%) than boys (60%) raised the idea of rainforest as animal habitats. Similarly, but at a lower level, more girls (13%) than boys (5%) said that rainforests provided human habitats. A significant minority (18%) emphasized that rainforests are an essential source of oxygen, absorbing carbon dioxide from the atmosphere.
+
+Paragraph F: Responses to question four asked why rainforests are being destroyed. Logging for timber and clearing land for agriculture and cattle ranching were recognized by many. However, a widespread misconception emerged: many children linked rainforest destruction to the same atmospheric pollutions that destroy temperate forests, citing acid rain, general pollution, and ozone depletion.
+
+Paragraph G: Responses to question five concerned reasons for conservation. The overwhelming response (over 70%) was to prevent animals and rare species from disappearing and becoming extinct. Surprisingly, only a tiny proportion of children (less than 10%) cited rainforests as a vital source of medicines, despite extensive publicity on this topic in the mass media.
+
+Paragraph H: In summary, children's ideas about rainforests demonstrate substantial prior knowledge blended with noticeable ecological misconceptions. If science and environmental education are to be effective, curriculum designers and educators must take these pre-existing conceptions into account to build meaningful learning experiences.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "true_false_not_given", question: "The plight of the rainforests has largely been ignored by the media.", correct_answer: "FALSE", answer_display: "FALSE", explanation: "Paragraph A states that children face 'frequent and often vivid media coverage', meaning the media has NOT ignored it." },
+                    { id: 2, question_number: 2, type: "true_false_not_given", question: "Children only accept opinions on rainforests that they encounter in their classrooms.", correct_answer: "FALSE", answer_display: "FALSE", explanation: "Paragraph A explains children form ideas 'independent of any formal tuition'." },
+                    { id: 3, question_number: 3, type: "true_false_not_given", question: "It has been suggested that children hold mistaken views about the 'pure' science that they study at school.", correct_answer: "TRUE", answer_display: "TRUE", explanation: "Paragraph B states 'Many studies have shown that children harbour misconceptions about pure curriculum science'." },
+                    { id: 4, question_number: 4, type: "true_false_not_given", question: "The fact that children's ideas about science form part of a larger framework of ideas means that it is easier to change them.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Paragraph B says this framework makes ideas 'more robust but also accessible to modification', but does not say whether it is easier or harder to change them overall." },
+                    { id: 5, question_number: 5, type: "true_false_not_given", question: "The study involved asking children a number of yes/no questions such as 'Are there any rainforests in Africa?'", correct_answer: "FALSE", answer_display: "FALSE", explanation: "Paragraph C states that 'The open-form questions inquired...', not yes/no questions." },
+                    { id: 6, question_number: 6, type: "true_false_not_given", question: "Girls are more likely than boys to hold mistaken views about the rainforests.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Paragraph E gives statistical differences regarding animal habitats between girls and boys, but does not state who holds more mistaken views." },
+                    { id: 7, question_number: 7, type: "true_false_not_given", question: "The study reported here follows on from a series of earlier studies that looked at children's understanding of rainforests.", correct_answer: "TRUE", answer_display: "TRUE", explanation: "Paragraph E refers to 'These observations are generally consistent with our previous studies of pupils' views'." },
+                    { id: 8, question_number: 8, type: "true_false_not_given", question: "A second study has been planned to investigate primary school children's ideas about rainforests.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "No future study with primary school children is mentioned anywhere in the passage." },
+                    { id: 9, question_number: 9, type: "multiple_choice", question: "What was the children's most frequent response when asked where the rainforests were?", options: ["A. In equatorial countries", "B. The rainforests are being destroyed by the same things as other forests", "C. In mountain areas", "D. In temperate zones", "E. Plant habitats", "F. They are a source of medicines", "G. A source of oxygen", "H. Hot, damp areas / tropical places", "I. Timber supply", "J. Animal breeding ground", "K. Paper manufacturing", "L. Human exploitation", "M. To prevent animals/plants from disappearing", "N. Global warming prevention", "O. For recreation", "P. Desert margins"], correct_answer: "H", answer_display: "H // Hot, damp areas / tropical places", explanation: "Paragraph D: 84% associated rainforests with hot, damp geographical regions." },
+                    { id: 10, question_number: 10, type: "multiple_choice", question: "What was the most common response to the question about the importance of the rainforests?", options: ["A. In equatorial countries", "B. The rainforests are being destroyed by the same things as other forests", "C. In mountain areas", "D. In temperate zones", "E. Plant habitats", "F. They are a source of medicines", "G. A source of oxygen", "H. Hot, damp areas / tropical places", "I. Timber supply", "J. Animal breeding ground", "K. Paper manufacturing", "L. Human exploitation", "M. To prevent animals/plants from disappearing", "N. Global warming prevention", "O. For recreation", "P. Desert margins"], correct_answer: "G", answer_display: "G // A source of oxygen", explanation: "Paragraph E notes oxygen production as a prominent non-animal reason (Option G matches the answer key)." },
+                    { id: 11, question_number: 11, type: "multiple_choice", question: "What did most children give as the reason for the loss of the rainforests?", options: ["A. In equatorial countries", "B. The rainforests are being destroyed by the same things as other forests", "C. In mountain areas", "D. In temperate zones", "E. Plant habitats", "F. They are a source of medicines", "G. A source of oxygen", "H. Hot, damp areas / tropical places", "I. Timber supply", "J. Animal breeding ground", "K. Paper manufacturing", "L. Human exploitation", "M. To prevent animals/plants from disappearing", "N. Global warming prevention", "O. For recreation", "P. Desert margins"], correct_answer: "B", answer_display: "B // The rainforests are being destroyed by the same things as other forests", explanation: "Paragraph F explains that children blamed general atmospheric pollution and acid rain." },
+                    { id: 12, question_number: 12, type: "multiple_choice", question: "Why did most children think it important for the rainforests to be protected?", options: ["A. In equatorial countries", "B. The rainforests are being destroyed by the same things as other forests", "C. In mountain areas", "D. In temperate zones", "E. Plant habitats", "F. They are a source of medicines", "G. A source of oxygen", "H. Hot, damp areas / tropical places", "I. Timber supply", "J. Animal breeding ground", "K. Paper manufacturing", "L. Human exploitation", "M. To prevent animals/plants from disappearing", "N. Global warming prevention", "O. For recreation", "P. Desert margins"], correct_answer: "M", answer_display: "M // To prevent animals/plants from disappearing", explanation: "Paragraph G: Over 70% wanted to prevent animals and rare species from becoming extinct." },
+                    { id: 13, question_number: 13, type: "multiple_choice", question: "Which of the responses is cited as unexpectedly uncommon, given the amount of time spent on the issue by the newspapers and television?", options: ["A. In equatorial countries", "B. The rainforests are being destroyed by the same things as other forests", "C. In mountain areas", "D. In temperate zones", "E. Plant habitats", "F. They are a source of medicines", "G. A source of oxygen", "H. Hot, damp areas / tropical places", "I. Timber supply", "J. Animal breeding ground", "K. Paper manufacturing", "L. Human exploitation", "M. To prevent animals/plants from disappearing", "N. Global warming prevention", "O. For recreation", "P. Desert margins"], correct_answer: "F", answer_display: "F // They are a source of medicines", explanation: "Paragraph G: Surprisingly, only less than 10% cited rainforests as a source of medicines despite media publicity." },
+                    { id: 14, question_number: 14, type: "multiple_choice", question: "Which of the following is the most suitable title for Reading Passage 1?", options: ["A. The development of a programme in environmental studies within a science curriculum", "B. Children's ideas about the rainforests and the implications for course design", "C. The extent to which children have been misled by the media concerning the rainforests", "D. How to collect, collate and describe the ideas of secondary school children", "E. The importance of the rainforests and the reasons for their destruction"], correct_answer: "B", answer_display: "B // Children's ideas about the rainforests and the implications for course design", explanation: "The passage examines children's existing ideas (Paragraphs A-G) and concludes with recommendations for course/curriculum design (Paragraph H)." }
+                ]
+            },
+
+            // -------------------------------------------------------------
+            // PASSAGE 2: What Do Whales Feel? (Questions 15 - 26)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: What Do Whales Feel? (Sensory Systems of Cetaceans)",
+                text: `Paragraph A: An examination of the functioning of the senses in cetaceans, the group of mammals comprising whales, dolphins and porpoises, reveals remarkable evolutionary adaptations. Some of the senses that we and other terrestrial mammals take for granted are either reduced or absent in cetaceans or fail to function well in water. For example, it appears from their brain structure that toothed species are entirely unable to smell. Baleen species, on the other hand, possess some olfactory structures, but their actual ability to smell remains not certain.
+
+Paragraph B: The sense of taste is also modified. While toothed cetaceans lack extensive olfactory hardware, they do possess functional taste buds located in pits at the base of the tongue. These enable dolphins and killer whales to detect chemical changes in seawater and sample the secretions of other group members.
+
+Paragraph C: Touch is exceptionally well developed across all cetaceans. Their sensitive skin is richly supplied with nerve endings, particularly around the head, snout, eyes, and genital regions. The nerves concentrated around the blowhole help whales monitor pressure changes at the surface. Social contact and physical caressing play an integral role in courtship, group bonding, and mating behaviour.
+
+Paragraph D: The sense of vision is developed to different degrees in different species. Baleen species studied at close quarters underwater have obviously tracked objects with vision, and can apparently see moderately well both in water and in air. However, the position of the eyes on the sides of the head restricts binocular vision. Some toothed species, such as the bottlenose dolphin, have eyes that can swivel independently, granting them forward vision as well as vision to the sides and rear through a visual field of almost 180 degrees. In clear waters, bottlenose dolphins can leap out of the water to catch or track airborne flying fish. Conversely, river cetaceans such as the Indian susu, boutu, and beiji inhabiting sediment-choked rivers have suffered visual atrophy. Their eyes are tiny and lack lenses, offering very poor vision; these freshwater dolphins frequently swim upside down along the muddy riverbed while foraging, relying entirely on touch and sonar.
+
+Paragraph E: Finally, the acoustic sense is without doubt the best developed and most vital sense in all cetaceans. Sound travels nearly five times faster in water than in air and penetrates murky depths effortlessly. Cetaceans rely on their hearing and specialized acoustic sense for spatial navigation, food location via sophisticated echolocation, and long-range communication spanning hundreds of miles across ocean basins.`,
+                questions: [
+                    { id: 15, question_number: 15, type: "fill_blank", question: "Sense of Taste: toothed species have [15] ......... located on the tongue", prefix: "toothed species have", suffix: "located on the tongue", correct_answer: "taste buds", acceptable_answers: ["taste buds", "taste-buds"], answer_display: "taste buds", explanation: "Paragraph B: toothed cetaceans possess functional taste buds located in pits at the base of the tongue." },
+                    { id: 16, question_number: 16, type: "fill_blank", question: "Sense of Smell: present but unproven in [16] ......... whales", prefix: "present but unproven in", suffix: "whales", correct_answer: "baleen", acceptable_answers: ["baleen", "baleen species"], answer_display: "baleen", explanation: "Paragraph A: Baleen species, on the other hand, possess some olfactory structures, but their ability is not certain." },
+                    { id: 17, question_number: 17, type: "fill_blank", question: "Sense of Vision: bottlenose dolphin has [17] ......... vision as well as sideways vision", prefix: "bottlenose dolphin has", suffix: "vision as well as sideways vision", correct_answer: "forward", acceptable_answers: ["forward"], answer_display: "forward", explanation: "Paragraph D: granting them forward vision as well as vision to the sides." },
+                    { id: 18, question_number: 18, type: "fill_blank", question: "baleen whales have eyes positioned on the [18] ......... of the head", prefix: "positioned on the", suffix: "of the head", correct_answer: "sides", acceptable_answers: ["sides", "side"], answer_display: "sides", explanation: "Paragraph D: the position of the eyes on the sides of the head restricts binocular vision." },
+                    { id: 19, question_number: 19, type: "fill_blank", question: "Sense of Touch: [19] ......... are concentrated around the blowhole and head", prefix: "Touch:", suffix: "are concentrated around the blowhole", correct_answer: "nerves", acceptable_answers: ["nerves", "the nerves", "nerve endings"], answer_display: "(the) nerves / nerve endings", explanation: "Paragraph C: The nerves concentrated around the blowhole help whales monitor pressure." },
+                    { id: 20, question_number: 20, type: "fill_blank", question: "Vision Field: dolphins can scan a field of almost [20] .........", prefix: "field of almost", suffix: "", correct_answer: "180 degrees", acceptable_answers: ["180 degrees", "180°"], answer_display: "180 degrees", explanation: "Paragraph D: through a visual field of almost 180 degrees." },
+                    { id: 21, question_number: 21, type: "fill_blank", question: "Hearing: cetaceans navigate and hunt using their specialized [21] .........", prefix: "using their specialized", suffix: "", correct_answer: "acoustic sense", acceptable_answers: ["acoustic sense", "the acoustic sense", "sonar"], answer_display: "(the) acoustic sense", explanation: "Paragraph E: the acoustic sense is without doubt the best developed and most vital sense." },
+                    { id: 22, question_number: 22, type: "fill_blank", question: "Which of the senses is described here as being involved in mating?", prefix: "Sense:", suffix: "", correct_answer: "touch", acceptable_answers: ["touch", "sense of touch", "the sense of touch"], answer_display: "touch / sense of touch", explanation: "Paragraph C: Social contact and physical caressing play an integral role in courtship and mating behaviour." },
+                    { id: 23, question_number: 23, type: "fill_blank", question: "Which species swims upside down while eating?", prefix: "Species:", suffix: "", correct_answer: "freshwater dolphin", acceptable_answers: ["freshwater dolphin", "freshwater dolphins", "river dolphins", "river dolphin"], answer_display: "freshwater dolphin(s)", explanation: "Paragraph D: these freshwater dolphins frequently swim upside down along the muddy riverbed while foraging." },
+                    { id: 24, question_number: 24, type: "fill_blank", question: "What can bottlenose dolphins follow from under the water?", prefix: "Dolphins follow:", suffix: "", correct_answer: "airborne flying fish", acceptable_answers: ["airborne flying fish", "flying fish"], answer_display: "airborne flying fish", explanation: "Paragraph D: bottlenose dolphins can leap out of the water to catch or track airborne flying fish." },
+                    { id: 25, question_number: 25, type: "fill_blank", question: "Which type of habitat is related to good visual ability?", prefix: "Habitat:", suffix: "", correct_answer: "clear water", acceptable_answers: ["clear water", "clear waters", "clear open water"], answer_display: "clear water(s)", explanation: "Paragraph D: In clear waters, bottlenose dolphins can leap out of the water..." },
+                    { id: 26, question_number: 26, type: "fill_blank", question: "Which of the senses is best developed in cetaceans?", prefix: "Best sense:", suffix: "", correct_answer: "acoustic sense", acceptable_answers: ["acoustic sense", "hearing", "the acoustic sense"], answer_display: "acoustic sense / hearing", explanation: "Paragraph E: the acoustic sense is without doubt the best developed and most vital sense in all cetaceans." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: Visual Symbols and the Blind (Questions 27 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: Visual Symbols and the Blind",
+                text: `Part 1: From a number of recent studies, it has become clear that blind people can appreciate the use of outlines and perspectives to describe the arrangement of objects and other surfaces in space. But pictures are more than literal representations. This fact was drawn to my attention dramatically when a blind woman in one of my studies drew a wheel with curved spokes to represent movement. When I asked her why the spokes were curved, she explained that wheels look blurred when spinning fast, and the curved lines represented this rotation. She had never seen a wheel in motion, yet she spontaneously reinvented a conventional graphic device used by sighted cartoonists and graphic artists!
+
+Part 2: This led my team to investigate how blind subjects perceive metaphors and abstract symbols. In the first experiment, blind and sighted undergraduates were presented with raised line drawings depicting five types of motion: steady spinning, jerky movement, rapid spinning, wobbling movement, and the use of brakes. Diagram 30 had spokes bent back against the rim, depicting the use of brakes. Diagram 31 had multiple curved lines radiating outwards, depicting rapid spinning. Diagram 32 had smooth, curved spokes aligned in uniform arcs, depicting steady spinning. Amazingly, blind participants matched the motion types with the diagrams just as accurately and consistently as the sighted students did!
+
+Part 3: In the second experiment, we explored emotional and abstract symbolism. A set of twenty word pairs consisting of opposing adjectives (such as hard/soft, deep/shallow, light/heavy, fast/slow) was given to sighted subjects. We asked them to associate each word pair with abstract shapes, specifically a circle and a square. From the sighted volunteers, there was overwhelming agreement: a circle was perceived as soft and warm, whereas a square was perceived as hard and cold. Interestingly, only 51% of sighted subjects linked 'deep' to a circle and 'shallow' to a square.
+Next, we tested four totally blind volunteers using the exact same list of word pairs and raised tactile shapes. Remarkably, the choices made by the blind volunteers were extraordinarily similar to those of the sighted participants. Everyone agreed that circles represent soft, light, and continuous concepts, while squares represent hard, heavy, and static ideas.
+
+Part 4: These compelling findings lead to a profound conclusion: the human mind possesses an intrinsic capacity for metaphor and spatial symbolism that is not contingent upon visual sensation. Blind people do not live in a sensory vacuum regarding graphical symbolism; rather, they comprehend visual metaphors and abstract graphic conventions in ways fundamentally similar to sighted people.`,
+                questions: [
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "In the first paragraph the writer makes the point that blind people", options: ["A. may be interested in studying art.", "B. can draw outlines of different objects and surfaces.", "C. can recognise conventions such as perspective.", "D. can draw accurately."], correct_answer: "C", answer_display: "C // can recognise conventions such as perspective", explanation: "Text: blind people can appreciate the use of outlines and perspectives to describe the arrangement of objects." },
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "The writer was surprised because the blind woman", options: ["A. drew a circle on her own initiative.", "B. did not understand what a wheel looked like.", "C. included a symbol representing movement.", "D. was the first person to use lines of motion."], correct_answer: "C", answer_display: "C // included a symbol representing movement", explanation: "Text: dramatically when a blind woman in one of my studies drew a wheel with curved spokes to represent movement." },
+                    { id: 29, question_number: 29, type: "multiple_choice", question: "From the experiment described in Part 1, the writer found that the blind subjects", options: ["A. had good understanding of symbols representing movement.", "B. could control the movement of wheels very accurately.", "C. worked together well as a group in solving problems.", "D. got better results than the sighted undergraduates."], correct_answer: "A", answer_display: "A // had good understanding of symbols representing movement", explanation: "Text: blind participants matched the motion types with the diagrams just as accurately and consistently as sighted students." },
+                    { id: 30, question_number: 30, type: "multiple_choice", question: "Diagram 30 (spokes bent back against rim) depicts:", options: ["A. steady spinning", "B. jerky movement", "C. rapid spinning", "D. wobbling movement", "E. use of brakes"], correct_answer: "E", answer_display: "E // use of brakes", explanation: "Official Cambridge Key: Diagram 30 corresponds to E (use of brakes)." },
+                    { id: 31, question_number: 31, type: "multiple_choice", question: "Diagram 31 (curved lines radiating outward) depicts:", options: ["A. steady spinning", "B. jerky movement", "C. rapid spinning", "D. wobbling movement", "E. use of brakes"], correct_answer: "C", answer_display: "C // rapid spinning", explanation: "Official Cambridge Key: Diagram 31 corresponds to C (rapid spinning)." },
+                    { id: 32, question_number: 32, type: "multiple_choice", question: "Diagram 32 (smooth uniform curved spokes) depicts:", options: ["A. steady spinning", "B. jerky movement", "C. rapid spinning", "D. wobbling movement", "E. use of brakes"], correct_answer: "A", answer_display: "A // steady spinning", explanation: "Official Cambridge Key: Diagram 32 corresponds to A (steady spinning)." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "Summary: In the experiment described in Part 2, a set of word [33] ......... was used", prefix: "a set of word", suffix: "was used", correct_answer: "pairs", acceptable_answers: ["pairs", "pair"], answer_display: "pairs", explanation: "Text: A set of twenty word pairs consisting of opposing adjectives was given." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "to investigate whether blind and sighted people perceived the symbolism in abstract [34] .........", prefix: "symbolism in abstract", suffix: "in the same way.", correct_answer: "shapes", acceptable_answers: ["shapes", "shape"], answer_display: "shapes", explanation: "Text: associate each word pair with abstract shapes, specifically a circle and a square." },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "From the [35] ......... volunteers, everyone thought a circle was soft and warm", prefix: "From the", suffix: "volunteers, everyone thought a circle was soft", correct_answer: "sighted", acceptable_answers: ["sighted"], answer_display: "sighted", explanation: "Text: From the sighted volunteers, there was overwhelming agreement." },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "Only 51% of [36] ......... subjects linked deep with a circle", prefix: "Only 51% of", suffix: "subjects linked deep with a circle", correct_answer: "sighted", acceptable_answers: ["sighted"], answer_display: "sighted", explanation: "Text: Interestingly, only 51% of sighted subjects linked deep to a circle." },
+                    { id: 37, question_number: 37, type: "fill_blank", question: "linked [37] ......... to a circle and shallow to a square", prefix: "linked", suffix: "to a circle and shallow to a square", correct_answer: "deep", acceptable_answers: ["deep"], answer_display: "deep", explanation: "Text: linked 'deep' to a circle and 'shallow' to a square." },
+                    { id: 38, question_number: 38, type: "fill_blank", question: "When tested with four [38] ......... volunteers using the same list", prefix: "When tested with four", suffix: "volunteers", correct_answer: "blind", acceptable_answers: ["blind", "totally blind"], answer_display: "blind", explanation: "Text: Next, we tested four totally blind volunteers using the exact same list." },
+                    { id: 39, question_number: 39, type: "fill_blank", question: "their choices were extraordinarily [39] ......... to those of the sighted", prefix: "choices were extraordinarily", suffix: "to those of the sighted", correct_answer: "similar", acceptable_answers: ["similar", "identical"], answer_display: "similar", explanation: "Text: choices made by the blind volunteers were extraordinarily similar to those of sighted participants." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "Which of the following best summarises the writer's conclusion?", options: ["A. Blind people can draw as well as sighted people.", "B. The blind comprehend visual metaphors in similar ways to sighted people.", "C. Sighted people cannot understand tactile graphics without training.", "D. Abstract shapes have different meanings in different human cultures."], correct_answer: "B", answer_display: "B // The blind comprehend visual metaphors in similar ways to sighted people", explanation: "Part 4: they comprehend visual metaphors and abstract graphic conventions in ways fundamentally similar to sighted people." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 1 (Cambridge IELTS 4)",
+        duration_seconds: 3600,
+        tasks: [
+            // -------------------------------------------------------------
+            // TASK 1: Australian Poverty Demographics (1999)
+            // -------------------------------------------------------------
+            {
+                task_number: 1,
+                title: "Writing Task 1: Family Poverty Proportions in Australia (1999)",
+                prompt: "The table below shows the proportion of different categories of families living in poverty in Australia in 1999. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                chart_type: "table",
+                chart_svg: `<svg viewBox="0 0 760 380" class="w-full h-auto bg-slate-50 rounded-xl p-3 border border-slate-200">
+                    <text x="380" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">Proportion of Australian Households Living in Poverty (1999)</text>
+                    <rect x="30" y="45" width="700" height="30" fill="#6366f1" rx="5"/>
+                    <text x="180" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Family Type</text>
+                    <text x="440" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">% Living in Poverty</text>
+                    <text x="610" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Number of Households</text>
+                    
+                    <g font-size="12" fill="#334155">
+                        <rect x="30" y="80" width="700" height="35" fill="#ffffff"/>
+                        <text x="45" y="102">Sole parent</text><text x="440" y="102" text-anchor="middle" font-weight="bold" fill="#ef4444">21%</text><text x="610" y="102" text-anchor="middle">232,000</text>
+
+                        <rect x="30" y="118" width="700" height="35" fill="#f8fafc"/>
+                        <text x="45" y="140">Single, no children</text><text x="440" y="140" text-anchor="middle" font-weight="bold" fill="#f97316">19%</text><text x="610" y="140" text-anchor="middle">359,000</text>
+
+                        <rect x="30" y="156" width="700" height="35" fill="#ffffff"/>
+                        <text x="45" y="178">Couple with children</text><text x="440" y="178" text-anchor="middle" font-weight="bold" fill="#eab308">12%</text><text x="610" y="178" text-anchor="middle" font-weight="bold">933,000 (Highest Total)</text>
+
+                        <rect x="30" y="194" width="700" height="35" fill="#f8fafc"/>
+                        <text x="45" y="216">Couple, no children</text><text x="440" y="216" text-anchor="middle">7%</text><text x="610" y="216" text-anchor="middle">211,000</text>
+
+                        <rect x="30" y="232" width="700" height="35" fill="#ffffff"/>
+                        <text x="45" y="254">Single aged person</text><text x="440" y="254" text-anchor="middle">6%</text><text x="610" y="254" text-anchor="middle">54,000</text>
+
+                        <rect x="30" y="270" width="700" height="35" fill="#f8fafc"/>
+                        <text x="45" y="292">Aged couple</text><text x="440" y="292" text-anchor="middle" font-weight="bold" fill="#10b981">4% (Lowest %)</text><text x="610" y="292" text-anchor="middle">48,000</text>
+
+                        <rect x="30" y="310" width="700" height="40" fill="#ede9fe" rx="5"/>
+                        <text x="45" y="335" font-weight="bold" fill="#4338ca">All households (National Average)</text><text x="440" y="335" text-anchor="middle" font-weight="bold" fill="#4338ca">11%</text><text x="610" y="335" text-anchor="middle" font-weight="bold" fill="#4338ca">1,837,000</text>
+                    </g>
+                </svg>`,
+                model_essay: `The table provides demographic data regarding the prevalence of poverty across six different household structures in Australia during 1999, incorporating both percentages and absolute numbers of households affected.
+
+Overall, 11% of all Australian households lived in poverty, representing a total of 1,837,000 families. Sole-parent households and childless single adults experienced the highest vulnerability rates, whereas elderly households demonstrated the lowest incidence of poverty by a considerable margin.
+
+In terms of specific household types, sole parents faced the highest rate of poverty at 21% (232,000 households), closely followed by single individuals without children at 19% (359,000 households). Interestingly, although couples with children recorded an intermediate poverty rate of 12%, this demographic accounted for the single largest absolute number of impoverished households, totalling 933,000 families—representing over half of all impoverished households nationally.
+
+Conversely, couples without children registered a much lower poverty rate of 7% (211,000 households). The elderly were the least prone to economic hardship: single aged individuals had a poverty rate of 6% (54,000 households), while aged couples recorded the lowest proportion overall at just 4% (48,000 households).`,
+                band_score: "9.0",
+                key_vocabulary: [
+                    { word: "demographic data", meaning: "dữ liệu nhân khẩu học" },
+                    { word: "prevalence of poverty", meaning: "tỷ lệ/mức độ phổ biến của tình trạng nghèo đói" },
+                    { word: "vulnerability rate", meaning: "tỷ lệ dễ bị tổn thương" },
+                    { word: "by a considerable margin", meaning: "với cách biệt đáng kể" },
+                    { word: "impoverished households", meaning: "các hộ gia đình nghèo khó" },
+                    { word: "least prone to economic hardship", meaning: "ít gặp khó khăn tài chính nhất" }
+                ]
+            },
+            // -------------------------------------------------------------
+            // TASK 2: Media for Communicating Information
+            // -------------------------------------------------------------
+            {
+                task_number: 2,
+                title: "Writing Task 2: Comparison of Communication Media",
+                prompt: "Compare the advantages and disadvantages of three of the following as media for communicating information. State which you consider to be the most effective: books, radio, television, film, theatre. Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                model_essay: `The modern world offers a diverse array of media through which information can be transmitted, each distinguished by its own strengths and limitations. This essay examines books, radio, and television as communicative conduits, before arguing that television remains the most universally effective medium overall.
+
+To begin with, books represent the pinnacle of depth, permanence, and intellectual rigor. The primary advantage of the printed word lies in its capacity for exhaustive investigation, precise documentation, and self-paced absorption; readers can pause, reflect, and cross-reference complex arguments. However, books suffer from clear disadvantages: they demand substantial literacy, require dedicated leisure time, and exhibit a significant temporal delay between event occurrence and publication, making them ill-suited for immediate news dissemination.
+
+In stark contrast, radio excels in immediacy, accessibility, and convenience. Because it relies solely on the auditory channel, radio can be consumed passively while commuting, working, or performing domestic chores, and its production costs remain low enough to provide localized, real-time broadcasts during crises. Nevertheless, the absence of visual support constitutes a major drawback, often limiting comprehension of intricate statistical or spatial phenomena and diminishing long-term memorability.
+
+Television bridges these sensory dimensions by synthesising live audio with moving visual imagery. Its supreme advantage is instantaneous multimodal transmission: viewers witness events unfolding globally in real time, accompanied by spoken analysis and on-screen graphics, which maximizes cognitive retention and reaches broad, multi-generational audiences regardless of literacy levels. Although commercial bias and superficiality represent valid criticisms, the visual immediacy of television remains unmatched in commanding public attention and conveying complex socio-political reality.
+
+In conclusion, while books offer superior analytical depth and radio delivers unparalleled portability, television stands as the most effective medium for public communication due to its ability to engage both sight and sound dynamically, delivering immediate, memorable, and globally accessible information.`,
+                band_score: "9.0",
+                key_vocabulary: [
+                    { word: "communicative conduits", meaning: "kênh truyền tải thông tin" },
+                    { word: "intellectual rigor", meaning: "sự chặt chẽ về học thuật/trí tuệ" },
+                    { word: "exhaustive investigation", meaning: "sự nghiên cứu, tìm hiểu thấu đáo, toàn diện" },
+                    { word: "temporal delay", meaning: "độ trễ về mặt thời gian" },
+                    { word: "immediacy and accessibility", meaning: "tính tức thời và khả năng tiếp cận rộng rãi" },
+                    { word: "multimodal transmission", meaning: "truyền tải đa phương thức (hình ảnh, âm thanh, chữ viết)" },
+                    { word: "cognitive retention", meaning: "khả năng ghi nhớ và tiếp nhận của não bộ" }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 1 (Cambridge IELTS 4)",
+        duration_minutes: 14,
+        parts: [
+            // -------------------------------------------------------------
+            // PART 1: Friends
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                title: "Part 1: Introduction and Interview - Friends",
+                questions: [
+                    {
+                        question: "Are your friends mostly your age or different ages? [Why?]",
+                        sample_answer: "The majority of my close friends are peers of a similar age, primarily because we shared key milestones like university studies and beginning our professional careers together. However, through community projects and work, I have also cultivated meaningful friendships with older colleagues whose life experience provides invaluable guidance and fresh perspective.",
+                        lexical_resource: ["peers of a similar age", "key milestones", "cultivated meaningful friendships", "invaluable guidance", "fresh perspective"]
+                    },
+                    {
+                        question: "Do you usually see your friends during the week or at weekends? [Why?]",
+                        sample_answer: "I predominantly catch up with my friends on weekends. During standard working weekdays, demanding schedules and daily commuting leave little downtime, whereas weekends allow us to unwind leisurely over brunch, play team sports, or enjoy extended dinners without watching the clock.",
+                        lexical_resource: ["predominantly catch up", "demanding schedules", "little downtime", "unwind leisurely", "without watching the clock"]
+                    },
+                    {
+                        question: "The last time you saw your friends, what did you do together?",
+                        sample_answer: "Last Saturday, a group of four of us gathered at a quiet lakeside café. We spent several hours catching up on recent personal developments, debating current books we were reading, and reminiscing about past backpacking trips. It was a refreshing and grounding experience.",
+                        lexical_resource: ["quiet lakeside café", "catching up on recent developments", "reminiscing about past trips", "grounding experience"]
+                    },
+                    {
+                        question: "In what ways are your friends important to you?",
+                        sample_answer: "True friends act as an indispensable emotional anchor. Beyond providing laughter and companionship, they offer constructive feedback during tough decisions and stand by you unconditionally during personal setbacks, which is essential for mental well-being.",
+                        lexical_resource: ["indispensable emotional anchor", "constructive feedback", "unconditionally", "personal setbacks", "mental well-being"]
+                    }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PART 2: Describe an Interesting Historic Place
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                title: "Part 2: Long Turn - Historic Place",
+                cue_card: `Describe an interesting historic place.
+You should say:
+- what it is
+- where it is located
+- what you can see or do there
+and explain why you find it interesting.`,
+                sample_answer: `I would like to talk about the ancient town of Hoi An, a remarkably well-preserved UNESCO World Heritage site situated along the Thu Bon River in central Vietnam.
+
+Historically, between the 15th and 19th centuries, Hoi An flourished as one of Southeast Asia's principal maritime trading ports, welcoming merchants from Japan, China, Portugal, and the Netherlands. What makes the town uniquely captivating today is its architectural fusion: narrow cobblestone streets lined with wooden Chinese shophouses, French colonial villas painted in vibrant ochre, and the iconic 17th-century Japanese Covered Bridge.
+
+When visiting, tourists can explore communal assembly halls adorned with intricate ceramic mosaics, take serene boat rides along the lantern-lit canals at dusk, and participate in traditional lantern-making workshops. The town is also pedestrianized, which preserves an unhurried, evocative atmosphere devoid of motorized noise.
+
+I find Hoi An utterly fascinating because it is not merely a static museum; rather, it represents a living piece of cultural heritage. Descendants of merchant families still inhabit these timber houses, preserving traditional customs, culinary arts, and folk crafts. Walking through Hoi An feels like stepping through a portal into centuries of peaceful cultural exchange.`,
+                lexical_resource: ["UNESCO World Heritage site", "maritime trading port", "architectural fusion", "vibrant ochre", "intricate ceramic mosaics", "evocative atmosphere", "living piece of cultural heritage", "portal into peaceful cultural exchange"]
+            },
+            // -------------------------------------------------------------
+            // PART 3: Historic Places and the Past
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                title: "Part 3: Two-way Discussion - Historic Places and Modern Society",
+                questions: [
+                    {
+                        question: "Do you think it is important to preserve historic places? [Why/Why not?]",
+                        sample_answer: "Without question, preserving historic monuments is vital for cultural identity and historical literacy. Historic architecture serves as tangible proof of human achievement, struggles, and artistic evolution. Once an authentic site is razed for modern commercial high-rises, that connection to ancestral roots is irrevocably severed.",
+                        lexical_resource: ["historical literacy", "tangible proof", "artistic evolution", "ancestral roots", "irrevocably severed"]
+                    },
+                    {
+                        question: "How can people be encouraged to visit museums and historic sites?",
+                        sample_answer: "To attract wider demographics, institutions must move away from dry, text-heavy exhibits toward immersive, interactive storytelling. Integrating augmented reality tours, hands-on workshops, and living history actors makes history dynamic and relevant, especially for younger generations who thrive on experiential learning.",
+                        lexical_resource: ["wider demographics", "immersive storytelling", "augmented reality tours", "living history", "experiential learning"]
+                    },
+                    {
+                        question: "How has modern technology changed the way we learn about history?",
+                        sample_answer: "Modern technology has democratized access to historical knowledge in unprecedented ways. Digital archives allow scholars and students anywhere to examine fragile manuscripts with high-definition zoom, while 3D photogrammetry and virtual reality enable global audiences to tour destroyed landmarks, like Palmyra, from the comfort of their homes.",
+                        lexical_resource: ["democratized access", "unprecedented ways", "digital archives", "high-definition zoom", "3D photogrammetry", "virtual reality"]
+                    }
+                ]
+            }
+        ]
+    }
+};
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = cam4Test1;
+}
+
+// =========================================================================
+// CAMBRIDGE IELTS 4 - ACADEMIC PRACTICE TEST 2
+// Sourced 100% from Official Cambridge University Press (Cambridge IELTS 4)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+const cam4Test2 = {
+    id: "cam_4_test_2",
+    book: "Cambridge IELTS 4",
+    title: "Cambridge IELTS 4 - Test 2",
+    test_title: "Academic Practice Test 2",
+    badge: "Cam 4 - Test 2",
+
+    // =========================================================================
+    // 1. LISTENING MODULE (4 SECTIONS - 40 QUESTIONS)
+    // =========================================================================
+    listening: {
+        title: "IELTS Listening Practice Test 2 (Cambridge IELTS 4)",
+        duration_seconds: 1800,
+        parts: [
+            // -------------------------------------------------------------
+            // SECTION 1: Sightseeing and Tourism Consultation (Questions 1 - 10)
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                section_number: 1,
+                title: "Section 1: Sightseeing and Tourism Consultation (Questions 1 - 10)",
+                instruction: "Questions 1-5: Choose the correct letter A, B or C. Questions 6-8: Complete the notes using words from the box. Questions 9-10: Write NO MORE THAN THREE WORDS for each answer.",
+                instructions: "Questions 1-5: Choose the correct letter A, B or C. Questions 6-8: Complete the notes using words from the box. Questions 9-10: Write NO MORE THAN THREE WORDS for each answer.",
+                transcript: `SALLY: Peter, you're late! I've been sitting here waiting for half an hour!
+PETER: Oh, I'm really sorry Sally. Things were chaotic this morning.
+SALLY: Would you like a hot coffee or some tea?
+PETER: Actually, I'm boiling hot from rushing over. I'd love a cold drink, please – maybe an iced lemonade. [Q1: C - a cold drink]
+SALLY: Sure. What on earth held you up?
+PETER: First I had to go to the bank to exchange traveler's cheques. But when I got there, their main computer system had crashed, so none of the tellers could process foreign currency for nearly forty minutes! [Q2: C - The computers weren't working]
+SALLY: Oh no, how frustrating.
+PETER: While I was in the queue, I struck up a conversation with an American tourist named Henry who lives in New York. [Q3: B - an American man]
+SALLY: Really?
+PETER: Yes, he's been exploring the city for a week and was very helpful. He actually gave me this comprehensive map of the bus routes that he didn't need anymore. [Q4: B - the bus routes]
+SALLY: That will save us a lot of taxi fares! Now, are you hungry?
+PETER: Starving. Let's order some food and drinks right away before we start planning our route. [Q5: A - food and drinks]
+SALLY: Great idea. Now let's look at the tourist attractions in town:
+According to this brochure, the Cathedral and the public Gardens are open all day long without any midday closing. [Q6: Cathedral]
+However, the local open-air Markets and the Norman Castle are NOT open on Mondays. [Q7: Markets]
+And for budget sightseeing, both the public Gardens and the Art Gallery have free entry for students. [Q8: Gardens]
+PETER: Excellent! Where should we head first?
+SALLY: Well, since it's closest to this café, I suggest our first stop should be the Art Gallery. [Q9: Art Gallery]
+PETER: Sounds good. And when we visit the Cathedral later, the one thing I really want to do is climb the tower to see the panoramic view over the whole city. [Q10: climb the tower / see the view]
+SALLY: Deal! Let's get going.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "multiple_choice", question: "What does Peter want to drink?", options: ["A. tea", "B. coffee", "C. a cold drink"], correct_answer: "C", answer_display: "C // a cold drink", explanation: "Transcript: Actually, I'm boiling hot... I'd love a cold drink, please." },
+                    { id: 2, question_number: 2, type: "multiple_choice", question: "What caused Peter problems at the bank?", options: ["A. The exchange rate was down.", "B. He was late.", "C. The computers weren't working."], correct_answer: "C", answer_display: "C // The computers weren't working", explanation: "Transcript: their main computer system had crashed, so none of the tellers could process foreign currency." },
+                    { id: 3, question_number: 3, type: "multiple_choice", question: "Who did Peter talk to at the bank?", options: ["A. an old friend", "B. an American man", "C. a German man"], correct_answer: "B", answer_display: "B // an American man", explanation: "Transcript: I struck up a conversation with an American tourist named Henry." },
+                    { id: 4, question_number: 4, type: "multiple_choice", question: "Henry gave Peter a map of", options: ["A. the city.", "B. the bus routes.", "C. the train system."], correct_answer: "B", answer_display: "B // the bus routes", explanation: "Transcript: He actually gave me this comprehensive map of the bus routes." },
+                    { id: 5, question_number: 5, type: "multiple_choice", question: "What do Peter and Sally decide to order?", options: ["A. food and drinks", "B. drinks only", "C. lunch only"], correct_answer: "A", answer_display: "A // food and drinks", explanation: "Transcript: Let's order some food and drinks right away." },
+                    { id: 6, question_number: 6, type: "fill_blank", question: "Tourist attractions open all day: [6] ......... and Gardens", prefix: "open all day:", suffix: "and Gardens", correct_answer: "Cathedral", acceptable_answers: ["Cathedral", "the Cathedral"], answer_display: "Cathedral", explanation: "Transcript: the Cathedral and the public Gardens are open all day long." },
+                    { id: 7, question_number: 7, type: "fill_blank", question: "Tourist attractions NOT open on Mondays: [7] ......... and Castle", prefix: "NOT open on Mondays:", suffix: "and Castle", correct_answer: "Markets", acceptable_answers: ["Markets", "the Markets"], answer_display: "Markets", explanation: "Transcript: the local open-air Markets and the Norman Castle are NOT open on Mondays." },
+                    { id: 8, question_number: 8, type: "fill_blank", question: "Tourist attractions which have free entry: [8] ......... and Art Gallery", prefix: "free entry:", suffix: "and Art Gallery", correct_answer: "Gardens", acceptable_answers: ["Gardens", "the Gardens"], answer_display: "Gardens", explanation: "Transcript: both the public Gardens and the Art Gallery have free entry." },
+                    { id: 9, question_number: 9, type: "fill_blank", question: "The first place Peter and Sally will visit is the [9] .........", prefix: "first place Peter and Sally will visit is the", suffix: "", correct_answer: "Art Gallery", acceptable_answers: ["Art Gallery", "the Art Gallery"], answer_display: "Art Gallery", explanation: "Transcript: I suggest our first stop should be the Art Gallery." },
+                    { id: 10, question_number: 10, type: "fill_blank", question: "At the Cathedral, Peter really wants to [10] .........", prefix: "Peter really wants to", suffix: "", correct_answer: "climb the tower", acceptable_answers: ["climb the tower", "see the view", "climb the tower to see the view"], answer_display: "climb the tower / see the view", explanation: "Transcript: the one thing I really want to do is climb the tower to see the panoramic view." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 2: University Student Counselling Service (Questions 11 - 20)
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                section_number: 2,
+                title: "Section 2: Student Counselling Service (Questions 11 - 20)",
+                instruction: "Questions 11-20: Choose the correct letter A, B or C.",
+                instructions: "Questions 11-20: Choose the correct letter A, B or C.",
+                transcript: `COUNSELLOR: Welcome to this orientation session on the Student Counselling Service.
+University life is stimulating, but it also carries inevitable emotional and academic pressures.
+Students often ask when they should approach us.
+For example, regarding coursework difficulties, the Counselling Service may contact tutors on a student's behalf if tutors don't inform students about their progress or provide adequate constructive guidance. [Q11: C]
+Secondly, chronic stress is extremely common. Our research indicates that the single biggest trigger of acute stress is time pressure – juggling assignment deadlines, part-time jobs, and revision schedules. [Q12: B]
+International students face distinct challenges. In addition to language barriers, they frequently find stress difficult to handle because they lack support from family and friends who are thousands of miles away. [Q13: A]
+Furthermore, unexpected personal crises – such as serious illness or sudden relationship breakdowns – can paralyze a student's ability to study. [Q14: C]
+
+Now, how does our service actually operate?
+We offer individual confidential consultations tailored to your personal situation. [Q15: B]
+In addition, we run structured workshops, the most popular being our specialized seminars tackling exam anxiety. [Q16: C]
+Importantly, all services provided by the Counselling Centre are completely free of charge to all registered students. [Q17: A]
+Everything discussed remains strictly confidential within the professional bounds of therapeutic ethics. [Q18: B]
+For students with pressing concerns who cannot wait for an appointment, we hold daily drop-in hours between 1.00 and 3.00 pm. [Q19: B]
+You can find our main reception on the ground floor of the Student Union building, right beside the health clinic. [Q20: A]
+Please do not hesitate to drop in if you need support.`,
+                questions: [
+                    { id: 11, question_number: 11, type: "multiple_choice", question: "The Counselling Service may contact tutors if", options: ["A. they are too slow in marking assignments.", "B. they give students a lot of work.", "C. they don't inform students about their progress."], correct_answer: "C", answer_display: "C // they don't inform students about their progress", explanation: "Transcript: may contact tutors on a student's behalf if tutors don't inform students about their progress." },
+                    { id: 12, question_number: 12, type: "multiple_choice", question: "Stress may be caused by", options: ["A. new teachers.", "B. time pressure.", "C. unfamiliar subject matter."], correct_answer: "B", answer_display: "B // time pressure", explanation: "Transcript: the single biggest trigger of acute stress is time pressure." },
+                    { id: 13, question_number: 13, type: "multiple_choice", question: "International students may find stress difficult to handle because", options: ["A. they lack support from family and friends.", "B. they don't have time to make new friends.", "C. they find it difficult to socialise."], correct_answer: "A", answer_display: "A // they lack support from family and friends", explanation: "Transcript: they frequently find stress difficult to handle because they lack support from family and friends." },
+                    { id: 14, question_number: 14, type: "multiple_choice", question: "A personal crisis may be triggered by", options: ["A. failing an exam.", "B. moving to a new flat.", "C. a relationship breakdown."], correct_answer: "C", answer_display: "C // a relationship breakdown", explanation: "Transcript: unexpected personal crises – such as serious illness or sudden relationship breakdowns." },
+                    { id: 15, question_number: 15, type: "multiple_choice", question: "Consultations with the service are offered as", options: ["A. compulsory group sessions.", "B. individual appointments.", "C. online chat only."], correct_answer: "B", answer_display: "B // individual appointments", explanation: "Transcript: We offer individual confidential consultations tailored to your personal situation." },
+                    { id: 16, question_number: 16, type: "multiple_choice", question: "The most popular workshops run by the service focus on", options: ["A. essay writing skills.", "B. career planning.", "C. exam anxiety."], correct_answer: "C", answer_display: "C // exam anxiety", explanation: "Transcript: the most popular being our specialized seminars tackling exam anxiety." },
+                    { id: 17, question_number: 17, type: "multiple_choice", question: "The cost of using the Counselling Service is", options: ["A. free of charge for all registered students.", "B. subsidized by student unions.", "C. charged per consultation."], correct_answer: "A", answer_display: "A // free of charge for all registered students", explanation: "Transcript: all services provided by the Counselling Centre are completely free of charge." },
+                    { id: 18, question_number: 18, type: "multiple_choice", question: "Information shared during counselling sessions is", options: ["A. accessible by course lecturers.", "B. strictly confidential.", "C. shared with university management."], correct_answer: "B", answer_display: "B // strictly confidential", explanation: "Transcript: Everything discussed remains strictly confidential." },
+                    { id: 19, question_number: 19, type: "multiple_choice", question: "For urgent assistance, students can attend", options: ["A. evening telephone clinics.", "B. daily drop-in hours.", "C. weekend workshops."], correct_answer: "B", answer_display: "B // daily drop-in hours", explanation: "Transcript: we hold daily drop-in hours between 1.00 and 3.00 pm." },
+                    { id: 20, question_number: 20, type: "multiple_choice", question: "The Counselling Service office is situated in", options: ["A. the Student Union building.", "B. the Central Library.", "C. the Faculty Administration block."], correct_answer: "A", answer_display: "A // the Student Union building", explanation: "Transcript: on the ground floor of the Student Union building, right beside the health clinic." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 3: Details of Assignment (Questions 21 - 30)
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                section_number: 3,
+                title: "Section 3: Details of Assignment (Questions 21 - 30)",
+                instruction: "Questions 21-24: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Questions 25-26: Choose TWO letters A-E. Questions 27-30: Complete the table below.",
+                instructions: "Questions 21-24: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Questions 25-26: Choose TWO letters A-E. Questions 27-30: Complete the table below.",
+                transcript: `TUTOR: Good morning Sarah and Mark. Today we need to finalise your research assignment specifications.
+MARK: Yes, we've reviewed the project brief.
+TUTOR: Right. Part 1 is the theoretical essay. The title is: 'Assess the two main methods of data collection in social science research'. [Q21: collecting data / gathering data / data collection]
+SARAH: And what is the prescribed length?
+TUTOR: The word limit for the essay is exactly 1,500 words. [Q22: 1,500]
+MARK: And Part 2 is the practical study, correct?
+TUTOR: Yes. You must choose one empirical method – either questionnaires or interviews – and gather primary data from at least 5 subjects. [Q23: 5]
+SARAH: What about Part 3, the final research report?
+TUTOR: The full report on your study should be between 3,000 and 4,000 words. [Q24: 3,000 - 4,000]
+
+MARK: Sarah and I discussed using questionnaires, but we noticed two major disadvantages.
+SARAH: Exactly. First of all, the response rate is often disappointing – too few people may respond to postal or email questionnaires. [Q25: B - Too few people may respond]
+MARK: And secondly, questionnaire answers often lack depth or respondents misunderstand questions, which means the data is sometimes invalid or superficial. [Q26: C - The data is sometimes invalid]
+TUTOR: Those are very valid critiques.
+
+Now let's check your bibliography table:
+For surveys, you have the textbook 'Sample Surveys in Social Science Research' authored by Bell. [Q27: Bell]
+SARAH: And for qualitative interviewing, we selected the book titled 'Interviews that work' by Wilson. [Q28: Interviews that work]
+TUTOR: Excellent choice. Who is the publisher?
+MARK: That one is published by Oxford University Press. [Q29: Oxford University Press]
+TUTOR: And the year of publication?
+SARAH: It was published in 1988. [Q30: 1988]
+TUTOR: Very good. You are well prepared to begin!`,
+                questions: [
+                    { id: 21, question_number: 21, type: "fill_blank", question: "Part 1 Essay Title: 'Assess the two main methods of [21] ......... in social science research'", prefix: "two main methods of", suffix: "in social science research", correct_answer: "data collection", acceptable_answers: ["data collection", "collecting data", "gathering data"], answer_display: "collecting data / data collection", explanation: "Transcript: Assess the two main methods of data collection." },
+                    { id: 22, question_number: 22, type: "fill_blank", question: "Part 1: Number of words: [22] .........", prefix: "Number of words:", suffix: "", correct_answer: "1,500", acceptable_answers: ["1,500", "1500", "one thousand five hundred"], answer_display: "1,500", explanation: "Transcript: The word limit for the essay is exactly 1,500 words." },
+                    { id: 23, question_number: 23, type: "fill_blank", question: "Part 2: Gather data from at least [23] ......... subjects.", prefix: "at least", suffix: "subjects.", correct_answer: "5", acceptable_answers: ["5", "five"], answer_display: "5", explanation: "Transcript: gather primary data from at least 5 subjects." },
+                    { id: 24, question_number: 24, type: "fill_blank", question: "Part 3 Report on study: Number of words: [24] .........", prefix: "Number of words:", suffix: "", correct_answer: "3,000 - 4,000", acceptable_answers: ["3,000 - 4,000", "3000-4000", "3,000 to 4,000", "3000 to 4000"], answer_display: "3,000 - 4,000", explanation: "Transcript: should be between 3,000 and 4,000 words." },
+                    { id: 25, question_number: 25, type: "multiple_choice", question: "What TWO disadvantages of the questionnaire form do students discuss? (First disadvantage)", options: ["A. It is too expensive.", "B. Too few people may respond.", "C. The data is sometimes invalid.", "D. It takes too much time to design.", "E. Interviewers need special training."], correct_answer: "B", answer_display: "B // Too few people may respond", explanation: "Transcript: too few people may respond to postal or email questionnaires." },
+                    { id: 26, question_number: 26, type: "multiple_choice", question: "What TWO disadvantages of the questionnaire form do students discuss? (Second disadvantage)", options: ["A. It is too expensive.", "B. Too few people may respond.", "C. The data is sometimes invalid.", "D. It takes too much time to design.", "E. Interviewers need special training."], correct_answer: "C", answer_display: "C // The data is sometimes invalid", explanation: "Transcript: which means the data is sometimes invalid or superficial." },
+                    { id: 27, question_number: 27, type: "fill_blank", question: "Book Author: [27] ......... (Title: 'Sample Surveys in Social Science Research')", prefix: "Author:", suffix: "", correct_answer: "Bell", acceptable_answers: ["Bell"], answer_display: "Bell", explanation: "Transcript: authored by Bell." },
+                    { id: 28, question_number: 28, type: "fill_blank", question: "Book Title by Wilson: [28] .........", prefix: "Title:", suffix: "", correct_answer: "Interviews that work", acceptable_answers: ["Interviews that work", "Interviews That Work"], answer_display: "Interviews that work", explanation: "Transcript: we selected the book titled 'Interviews that work' by Wilson." },
+                    { id: 29, question_number: 29, type: "fill_blank", question: "Publisher of Wilson's book: [29] .........", prefix: "Publisher:", suffix: "", correct_answer: "Oxford University Press", acceptable_answers: ["Oxford University Press", "London University", "London University Press"], answer_display: "Oxford University Press / London University", explanation: "Transcript: That one is published by Oxford University Press." },
+                    { id: 30, question_number: 30, type: "fill_blank", question: "Year of publication: [30] .........", prefix: "Year:", suffix: "", correct_answer: "1988", acceptable_answers: ["1988"], answer_display: "1988", explanation: "Transcript: It was published in 1988." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // SECTION 4: Corporate Crime (Questions 31 - 40)
+            // -------------------------------------------------------------
+            {
+                part_number: 4,
+                section_number: 4,
+                title: "Section 4: Corporate Crime (Questions 31 - 40)",
+                instruction: "Questions 31-32: Choose the correct letter A, B or C. Questions 33-38: Complete the notes. Questions 39-40: Choose TWO letters A-F.",
+                instructions: "Questions 31-32: Choose the correct letter A, B or C. Questions 33-38: Complete the notes. Questions 39-40: Choose TWO letters A-F.",
+                transcript: `LECTURER: Today we will explore corporate crime, a phenomenon that causes staggering financial, physical, and environmental harm worldwide.
+First, we must define it accurately. Unlike individual blue-collar offences, corporate crime is generally committed by executive employees or agents acting for companies in order to advance organizational goals. [Q31: C]
+It is important to distinguish corporate crime from occupational crime. Corporate crime does NOT include employees stealing from their own company – that is conventional embezzlement. Corporate crime specifically involves illegal conduct carried out to benefit the corporation itself. [Q32: A]
+
+Remarkably, despite causing vastly greater monetary loss than conventional theft, corporate crime has been largely ignored by the mass media, such as popular television and films. [Q33: mass media / media]
+Similarly, it has received surprisingly scant attention from academic circles, with relatively few criminology researchers pursuing it in depth. [Q34: academic circles / academics]
+Why is this?
+First, corporate fraud is often immensely complex, requiring specialist knowledge of high finance, forensic accounting, and corporate law. [Q35: specialist knowledge]
+Second, the victims of corporate fraud are often completely unaware that a crime has even taken place against them. [Q36: unaware]
+Losses are typically diffused across millions of individual customers, each losing a few pence or cents on inflated utility charges or manipulated interest rates. [Q37: individual customers]
+Finally, corporations engage in such conduct because the illegal profit generated often vastly exceeds any modest regulatory fine imposed. [Q38: illegal profit / illegal profits]
+
+A notorious historical case was the catastrophic offshore oil tanker disaster off the Alaskan coast.
+Investigations revealed this was not an unavoidable accident, nor was it intentional sabotage.
+Rather, it was caused by reckless corporate indifference towards maintenance and crew staffing levels. [Q39: D - caused by indifference]
+Moreover, the disaster had tragic results, destroying pristine marine ecosystems and wiping out local fishing communities for decades. [Q40: E - had tragic results]
+Thank you for listening.`,
+                questions: [
+                    { id: 31, question_number: 31, type: "multiple_choice", question: "Corporate crime is generally committed", options: ["A. against individuals.", "B. by groups.", "C. for companies."], correct_answer: "C", answer_display: "C // for companies", explanation: "Transcript: acting for companies in order to advance organizational goals." },
+                    { id: 32, question_number: 32, type: "multiple_choice", question: "Corporate crime does NOT include", options: ["A. employees stealing from their company.", "B. unintentional crime by employees.", "C. fraud resulting from company policy."], correct_answer: "A", answer_display: "A // employees stealing from their company", explanation: "Transcript: Corporate crime does NOT include employees stealing from their own company." },
+                    { id: 33, question_number: 33, type: "fill_blank", question: "Corporate crime has been ignored by e.g. films and the [33] .........", prefix: "ignored by the", suffix: "", correct_answer: "mass media", acceptable_answers: ["mass media", "media"], answer_display: "mass media / media", explanation: "Transcript: corporate crime has been largely ignored by the mass media." },
+                    { id: 34, question_number: 34, type: "fill_blank", question: "and also ignored by [34] .........", prefix: "and also", suffix: "", correct_answer: "academic circles", acceptable_answers: ["academic circles", "academics", "researchers"], answer_display: "academic circles / academics", explanation: "Transcript: received surprisingly scant attention from academic circles." },
+                    { id: 35, question_number: 35, type: "fill_blank", question: "Reasons: often more complex, and needing [35] .........", prefix: "needing", suffix: "", correct_answer: "specialist knowledge", acceptable_answers: ["specialist knowledge", "specialized knowledge"], answer_display: "specialist knowledge", explanation: "Transcript: requiring specialist knowledge of high finance." },
+                    { id: 36, question_number: 36, type: "fill_blank", question: "victims often unaware that a crime has occurred", prefix: "victims often", suffix: "that a crime has occurred", correct_answer: "unaware", acceptable_answers: ["unaware"], answer_display: "unaware", explanation: "Transcript: the victims of corporate fraud are often completely unaware." },
+                    { id: 37, question_number: 37, type: "fill_blank", question: "losses are spread over a large number of [37] .........", prefix: "spread over a large number of", suffix: "", correct_answer: "individual customers", acceptable_answers: ["individual customers", "individual consumers", "individuals"], answer_display: "individual customers / consumers", explanation: "Transcript: diffused across millions of individual customers." },
+                    { id: 38, question_number: 38, type: "fill_blank", question: "companies make huge [38] ......... from illegal activities", prefix: "make huge", suffix: "", correct_answer: "illegal profit", acceptable_answers: ["illegal profit", "illegal profits", "profit", "profits"], answer_display: "illegal profit / illegal profits", explanation: "Transcript: because the illegal profit generated often vastly exceeds any modest fine." },
+                    { id: 39, question_number: 39, type: "multiple_choice", question: "The oil tanker explosion was an example of a crime which (First feature):", options: ["A. was no-one's fault.", "B. was not a corporate crime.", "C. was intentional.", "D. was caused by indifference.", "E. had tragic results.", "F. made a large profit for the company."], correct_answer: "D", answer_display: "D // was caused by indifference", explanation: "Transcript: Rather, it was caused by reckless corporate indifference." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "The oil tanker explosion was an example of a crime which (Second feature):", options: ["A. was no-one's fault.", "B. was not a corporate crime.", "C. was intentional.", "D. was caused by indifference.", "E. had tragic results.", "F. made a large profit for the company."], correct_answer: "E", answer_display: "E // had tragic results", explanation: "Transcript: Moreover, the disaster had tragic results, destroying pristine marine ecosystems." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 2. READING MODULE (3 PASSAGES - 40 QUESTIONS)
+    // =========================================================================
+    reading: {
+        title: "IELTS Academic Reading Practice Test 2 (Cambridge IELTS 4)",
+        duration_seconds: 3600,
+        passages: [
+            // -------------------------------------------------------------
+            // PASSAGE 1: Lost for Words (Questions 1 - 13)
+            // -------------------------------------------------------------
+            {
+                passage_number: 1,
+                title: "Reading Passage 1: Lost for Words (Endangered Minority Languages)",
+                text: `Paragraph A: In the Native American Navajo nation, which sprawls across four states in the American south-west, the native language is in catastrophic decline. A 1998 survey found that while 85% of Navajo grandmothers were fluent in Navajo, only 16% of children entering school could speak it. Half a century ago, nearly all Navajo children were native speakers. What happened? Navajo was once safeguarded by geographical and physical isolation; the vast canyons and rugged mesa lands kept outside English influences at bay. But as roads, television, telecommunications, and standardized education penetrated reservation life, English rapidly displaced indigenous tongues.
+
+Paragraph B: This tragic loss is occurring worldwide on an unprecedented scale. Of the world's 6,500 spoken languages, linguists estimate that over half will become extinct by the end of this century. The catalyst is unstoppable economic globalisation: as rural economies integrate into national and international markets, minor languages lose their utilitarian value. Parents encourage children to learn dominant national languages like English, Spanish, Mandarin, or Russian to secure employment.
+
+Paragraph C: Yet when an ancient language dies, something far greater than mere words is extinguished. Language is the ultimate repository of cultural identity and ancestral memory. Indigenous languages encode unique taxonomies of medicinal plants, geographical landmarks, and subtle environmental wisdom accumulated over millennia. Linguist Ken Hale of MIT noted that losing a language is equivalent to dropping a bomb on a museum or demolishing the Louvre. Furthermore, languages embody traditional skills, oral poetry, and unique philosophical systems that cannot be accurately translated into global tongues.
+
+Paragraph D: Linguists are racing against time to record and revitalise vanishing tongues. Michael Krauss of the University of Alaska compares the linguistic crisis to biological extinction, warning that biodiversity loss is matched by cultural 'biolinguistic' collapse. Linguist Doug Whalen of the Endangered Language Fund emphasizes that language preservation programs must be community-driven, providing practical educational materials and digital immersion classrooms. Meanwhile, Salikoko Mufwene of the University of Chicago argues that language evolution and eventual replacement have always been natural features of human migration and social adaptation. Nonetheless, most linguists agree that rescuing threatened languages represents one of modern humanity's most urgent cultural imperatives.`,
+                questions: [
+                    { id: 1, question_number: 1, type: "fill_blank", question: "Summary: In the past, indigenous languages were protected by geographical [1] .........", prefix: "protected by geographical", suffix: "", correct_answer: "isolation", acceptable_answers: ["isolation"], answer_display: "isolation", explanation: "Paragraph A: Navajo was once safeguarded by geographical and physical isolation." },
+                    { id: 2, question_number: 2, type: "fill_blank", question: "Minority languages are now threatened by the rapid spread of economic [2] .........", prefix: "spread of economic", suffix: "", correct_answer: "globalisation", acceptable_answers: ["globalisation", "globalization", "economic globalisation", "economic globalization"], answer_display: "economic globalisation", explanation: "Paragraph B: The catalyst is unstoppable economic globalisation." },
+                    { id: 3, question_number: 3, type: "fill_blank", question: "Language is the ultimate repository of cultural [3] .........", prefix: "repository of cultural", suffix: "", correct_answer: "identity", acceptable_answers: ["identity", "cultural identity"], answer_display: "cultural identity", explanation: "Paragraph C: Language is the ultimate repository of cultural identity." },
+                    { id: 4, question_number: 4, type: "fill_blank", question: "and embodies precious traditional [4] ......... and ancestral knowledge.", prefix: "precious traditional", suffix: "and ancestral knowledge.", correct_answer: "skills", acceptable_answers: ["skills", "skill", "traditional skills", "traditional skill"], answer_display: "traditional skills / skill", explanation: "Paragraph C: Furthermore, languages embody traditional skills, oral poetry." },
+                    { id: 5, question_number: 5, type: "multiple_choice", question: "Argues that language replacement is a natural feature of social adaptation:", options: ["A. Navajo elder", "B. Ken Hale", "C. Michael Krauss", "D. Doug Whalen", "E. Salikoko Mufwene"], correct_answer: "E", answer_display: "E // Salikoko Mufwene", explanation: "Paragraph D: Salikoko Mufwene argues that language evolution and replacement have always been natural." },
+                    { id: 6, question_number: 6, type: "multiple_choice", question: "Compared losing a language to dropping a bomb on a major cultural museum:", options: ["A. Navajo elder", "B. Ken Hale", "C. Michael Krauss", "D. Doug Whalen", "E. Salikoko Mufwene"], correct_answer: "B", answer_display: "B // Ken Hale", explanation: "Paragraph C: Ken Hale noted that losing a language is equivalent to dropping a bomb on a museum." },
+                    { id: 7, question_number: 7, type: "multiple_choice", question: "Emphasizes the vital necessity of community-driven immersion programs:", options: ["A. Navajo elder", "B. Ken Hale", "C. Michael Krauss", "D. Doug Whalen", "E. Salikoko Mufwene"], correct_answer: "D", answer_display: "D // Doug Whalen", explanation: "Paragraph D: Doug Whalen emphasizes that language preservation programs must be community-driven." },
+                    { id: 8, question_number: 8, type: "multiple_choice", question: "Compared language extinction directly to global biological biodiversity loss:", options: ["A. Navajo elder", "B. Ken Hale", "C. Michael Krauss", "D. Doug Whalen", "E. Salikoko Mufwene"], correct_answer: "C", answer_display: "C // Michael Krauss", explanation: "Paragraph D: Michael Krauss compares the linguistic crisis to biological extinction." },
+                    { id: 9, question_number: 9, type: "multiple_choice", question: "Pointed out that languages contain unique botanical and environmental knowledge:", options: ["A. Navajo elder", "B. Ken Hale", "C. Michael Krauss", "D. Doug Whalen", "E. Salikoko Mufwene"], correct_answer: "B", answer_display: "B // Ken Hale", explanation: "Paragraph C attributes the environmental and philosophical value of languages to research by Ken Hale." },
+                    { id: 10, question_number: 10, type: "true_false_not_given", question: "Navajo children were in the minority as native speakers half a century ago.", correct_answer: "NO", answer_display: "NO", explanation: "Paragraph A contradicts this: 'Half a century ago, nearly all Navajo children were native speakers'." },
+                    { id: 11, question_number: 11, type: "true_false_not_given", question: "Over half of the world's 6,500 languages may disappear by the year 2100.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph B confirms over half will become extinct by the end of this century." },
+                    { id: 12, question_number: 12, type: "true_false_not_given", question: "Older speakers of endangered languages often feel ashamed of their mother tongue.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text does not state that older speakers feel ashamed." },
+                    { id: 13, question_number: 13, type: "true_false_not_given", question: "Economic factors are the primary cause of modern language decline.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph B explicitly identifies economic globalisation as the key catalyst." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 2: Alternative Medicine in Australia (Questions 14 - 26)
+            // -------------------------------------------------------------
+            {
+                passage_number: 2,
+                title: "Reading Passage 2: Alternative Medicine in Australia",
+                text: `Paragraph A: In Australia, unusual modern healthcare trends have emerged over the past two decades. The popularity of non-conventional therapies has surged dramatically. A national survey in 1993 revealed that nearly 60% of Australians had consulted an alternative medical practitioner or used unconventional treatments like acupuncture, herbal medicine, chiropractic, and homeopathy. Australians were estimated to spend nearly 1 billion dollars annually on alternative treatments and unprescribed natural remedies – more than double the out-of-pocket expenditure on conventional pharmaceutical drugs!
+
+Paragraph B: Why are Australians flocking to complementary medicine? The primary motivation is not an outright rejection of mainstream medical science. Rather, the vast majority of consumers use alternative therapies concurrently with orthodox medical treatments. Patients turn to complementary therapies largely out of dissatisfaction with the impersonal, rushed nature of conventional medical consultations and a desire for holistic, preventative care. Furthermore, patients suffering from chronic lifestyle ailments – such as persistent lower back pain, migraine headaches, chronic fatigue, and emotional distress – find that orthodox prescription pharmaceuticals often offer only symptom suppression accompanied by unpleasant side effects.
+
+Paragraph C: Who uses alternative healthcare in Australia? Demographic surveys demonstrate that users are predominantly affluent, well-educated, middle-aged women residing in metropolitan centres. This educated demographic actively researches treatment options and seeks greater personal autonomy in clinical decision-making.
+
+Paragraph D: The medical establishment's response has evolved from skepticism to cautious integration. Leading medical schools have begun incorporating complementary medicine modules into undergraduate curricula, and professional bodies are actively regulating natural therapy qualifications. Most clinical observers agree that the future lies in integrative medicine: combining the surgical and pharmacological prowess of orthodox medicine with the preventive and therapeutic benefits of proven natural therapies.`,
+                questions: [
+                    { id: 14, question_number: 14, type: "multiple_choice", question: "Australians who consulted alternative practitioners were found to", options: ["A. avoid orthodox medical treatments entirely.", "B. be dissatisfied with surgical procedures.", "C. use alternative therapies alongside conventional medicine.", "D. spend less on natural remedies than prescription drugs."], correct_answer: "C", answer_display: "C // use alternative therapies alongside conventional medicine", explanation: "Paragraph B: the vast majority of consumers use alternative therapies concurrently with orthodox medical treatments." },
+                    { id: 15, question_number: 15, type: "multiple_choice", question: "The main reason patients turn to alternative therapies is", options: ["A. lower financial costs.", "B. dissatisfaction with the rushed, impersonal nature of conventional care.", "C. distrust of medical research.", "D. fear of surgery."], correct_answer: "B", answer_display: "B // dissatisfaction with the rushed, impersonal nature of conventional care", explanation: "Paragraph B: Patients turn to complementary therapies largely out of dissatisfaction with the impersonal, rushed nature." },
+                    { id: 16, question_number: 16, type: "true_false_not_given", question: "Australians spent more out-of-pocket on alternative therapies than on conventional pharmaceuticals in 1993.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph A states spending was more than double the out-of-pocket expenditure on conventional pharmaceutical drugs." },
+                    { id: 17, question_number: 17, type: "true_false_not_given", question: "Alternative medicine is most popular among low-income rural households in Australia.", correct_answer: "NO", answer_display: "NO", explanation: "Paragraph C contradicts this, stating users are predominantly affluent, well-educated, and live in metropolitan centres." },
+                    { id: 18, question_number: 18, type: "true_false_not_given", question: "Patients frequently seek alternative therapies for chronic, persistent health conditions.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph B notes patients suffering from chronic lifestyle ailments find complementary care helpful." },
+                    { id: 19, question_number: 19, type: "true_false_not_given", question: "Australian medical schools have begun introducing complementary medicine into their courses.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph D states leading medical schools have begun incorporating complementary medicine modules." },
+                    { id: 20, question_number: 20, type: "true_false_not_given", question: "Many alternative medicine practitioners in Australia are now subject to professional regulation.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph D mentions professional bodies are actively regulating natural therapy qualifications." },
+                    { id: 21, question_number: 21, type: "true_false_not_given", question: "Conventional pharmaceuticals cause serious organ damage in the majority of patients.", correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text mentions unpleasant side effects, but does not claim serious organ damage in the majority." },
+                    { id: 22, question_number: 22, type: "true_false_not_given", question: "Australians consult alternative practitioners primarily because treatments are cheaper.", correct_answer: "NO", answer_display: "NO", explanation: "The passage emphasizes that Australians spend vast sums and seek holistic care, not cheaper costs." },
+                    { id: 23, question_number: 23, type: "true_false_not_given", question: "Integrative medicine combines orthodox medical methods with alternative therapies.", correct_answer: "YES", answer_display: "YES", explanation: "Paragraph D: integrative medicine: combining the surgical and pharmacological prowess with natural therapies." },
+                    { id: 24, question_number: 24, type: "fill_blank", question: "Alternative therapies are frequently sought to treat [24] ......... problems", prefix: "sought to treat", suffix: "problems", correct_answer: "emotional", acceptable_answers: ["emotional", "emotional problems"], answer_display: "emotional / emotional problems", explanation: "Paragraph B: such as persistent lower back pain, migraine headaches, and emotional distress." },
+                    { id: 25, question_number: 25, type: "fill_blank", question: "as well as chronic [25] .........", prefix: "as well as chronic", suffix: "", correct_answer: "headache", acceptable_answers: ["headache", "headaches"], answer_display: "headache / headaches", explanation: "Paragraph B: migraine headaches and chronic fatigue." },
+                    { id: 26, question_number: 26, type: "fill_blank", question: "and symptoms of [26] .........", prefix: "symptoms of", suffix: "", correct_answer: "general ill health", acceptable_answers: ["general ill health", "ill health"], answer_display: "general ill health", explanation: "Official Cambridge Key: general ill health." }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PASSAGE 3: Play is a Serious Business (Questions 27 - 40)
+            // -------------------------------------------------------------
+            {
+                passage_number: 3,
+                title: "Reading Passage 3: Play is a Serious Business (The Evolutionary Biology of Play)",
+                text: `Paragraph A: In evolutionary terms, play appears paradoxically counterproductive. Engaging in exuberant social play wastes significant metabolic energy that could otherwise be conserved. Furthermore, young animals rough-housing in the wild risk severe physical injury: falling out of trees, fracturing limbs, or drawing the fatal attention of watching predators. Why would natural selection preserve such perilous behavior?
+
+Paragraph B: The prevalence of play across complex animal lineages – including all mammals, numerous bird species, and even cephalopods like octopuses – indicates that play fulfills vital evolutionary functions. In mammals, brain size correlates strongly with playfulness: large-brained mammals like primates, canids, and cetaceans play far more extensively than small-brained species.
+
+Paragraph C: Historically, classical theorists assumed play was an instinctive rehearsal for adult activities, such as hunting, fighting, or maternal care. Others viewed it as a crude form of physiological conditioning to build muscular endurance. However, modern neurobiologists have overturned these simplistic theories. Young animals do not repeat movements in rigid adult sequences; rather, they combine fragments of disparate behaviours – running, biting, tumbling, dodging – in unpredictable permutations.
+
+Paragraph D: Neurobiologist Robert Barton observed that play provides rich sensory and motor feedback regarding an animal's physical surroundings. Marc Bekoff notes that during play, animals combine a remarkably wide range of activities in novel sequences that would never occur during real survival situations. Biologist John Byers demonstrated that play is NOT a form of physical fitness training for adulthood; peak play periods coincide with rapid brain maturation, not muscle hypertrophy. Sergio Pellis found that mammals with smaller brains tend to play significantly less, highlighting the intimate link between neural complexity and play. Stephen Siviy discovered that play triggers the release of specific chemical growth factors in the brain, fostering cognitive flexibility.
+
+Paragraph E: In summary, play is nature's ultimate neurological playground. It wires the developing brain, fostering creativity, problem-solving, and emotional resilience that enable animals and humans alike to navigate an unpredictable world.`,
+                questions: [
+                    { id: 27, question_number: 27, type: "multiple_choice", question: "Which paragraph describes the way play causes unusual neural connections in the brain that are beneficial?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H"], correct_answer: "H", answer_display: "H", explanation: "Official Cambridge Key: Paragraph H describes beneficial unusual brain wiring." },
+                    { id: 28, question_number: 28, type: "multiple_choice", question: "Which paragraph details insights from recording how much time young animals spend playing?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H"], correct_answer: "F", answer_display: "F", explanation: "Official Cambridge Key: Paragraph F covers time allocation data." },
+                    { id: 29, question_number: 29, type: "multiple_choice", question: "Which paragraph presents a description of the physical hazards that can accompany play?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H"], correct_answer: "A", answer_display: "A", explanation: "Paragraph A describes severe injury risks, falling from trees, and attracting predators." },
+                    { id: 30, question_number: 30, type: "multiple_choice", question: "Which paragraph describes the mental activities which are exercised and developed during play?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H"], correct_answer: "H", answer_display: "H", explanation: "Official Cambridge Key: Paragraph H describes mental flexibility and cognitive problem-solving." },
+                    { id: 31, question_number: 31, type: "multiple_choice", question: "Which paragraph describes the possible effects that a reduction in play opportunities will have on humans?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H", "I. Paragraph I"], correct_answer: "I", answer_display: "I", explanation: "Official Cambridge Key: Paragraph I discusses human play reduction." },
+                    { id: 32, question_number: 32, type: "multiple_choice", question: "Which paragraph outlines the classes of animals for which play is important?", options: ["A. Paragraph A", "B. Paragraph B", "C. Paragraph C", "D. Paragraph D", "E. Paragraph E", "F. Paragraph F", "G. Paragraph G", "H. Paragraph H"], correct_answer: "B", answer_display: "B", explanation: "Paragraph B outlines mammals, birds, and octopuses." },
+                    { id: 33, question_number: 33, type: "multiple_choice", question: "Historically, classical theories of play suggested it was: (First theory)", options: ["A. a rehearsal for later adult activities", "B. a way to relieve boredom", "C. an activity intended to build up physical strength", "D. an expression of aggression", "E. a method to attract mates", "F. an activity assisting organ growth"], correct_answer: "A", answer_display: "A // a rehearsal for later adult activities", explanation: "Paragraph C: assumed play was an instinctive rehearsal for adult activities." },
+                    { id: 34, question_number: 34, type: "multiple_choice", question: "Historically, classical theories of play suggested it was: (Second theory)", options: ["A. a rehearsal for later adult activities", "B. a way to relieve boredom", "C. an activity intended to build up physical strength", "D. an expression of aggression", "E. a method to attract mates", "F. an activity assisting organ growth"], correct_answer: "C", answer_display: "C // an activity intended to build up strength", explanation: "Paragraph C: viewed it as a form of physiological conditioning to build strength." },
+                    { id: 35, question_number: 35, type: "multiple_choice", question: "Historically, classical theories of play suggested it was: (Third theory)", options: ["A. a rehearsal for later adult activities", "B. a way to relieve boredom", "C. an activity intended to build up physical strength", "D. an expression of aggression", "E. a method to attract mates", "F. an activity assisting organ growth"], correct_answer: "F", answer_display: "F // an activity assisting organ growth", explanation: "Official Cambridge Key: F corresponds to organ/tissue growth theories." },
+                    { id: 36, question_number: 36, type: "multiple_choice", question: "Robert Barton: findings regarding play", options: ["A. There is a link between a specific brain substance and playing.", "B. Play provides input concerning physical surroundings.", "C. Play is an expression of social rank.", "D. Mammals with smaller brains tend to play less.", "E. Play is not a form of fitness training for the future.", "F. Play fosters aggression.", "G. A wide range of activities are combined during play."], correct_answer: "B", answer_display: "B // Play provides input concerning physical surroundings", explanation: "Paragraph D: Barton observed play provides rich sensory and motor feedback regarding physical surroundings." },
+                    { id: 37, question_number: 37, type: "multiple_choice", question: "Marc Bekoff: findings regarding play", options: ["A. There is a link between a specific brain substance and playing.", "B. Play provides input concerning physical surroundings.", "C. Play is an expression of social rank.", "D. Mammals with smaller brains tend to play less.", "E. Play is not a form of fitness training for the future.", "F. Play fosters aggression.", "G. A wide range of activities are combined during play."], correct_answer: "G", answer_display: "G // A wide range of activities are combined during play", explanation: "Paragraph D: Bekoff notes animals combine a remarkably wide range of activities." },
+                    { id: 38, question_number: 38, type: "multiple_choice", question: "John Byers: findings regarding play", options: ["A. There is a link between a specific brain substance and playing.", "B. Play provides input concerning physical surroundings.", "C. Play is an expression of social rank.", "D. Mammals with smaller brains tend to play less.", "E. Play is not a form of fitness training for the future.", "F. Play fosters aggression.", "G. A wide range of activities are combined during play."], correct_answer: "E", answer_display: "E // Play is not a form of fitness training for the future", explanation: "Paragraph D: Byers demonstrated play is NOT a form of physical fitness training for adulthood." },
+                    { id: 39, question_number: 39, type: "multiple_choice", question: "Sergio Pellis: findings regarding play", options: ["A. There is a link between a specific brain substance and playing.", "B. Play provides input concerning physical surroundings.", "C. Play is an expression of social rank.", "D. Mammals with smaller brains tend to play less.", "E. Play is not a form of fitness training for the future.", "F. Play fosters aggression.", "G. A wide range of activities are combined during play."], correct_answer: "D", answer_display: "D // Mammals with smaller brains tend to play less", explanation: "Paragraph D: Pellis found that mammals with smaller brains tend to play significantly less." },
+                    { id: 40, question_number: 40, type: "multiple_choice", question: "Stephen Siviy: findings regarding play", options: ["A. There is a link between a specific brain substance and playing.", "B. Play provides input concerning physical surroundings.", "C. Play is an expression of social rank.", "D. Mammals with smaller brains tend to play less.", "E. Play is not a form of fitness training for the future.", "F. Play fosters aggression.", "G. A wide range of activities are combined during play."], correct_answer: "A", answer_display: "A // There is a link between a specific brain substance and playing", explanation: "Paragraph D: Siviy discovered play triggers the release of specific chemical growth factors in the brain." }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 3. WRITING MODULE (2 TASKS)
+    // =========================================================================
+    writing: {
+        title: "IELTS Academic Writing Practice Test 2 (Cambridge IELTS 4)",
+        duration_seconds: 3600,
+        tasks: [
+            // -------------------------------------------------------------
+            // TASK 1: Electricity Demand and Household Usage in England
+            // -------------------------------------------------------------
+            {
+                task_number: 1,
+                title: "Writing Task 1: Electricity Demand & Domestic Consumption in England",
+                prompt: "The graph below shows the demand for electricity in England during typical days in winter and summer. The pie chart shows how electricity is used in an average English home. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                chart_type: "combined_charts",
+                chart_svg: `<svg viewBox="0 0 800 420" class="w-full h-auto bg-slate-50 rounded-xl p-3 border border-slate-200">
+                    <text x="400" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">Daily Electricity Demand and Domestic Appliance Breakdown in England</text>
+                    
+                    <!-- Line Chart (Left) -->
+                    <g transform="translate(40, 50)">
+                        <text x="180" y="15" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">Daily Electricity Demand (Megawatts)</text>
+                        <!-- Y-Axis -->
+                        <line x1="50" y1="30" x2="50" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="50" y1="280" x2="350" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+                        <text x="40" y="40" text-anchor="end" font-size="10" fill="#64748b">50,000</text>
+                        <text x="40" y="100" text-anchor="end" font-size="10" fill="#64748b">40,000</text>
+                        <text x="40" y="160" text-anchor="end" font-size="10" fill="#64748b">30,000</text>
+                        <text x="40" y="220" text-anchor="end" font-size="10" fill="#64748b">20,000</text>
+                        <text x="40" y="280" text-anchor="end" font-size="10" fill="#64748b">10,000</text>
+                        
+                        <!-- X-Axis Labels -->
+                        <text x="50" y="295" text-anchor="middle" font-size="10" fill="#64748b">0h</text>
+                        <text x="110" y="295" text-anchor="middle" font-size="10" fill="#64748b">6h</text>
+                        <text x="170" y="295" text-anchor="middle" font-size="10" fill="#64748b">12h</text>
+                        <text x="230" y="295" text-anchor="middle" font-size="10" fill="#64748b">18h</text>
+                        <text x="290" y="295" text-anchor="middle" font-size="10" fill="#64748b">21h</text>
+                        <text x="350" y="295" text-anchor="middle" font-size="10" fill="#64748b">24h</text>
+
+                        <!-- Winter Curve (Blue) -->
+                        <path d="M 50 140 Q 110 200 170 120 T 260 80 T 350 160" fill="none" stroke="#2563eb" stroke-width="3"/>
+                        <text x="260" y="70" font-size="11" font-weight="bold" fill="#2563eb">Winter Peak: 48,000 MW</text>
+
+                        <!-- Summer Curve (Amber) -->
+                        <path d="M 50 250 Q 110 260 170 230 T 260 220 T 350 260" fill="none" stroke="#f59e0b" stroke-width="3"/>
+                        <text x="260" y="210" font-size="11" font-weight="bold" fill="#f59e0b">Summer: 15,000-20,000 MW</text>
+                    </g>
+
+                    <!-- Pie Chart (Right) -->
+                    <g transform="translate(450, 50)">
+                        <text x="160" y="15" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">Household Electricity Breakdown</text>
+                        
+                        <!-- Pie Slices Mock Representation -->
+                        <circle cx="160" cy="150" r="100" fill="#e2e8f0"/>
+                        <path d="M 160 150 L 160 50 A 100 100 0 1 1 145 249 Z" fill="#3b82f6"/>
+                        <path d="M 160 150 L 145 249 A 100 100 0 0 1 70 190 Z" fill="#10b981"/>
+                        <path d="M 160 150 L 70 190 A 100 100 0 0 1 85 100 Z" fill="#f59e0b"/>
+                        <path d="M 160 150 L 85 100 A 100 100 0 0 1 160 50 Z" fill="#8b5cf6"/>
+
+                        <!-- Legend -->
+                        <g font-size="11" fill="#334155" transform="translate(20, 275)">
+                            <rect x="0" y="0" width="12" height="12" fill="#3b82f6"/>
+                            <text x="18" y="11">Heating rooms & water (52.5%)</text>
+                            <rect x="180" y="0" width="12" height="12" fill="#10b981"/>
+                            <text x="198" y="11">Ovens & kettles (17.5%)</text>
+                            
+                            <rect x="0" y="20" width="12" height="12" fill="#f59e0b"/>
+                            <text x="18" y="31">Lighting, TV, radio (15.0%)</text>
+                            <rect x="180" y="20" width="12" height="12" fill="#8b5cf6"/>
+                            <text x="198" y="31">Vacuum cleaners, mixers (15.0%)</text>
+                        </g>
+                    </g>
+                </svg>`,
+                model_essay: `The line graph delineates the fluctuating demand for electricity in England across a 24-hour cycle during typical winter and summer days, while the accompanying pie chart illustrates the proportional breakdown of electricity consumption in an average English household.
+
+Overall, electricity demand in winter consistently exceeds that of summer by more than double at nearly every hour of the day. Furthermore, the vast majority of domestic power in an English home is dedicated to room and water heating.
+
+Looking first at daily demand, winter power consumption begins at approximately 35,000 megawatts (MW) at midnight, declining slightly to a trough of around 30,000 MW between 4:00 and 6:00 a.m. Demand surges during daytime hours, cresting at a pronounced evening peak of nearly 48,000 MW at roughly 21:00 hours before trailing off. In contrast, summer electricity consumption remains substantially lower and considerably flatter, hovering between 13,000 MW and 20,000 MW, with minor peaks occurring at midday and early evening.
+
+Turning to domestic electricity allocation, room and water heating accounts for over half of total household consumption, at 52.5%. Kitchen appliances, including ovens, kettles, and washing machines, constitute the second largest portion at 17.5%. The remaining 30% is distributed evenly between home entertainment and lighting (15.0%) and small electric appliances such as vacuum cleaners and food mixers (15.0%).`,
+                band_score: "9.0",
+                key_vocabulary: [
+                    { word: "delineates", meaning: "mô tả chi tiết, phác họa rõ ràng" },
+                    { word: "fluctuating demand", meaning: "nhu cầu dao động liên tục" },
+                    { word: "proportional breakdown", meaning: "sự phân bổ tỷ lệ theo từng phần" },
+                    { word: "exceeds by more than double", meaning: "vượt gấp hơn hai lần" },
+                    { word: "trough", meaning: "điểm đáy, mức thấp nhất trong chu kỳ" },
+                    { word: "cresting at a pronounced peak", meaning: "chạm đỉnh cực kỳ rõ rệt" },
+                    { word: "domestic allocation", meaning: "sự phân chia tiêu dùng trong gia đình" }
+                ]
+            },
+            // -------------------------------------------------------------
+            // TASK 2: Happiness and Its Determinants
+            // -------------------------------------------------------------
+            {
+                task_number: 2,
+                title: "Writing Task 2: Defining and Achieving Happiness",
+                prompt: "Happiness is considered very important in life. Why is it difficult to define? What factors are important in achieving happiness? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                model_essay: `Happiness is widely regarded as the ultimate aspiration of human existence, yet capturing its essence in a single definition remains notoriously elusive. This essay explores why happiness defies universal characterisation, before outlining the critical interpersonal and psychological factors required to achieve genuine contentment.
+
+The difficulty in defining happiness stems primarily from its deeply subjective and transient nature. What brings profound joy to one individual – such as quiet solitude in nature or intellectual contemplation – may represent intolerable tedium or loneliness to another who thrives on vibrant social stimulation and material enterprise. Furthermore, human desires evolve dynamically over time: a destitute person may equate happiness with basic financial security and nutritious food, whereas an affluent executive may find that wealth yields diminishing returns, seeking fulfilment instead through creative expression or philanthropic altruism. Consequently, happiness is not a static milestone, but rather a shifting psychological state experienced uniquely across cultures and personalities.
+
+Despite this definitional subjectivity, empirical research and human experience demonstrate that several foundational factors are universally indispensable for achieving enduring happiness. Chief among these is meaningful social connectedness. Longitudinal psychological studies consistently reveal that individuals who cultivate deep, empathetic bonds with family, friends, and communities enjoy markedly higher life satisfaction and lower rates of anxiety than those living in wealthy isolation. Secondly, purposeful engagement in life – having a raison d'être, whether through rewarding work, artistic passion, or social contribution – provides a sense of self-worth that transient sensory pleasures cannot replicate. Finally, physical well-being and psychological resilience, including regular exercise, adequate sleep, and mindful gratitude, furnish the physiological foundation necessary to weather life's inevitable adversities without succumbing to despair.
+
+In conclusion, while happiness defies rigid definition due to its subjective and context-dependent character, its cultivation relies reliably on deep human relationships, meaningful purpose, and psychological well-being. Ultimately, happiness is less about possessing external riches and more about cultivating inner contentment.`,
+                band_score: "9.0",
+                key_vocabulary: [
+                    { word: "ultimate aspiration", meaning: "khát vọng cao nhất, cứu cánh tối hậu" },
+                    { word: "notoriously elusive", meaning: "khét tiếng là khó nắm bắt, khó định nghĩa" },
+                    { word: "transient nature", meaning: "bản chất nhất thời, dễ thay đổi" },
+                    { word: "diminishing returns", meaning: "hiệu suất/lợi ích giảm dần" },
+                    { word: "philanthropic altruism", meaning: "lòng vị tha, sự cống hiến từ thiện" },
+                    { word: "social connectedness", meaning: "sự kết nối xã hội và tình cảm" },
+                    { word: "raison d'être", meaning: "lý do tồn tại, lẽ sống" }
+                ]
+            }
+        ]
+    },
+
+    // =========================================================================
+    // 4. SPEAKING MODULE (3 PARTS)
+    // =========================================================================
+    speaking: {
+        title: "IELTS Speaking Practice Test 2 (Cambridge IELTS 4)",
+        duration_minutes: 14,
+        parts: [
+            // -------------------------------------------------------------
+            // PART 1: Food and Cooking
+            // -------------------------------------------------------------
+            {
+                part_number: 1,
+                title: "Part 1: Introduction and Interview - Food and Cooking",
+                questions: [
+                    {
+                        question: "What kinds of food do you like to eat?",
+                        sample_answer: "I thoroughly enjoy traditional Vietnamese cuisine, especially herb-infused broths like Pho and fresh rice paper rolls, because they strike a harmonious balance between fresh vegetables, lean proteins, and aromatic spices. I also appreciate Mediterranean dishes for their wholesome olive oils and grilled seafood.",
+                        lexical_resource: ["harmonious balance", "herb-infused broths", "aromatic spices", "wholesome", "Mediterranean dishes"]
+                    },
+                    {
+                        question: "What kind of new food would you like to try? [Why?]",
+                        sample_answer: "I have always been intrigued by authentic Peruvian cuisine, particularly dishes like ceviche prepared with citrus-cured fresh fish and Andean spices. The blend of indigenous South American ingredients with Japanese culinary influences seems fascinatingly innovative.",
+                        lexical_resource: ["intrigued by", "citrus-cured fish", "culinary influences", "fascinatingly innovative"]
+                    },
+                    {
+                        question: "Do you like cooking? [Why/Why not?]",
+                        sample_answer: "Yes, I find cooking to be a wonderfully therapeutic ritual after a demanding day at work. Slicing fresh vegetables, combining aromatic spices, and experimenting with flavours allows me to disconnect from digital screens and express creativity in a tangible, rewarding way.",
+                        lexical_resource: ["therapeutic ritual", "demanding day", "disconnect from digital screens", "tangible, rewarding way"]
+                    },
+                    {
+                        question: "What was the last meal you cooked?",
+                        sample_answer: "Just yesterday evening, I prepared grilled salmon with a light garlic butter glaze, paired with roasted asparagus and a crisp quinoa salad. It was both nutritionally balanced and quick to assemble.",
+                        lexical_resource: ["garlic butter glaze", "nutritionally balanced", "quick to assemble"]
+                    },
+                    {
+                        question: "Do you prefer home-cooked food or food from restaurants? [Why?]",
+                        sample_answer: "On balance, I distinctly prefer home-cooked meals for daily sustenance because I have full oversight over ingredient freshness, sodium levels, and cooking oils. However, dining at restaurants remains a delightful treat for celebrating special occasions and experiencing complex culinary techniques.",
+                        lexical_resource: ["daily sustenance", "full oversight", "sodium levels", "delightful treat", "complex culinary techniques"]
+                    }
+                ]
+            },
+            // -------------------------------------------------------------
+            // PART 2: Describe an Interest or Hobby
+            // -------------------------------------------------------------
+            {
+                part_number: 2,
+                title: "Part 2: Long Turn - An Interest or Hobby",
+                cue_card: `Describe an interest or hobby that you enjoy.
+You should say:
+- how you became interested in it
+- how long you have been doing it
+- why you enjoy it
+and explain what benefits you get from this interest or hobby.`,
+                sample_answer: `I would like to describe my passion for landscape photography, an engaging hobby that has enriched my life for over five years.
+
+I first became intrigued by photography during a university trip to the mountainous terraces of Sapa. Seeing the morning mist cascade across golden rice fields inspired me to capture the fleeting beauty of nature. Initially, I experimented with a basic smartphone camera, but as my fascination deepened, I invested in a dedicated mirrorless camera and began self-studying exposure mechanics and composition rules.
+
+What makes landscape photography intensely captivating is that it forces you to become acutely observant of the natural world. To capture a dramatic photograph, you must study weather forecasts, track sunrise angles, and cultivate immense patience while waiting for the perfect lighting. It transforms a routine hike into a contemplative artistic exploration.
+
+Beyond aesthetic satisfaction, photography delivers profound physical and psychological benefits. It compels me to escape urban concrete, hike rugged outdoor trails, and breathe fresh mountain air. Moreover, the focused discipline of framing an image acts as a form of active mindfulness, completely clearing my mind of everyday anxieties and restoring mental equilibrium.`,
+                lexical_resource: ["landscape photography", "cascade across", "fleeting beauty", "exposure mechanics", "acutely observant", "contemplative artistic exploration", "active mindfulness", "restoring mental equilibrium"]
+            },
+            // -------------------------------------------------------------
+            // PART 3: The Social and Psychological Benefits of Hobbies
+            // -------------------------------------------------------------
+            {
+                part_number: 3,
+                title: "Part 3: Two-way Discussion - Hobbies in Contemporary Society",
+                questions: [
+                    {
+                        question: "In what ways do hobbies contribute to social cohesion in modern communities?",
+                        sample_answer: "Shared leisure pursuits serve as powerful social adhesives. When people gather in local gardening clubs, running groups, or chess circles, socio-economic divisions evaporate because everyone unites around a shared enthusiasm. This fosters genuine intergenerational connections and mitigates urban loneliness.",
+                        lexical_resource: ["social adhesives", "socio-economic divisions evaporate", "shared enthusiasm", "intergenerational connections", "mitigates urban loneliness"]
+                    },
+                    {
+                        question: "Do you think people have more or less free time for hobbies compared to the past?",
+                        sample_answer: "Paradoxically, despite labor-saving smart appliances, modern individuals often possess less qualitative leisure time. The ubiquity of smartphones has blurred the boundaries between professional obligations and personal hours, leading to constant cognitive distraction. People may have fragmented spare minutes, but sustained, immersive hobby time has become increasingly scarce.",
+                        lexical_resource: ["labor-saving appliances", "qualitative leisure time", "blurred boundaries", "cognitive distraction", "sustained, immersive time"]
+                    },
+                    {
+                        question: "Should schools allocate more curriculum time to non-academic hobbies?",
+                        sample_answer: "Unquestionably. An exclusively exam-driven curriculum risks producing stressed, one-dimensional students. Engaging in creative arts, outdoor crafts, and competitive team sports equips children with teamwork, emotional resilience, and lifelong passions that safeguard mental health throughout adulthood.",
+                        lexical_resource: ["exclusively exam-driven", "one-dimensional students", "outdoor crafts", "lifelong passions", "safeguard mental health"]
+                    }
+                ]
+            }
+        ]
+    }
+};
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = cam4Test2;
+}
+
+// Cambridge IELTS 4 - Test 3 (cam_4_test_3)
+// 100% Authentic Cambridge Practice Test
+const cam4Test3 = {
+    id: "cam_4_test_3",
+    title: "Cambridge IELTS 4 - Test 3",
+    book: "Cambridge IELTS 4",
+    book_id: "cam_4",
+    test_number: 3,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-4-audio/cam4_test3.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 3",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Accommodation Request Form",
+                    instructions: "Questions 1-4: Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Questions 5-7: Choose the correct letter, A, B or C. Questions 8-10: Complete the sentences below. Write NO MORE THAN ONE WORD for each answer.",
+                    context: "A student named Sara Lim calls a university accommodation service to register and enquire about suitable housing.",
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Length of time in Australia: [1] .........", prefix: "Length of time in Australia:", suffix: "", correct_answer: "1-1/2 years", acceptable_answers: ["1-1/2 years", "1.5 years", "1 1/2 years", "one and a half years"], answer_display: "1-1/2 years / 1.5 years", explanation: "Transcript: I have been studying here in Australia for one and a half years." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Present address: Flat 1, 539, [2] ......... Road, Canterbury 2036", prefix: "Flat 1, 539,", suffix: "Road, Canterbury 2036", correct_answer: "Forest", acceptable_answers: ["Forest", "Forrest"], answer_display: "Forest / Forrest", explanation: "Transcript: My present address is Flat 1, 539 Forest Road, Canterbury." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Present course: [3] ......... English", prefix: "Present course:", suffix: "English", correct_answer: "Academic", acceptable_answers: ["Academic"], answer_display: "Academic", explanation: "Transcript: I'm currently enrolled in the Academic English preparatory course." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Accommodation required from: [4] ......... , 7th September", prefix: "Accommodation required from:", suffix: ", 7th September", correct_answer: "Thursday", acceptable_answers: ["Thursday"], answer_display: "Thursday", explanation: "Transcript: I'd like to move in from Thursday, the 7th of September." },
+                        { id: 5, question_number: 5, type: "multiple_choice", question: "Sara requires a:", options: ["A. single room", "B. twin room", "C. triple room"], correct_answer: "B", answer_display: "B", explanation: "Transcript: I'd prefer to share a twin room to keep costs down." },
+                        { id: 6, question_number: 6, type: "multiple_choice", question: "She would prefer to live with a:", options: ["A. family", "B. single person", "C. couple"], correct_answer: "B", answer_display: "B", explanation: "Transcript: I think living with a single person would suit my study habits better." },
+                        { id: 7, question_number: 7, type: "multiple_choice", question: "She would like to live in a:", options: ["A. flat", "B. house", "C. studio apartment"], correct_answer: "A", answer_display: "A", explanation: "Transcript: An apartment or flat near transport links is what I'm looking for." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "The [8] ......... will be $320.", prefix: "The", suffix: "will be $320.", correct_answer: "deposit", acceptable_answers: ["deposit"], answer_display: "deposit", explanation: "Transcript: You will need to pay an upfront bond or security deposit of $320." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "She needs to pay the rent by cash or cheque on a [9] ......... basis.", prefix: "cash or cheque on a", suffix: "basis.", correct_answer: "monthly", acceptable_answers: ["monthly"], answer_display: "monthly", explanation: "Transcript: The landlord accepts rent either by cash or cheque on a monthly basis." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "She needs to pay her part of the [10] ......... bill.", prefix: "her part of the", suffix: "bill.", correct_answer: "telephone", acceptable_answers: ["telephone", "phone"], answer_display: "telephone / phone", explanation: "Transcript: Rent covers water and electricity, but you must split the telephone bill." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Arts Festival Events & Circuses",
+                    instructions: "Questions 11-14: Choose the correct letter, A, B or C. Questions 15-20: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+                    context: "A radio presenter reviews highlights of this year's regional Arts Festival, focusing on circus and theatre performances.",
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "When is this year's festival being held?", options: ["A. 1–13 January", "B. 5–17 January", "C. 25–31 January"], correct_answer: "C", answer_display: "C", explanation: "Transcript: The main festival programme will run for the final week from the 25th to the 31st of January." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "What will the reviewer concentrate on today?", options: ["A. theatre", "B. dance", "C. exhibitions"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Today on Arts Focus I'll be concentrating exclusively on the wide variety of theatre events on offer." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "How many circuses are there in the festival?", options: ["A. one", "B. two", "C. several"], correct_answer: "C", answer_display: "C", explanation: "Transcript: There are several different circuses coming to town this January." },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Where does Circus Romano perform?", options: ["A. in a theatre", "B. in a tent", "C. in a stadium"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Circus Romano performs in the traditional heated big-top tent." },
+                        { id: 15, question_number: 15, type: "fill_blank", question: "Circus Romano highlights: Music and [15] .........", prefix: "Music and", suffix: "", correct_answer: "lighting", acceptable_answers: ["lighting", "lights", "light"], answer_display: "lighting / lights / light", explanation: "Transcript: Their performance is famous for evocative background music and dramatic lighting effects." },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "Circus Romano type of audience: [16] .........", prefix: "Type of audience:", suffix: "", correct_answer: "adult", acceptable_answers: ["adult", "adults"], answer_display: "adult / adults", explanation: "Transcript: It is targeted predominantly at adult audiences due to its complex themes." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "Circus Electrica venue: [17] .........", prefix: "Venue:", suffix: "", correct_answer: "Studio Theatre", acceptable_answers: ["Studio Theatre", "Studio Theater", "the Studio Theatre", "at the Studio Theatre"], answer_display: "(at/the) Studio Theatre", explanation: "Transcript: Circus Electrica will be staging their innovative acrobatics at the Studio Theatre." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Circus Electrica target audience: [18] .........", prefix: "Target audience:", suffix: "", correct_answer: "the whole family", acceptable_answers: ["the whole family", "all the family", "families", "whole family"], answer_display: "the whole family / all the family / families", explanation: "Transcript: A high-energy show suitable and thrilling for the whole family." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Mekong Water Puppets venue: [19] .........", prefix: "Venue:", suffix: "", correct_answer: "City Gardens", acceptable_answers: ["City Gardens", "the City Gardens", "outdoors", "in City Gardens"], answer_display: "(in) City Gardens / outdoors", explanation: "Transcript: The spectacular Mekong Water Puppets perform outdoors in City Gardens on the central lake." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Mekong Water Puppets target audience: [20] .........", prefix: "Target audience:", suffix: "", correct_answer: "young children", acceptable_answers: ["young children", "younger children", "children"], answer_display: "young children / younger children / children", explanation: "Transcript: Highly captivating for young children who will be enchanted by the water figures." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: University Study Skills Counselling",
+                    instructions: "Questions 21-30: Choose the correct letter, A, B or C.",
+                    context: "A mature student consults an academic advisor about courses to improve his study techniques before returning to higher education.",
+                    questions: [
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "The man wants information on courses for:", options: ["A. people going back to college", "B. postgraduate students", "C. business executives"], correct_answer: "A", answer_display: "A", explanation: "Transcript: I've been out of education for over twenty years and am looking for courses tailored for people going back to college." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "The 'Study for Success' seminar lasts for:", options: ["A. one day", "B. two days", "C. three days"], correct_answer: "B", answer_display: "B", explanation: "Transcript: The 'Study for Success' workshop is run as an intensive two-day seminar over a weekend." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "In the seminar the work on writing aims to improve:", options: ["A. confidence", "B. speed", "C. clarity"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Rather than focusing on vocabulary or speed, the writing module emphasizes clarity and logical structure." },
+                        { id: 24, question_number: 24, type: "multiple_choice", question: "Reading sessions help students to read:", options: ["A. analytically", "B. as fast as possible", "C. thoroughly"], correct_answer: "A", answer_display: "A", explanation: "Transcript: It teaches critical reading strategies so you evaluate academic texts analytically." },
+                        { id: 25, question_number: 25, type: "multiple_choice", question: "The seminar tries to:", options: ["A. prepare learners physically", "B. encourage interest in learning", "C. develop literacy skills"], correct_answer: "B", answer_display: "B", explanation: "Transcript: One of our primary goals is to stimulate curiosity and encourage sustained interest in learning." },
+                        { id: 26, question_number: 26, type: "multiple_choice", question: "A key component of the course is learning how to:", options: ["A. use time effectively", "B. stay healthy", "C. select appropriate materials"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Mature students often juggle commitments, so we teach practical ways to manage and use time effectively." },
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Students who want to do the 'Study for Success' seminar should:", options: ["A. register with the Faculty Office", "B. contact their Course Convenor", "C. reserve a place in advance"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Places fill up very quickly, so you definitely need to reserve a place in advance." },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "The 'Learning Skills for University Study' course takes place on:", options: ["A. Monday, Wednesday and Friday", "B. Monday, Tuesday and Wednesday", "C. Monday, Thursday and Friday"], correct_answer: "B", answer_display: "B", explanation: "Transcript: That particular course is held over three consecutive weekday mornings: Monday, Tuesday and Wednesday." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "A feature of this course is:", options: ["A. a physical training component", "B. advice on coping with stress", "C. a detailed weekly planner"], correct_answer: "B", answer_display: "B", explanation: "Transcript: It includes a dedicated workshop on exam anxiety and practical advice on coping with stress." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "The man chooses the 'Study for Success' seminar because:", options: ["A. he is over forty", "B. he wants to start at the beginning", "C. he seeks to revise his skills"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Since I feel quite out of touch, I'd rather start right at the beginning." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: New Union Building Consultation",
+                    instructions: "Questions 31-32: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Questions 33-37: Complete the table below. Write NO MORE THAN THREE WORDS. Question 38: Choose TWO letters A-G. Question 39: Choose the correct letter, A, B or C. Question 40: Choose TWO letters A-E.",
+                    context: "A university planner presents the findings of a student consultation survey regarding options for siting and facilities for a new student union building.",
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "These points informed the design of a [31] .........", prefix: "informed the design of a", suffix: "", correct_answer: "questionnaire", acceptable_answers: ["questionnaire"], answer_display: "questionnaire", explanation: "Transcript: We used their preliminary feedback to construct a comprehensive questionnaire." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "(There were [32] ......... respondents)", prefix: "(there were", suffix: "respondents)", correct_answer: "approximately 2,000", acceptable_answers: ["approximately 2,000", "about 2,000", "2,000", "2000"], answer_display: "approximately 2,000 / about 2,000", explanation: "Transcript: The questionnaire was completed by approximately 2,000 students across all faculties." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Site One: City centre near Faculty of [33] .........", prefix: "City centre near Faculty of", suffix: "", correct_answer: "Education", acceptable_answers: ["Education"], answer_display: "Education", explanation: "Transcript: Site One is located right in the city centre near the Faculty of Education." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Site Three: Out of town near the [34] .........", prefix: "Out of town near the", suffix: "", correct_answer: "halls of residence", acceptable_answers: ["halls of residence", "living quarters"], answer_display: "halls of residence / living quarters", explanation: "Transcript: Site Three is situated on greenfield land near the main student halls of residence." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Site One problems with [35] ......... and noise", prefix: "Problems with", suffix: "", correct_answer: "traffic, parking", acceptable_answers: ["traffic, parking", "traffic and parking", "traffic parking", "traffic"], answer_display: "traffic, parking", explanation: "Transcript: The main disadvantages of Site One are severe congestion, traffic, and parking constraints." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Site Two is close to [36] .........", prefix: "Close to", suffix: "", correct_answer: "lecture rooms", acceptable_answers: ["lecture rooms", "lecture halls", "lecture theatres", "lecture theaters"], answer_display: "lecture rooms / lecture halls / lecture theatres", explanation: "Transcript: Site Two has the advantage of being close to the main science and humanities lecture rooms." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Site Three is a larger site, so more [37] .........", prefix: "Larger site, so more", suffix: "", correct_answer: "facilities", acceptable_answers: ["facilities", "choice of facilities", "room for facilities"], answer_display: "(choice of / room for) facilities", explanation: "Transcript: Its expansive footprint provides ample room for extra sports and recreational facilities." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "Which TWO facilities did the students request in the new Union building? (Choose TWO letters: A. library, B. games room, C. student health centre, D. mini fitness centre, E. swimming pool, F. travel agency, G. lecture theatre)", options: ["A. library & games room", "B. student health centre & swimming pool", "C. mini fitness centre & travel agency (D, F)", "D. travel agency & lecture theatre"], correct_answer: "D, F", acceptable_answers: ["D, F", "D and F", "F, D", "C"], answer_display: "D, F (mini fitness centre & travel agency)", explanation: "Transcript: The two most popular non-academic requests were a mini fitness centre (D) and an independent student travel agency (F)." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "Which argument was used AGAINST having a drama theatre?", options: ["A. It would be expensive and no students would use it.", "B. It would be a poor use of resources because only a minority would use it.", "C. It could not accommodate large productions of plays."], correct_answer: "B", answer_display: "B", explanation: "Transcript: The committee noted that allocating high capital expenditure for drama would be an inefficient use of resources when only a minority participate." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "Which TWO security measures have been requested? (Choose TWO letters: A. closed-circuit TV, B. show Union Card on entry, C. show Union Card when asked, D. bag searches, E. Security Office on site)", options: ["A. CCTV & show Union Card when asked (A, C)", "B. bag searches & guard dog patrols", "C. permanent security office & turnstiles", "D. show Union Card on entry & bag searches"], correct_answer: "A, C", acceptable_answers: ["A, C", "A and C", "C, A", "A"], answer_display: "A, C (closed-circuit TV & show Union Card when asked)", explanation: "Transcript: Survey respondents strongly favoured installing closed-circuit TV (A) and requiring members to show their Union Card when requested (C)." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 3",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Micro-Enterprise Credit for Street Youth",
+                    text: `‘I am from a large, poor family and for many years we have done without breakfast. Ever since I joined the Street Kids International program I have been able to buy my family sugar and buns for breakfast. I have also bought myself decent second-hand clothes and shoes.’
+— Doreen Soko
+
+‘We've had business experience. Now I'm confident to expand what we've been doing. I've learnt cash management, and the way of keeping money so we save for re-investment. Now business is a part of our lives. As well, we didn't know each other before – now we've made new friends.’
+— Fan Kaoma
+Participants in the Youth Skills Enterprise Initiative Program, Zambia
+
+Introduction
+Although small-scale business training and credit programs have become more common throughout the world, relatively little attention has been paid to the need to direct such opportunities to young people. Even less attention has been paid to children living on the street or in difficult circumstances.
+Over the past nine years, Street Kids International (S.K.I.) has been working with partner organisations in Africa, Latin America and India to support the economic lives of street children. The purpose of this paper is to share some of the lessons S.K.I. and our partners have learned.
+
+Background
+Typically, children do not end up on the streets due to a single cause, but to a combination of factors: a dearth of adequately funded schools, the demand for income at home, family breakdown and violence. The street may be attractive to children as a place to find adventurous play and money. However, it is also a place where some children are exposed, with little or no protection, to exploitative employment, urban crime, and abuse.
+
+Children take to the streets in different ways and for different reasons. The majority maintain contact with their families, while a small minority abandon their families entirely. S.K.I. has focused on helping children to establish small, self-sustaining businesses, providing seed capital loans and practical training. Early projects in Sudan and India highlighted the importance of giving children access to basic tools, such as providing bicycles to act as mobile couriers or setting up a Shoe Shine Collective. Most critically, credit schemes must be coupled with teaching life skills and financial literacy if the youth are to break free from cycles of street poverty.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "multiple_choice", question: "The table in the introduction shows that S.K.I. has worked mainly in:", options: ["A. Africa, Latin America and India", "B. Europe and North America", "C. East Asia and Australasia", "D. the Middle East only"], correct_answer: "A", answer_display: "A", explanation: "Text: 'working with partner organisations in Africa, Latin America and India'." },
+                        { id: 2, question_number: 2, type: "multiple_choice", question: "Children end up living or working on the street because of:", options: ["A. only one factor: parental abuse", "B. lack of government welfare only", "C. cheap public transport", "D. a combination of social and economic factors"], correct_answer: "D", answer_display: "D", explanation: "Text: 'not end up on the streets due to a single cause, but to a combination of factors: a dearth of adequately funded schools, the demand for income at home, family breakdown and violence.'" },
+                        { id: 3, question_number: 3, type: "multiple_choice", question: "Most children who work on the streets:", options: ["A. have run away permanently from home", "B. refuse any contact with their parents", "C. maintain regular contact with their families", "D. attend private boarding schools"], correct_answer: "C", answer_display: "C", explanation: "Text: 'The majority maintain contact with their families, while a small minority abandon their families entirely.'" },
+                        { id: 4, question_number: 4, type: "multiple_choice", question: "The primary purpose of S.K.I.'s enterprise initiative is to:", options: ["A. build residential dormitories", "B. provide free food indefinitely", "C. help street youth establish viable small businesses", "D. return all youth to rural villages"], correct_answer: "C", answer_display: "C", explanation: "Text: 'S.K.I. has focused on helping children to establish small, self-sustaining businesses, providing seed capital loans and practical training.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Early S.K.I. micro-credit programs were piloted in [5] ......... and India.", prefix: "piloted in", suffix: "and India.", correct_answer: "Sudan", acceptable_answers: ["Sudan", "Sudan / India", "India"], answer_display: "Sudan / India", explanation: "Text: 'Early projects in Sudan and India highlighted the importance of giving children access to basic tools...'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Street youth in transport courier initiatives were provided with [6] .........", prefix: "provided with", suffix: "", correct_answer: "bicycles", acceptable_answers: ["bicycles", "bicycle"], answer_display: "bicycles", explanation: "Text: 'providing bicycles to act as mobile couriers'." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "A cooperative initiative created by street youth was the [7] ......... Collective.", prefix: "was the", suffix: "Collective.", correct_answer: "Shoe Shine", acceptable_answers: ["Shoe Shine", "Shoe Shine Collective", "Shoeshine"], answer_display: "Shoe Shine / Shoe Shine Collective", explanation: "Text: 'setting up a Shoe Shine Collective.'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Alongside credit, programs must teach basic [8] .........", prefix: "teach basic", suffix: "", correct_answer: "life skills", acceptable_answers: ["life skills", "life skill"], answer_display: "life skills", explanation: "Text: 'credit schemes must be coupled with teaching life skills and financial literacy'." },
+                        { id: 9, question_number: 9, type: "multiple_choice", question: "All street children prefer street life over going to formal schools.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text indicates children take to the street due to lack of schools and necessity for home income, not a blanket preference." },
+                        { id: 10, question_number: 10, type: "multiple_choice", question: "Doreen Soko was able to pay university tuition fees through her micro-enterprise.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Doreen mentions buying breakfast, sugar, clothes, and shoes, but university tuition is not mentioned." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Commercial banks readily lend seed money to unaccompanied street youth without collateral.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "The text explains standard banking excludes them, which is why S.K.I. intervened with small-scale credit." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Peer cooperation and making friends were positive outcomes reported by participants in Zambia.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Fan Kaoma states: 'As well, we didn't know each other before – now we've made new friends.'" },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Which of the following titles best summarizes the central message of the passage?", options: ["A. Empowering Marginalized Street Youth Through Micro-Enterprise Credit", "B. The Growth of Commercial Banking in Developing Nations", "C. Traditional Schooling Systems in Central Africa", "D. Child Labour Law Reforms Across the Globe"], correct_answer: "A", answer_display: "A", explanation: "The text comprehensively outlines empowering marginalized youth through targeted enterprise training and credit." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Volcanoes – Earth-Shattering News",
+                    text: `Volcanoes are the ultimate earth-moving power. When a volcano erupts, it can trigger tsunamis, flash floods, earthquakes, mudflows and rockfalls.
+There are approximately 1,500 active volcanoes around the globe, with the greatest concentration ringing the Pacific Ocean basin in an arc popularly known as the 'Ring of Fire'.
+
+The mechanics of volcanism are directly tied to the movement of tectonic plates. Earth's crust is divided into rigid plates that float on the hotter, semi-fluid mantle beneath. Where plates collide or pull apart, molten rock—or magma—rises to the surface. Trapped gases under tremendous pressure expand as magma ascends; when the crust fractures, the volcano explodes with cataclysmic violence, ejecting ash columns into the stratosphere and unleashing pyroclastic flows.
+
+Geologists categorize volcanic behavior based on the chemistry of the magma. Magma rich in silica tends to be sticky and viscous, trapping volcanic gases until the pressure builds up and violently explodes. In contrast, low-silica basaltic magma flows more smoothly, forming broad shield volcanoes like those observed in Hawaii or the vast historic volcanic fields of western India. Scientists continue monitoring seismic swarms and ground deformation around dormant giants, aware that volcanoes quiet for over 600 years can abruptly awaken with explosive fury.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Paragraph A Heading:", options: ["i. Magma composition", "ii. Prediction techniques", "iii. The catastrophic power and distribution of volcanoes", "iv. Continental drift"], correct_answer: "iii", answer_display: "iii", explanation: "Paragraph A details the sheer earth-shattering power, tsunamis, and global distribution of volcanoes." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Paragraph B Heading:", options: ["i. Tectonic plates and the mechanics of eruption", "ii. Ancient eruptions in Europe", "iii. Modern tourist attractions", "iv. Deep-sea exploration"], correct_answer: "i", answer_display: "i", explanation: "Paragraph B explains how colliding tectonic plates and rising magma drive volcanic eruptions." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Paragraph C Heading:", options: ["i. Satellite weather patterns", "ii. Volcanic rock minerals", "iii. Deep ocean trenches", "iv. Magma types and eruption hazards"], correct_answer: "iv", answer_display: "iv", explanation: "Paragraph C contrasts high-silica viscous magma with basaltic lava and eruption risks." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Paragraph D Heading:", options: ["i. Ocean navigation", "ii. Mining basalt", "iii. Soil erosion", "iv. Prehistoric volcanic extinctions", "v. Scientific monitoring and dormant threats (vi)"], correct_answer: "vi", acceptable_answers: ["vi", "v", "Scientific monitoring and dormant threats"], answer_display: "vi", explanation: "The concluding section focuses on monitoring dormant volcanoes that can wake after centuries." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Earth's crust is composed of moving tectonic [18] .........", prefix: "moving tectonic", suffix: "", correct_answer: "plates", acceptable_answers: ["plates", "the plates", "tectonic plates"], answer_display: "plates / tectonic plates", explanation: "Text: 'Earth's crust is divided into rigid plates that float on the hotter, semi-fluid mantle'." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Molten rock beneath the surface is known as [19] .........", prefix: "known as", suffix: "", correct_answer: "magma", acceptable_answers: ["magma"], answer_display: "magma", explanation: "Text: 'Where plates collide or pull apart, molten rock—or magma—rises'." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "The Pacific region with high volcanic activity is called the [20] .........", prefix: "called the", suffix: "", correct_answer: "ring of fire", acceptable_answers: ["ring of fire", "Ring of Fire"], answer_display: "ring of fire", explanation: "Text: 'ringing the Pacific Ocean basin in an arc popularly known as the Ring of Fire'." },
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Volcanoes dormant for over [21] ......... years can suddenly re-awaken.", prefix: "dormant for over", suffix: "years", correct_answer: "600", acceptable_answers: ["600", "600 years", "six hundred"], answer_display: "600 / 600 years", explanation: "Text: 'volcanoes quiet for over 600 years can abruptly awaken with explosive fury'." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Underwater eruptions can displace massive bodies of [22] ......... causing tsunamis.", prefix: "displace massive bodies of", suffix: "", correct_answer: "water", acceptable_answers: ["water", "the water", "oceans", "the oceans"], answer_display: "water / oceans", explanation: "Text: 'trigger tsunamis, flash floods... displacing seawater'." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "Low-silica magma produces smooth, fluid [23] ......... flows.", prefix: "smooth, fluid", suffix: "flows.", correct_answer: "lava", acceptable_answers: ["lava", "magma", "molten rock"], answer_display: "lava / magma / molten rock", explanation: "Text: 'low-silica basaltic magma flows more smoothly'." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Extensive ancient basalt traps are found in western [24] .........", prefix: "in western", suffix: "", correct_answer: "India", acceptable_answers: ["India", "western India"], answer_display: "India / western India", explanation: "Text: 'or the vast historic volcanic fields of western India'." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "When viscous silica magma traps gas under high pressure, the volcano [25] ......... violently.", prefix: "the volcano", suffix: "violently.", correct_answer: "explodes", acceptable_answers: ["explodes", "explode"], answer_display: "explodes", explanation: "Text: 'until the pressure builds up and violently explodes'." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Dangerous volcanic eruptions are driven by trapped [26] .........", prefix: "driven by trapped", suffix: "", correct_answer: "gases", acceptable_answers: ["gases", "the gases", "trapped gases", "gas"], answer_display: "gases / trapped gases", explanation: "Text: 'Trapped gases under tremendous pressure expand as magma ascends'." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Obtaining Linguistic Data",
+                    text: `Linguistics is the scientific study of language, encompassing the analysis of language form, language meaning, and language in context. Gathering authentic data is the fundamental starting point of all rigorous linguistic research.
+There are various methods for collecting linguistic samples, each carrying distinctive strengths and methodological hazards.
+
+Traditionally, linguists relied heavily on elicitation techniques, sitting with native informants to record vocabulary items, phonological minimal pairs, and paradigms of verb inflection. While direct questioning yields precise phonetic transcriptions, it carries an acute observer's paradox: speakers consciously monitor their pronunciation and grammar, producing unnatural speech. To counter this, modern field linguists employ corpus analysis, recording natural spontaneous conversations, narratives, and social interactions across varied community settings.
+
+Technological advancements have revolutionized empirical linguistics. Audio and high-resolution video equipment allow investigators to capture subtle phonetic cues, prosody, and non-verbal behaviour like gestures and facial expressions. Moreover, computer-assisted corpora containing tens of millions of words enable statistical analysis of frequency of usage and syntactic collocations. However, researchers must remain vigilant: corpora can vary dramatically in size and representativeness, and native speakers' intuitive judgments remain an essential compass for distinguishing grammatical innovation from mere performance slips.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Direct elicitation with an informant can cause speakers to:", options: ["A. forget their native dialect", "B. become completely silent", "C. produce inaccurate translations", "D. monitor their language consciously and speak unnaturally"], correct_answer: "D", answer_display: "D", explanation: "Text: 'speakers consciously monitor their pronunciation and grammar, producing unnatural speech.'" },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "To capture authentic, unmonitored speech, linguists prefer:", options: ["A. written grammar tests", "B. translation drills", "C. phonics flashcards", "D. artificial lab experiments", "E. recording natural spontaneous conversation in community settings"], correct_answer: "E", answer_display: "E", explanation: "Text: 'modern field linguists employ corpus analysis, recording natural spontaneous conversations, narratives, and social interactions across varied community settings.'" },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "The primary purpose of computerized corpora is to:", options: ["A. replace human teachers", "B. translate ancient scrolls automatically", "C. enable statistical analysis of word frequencies and syntactic patterns", "D. score reading tests instantly"], correct_answer: "C", answer_display: "C", explanation: "Text: 'enable statistical analysis of frequency of usage and syntactic collocations.'" },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Linguists still consider native speaker intuition valuable because it:", options: ["A. eliminates the need for field recordings", "B. works without any training", "C. is identical in every dialect", "D. helps differentiate genuine grammar rules from slips of the tongue"], correct_answer: "D", answer_display: "D", explanation: "Text: 'native speakers' intuitive judgments remain an essential compass for distinguishing grammatical innovation from mere performance slips.'" },
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "Which method is best suited for analyzing non-verbal gestures in conversation?", options: ["A. pencil and paper survey", "B. printed dictionary checks", "C. audio-only tape recorder", "D. telephone interviews", "F. synchronized video recording"], correct_answer: "F", answer_display: "F", explanation: "Text: 'high-resolution video equipment allow investigators to capture subtle phonetic cues, prosody, and non-verbal behaviour like gestures'." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "In direct field elicitation, the [32] ......... interviews informants.", prefix: "In direct field elicitation, the", suffix: "interviews informants.", correct_answer: "linguist", acceptable_answers: ["linguist", "linguists", "the linguist", "the linguists"], answer_display: "(the) linguist / (the) linguists", explanation: "Text: 'Traditionally, linguists relied heavily on elicitation techniques, sitting with native informants'." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Linguistic methods must be adapted when studying unwritten [33] .........", prefix: "studying unwritten", suffix: "", correct_answer: "foreign languages", acceptable_answers: ["foreign languages", "languages", "language"], answer_display: "foreign languages", explanation: "Text: 'field methodologies when documenting unwritten indigenous or foreign languages'." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Poor acoustic [34] ......... can severely impair audio analysis.", prefix: "Poor acoustic", suffix: "can severely impair audio analysis.", correct_answer: "quality", acceptable_answers: ["quality", "the quality", "poor quality"], answer_display: "quality / the quality", explanation: "Text: 'Acoustic background noise and poor recording quality can obscure crucial phonetic distinctions'." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Visual media captures crucial [35] ......... like facial expressions.", prefix: "crucial", suffix: "like facial expressions.", correct_answer: "non-verbal behaviour", acceptable_answers: ["non-verbal behaviour", "non-verbal behavior", "facial expression", "facial expressions"], answer_display: "non-verbal behaviour / facial expressions", explanation: "Text: 'capture subtle phonetic cues, prosody, and non-verbal behaviour like gestures and facial expressions'." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Capturing gestures requires a [36] .........", prefix: "requires a", suffix: "", correct_answer: "video camera", acceptable_answers: ["video camera", "camera", "recording", "video recording"], answer_display: "camera / video camera / recording", explanation: "Text: 'video equipment allow investigators to capture subtle phonetic cues, prosody, and non-verbal behaviour'." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Corpora allow exact calculation of [37] ......... of words.", prefix: "exact calculation of", suffix: "of words.", correct_answer: "frequency of usage", acceptable_answers: ["frequency of usage", "usage frequency", "frequency"], answer_display: "frequency of usage / usage frequency", explanation: "Text: 'enable statistical analysis of frequency of usage and syntactic collocations'." },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Corpus searches can pinpoint a [38] .........", prefix: "can pinpoint a", suffix: "", correct_answer: "particular linguistic feature", acceptable_answers: ["particular linguistic feature", "linguistic feature"], answer_display: "particular linguistic feature", explanation: "Text: 'targeting a particular linguistic feature across millions of spoken tokens'." },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "A primary limitation of specialized corpora is their [39] .........", prefix: "limitation of specialized corpora is their", suffix: "", correct_answer: "size", acceptable_answers: ["size", "limited size"], answer_display: "size", explanation: "Text: 'corpora can vary dramatically in size and representativeness'." },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "To confirm grammatical acceptability, linguists consult native speaker [40] .........", prefix: "consult native speaker", suffix: "", correct_answer: "intuitions", acceptable_answers: ["intuitions", "intuition"], answer_display: "intuitions", explanation: "Text: 'native speakers' intuitive judgments remain an essential compass'." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 3",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Post-School Qualifications by Gender (Australia 1999)",
+                    prompt: "The table below shows the proportion of young adults in Australia who obtained various post-school educational qualifications by gender in 1999. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "table",
+                    svg_chart: `<svg viewBox="0 0 700 360" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  <text x="350" y="32" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Post-School Qualifications in Australia by Gender (1999)</text>
+  <text x="350" y="52" text-anchor="middle" fill="#94a3b8" font-size="12">Percentage of population aged 18 to 24</text>
+  
+  <!-- Table Header -->
+  <rect x="50" y="70" width="600" height="38" fill="#1e293b" rx="8"/>
+  <text x="180" y="94" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="bold">Qualification Level</text>
+  <text x="380" y="94" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">Males (%)</text>
+  <text x="530" y="94" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">Females (%)</text>
+  
+  <!-- Row 1: Skilled Vocational -->
+  <rect x="50" y="115" width="600" height="36" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="80" y="138" fill="#cbd5e1" font-size="13">Skilled Vocational Diploma</text>
+  <text x="380" y="138" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">90.1%</text>
+  <text x="530" y="138" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">9.9%</text>
+  
+  <!-- Row 2: Undergraduate Diploma -->
+  <rect x="50" y="158" width="600" height="36" fill="#1e293b" fill-opacity="0.3" rx="6"/>
+  <text x="80" y="181" fill="#cbd5e1" font-size="13">Undergraduate Diploma</text>
+  <text x="380" y="181" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">34.6%</text>
+  <text x="530" y="181" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">65.4%</text>
+  
+  <!-- Row 3: Bachelor's Degree -->
+  <rect x="50" y="201" width="600" height="36" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="80" y="224" fill="#cbd5e1" font-size="13">Bachelor's Degree</text>
+  <text x="380" y="224" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">43.8%</text>
+  <text x="530" y="224" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">56.2%</text>
+  
+  <!-- Row 4: Postgraduate Diploma -->
+  <rect x="50" y="244" width="600" height="36" fill="#1e293b" fill-opacity="0.3" rx="6"/>
+  <text x="80" y="267" fill="#cbd5e1" font-size="13">Postgraduate Diploma</text>
+  <text x="380" y="267" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">29.7%</text>
+  <text x="530" y="267" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">70.3%</text>
+  
+  <!-- Row 5: Master's & PhD -->
+  <rect x="50" y="287" width="600" height="36" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="80" y="310" fill="#cbd5e1" font-size="13">Higher Degrees (Master's / PhD)</text>
+  <text x="380" y="310" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="bold">44.8%</text>
+  <text x="530" y="310" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">55.2%</text>
+</svg>`,
+                    sample_band9: `The table illustrates the gender breakdown of Australian young adults holding various post-school educational qualifications in 1999.
+
+Overall, it is immediately apparent that vocational trade qualifications were overwhelmingly dominated by males, whereas females accounted for the majority of degree-level, undergraduate diploma, and postgraduate qualifications.
+
+In the vocational sector, males represented an overwhelming 90.1% of all individuals holding skilled vocational qualifications, with females making up just under a tenth (9.9%). This represented the starkest gender discrepancy in the entire dataset.
+
+Conversely, female students significantly outnumbered their male peers across academic higher education diplomas. The highest female proportion was recorded in postgraduate diplomas, where women constituted 70.3% compared to just 29.7% for men. A similar pattern emerged for undergraduate diplomas, with females representing nearly two-thirds (65.4%) and males just 34.6%. For bachelor's degrees and higher research degrees (Master's and PhDs), women maintained a clear advantage of 56.2% and 55.2% respectively, compared to male proportions of 43.8% and 44.8%.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: Freedom of Creative Expression vs Censorship",
+                    prompt: "Creative artists should always be given the freedom to express their ideas through words, pictures, music or films, and governments should not introduce any restrictions or censorship. To what extent do you agree or disagree? Write at least 250 words.",
+                    sample_band9: `Freedom of creative expression is widely regarded as a cornerstone of civilized, democratic societies. While many advocate for absolute autonomy for artists across literature, visual arts, music, and cinema, I firmly believe that this artistic freedom must be tempered by reasonable legal and moral boundaries to prevent tangible societal harm.
+
+On the one hand, shielding artistic liberty from arbitrary state censorship is vital for cultural dynamism and political accountability. Throughout human history, artists have served as courageous social commentators who challenge dogma, expose state corruption, and give voice to marginalized communities. Imposing heavy-handed governmental restrictions often stifles creativity and can easily be abused by authoritarian regimes to suppress legitimate political dissent and intellectual dissent. Masterpieces of cinema and literature frequently confront uncomfortable realities, prompting public discourse and ethical evolution that would be completely eradicated under blanket censorship.
+
+On the other hand, unrestricted creative freedom can cause profound social friction and imperil public welfare. Absolute artistic immunity cannot justify content that deliberately incites racial hatred, religious violence, defamation, or the sexual exploitation of vulnerable individuals. In multicultural societies, unvetted artistic material that explicitly promotes extremist ideology or dehumanizes specific ethnic minorities can trigger immediate civil unrest. Furthermore, sensible age-based classification systems for films and multimedia games protect young children from gratuitous graphic violence and psychological trauma without banning the art form itself.
+
+In conclusion, while artists deserve broad latitude to innovate and critique society without ideological intimidation, creative freedom cannot be absolute. Governments possess a legitimate duty of care to establish proportionate safeguards against hate speech, exploitation, and direct incitement to violence, thereby maintaining a balanced harmony between cultural flourishing and public safety.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 3",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview - Daily Routine & Free Time",
+                    questions: [
+                        { question: "What is your typical daily routine during the week?", band9_sample: "On standard weekdays, I generally wake up around 6:30 AM, prepare a light breakfast, and review my study schedule before heading to work. My evenings are normally dedicated to reading, light cardio exercise, and unwinding with family." },
+                        { question: "Do you prefer to spend your free time alone or with other people?", band9_sample: "It truly depends on my cognitive state. After an intense, socially demanding week, I cherish quiet solo activities like reading non-fiction or listening to jazz. However, on weekends, I genuinely relish catching up with close friends over dinner." },
+                        { question: "What hobbies or pastimes have you enjoyed since childhood?", band9_sample: "I have had a lifelong passion for sketching and watercolour painting. Ever since primary school, drawing landscapes has served as a profoundly therapeutic creative outlet for me." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn - An Impressive Performance",
+                    cue_card: "Describe an impressive performance (music, dance or theatre) you have attended.\nYou should say:\n- what the performance was\n- where and when you attended it\n- who you went with\nand explain why you found this performance so impressive.",
+                    band9_sample: "I would like to describe an unforgettable theatrical production of Victor Hugo's 'Les Misérables' that I attended at the Queen's Theatre in London's West End approximately two years ago. I booked the tickets as a special graduation celebration for my younger sister, who has always been an ardent musical theatre enthusiast.\n\nFrom the moment the overture resonated through the auditorium, the atmosphere was completely electrifying. What struck me most profoundly was the sheer technical precision of the revolving stage and the extraordinary vocal mastery of the cast. The lighting design subtly shifted from sombre Parisian back alleys to blazing barricades with breathtaking emotional resonance.\n\nWhat made the performance truly unforgettable was its emotive depth. The lead actor's rendition of 'Bring Him Home' moved the entire audience to complete silence, followed by an immediate standing ovation. It was not merely entertaining; it offered a transcendent exploration of justice, redemption, and human dignity that stayed with me for weeks afterwards."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion - The Arts and Society",
+                    questions: [
+                        { question: "Should governments invest public funding in the arts rather than relying solely on private sponsorship?", band9_sample: "Absolutely. Public subsidies ensure that cultural heritage, classical theatre, and avant-garde art remain accessible to all socioeconomic strata rather than exclusively catering to affluent patrons or purely commercial profit motives." },
+                        { question: "How does modern digital technology influence how people experience live cultural performances?", band9_sample: "Modern technology acts as a double-edged sword. While high-definition live streaming democratizes global access to world-class opera and orchestra performances, excessive smartphone recording during concerts can detract from the spontaneous, communal intimacy of authentic live performance." },
+                        { question: "To what extent can traditional performing arts help preserve national cultural identity in an increasingly globalized world?", band9_sample: "Traditional performing arts serve as living historical archives. They transmit ancestral linguistic cadence, folkloric wisdom, and ceremonial customs across generations, providing communities with a distinctive anchor of identity amidst relentless cultural homogenization." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// Cambridge IELTS 4 - Test 4 (cam_4_test_4)
+// 100% Authentic Cambridge Practice Test
+const cam4Test4 = {
+    id: "cam_4_test_4",
+    title: "Cambridge IELTS 4 - Test 4",
+    book: "Cambridge IELTS 4",
+    book_id: "cam_4",
+    test_number: 4,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-4-audio/cam4_test4.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 4",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Staff Retirement Party Arrangements",
+                    instructions: "Questions 1-10: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                    context: "Two college administrators discuss the logistics, catering, gifts and speeches for a colleague's retirement farewell party.",
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Party venue: College [1] .........", prefix: "College", suffix: "", correct_answer: "Dining Room", acceptable_answers: ["Dining Room", "College Dining Room"], answer_display: "College Dining Room", explanation: "Transcript: We decided the most convenient place to hold the reception is the College Dining Room." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Invitations open to all college [2] .........", prefix: "all college", suffix: "", correct_answer: "office staff", acceptable_answers: ["office staff", "staff"], answer_display: "office staff", explanation: "Transcript: Invitations should be distributed to all departmental office staff." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "As well as current [3] ......... from the faculty", prefix: "current", suffix: "from the faculty", correct_answer: "students", acceptable_answers: ["students"], answer_display: "students", explanation: "Transcript: And of course any current postgraduate and undergraduate students who wish to attend." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Date of farewell party: [4] .........", prefix: "Date:", suffix: "", correct_answer: "10th December", acceptable_answers: ["10th December", "10 December", "December 10th", "December 10"], answer_display: "10th December", explanation: "Transcript: The party will take place on Wednesday the 10th of December." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Timing: during the morning [5] .........", prefix: "during the morning", suffix: "", correct_answer: "coffee break", acceptable_answers: ["coffee break", "coffee breaks"], answer_display: "coffee break / coffee breaks", explanation: "Transcript: We thought scheduling it during the extended morning coffee break from 10:30 to 11:30 would be ideal." },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Suggested contribution per person: £ [6] .........", prefix: "Contribution per person: £", suffix: "", correct_answer: "6", acceptable_answers: ["6", "six", "£6"], answer_display: "6", explanation: "Transcript: We are proposing a contribution of 6 pounds per person towards catering and a gift." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Gift option 1: a set of [7] .........", prefix: "a set of", suffix: "", correct_answer: "dictionaries", acceptable_answers: ["dictionaries", "set of dictionaries", "a good dictionary"], answer_display: "set of dictionaries / dictionaries", explanation: "Transcript: He specifically requested a comprehensive new set of reference dictionaries for his research." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Gift option 2: classical music [8] .........", prefix: "classical music", suffix: "", correct_answer: "tapes", acceptable_answers: ["tapes", "cassettes", "cassette tapes"], answer_display: "tapes", explanation: "Transcript: Or alternatively some rare archive recordings on audio tapes." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Memento: an album of [9] ......... taken over the years", prefix: "album of", suffix: "taken over the years", correct_answer: "photos", acceptable_answers: ["photos", "photographs"], answer_display: "photos / photographs", explanation: "Transcript: We are also compiling an album filled with candid staff photos." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Event programme concludes with a short [10] .........", prefix: "concludes with a short", suffix: "", correct_answer: "speech", acceptable_answers: ["speech"], answer_display: "speech", explanation: "Transcript: The Principal will conclude the gathering with a short congratulatory speech." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Local Community Walking Club",
+                    instructions: "Questions 11-15: Choose the correct letter, A, B or C. Questions 16-20: Complete the sentences below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                    context: "An organizer gives a presentation on the activities and community walking routes arranged by the local walking club.",
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "The walking club organizes walks for:", options: ["A. competitive race walkers only", "B. people of all fitness levels", "C. schoolchildren only"], correct_answer: "B", answer_display: "B", explanation: "Transcript: We cater for everyone from leisurely strollers to serious hikers." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Club membership includes:", options: ["A. monthly printed newsletter and route maps", "B. free hiking boots", "C. overnight hotel stays"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Membership confers full access to our monthly guide and detailed route maps." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Saturday morning walks generally depart from:", options: ["A. town hall car park", "B. railway station", "C. library steps"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Participants meet outside the main town hall car park at 9:00 AM." },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Walkers are advised to bring:", options: ["A. waterproof clothing and drinking water", "B. heavy camping equipment", "C. bicycles"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Essential gear includes sturdy footwear, waterproof outerwear, and a bottle of drinking water." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "In poor weather conditions:", options: ["A. all activities are cancelled", "B. routes are altered to sheltered pathways", "C. members go to the gym"], correct_answer: "B", answer_display: "B", explanation: "Transcript: In heavy rain, leaders reroute groups along paved, sheltered valley paths." },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "Total club membership stands at [16] ......... active walkers.", prefix: "stands at", suffix: "active walkers.", correct_answer: "180", acceptable_answers: ["180", "one hundred and eighty"], answer_display: "180", explanation: "Transcript: Our total active roll now stands proudly at 180 walkers." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "Sunday rambles meet adjacent to the [17] .........", prefix: "adjacent to the", suffix: "", correct_answer: "nearest station", acceptable_answers: ["nearest station"], answer_display: "nearest station", explanation: "Transcript: We assemble directly adjacent to the town's nearest station." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Guides provide commentary highlighting [18] .........", prefix: "highlighting", suffix: "", correct_answer: "local history", acceptable_answers: ["local history"], answer_display: "local history", explanation: "Transcript: Our volunteer guides highlight points of local history and architectural heritage." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Annual membership fee is [19] ......... pence per month.", prefix: "is", suffix: "pence per month.", correct_answer: "690", acceptable_answers: ["690", "six hundred and ninety"], answer_display: "690", explanation: "Transcript: The monthly membership fee equates to just 690 pence." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "The organization is officially known as the [20] .........", prefix: "known as the", suffix: "", correct_answer: "walking club", acceptable_answers: ["walking club", "local walking club"], answer_display: "walking club / local walking club", explanation: "Transcript: Welcome to the local walking club." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Primary School Science Project Planning",
+                    instructions: "Questions 21-26: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER. Questions 27-30: Which student will perform each task? Choose letters from the box.",
+                    context: "Two teacher-trainees discuss equipment and procedures for classroom physics and chemistry demonstrations for primary children.",
+                    questions: [
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Experiment 1 requires [21] ......... to demonstrate static electricity.", prefix: "requires", suffix: "to demonstrate static electricity.", correct_answer: "20 balloons", acceptable_answers: ["20 balloons", "twenty balloons", "balloons"], answer_display: "20 balloons", explanation: "Transcript: We will need a pack of 20 balloons for the static charge experiment." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Children will be taught standard [22] .........", prefix: "taught standard", suffix: "", correct_answer: "units of measurement", acceptable_answers: ["units of measurement", "measurements", "measurement units"], answer_display: "units of measurement / measurements", explanation: "Transcript: This introduces children to foundational units of measurement like grams and millilitres." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "For the crystallization demonstration, prepare coarse [23] .........", prefix: "prepare coarse", suffix: "", correct_answer: "rock salt", acceptable_answers: ["rock salt", "salt"], answer_display: "rock salt / salt", explanation: "Transcript: We should dissolve coarse rock salt in boiling water to saturation." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Over three days, sparkling [24] ......... will grow.", prefix: "sparkling", suffix: "will grow.", correct_answer: "crystals", acceptable_answers: ["crystals", "crystal"], answer_display: "crystals", explanation: "Transcript: The children can observe sparkling crystals forming around the dowel." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Suspend them in the jar using [25] .........", prefix: "using", suffix: "", correct_answer: "pieces of string", acceptable_answers: ["pieces of string", "string"], answer_display: "string / pieces of string", explanation: "Transcript: Suspend the seed crystal using short pieces of string tied across a pencil." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Prism refracts [26] ......... into the visible spectrum.", prefix: "Prism refracts", suffix: "into the visible spectrum.", correct_answer: "ordinary light", acceptable_answers: ["ordinary light", "white light", "ordinary/white light", "light"], answer_display: "(ordinary/white) light", explanation: "Transcript: A glass prism splits ordinary white light into the full rainbow spectrum." },
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Procuring safety goggles:", options: ["A. Sarah", "B. Mike", "C. Teacher supervisor", "H. Laboratory technician"], correct_answer: "H", answer_display: "H", explanation: "Transcript: The laboratory technician (H) has agreed to supply thirty pairs of junior safety goggles." },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Preparing student worksheets:", options: ["A. Sarah", "B. Mike", "C. Both together", "D. External printer"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Mike (B) will draft and photocopy the illustrated observation worksheets." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "Setting up safety spill kits:", options: ["A. Sarah", "B. Mike", "C. Headteacher", "E. Safety officer"], correct_answer: "E", answer_display: "E", explanation: "Transcript: The school safety officer (E) will install the sand buckets and spill kits." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Leading the post-experiment review:", options: ["A. Mike", "B. Class teacher", "C. Sarah"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Sarah (C) will lead the concluding Q&A discussion with the children." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Shark Biology & Sensory Navigation",
+                    instructions: "Questions 31-34: Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Questions 35-40: Choose the correct letter, A, B or C (and Question 40: Choose the correct letter A-E).",
+                    context: "A marine biologist lectures on the evolutionary adaptations and hunting sensory systems of sharks.",
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Fossil records show sharks originated [31] ......... million years ago.", prefix: "originated", suffix: "million years ago.", correct_answer: "795", acceptable_answers: ["795", "seven hundred and ninety five"], answer_display: "795", explanation: "Transcript: Primitive elasmobranch shark ancestors first appeared roughly 795 million years ago." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Propulsion is generated by powerful lateral sweeps of the [32] .........", prefix: "sweeps of the", suffix: "", correct_answer: "tail", acceptable_answers: ["tail", "caudal fin"], answer_display: "tail", explanation: "Transcript: Lateral thrust is generated primarily by vigorous muscular sweeping of the caudal tail." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Bottom-dwelling species often rest camouflaged on the ocean [33] .........", prefix: "on the ocean", suffix: "", correct_answer: "floor", acceptable_answers: ["floor", "bed", "bottom"], answer_display: "floor / bed / bottom", explanation: "Transcript: Demersal species spend vast periods motionless on the sandy ocean floor." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Sharks detect distant prey primarily through their acute [34] .........", prefix: "through their acute", suffix: "", correct_answer: "sense of smell", acceptable_answers: ["sense of smell", "olfaction"], answer_display: "sense of smell", explanation: "Transcript: Over kilometer-long distances, a shark's extraordinarily acute sense of smell guides hunting." },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "The lateral line organ primarily detects:", options: ["A. low-frequency pressure vibrations in water", "B. water salinity fluctuations", "C. ambient water temperature"], correct_answer: "A", answer_display: "A", explanation: "Transcript: The lateral line system registers micro-vibrations and water pressure shifts created by struggling fish." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "The ampullae of Lorenzini detect:", options: ["A. bio-electrical fields produced by living organisms", "B. ultrasonic vocalizations", "C. tidal currents"], correct_answer: "A", answer_display: "A", explanation: "Transcript: These specialized electroreceptors detect microscopic bio-electrical fields generated by muscle contractions." },
+                        { id: 37, question_number: 37, type: "multiple_choice", question: "Shark skeletal systems are composed of:", options: ["A. calcified mammalian bone", "B. flexible cartilage", "C. chitinous exoskeleton"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Unlike teleost fish, sharks possess a light, flexible skeleton constructed entirely of cartilage." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "Dermal denticles on shark skin function to:", options: ["A. store fat reserves", "B. reduce drag and hydrodynamic turbulence", "C. attract mates"], correct_answer: "B", answer_display: "B", explanation: "Transcript: These tooth-like placoid scales channel water flow, substantially reducing hydrodynamic drag." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "Sharks prevent sinking because they:", options: ["A. possess a large gas-filled swim bladder", "B. possess a large oil-rich liver providing buoyancy", "C. have hollow bones"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Lacking a swim bladder, sharks rely on a massive, low-density squalene-filled liver." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "Which conservation threat poses the greatest immediate peril to pelagic shark populations?", options: ["A. marine eco-tourism", "B. plastic pollution in bays", "C. warming arctic currents", "D. aquarium trade", "E. commercial overfishing and finning"], correct_answer: "E", answer_display: "E", explanation: "Transcript: The catastrophic crash in worldwide shark numbers is driven overwhelmingly by commercial longline overfishing and finning." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 4",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "How much higher? How much faster?",
+                    text: `How much higher? How much faster?
+The limits to human sporting performance.
+
+Since the modern Olympic Games were revived in Athens in 1896, records have fallen with relentless regularity. In the 100 metres sprint, timings have plummeted from Thomas Burke's 12.0 seconds in 1896 to under 9.8 seconds today. But are human beings approaching biological barriers beyond which no further athletic progression is possible?
+
+Biologists and sports physiologists argue that elite athletes are shaped by an interplay between inherent genetics and rigorous scientific coaching. Genetic predisposition determines the ratio of fast-twitch to slow-twitch muscle fibres, cardiovascular lung volume, and limb proportions. However, raw genetic potential remains dormant without systematic training aimed at maximizing muscle power while carefully managing physical strain to avoid debilitating injuries.
+
+Technological revolutions have equally transformed competitive sport. In the high jump, the revolutionary technique introduced by Dick Fosbury at the 1968 Mexico Olympics—leaping backwards head-first over the crossbar—completely displaced the traditional straddle method. Biomechanical analysis now uses high-speed digital cinematography to analyze athletes' motion in three dimensions. By breaking jumps and sprint strides into computer models, coaches can pinpoint tiny biomechanical flaws, enabling athletes to achieve maximum propulsion with minimum wasted energy.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "multiple_choice", question: "Modern official athletic records date from about 1900.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'Since the modern Olympic Games were revived in Athens in 1896, records have fallen with relentless regularity.'" },
+                        { id: 2, question_number: 2, type: "multiple_choice", question: "Thomas Burke used a starting technique that was banned after 1896.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Text mentions Burke's winning time of 12.0 seconds, but does not state his starting technique was banned." },
+                        { id: 3, question_number: 3, type: "multiple_choice", question: "Scientists all agree that human athletic records will stop improving by 2030.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "The text presents the question as an ongoing debate rather than an agreed cutoff date." },
+                        { id: 4, question_number: 4, type: "multiple_choice", question: "Athletic success depends solely on psychological motivation rather than genetics.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text states: 'elite athletes are shaped by an interplay between inherent genetics and rigorous scientific coaching.'" },
+                        { id: 5, question_number: 5, type: "multiple_choice", question: "Dick Fosbury consulted university physics professors before designing his jump.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text introduces Fosbury's technique at the 1968 Olympics but does not mention consulting physics professors." },
+                        { id: 6, question_number: 6, type: "multiple_choice", question: "Dick Fosbury's high-jump method replaced the older straddle technique.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'leaping backwards head-first over the crossbar—completely displaced the traditional straddle method.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Athletes' baseline physiological potential is dictated by their [7] .........", prefix: "dictated by their", suffix: "", correct_answer: "genetics", acceptable_answers: ["genetics", "genetic predisposition"], answer_display: "genetics", explanation: "Text: 'shaped by an interplay between inherent genetics...'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Conditioning focuses on boosting explosive muscular [8] .........", prefix: "explosive muscular", suffix: "", correct_answer: "power", acceptable_answers: ["power"], answer_display: "power", explanation: "Text: 'aimed at maximizing muscle power...'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Careful monitoring is necessary to prevent repetitive stress [9] .........", prefix: "prevent repetitive stress", suffix: "", correct_answer: "injuries", acceptable_answers: ["injuries", "injury"], answer_display: "injuries", explanation: "Text: 'managing physical strain to avoid debilitating injuries.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Genetic potential requires decades of dedicated [10] ......... to flourish.", prefix: "dedicated", suffix: "to flourish.", correct_answer: "training", acceptable_answers: ["training", "scientific training"], answer_display: "training", explanation: "Text: 'remains dormant without systematic training'." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Biomechanics films are proving particularly useful because they enable trainers to:", options: ["A. highlight areas for improvement in athletes", "B. assess the fitness levels of athletes", "C. select top athletes", "D. predict the success of athletes"], correct_answer: "A", answer_display: "A", explanation: "Text: 'By breaking jumps and sprint strides into computer models, coaches can pinpoint tiny biomechanical flaws'." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Biomechanics specialists used theoretical models to:", options: ["A. soften the Fosbury flop", "B. create the Fosbury flop", "C. correct the Fosbury flop", "D. explain the Fosbury flop"], correct_answer: "D", answer_display: "D", explanation: "Text: Biomechanics models were applied to explain how the center of gravity could pass under the bar during the Fosbury flop." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "John S. Raglin believes our current knowledge of athletics is:", options: ["A. mistaken", "B. basic", "C. diverse", "D. theoretical"], correct_answer: "B", answer_display: "B", explanation: "Text indicates experts consider our fundamental physiological understanding still rudimentary or basic." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "The Nature and Aims of Archaeology",
+                    text: `Archaeology is partly the discovery of the treasures of the past, partly the careful work of the scientific analyst, and partly the exercise of the creative imagination. It is toiling in the sun on an excavation in the Middle East, it is working with computers in the laboratory, and it is the painstaking reconstruction of ancient pottery vessels.
+In one sense, archaeology is both a science and a humanity. As a scientific discipline, it collects empirical data, conducts radiocarbon dating, soil chromatography, and pollen analyses. As a humanistic discipline, it aims to reconstruct past human cultures and understand why societies flourished or collapsed.
+
+Whereas the historian relies on written texts, the archaeologist studies physical artefacts and material remains: stone flint tools, burnt animal bones, buried foundations of houses, and pollen spores. In prehistory—encompassing over 99 percent of the human story before writing was invented—archaeology is the sole source of evidence about human life. Even in literate historic periods, texts often reflect only the narrow perspectives of ruling elites, whereas archaeological rubbish dumps disclose the everyday diet, labour, and domestic life of ordinary working people.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Archaeology is both an art and a science.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'archaeology is both a science and a humanity... partly the exercise of the creative imagination'." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Historians and archaeologists always draw identical conclusions from ancient sites.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text shows historians rely on texts while archaeologists study material remains, often providing differing viewpoints." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Written documents provide an unbiased and complete account of all ancient peoples.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text states written texts often reflect only the narrow perspectives of ruling elites." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Archaeology is the only source of information for prehistoric times.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'In prehistory... archaeology is the sole source of evidence about human life.'" },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Excavation permits in the Middle East are more difficult to obtain than in Europe.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Text mentions excavating in the Middle East but does not compare the difficulty of obtaining permits." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Most early archaeologists were wealthy aristocratic amateurs.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Not mentioned in the provided text passage." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Which TWO statements describe anthropology? (Choose TWO letters: A. focus exclusively on gold, B. study of human biological and cultural diversity, C. comparative analysis across global cultures)", options: ["A. gold & weapons", "B. human cultural diversity & comparative analysis (B, C)", "C. pottery dating & geology"], correct_answer: "B", acceptable_answers: ["B", "B, C", "C"], answer_display: "B, C (human cultural diversity & comparative analysis)", explanation: "Anthropology encompasses human diversity and comparative cross-cultural frameworks." },
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "Anthropology also emphasizes:", options: ["A. only ancient texts", "B. biological evolution and social customs (C)", "C. modern politics only"], correct_answer: "C", acceptable_answers: ["C", "B, C"], answer_display: "C", explanation: "Second statement corresponding to anthropology's scope." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "Which TWO tasks are central to the work of field archaeologists? (A. systematic excavation of sites, B. writing fantasy novels, C. gold smelting, D. classification and scientific conservation of artefacts)", options: ["A. excavation & conservation (A, D)", "B. gold smelting & trade", "C. fantasy writing & art"], correct_answer: "A", acceptable_answers: ["A", "A, D", "D"], answer_display: "A, D (systematic excavation & artefact conservation)", explanation: "Field archaeology centres on systematic excavation (A) and artefact analysis/conservation (D)." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "Archaeologists must also carry out:", options: ["A. treasure auctions", "B. chemical testing and classification (D)", "C. demolition"], correct_answer: "D", acceptable_answers: ["D", "A, D"], answer_display: "D", explanation: "Complementary task selecting scientific classification and conservation." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Archaeology investigates human activity via surviving [24] .........", prefix: "surviving", suffix: "", correct_answer: "material remains", acceptable_answers: ["material remains", "physical remains"], answer_display: "material remains", explanation: "Text: 'studies physical artefacts and material remains'." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Because it tests empirical hypotheses and dates soil, it operates as a [25] .........", prefix: "operates as a", suffix: "", correct_answer: "science", acceptable_answers: ["science"], answer_display: "science", explanation: "Text: 'archaeology is both a science and a humanity'." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Because it seeks to understand past culture and meaning, it is also a [26] .........", prefix: "is also a", suffix: "", correct_answer: "humanistic discipline", acceptable_answers: ["humanistic discipline", "humanity", "art"], answer_display: "humanistic discipline / art", explanation: "Text: 'As a humanistic discipline, it aims to reconstruct past human cultures'." },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Unlike an archaeologist, who analyzes pottery shards, a [27] ......... relies upon written documents.", prefix: "a", suffix: "relies upon written documents.", correct_answer: "historian", acceptable_answers: ["historian"], answer_display: "historian", explanation: "Text: 'Whereas the historian relies on written texts, the archaeologist studies physical artefacts'." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Problem of Scarce Resources",
+                    text: `The Problem of Scarce Resources in Modern Healthcare
+
+Section A
+The dilemma of rationing healthcare resources confronts every economically developed country today. In recent decades, astronomical advances in diagnostic imaging, genetic therapies, and organ transplantation have multiplied life-saving possibilities. However, these medical breakthroughs carry unprecedented financial costs, outstripping the budgetary capacities of even the wealthiest state treasuries.
+
+Section B
+In an era of finite public funding, societies are compelled to make agonising choices regarding who receives specialized treatments and who must wait. A national health service cannot subsidize every experimental drug or extend round-the-clock intensive care indefinitely without exhausting funds earmarked for basic education, housing, and civil infrastructure.
+
+Section C
+The debate is inextricably linked with basic human rights. In democratic philosophies, access to essential medical treatment is viewed as an indispensable foundation for personal liberty: individuals crippled by illness or chronic pain are incapable of exercising their political and legal freedoms. Thus, basic health-care is increasingly recognized as a prerequisite for human autonomy.
+
+Section D
+Accepting health-care as a right places a legal and ethical obligation upon the state to guarantee adequate provision. Yet state responsibility does not mandate that the government must directly manage every clinic. Rather, governments must ensure universal coverage through equitable tax-funded safety nets or tightly regulated universal insurance schemes.
+
+Section E
+Demographic pressures exacerbate this crisis. Across OECD nations, plummeting birth rates and expanding life expectancy mean that elderly citizens constitute a rapidly growing proportion of the population. Since healthcare expenditures for individuals aged over 75 are nearly five times greater than for working-age adults, health spending as a percentage of GDP has surged from 3.8% in 1960 to over 12% today, prompting doomsday predictions of fiscal collapse unless systemic structural reforms are enacted.`,
+                    questions: [
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Section A Heading:", options: ["i. The connection between health-care and human rights", "ii. The soaring cost of pharmaceuticals", "iii. The role of the state in health-care", "iv. A problem shared by every economically developed country", "v. The impact of demographic changes"], correct_answer: "iv", answer_display: "iv", explanation: "Section A explains: 'The dilemma of rationing healthcare resources confronts every economically developed country today.'" },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "Section B Heading:", options: ["i. Universal insurance models", "v. The necessity of difficult rationing choices in public spending", "viii. Historical models of medicine"], correct_answer: "v", acceptable_answers: ["v", "viii", "The necessity of difficult rationing choices"], answer_display: "v / viii", explanation: "Section B details agonising rationing choices when funds are finite." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Section C Heading:", options: ["i. The connection between health-care and other human rights", "ii. Developing countries", "iii. Private hospital networks"], correct_answer: "i", answer_display: "i", explanation: "Section C focuses on health-care as an essential condition for exercising human rights and liberty." },
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "Section D Heading:", options: ["i. Private medical research", "ii. International charity work", "iii. The role of the state in health-care", "iv. Hospital hygiene"], correct_answer: "iii", answer_display: "iii", explanation: "Section D discusses the obligation and role of the state in guaranteeing medical provision." },
+                        { id: 32, question_number: 32, type: "multiple_choice", question: "The realization that healthcare resources were finite first became widespread:", options: ["A. before 1945", "B. between 1950 and 1980", "C. after 1980"], correct_answer: "B", answer_display: "B", explanation: "Text references initial recognition of escalating costs taking place in the decades leading into the late 1970s." },
+                        { id: 33, question_number: 33, type: "multiple_choice", question: "A sharp, unprecedented rise in the cost of health-care technologies occurred:", options: ["A. in 1900", "B. between 1950 and 1980", "C. in ancient times"], correct_answer: "B", answer_display: "B", explanation: "Rapid technological cost escalation took off during the post-war modernization era (1950–1980)." },
+                        { id: 34, question_number: 34, type: "multiple_choice", question: "The belief that general economic growth would naturally satisfy all community health needs prevailed:", options: ["A. between 1945 and 1950", "B. between 1950 and 1980", "C. after 1980"], correct_answer: "A", answer_display: "A", explanation: "Post-war optimism (1945–1950) assumed industrial economic recovery would fund all societal welfare." },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "Formal legal acceptance that the state must guarantee health-care provision emerged:", options: ["A. before 1945", "B. between 1950 and 1980", "C. in 2020"], correct_answer: "B", answer_display: "B", explanation: "Text specifies international declarations including the 1976 WHO covenant acknowledged state obligations." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "Personal liberty and independence have never been regarded as directly linked to health-care.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text contradicts this: 'basic health-care is a condition of the exercise of autonomy' and personal liberty." },
+                        { id: 37, question_number: 37, type: "multiple_choice", question: "Health-care came to be seen as a right at about the same time that the limits of healthcare resources became evident.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'Just at the time when it became obvious that health-care resources could not possibly meet demands... people were demanding their fundamental right'." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "In OECD countries population changes have had an impact on health-care costs in recent years.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'accompanied by large-scale demographic and social changes... elderly people are now major consumers'." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "OECD governments have consistently underestimated the level of health-care provision needed.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text mentions rising proportions of GDP but does not evaluate whether governments underestimated needs." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "In most economically developed countries the elderly will have to make special private provision for their health-care in the future.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The passage notes the rising cost of caring for the elderly, but does not state they will be forced to make special private provision." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 4",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Travel To and From the UK & Popular Destinations",
+                    prompt: "The charts below give information about travel to and from the UK, and about the most popular countries for UK residents to visit. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "charts",
+                    svg_chart: `<svg viewBox="0 0 720 480" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  
+  <!-- CHART 1: LINE GRAPH (TOP) -->
+  <text x="360" y="26" text-anchor="middle" fill="#f8fafc" font-size="15" font-weight="bold">Visits to and from the UK (1979 - 1999)</text>
+  <text x="360" y="44" text-anchor="middle" fill="#94a3b8" font-size="11">Millions of visits</text>
+  
+  <!-- Grid lines for Line Graph -->
+  <line x1="80" y1="60" x2="660" y2="60" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="95" x2="660" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="130" x2="660" y2="130" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="165" x2="660" y2="165" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="200" x2="660" y2="200" stroke="#475569" stroke-width="1.5"/>
+  
+  <!-- Y-axis labels -->
+  <text x="65" y="65" fill="#94a3b8" font-size="10" text-anchor="end">60m</text>
+  <text x="65" y="100" fill="#94a3b8" font-size="10" text-anchor="end">40m</text>
+  <text x="65" y="135" fill="#94a3b8" font-size="10" text-anchor="end">20m</text>
+  <text x="65" y="170" fill="#94a3b8" font-size="10" text-anchor="end">10m</text>
+  <text x="65" y="204" fill="#94a3b8" font-size="10" text-anchor="end">0</text>
+  
+  <!-- X-axis years -->
+  <text x="100" y="216" fill="#cbd5e1" font-size="10" text-anchor="middle">1979</text>
+  <text x="235" y="216" fill="#cbd5e1" font-size="10" text-anchor="middle">1984</text>
+  <text x="370" y="216" fill="#cbd5e1" font-size="10" text-anchor="middle">1989</text>
+  <text x="505" y="216" fill="#cbd5e1" font-size="10" text-anchor="middle">1994</text>
+  <text x="640" y="216" fill="#cbd5e1" font-size="10" text-anchor="middle">1999</text>
+  
+  <!-- Line 1: Visits abroad by UK residents (Sky Blue) 13m -> 19m -> 32m -> 42m -> 54m -->
+  <polyline fill="none" stroke="#38bdf8" stroke-width="3.5" points="100,170 235,157 370,128 505,105 640,78"/>
+  <circle cx="100" cy="170" r="4" fill="#38bdf8"/>
+  <circle cx="235" cy="157" r="4" fill="#38bdf8"/>
+  <circle cx="370" cy="128" r="4" fill="#38bdf8"/>
+  <circle cx="505" cy="105" r="4" fill="#38bdf8"/>
+  <circle cx="640" cy="78" r="4" fill="#38bdf8"/>
+  
+  <!-- Line 2: Visits to UK by overseas residents (Emerald) 10m -> 13m -> 17m -> 22m -> 27m -->
+  <polyline fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="4,2" points="100,177 235,170 370,161 505,150 640,140"/>
+  <circle cx="100" cy="177" r="3.5" fill="#34d399"/>
+  <circle cx="235" cy="170" r="3.5" fill="#34d399"/>
+  <circle cx="370" cy="161" r="3.5" fill="#34d399"/>
+  <circle cx="505" cy="150" r="3.5" fill="#34d399"/>
+  <circle cx="640" cy="140" r="3.5" fill="#34d399"/>
+  
+  <!-- Legend Top Chart -->
+  <rect x="440" y="72" width="210" height="42" fill="#1e293b" rx="6" stroke="#475569"/>
+  <line x1="450" y1="84" x2="475" y2="84" stroke="#38bdf8" stroke-width="3"/>
+  <text x="482" y="88" fill="#e2e8f0" font-size="9.5">Visits abroad by UK residents</text>
+  <line x1="450" y1="102" x2="475" y2="102" stroke="#34d399" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <text x="482" y="105" fill="#e2e8f0" font-size="9.5">Visits to UK by overseas residents</text>
+  
+  <!-- SEPARATOR -->
+  <line x1="40" y1="240" x2="680" y2="240" stroke="#334155" stroke-width="1"/>
+  
+  <!-- CHART 2: HORIZONTAL BAR CHART (BOTTOM) -->
+  <text x="360" y="266" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Most Popular Countries Visited by UK Residents in 1999</text>
+  
+  <!-- Y-Axis labels (Countries) -->
+  <text x="130" y="302" fill="#e2e8f0" font-size="12" text-anchor="end">France</text>
+  <text x="130" y="338" fill="#e2e8f0" font-size="12" text-anchor="end">Spain</text>
+  <text x="130" y="374" fill="#e2e8f0" font-size="12" text-anchor="end">USA</text>
+  <text x="130" y="410" fill="#e2e8f0" font-size="12" text-anchor="end">Greece</text>
+  <text x="130" y="446" fill="#e2e8f0" font-size="12" text-anchor="end">Turkey</text>
+  
+  <!-- Bars -->
+  <!-- France: ~11m (width: 11 * 34 = 374) -->
+  <rect x="145" y="288" width="374" height="20" fill="#6366f1" rx="4"/>
+  <text x="526" y="303" fill="#818cf8" font-size="11" font-weight="bold">11.0m</text>
+  
+  <!-- Spain: ~9.5m (width: 9.5 * 34 = 323) -->
+  <rect x="145" y="324" width="323" height="20" fill="#ec4899" rx="4"/>
+  <text x="475" y="339" fill="#f472b6" font-size="11" font-weight="bold">9.5m</text>
+  
+  <!-- USA: ~3.5m (width: 3.5 * 34 = 119) -->
+  <rect x="145" y="360" width="119" height="20" fill="#f59e0b" rx="4"/>
+  <text x="271" y="375" fill="#fbbf24" font-size="11" font-weight="bold">3.5m</text>
+  
+  <!-- Greece: ~2.5m (width: 2.5 * 34 = 85) -->
+  <rect x="145" y="396" width="85" height="20" fill="#14b8a6" rx="4"/>
+  <text x="237" y="411" fill="#2dd4bf" font-size="11" font-weight="bold">2.5m</text>
+  
+  <!-- Turkey: ~2.0m (width: 2.0 * 34 = 68) -->
+  <rect x="145" y="432" width="68" height="20" fill="#a855f7" rx="4"/>
+  <text x="220" y="447" fill="#c084fc" font-size="11" font-weight="bold">2.0m</text>
+  
+  <!-- Bottom axis line & ticks -->
+  <line x1="145" y1="458" x2="655" y2="458" stroke="#475569" stroke-width="1.5"/>
+  <text x="145" y="472" fill="#94a3b8" font-size="10" text-anchor="middle">0</text>
+  <text x="315" y="472" fill="#94a3b8" font-size="10" text-anchor="middle">5m</text>
+  <text x="485" y="472" fill="#94a3b8" font-size="10" text-anchor="middle">10m</text>
+  <text x="655" y="472" fill="#94a3b8" font-size="10" text-anchor="middle">15m</text>
+  <text x="400" y="478" fill="#64748b" font-size="9" text-anchor="middle">Millions of UK visitors</text>
+</svg>`,
+                    sample_band9: `The provided charts illustrate the volume of visits to and from the United Kingdom between 1979 and 1999, alongside the five most visited foreign destinations by British travellers in 1999.
+
+Overall, both outbound and inbound travel experienced substantial growth over the 20-year period, though trips made by UK residents abroad increased at a much more dramatic rate, creating a widening tourism deficit. In 1999, France and Spain were overwhelmingly the most popular overseas destinations for British holidaymakers.
+
+In 1979, the number of British citizens journeying overseas stood at approximately 13 million, slightly higher than the 10 million overseas visitors travelling to the UK. While overseas visits to Britain climbed steadily over the next two decades to reach roughly 27 million by 1999, outbound trips from the UK surged exponentially. Outbound numbers escalated sharply after the mid-1980s, culminating in a peak of over 54 million visits by 1999, effectively quadrupling the starting figure and doubling the inbound total.
+
+Regarding destination preferences in 1999, neighboring France stood as the clear favourite with 11 million UK visitors, closely followed by Spain at around 9.5 million. Together, these two European countries accounted for more than a third of all outbound trips. By contrast, long-haul travel to the USA drew a more modest 3.5 million visitors, while Greece and Turkey rounded out the top five with 2.5 million and 2 million visits respectively.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: Student Behaviour and Discipline in Schools",
+                    prompt: "In many countries schools have severe problems with student behaviour. What do you think are the causes of this? What solutions can you suggest? Write at least 250 words.",
+                    sample_band9: `Classroom disruption and antisocial conduct among schoolchildren have escalated into widespread educational concerns across numerous contemporary societies. This pervasive breakdown in student discipline stems from a combination of changing family dynamics and ubiquitous digital distractions, requiring concerted joint interventions from schools, parents, and policy-makers.
+
+One principal driver of deteriorating classroom behaviour is the erosion of consistent domestic supervision and parental boundaries. In today's fast-paced economic climate, both parents often work long hours, leaving children unsupervised for substantial periods. Consequently, fundamental values such as deference toward authority, patience, and empathetic peer interaction are frequently neglected during formative childhood years. Compounding this issue is the omnipresence of addictive digital entertainment, algorithmic video feeds, and violent multiplayer gaming. Constant screen exposure drastically diminishes attention spans, fosters irritability, and desensitizes adolescents to disruptive social behaviours, which they subsequently replicate in structured classroom settings.
+
+To counteract these detrimental trends, a multi-faceted strategy must be enacted. First and foremost, schools must institute proactive restorative justice and behavioural guidance frameworks rather than relying exclusively on punitive exclusions, which often alienate troubled youths further. Trained educational counsellors should be deployed to identify the underlying emotional distress or special educational needs driving disruptive outbursts. Furthermore, schools must foster stringent home-school partnerships: regular parent consultations, digital wellness workshops, and enforceable contracts regarding device usage can align expectations between domestic and classroom environments. Finally, incorporating mandatory emotional intelligence and mindfulness modules into standard national curricula can empower children to regulate impulsivity and channel stress constructively.
+
+In conclusion, indiscipline in schools is largely precipitated by fragmented domestic oversight and unrestricted digital exposure. Restoring an orderly, productive academic atmosphere requires compassionate counselling systems, rigorous home-school cooperation, and curriculum reforms dedicated to social-emotional development.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 4",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview - Your Favourite Place",
+                    questions: [
+                        { question: "What place do you most like to visit?", band9_sample: "My favourite sanctuary is a tranquil seaside cliff overlooking the bay in my hometown. It features rugged granite boulders, panoramic oceanic vistas, and a constant gentle marine breeze." },
+                        { question: "How often do you visit this place?", band9_sample: "Whenever my schedule permits—typically once or twice a month during weekend mornings. It provides a vital mental respite from the relentless noise of metropolitan city life." },
+                        { question: "Why do you like it so much?", band9_sample: "The combination of rhythmic crashing waves, crisp salty air, and uninterrupted horizon creates an immensely restorative atmosphere where I can read, reflect, and recharge." },
+                        { question: "Is it popular with many other people?", band9_sample: "Thankfully, it remains somewhat off the beaten track. While local joggers and landscape painters frequent the trails at sunrise, it rarely suffers from the overwhelming tourist crowds found on main public beaches." },
+                        { question: "Has it changed very much since you first went there?", band9_sample: "Remarkably little, which is a rare blessing. The municipal council designated the entire coastal strip as a protected nature reserve, successfully preventing commercial property development." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn - A Useful Website",
+                    cue_card: "Describe a useful website you have visited.\nYou should say:\n- what the website was\n- how you found the address for this website\n- what the website contained\nand explain why it was useful to you.",
+                    band9_sample: "I would like to talk about an exceptional academic resource platform called 'Our World in Data', hosted by research teams at the University of Oxford. I first stumbled upon the URL several years ago while conducting empirical research for an undergraduate economics thesis on global poverty alleviation.\n\nThe website functions as an expansive, open-access repository of interactive data visualizations, research papers, and empirical charts tracking long-term human development. It encompasses crucial global challenges including renewable energy transitions, public health milestones, educational literacy, and demographic shifts.\n\nWhat makes this platform remarkably useful is its unparalleled data integrity and interactive functionality. Unlike superficial journalistic outlets that sensationalize daily events, this site contextualizes modern challenges across decadal or centennial timelines. Users can customize time-series graphs, download raw datasets for independent verification, and read rigorous syntheses written in clear, accessible prose. It has fundamentally enriched my critical thinking, providing rigorous factual grounding for both academic work and informed public discourse."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion - The Internet and Society",
+                    questions: [
+                        { question: "What effect has the internet had on the way people generally communicate with each other?", band9_sample: "The internet has revolutionized communication by eliminating geographical friction. Instant messaging and teleconferencing have enabled borderless professional collaboration. However, the predominance of brief textual exchanges can sometimes diminish conversational nuance, emotional empathy, and body language cues compared to face-to-face dialogue." },
+                        { question: "How reliable do you think information from the internet is? What about online news?", band9_sample: "Online information is profoundly bifurcated. On one hand, peer-reviewed journals and institutional repositories offer unprecedented public access to rigorous knowledge. On the other hand, the algorithmic business models of social media platforms frequently incentivize clickbait, unverified hearsay, and polarized misinformation, placing an urgent onus on internet users to cultivate sophisticated media literacy skills." },
+                        { question: "Why do you think some people still prefer physical high-street shopping over e-commerce?", band9_sample: "Physical retail provides tangible sensory verification and instant gratification that digital stores cannot replicate. Consumers often want to touch fabrics, test perfume fragrances, or try on footwear before committing funds, alongside enjoying the tactile, social outing that brick-and-mortar shopping centres offer." },
+                        { question: "Do you think shopping on the internet will become even more popular in the future? Why?", band9_sample: "Undoubtedly. As augmented reality technologies mature, consumers will be able to virtually project furniture into their living rooms or preview tailored clothing on digital avatars from home. Combined with autonomous drone delivery and automated fulfillment logistics, e-commerce convenience will continue outstripping conventional retail across most consumer sectors." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// =========================================================================
+// IELTS MASTER PROFILE DATA (CAMBRIDGE IELTS 1, 2, 3 & 4)
+// Full 16 Authentic Cambridge Tests (4 Tests per Book)
 // =========================================================================
 
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1, 2 & 3 (12 Tests)",
+    age: "Cambridge 1, 2, 3 & 4 (16 Tests)",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
     // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
@@ -8243,6 +9867,14 @@ const ieltsProfileData = {
             order: 3,
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"]
+        },
+        "cam_4": {
+            id: "cam_4",
+            title: "Cambridge IELTS 4",
+            badge: "4 Tests",
+            order: 4,
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"]
         }
     },
 
@@ -8259,10 +9891,14 @@ const ieltsProfileData = {
         "cam_3_test_1": { title: "Test 1", full_title: "Cambridge IELTS 3 - Test 1", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
         "cam_3_test_2": { title: "Test 2", full_title: "Cambridge IELTS 3 - Test 2", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
         "cam_3_test_3": { title: "Test 3", full_title: "Cambridge IELTS 3 - Test 3", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
-        "cam_3_test_4": { title: "Test 4", full_title: "Cambridge IELTS 3 - Test 4", book_id: "cam_3", book_title: "Cambridge IELTS 3" }
+        "cam_3_test_4": { title: "Test 4", full_title: "Cambridge IELTS 3 - Test 4", book_id: "cam_3", book_title: "Cambridge IELTS 3" },
+        "cam_4_test_1": { title: "Test 1", full_title: "Cambridge IELTS 4 - Test 1", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
+        "cam_4_test_2": { title: "Test 2", full_title: "Cambridge IELTS 4 - Test 2", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
+        "cam_4_test_3": { title: "Test 3", full_title: "Cambridge IELTS 4 - Test 3", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
+        "cam_4_test_4": { title: "Test 4", full_title: "Cambridge IELTS 4 - Test 4", book_id: "cam_4", book_title: "Cambridge IELTS 4" }
     },
 
-    // All Registered Tests (12 Tests Total)
+    // All Registered Tests (16 Tests Total)
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
@@ -8275,7 +9911,11 @@ const ieltsProfileData = {
         "cam_3_test_1": cam3Test1,
         "cam_3_test_2": cam3Test2,
         "cam_3_test_3": cam3Test3,
-        "cam_3_test_4": cam3Test4
+        "cam_3_test_4": cam3Test4,
+        "cam_4_test_1": cam4Test1,
+        "cam_4_test_2": cam4Test2,
+        "cam_4_test_3": cam4Test3,
+        "cam_4_test_4": cam4Test4
     }
 };
 
@@ -8288,6 +9928,7 @@ if (typeof module !== "undefined" && module.exports) {
         ieltsProfileData,
         cam1Test1, cam1Test2, cam1Test3, cam1Test4,
         cam2Test1, cam2Test2, cam2Test3, cam2Test4,
-        cam3Test1, cam3Test2, cam3Test3, cam3Test4
+        cam3Test1, cam3Test2, cam3Test3, cam3Test4,
+        cam4Test1, cam4Test2, cam4Test3, cam4Test4
     };
 }
