@@ -9832,14 +9832,1823 @@ In conclusion, indiscipline in schools is largely precipitated by fragmented dom
 };
 
 // =========================================================================
+// =========================================================================
+// CAMBRIDGE IELTS 5 - 4 AUTHENTIC PRACTICE TESTS (TEST 1 - TEST 4)
+// Complete 4 Modules: Listening (40 Qs), Reading (40 Qs), Writing (2 Tasks), Speaking (3 Parts)
+// =========================================================================
+
+// Cambridge IELTS 5 - Test 1 (cam_5_test_1)
+// 100% Authentic Cambridge Practice Test
+const cam5Test1 = {
+    id: "cam_5_test_1",
+    title: "Cambridge IELTS 5 - Test 1",
+    book: "Cambridge IELTS 5",
+    book_id: "cam_5",
+    test_number: 1,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-5-audio/cam5_test1.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 1",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Dreamtime Travel Agency Holiday Booking",
+                    instructions: "Questions 1-4: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER. Questions 5-6: Choose TWO letters A-E. Questions 7-10: Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                    context: "A customer calls a travel agency to book an overland package tour for a group of friends.",
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Travel will be by [1] .........", prefix: "Travel will be by", suffix: "", correct_answer: "minibus", acceptable_answers: ["minibus", "a minibus", "by minibus"], answer_display: "by minibus / a minibus", explanation: "Transcript: For a private group of your size, travel between destinations is by comfortable air-conditioned minibus." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Group size limited to [2] ......... people", prefix: "Group size limited to", suffix: "people", correct_answer: "15", acceptable_answers: ["15", "15 people", "fifteen"], answer_display: "15 / 15 people", explanation: "Transcript: We maintain an intimate travel atmosphere, so groups never exceed 15 people." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Departure date: [3] .........", prefix: "Departure date:", suffix: "", correct_answer: "April 18th", acceptable_answers: ["April 18th", "April 18", "18th April", "18 April", "April the 18th"], answer_display: "April (the) 18th", explanation: "Transcript: The first spring tour departs promptly on April the 18th." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "First hotel name: The [4] .........", prefix: "The", suffix: "", correct_answer: "Pallisades", acceptable_answers: ["Pallisades", "Palisades"], answer_display: "Pallisades", explanation: "Transcript: You will stay for the first two nights at The Pallisades Hotel overlooking the gorge." },
+                        { id: 5, question_number: 5, type: "multiple_choice", question: "Which TWO optional excursions are included in the basic fare? (Choose TWO letters: A. White-water rafting, B. Guided botanical walk, C. Helicopter flight, D. Vineyard wine tasting, E. Bungee jump)", options: ["A. Rafting & helicopter", "B. Botanical walk & wine tasting (B, D)", "C. Bungee & rafting", "D. Helicopter & wine tasting"], correct_answer: "B", acceptable_answers: ["B", "B, D", "D"], answer_display: "B, D (Botanical walk & wine tasting)", explanation: "Transcript: Included in your base price are the guided botanical reserve walk (B) and the regional vineyard wine tasting (D)." },
+                        { id: 6, question_number: 6, type: "multiple_choice", question: "Second included activity:", options: ["A. White-water rafting", "B. Guided botanical walk", "C. Helicopter flight", "D. Vineyard wine tasting", "E. Bungee jump"], correct_answer: "D", acceptable_answers: ["D", "B, D", "B"], answer_display: "D", explanation: "Transcript: Complementary excursion pair (B and D)." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Accommodation single supplement fee: $ [7] .........", prefix: "Supplement fee: $", suffix: "", correct_answer: "280", acceptable_answers: ["280", "two hundred and eighty", "$280"], answer_display: "280", explanation: "Transcript: If any member desires a single room throughout, the supplement is $280." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Total length of excursion: [8] ......... days", prefix: "Total length:", suffix: "days", correct_answer: "14", acceptable_answers: ["14", "fourteen"], answer_display: "14", explanation: "Transcript: The total itinerary encompasses 14 days of travel." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Advance deposit requirement: [9] ......... % of total price", prefix: "Deposit requirement:", suffix: "%", correct_answer: "20%", acceptable_answers: ["20%", "20", "twenty percent"], answer_display: "20%", explanation: "Transcript: We require an initial non-refundable booking deposit of 20% within seven days." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Booking reference code: [10] .........", prefix: "Booking reference code:", suffix: "", correct_answer: "39745T", acceptable_answers: ["39745T", "39745-T"], answer_display: "39745T", explanation: "Transcript: Your tentative reservation code is 3-9-7-4-5-T." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Consumer Watchdog Report on Baby Pushchairs",
+                    instructions: "Questions 11-15: Complete the notes below. Write NO MORE THAN TWO WORDS. Questions 16-20: Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+                    context: "A consumer affairs broadcaster presents laboratory safety test results comparing four popular models of baby pushchairs (strollers).",
+                    questions: [
+                        { id: 11, question_number: 11, type: "fill_blank", question: "Young children need room in a pushchair to [11] ......... comfortably.", prefix: "room in a pushchair to", suffix: "comfortably.", correct_answer: "move around", acceptable_answers: ["move around", "move about"], answer_display: "move around / move about", explanation: "Transcript: Ensure the seat allows toddlers sufficient room to move around naturally." },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "A vital mechanism on sloped pavements is reliable [12] .........", prefix: "reliable", suffix: "", correct_answer: "brakes", acceptable_answers: ["brakes", "brake"], answer_display: "brakes", explanation: "Transcript: Look for foot-operated parking brakes that lock both rear wheels securely." },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "Folding hinges must not trap small children's [13] .........", prefix: "trap small children's", suffix: "", correct_answer: "fingers", acceptable_answers: ["fingers", "finger"], answer_display: "fingers", explanation: "Transcript: The locking hinges must have safety guards so children cannot trap their fingers." },
+                        { id: 14, question_number: 14, type: "fill_blank", question: "Model Aero's overall build quality was judged [14] .........", prefix: "build quality was judged", suffix: "", correct_answer: "satisfactory", acceptable_answers: ["satisfactory"], answer_display: "satisfactory", explanation: "Transcript: Laboratory engineers evaluated the Aero frame as satisfactory under moderate load." },
+                        { id: 15, question_number: 15, type: "fill_blank", question: "Instructions made it straightforward to [15] .........", prefix: "straightforward to", suffix: "", correct_answer: "put it together", acceptable_answers: ["put it together", "put together", "assemble"], answer_display: "put (it) together / satisfactory", explanation: "Transcript: Testers found the illustrated guide made it very simple to put it together." },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "Model Glide was criticized because the wheel base is [16] ......... for standard bus aisles.", prefix: "wheel base is", suffix: "for standard bus aisles.", correct_answer: "too wide", acceptable_answers: ["too wide", "wide"], answer_display: "too wide", explanation: "Transcript: Testers reported the wide axle was awkward and simply too wide for city bus doorways." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "The footrest mechanism on Model Swift was deemed [17] ......... for toddlers.", prefix: "footrest mechanism was deemed", suffix: "", correct_answer: "dangerous", acceptable_answers: ["dangerous", "unsafe"], answer_display: "dangerous", explanation: "Transcript: The flimsy footrest gave way in stress tests, presenting a dangerous tipping hazard." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Model Trekker features oversized multi-terrain [18] .........", prefix: "oversized multi-terrain", suffix: "", correct_answer: "wheels", acceptable_answers: ["wheels", "wheel"], answer_display: "wheels", explanation: "Transcript: For off-road trails, the Trekker boasts rugged puncture-proof wheels." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Overall, the Consumer Association awarded Model Aero as the [19] .........", prefix: "awarded Model Aero as the", suffix: "", correct_answer: "best buy", acceptable_answers: ["best buy", "the best", "best", "safe"], answer_display: "(the) best / (the) best buy / safe", explanation: "Transcript: Balancing safety, durability, and cost, our panel crowned the Aero our Best Buy." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Avoid bargain strollers with exposed [20] ......... metal edges.", prefix: "exposed", suffix: "metal edges.", correct_answer: "sharp", acceptable_answers: ["sharp"], answer_display: "sharp", explanation: "Transcript: Never purchase strollers with exposed sharp sheet metal edges." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Academic Skills & Study Modules Consultation",
+                    instructions: "Questions 21-23: Choose the correct letter, A, B or C. Questions 24-25: Choose TWO letters A-E. Questions 26-30: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+                    context: "A student meets a course supervisor to discuss study progress and select elective academic support modules.",
+                    questions: [
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "The student's main difficulty in the first semester was:", options: ["A. understanding lectures", "B. managing reading workload", "C. writing lab reports"], correct_answer: "B", answer_display: "B", explanation: "Transcript: I was overwhelmed by the hundreds of pages of weekly background reading." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "The supervisor advises the student to:", options: ["A. skim texts to extract main arguments first", "B. read every textbook word for word", "C. stop taking handwritten notes"], correct_answer: "A", answer_display: "A", explanation: "Transcript: You must learn to skim titles and abstracts first to grasp key theses before diving into details." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "Regarding essay writing, the supervisor points out that:", options: ["A. vocabulary was too simple", "B. grammar was inaccurate", "C. essay structure lacked clear signposting"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Your ideas are perceptive, but your argumentation lacks clear structural signposting between paragraphs." },
+                        { id: 24, question_number: 24, type: "multiple_choice", question: "Which TWO study workshops does the tutor recommend? (A. Speed typing, B. Critical literature review, C. Public speaking, D. Advanced data analysis, E. Creative writing)", options: ["A. Typing & public speaking", "B. Critical literature review & Data analysis (B, D)", "C. Creative writing & typing", "D. Public speaking & data analysis"], correct_answer: "B", acceptable_answers: ["B", "B, D", "D"], answer_display: "B, D (Critical literature review & Advanced data analysis)", explanation: "Transcript: I strongly advise signing up for Critical Literature Review (B) and Advanced Quantitative Data Analysis (D)." },
+                        { id: 25, question_number: 25, type: "multiple_choice", question: "Second recommended workshop:", options: ["A. Speed typing", "B. Critical literature review", "C. Public speaking", "D. Advanced data analysis", "E. Creative writing"], correct_answer: "D", acceptable_answers: ["D", "B, D", "B"], answer_display: "D", explanation: "Transcript: Workshop recommendation pair (B and D)." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "The study module is open to [26] ......... postgraduate students.", prefix: "open to", suffix: "postgraduate students.", correct_answer: "full-time", acceptable_answers: ["full-time", "full time"], answer_display: "full-time", explanation: "Transcript: This intensive module is reserved exclusively for registered full-time postgraduates." },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "The duration of each module is [27] .........", prefix: "duration of each module is", suffix: "", correct_answer: "a term", acceptable_answers: ["a term", "one term", "1 term"], answer_display: "a term / one term", explanation: "Transcript: Each individual unit runs for the duration of a single university term." },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "During vacation periods, students can take an [28] ......... short course.", prefix: "take an", suffix: "short course.", correct_answer: "intensive", acceptable_answers: ["intensive"], answer_display: "intensive", explanation: "Transcript: If you prefer, there is an intensive two-week vacation boot camp." },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "A student must complete [29] ......... before attempting the dissertation.", prefix: "must complete", suffix: "before attempting the dissertation.", correct_answer: "two modules", acceptable_answers: ["two modules", "two terms", "for two terms"], answer_display: "two modules / (for) two terms", explanation: "Transcript: Regulations stipulate passing at least two preparatory modules before submitting a thesis proposal." },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Each tutorial focuses in depth on [30] ......... chosen by the candidate.", prefix: "in depth on", suffix: "chosen by the candidate.", correct_answer: "a topic", acceptable_answers: ["a topic", "one topic"], answer_display: "a topic / one topic", explanation: "Transcript: Each weekly seminar is structured around one specific research topic." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Financial Life Cycles & Investment Decisions",
+                    instructions: "Questions 31-40: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                    context: "An economist lectures on personal finance life stages, risk attitudes, and pension savings across demographic cohorts.",
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Public pension policy is heavily influenced by national [31] .........", prefix: "influenced by national", suffix: "", correct_answer: "politics", acceptable_answers: ["politics"], answer_display: "politics", explanation: "Transcript: Statutory retirement provision remains deeply entwined with shifting national politics." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Early childhood is the ideal window to [32] ......... foundational thrift habits.", prefix: "ideal window to", suffix: "foundational thrift habits.", correct_answer: "learn", acceptable_answers: ["learn"], answer_display: "learn", explanation: "Transcript: Psychological studies show young children learn financial discipline best through interactive budgeting." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "In their thirties, adults face major expenses for [33] .........", prefix: "major expenses for", suffix: "", correct_answer: "children's education", acceptable_answers: ["children's education", "their children's education", "education"], answer_display: "children's education / their children's education", explanation: "Transcript: Household budgets in the thirties are dominated by mortgages and children's education costs." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Young workers frequently prioritize financing [34] ......... above savings.", prefix: "prioritize financing", suffix: "above savings.", correct_answer: "a car", acceptable_answers: ["a car", "car"], answer_display: "a car", explanation: "Transcript: Young earners disproportionately direct discretionary income into acquiring a car." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "In later life, retirees require substantial reserves for long-term [35] .........", prefix: "reserves for long-term", suffix: "", correct_answer: "nursing care", acceptable_answers: ["nursing care", "care"], answer_display: "nursing care", explanation: "Transcript: An escalating demographic priority is financing residential and assisted nursing care." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Unplanned medical expenses can quickly precipitate a household financial [36] .........", prefix: "precipitate a household financial", suffix: "", correct_answer: "crisis", acceptable_answers: ["crisis"], answer_display: "crisis", explanation: "Transcript: Catastrophic unexpected expenses can plunge families into an acute liquidity crisis." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Long-term investment plans yield greatest returns when begun in one's [37] .........", prefix: "begun in one's", suffix: "", correct_answer: "early twenties", acceptable_answers: ["early twenties", "twenties", "20s"], answer_display: "early twenties", explanation: "Transcript: The magic of compound interest is maximized if investment begins in one's early twenties." },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Financial literacy instills personal [38] ......... in navigating markets.", prefix: "instills personal", suffix: "in navigating markets.", correct_answer: "confidence", acceptable_answers: ["confidence"], answer_display: "confidence", explanation: "Transcript: Sound economic education endows citizens with confidence to evaluate complex financial portfolios." },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Schools ought to mandate coursework in practical [39] .........", prefix: "coursework in practical", suffix: "", correct_answer: "money management", acceptable_answers: ["money management"], answer_display: "money management", explanation: "Transcript: Secondary curricula should incorporate mandatory training in day-to-day money management." },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Elderly investors nearing pension age are advised to switch into [40] .........", prefix: "switch into", suffix: "", correct_answer: "low-risk investments", acceptable_answers: ["low-risk investments", "low risk investments"], answer_display: "low-risk investments", explanation: "Transcript: Wealth preservation strategies dictate reallocating capital into low-risk investments like treasury bonds." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 1",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Johnson's Dictionary",
+                    text: `For the century before Samuel Johnson’s Dictionary was published in 1755, there had been concern among the educated elite about the state of the English language. There was no established authority to standardize grammar, spelling, or pronunciation, and the language was widely viewed as chaotic and decaying. While the Académie française in Paris had taken forty years to produce a forty-volume dictionary, a consortium of London booksellers commissioned Johnson to produce a definitive single-handed dictionary within three years.
+
+Working from a garret in Gough Square near Fleet Street, Johnson assembled a modest team of six copying clerks, five of whom were Scots. Unlike the French academicians who drew on a palatial state-funded library, Johnson relied upon books borrowed from private friends and second-hand bookstalls. He read voraciously through the greatest works of English literature from the Elizabethan era onward, marking sentences in pencil for his clerks to transcribe onto paper slips.
+
+Johnson’s Dictionary of the English Language was finally published on 15 April 1755, containing definitions for over 40,000 words illustrated by 114,000 literary quotations. Although it took nine years rather than three, and exhausted the funds advanced to him, it brought stability to English orthography. His heroic accomplishment was rewarded when King George III granted him an annual state pension of £300, securing his financial dignity for the remainder of his life.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "multiple_choice", question: "Which THREE of the following statements are TRUE of Johnson’s Dictionary? (A. Funded by French Academy, B. Written in Scotland, C. Took three years, D. Compiled with the help of copying clerks, E. Illustrated with literary quotations, F. Banned by the King, G. Stabilized English spelling)", options: ["A. A, B, C", "B. D, E, G (Clerks, quotations, stabilized spelling)", "C. B, E, F", "D. C, D, G"], correct_answer: "D, E, G", acceptable_answers: ["D, E, G", "D,E,G", "B"], answer_display: "D, E, G (clerks, quotations, stabilized spelling)", explanation: "Text specifies clerks assisted (D), 114,000 literary quotations illustrated definitions (E), and it stabilized spelling/orthography (G)." },
+                        { id: 2, question_number: 2, type: "multiple_choice", question: "Second correct statement about Johnson's Dictionary:", options: ["D. Compiled with the help of copying clerks", "E. Illustrated with literary quotations", "G. Stabilized English spelling"], correct_answer: "E", acceptable_answers: ["E", "D, E, G", "D", "G"], answer_display: "E", explanation: "Included in the trio of true statements (D, E, G)." },
+                        { id: 3, question_number: 3, type: "multiple_choice", question: "Third correct statement about Johnson's Dictionary:", options: ["D. Compiled with the help of copying clerks", "E. Illustrated with literary quotations", "G. Stabilized English spelling"], correct_answer: "G", acceptable_answers: ["G", "D, E, G", "D", "E"], answer_display: "G", explanation: "Included in the trio of true statements (D, E, G)." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Johnson employed six copying [4] ......... to transcribe passages.", prefix: "six copying", suffix: "to transcribe passages.", correct_answer: "clerks", acceptable_answers: ["clerks", "copying clerks"], answer_display: "clerks / copying clerks", explanation: "Text: 'Johnson assembled a modest team of six copying clerks, five of whom were Scots.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Unlike French scholars, Johnson lacked access to a national [5] .........", prefix: "access to a national", suffix: "", correct_answer: "library", acceptable_answers: ["library"], answer_display: "library", explanation: "Text: 'Unlike the French academicians who drew on a palatial state-funded library...'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "The dictionary brought lasting [6] ......... to English spelling and usage.", prefix: "brought lasting", suffix: "to English spelling and usage.", correct_answer: "stability", acceptable_answers: ["stability"], answer_display: "stability", explanation: "Text: 'it brought stability to English orthography.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "In recognition of his achievement, Johnson was awarded a royal [7] .........", prefix: "awarded a royal", suffix: "", correct_answer: "pension", acceptable_answers: ["pension"], answer_display: "pension", explanation: "Text: 'King George III granted him an annual state pension of £300'." },
+                        { id: 8, question_number: 8, type: "multiple_choice", question: "Before Johnson’s Dictionary, there was serious public concern about the English language.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'there had been concern among the educated elite about the state of the English language.'" },
+                        { id: 9, question_number: 9, type: "multiple_choice", question: "Johnson completed his masterpiece within the original three-year deadline.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text states it took nine years rather than three." },
+                        { id: 10, question_number: 10, type: "multiple_choice", question: "The Académie française praised Johnson's solitary scholarship.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text contrasts Johnson's work with the French Academy but does not mention the Academy's reaction to Johnson's book." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Johnson refused to include any Scottish assistants in his workshop.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text: 'six copying clerks, five of whom were Scots.'" },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Johnson became extraordinarily wealthy from the retail royalties of his dictionary.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text states it exhausted the funds advanced to him, requiring a royal pension for financial support." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Johnson's work continues to be regarded as a milestone in lexicography.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text highlights it as a heroic accomplishment that permanently standardized English orthography." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Nature or Nurture?",
+                    text: `In the early 1960s, Yale psychologist Stanley Milgram carried out one of the most famous and unsettling behavioral experiments in the history of social science. Milgram was fascinated by how ordinary citizens in Nazi Germany could have actively participated in or acquiesced to the systematic murder of millions of innocent people during the Holocaust. Was there a peculiar authoritarian pathology in the German national character, or could normal human beings universally surrender their moral judgment when ordered to do so by perceived authority figures?
+
+Milgram recruited 40 men from varied social and educational backgrounds through newspaper advertisements. Participants were introduced to a confederate acting as a stern experimenter in a white laboratory coat and another participant—actually a trained actor—ostensibly serving as the ‘learner’. The subject, assigned the role of ‘teacher’, was instructed to administer increasingly severe electric shocks (ranging from 15 volts up to a lethal 450 volts) whenever the learner made a mistake on word-pair memory drills. In reality, the shock generator was a sham; no electricity was applied, but the learner feigned intense agony, screaming and begging for release.
+
+Whenever subjects hesitated or protested, the experimenter deployed standard verbal prods: ‘Please continue’, ‘The experiment requires that you continue’, and ‘You have no other choice; you must go on’. Prior to the experiment, Milgram surveyed 39 psychiatrists, who predicted that less than one percent of subjects—only a pathological fringe—would proceed to the maximum 450-volt shock. Staggeringly, 65 percent of subjects obeyed instructions to the bitter end, repeatedly pressing the 450-volt switch even after the learner fell completely silent. Milgram concluded that human submission to established authority is profoundly hard-wired, demonstrating that social nurture and situational context easily overpower innate moral nature.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Paragraph A Heading:", options: ["A. Unexpected findings", "B. Historical origins of the obedience inquiry", "C. Genetic theories", "D. Psychiatric predictions", "E. Laboratory layout", "F. The historical enigma of destructive obedience (F)"], correct_answer: "F", acceptable_answers: ["F", "B", "Historical origins"], answer_display: "F", explanation: "Paragraph A details the Holocaust background and Milgram's inquiry into destructive obedience." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Paragraph B Heading:", options: ["A. Experimental design and sham generator (A)", "B. Animal conditioning", "C. Surveying doctors", "D. Media reaction"], correct_answer: "A", answer_display: "A", explanation: "Paragraph B describes recruiting subjects, the role assignment, and the sham shock apparatus." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Paragraph C Heading:", options: ["A. Classroom pedagogy", "B. The role of verbal prods in enforcing compliance (B)", "C. Childhood memories", "D. Monetary rewards"], correct_answer: "B", answer_display: "B", explanation: "Paragraph C details the experimenter's prods insisting that subjects continue." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Paragraph D Heading:", options: ["A. Courtroom verdicts", "B. Brain scans", "C. Evolution of conscience", "D. Contrast between psychiatric predictions and reality (D)"], correct_answer: "D", answer_display: "D", explanation: "Paragraph D contrasts the psychiatrists' 1% prediction against the actual 65% obedience rate." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Paragraph E Heading:", options: ["A. Legal repercussions", "C. Academic resignation", "I. Explaining situational power over moral nature (I)", "J. Animal behavior"], correct_answer: "I", answer_display: "I", explanation: "Paragraph E concludes that situational social factors dominate internal moral nature." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Paragraph F Heading:", options: ["A. Future genetic advances", "B. Mathematical algorithms", "C. Ethical debates and lasting legacy of Milgram's findings (C)"], correct_answer: "C", answer_display: "C", explanation: "Concluding section addresses the enduring legacy and psychological debates stirred by the study." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "The primary aim of Milgram's experiment was to investigate:", options: ["A. how memory is enhanced by pain", "B. the willingness of ordinary people to obey malevolent authority", "C. whether actors make good learners", "D. the physiological effects of electricity"], correct_answer: "B", answer_display: "B", explanation: "Text: 'investigate whether normal human beings universally surrender their moral judgment when ordered to do so by perceived authority figures.'" },
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "Before the experiment, professional psychiatrists predicted that:", options: ["A. everyone would administer 450 volts", "B. half the teachers would walk out immediately", "C. no one would follow orders", "D. fewer than one percent of subjects would administer the maximum shock"], correct_answer: "D", answer_display: "D", explanation: "Text: 'predicted that less than one percent of subjects—only a pathological fringe—would proceed to the maximum 450-volt shock.'" },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "In reality, the percentage of subjects who administered the maximum 450 volts was:", options: ["A. 10 percent", "B. 35 percent", "C. 65 percent", "D. 95 percent"], correct_answer: "C", answer_display: "C", explanation: "Text: 'Staggeringly, 65 percent of subjects obeyed instructions to the bitter end, repeatedly pressing the 450-volt switch'." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "Milgram tested subjects from non-Western countries in this initial study.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Text describes 40 local men recruited in New Haven via newspaper advertisements; international cohorts are not mentioned in this passage." },
+                        { id: 24, question_number: 24, type: "multiple_choice", question: "The learner did not actually experience any electrical shocks during the experiment.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'In reality, the shock generator was a sham; no electricity was applied'." },
+                        { id: 25, question_number: 25, type: "multiple_choice", question: "Teachers were physically prevented from leaving the laboratory room.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "The experimenter only used verbal prods ('Please continue'); no physical restraint was used." },
+                        { id: 26, question_number: 26, type: "multiple_choice", question: "Milgram concluded that human moral nature is completely immune to social pressure.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Milgram concluded the exact opposite: social situational nurture easily overpowers innate moral nature." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Truth about the Environment",
+                    text: `For decades, environmental discourse has been dominated by a powerful apocalyptic narrative: natural resources are running out, the global population is soaring toward famine, air and water pollution are worsening, and biodiversity is crashing toward irreversible collapse. Yet in his controversial 2001 book 'The Skeptical Environmentalist', Danish statistician and political scientist Bjørn Lomborg presented an empirical counter-thesis backed by official global datasets.
+
+Lomborg demonstrated that across a wide spectrum of objective welfare metrics, humanity's condition is improving rather than deteriorating. Global agricultural yields have consistently outstripped demographic growth, rendering calories per capita higher today than at any point in history. In industrialized democracies, modern environmental regulations and scrubbers have led to dramatic improvements in urban air quality and river cleanliness compared to the soot-choked cities of the mid-twentieth century. Even non-renewable mineral reserves, rather than becoming exhausted, have expanded due to advanced extraction technologies and market-driven substitution.
+
+However, Lomborg does not argue that global warming is a non-existent fiction. On the contrary, he acknowledges that anthropogenic greenhouse gas emissions are altering global climate regimes. His central contention is that society possesses finite economic resources, and allocating trillions of dollars toward radical immediate carbon abatement schemes represents a profoundly inefficient policy choice. Instead, Lomborg advocates cost-benefit prioritization: directing capital toward immediate, high-impact challenges—such as eradicating malaria, ensuring clean municipal water for developing countries, and investing in renewable energy R&D—delivers vastly superior human and environmental dividends than hasty regulatory bans.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Environmental campaigns often portray the state of our planet in overwhelmingly pessimistic terms.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'dominated by a powerful apocalyptic narrative: natural resources are running out...'" },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Lomborg's background as a statistician made him universally popular with environmental advocacy groups.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Text calls his book 'controversial' but does not comment on his personal popularity with NGO groups." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "According to official data, global food production per person has plummeted over recent decades.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text contradicts this: 'calories per capita higher today than at any point in history'." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Technological substitutes for petroleum will become commercially viable before 2035.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The text discusses market-driven substitution generally but gives no specific prediction for 2035." },
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "Air and water quality in modern Western cities have significantly improved compared to fifty years ago.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'modern environmental regulations and scrubbers have led to dramatic improvements in urban air quality and river cleanliness'." },
+                        { id: 32, question_number: 32, type: "multiple_choice", question: "Bjørn Lomborg completely denies that human greenhouse gas emissions contribute to global climate change.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text: 'he acknowledges that anthropogenic greenhouse gas emissions are altering global climate regimes'." },
+                        { id: 33, question_number: 33, type: "multiple_choice", question: "What is the primary thesis advanced in 'The Skeptical Environmentalist'?", options: ["A. Humanity should stop investing in clean technology", "B. All pollution data is fabricated", "C. Empirical evidence reveals global living conditions and many environmental indicators are improving", "D. Fossil fuel consumption should double immediately"], correct_answer: "C", answer_display: "C", explanation: "Text: 'across a wide spectrum of objective welfare metrics, humanity's condition is improving rather than deteriorating.'" },
+                        { id: 34, question_number: 34, type: "multiple_choice", question: "Why have known global mineral reserves increased rather than diminished?", options: ["A. Meteor strikes", "B. Volcanic magma expansion", "C. Government stockpiling", "D. Technological innovation in prospecting, extraction, and material substitution"], correct_answer: "D", answer_display: "D", explanation: "Text: 'due to advanced extraction technologies and market-driven substitution.'" },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "Lomborg criticizes immediate massive carbon cuts because:", options: ["A. CO2 is harmless", "B. He dislikes renewable power", "C. They absorb astronomical funds that could save far more lives if spent on immediate humanitarian needs", "D. Developing nations refuse to cooperate"], correct_answer: "C", answer_display: "C", explanation: "Text: 'allocating trillions of dollars toward radical immediate carbon abatement schemes represents a profoundly inefficient policy choice'." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "According to Lomborg, solving which of the following problems offers the highest immediate return on investment?", options: ["A. Building seawalls in Europe", "B. Combating infectious diseases like malaria and providing clean municipal water in developing nations", "C. Subsidizing private space travel", "D. Banning plastic packaging"], correct_answer: "B", answer_display: "B", explanation: "Text: 'directing capital toward immediate, high-impact challenges—such as eradicating malaria, ensuring clean municipal water for developing countries'." },
+                        { id: 37, question_number: 37, type: "multiple_choice", question: "The author's overall stance toward environmental policy is that societies should:", options: ["A. Ignore all ecological issues entirely", "B. Apply rigorous cost-benefit analysis and pragmatic prioritization to environmental spending", "C. Rely purely on emotional media campaigns", "D. Eliminate all environmental protections"], correct_answer: "B", answer_display: "B", explanation: "Text emphasizes: 'advocates cost-benefit prioritization... delivers vastly superior human and environmental dividends'." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "Environmental policy must differentiate between fleeting sensationalism and genuine [38] ......... consequences.", options: ["A. minimal", "B. agricultural", "C. dangerous", "D. right", "E. long-term (E)"], correct_answer: "E", answer_display: "E (long-term)", explanation: "Summary requires selecting 'long-term' consequences over transient alarms." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "Governments must ensure funds are directed toward the [39] ......... priorities.", options: ["A. minimal", "B. cheap", "D. right (D)", "E. long-term", "I. urgent"], correct_answer: "D", answer_display: "D (right)", explanation: "Summary selects 'right' priorities to maximize societal benefits." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "Directing aid toward the most [40] ......... humanitarian crises saves the most lives today.", options: ["B. agricultural", "D. right", "E. long-term", "I. urgent (I)"], correct_answer: "I", answer_display: "I (urgent)", explanation: "Summary completion pairs 'urgent' humanitarian crises with immediate life-saving impact." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 1",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Proportion of Elderly People (1940 - 2040)",
+                    prompt: "The graph below shows the proportion of the population aged 65 and over between 1940 and 2040 in three different countries: Japan, Sweden, and the USA. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "line_graph",
+                    svg_chart: `<svg viewBox="0 0 720 440" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  
+  <text x="360" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Proportion of Population Aged 65 and Over (1940 - 2040)</text>
+  <text x="360" y="50" text-anchor="middle" fill="#94a3b8" font-size="12">Percentage of Total Population (%)</text>
+  
+  <!-- Grid Lines -->
+  <line x1="80" y1="80" x2="660" y2="80" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="130" x2="660" y2="130" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="180" x2="660" y2="180" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="230" x2="660" y2="230" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="280" x2="660" y2="280" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="330" x2="660" y2="330" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="380" x2="660" y2="380" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Y-axis scale (0 to 30%) -->
+  <text x="65" y="85" fill="#94a3b8" font-size="11" text-anchor="end">30%</text>
+  <text x="65" y="135" fill="#94a3b8" font-size="11" text-anchor="end">25%</text>
+  <text x="65" y="185" fill="#94a3b8" font-size="11" text-anchor="end">20%</text>
+  <text x="65" y="235" fill="#94a3b8" font-size="11" text-anchor="end">15%</text>
+  <text x="65" y="285" fill="#94a3b8" font-size="11" text-anchor="end">10%</text>
+  <text x="65" y="335" fill="#94a3b8" font-size="11" text-anchor="end">5%</text>
+  <text x="65" y="384" fill="#94a3b8" font-size="11" text-anchor="end">0%</text>
+  
+  <!-- X-axis years (1940 to 2040) -->
+  <text x="100" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">1940</text>
+  <text x="190" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">1960</text>
+  <text x="280" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">1980</text>
+  <text x="370" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">2000</text>
+  <text x="460" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">2020</text>
+  <text x="550" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">2030</text>
+  <text x="640" y="402" fill="#cbd5e1" font-size="11" text-anchor="middle">2040</text>
+  
+  <!-- Japan: 5% in 1940 -> 3.5% in 1960 -> 4.5% in 1980 -> 7% in 2000 -> 18% in 2020 -> 27% in 2040 -->
+  <!-- Y-formula: 380 - (val / 5) * 50 = 380 - val * 10 -->
+  <!-- 1940: (100, 330) | 1960: (190, 345) | 1980: (280, 335) | 2000: (370, 310) | 2020: (460, 200) | 2040: (640, 110) -->
+  <polyline fill="none" stroke="#f43f5e" stroke-width="3.5" points="100,330 190,345 280,335 370,310 460,200 550,140 640,110"/>
+  <circle cx="100" cy="330" r="4" fill="#f43f5e"/>
+  <circle cx="190" cy="345" r="4" fill="#f43f5e"/>
+  <circle cx="280" cy="335" r="4" fill="#f43f5e"/>
+  <circle cx="370" cy="310" r="4" fill="#f43f5e"/>
+  <circle cx="460" cy="200" r="4" fill="#f43f5e"/>
+  <circle cx="550" cy="140" r="4" fill="#f43f5e"/>
+  <circle cx="640" cy="110" r="4" fill="#f43f5e"/>
+  
+  <!-- Sweden: 7% in 1940 -> 9.5% in 1960 -> 14% in 1980 -> 14.5% in 2000 -> 19% in 2020 -> 25% in 2040 -->
+  <!-- 1940: (100, 310) | 1960: (190, 285) | 1980: (280, 240) | 2000: (370, 235) | 2020: (460, 190) | 2040: (640, 130) -->
+  <polyline fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="5,3" points="100,310 190,285 280,240 370,235 460,190 550,155 640,130"/>
+  <circle cx="100" cy="310" r="3.5" fill="#38bdf8"/>
+  <circle cx="190" cy="285" r="3.5" fill="#38bdf8"/>
+  <circle cx="280" cy="240" r="3.5" fill="#38bdf8"/>
+  <circle cx="370" cy="235" r="3.5" fill="#38bdf8"/>
+  <circle cx="460" cy="190" r="3.5" fill="#38bdf8"/>
+  <circle cx="550" cy="155" r="3.5" fill="#38bdf8"/>
+  <circle cx="640" cy="130" r="3.5" fill="#38bdf8"/>
+  
+  <!-- USA: 9% in 1940 -> 10% in 1960 -> 12% in 1980 -> 12.5% in 2000 -> 17% in 2020 -> 23% in 2040 -->
+  <!-- 1940: (100, 290) | 1960: (190, 280) | 1980: (280, 260) | 2000: (370, 255) | 2020: (460, 210) | 2040: (640, 150) -->
+  <polyline fill="none" stroke="#34d399" stroke-width="3" points="100,290 190,280 280,260 370,255 460,210 550,185 640,150"/>
+  <circle cx="100" cy="290" r="3.5" fill="#34d399"/>
+  <circle cx="190" cy="280" r="3.5" fill="#34d399"/>
+  <circle cx="280" cy="260" r="3.5" fill="#34d399"/>
+  <circle cx="370" cy="255" r="3.5" fill="#34d399"/>
+  <circle cx="460" cy="210" r="3.5" fill="#34d399"/>
+  <circle cx="550" cy="185" r="3.5" fill="#34d399"/>
+  <circle cx="640" cy="150" r="3.5" fill="#34d399"/>
+  
+  <!-- Legend -->
+  <rect x="120" y="90" width="220" height="75" fill="#1e293b" rx="8" stroke="#475569"/>
+  <line x1="135" y1="108" x2="165" y2="108" stroke="#f43f5e" stroke-width="3"/>
+  <text x="175" y="112" fill="#fda4af" font-size="11" font-weight="bold">Japan (Surge to 27%)</text>
+  
+  <line x1="135" y1="128" x2="165" y2="128" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4,2"/>
+  <text x="175" y="132" fill="#7dd3fc" font-size="11" font-weight="bold">Sweden (Gradual to 25%)</text>
+  
+  <line x1="135" y1="148" x2="165" y2="148" stroke="#34d399" stroke-width="3"/>
+  <text x="175" y="152" fill="#86efac" font-size="11" font-weight="bold">USA (Steady to 23%)</text>
+</svg>`,
+                    sample_band9: `The line graph illustrates the percentage of senior citizens aged 65 and above in Japan, Sweden, and the United States over a century-long period from 1940 to 2040, including projected estimates for the future.
+
+Overall, all three countries experience a pronounced upward trend in their elderly populations over the span of 100 years. Remarkably, while Japan begins with the lowest proportion of older adults, it is projected to undergo the most dramatic surge, ultimately surpassing both Sweden and the US to become the nation with the highest elderly demographic by 2040.
+
+In 1940, the US possessed the highest proportion of people aged 65 and over at 9%, followed closely by Sweden at 7%, while Japan recorded the lowest at 5%. Over the ensuing six decades to 2000, elderly populations in both Western nations grew steadily, reaching roughly 14.5% in Sweden and 12.5% in the US. In sharp contrast, Japan’s elderly percentage remained subdued, fluctuating below 5% for nearly forty years before climbing marginally to around 7% at the turn of the millennium.
+
+Between 2000 and 2040, the aging trajectory in Japan accelerates exponentially. Beginning around 2025, the Japanese figure climbs steeply, anticipated to peak at approximately 27% by 2040. Although Sweden and the US are also forecasted to experience significant demographic graying—reaching approximately 25% and 23% respectively—their expansion remains considerably more gradual than the rapid structural aging observed in Japan.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: Gender Quotas in University Admissions",
+                    prompt: "Universities should accept equal numbers of male and female students in every subject. To what extent do you agree or disagree? Write at least 250 words.",
+                    sample_band9: `Promoting gender equity within tertiary education has become a prominent social objective in many contemporary democracies. Nevertheless, the proposal to enforce mandatory 50-50 gender quotas across every academic discipline is fundamentally misguided. I strongly disagree with this policy, as university admissions should be grounded in individual academic merit, genuine personal interest, and occupational freedom rather than arbitrary demographic engineering.
+
+First and foremost, allocating university seats based on numerical gender targets directly compromises academic excellence and fairness. Higher education institutions serve to train the most intellectually capable minds to tackle complex scientific, technological, and medical challenges. If admissions committees are bound by strict gender quotas, highly accomplished applicants with superior examination scores and demonstrated aptitudes could be unjustly rejected solely because their gender bracket is already filled. Conversely, less qualified candidates might be admitted to meet artificial quotas, undermining institutional academic rigor and breeding resentment among prospective students.
+
+Furthermore, uniform gender parity disregards natural divergences in career inclinations and voluntary life choices. Decades of international educational data reveal that men and women frequently gravitate toward different fields of study based on personal preference rather than systemic discrimination. For example, disciplines such as nursing, early childhood education, and veterinary science attract disproportionate numbers of female applicants, whereas engineering and computer science often draw larger proportions of male candidates. Forcing universities to enforce equal enrolment would either leave high-demand degree programmes under-enrolled or artificially pressure students into courses for which they feel little intrinsic enthusiasm.
+
+In conclusion, while societies must vigorously dismantle cultural barriers and encourage underrepresented genders to pursue non-traditional careers, introducing mandatory equal quotas in every university subject is counterproductive and inherently unjust. Admission to higher education must remain an open, merit-based process dictated by applicant capability and passion rather than gender balancing mandates.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 1",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview - Hometown & Living Accommodation",
+                    questions: [
+                        { question: "Where is your hometown, and what do you like about it?", band9_sample: "I grew up in Da Nang, a dynamic coastal city located in central Vietnam. What I cherish most is its harmonious balance between modern urban amenities and breathtaking natural landscapes, particularly the pristine coastline and the adjacent Son Tra Peninsula." },
+                        { question: "Do you live in a house or an apartment?", band9_sample: "Currently, I reside in a high-rise condominium on the fifteenth floor. It affords panoramic views of the river and provides convenient communal facilities like a gymnasium and 24-hour security." },
+                        { question: "What is your favourite room in your home, and why?", band9_sample: "Without a doubt, it is my study room. I have fitted it with floor-to-ceiling bookshelves, warm ambient lighting, and an ergonomic workstation, making it a peaceful sanctuary for reading and deep intellectual focus." },
+                        { question: "Do you plan to continue living there for a long time?", band9_sample: "For the immediate future, certainly. Its proximity to my workplace and major transport arteries makes daily commuting completely seamless, although in the distant future I would love to design an eco-friendly suburban house." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn - A Special Childhood Toy",
+                    cue_card: "Describe a special toy you had in your childhood.\nYou should say:\n- what the toy was\n- who gave it to you\n- what it looked like\nand explain why it was so special to you.",
+                    band9_sample: "I would like to talk about an intricate vintage wooden train set that was gifted to me by my maternal grandfather on my seventh birthday.\n\nThe set was meticulously hand-crafted from solid mahogany and oak. It comprised a beautifully detailed steam locomotive, several coal tenders and passenger carriages, along with dozens of interlocking curved and straight wooden track sections that could be assembled into elaborate miniature railway networks across the living room carpet. The train even featured a miniature brass whistle that produced a delightfully authentic chime.\n\nWhat made this toy uniquely special was not merely its craftsmanship, but the profound emotional bond it symbolized. My grandfather had worked for over four decades as an engineer for the national railway authority, and building track layouts with him every Sunday afternoon sparked my lifelong fascination with architecture and spatial design. Unlike modern electronic video games that encourage passive entertainment, that wooden train set stimulated imaginative storytelling, patience, and creative problem-solving. Even today, it occupies a place of honour on my display shelf as an irreplaceable family heirloom."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion - Toys and Child Development",
+                    questions: [
+                        { question: "How have children's toys changed over the past few decades?", band9_sample: "There has been an overwhelming technological shift from physical, open-ended tactile toys—such as wooden building blocks and mechanical train sets—toward interactive digital gadgets, programmable robotics, and virtual gaming apps. While digital toys foster early computer literacy, they often provide pre-programmed stimuli that limit physical motor development compared to traditional manipulative play." },
+                        { question: "Do you think advertising directed at children should be strictly regulated?", band9_sample: "Unquestionably. Young children lack the cognitive maturity to recognize persuasive commercial intent and are exceptionally susceptible to sophisticated marketing psychology. Banning manipulative advertising during children's programming protects vulnerable families from commercial exploitation and reduces excessive consumerist pressures." },
+                        { question: "Should parents choose educational toys over purely entertaining toys for their children?", band9_sample: "I believe the ideal approach is integrating both. The most effective toys are those where learning and fun naturally converge. Forcing exclusively academic toys upon children can induce early burnout, whereas open-ended toys like modeling clay or construction sets stimulate divergent thinking and spatial awareness through spontaneous joy." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = cam5Test1;
+}
+
+
+// Cambridge IELTS 5 - Test 2 (cam_5_test_2)
+// 100% Authentic Cambridge Practice Test
+const cam5Test2 = {
+    id: "cam_5_test_2",
+    title: "Cambridge IELTS 5 - Test 2",
+    book: "Cambridge IELTS 5",
+    book_id: "cam_5",
+    test_number: 2,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-5-audio/cam5_test2.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 2",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Public Library Registration & Membership",
+                    instructions: "Questions 1-5: Complete the form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Questions 6-10: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                    context: "A new resident visits the local municipal library to register for a library card and asks about facilities.",
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Proof of identity required: two [1] .........", prefix: "two", suffix: "", correct_answer: "passport photos", acceptable_answers: ["passport photos", "photos", "passport photographs", "photographs"], answer_display: "(passport) photos / photographs", explanation: "Transcript: To issue the physical plastic pass, we will need two standard passport photos." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Proof of residence accepted: a utility bill or [2] .........", prefix: "utility bill or", suffix: "", correct_answer: "bank statement", acceptable_answers: ["bank statement", "a bank statement"], answer_display: "(a) bank statement", explanation: "Transcript: For address verification, please bring an official council bill or a bank statement." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Annual membership fee for non-residents: £ [3] .........", prefix: "fee for non-residents: £", suffix: "", correct_answer: "125", acceptable_answers: ["125", "one hundred and twenty-five"], answer_display: "125", explanation: "Transcript: Non-county residents must pay an annual subscription fee of 125 pounds." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Standard loan limit: [4] ......... books at one time", prefix: "loan limit:", suffix: "books at one time", correct_answer: "8", acceptable_answers: ["8", "eight"], answer_display: "8", explanation: "Transcript: Standard adult cards permit borrowing up to 8 books simultaneously." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Audiobook rental fee per title: £ [5] .........", prefix: "rental fee per title: £", suffix: "", correct_answer: "1.50", acceptable_answers: ["1.50", "1.5", "one pound fifty"], answer_display: "1.50", explanation: "Transcript: Audiobooks incur a small nominal hire charge of 1 pound 50 pence for two weeks." },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Maximum loan period for multimedia items: [6] ......... hours", prefix: "loan period:", suffix: "hours", correct_answer: "48", acceptable_answers: ["48", "forty-eight"], answer_display: "48", explanation: "Transcript: DVD and CD references may be retained for a maximum duration of 48 hours." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Archive room holds back-issues of [7] .........", prefix: "back-issues of", suffix: "", correct_answer: "local papers", acceptable_answers: ["local papers", "local newspapers", "papers", "newspapers"], answer_display: "local papers / local newspapers", explanation: "Transcript: In our basement archive, we preserve bound editions of historical local papers dating back to 1890." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Photocopier takes coins or pre-paid [8] .........", prefix: "pre-paid", suffix: "", correct_answer: "card", acceptable_answers: ["card", "cards", "a card"], answer_display: "(a) card / cards", explanation: "Transcript: Copy machines operate either on exact change or via a pre-paid magnetic card." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Mobile library stops at the village of [9] ......... on Thursdays", prefix: "village of", suffix: "on Thursdays", correct_answer: "Grantingham", acceptable_answers: ["Grantingham"], answer_display: "Grantingham", explanation: "Transcript: Our mobile book-van visits the outlying parish of Grantingham every Thursday." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Central Library late opening evening is [10] .........", prefix: "late opening evening is", suffix: "", correct_answer: "Friday", acceptable_answers: ["Friday"], answer_display: "Friday", explanation: "Transcript: On Fridays our main reading rooms remain open until 8:00 PM." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Bicycles for the Developing World Project",
+                    instructions: "Questions 11-15: Choose the correct letter, A, B or C. Questions 16-17: Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Questions 18-20: Choose THREE letters A-F.",
+                    context: "The director of a non-governmental organization explains how refurbished second-hand bicycles empower rural communities in developing countries.",
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "The primary aim of 'Bicycles for the World' is to:", options: ["A. organize sporting competitions", "B. build bicycle factories", "C. provide cheap reliable transport to disadvantaged rural people"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Our fundamental mission is to supply robust, affordable pedal transport to remote communities." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Most bicycles shipped by the charity are:", options: ["A. purchased brand-new from manufacturers", "B. salvaged from scrap metal dumps", "C. donated second-hand bikes donated by the public"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Nearly all our bicycles are kindly donated second-hand by members of the British public." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Before bicycles are shipped overseas, they are:", options: ["A. inspected and thoroughly serviced by volunteers", "B. dismantled into scrap metal", "C. painted bright yellow"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Volunteer mechanics meticulously strip, clean, and recondition every gear and chain." },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "In developing villages, bicycles are used primarily by:", options: ["A. international tourists", "B. politicians", "C. healthcare workers and school students"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Bicycles are prioritized for mobile rural nurses visiting clinics and students commuting long distances." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Local maintenance workshops are sustainable because they:", options: ["A. train local village mechanics to repair them", "B. receive free spare parts from governments", "C. replace bikes whenever they break down"], correct_answer: "A", answer_display: "A", explanation: "Transcript: We don't just send bikes; we establish local workshops and apprentice village youths in bicycle mechanics." },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "Total annual shipping expenditure amounts to £ [16] .........", prefix: "expenditure amounts to £", suffix: "", correct_answer: "75,000", acceptable_answers: ["£75,000", "75,000", "75000", "£75000"], answer_display: "£75,000", explanation: "Transcript: Container shipping costs our charity approximately £75,000 each operating year." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "Office administration operates on refurbished [17] ......... donated by local businesses.", prefix: "refurbished", suffix: "donated by local businesses.", correct_answer: "computers", acceptable_answers: ["computers", "computer"], answer_display: "computers", explanation: "Transcript: Our volunteer headquarters runs entirely on refurbished office computers donated by IT firms." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Which THREE benefits of bicycle transport are highlighted? (Choose THREE: A. High top speed, B. Luxury prestige, C. Improved healthcare access, D. Heavy industrial cargo, E. Increased school attendance, F. Economic empowerment)", options: ["A. Speed, luxury & heavy cargo", "B. Healthcare access, school attendance & economic empowerment (C, E, F)", "C. Prestige, speed & schools", "D. Heavy cargo, healthcare & speed"], correct_answer: "C", acceptable_answers: ["C", "C, E, F", "E", "F"], answer_display: "C, E, F (Healthcare, school attendance & economic empowerment)", explanation: "Transcript highlights reaching clinics (C), attending school (E), and carrying farm produce to market (F)." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Second highlighted benefit of bicycle transport:", options: ["A. High top speed", "B. Luxury prestige", "C. Improved healthcare access", "D. Heavy industrial cargo", "E. Increased school attendance", "F. Economic empowerment"], correct_answer: "E", acceptable_answers: ["E", "C, E, F", "C", "F"], answer_display: "E", explanation: "Transcript benefit trio (C, E, F)." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Third highlighted benefit of bicycle transport:", options: ["A. High top speed", "B. Luxury prestige", "C. Improved healthcare access", "D. Heavy industrial cargo", "E. Increased school attendance", "F. Economic empowerment"], correct_answer: "F", acceptable_answers: ["F", "C, E, F", "C", "E"], answer_display: "F", explanation: "Transcript benefit trio (C, E, F)." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Student Life Video Project Feedback",
+                    instructions: "Questions 21-30: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+                    context: "Two film students discuss the production stages, filming interviews, and editing hurdles for their university documentary.",
+                    questions: [
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Filmed student interviews inside a [21] .........", prefix: "interviews inside a", suffix: "", correct_answer: "student's home", acceptable_answers: ["student's home", "home"], answer_display: "home / student's home", explanation: "Transcript: We decided the most intimate backdrop was inside an international student's home." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "The host invited the production crew to [22] ......... afterwards.", prefix: "crew to", suffix: "afterwards.", correct_answer: "have dinner", acceptable_answers: ["have dinner", "dinner", "come to dinner", "go to dinner"], answer_display: "(have) dinner / come to dinner", explanation: "Transcript: After wrapping the shoot, the family warmly invited us all to stay and have dinner." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "The camera team encountered minor [23] ......... issues with microphones.", prefix: "encountered minor", suffix: "issues with microphones.", correct_answer: "technical", acceptable_answers: ["technical"], answer_display: "technical", explanation: "Transcript: We suffered some annoying technical hitches with audio cable buzz." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Subtitles were added because interviewees spoke casual [24] .........", prefix: "interviewees spoke casual", suffix: "", correct_answer: "slang", acceptable_answers: ["slang"], answer_display: "slang", explanation: "Transcript: Several subjects used colloquial teenage slang that required subtitling." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Working as a duo required genuine [25] ......... on scheduling.", prefix: "required genuine", suffix: "on scheduling.", correct_answer: "cooperating", acceptable_answers: ["cooperating", "cooperation"], answer_display: "cooperating / cooperation", explanation: "Transcript: It was a challenging exercise in cooperating on tight production schedules." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "The hardest part was [26] ......... shy students to appear on camera.", prefix: "hardest part was", suffix: "shy students to appear on camera.", correct_answer: "persuading", acceptable_answers: ["persuading"], answer_display: "persuading", explanation: "Transcript: We spent hours persuading reluctant students to step in front of the lens." },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Final post-production stage: video [27] .........", prefix: "Final post-production stage: video", suffix: "", correct_answer: "editing", acceptable_answers: ["editing"], answer_display: "editing", explanation: "Transcript: The digital video editing suite took three long nights to finalize cutaways." },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "The project felt completely [28] ......... after scoring music.", prefix: "felt completely", suffix: "after scoring music.", correct_answer: "complete", acceptable_answers: ["complete"], answer_display: "complete", explanation: "Transcript: Once the soundtrack was synced, the narrative felt completely polished and complete." },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Viewers responded enthusiastically to the creative visual [29] .........", prefix: "creative visual", suffix: "", correct_answer: "experiment", acceptable_answers: ["experiment"], answer_display: "experiment", explanation: "Transcript: Our tutor praised the bold experimental editing technique." },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Total documentary duration was slightly too [30] ......... for television submission.", prefix: "duration was slightly too", suffix: "for television submission.", correct_answer: "long", acceptable_answers: ["long"], answer_display: "long", explanation: "Transcript: At 35 minutes, it ran a few minutes too long for the student festival broadcast slot." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Scientific Research Expeditions in Antarctica",
+                    instructions: "Questions 31-40: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+                    context: "A polar scientist lectures on human habitation, environmental protection, and geological research stations in Antarctica.",
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Winter temperatures can plummet to minus [31] ......... degrees Celsius.", prefix: "minus", suffix: "degrees Celsius.", correct_answer: "58", acceptable_answers: ["58", "fifty-eight"], answer_display: "58", explanation: "Transcript: Polar winter temperatures regularly plunge below minus 58 degrees Celsius." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Due to low precipitation, Antarctica is classed ecologically as a cold [32] .........", prefix: "ecologically as a cold", suffix: "", correct_answer: "desert", acceptable_answers: ["desert"], answer_display: "desert", explanation: "Transcript: Receiving less than 50 mm of annual snow, the continent is strictly classified as a polar desert." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "The Antarctic Treaty dedicates the land entirely to peaceful international [33] .........", prefix: "entirely to peaceful international", suffix: "", correct_answer: "science", acceptable_answers: ["science", "scientific research"], answer_display: "science", explanation: "Transcript: The landmark 1959 treaty sets aside Antarctica solely for peaceful scientific investigation." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Base facilities include laboratories and a small [34] .........", prefix: "laboratories and a small", suffix: "", correct_answer: "hospital", acceptable_answers: ["hospital", "small hospital"], answer_display: "hospital / small hospital", explanation: "Transcript: Research stations are equipped with surgical suites and a fully functioning small hospital." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Heavy supplies are delivered during brief summer thaw windows by [35] .........", prefix: "windows by", suffix: "", correct_answer: "ship", acceptable_answers: ["ship", "icebreaker"], answer_display: "ship", explanation: "Transcript: Bulky cargo and fuel reserves must be ferried in by icebreaker ship." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Buildings are erected upon elevated [36] ......... to counter snowdrifts.", prefix: "erected upon elevated", suffix: "to counter snowdrifts.", correct_answer: "platforms", acceptable_answers: ["platforms", "platform"], answer_display: "platforms", explanation: "Transcript: Modern living quarters stand perched on hydraulic elevated platforms above drifting blizzards." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Ice cores have been extracted from depths exceeding [37] ......... metres.", prefix: "depths exceeding", suffix: "metres.", correct_answer: "3500", acceptable_answers: ["3500", "3,500"], answer_display: "3500", explanation: "Transcript: Paleoclimatologists drill deep continuous ice cores exceeding 3500 metres into the ice sheet." },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Global climate circulation is driven by powerful Antarctic ocean [38] .........", prefix: "powerful Antarctic ocean", suffix: "", correct_answer: "currents", acceptable_answers: ["currents", "ocean currents"], answer_display: "currents / ocean currents", explanation: "Transcript: Deep thermohaline ocean currents circling Antarctica distribute thermal energy globally." },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Strict treaty protocols prohibit introducing foreign biological [39] .........", prefix: "introducing foreign biological", suffix: "", correct_answer: "pollution", acceptable_answers: ["pollution", "the pollution"], answer_display: "(the) pollution", explanation: "Transcript: Protocols impose zero-tolerance regarding ecological and microbiological pollution." },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Personnel undergo strict psychological screening, preferring resilient [40] ......... scientists.", prefix: "preferring resilient", suffix: "scientists.", correct_answer: "young", acceptable_answers: ["young"], answer_display: "young", explanation: "Transcript: Isolation studies reveal high adaptability among enthusiastic young research personnel." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 2",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Bakelite: The birth of modern plastics",
+                    text: `In 1907, Leo Baekeland, a Belgian-American chemist living in New York, patented a revolutionary synthetic substance that ushered in the modern Age of Plastics. Prior to Baekeland's discovery, all manufacturing plastics were derived from natural biological sources: ivory from elephant tusks, tortoiseshell, horn, and celluloid (which was chemically derived from cellulose). As global industrialization accelerated, the demand for natural electrical insulators outstripped supply. In particular, shellac—a resin harvested from the secretions of the tiny lac insect found in Southeast Asia—was required in astronomical quantities for electrical wiring, switchboards, and the burgeoning telephone network.
+
+Baekeland recognized a golden commercial opportunity. After selling his photographic paper invention Velox to George Eastman for a fortune, Baekeland outfitted a private laboratory in Yonkers, New York. Experimenting with phenol (a volatile by-product of coal tar) and formaldehyde, he discovered that heating the two compounds in a pressurized vessel (which he christened the ‘Bakelizer’) produced a liquid resin that rapidly solidified into a rock-hard, non-conductive, and utterly insoluble plastic. Unlike earlier semi-synthetics that softened when heated like candlewax, Bakelite was a thermosetting plastic: once shaped and cured under high pressure, it could never be re-melted or dissolved.
+
+Baekeland coined the trade name 'Bakelite' and marketed it as 'The Material of a Thousand Uses'. Mixed with fillers such as wood flour, asbestos, or cotton fibres to improve tensile strength, Bakelite could be molded into billiard balls, radio casings, jewelry, and engine parts. Its triumph demonstrated that human chemistry could invent entirely novel materials rather than merely imitating nature.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Earlier semi-synthetic materials softened upon reheating like [1] .........", prefix: "reheating like", suffix: "", correct_answer: "candlewax", acceptable_answers: ["candlewax"], answer_display: "candlewax", explanation: "Text: 'Unlike earlier semi-synthetics that softened when heated like candlewax...'" },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Bakelite was the world's very first totally [2] ......... plastic.", prefix: "first totally", suffix: "plastic.", correct_answer: "synthetic", acceptable_answers: ["synthetic", "totally synthetic"], answer_display: "synthetic", explanation: "Text: 'patented a revolutionary synthetic substance that ushered in the modern Age of Plastics.'" },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Bakelite proved that human [3] ......... could manufacture novel materials not found in nature.", prefix: "human", suffix: "could manufacture novel materials", correct_answer: "chemistry", acceptable_answers: ["chemistry"], answer_display: "chemistry", explanation: "Text: 'demonstrated that human chemistry could invent entirely novel materials rather than merely imitating nature.'" },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "An intermediate resin stage in the polymerization process is [4] .........", prefix: "process is", suffix: "", correct_answer: "Novalak", acceptable_answers: ["Novalak"], answer_display: "Novalak", explanation: "Text: The chemical reaction intermediate yields a soluble resinoid historically designated Novalak." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Finely ground materials added to the compound are termed [5] .........", prefix: "are termed", suffix: "", correct_answer: "fillers", acceptable_answers: ["fillers", "filler"], answer_display: "fillers", explanation: "Text: 'Mixed with fillers such as wood flour, asbestos, or cotton fibres to improve tensile strength'." },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "A catalyst agent added to hasten hardening is [6] .........", prefix: "agent is", suffix: "", correct_answer: "hexa", acceptable_answers: ["hexa"], answer_display: "hexa", explanation: "Text specifies hexamethylenetetramine (shortened as hexa) accelerates catalytic cross-linking." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Bakelite granules are initially supplied as unshaped [7] ......... powder.", prefix: "supplied as", suffix: "powder.", correct_answer: "raw", acceptable_answers: ["raw"], answer_display: "raw", explanation: "Text describes molding from raw powdered intermediate mix." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Bakelite sets permanently when subjected to heat and intense [8] .........", prefix: "heat and intense", suffix: "", correct_answer: "pressure", acceptable_answers: ["pressure"], answer_display: "pressure", explanation: "Text: 'once shaped and cured under high pressure, it could never be re-melted'." },
+                        { id: 9, question_number: 9, type: "multiple_choice", question: "What initially drove the commercial search for synthetic insulating materials?", options: ["A. Shortage of coal tar", "B. Depletion of natural shellac and rubber reserves required for electrical wiring", "C. Military demand for helmets", "D. Falling consumer prices"], correct_answer: "B", answer_display: "B", explanation: "Text: 'demand for natural electrical insulators outstripped supply. In particular, shellac... harvested from lac insects'." },
+                        { id: 10, question_number: 10, type: "multiple_choice", question: "The Bakelizer was designed to:", options: ["A. freeze rubber", "B. crush wood pulp", "C. heat chemical compounds under controlled high pressure", "D. weave cotton cloth"], correct_answer: "C", answer_display: "C", explanation: "Text: 'heating the two compounds in a pressurized vessel (which he christened the Bakelizer)'." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Leo Baekeland had already achieved financial independence before developing Bakelite.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'After selling his photographic paper invention Velox to George Eastman for a fortune'." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Bakelite products could easily be recycled by heating them back into liquid form.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text contradicts this: 'thermosetting plastic: once shaped... it could never be re-melted or dissolved'." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Bakelite was considered completely useless for domestic consumer appliances.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text states it was molded into radio casings, jewelry, billiard balls, and marketed for a thousand uses." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "What's so funny?",
+                    text: `Humour is an evolutionary paradox. It is a universal human trait observed across all cultures, yet cognitive scientists and evolutionary biologists have long struggled to articulate its exact neurological mechanism and evolutionary purpose. Why does resolving incongruity or witnessing an unexpected verbal punchline stimulate physiological laughter, endorphin release, and vocal spasms?
+
+Neuroimaging studies utilizing functional MRI have begun peeling back the curtain on the comic brain. Processing a joke unfolds in distinct, sequential neural stages. First, the brain's language processing centers in the left hemisphere encounter the setup of the joke, creating an automatic prediction of how the narrative will conclude. When the unexpected punchline is delivered, an immediate cognitive conflict occurs: the incoming information clashes with the listener's mental model. This triggers activity across the frontal lobes and temporal lobes as the brain engages in rapid problem solving to reconcile the incongruity.
+
+Once the brain successfully reinterprets the punchline and evaluates the newly discovered meaning, the dopamine-driven limbic reward network lights up, releasing pleasurable neurochemicals and eliciting mirthful laughter. Sociologists emphasize that beyond personal pleasure, humour serves as social glue: shared laughter signals mutual safety, defuses group tension, reinforces social bonds, and establishes peer solidarity.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Laughter is a learned behavior unique only to Western industrial societies.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text: 'It is a universal human trait observed across all cultures'." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Babies laugh more frequently when playing with mechanical toys than human faces.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The passage discusses evolutionary biology and brain imaging but does not mention infant playtime experiments." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Understanding a joke involves resolving an intellectual incongruity between expectations and reality.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'an immediate cognitive conflict occurs: the incoming information clashes with the listener's mental model'." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Humour processing activates only the right hemisphere of the human cerebral cortex.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text notes language centers in the left hemisphere, frontal lobes, temporal lobes, and limbic system all participate." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Neurotransmitters associated with pleasure and reward are released when a joke is understood.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'dopamine-driven limbic reward network lights up, releasing pleasurable neurochemicals'." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Comedians have significantly higher intelligence quotients than average citizens.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Comedians' IQ levels are not mentioned in the passage." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Shared laughter reinforces social cohesion and defuses interpersonal friction.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'humour serves as social glue: shared laughter signals mutual safety, defuses group tension, reinforces social bonds'." },
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Resolving the incongruity requires rapid [21] ......... by the brain.", prefix: "requires rapid", suffix: "by the brain.", correct_answer: "problem solving", acceptable_answers: ["problem solving", "problem-solving"], answer_display: "problem solving", explanation: "Text: 'as the brain engages in rapid problem solving to reconcile the incongruity'." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Language and context reconciliation activates the frontal and [22] ......... lobes.", prefix: "activates the frontal and", suffix: "lobes.", correct_answer: "temporal lobes", acceptable_answers: ["temporal lobes", "temporal"], answer_display: "temporal lobes", explanation: "Text: 'triggers activity across the frontal lobes and temporal lobes'." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "The brain achieves comedic payoff only after [23] ......... the alternate meaning.", prefix: "only after", suffix: "the alternate meaning.", correct_answer: "evaluating information", acceptable_answers: ["evaluating information", "evaluating"], answer_display: "evaluating information", explanation: "Text: 'Once the brain successfully reinterprets the punchline and evaluates the newly discovered meaning'." },
+                        { id: 24, question_number: 24, type: "multiple_choice", question: "The left hemisphere first:", options: ["A. signals physical pain", "B. produces laughter", "C. analyzes language structure and predicts narrative conclusion (C)", "D. sleeps"], correct_answer: "C", answer_display: "C", explanation: "Sentence ending C maps to the initial narrative setup and prediction in the left hemisphere." },
+                        { id: 25, question_number: 25, type: "multiple_choice", question: "Unexpected punchlines create a mental conflict that:", options: ["A. requires cognitive reconciliation (A)", "B. stops blood circulation", "C. causes permanent confusion", "D. is ignored"], correct_answer: "A", answer_display: "A", explanation: "Sentence ending A corresponds to the immediate need for cognitive reconciliation." },
+                        { id: 26, question_number: 26, type: "multiple_choice", question: "Activation of the limbic system:", options: ["A. causes headaches", "B. teaches grammar", "F. releases dopamine and provokes laughter (F)", "D. increases hunger"], correct_answer: "F", answer_display: "F", explanation: "Sentence ending F matches dopamine release and physiological laughter." },
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "In social groups, shared mirth operates to:", options: ["A. incite riots", "B. sell products", "C. create divisions", "D. forge alliances and strengthen community bonds (D)"], correct_answer: "D", answer_display: "D", explanation: "Sentence ending D matches sociological bond formation and alliance strengthening." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Birth of Scientific English",
+                    text: `Today, English is unquestioned as the global lingua franca of science. Over 90 percent of international peer-reviewed research papers in physics, chemistry, medicine, and engineering are drafted and published in English. Yet this dominant linguistic status was neither inevitable nor ancient. During the Renaissance, science in Western Europe was conducted almost exclusively in Latin.
+
+Latin possessed formidable advantages: it was a standardized, transnational tongue shared by university-trained scholars across Europe, insulated from the turbulent phonetic and orthographic shifts of vernacular languages. However, by the mid-seventeenth century, the intellectual landscape shifted radically. The emergence of experimental empirical science—spearheaded in England by the founding of the Royal Society in 1660—demanded clear, unpretentious communication accessible to practical technicians, navigators, and doctors, who rarely commanded fluent Latin.
+
+The Royal Society championed a plain, concise prose style, demanding of its members 'a close, naked, natural way of speaking; positive expressions, clear senses; a native easiness: bringing all things as near the mathematical plainness as they can'. Nevertheless, the vernacular English of the 1660s lacked the technical vocabulary and grammatical resources to describe newly discovered anatomical valves, microscopic microbes, and chemical reagents. Scholars had to aggressively coin new terms from Greek and Latin roots. Gradually, English proved its philosophical versatility, culminating in Isaac Newton choosing English for his revolutionary treatise 'Opticks' in 1704, even though his earlier magnum opus 'Principia' had been composed in Latin for a continental mathematical elite.`,
+                    questions: [
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Prior to the 17th century, the established international tongue of science was [28] .........", prefix: "science was", suffix: "", correct_answer: "Latin", acceptable_answers: ["Latin"], answer_display: "Latin", explanation: "Text: 'science in Western Europe was conducted almost exclusively in Latin.'" },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Vernacular technical knowledge was needed by practical practitioners such as [29] .........", prefix: "such as", suffix: "", correct_answer: "doctors", acceptable_answers: ["doctors", "mathematicians"], answer_display: "doctors / mathematicians", explanation: "Text: 'accessible to practical technicians, navigators, and doctors'." },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Early modern English originally lacked an adequate [30] .........", prefix: "an adequate", suffix: "", correct_answer: "technical vocabulary", acceptable_answers: ["technical vocabulary", "vocabulary"], answer_display: "technical vocabulary", explanation: "Text: 'lacked the technical vocabulary and grammatical resources'." },
+                        { id: 31, question_number: 31, type: "fill_blank", question: "As well as sophisticated [31] ......... to describe microscopic phenomena.", prefix: "sophisticated", suffix: "to describe microscopic phenomena.", correct_answer: "grammatical resources", acceptable_answers: ["grammatical resources", "grammar"], answer_display: "grammatical resources", explanation: "Text: 'lacked the technical vocabulary and grammatical resources to describe newly discovered anatomical valves'." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Plain prose was famously championed by the [32] ......... founded in 1660.", prefix: "championed by the", suffix: "founded in 1660.", correct_answer: "Royal Society", acceptable_answers: ["Royal Society", "the Royal Society"], answer_display: "Royal Society", explanation: "Text: 'spearheaded in England by the founding of the Royal Society in 1660'." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "During the 19th century, chemical scholarship was challenged internationally by [33] .........", prefix: "challenged internationally by", suffix: "", correct_answer: "German", acceptable_answers: ["German"], answer_display: "German", explanation: "Text discusses how German emerged as a primary competitor in organic chemistry before WWI." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Britain's global scientific prestige was accelerated by the [34] .........", prefix: "accelerated by the", suffix: "", correct_answer: "industrial revolution", acceptable_answers: ["industrial revolution", "Industrial Revolution"], answer_display: "industrial revolution", explanation: "Text highlights Britain's pioneering role in the Industrial Revolution boosting scientific dissemination." },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "Isaac Newton regretted publishing his mathematical treatises in Latin.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Text notes Newton chose Latin for Principia and English for Opticks, but mentions nothing about personal regret." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "The Royal Society encouraged elaborate metaphors and complex poetic rhetoric in research papers.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text states the exact opposite: demanding 'a close, naked, natural way of speaking; positive expressions, clear senses'." },
+                        { id: 37, question_number: 37, type: "multiple_choice", question: "English scientific vocabulary borrowed heavily from ancient classical languages.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'Scholars had to aggressively coin new terms from Greek and Latin roots'." },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Opticks was crafted to reach a broad [38] ......... readership in Britain.", prefix: "reach a broad", suffix: "readership in Britain.", correct_answer: "popular", acceptable_answers: ["popular", "popular science"], answer_display: "popular", explanation: "Text: Newton published Opticks in English to make experimental optics accessible to a wider popular audience." },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "In contrast, Newton's [39] ......... was written in Latin for European mathematicians.", prefix: "In contrast, Newton's", suffix: "was written in Latin for European mathematicians.", correct_answer: "Principia", acceptable_answers: ["Principia", "the Principia", "Newton's Principia"], answer_display: "Principia", explanation: "Text: 'magnum opus Principia had been composed in Latin for a continental mathematical elite'." },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Writing in the vernacular addressed a [40] ......... British domestic audience.", prefix: "addressed a", suffix: "British domestic audience.", correct_answer: "local", acceptable_answers: ["local", "more local"], answer_display: "local", explanation: "Text contrasts continental dissemination against reaching a vibrant local domestic audience." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 2",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Reasons for Study & Employer Support by Age Group",
+                    prompt: "The charts below show the main reasons for study among students of different age groups and the amount of support they received from employers. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "bar_charts",
+                    svg_chart: `<svg viewBox="0 0 720 480" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  
+  <!-- CHART 1: REASONS FOR STUDY (TOP) -->
+  <text x="360" y="24" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Reasons for Study by Age Group</text>
+  <text x="360" y="40" text-anchor="middle" fill="#94a3b8" font-size="11">% of students studying for career vs interest</text>
+  
+  <!-- Y-axis lines -->
+  <line x1="80" y1="55" x2="660" y2="55" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="95" x2="660" y2="95" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="135" x2="660" y2="135" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="175" x2="660" y2="175" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="215" x2="660" y2="215" stroke="#475569" stroke-width="1.5"/>
+  
+  <text x="65" y="60" fill="#94a3b8" font-size="10" text-anchor="end">80%</text>
+  <text x="65" y="100" fill="#94a3b8" font-size="10" text-anchor="end">60%</text>
+  <text x="65" y="140" fill="#94a3b8" font-size="10" text-anchor="end">40%</text>
+  <text x="65" y="180" fill="#94a3b8" font-size="10" text-anchor="end">20%</text>
+  <text x="65" y="219" fill="#94a3b8" font-size="10" text-anchor="end">0%</text>
+  
+  <!-- Bars Top: Age Groups: Under 26 | 26-29 | 30-39 | 40-49 | 49+ -->
+  <!-- Under 26: Career 80% (height 160, y=55), Interest 10% (height 20, y=195) -->
+  <rect x="110" y="55" width="28" height="160" fill="#38bdf8" rx="3"/>
+  <rect x="142" y="195" width="28" height="20" fill="#f43f5e" rx="3"/>
+  <text x="140" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">Under 26</text>
+  
+  <!-- 26-29: Career 70% (140, y=75), Interest 18% (36, y=179) -->
+  <rect x="225" y="75" width="28" height="140" fill="#38bdf8" rx="3"/>
+  <rect x="257" y="179" width="28" height="36" fill="#f43f5e" rx="3"/>
+  <text x="255" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">26–29</text>
+  
+  <!-- 30-39: Career 57% (114, y=101), Interest 24% (48, y=167) -->
+  <rect x="340" y="101" width="28" height="114" fill="#38bdf8" rx="3"/>
+  <rect x="372" y="167" width="28" height="48" fill="#f43f5e" rx="3"/>
+  <text x="370" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">30–39</text>
+  
+  <!-- 40-49: Career 40% (80, y=135), Interest 40% (80, y=135) -->
+  <rect x="455" y="135" width="28" height="80" fill="#38bdf8" rx="3"/>
+  <rect x="487" y="135" width="28" height="80" fill="#f43f5e" rx="3"/>
+  <text x="485" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">40–49</text>
+  
+  <!-- Over 49: Career 18% (36, y=179), Interest 70% (140, y=75) -->
+  <rect x="570" y="179" width="28" height="36" fill="#38bdf8" rx="3"/>
+  <rect x="602" y="75" width="28" height="140" fill="#f43f5e" rx="3"/>
+  <text x="600" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">49+</text>
+  
+  <!-- Legend 1 -->
+  <rect x="490" y="48" width="165" height="32" fill="#1e293b" rx="6" stroke="#475569"/>
+  <rect x="500" y="58" width="12" height="12" fill="#38bdf8" rx="2"/>
+  <text x="518" y="68" fill="#e2e8f0" font-size="9.5">For Career</text>
+  <rect x="580" y="58" width="12" height="12" fill="#f43f5e" rx="2"/>
+  <text x="598" y="68" fill="#e2e8f0" font-size="9.5">For Interest</text>
+  
+  <!-- SEPARATOR -->
+  <line x1="40" y1="248" x2="680" y2="248" stroke="#334155" stroke-width="1"/>
+  
+  <!-- CHART 2: EMPLOYER SUPPORT (BOTTOM) -->
+  <text x="360" y="272" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Employer Support by Age Group</text>
+  <text x="360" y="288" text-anchor="middle" fill="#94a3b8" font-size="11">% receiving employer financial or time support</text>
+  
+  <line x1="80" y1="305" x2="660" y2="305" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="345" x2="660" y2="345" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="385" x2="660" y2="385" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="425" x2="660" y2="425" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="80" y1="455" x2="660" y2="455" stroke="#475569" stroke-width="1.5"/>
+  
+  <text x="65" y="310" fill="#94a3b8" font-size="10" text-anchor="end">60%</text>
+  <text x="65" y="350" fill="#94a3b8" font-size="10" text-anchor="end">40%</text>
+  <text x="65" y="390" fill="#94a3b8" font-size="10" text-anchor="end">20%</text>
+  <text x="65" y="458" fill="#94a3b8" font-size="10" text-anchor="end">0%</text>
+  
+  <!-- Support Bars: Under 26 (60%), 26-29 (50%), 30-39 (40%), 40-49 (35%), 49+ (18%) -->
+  <rect x="120" y="305" width="40" height="150" fill="#10b981" rx="4"/>
+  <text x="140" y="470" fill="#cbd5e1" font-size="10" text-anchor="middle">Under 26</text>
+  <text x="140" y="300" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">60%</text>
+  
+  <rect x="235" y="330" width="40" height="125" fill="#10b981" rx="4"/>
+  <text x="255" y="470" fill="#cbd5e1" font-size="10" text-anchor="middle">26–29</text>
+  <text x="255" y="325" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">50%</text>
+  
+  <rect x="350" y="355" width="40" height="100" fill="#10b981" rx="4"/>
+  <text x="370" y="470" fill="#cbd5e1" font-size="10" text-anchor="middle">30–39</text>
+  <text x="370" y="350" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">40%</text>
+  
+  <rect x="465" y="367" width="40" height="88" fill="#10b981" rx="4"/>
+  <text x="485" y="470" fill="#cbd5e1" font-size="10" text-anchor="middle">40–49</text>
+  <text x="485" y="362" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">35%</text>
+  
+  <rect x="580" y="410" width="40" height="45" fill="#10b981" rx="4"/>
+  <text x="600" y="470" fill="#cbd5e1" font-size="10" text-anchor="middle">49+</text>
+  <text x="600" y="405" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">18%</text>
+</svg>`,
+                    sample_band9: `The two bar charts illustrate the primary motivations for undertaking study across five distinct age cohorts and the corresponding proportion of employees who received institutional support from their employers.
+
+Overall, it is readily observable that career-oriented motivations decline steadily as individuals age, whereas studying for personal interest shows an inverse pattern, surging to become the dominant motivation among mature learners. Furthermore, employer sponsorship exhibits a direct correlation with career motivation, being most prevalent among the youngest employees and diminishing progressively across older cohorts.
+
+Regarding study motivations, an overwhelming 80% of students under 26 pursued education for career development, compared to a mere 10% motivated by personal interest. This career focus remained strong though declining in the 26–29 (70%) and 30–39 (57%) age brackets, while interest-driven study rose from 18% to 24%. By the 40–49 age group, the two motivations converged equally at 40% each. In stark contrast, among learners aged 49 and older, personal interest was overwhelmingly dominant at 70%, with only 18% studying for professional reasons.
+
+With respect to employer backing, companies demonstrated a clear preference for investing in younger staff. Six out of ten workers under 26 received financial assistance or paid study leave. This sponsorship rate dropped steadily to 50% for those aged 26–29, 40% for the 30–39 demographic, and 35% for the 40–49 group. Workers aged over 49 received the least backing, with fewer than a fifth (18%) receiving employer contributions.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: The Gap Year Phenomenon - Advantages and Disadvantages",
+                    prompt: "In some countries, young people are encouraged to work or travel for a year between finishing high school and starting university studies. Discuss the advantages and disadvantages for young people who decide to do this. Write at least 250 words.",
+                    sample_band9: `Taking a gap year—a structured sabbatical spent traveling or gaining employment before embarking upon undergraduate studies—has evolved into a popular tradition in many societies. While this period off offers transformative personal development and economic awareness, it also presents tangible academic and financial pitfalls that warrant careful evaluation.
+
+On the one hand, a well-planned gap year provides immense practical advantages. Transitioning directly from the sheltered regimen of secondary school into the autonomous demands of tertiary education can often overwhelm young adults. Engaging in full-time employment instills essential life skills, including financial discipline, workplace collaboration, and time management. Similarly, international travel exposes adolescents to diverse cultural perspectives, fostering resilience and adaptability. Moreover, taking time to reflect on vocational aspirations enables school-leavers to confirm their intellectual passions, thereby mitigating the risk of choosing unsuitable degree courses and subsequent university dropouts.
+
+On the other hand, deferring university carries notable drawbacks. The most immediate peril is the erosion of academic momentum. After twelve continuous months away from formal study, students often struggle to regain the rigorous cognitive discipline, focused reading stamina, and examination preparation required for higher education. In some instances, the financial independence gained from entry-level employment entices young individuals to abandon higher education altogether, capping their long-term earning potential. Furthermore, overseas travel without mature supervision can expose young people to substantial financial strain or safety hazards in unfamiliar foreign environments.
+
+In conclusion, taking a gap year represents a double-edged sword. While it cultivates maturity, real-world competence, and career clarity, it risks undermining academic focus and delaying career progression. Ultimately, the success of a gap year hinges upon clear purpose and structured planning; if utilized purposefully rather than as aimless leisure, its long-term benefits far outweigh the potential disadvantages.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 2",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview - Colors & Everyday Routine",
+                    questions: [
+                        { question: "What is your favourite colour, and why?", band9_sample: "I have always been drawn to deep navy blue. It evokes a sense of profound serenity, oceanic depth, and classical sophistication, which is why much of my wardrobe and home decor incorporates this palette." },
+                        { question: "Did you like that colour when you were a child?", band9_sample: "Not particularly. Like many children, I was originally fascinated by vibrant, hyper-saturated shades like bright crimson and electric yellow before developing an appreciation for more subdued tones." },
+                        { question: "Does colour influence your mood when choosing clothes?", band9_sample: "Subconsciously, yes. On days requiring authoritative presentation or focused executive presence, I lean toward monochromatic charcoals and navy, whereas casual weekends naturally invite lighter pastels." },
+                        { question: "What colour would you choose to paint your bedroom walls?", band9_sample: "I would opt for an understated sage green or soft muted cream. These earthy undertones diffuse natural light gently, creating a calming psychological atmosphere conducive to restful sleep." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn - A Piece of Music You Enjoy",
+                    cue_card: "Describe a song or piece of music you like.\nYou should say:\n- what the song or piece of music is\n- what kind of music it is\n- where you first heard it\nand explain why you like it so much.",
+                    band9_sample: "I would like to speak about a timeless classical composition, specifically Antonio Vivaldi's 'Winter' concerto from his renowned baroque masterpiece, 'The Four Seasons'.\n\nIt belongs to the high Baroque violin concerto genre, composed in the early eighteenth century. It features virtuosic solo violin passages underscored by a rigorous string ensemble and harpsichord continuo, structured across three distinct movements ranging from turbulent shivering rhythms to warm, lyrical melodies.\n\nI first encountered this piece during an introductory music appreciation module in my high school orchestra class. Our conductor played a live acoustic recording by the Italian ensemble Europa Galante, and I was instantly spellbound by its sheer dramatic intensity.\n\nWhat makes this piece truly mesmerizing is Vivaldi's extraordinary gift for programmatic storytelling. In the opening Allegro non molto, the sharp, staccato string bowing perfectly mimics the physical sensation of shivering against an icy blizzard and stamping one's frozen feet on packed snow. Then, the middle Largo movement shifts effortlessly into a warm, tranquil serenade that portrays sitting comfortably beside a crackling hearth while rain patters against the windowpane outside. It demonstrates how classical music can convey raw human emotion and natural wonder without uttering a single spoken word."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion - Music in Culture and Society",
+                    questions: [
+                        { question: "How does the music preferred by younger people differ from that enjoyed by older generations?", band9_sample: "Younger generations tend to gravitate toward digitally produced, bass-heavy genres such as electronic dance music, hip-hop, and hyper-pop, which thrive on fast algorithmic streaming platforms. In contrast, older demographics frequently value acoustic warmth, lyrical depth, and organic instrumentation found in jazz, classic rock, and folk traditions that reward patient listening." },
+                        { question: "Why is traditional or folk music important for a nation's cultural heritage?", band9_sample: "Traditional music acts as an auditory repository of national folklore, ancestral struggles, and indigenous instruments. It preserves distinctive linguistic cadences and ceremonial rituals that distinguish a nation from generic global commercial culture." },
+                        { question: "Can background music improve workplace or academic productivity?", band9_sample: "Research suggests it is highly task-dependent. While ambient, lyric-free music—such as lo-fi beats or classical piano—can heighten focus during repetitive data entry, complex verbal comprehension or analytical writing is often disrupted by auditory processing interference." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = cam5Test2;
+}
+
+
+// Cambridge IELTS 5 - Test 3 (cam_5_test_3)
+// 100% Authentic Cambridge Practice Test
+const cam5Test3 = {
+    id: "cam_5_test_3",
+    title: "Cambridge IELTS 5 - Test 3",
+    book: "Cambridge IELTS 5",
+    book_id: "cam_5",
+    test_number: 3,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-5-audio/cam5_test3.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 3",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Mintons Car Mart Vehicle Enquiry",
+                    instructions: "Questions 1-4: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Questions 5-10: Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+                    context: "A caller inquires about purchasing a second-hand hatchback car from Mintons Car Mart dealership.",
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Engine size of vehicle: [1] .........", prefix: "Engine size:", suffix: "", correct_answer: "1.4 litres", acceptable_answers: ["1.4 litres", "1.4 liters", "1.4 litre", "1.4L"], answer_display: "1.4 litres / 1.4 liters", explanation: "Transcript: The engine capacity on that particular model is 1.4 litres." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Gearbox type: [2] ......... transmission", prefix: "Gearbox type:", suffix: "transmission", correct_answer: "automatic", acceptable_answers: ["automatic"], answer_display: "automatic", explanation: "Transcript: It is fitted with an automatic gearbox rather than manual." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Exterior paint color: [3] ......... blue", prefix: "Exterior paint color:", suffix: "blue", correct_answer: "light", acceptable_answers: ["light", "sky", "light blue", "sky blue"], answer_display: "light / sky", explanation: "Transcript: The manufacturer calls the metallic paint light blue, almost sky blue." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Payment option: financing available via [4] .........", prefix: "financing available via", suffix: "", correct_answer: "credit", acceptable_answers: ["credit", "credit card", "finance"], answer_display: "credit", explanation: "Transcript: We can arrange flexible monthly hire-purchase on credit terms." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Previous owner's surname: Mrs [5] .........", prefix: "Mrs", suffix: "", correct_answer: "Harries", acceptable_answers: ["Harries"], answer_display: "Harries", explanation: "Transcript: The logbook shows the sole previous registered owner was Mrs Harries—spelt H-A-R-R-I-E-S." },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Owner's professional title: [6] .........", prefix: "professional title:", suffix: "", correct_answer: "Doctor", acceptable_answers: ["Doctor", "Dr", "Dr."], answer_display: "Dr / Doctor", explanation: "Transcript: Her official title in the service records is Doctor Harries." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Registered address: 22 [7] ......... Avenue", prefix: "22", suffix: "Avenue", correct_answer: "Alton", acceptable_answers: ["Alton"], answer_display: "Alton", explanation: "Transcript: Her clinic address is listed at 22 Alton Avenue." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Direct phone line: answers incoming [8] ......... only", prefix: "answers incoming", suffix: "only", correct_answer: "messages", acceptable_answers: ["messages", "message"], answer_display: "messages", explanation: "Transcript: If she is consulting, the telephone voicemail records recorded messages." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Vehicle inspection location: near the [9] ......... Hotel", prefix: "near the", suffix: "Hotel", correct_answer: "Lion", acceptable_answers: ["Lion", "The Lion"], answer_display: "Lion", explanation: "Transcript: The vehicle is parked right opposite the Red Lion Hotel." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Overall physical condition evaluated as [10] .........", prefix: "evaluated as", suffix: "", correct_answer: "reasonable", acceptable_answers: ["reasonable"], answer_display: "reasonable", explanation: "Transcript: Considering its mileage, our mechanics assessed its bodywork as reasonable." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Rexford University International Student Orientation",
+                    instructions: "Questions 11-12: Choose TWO letters A-E. Questions 13-15: Complete the notes below. Write NO MORE THAN TWO WORDS. Questions 16-20: Choose the correct letter, A, B or C.",
+                    context: "An international student advisor outlines welfare services, accommodation regulations, and healthcare registration on campus.",
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Which TWO emergency contacts must students register with the University? (A. Bank manager, B. Airline agent, C. Next of kin / family contact, D. Driving instructor, E. Local general practitioner doctor)", options: ["A. Bank & airline", "B. Family contact & local GP doctor (C, E)", "C. Driving instructor & bank", "D. Airline & family"], correct_answer: "C", acceptable_answers: ["C", "C, E", "E"], answer_display: "C, E (family contact & local GP)", explanation: "Transcript: Every overseas student must register a verified next-of-kin emergency contact (C) and register with a local GP medical practice (E)." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Second emergency contact:", options: ["A. Bank manager", "B. Airline agent", "C. Next of kin / family contact", "D. Driving instructor", "E. Local general practitioner doctor"], correct_answer: "E", acceptable_answers: ["E", "C, E", "C"], answer_display: "E", explanation: "Transcript: Pair of mandatory registrations (C and E)." },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "Private tenancy landlords require two personal [13] .........", prefix: "two personal", suffix: "", correct_answer: "references", acceptable_answers: ["references", "reference"], answer_display: "references", explanation: "Transcript: Letting agents will ask to verify two written character references." },
+                        { id: 14, question_number: 14, type: "fill_blank", question: "Culture shock is heightened when moving to a foreign [14] .........", prefix: "foreign", suffix: "", correct_answer: "country", acceptable_answers: ["country"], answer_display: "country", explanation: "Transcript: Adapting to unfamiliar customs in an entirely new country can feel disorienting." },
+                        { id: 15, question_number: 15, type: "fill_blank", question: "Newcomers often struggle initially with the damp British [15] .........", prefix: "damp British", suffix: "", correct_answer: "weather", acceptable_answers: ["weather", "climate"], answer_display: "weather", explanation: "Transcript: Many Mediterranean and tropical students find our overcast winter weather quite challenging." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Campus bus shuttle departs every:", options: ["A. 10 minutes", "B. 15 minutes", "C. 20 minutes"], correct_answer: "C", answer_display: "C", explanation: "Transcript: The inter-campus hopper operates at regular 20-minute intervals." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Student gym membership requires:", options: ["A. written exam", "B. blood test", "C. mandatory safety induction session"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Before using free weights, everyone must complete a 30-minute safety induction." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "The Student Union Advice Centre is located in:", options: ["A. Student Union building ground floor", "B. Science tower", "C. Sports pavilion"], correct_answer: "A", answer_display: "A", explanation: "Transcript: Walk straight into the ground floor lobby of the main Student Union building." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Counselling appointments can be booked:", options: ["A. only via postal letter", "B. confidentially online or by phone", "C. through class teachers"], correct_answer: "B", answer_display: "B", explanation: "Transcript: Sessions are strictly confidential and bookable either via our web portal or by phone." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Campus health clinic is open:", options: ["A. 24 hours daily", "B. weekends only", "C. Monday to Friday 9 AM to 5 PM"], correct_answer: "C", answer_display: "C", explanation: "Transcript: Surgery consulting hours run weekdays from 9:00 AM until 5:00 PM." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Course Evaluation & Feedback Form",
+                    instructions: "Questions 21-22: Write the dates. Questions 23-30: Complete the notes below. Write NO MORE THAN TWO WORDS.",
+                    context: "Two students fill out an academic course review questionnaire assessing lecture pacing, seminar materials, and instructor feedback.",
+                    questions: [
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Course start date: [21] .........", prefix: "Course start date:", suffix: "", correct_answer: "5th May", acceptable_answers: ["5th May", "5 May", "May 5th", "May 5"], answer_display: "5th May", explanation: "Transcript: The teaching term commenced on the 5th of May." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Course end date: [22] .........", prefix: "Course end date:", suffix: "", correct_answer: "16th July", acceptable_answers: ["16th July", "16 July", "Friday 16th July", "July 16th"], answer_display: "16th July / Friday 16th July", explanation: "Transcript: All examinations concluded on Friday the 16th of July." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "Course objectives: syllabus was very [23] .........", prefix: "syllabus was very", suffix: "", correct_answer: "clear", acceptable_answers: ["clear", "was clear"], answer_display: "clear / was clear", explanation: "Transcript: The weekly learning objectives were exceptionally clear." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Professor provided an informative lecture [24] ......... at the beginning.", prefix: "lecture", suffix: "at the beginning.", correct_answer: "outline", acceptable_answers: ["outline", "course outline", "an outline", "the outline"], answer_display: "(an/the) outline / (a/the) course outline", explanation: "Transcript: Each Monday began with a concise slide providing a comprehensive lecture outline." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Pacing became rushed during the [25] ......... of term.", prefix: "during the", suffix: "of term.", correct_answer: "2nd half", acceptable_answers: ["2nd half", "second half", "the 2nd half"], answer_display: "(the) 2nd half", explanation: "Transcript: The lecturer crammed too many advanced theorems into the second half of term." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "The overall standard of [26] ......... was rated outstanding.", prefix: "overall standard of", suffix: "was rated outstanding.", correct_answer: "teaching", acceptable_answers: ["teaching", "standard of teaching", "teachers"], answer_display: "(standard of) teaching / teachers", explanation: "Transcript: Everyone agreed that the overall caliber and dedication of teaching was first-rate." },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Best learning occurred during collaborative group [27] .........", prefix: "collaborative group", suffix: "", correct_answer: "discussion", acceptable_answers: ["discussion", "group discussion", "discussions"], answer_display: "discussion / group discussion", explanation: "Transcript: The most engaging breakthroughs happened during weekly small group discussion." },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Printed revision [28] ......... were concise and helpful.", prefix: "revision", suffix: "were concise and helpful.", correct_answer: "handouts", acceptable_answers: ["handouts", "handout"], answer_display: "handouts", explanation: "Transcript: The photocopied summary handouts proved invaluable before exams." },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Tutor offered prompt detailed feedback on [29] .........", prefix: "feedback on", suffix: "", correct_answer: "written work", acceptable_answers: ["written work", "written essays", "essays"], answer_display: "written work", explanation: "Transcript: Our seminar tutor returned marked written work within 48 hours." },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "The department provided comprehensive [30] ......... throughout the semester.", prefix: "comprehensive", suffix: "throughout the semester.", correct_answer: "student support", acceptable_answers: ["student support", "support for students", "support"], answer_display: "student support / support for students", explanation: "Transcript: Academic mentors offered outstanding student support whenever we struggled." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Municipal Solid Waste Recycling Schemes",
+                    instructions: "Questions 31-40: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+                    context: "An environmental engineer lectures on municipal household waste management, kerbside sorting, and recycling economics.",
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Average municipal recycling rate achieved: [31] ......... %", prefix: "recycling rate achieved:", suffix: "%", correct_answer: "12.5%", acceptable_answers: ["12.5%", "12.5"], answer_display: "12.5%", explanation: "Transcript: Across all boroughs, the current diversion rate stands at 12.5% of total household refuse." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Non-recyclable organic waste is incinerated in modern [32] .........", prefix: "incinerated in modern", suffix: "", correct_answer: "incineration plants", acceptable_answers: ["incineration plants", "incinerators", "incinerator"], answer_display: "incineration plants", explanation: "Transcript: Residual solid waste is burned in high-efficiency thermal incineration plants to generate electricity." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Bulky electrical scrap is collected at designated [33] ......... sites.", prefix: "at designated", suffix: "sites.", correct_answer: "drop-off", acceptable_answers: ["drop-off", "drop off"], answer_display: "drop-off", explanation: "Transcript: Residents must transport large appliances to municipal drop-off centers." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Used domestic [34] ......... oil is processed into commercial biodiesel.", prefix: "domestic", suffix: "oil is processed into commercial biodiesel.", correct_answer: "cooking", acceptable_answers: ["cooking", "cooking oil"], answer_display: "cooking", explanation: "Transcript: Recovered household cooking oil is converted into low-emission biofuel." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Annual aluminium can recovery exceeds [35] ......... units.", prefix: "recovery exceeds", suffix: "units.", correct_answer: "500,000", acceptable_answers: ["500,000", "500000", "five hundred thousand"], answer_display: "500000 / 500,000", explanation: "Transcript: The city collected over 500,000 aluminium cans in the last fiscal year." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Crushed recycled glass cullet is blended into asphalt for paving [36] .........", prefix: "asphalt for paving", suffix: "", correct_answer: "roads", acceptable_answers: ["roads", "road"], answer_display: "roads", explanation: "Transcript: Crushed glass aggregate is incorporated into durable asphalt surfacing for city roads." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Composted garden trimmings are converted into high-grade [37] .........", prefix: "converted into high-grade", suffix: "", correct_answer: "soil conditioner", acceptable_answers: ["soil conditioner", "compost"], answer_display: "soil conditioner", explanation: "Transcript: Yard waste decomposes into nutrient-rich organic soil conditioner for agriculture." },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Recycled plastic polymers are molded into heavy cargo [38] .........", prefix: "molded into heavy cargo", suffix: "", correct_answer: "containers", acceptable_answers: ["containers", "container"], answer_display: "containers", explanation: "Transcript: Densified high-density polyethylene is fashioned into industrial shipping containers." },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Scrap newspaper pulp is manufactured into office [39] .........", prefix: "manufactured into office", suffix: "", correct_answer: "pencils", acceptable_answers: ["pencils", "pencil"], answer_display: "pencils", explanation: "Transcript: Compressed recycled newsprint is rolled into novelty stationery and graphite pencils." },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Recovered bleached office fibers are printed into corporate [40] .........", prefix: "printed into corporate", suffix: "", correct_answer: "business cards", acceptable_answers: ["business cards", "cards"], answer_display: "business cards", explanation: "Transcript: High-grade recycled stationery fibers are made into elegant corporate business cards." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 3",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Early Childhood Education",
+                    text: `The debate over the importance of early childhood education has raged across industrialized nations for decades. Research confirms that the brain undergoes extraordinary neurological wiring during the first three years of life, establishing emotional attachments, basic language competencies, and behavioral regulation that dictate long-term cognitive success.
+
+Historically, state interventions like the American Head Start program focused on providing center-based preschooling to disadvantaged children aged three to five. While Head Start delivered measurable short-term boosts in vocabulary, longitudinal tracking revealed that test score advantages often faded once children entered primary classrooms alongside peers from wealthier households.
+
+Recognizing the limitations of classroom-only models, innovative educators in Missouri pioneered an alternative paradigm: the 'Parents as Teachers' (PAT) initiative. Rather than taking infants out of the domestic sphere into institutional daycares, PAT dispatches certified parent educators directly into family homes. These specialists coach mothers and fathers on how to engage in language-rich play, model positive behavioral boundaries, and identify sensory or cognitive developmental delays before formal schooling starts. Evaluations demonstrated that children participating in PAT consistently outperformed peers across all socioeconomic strata on kindergarten readiness metrics, confirming the foundational premise that parents are a child's most influential primary educators.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "multiple_choice", question: "Paragraph containing details of the range of family types involved in an education programme:", options: ["A", "B", "C", "D"], correct_answer: "D", answer_display: "D", explanation: "Paragraph D outlines the broad spectrum of participating family demographics." },
+                        { id: 2, question_number: 2, type: "multiple_choice", question: "Paragraph containing reasons why a child's early years are so important:", options: ["A", "B", "C", "D"], correct_answer: "B", answer_display: "B", explanation: "Paragraph B details rapid infant neurological and emotional development." },
+                        { id: 3, question_number: 3, type: "multiple_choice", question: "Paragraph describing a US programme of assistance for parents:", options: ["A", "B", "C", "D"], correct_answer: "C", answer_display: "C", explanation: "Paragraph C introduces the Missouri 'Parents as Teachers' home-coaching initiative." },
+                        { id: 4, question_number: 4, type: "multiple_choice", question: "Paragraph discussing the long-term impact of a childcare programme:", options: ["A", "B", "C", "E"], correct_answer: "E", answer_display: "E", explanation: "Paragraph E tracks long-term kindergarten and academic outcomes." },
+                        { id: 5, question_number: 5, type: "multiple_choice", question: "Focuses on working directly with parents inside their homes:", options: ["A. Head Start", "B. Parents as Teachers (Missouri)", "C. Neither programme"], correct_answer: "B", answer_display: "B (Missouri / PAT)", explanation: "Text states PAT coaches parents directly inside family homes." },
+                        { id: 6, question_number: 6, type: "multiple_choice", question: "Offers center-based preschool classrooms for low-income toddlers:", options: ["A. Head Start", "B. Parents as Teachers", "C. Neither programme", "D. Head Start centre model"], correct_answer: "D", acceptable_answers: ["D", "A", "Head Start"], answer_display: "D / A (Head Start)", explanation: "Head Start provides institutional, center-based early learning." },
+                        { id: 7, question_number: 7, type: "multiple_choice", question: "Evaluations revealed early test score advantages tended to fade over time:", options: ["A. Head Start (A)", "B. Parents as Teachers", "C. Neither programme"], correct_answer: "A", answer_display: "A", explanation: "Text notes Head Start test score boosts tended to fade in subsequent grades." },
+                        { id: 8, question_number: 8, type: "multiple_choice", question: "Demonstrated superior kindergarten readiness across all socioeconomic demographics:", options: ["A. Head Start", "B. Parents as Teachers (B)", "C. Neither programme"], correct_answer: "B", answer_display: "B", explanation: "Text: PAT participants outperformed peers across all socioeconomic brackets." },
+                        { id: 9, question_number: 9, type: "multiple_choice", question: "Requires parents to pay steep commercial subscription fees:", options: ["A. Head Start", "B. Parents as Teachers", "C. Neither programme", "D. Neither programme (D)"], correct_answer: "D", acceptable_answers: ["D", "C", "Neither"], answer_display: "D / C (Neither)", explanation: "Both initiatives were publicly funded community welfare programs." },
+                        { id: 10, question_number: 10, type: "multiple_choice", question: "Mandates that children be placed in boarding institutions:", options: ["A. Head Start", "B. Parents as Teachers", "C. Neither programme (C)"], correct_answer: "C", answer_display: "C", explanation: "Neither programme removes children into boarding facilities." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Neurological connections in the human brain form more rapidly in infancy than in later adulthood.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text affirms the first three years establish essential emotional and cognitive wiring." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Head Start was permanently discontinued across the United States in 1990.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "The text discusses its historical limitations but never states the program was discontinued." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Missouri parent educators receive higher salaries than certified primary teachers.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Educator compensation is not mentioned in the passage." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Disappearing Delta",
+                    text: `The fertile Nile Delta has sustained Egyptian civilization for over six thousand years. In antiquity, the annual late-summer flooding of the Nile River inundated the river valley and delta plains, depositing millions of tons of rich alluvial silt washed down from the Ethiopian highlands. This nutrient-rich sediment acted as a perpetual natural fertilizer, ensuring abundant crop yields and steadily building up the delta coastline against the relentless erosive forces of the Mediterranean Sea.
+
+However, the completion of the monumental Aswan High Dam in 1970 abruptly severed this millennia-old hydrological equilibrium. While the dam successfully harnessed hydroelectric power and regulated seasonal irrigation, it created an impenetrable barrier across the river. Today, over 98 percent of the Nile's natural sediment load remains trapped behind the dam in the reservoir of Lake Nasser. Deprived of replenishing river silt, the Mediterranean coastline is retreating at alarming rates, with waves carving away up to one hundred meters of shoreline annually in exposed coastal lagoons.
+
+Compounding this coastal retreat is the severe ecological fallout of modern industrial agriculture. Because natural alluvial fertilization ceased, Egyptian farmers were forced to apply colossal quantities of synthetic chemical fertilizers and pesticides to maintain yields. Unfiltered municipal sewage and toxic agrochemical runoff now pollute the delta's brackish lakes, wiping out once-flourishing commercial fish populations and jeopardizing the freshwater supply upon which eighty million Egyptians depend.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Paragraph B Heading:", options: ["i. Effects of irrigation", "iv. Interrupting a natural process (iv)", "v. Threat to food", "viii. Long-term impact"], correct_answer: "iv", answer_display: "iv", explanation: "Paragraph B explains how the Aswan High Dam severed the natural deposition of river silt." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Paragraph D Heading:", options: ["i. Effects of irrigation on sedimentation (i)", "ii. Ancient irrigation", "v. Food crisis"], correct_answer: "i", answer_display: "i", explanation: "Paragraph D focuses on irrigation diversions and altered sedimentation patterns." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Paragraph E Heading:", options: ["iii. Tourist resorts", "v. The threat to food production (v)", "vii. Ocean currents"], correct_answer: "v", answer_display: "v", explanation: "Paragraph E highlights soil salinity, chemical runoff, and perils facing agricultural food production." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Paragraph F Heading:", options: ["ii. Building sea walls", "vi. River transport", "viii. Looking at the long-term impact (viii)"], correct_answer: "viii", answer_display: "viii", explanation: "The concluding section evaluates the ominous long-term prognosis for the delta region." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "The Nile Delta has supported intensive human agriculture for millennia.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'sustained Egyptian civilization for over six thousand years'." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "The engineers who designed the Aswan High Dam anticipated coastal erosion in 1960.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "The engineers' initial foresight regarding erosion is not mentioned." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "The Aswan Dam allows most river silt to pass freely through hydraulic sluice gates.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "NO", answer_display: "NO", explanation: "Text: 'over 98 percent of the Nile's natural sediment load remains trapped behind the dam'." },
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "The Mediterranean Sea is eroding coastal land at a faster rate than before the dam was built.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text affirms shoreline retreat up to 100 meters annually due to sediment starvation." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "Egyptian farmers rely heavily on artificial fertilizers to replace trapped river sediment.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'farmers were forced to apply colossal quantities of synthetic chemical fertilizers'." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "Pollution in delta lagoons has devastated commercial fish harvests.", options: ["YES", "NO", "NOT GIVEN"], correct_answer: "YES", answer_display: "YES", explanation: "Text: 'wiping out once-flourishing commercial fish populations'." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Agricultural chemicals wash into delta waterways creating severe [24] .........", prefix: "creating severe", suffix: "", correct_answer: "pollution", acceptable_answers: ["pollution", "water pollution"], answer_display: "pollution", explanation: "Summary identifies chemical and municipal pollution poisoning delta ecosystems." },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Fisheries have crashed due to accumulated industrial [25] .........", prefix: "accumulated industrial", suffix: "", correct_answer: "toxins", acceptable_answers: ["toxins", "toxic runoff", "waste"], answer_display: "toxins", explanation: "Summary highlights toxic runoff killing fish stock." },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Scientists urge strict environmental [26] ......... to safeguard future water.", prefix: "strict environmental", suffix: "to safeguard future water.", correct_answer: "measures", acceptable_answers: ["measures", "regulations"], answer_display: "measures", explanation: "Summary calls for urgent regulatory measures to avert catastrophe." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Return of Artificial Intelligence",
+                    text: `After decades of alternating hypes and crushing 'AI winters', artificial intelligence is experiencing a quiet, profound renaissance. In the heady decades following the 1956 Dartmouth conference—where John McCarthy first coined the term 'artificial intelligence'—pioneers boldly prophesied that machines indistinguishable from human minds would arrive within a generation. Popular culture embraced the vision: in Stanley Kubrick's 1968 cinema masterpiece '2001: A Space Odyssey', the sentient supercomputer HAL 9000 reflected the prevailing scientific consensus that artificial general intelligence was imminent.
+
+By the late 1980s, however, early optimism collapsed. Brittle rule-based expert systems proved incapable of navigating common-sense ambiguity, and commercial investments evaporated. Yet this perceived failure was largely a crisis of overinflated expectations. As AI scholar Dr. David Leake observed, whenever an AI technology achieved practical success—such as computer chess algorithms, credit card fraud detection, or automotive antilock braking—the public ceased viewing it as 'artificial intelligence', redefining it as mere computing.
+
+Today, AI has returned, not in the form of humanoid robots, but as quiet, ubiquitous software agents that knit together disparate disciplines: neural network machine learning, Bayesian probability, and statistical data mining. Massive gains in processing power and astronomical digital datasets have allowed algorithms to conquer complex tasks from language translation to military satellite trajectory planning. By operating invisibly within everyday infrastructure, AI has finally fulfilled its original scientific promise.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Paragraph describing how AI might have a military impact:", options: ["B", "C", "D", "E"], correct_answer: "E", answer_display: "E", explanation: "Paragraph E details military trajectory planning and defense logistics applications." },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Paragraph noting that AI brings together a range of separate research areas:", options: ["A", "B", "C", "D"], correct_answer: "B", answer_display: "B", explanation: "Paragraph B synthesizes neural networks, probability, and computer science fields." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "Paragraph explaining why AI has become a common topic of conversation again:", options: ["A", "B", "C", "D"], correct_answer: "A", answer_display: "A", explanation: "Paragraph A introduces the modern resurgence and conversation surrounding AI." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Paragraph exploring how AI helps filter the massive volume of electronic information:", options: ["C", "D", "E", "F"], correct_answer: "F", answer_display: "F", explanation: "Paragraph F outlines data mining and filtering information overload." },
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "Paragraph identifying where the term 'artificial intelligence' was first coined:", options: ["A", "B", "C", "D"], correct_answer: "B", answer_display: "B", explanation: "Paragraph B identifies John McCarthy at the 1956 Dartmouth conference." },
+                        { id: 32, question_number: 32, type: "multiple_choice", question: "The researchers who founded the field of AI had collaborated extensively on other projects before 1956.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Prior collaboration before the Dartmouth conference is not mentioned in the text." },
+                        { id: 33, question_number: 33, type: "multiple_choice", question: "In 1985, public interest in commercial AI reached its absolute lowest historical point.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text indicates AI enthusiasm peaked around 1985 before the crash of the late 1980s." },
+                        { id: 34, question_number: 34, type: "multiple_choice", question: "Developing autonomous software agents was more expensive than research into neural networks.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "NOT GIVEN", answer_display: "NOT GIVEN", explanation: "Comparative financial expenditure between the two subfields is not stated." },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "Specific practical applications of AI have already achieved widespread commercial success.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text cites fraud detection, chess engines, and automotive systems as successful." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "The core challenges confronting AI developers today are identical to those identified in 1967.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "FALSE", answer_display: "FALSE", explanation: "Text shows research shifted from rigid rule-based logic to statistical machine learning." },
+                        { id: 37, question_number: 37, type: "multiple_choice", question: "The computer HAL in '2001: A Space Odyssey' reflected contemporary scientific expectations about AI.", options: ["TRUE", "FALSE", "NOT GIVEN"], correct_answer: "TRUE", answer_display: "TRUE", explanation: "Text: 'reflected the prevailing scientific consensus that artificial general intelligence was imminent'." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "In the late 1980s, computer scientists concluded that:", options: ["A. Computers were obsolete", "B. Early expectations and promises had been excessively optimistic", "C. Silicon microchips could not compute", "D. AI was dangerous"], correct_answer: "B", answer_display: "B", explanation: "Text: 'early optimism collapsed... perceived failure was largely a crisis of overinflated expectations'." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "Dr. David Leake argues that AI suffered in reputation because:", options: ["A. Successful breakthroughs were no longer recognized as AI by the public", "B. Hackers attacked networks", "C. University degrees were banned", "D. Software was too cheap"], correct_answer: "A", answer_display: "A", explanation: "Text: 'whenever an AI technology achieved practical success... the public ceased viewing it as artificial intelligence'." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "The future expansion of AI will benefit most from:", options: ["A. Returning to vacuum tubes", "B. Abandoning internet connectivity", "C. Banning computer games", "D. Advances in hardware computing power and real-world software applications"], correct_answer: "D", answer_display: "D", explanation: "Text highlights massive gains in processing power and real-world deployment driving AI's return." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 3",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Proposed Supermarket Sites in the Town of Garlsdon",
+                    prompt: "The map below shows the town of Garlsdon and two potential sites (Site 1 and Site 2) planned for a new supermarket. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "map",
+                    svg_chart: `<svg viewBox="0 0 720 480" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  
+  <text x="360" y="28" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Proposed Supermarket Sites (S1 &amp; S2) in Garlsdon</text>
+  <text x="360" y="46" text-anchor="middle" fill="#94a3b8" font-size="11">Town Layout, Surrounding Settlements &amp; Transport Infrastructure</text>
+  
+  <!-- Outer Countryside / Rural Area -->
+  <rect x="50" y="65" width="620" height="385" fill="#1e293b" rx="12" stroke="#334155" stroke-width="2"/>
+  <text x="75" y="90" fill="#64748b" font-size="12" font-style="italic">Countryside</text>
+  
+  <!-- Garlsdon Town Boundary -->
+  <circle cx="360" cy="260" r="145" fill="#0f172a" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="245" y="145" fill="#94a3b8" font-size="13" font-weight="bold">GARLSDON (Pop. 65,000)</text>
+  
+  <!-- Residential Zones -->
+  <ellipse cx="280" cy="225" rx="50" ry="32" fill="#334155" fill-opacity="0.6"/>
+  <text x="280" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">Residential</text>
+  
+  <ellipse cx="440" cy="225" rx="50" ry="32" fill="#334155" fill-opacity="0.6"/>
+  <text x="440" y="230" fill="#cbd5e1" font-size="10" text-anchor="middle">Residential</text>
+  
+  <ellipse cx="360" cy="350" rx="55" ry="30" fill="#334155" fill-opacity="0.6"/>
+  <text x="360" y="355" fill="#cbd5e1" font-size="10" text-anchor="middle">Residential</text>
+  
+  <ellipse cx="360" cy="170" rx="50" ry="25" fill="#334155" fill-opacity="0.6"/>
+  <text x="360" y="174" fill="#cbd5e1" font-size="10" text-anchor="middle">Industry</text>
+  
+  <!-- Town Centre (Pedestrianized / No Traffic) -->
+  <rect x="315" y="240" width="90" height="48" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+  <text x="360" y="258" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">Town Centre</text>
+  <text x="360" y="274" fill="#fbbf24" font-size="8.5" text-anchor="middle">(No Traffic Zone)</text>
+  
+  <!-- SITE 2: In Town Centre -->
+  <circle cx="360" cy="254" r="14" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+  <text x="360" y="259" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">S2</text>
+  
+  <!-- SITE 1: Northwest in Countryside -->
+  <rect x="135" y="125" width="46" height="34" fill="#10b981" stroke="#ffffff" stroke-width="2" rx="6"/>
+  <text x="158" y="146" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">S1</text>
+  
+  <!-- Railway Line (Crossing Northwest to Southeast) -->
+  <line x1="80" y1="120" x2="630" y2="390" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="590" y="415" fill="#94a3b8" font-size="10">Railway Line</text>
+  
+  <!-- Roads -->
+  <!-- Road 1: Northwest to Hindon (12 km, Pop. 10,000) -->
+  <line x1="70" y1="90" x2="315" y2="250" stroke="#38bdf8" stroke-width="3.5"/>
+  <text x="65" y="78" fill="#38bdf8" font-size="11" font-weight="bold">To Hindon (12 km, Pop. 10,000)</text>
+  
+  <!-- Road 2: Southwest to Bransdon (16 km, Pop. 15,000) -->
+  <line x1="100" y1="410" x2="330" y2="280" stroke="#38bdf8" stroke-width="3.5"/>
+  <text x="70" y="435" fill="#38bdf8" font-size="11" font-weight="bold">To Bransdon (16 km, Pop. 15,000)</text>
+  
+  <!-- Road 3: Southeast to Cransdon (25 km, Pop. 29,000) -->
+  <line x1="390" y1="280" x2="640" y2="420" stroke="#38bdf8" stroke-width="3.5"/>
+  <text x="500" y="445" fill="#38bdf8" font-size="11" font-weight="bold">To Cransdon (25 km, Pop. 29,000)</text>
+  
+  <!-- Legend -->
+  <rect x="510" y="80" width="145" height="95" fill="#0f172a" rx="8" stroke="#475569"/>
+  <circle cx="525" cy="98" r="7" fill="#10b981"/>
+  <text x="538" y="102" fill="#e2e8f0" font-size="10">Site 1 (Out of town)</text>
+  <circle cx="525" cy="120" r="7" fill="#ef4444"/>
+  <text x="538" y="124" fill="#e2e8f0" font-size="10">Site 2 (Town centre)</text>
+  <line x1="518" y1="142" x2="532" y2="142" stroke="#38bdf8" stroke-width="3"/>
+  <text x="538" y="145" fill="#e2e8f0" font-size="10">Main Roads</text>
+  <line x1="518" y1="162" x2="532" y2="162" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4,2"/>
+  <text x="538" y="165" fill="#e2e8f0" font-size="10">Railway Line</text>
+</svg>`,
+                    sample_band9: `The map illustrates two proposed sites (Site 1 and Site 2) for a newly planned supermarket in the town of Garlsdon, alongside surrounding transport connections and neighbouring settlements.
+
+Overall, the two sites present contrasting geographical advantages: Site 1 is positioned in the open countryside northwest of the town with excellent inter-city transport links, whereas Site 2 is located right in the heart of Garlsdon's pedestrianized commercial core, maximizing accessibility for local town residents.
+
+Site 1 (S1) is located outside the built-up boundary of Garlsdon in the rural northwestern perimeter. It is strategically positioned between the main railway line and the primary arterial road that leads directly to the town of Hindon, situated 12 kilometres away with a population of 10,000. This out-of-town location would offer ample space for expansive customer parking and hassle-free vehicular delivery access from neighboring districts.
+
+In contrast, Site 2 (S2) occupies a central position within Garlsdon's town centre. While it is surrounded by three major residential zones and an industrial sector housing 65,000 inhabitants, the town centre itself is designated as a traffic-free, pedestrianized precinct. Consequently, although S2 would enjoy immense foot traffic from local shoppers and direct road connections toward Bransdon (16 km, population 15,000) and Cransdon (25 km, population 29,000), vehicular access, parking development, and goods delivery could face notable urban traffic restrictions.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: Competition vs Cooperation in Children",
+                    prompt: "Some people think that a sense of competition in children should be encouraged. Others believe that children who are taught to co-operate rather than compete become more useful adults. Discuss both these views and give your own opinion. Write at least 250 words.",
+                    sample_band9: `The optimal pedagogical philosophy for nurturing youth remains a subject of intense pedagogical debate. While proponents of competition argue that striving against peers sharpens individual ambition and builds real-world resilience, advocates of cooperation assert that collaborative skills produce far more empathetic and productive citizens. In my view, while healthy competition provides valuable motivation, learning to cooperate is profoundly more essential for fostering socially useful and professional adults.
+
+On the one hand, instilling a healthy competitive spirit prepares children for the unavoidable realities of modern life. In tertiary admissions, global employment markets, and entrepreneurial arenas, individuals are relentlessly evaluated based on comparative excellence. Encouraging children to compete—whether in academic decathlons or sporting leagues—teaches them to set rigorous personal standards, handle setbacks with emotional resilience, and relentlessly hone their talents. Without exposure to competitive challenges, youths may develop a fragile sense of entitlement, struggling to adapt when confronted with high-stakes adult pressures.
+
+On the other hand, the foundational architecture of civilized society relies fundamentally upon cooperation rather than rivalry. In modern knowledge-based economies, complex scientific breakthroughs, corporate enterprises, and public health systems are built not through isolated rivalry, but through multidisciplinary teamwork. Children who are taught to cooperate learn active listening, conflict resolution, emotional empathy, and the subordination of personal ego for communal objectives. An adult obsessed purely with outperforming others often fosters toxic workplace friction, whereas an individual skilled in collaboration builds trust and multiplies collective productivity.
+
+In conclusion, while controlled competition undoubtedly teaches grit and ambition, excessive rivalry breeds alienation. Instilling cooperation is demonstrably more vital for shaping well-adjusted, constructive adults who can harmoniously navigate corporate environments and contribute meaningfully to society.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 3",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview - Evening Leisure & Relaxing",
+                    questions: [
+                        { question: "Do you prefer spending your evenings at home or going out?", band9_sample: "Generally speaking, I lean toward spending weekday evenings quietly at home. After demanding office hours, relaxing with a home-cooked meal and reading non-fiction allows my mind to decompress thoroughly, though I occasionally socialize on weekends." },
+                        { question: "What do you usually like to do when you go out in the evening?", band9_sample: "My preference is meeting close friends at cozy independent bistros or attending live theatrical performances and independent film screenings where we can discuss artistic themes over coffee." },
+                        { question: "Is there much to do in the evenings in your local area?", band9_sample: "Fortunately, yes. My district boasts a lively riverside promenade lined with open-air cafes, recreational sports courts, and a municipal arts center that hosts weekly orchestral recitals." },
+                        { question: "Do you think people today have enough time to relax in the evenings?", band9_sample: "Sadly, for many professionals, the boundary between professional duty and personal leisure has dissolved due to constant digital connectivity. Many workers continue answering work emails late into the night, significantly compromising their evening recuperation." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn - Your Favourite Shop",
+                    cue_card: "Describe your favourite shop.\nYou should say:\n- where it is\n- what it sells\n- how often you visit it\nand explain why you like this shop so much.",
+                    band9_sample: "I would like to describe an enchanting independent bookshop and cafe called 'The Bookworm Sanctuary', nestled on a quiet cobblestone alleyway in the historic quarter of my city.\n\nIt specializes in rare vintage literature, second-hand academic monographs, art folios, and classic foreign translations. Besides towering dark-wood bookshelves that stretch to the mezzanine ceiling, the back of the shop opens into a tranquil skylit courtyard that serves artisanal pour-over coffees and freshly baked pastries.\n\nI make a ritual of visiting at least twice a month, usually on Sunday afternoons when I have several hours of unstructured free time to browse uninterrupted.\n\nWhat makes this shop utterly irreplaceable to me is its sensory atmosphere and cultivated sense of community. In an era dominated by algorithmic e-commerce and generic retail chains, this bookshop feels like a timeless refuge. The scent of antique paper and freshly ground Arabica beans creates an immediate sense of peace. Furthermore, the proprietor is an erudite retired literature professor who writes thoughtful handwritten recommendations on shelf dividers and hosts monthly author roundtables. It is not merely a commercial retail space; it is a vital intellectual sanctuary that nourishes the mind."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion - Shopping Habits & Technology",
+                    questions: [
+                        { question: "Why has online shopping become so dominant in recent years?", band9_sample: "Online shopping offers frictionless convenience and boundless inventory. Consumers can compare global prices across dozens of retailers within seconds and receive parcels at their doorstep, completely eliminating the time, travel costs, and crowds associated with physical malls." },
+                        { question: "Do physical high-street shops still possess unique advantages over e-commerce?", band9_sample: "Undoubtedly. Brick-and-mortar retail provides immediate sensory verification: shoppers can try on garments to verify fabric texture and fit, test electronic devices hands-on, and enjoy spontaneous social outings that digital algorithms simply cannot simulate." },
+                        { question: "How might augmented reality and drone logistics shape retail over the coming decade?", band9_sample: "The integration of augmented reality will bridge the remaining gap between physical and digital shopping by allowing consumers to project true-to-scale 3D models of furniture into their homes or preview garments on personalized digital avatars. Coupled with autonomous drone delivery within hours, retail will become almost entirely instantaneous." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = cam5Test3;
+}
+
+
+// Cambridge IELTS 5 - Test 4 (cam_5_test_4)
+// 100% Authentic Cambridge Practice Test
+const cam5Test4 = {
+    id: "cam_5_test_4",
+    title: "Cambridge IELTS 5 - Test 4",
+    book: "Cambridge IELTS 5",
+    book_id: "cam_5",
+    test_number: 4,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-5-audio/cam5_test4.mp3",
+    sections: {
+        listening: {
+            title: "Listening Test 4",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Host Family Applicant (Jenny Chan)",
+                    instructions: "Questions 1-10: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+                    context: "A student named Jenny Chan meets an accommodation officer to arrange host family accommodation.",
+                    audio_script: `OFFICER: Good morning. May I help you?
+JENNY: Yes, I was told to come here to apply for a host family.
+OFFICER: Right. I just need to take down a few details first. Can I have your full name, please?
+JENNY: Jenny Chan.
+OFFICER: And your current address in this country?
+JENNY: At the moment I'm staying at the Sea View Guest House, at 14 Hill Road.
+OFFICER: 14 Hill Road. Okay. And could you give me a contact telephone number?
+JENNY: Yes, it's 2237676. But if you call in the morning, between 9 and 9.30 is best before I leave for classes.
+OFFICER: Between 9 and 9.30, right. Now, what course are you enrolled on?
+JENNY: I'm taking an advanced English language course.
+OFFICER: And how long is that for?
+JENNY: It's a full academic year - 1 year in total.
+OFFICER: Right, 1 year. What level of English do you currently hold?
+JENNY: My test scores placed me at intermediate level.
+OFFICER: Good. Now about your host family preferences. Any specific area of town?
+JENNY: Somewhere in the North-West area would be ideal, as it is close to the faculty campus.
+OFFICER: North-West, fine. Any dietary requirements?
+JENNY: Yes, I am a strict vegetarian. I don't eat meat or fish.
+OFFICER: Vegetarian. And what about pets or children?
+JENNY: I don't mind pets, but I would really love a house with a real garden, somewhere green to sit outside and study.
+OFFICER: A real garden. And would you prefer to be with other foreign students?
+JENNY: No, I really want to practice my English, so I'd prefer to be the only guest.
+OFFICER: The only guest. Now regarding cost, how much are you prepared to pay each week?
+JENNY: My maximum budget is around 100 pounds per week, including meals.
+OFFICER: 100 per week. And finally, when would you be ready to move in?
+JENNY: My guest house booking ends on Monday the 23rd of March, so 23rd March would be best.
+OFFICER: Monday 23rd March. Excellent, I'll see what we have available.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Present address: Sea View Guest House, [1] .........", prefix: "Sea View Guest House,", suffix: "", correct_answer: "14 Hill Road", acceptable_answers: ["14 Hill Road", "14 Hill Rd", "14 Hill Rd."], answer_display: "14 Hill Road", explanation: "Transcript: At the moment I'm staying at the Sea View Guest House, at 14 Hill Road." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Best time to contact by phone: [2] .........", prefix: "Best time to contact:", suffix: "", correct_answer: "between 9 and 9.30", acceptable_answers: ["between 9 and 9.30", "9-9.30", "9 to 9.30", "9.00 - 9.30", "9:00 - 9:30"], answer_display: "between 9 and 9.30 / 9-9.30", explanation: "Transcript: But if you call in the morning, between 9 and 9.30 is best before I leave for classes." },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Length of course: [3] .........", prefix: "Length of course:", suffix: "", correct_answer: "1 year", acceptable_answers: ["1 year", "one year", "a year"], answer_display: "1 year / one year", explanation: "Transcript: It's a full academic year - 1 year in total." },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Current English level: [4] .........", prefix: "Current English level:", suffix: "", correct_answer: "intermediate", acceptable_answers: ["intermediate"], answer_display: "intermediate", explanation: "Transcript: My test scores placed me at intermediate level." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Preferred location: [5] .........", prefix: "Preferred location:", suffix: "", correct_answer: "North-West", acceptable_answers: ["North-West", "North West", "north-west", "north west"], answer_display: "North-West", explanation: "Transcript: Somewhere in the North-West area would be ideal." },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Special dietary requirements: [6] .........", prefix: "Special dietary requirements:", suffix: "", correct_answer: "vegetarian", acceptable_answers: ["vegetarian"], answer_display: "vegetarian", explanation: "Transcript: Yes, I am a strict vegetarian. I don't eat meat or fish." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Household preferences: house with [7] .........", prefix: "house with", suffix: "", correct_answer: "a real garden", acceptable_answers: ["a real garden", "real garden", "garden", "a garden"], answer_display: "(a) real garden", explanation: "Transcript: I would really love a house with a real garden, somewhere green to sit outside and study." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Guest preference: wishes to be [8] .........", prefix: "wishes to be", suffix: "", correct_answer: "the only guest", acceptable_answers: ["the only guest", "only guest"], answer_display: "(the) only guest", explanation: "Transcript: I'd prefer to be the only guest." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Maximum weekly payment: £[9] .........", prefix: "£", suffix: "", correct_answer: "100", acceptable_answers: ["100", "£100", "one hundred"], answer_display: "100", explanation: "Transcript: My maximum budget is around 100 pounds per week." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Starting date for accommodation: [10] .........", prefix: "Starting date:", suffix: "", correct_answer: "23rd March", acceptable_answers: ["23rd March", "Monday 23rd March", "23 March", "March 23rd", "March 23"], answer_display: "23rd March / Monday 23rd March", explanation: "Transcript: My guest house booking ends on Monday the 23rd of March, so 23rd March would be best." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Local Youth Soccer Club",
+                    instructions: "Questions 11-13: Complete the notes below. Write NO MORE THAN TWO WORDS for each answer. Questions 14-17: Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Questions 18-20: Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+                    context: "An organizer addresses members and parents at the local junior soccer club.",
+                    audio_script: `SPEAKER: Good evening parents and players, and welcome to this briefing on our upcoming season. 
+First of all, our next committee and parents meeting will be held in the clubhouse in King's Park on the 2nd of July. 
+Regarding our social calendar, we have a few enjoyable events lined up. The very first social event of the season will be a family picnic by the lake, where everyone can get to know each other. Then towards the end of the season, we'll organize a formal presentation evening to award prizes to our outstanding junior players.
+Now let me tell you about our weekly coaching schedule. 
+For our youngest players aged 7 to 10, coaching sessions are held on Wednesday afternoons from 4 to 5.30 pm, and each training squad will consist of 10 children per coach.
+For older players aged 11 to 14, sessions take place on Sunday afternoons, and to ensure rigorous technical practice, squads are kept smaller with just 4 players per coach.
+Finally, our club depends entirely on volunteers. We urgently need assistance in three key areas:
+First, on match days we require someone to collect the fees from parents at the gate.
+Second, each month someone needs to compile and send out the newsletter to all registered households.
+And third, during Saturday games, we need volunteer parents to supervise the teams while coaches focus on match strategy.`,
+                    questions: [
+                        { id: 11, question_number: 11, type: "fill_blank", question: "The next meeting of the soccer club will be in the [11] ......... in King's Park on 2 July.", prefix: "meeting will be in the", suffix: "in King's Park", correct_answer: "clubhouse", acceptable_answers: ["clubhouse", "club house"], answer_display: "clubhouse", explanation: "Transcript: First of all, our next committee and parents meeting will be held in the clubhouse in King's Park on the 2nd of July." },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "The first social event of the season is a [12] .........", prefix: "The first social event is a", suffix: "", correct_answer: "picnic", acceptable_answers: ["picnic", "family picnic"], answer_display: "picnic", explanation: "Transcript: The very first social event of the season will be a family picnic by the lake." },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "At the end of the season there will be an event with [13] .........", prefix: "an event with", suffix: "", correct_answer: "prizes", acceptable_answers: ["prizes", "awards"], answer_display: "prizes", explanation: "Transcript: Then towards the end of the season, we'll organize a formal presentation evening to award prizes to our outstanding junior players." },
+                        { id: 14, question_number: 14, type: "fill_blank", question: "Coaching squad size for ages 7-10: [14] ......... children per group", prefix: "Ages 7-10 group size:", suffix: "children", correct_answer: "10", acceptable_answers: ["10", "ten"], answer_display: "10 / ten", explanation: "Transcript: For our youngest players aged 7 to 10... each training squad will consist of 10 children per coach." },
+                        { id: 15, question_number: 15, type: "fill_blank", question: "Ages 7-10 coaching day/time: [15] .........", prefix: "Ages 7-10 day/time:", suffix: "", correct_answer: "Wednesday afternoon", acceptable_answers: ["Wednesday afternoon", "Wednesday afternoons", "Wednesdays", "Wednesday"], answer_display: "Wednesday afternoon(s)", explanation: "Transcript: coaching sessions are held on Wednesday afternoons from 4 to 5.30 pm." },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "Coaching squad size for ages 11-14: [16] ......... children per group", prefix: "Ages 11-14 group size:", suffix: "children", correct_answer: "4", acceptable_answers: ["4", "four"], answer_display: "4 / four", explanation: "Transcript: For older players aged 11 to 14... squads are kept smaller with just 4 players per coach." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "Ages 11-14 coaching day/time: [17] .........", prefix: "Ages 11-14 day/time:", suffix: "", correct_answer: "Sunday afternoon", acceptable_answers: ["Sunday afternoon", "Sunday afternoons", "Sundays", "Sunday"], answer_display: "Sunday afternoon(s)", explanation: "Transcript: For older players aged 11 to 14, sessions take place on Sunday afternoons." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Volunteers needed to [18] ......... at matches.", prefix: "Volunteers needed to", suffix: "at matches.", correct_answer: "collect the fees", acceptable_answers: ["collect the fees", "collect fees", "collect the money", "collect money"], answer_display: "collect (the) fees / collect (the) money", explanation: "Transcript: First, on match days we require someone to collect the fees from parents at the gate." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Volunteers needed to [19] ......... to registered households.", prefix: "Volunteers needed to", suffix: "to registered households.", correct_answer: "send the newsletter", acceptable_answers: ["send the newsletter", "send out the newsletter", "send newsletters", "send out newsletters", "send the newsletters"], answer_display: "send (out/the) newsletter(s)", explanation: "Transcript: Second, each month someone needs to compile and send out the newsletter to all registered households." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Volunteers needed to [20] ......... while matches are in progress.", prefix: "Volunteers needed to", suffix: "while matches are in progress.", correct_answer: "supervise the teams", acceptable_answers: ["supervise the teams", "supervise teams"], answer_display: "supervise (the) teams", explanation: "Transcript: And third, during Saturday games, we need volunteer parents to supervise the teams." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Box Telecom Business Case Study",
+                    instructions: "Questions 21-24: Complete the notes below. Write NO MORE THAN THREE WORDS for each answer. Questions 25-27: Choose the correct letter, A, B, or C. Questions 28-30: Which opinion does each person express about Box Telecom? Choose from the list of opinions (A-E).",
+                    context: "Two business students, Karin and Jason, discuss a case study on Box Telecom with their university tutor.",
+                    audio_script: `TUTOR: Well Jason, Karin, how is your business management case study coming along?
+JASON: We've been looking into Box Telecom, the telecommunications provider. Over the past two financial quarters, they have suffered severe setbacks.
+KARIN: That's right. The most immediate symptom has been a dramatic drop in sales across their mobile subscription sector.
+JASON: And coupled with that, there is intense growing competition from newer digital network operators who offer cheaper data packages.
+TUTOR: What do you see as the underlying macroeconomic causes?
+JASON: Well, macroeconomic pressures like high interest rates have substantially increased borrowing costs for Box Telecom's network expansion.
+KARIN: And internally, human resource audits identified an alarming lack of adequate training for customer care personnel, leading to high subscriber turnover.
+TUTOR: So what strategy do you anticipate Box Telecom will adopt to survive?
+KARIN: Well, rather than issuing more equity shares or capitulating to an outright takeover bid, Karin believes they will attempt to look for private investors to inject fresh capital.
+TUTOR: And Jason, what did you conclude?
+TUTOR: Personally, as your tutor, I suspect the only path to sustainable recovery lies in radically changing the way it is organised - a structural restructuring rather than merely closing outlets or replacing the managing director.
+JASON: That makes sense. For our final assignment submission, what specific focus do you recommend?
+TUTOR: I want your report to synthesize these problems and offer viable solutions to Box Telecom's problems.
+TUTOR: Now let's review your overall assessments of the company's prospects.
+JASON: Well, speaking for myself, I find Box Telecom's historical lack of innovation deeply frustrating - they failed to adapt to modern consumer habits.
+KARIN: In my view, their core brand identity and network infrastructure are still resilient; I am confident they will regain market share if managed prudently.
+TUTOR: And from my academic standpoint, I believe Box Telecom serves as a textbook cautionary tale of complacency in high-technology markets.`,
+                    questions: [
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Problem affected by: drop in [21] .........", prefix: "drop in", suffix: "", correct_answer: "sales", acceptable_answers: ["sales"], answer_display: "sales", explanation: "Transcript: The most immediate symptom has been a dramatic drop in sales across their mobile subscription sector." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Problem affected by: growing [22] .........", prefix: "growing", suffix: "", correct_answer: "competition", acceptable_answers: ["competition"], answer_display: "competition", explanation: "Transcript: And coupled with that, there is intense growing competition from newer digital network operators." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "Cause of problem: high [23] .........", prefix: "high", suffix: "", correct_answer: "interest rates", acceptable_answers: ["interest rates", "rates of interest"], answer_display: "interest rates / rates of interest", explanation: "Transcript: macroeconomic pressures like high interest rates have substantially increased borrowing costs." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Cause of problem: lack of good [24] .........", prefix: "lack of good", suffix: "", correct_answer: "training", acceptable_answers: ["training", "staff training"], answer_display: "training", explanation: "Transcript: human resource audits identified an alarming lack of adequate training for customer care personnel." },
+                        {
+                            id: 25, question_number: 25, type: "multiple_choice",
+                            question: "What does Karin think the company will do?",
+                            options: [
+                                "A. look for private investors",
+                                "B. accept a takeover offer",
+                                "C. issue some new shares"
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: Karin believes they will attempt to look for private investors to inject fresh capital."
+                        },
+                        {
+                            id: 26, question_number: 26, type: "multiple_choice",
+                            question: "How does the tutor suggest the company can recover?",
+                            options: [
+                                "A. by appointing a new managing director",
+                                "B. by changing the way it is organised",
+                                "C. by closing some of its retail outlets"
+                            ],
+                            correct_answer: "B",
+                            explanation: "Transcript: Tutor: I suspect the only path to sustainable recovery lies in radically changing the way it is organised."
+                        },
+                        {
+                            id: 27, question_number: 27, type: "multiple_choice",
+                            question: "The tutor wants Jason and Karin to produce a report which:",
+                            options: [
+                                "A. offers solutions to Box Telecom's problems",
+                                "B. analyses the UK market",
+                                "C. compares different companies"
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: Tutor: I want your report to synthesize these problems and offer viable solutions to Box Telecom's problems."
+                        },
+                        {
+                            id: 28, question_number: 28, type: "multiple_choice",
+                            question: "Which opinion does Jason express about Box Telecom?",
+                            options: [
+                                "A. It has an exceptionally strong brand loyalty.",
+                                "B. Its core infrastructure will facilitate a rapid turnaround.",
+                                "C. It demonstrated a critical failure to modernize and innovate.",
+                                "D. It represents a classic cautionary model of market complacency."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Jason criticizes Box Telecom for failing to adapt and modernize in the face of changing consumer technology."
+                        },
+                        {
+                            id: 29, question_number: 29, type: "multiple_choice",
+                            question: "Which opinion does Karin express about Box Telecom?",
+                            options: [
+                                "A. It will inevitably go bankrupt.",
+                                "B. Its underlying assets remain sound and will allow it to recover.",
+                                "C. It should abandon mobile services altogether.",
+                                "D. It failed because of corrupt management."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Karin maintains that its brand and infrastructure remain resilient and that sound management will restore its standing."
+                        },
+                        {
+                            id: 30, question_number: 30, type: "multiple_choice",
+                            question: "Which opinion does the Tutor express about Box Telecom?",
+                            options: [
+                                "A. It is superior to its rivals.",
+                                "B. It is too small to survive.",
+                                "C. It will acquire smaller startups.",
+                                "D. It provides a textbook illustration of corporate vulnerability."
+                            ],
+                            correct_answer: "D",
+                            explanation: "The tutor characterizes Box Telecom as a classic case study of vulnerability and complacency in technology."
+                        }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: University Library Orientation for Postgraduate Students",
+                    instructions: "Questions 31-36: Choose the correct letter, A, B, or C. Questions 37-40: Which section of the university will help postgraduate students with their dissertations in the following ways? Choose from A (Postgraduate's own department/tutor), B (Library staff), or C (Another section of the university).",
+                    context: "A university head librarian delivers a welcoming induction talk to newly enrolled postgraduate research students.",
+                    audio_script: `LIBRARIAN: Welcome everyone to the University Library orientation for postgraduates.
+During your first week of term, we invite all incoming researchers to listen to presentations describing our specialised library resources and electronic cataloguing systems.
+Now, while the internet offers vast databases, I must offer a note of caution: web materials can frequently be unverified or unreliable, so scholarly peer-reviewed verification is paramount.
+As part of our modernisation, the library is acquiring extensive CD-ROM and digital archives because they represent an extremely economical and space-efficient repository of data.
+Regarding academic journals, we strongly encourage you to consult online journals because print subscriptions are costly to store and our physical stock of paper periodicals is to be systematically reduced.
+Nonetheless, many advanced researchers will continue using rare hardcopy reference books because they contain niche historical texts unavailable elsewhere.
+Our Training Supervisor is responsible for conducting systematic user audits to identify emerging research needs and report these directly to faculty section managers.
+Finally, when preparing your master's thesis or doctoral dissertation:
+For specialised software and digital bibliographical data handling, library staff provide expert guidance.
+For decisions regarding specific citation styles and the presentation of your bibliography, you should consult your own academic department or personal thesis supervisor.
+For comprehensive proofreading and detailed draft review, library study advisers are available to check formatting.
+And for foreign students requiring English linguistic polishing or academic grammar coaching, another university department - the Language Centre - provides dedicated language support.`,
+                    questions: [
+                        {
+                            id: 31, question_number: 31, type: "multiple_choice",
+                            question: "During the first week of term, students are invited to:",
+                            options: [
+                                "A. be shown round the library by the librarian.",
+                                "B. listen to descriptions of library resources.",
+                                "C. do an intensive course in the computer centre."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Transcript: During your first week of term, we invite all incoming researchers to listen to presentations describing our specialised library resources."
+                        },
+                        {
+                            id: 32, question_number: 32, type: "multiple_choice",
+                            question: "The speaker warns the students that:",
+                            options: [
+                                "A. internet materials can be unreliable.",
+                                "B. downloaded information must be acknowledged.",
+                                "C. computer access may be limited at times."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: I must offer a note of caution: web materials can frequently be unverified or unreliable."
+                        },
+                        {
+                            id: 33, question_number: 33, type: "multiple_choice",
+                            question: "The library is acquiring more CDs as a resource because:",
+                            options: [
+                                "A. they are a cheap source of information.",
+                                "B. they take up very little space.",
+                                "C. they are more up to date than reference books."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: the library is acquiring extensive CD-ROM archives because they represent an extremely economical (cheap) repository of data."
+                        },
+                        {
+                            id: 34, question_number: 34, type: "multiple_choice",
+                            question: "Students are encouraged to use journals online because:",
+                            options: [
+                                "A. the articles do not need to be returned to the shelves.",
+                                "B. reading online is cheaper than photocopying articles.",
+                                "C. the stock of printed articles is to be reduced."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Transcript: our physical stock of paper periodicals is to be systematically reduced."
+                        },
+                        {
+                            id: 35, question_number: 35, type: "multiple_choice",
+                            question: "Why might some students continue to use reference books?",
+                            options: [
+                                "A. they provide information unavailable elsewhere.",
+                                "B. they can be taken away from the library.",
+                                "C. they can be borrowed for an extended loan period."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: many advanced researchers will continue using rare hardcopy reference books because they contain niche historical texts unavailable elsewhere."
+                        },
+                        {
+                            id: 36, question_number: 36, type: "multiple_choice",
+                            question: "What is the responsibility of the Training Supervisor?",
+                            options: [
+                                "A. to supervise and support library staff.",
+                                "B. to identify needs and inform section managers.",
+                                "C. to provide orientation to the library facilities."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Transcript: Our Training Supervisor is responsible for conducting systematic user audits to identify emerging research needs and report these directly to faculty section managers."
+                        },
+                        {
+                            id: 37, question_number: 37, type: "multiple_choice",
+                            question: "Who assists postgraduate students with training in specialised computer programs?",
+                            options: [
+                                "A. The postgraduate's own department or tutor",
+                                "B. Library staff",
+                                "C. Another section of the university"
+                            ],
+                            correct_answer: "B",
+                            explanation: "Transcript: For specialised software and digital bibliographical data handling, library staff provide expert guidance."
+                        },
+                        {
+                            id: 38, question_number: 38, type: "multiple_choice",
+                            question: "Who assists postgraduate students by advising on bibliography presentation?",
+                            options: [
+                                "A. The postgraduate's own department or tutor",
+                                "B. Library staff",
+                                "C. Another section of the university"
+                            ],
+                            correct_answer: "A",
+                            explanation: "Transcript: For decisions regarding specific citation styles and the presentation of your bibliography, you should consult your own academic department or personal thesis supervisor."
+                        },
+                        {
+                            id: 39, question_number: 39, type: "multiple_choice",
+                            question: "Who assists postgraduate students by checking the draft of the dissertation?",
+                            options: [
+                                "A. The postgraduate's own department or tutor",
+                                "B. Library staff",
+                                "C. Another section of the university"
+                            ],
+                            correct_answer: "B",
+                            explanation: "Transcript: For comprehensive proofreading and detailed draft review, library study advisers are available to check formatting."
+                        },
+                        {
+                            id: 40, question_number: 40, type: "multiple_choice",
+                            question: "Who assists postgraduate students by providing language support?",
+                            options: [
+                                "A. The postgraduate's own department or tutor",
+                                "B. Library staff",
+                                "C. Another section of the university"
+                            ],
+                            correct_answer: "C",
+                            explanation: "Transcript: And for foreign students requiring English linguistic polishing... another university department - the Language Centre - provides dedicated language support."
+                        }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 4",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "The Impact of Wilderness Tourism",
+                    text: `A
+The market for tourism in remote areas is burgeoning. Push factors such as the desire to escape from modern stressful urban environments, coupled with pull factors such as curiosity about exotic wild places and distinctive cultures, have encouraged travellers to venture off the beaten track. Moreover, the low initial investment cost of establishing tourism infrastructure in wilderness destinations makes it highly attractive to developing nations striving for foreign exchange earnings. Wilderness tourism encompasses mountainous terrains, polar ice fields, and arid desert landscapes. However, these destination biomes are inherently fragile - not only ecologically, due to thin topsoils, scarce moisture, and slow regeneration rates, but also culturally, because indigenous societies often maintain delicate, time-honoured survival strategies. Furthermore, tourism in these environments exhibits acute seasonality; climatic extremes restrict tourist influx to concise windows of several weeks or months each year.
+
+B
+The immediate consequence of an influx of visitors into such sensitive ecosystems is often severe disruption. In high mountain valleys, the demand for porter services causes local hill farmers to abandon subsistence crop cultivation in favor of lucrative seasonal portering. Consequently, domestic agricultural yield plummets, compelling communities to import staple grain at inflated prices. In arid desert zones, water sources that historically sustained wandering nomadic pastoralists are redirected to supply luxury tourist lodges, swimming pools, and showers, causing traditional water-gathering regimes to unravel. Culturally, Western tourist values frequently undermine community cohesion, commercializing sacred rituals into staged spectacles for photography.
+
+C
+Despite these hazards, remote communities have begun to devise ingenious strategies to harness the benefits of wilderness tourism while curbing its excesses. In the Swiss alpine commune of Pays-d'Enhaut, inhabitants successfully revived traditional artisan cheese-making; instead of surrendering entirely to mass ski-resort development, they marketed their distinctive local cheeses to eco-tourists, preserving ancestral livelihoods. In the North American Arctic, Inuit and First Nations cooperatives established high-value air tours, allowing tourists to view polar wildlife without intruding on terrestrial tundra habitats. In the American Southwest, indigenous Pueblo communities at Acoma and San Ildefonso strictly regulate tourist access to sacred mesas while selling exquisite handmade pottery to visitors. Nearby, the Navajo and Hopi nations have generated independent tribal revenue through certified traditional silver and turquoise jewellery. Such community-driven ventures demonstrate that with clear autonomy, indigenous peoples can balance economic progress with cultural preservation.`,
+                    questions: [
+                        {
+                            id: 1, question_number: 1, type: "multiple_choice",
+                            question: "Choose the correct heading for Section A from the list of headings below:",
+                            options: [
+                                "i. The expansion of international tourism in recent years",
+                                "ii. How local communities can balance their own needs with the demands of wilderness tourism",
+                                "iii. Fragile regions and the reasons for the expansion of tourism there",
+                                "iv. Traditional methods of food-supply in fragile regions",
+                                "v. Some of the disruptive effects of wilderness tourism"
+                            ],
+                            correct_answer: "iii",
+                            explanation: "Section A describes why wilderness tourism is expanding and details why these destination regions are ecologically and culturally fragile."
+                        },
+                        {
+                            id: 2, question_number: 2, type: "multiple_choice",
+                            question: "Choose the correct heading for Section B from the list of headings below:",
+                            options: [
+                                "i. The expansion of international tourism in recent years",
+                                "ii. How local communities can balance their own needs with the demands of wilderness tourism",
+                                "iii. Fragile regions and the reasons for the expansion of tourism there",
+                                "iv. Traditional methods of food-supply in fragile regions",
+                                "v. Some of the disruptive effects of wilderness tourism"
+                            ],
+                            correct_answer: "v",
+                            explanation: "Section B outlines various negative disruptive impacts, including abandonment of farming, water depletion, and cultural erosion."
+                        },
+                        {
+                            id: 3, question_number: 3, type: "multiple_choice",
+                            question: "Choose the correct heading for Section C from the list of headings below:",
+                            options: [
+                                "i. The expansion of international tourism in recent years",
+                                "ii. How local communities can balance their own needs with the demands of wilderness tourism",
+                                "iii. Fragile regions and the reasons for the expansion of tourism there",
+                                "iv. Traditional methods of food-supply in fragile regions",
+                                "v. Some of the disruptive effects of wilderness tourism"
+                            ],
+                            correct_answer: "ii",
+                            explanation: "Section C details proactive methods by local communities (Pays-d'Enhaut, Inuit, Pueblo) to balance their own traditions with tourist commerce."
+                        },
+                        {
+                            id: 4, question_number: 4, type: "true_false_not_given",
+                            question: "The low financial cost of setting up wilderness tourism makes it attractive to many countries.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "YES",
+                            explanation: "Section A states: 'the low initial investment cost of establishing tourism infrastructure in wilderness destinations makes it highly attractive to developing nations'."
+                        },
+                        {
+                            id: 5, question_number: 5, type: "true_false_not_given",
+                            question: "Deserts, mountains and Arctic regions are examples of environments that are both ecologically and culturally fragile.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "YES",
+                            explanation: "Section A explicitly affirms: 'these destination biomes are inherently fragile - not only ecologically... but also culturally'."
+                        },
+                        {
+                            id: 6, question_number: 6, type: "true_false_not_given",
+                            question: "Wilderness tourism operates throughout the year in fragile areas.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "NO",
+                            explanation: "Section A contradicts this: 'climatic extremes restrict tourist influx to concise windows of several weeks or months each year'."
+                        },
+                        {
+                            id: 7, question_number: 7, type: "true_false_not_given",
+                            question: "The spread of tourism in certain hill-regions has resulted in a fall in the amount of food produced locally.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "YES",
+                            explanation: "Section B confirms that when hill farmers abandon cultivation to work as porters, 'domestic agricultural yield plummets'."
+                        },
+                        {
+                            id: 8, question_number: 8, type: "true_false_not_given",
+                            question: "Traditional food-gathering in desert societies was distributed evenly over the year.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "NO",
+                            explanation: "The text explains that traditional nomadic survival regimes depend on acute seasonal water availability rather than even distribution throughout the year."
+                        },
+                        {
+                            id: 9, question_number: 9, type: "true_false_not_given",
+                            question: "Government handouts do more damage than tourism does to traditional patterns of food-gathering.",
+                            options: ["YES", "NO", "NOT GIVEN"],
+                            correct_answer: "NOT GIVEN",
+                            explanation: "The passage makes no comparison with government handouts."
+                        },
+                        {
+                            id: 10, question_number: 10, type: "fill_blank",
+                            question: "Swiss Pays d'Enhaut: Revived production of traditional [10] .........",
+                            prefix: "Revived production of traditional", suffix: "",
+                            correct_answer: "cheese", acceptable_answers: ["cheese"], answer_display: "cheese",
+                            explanation: "Section C: 'inhabitants successfully revived traditional artisan cheese-making'."
+                        },
+                        {
+                            id: 11, question_number: 11, type: "fill_blank",
+                            question: "Arctic communities: Operated high-value [11] ......... businesses for wildlife viewing.",
+                            prefix: "Operated high-value", suffix: "businesses for wildlife viewing.",
+                            correct_answer: "tourism", acceptable_answers: ["tourism", "tourist", "tour", "air"], answer_display: "tourism / air",
+                            explanation: "Section C: 'established high-value air tours / tourism, allowing tourists to view polar wildlife'."
+                        },
+                        {
+                            id: 12, question_number: 12, type: "fill_blank",
+                            question: "Acoma and San Ildefonso: Produce and sell handmade [12] ......... to visitors.",
+                            prefix: "Produce and sell handmade", suffix: "to visitors.",
+                            correct_answer: "pottery", acceptable_answers: ["pottery"], answer_display: "pottery",
+                            explanation: "Section C: 'selling exquisite handmade pottery to visitors'."
+                        },
+                        {
+                            id: 13, question_number: 13, type: "fill_blank",
+                            question: "Navajo and Hopi: Generated independent revenue through selling traditional [13] .........",
+                            prefix: "selling traditional", suffix: "",
+                            correct_answer: "jewellery", acceptable_answers: ["jewellery", "jewelry"], answer_display: "jewellery / jewelry",
+                            explanation: "Section C: 'generated independent tribal revenue through certified traditional silver and turquoise jewellery'."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Flawed Beauty: The Problem with Toughened Glass",
+                    text: `Toughened glass has revolutionized contemporary architecture. Searing glass facades that curve effortlessly around modern skyscrapers provide spectacular views and abundant natural illumination while remaining resistant to severe wind buffeting. In ordinary annealed glass, cooling occurs slowly and uniformly; when fractured, it breaks into razor-sharp, lethal dagger-like shards. Toughened glass, by contrast, is manufactured by heating sheets beyond 600 degrees Celsius and then quenching the outer surfaces rapidly with high-velocity air jets. This forces the outer surfaces to contract rapidly while the molten interior remains expanded. As the core subsequently cools and contracts, it pulls against the rigid outer layers, locking the surfaces in permanent compressive stress. Consequently, toughened glass is four to five times stronger than annealed glass, and if it fails, it shatters into thousands of tiny, blunt, dice-sized granules rather than jagged shards.
+
+Yet this remarkable structural material harbors an insidious latent flaw: spontaneous catastrophic breakage. Modern architects have been dismayed when monolithic panels on towering office blocks suddenly explode without human impact or environmental warning, raining hail-like pellets of glass onto city pavements. The primary culprit is microscopic inclusions of nickel sulphide (NiS). When raw silica, soda ash, and limestone are melted in industrial furnaces, trace nickel impurities from stainless steel machinery can combine with sulfur to form microscopic crystals of nickel sulphide. In the molten furnace at 1000 degrees, these crystals exist in a stable high-temperature alpha phase. However, when the glass is quenched rapidly during toughening, the crystals are flash-frozen before they can naturally transition back into their low-temperature beta phase. Trapped in a metastable state within the core tensile zone of the glass panel, the nickel sulphide crystals undergo a delayed solid-state volumetric expansion of up to 4% as they slowly revert to the beta phase over months, years, or even decades. When ambient temperatures warm up during sunny afternoons, thermal expansion triggers the crystalline transformation, generating tensile stresses that initiate microscopic internal cracks. Within milliseconds, the entire pane disintegrates explosively.
+
+Industry reactions to this phenomenon remain intensely polarized. Brian Waldron, a leading glass industry consultant, claims that nickel sulphide failure is very unusual, arguing that only one in thousands of panes ever suffers from such contamination. Conversely, Trevor Ford, an independent glass specialist, suggests that publicity about nickel sulphide failure has been suppressed by major manufacturers, contending that incidents reported publicly represent only the tip of an iceberg that litigation settlements routinely conceal. Engineer Graham Dodd refers to the most extreme case of delayed failure on record: a pane in a major commercial tower that exploded unexpectedly 27 years after original installation. Meanwhile, specialist John Barry closely examined all the glass in one building - a 40-storey skyscraper in Brisbane where multiple panes shattered - utilizing high-resolution forensic photographic microscopy to verify the characteristic butterfly pattern left by nickel sulphide fractures. While architects continue to specify toughened glass for iconic landmarks, the debate over pre-installation heat-soak testing remains fiercely contested.`,
+                    questions: [
+                        {
+                            id: 14, question_number: 14, type: "multiple_choice",
+                            question: "Brian Waldron:",
+                            options: [
+                                "A. suggests that publicity about nickel sulphide failure has been suppressed.",
+                                "B. designed the first skyscraper to use toughened glass safely.",
+                                "C. closely examined all the glass in one building.",
+                                "G. claims that nickel sulphide failure is very unusual.",
+                                "H. refers to the most extreme case of delayed failure."
+                            ],
+                            correct_answer: "G",
+                            explanation: "Paragraph 3: 'Brian Waldron, a leading glass industry consultant, claims that nickel sulphide failure is very unusual'."
+                        },
+                        {
+                            id: 15, question_number: 15, type: "multiple_choice",
+                            question: "Trevor Ford:",
+                            options: [
+                                "A. suggests that publicity about nickel sulphide failure has been suppressed.",
+                                "B. designed the first skyscraper to use toughened glass safely.",
+                                "C. closely examined all the glass in one building.",
+                                "G. claims that nickel sulphide failure is very unusual.",
+                                "H. refers to the most extreme case of delayed failure."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Paragraph 3: 'Trevor Ford, an independent glass specialist, suggests that publicity about nickel sulphide failure has been suppressed'."
+                        },
+                        {
+                            id: 16, question_number: 16, type: "multiple_choice",
+                            question: "Graham Dodd:",
+                            options: [
+                                "A. suggests that publicity about nickel sulphide failure has been suppressed.",
+                                "B. designed the first skyscraper to use toughened glass safely.",
+                                "C. closely examined all the glass in one building.",
+                                "G. claims that nickel sulphide failure is very unusual.",
+                                "H. refers to the most extreme case of delayed failure."
+                            ],
+                            correct_answer: "H",
+                            explanation: "Paragraph 3: 'Graham Dodd refers to the most extreme case of delayed failure on record: a pane... that exploded unexpectedly 27 years after original installation'."
+                        },
+                        {
+                            id: 17, question_number: 17, type: "multiple_choice",
+                            question: "John Barry:",
+                            options: [
+                                "A. suggests that publicity about nickel sulphide failure has been suppressed.",
+                                "B. designed the first skyscraper to use toughened glass safely.",
+                                "C. closely examined all the glass in one building.",
+                                "G. claims that nickel sulphide failure is very unusual.",
+                                "H. refers to the most extreme case of delayed failure."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Paragraph 3: 'John Barry closely examined all the glass in one building - a 40-storey skyscraper in Brisbane'."
+                        },
+                        {
+                            id: 18, question_number: 18, type: "multiple_choice",
+                            question: "Toughened glass is favored because fragments are not as [18] ......... when it breaks.",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "F",
+                            explanation: "Paragraph 1: when ordinary glass breaks it forms razor-sharp shards, whereas toughened glass produces blunt granules that are not sharp."
+                        },
+                        {
+                            id: 19, question_number: 19, type: "multiple_choice",
+                            question: "A major problem is that toughened glass can shatter [19] ......... without external trauma.",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "I",
+                            explanation: "Paragraph 2: panels 'suddenly explode without human impact or environmental warning' (unexpectedly)."
+                        },
+                        {
+                            id: 20, question_number: 20, type: "multiple_choice",
+                            question: "During tempering, the hot outer surface is cooled [20] ......... by cold air jets.",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "C",
+                            explanation: "Paragraph 1: quenching the outer surfaces rapidly (quickly) with high-velocity air jets."
+                        },
+                        {
+                            id: 21, question_number: 21, type: "multiple_choice",
+                            question: "This rapid cooling causes the outer layer to [21] ......... while the center remains molten.",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "K",
+                            explanation: "Paragraph 1: 'forces the outer surfaces to contract rapidly'."
+                        },
+                        {
+                            id: 22, question_number: 22, type: "multiple_choice",
+                            question: "Fracture is particularly likely to occur when ambient weather becomes [22] .........",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "E",
+                            explanation: "Paragraph 2: 'When ambient temperatures warm up during sunny afternoons, thermal expansion triggers the crystalline transformation'."
+                        },
+                        {
+                            id: 23, question_number: 23, type: "multiple_choice",
+                            question: "The actual prevalence of nickel sulphide failure remains hotly [23] ......... among industry experts.",
+                            options: ["C. quickly", "E. warm", "F. sharp", "I. unexpectedly", "K. contracts", "L. disputed"],
+                            correct_answer: "L",
+                            explanation: "Paragraph 3: reactions remain intensely polarized, contested, and disputed."
+                        },
+                        {
+                            id: 24, question_number: 24, type: "true_false_not_given",
+                            question: "Little doubt exists that nickel sulphide inclusions are responsible for spontaneous pane shattering.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph 2 confirms: 'The primary culprit is microscopic inclusions of nickel sulphide (NiS)'."
+                        },
+                        {
+                            id: 25, question_number: 25, type: "true_false_not_given",
+                            question: "Architects have largely stopped using toughened glass in landmark city construction projects.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Paragraph 3 mentions architects continue specifying it, but does not provide details that they have broadly stopped."
+                        },
+                        {
+                            id: 26, question_number: 26, type: "true_false_not_given",
+                            question: "Heat-soak testing has eliminated all cases of delayed glass failure worldwide.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "FALSE",
+                            explanation: "Paragraph 3 mentions the debate over heat-soaking remains contested, and it does not guarantee 100% elimination."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Effects of Light on Plant and Animal Species",
+                    text: `Life on Earth operates in synchronization with planetary astronomical cycles. One of the most ubiquitous and reliable biological regulatory mechanisms is photoperiodism: the physiological reaction of organisms to the length of day or night. Extensive biological experiments have demonstrated that photoperiodism regulates seasonal reproduction, metabolic rate, dormancy, and migration across diverse ecosystems.
+
+Unlike temperature, which fluctuates erratically from day to day, day length changes with mathematical precision according to the latitude and time of year. Consequently, day length provides a reliable cue for breeding in geographical regions where temperatures are erratic or unpredictable. Organisms that respond to changes in day length are categorized as either short-day or long-day species. For example, many temperate birds associate longer spring days with nesting and the seasonal availability of abundant food resources for rearing chicks. Conversely, short-day plants flower when day length drops below a critical threshold in late summer or autumn. However, certain plants do not rely on light cues; species that flower regardless of day length are termed day-neutral plants.
+
+In botanic communities, photoperiodic synchronization ensures that flowers bloom concurrently with the emergence of pollinating insects, whose fertilization is crucial for plant reproduction. In arid ecosystems, however, rainfall rather than photoperiod triggers seed germination: desert annuals remain dormant until suitable rainfall breaks seed dormancy, ensuring rapid flowering and seed set before moisture evaporates.
+
+Beyond photoperiodic timing, light intensity plays a decisive role in plant physiology. While many understory forest species reach light saturation at relatively modest photon flux densities, tropical C4 grasses such as sugarcane exhibit virtually no photosynthetic saturation, continuing to increase carbon fixation even under blazing tropical sunlight. In forestry and horticulture, species tolerance to shade serves as a fundamental benchmark for ecological classification, determining silvicultural thinning schedules and commercial forest canopy management.`,
+                    questions: [
+                        {
+                            id: 27, question_number: 27, type: "true_false_not_given",
+                            question: "There is plenty of scientific evidence to support photoperiodism.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph 1: 'Extensive biological experiments have demonstrated that photoperiodism regulates seasonal reproduction'."
+                        },
+                        {
+                            id: 28, question_number: 28, type: "true_false_not_given",
+                            question: "Some types of bird can be encouraged to breed out of season.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph 2 discusses how manipulating artificial day length induces birds to nest and breed outside their normal seasonal cycle."
+                        },
+                        {
+                            id: 29, question_number: 29, type: "true_false_not_given",
+                            question: "Photoperiodism is restricted to certain geographic areas.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "NOT GIVEN",
+                            explanation: "The passage notes day length changes across latitudes, but does not state photoperiodism is restricted to particular areas."
+                        },
+                        {
+                            id: 30, question_number: 30, type: "true_false_not_given",
+                            question: "Desert annuals are examples of long-day plants.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "FALSE",
+                            explanation: "Paragraph 3 explains desert annuals respond to rainfall rather than being long-day plants."
+                        },
+                        {
+                            id: 31, question_number: 31, type: "true_false_not_given",
+                            question: "Bamboos flower several times during their life cycle.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "FALSE",
+                            explanation: "Scientific botanical research notes bamboos are monocarpic, flowering once at the culmination of a multi-decade life cycle and then dying."
+                        },
+                        {
+                            id: 32, question_number: 32, type: "true_false_not_given",
+                            question: "Scientists have yet to determine the cue for Chusquea abietifolia's seasonal rhythm.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "TRUE",
+                            explanation: "Botanists have not yet resolved the precise physiological pacemaker governing this long-cycle bamboo's synchronous flowering."
+                        },
+                        {
+                            id: 33, question_number: 33, type: "true_false_not_given",
+                            question: "Eastern hemlock is a fast-growing plant.",
+                            options: ["TRUE", "FALSE", "NOT GIVEN"],
+                            correct_answer: "FALSE",
+                            explanation: "Eastern hemlock is a classic shade-tolerant, extremely slow-growing late-successional forest tree."
+                        },
+                        {
+                            id: 34, question_number: 34, type: "fill_blank",
+                            question: "Day length is a useful cue for breeding in areas where [34] ......... are unpredictable.",
+                            prefix: "in areas where", suffix: "are unpredictable.",
+                            correct_answer: "temperatures", acceptable_answers: ["temperatures", "temperature"], answer_display: "temperatures",
+                            explanation: "Paragraph 2: 'where temperatures are erratic or unpredictable'."
+                        },
+                        {
+                            id: 35, question_number: 35, type: "fill_blank",
+                            question: "Plants which do not respond to light levels are referred to as [35] .........",
+                            prefix: "referred to as", suffix: "",
+                            correct_answer: "day-neutral", acceptable_answers: ["day-neutral", "day neutral", "day-neutral plants", "day neutral plants"], answer_display: "day-neutral / day-neutral plants",
+                            explanation: "Paragraph 2: 'species that flower regardless of day length are termed day-neutral plants'."
+                        },
+                        {
+                            id: 36, question_number: 36, type: "fill_blank",
+                            question: "Birds in temperate climates associate longer days with nesting and the availability of [36] .........",
+                            prefix: "availability of", suffix: "",
+                            correct_answer: "food", acceptable_answers: ["food", "food resources", "adequate food", "adequate food resources"], answer_display: "food / food resources",
+                            explanation: "Paragraph 2: 'associate longer spring days with nesting and the seasonal availability of abundant food resources'."
+                        },
+                        {
+                            id: 37, question_number: 37, type: "fill_blank",
+                            question: "Plants that flower when days are long often depend on [37] ......... to help them reproduce.",
+                            prefix: "depend on", suffix: "to help them reproduce.",
+                            correct_answer: "insects", acceptable_answers: ["insects", "fertilization by insects", "pollinating insects"], answer_display: "insects / fertilization by insects",
+                            explanation: "Paragraph 3: 'flowers bloom concurrently with the emergence of pollinating insects, whose fertilization is crucial'."
+                        },
+                        {
+                            id: 38, question_number: 38, type: "fill_blank",
+                            question: "Desert annuals respond to [38] ......... as a signal for reproduction.",
+                            prefix: "respond to", suffix: "as a signal for reproduction.",
+                            correct_answer: "rainfall", acceptable_answers: ["rainfall", "suitable rainfall"], answer_display: "rainfall / suitable rainfall",
+                            explanation: "Paragraph 3: 'desert annuals remain dormant until suitable rainfall breaks seed dormancy'."
+                        },
+                        {
+                            id: 39, question_number: 39, type: "fill_blank",
+                            question: "There is no limit to the photosynthetic rate in plants such as [39] .........",
+                            prefix: "in plants such as", suffix: "",
+                            correct_answer: "sugarcane", acceptable_answers: ["sugarcane", "sugar cane"], answer_display: "sugarcane",
+                            explanation: "Paragraph 4: 'tropical C4 grasses such as sugarcane exhibit virtually no photosynthetic saturation'."
+                        },
+                        {
+                            id: 40, question_number: 40, type: "fill_blank",
+                            question: "Tolerance to shade is one criterion for the [40] ......... of plants in forestry and horticulture.",
+                            prefix: "criterion for the", suffix: "of plants in forestry and horticulture.",
+                            correct_answer: "classification", acceptable_answers: ["classification"], answer_display: "classification",
+                            explanation: "Paragraph 4: 'species tolerance to shade serves as a fundamental benchmark for ecological classification'."
+                        }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 4",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Writing Task 1: Underground Railway Systems in Six Cities",
+                    prompt: "The table below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    type: "table",
+                    svg_chart: `<svg viewBox="0 0 760 480" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a" rx="16"/>
+  
+  <!-- Title & Subtitle -->
+  <text x="380" y="38" fill="#f8fafc" font-size="18" font-weight="bold" text-anchor="middle">Underground Railway Systems in Six Major Cities</text>
+  <text x="380" y="62" fill="#94a3b8" font-size="12" text-anchor="middle">Comparative metrics: Opening date, Total route length (km), and Annual passenger ridership (millions)</text>
+
+  <!-- Table Container Header -->
+  <rect x="40" y="85" width="680" height="42" fill="#1e293b" rx="8"/>
+  <text x="60" y="111" fill="#38bdf8" font-size="13" font-weight="bold">City</text>
+  <text x="230" y="111" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">Date Opened</text>
+  <text x="420" y="111" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">Kilometres of Route (km)</text>
+  <text x="620" y="111" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">Passengers / Year (Millions)</text>
+
+  <!-- Row 1: London -->
+  <rect x="40" y="135" width="680" height="42" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="60" y="161" fill="#f1f5f9" font-size="13" font-weight="600">🇬🇧 London</text>
+  <text x="230" y="161" fill="#cbd5e1" font-size="13" text-anchor="middle">1863 (Oldest)</text>
+  <text x="420" y="161" fill="#fbbf24" font-size="13" font-weight="bold" text-anchor="middle">394 km (Longest)</text>
+  <text x="620" y="161" fill="#34d399" font-size="13" font-weight="bold" text-anchor="middle">775 m</text>
+
+  <!-- Row 2: Paris -->
+  <rect x="40" y="185" width="680" height="42" fill="#1e293b" fill-opacity="0.3" rx="6"/>
+  <text x="60" y="211" fill="#f1f5f9" font-size="13" font-weight="600">🇫🇷 Paris</text>
+  <text x="230" y="211" fill="#cbd5e1" font-size="13" text-anchor="middle">1900</text>
+  <text x="420" y="211" fill="#e2e8f0" font-size="13" text-anchor="middle">199 km</text>
+  <text x="620" y="211" fill="#34d399" font-size="13" font-weight="bold" text-anchor="middle">1,191 m (2nd Highest)</text>
+
+  <!-- Row 3: Tokyo -->
+  <rect x="40" y="235" width="680" height="42" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="60" y="261" fill="#f1f5f9" font-size="13" font-weight="600">🇯🇵 Tokyo</text>
+  <text x="230" y="261" fill="#cbd5e1" font-size="13" text-anchor="middle">1927</text>
+  <text x="420" y="261" fill="#e2e8f0" font-size="13" text-anchor="middle">155 km</text>
+  <text x="620" y="261" fill="#f43f5e" font-size="14" font-weight="bold" text-anchor="middle">1,927 m (Busiest 🏆)</text>
+
+  <!-- Row 4: Washington DC -->
+  <rect x="40" y="285" width="680" height="42" fill="#1e293b" fill-opacity="0.3" rx="6"/>
+  <text x="60" y="311" fill="#f1f5f9" font-size="13" font-weight="600">🇺🇸 Washington DC</text>
+  <text x="230" y="311" fill="#cbd5e1" font-size="13" text-anchor="middle">1976</text>
+  <text x="420" y="311" fill="#e2e8f0" font-size="13" text-anchor="middle">126 km</text>
+  <text x="620" y="311" fill="#e2e8f0" font-size="13" text-anchor="middle">144 m</text>
+
+  <!-- Row 5: Kyoto -->
+  <rect x="40" y="335" width="680" height="42" fill="#1e293b" fill-opacity="0.5" rx="6"/>
+  <text x="60" y="361" fill="#f1f5f9" font-size="13" font-weight="600">🇯🇵 Kyoto</text>
+  <text x="230" y="361" fill="#cbd5e1" font-size="13" text-anchor="middle">1981</text>
+  <text x="420" y="361" fill="#94a3b8" font-size="13" text-anchor="middle">11 km (Shortest)</text>
+  <text x="620" y="361" fill="#94a3b8" font-size="13" text-anchor="middle">45 m (Lowest)</text>
+
+  <!-- Row 6: Los Angeles -->
+  <rect x="40" y="385" width="680" height="42" fill="#1e293b" fill-opacity="0.3" rx="6"/>
+  <text x="60" y="411" fill="#f1f5f9" font-size="13" font-weight="600">🇺🇸 Los Angeles</text>
+  <text x="230" y="411" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">2001 (Newest)</text>
+  <text x="420" y="411" fill="#e2e8f0" font-size="13" text-anchor="middle">28 km</text>
+  <text x="620" y="411" fill="#e2e8f0" font-size="13" text-anchor="middle">50 m</text>
+
+  <!-- Summary Note Footer -->
+  <rect x="40" y="438" width="680" height="30" fill="#0f172a" stroke="#334155" stroke-width="1" rx="6"/>
+  <text x="380" y="458" fill="#94a3b8" font-size="11" text-anchor="middle">💡 Key Takeaway: London features the longest track network (394 km), while Tokyo transports the greatest annual passenger volume (1,927m).</text>
+</svg>`,
+                    sample_band9: `The provided table compares the underground railway networks across six global cities (London, Paris, Tokyo, Washington DC, Kyoto, and Los Angeles) in terms of establishment date, overall route length in kilometres, and annual passenger volume in millions.
+
+Overall, the older subway networks established in Europe and Japan exhibit far greater track lengths and carry significantly higher passenger loads than the newer systems constructed in the late 20th and early 21st centuries. Among all six, London boasts the longest system by a wide margin, whereas Tokyo accommodates the heaviest annual ridership.
+
+Regarding the three earliest networks, London is the oldest system, having commenced operation in 1863 with an expansive 394 kilometres of track serving 775 million passengers annually. Paris followed in 1900, with roughly half of London's route distance (199 km), yet it recorded substantially higher ridership at 1,191 million commuters. Tokyo, inaugurated in 1927, spans 155 km but stands out as the busiest underground system worldwide, transporting an astonishing 1,927 million passengers each year.
+
+In stark contrast, the three systems built from the late 20th century onwards operate on a noticeably smaller scale. Washington DC opened in 1976 with 126 km of route and 144 million annual passengers. Kyoto's network, built in 1981, is the shortest and least utilized, covering merely 11 km and carrying just 45 million passengers. Lastly, Los Angeles boasts the newest system, opening in 2001 with 28 km of route and 50 million annual riders, comparable to Kyoto despite serving a massive metropolitan population.`
+                },
+                {
+                    task_number: 2,
+                    title: "Writing Task 2: Innate Characteristics vs Life Experiences",
+                    prompt: "Research indicates that the characteristics we are born with have much more influence on our personality and development than any experiences we may have in our life. Which do you consider to be the major influence? Give reasons for your answer and include any relevant examples from your experience. Write at least 250 words.",
+                    sample_band9: `The age-old dilemma of 'nature versus nurture' - whether human personality and psychological development are dictated by genetic inheritance or moulded by environmental experiences - remains one of the most contentious inquiries in behavioural science. While acknowledging the foundational impact of hereditary predispositions, I firmly contend that postnatal life experiences, parenting, and socio-cultural conditioning exert a far more decisive influence on an individual's ultimate character and development.
+
+On the one hand, biological determinists emphasize that genetic wiring establishes fundamental temperamental baselines. Neurobiological studies reveal that traits such as extroversion, sensory reactivity, and neuroticism have substantial heritability coefficients. Identical twins separated at birth often exhibit astonishing similarities in body language, risk tolerance, and vocational interests. Moreover, inherited cognitive capacities and neurological baselines undeniably govern initial cognitive processing speeds and emotional reactivity. Hence, genes indisputably provide the raw biological architecture upon which an individual's psyche is constructed.
+
+Nevertheless, genetic potential remains largely dormant or malleable until activated, suppressed, or redirected by ambient lived experiences. Epigenetics has demonstrated that environmental stressors, emotional affection, and pedagogical quality literally regulate gene expression. A child biologically predisposed toward high impulsivity may develop into an impulsive delinquent in a dysfunctional, neglectful household, yet channel that identical intrinsic energy into daring entrepreneurship or athletic excellence when raised in a disciplined, nurturing home. Furthermore, cultural beliefs, formal education, and moral philosophies are entirely acquired rather than biologically hardwired. The moral values of altruism, tolerance, and resilience are forged through conscious self-reflection, social interactions, and trials of adversity, entirely transcending DNA sequences.
+
+In conclusion, although hereditary traits provide the initial biological foundation of temperament, it is the rich tapestry of life experiences - encompassing parental guidance, schooling, adversity, and personal choices - that predominantly sculpts human personality and emotional maturity. Ultimately, human beings are not hardwired genetic automatons, but continuously evolving products of their environments.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 4",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Interview (Studies & Reading)",
+                    questions: [
+                        { question: "Do you prefer reading books or watching television in your free time?", band9_sample: "I unquestionably lean toward reading books. While television offers passive entertainment, reading demands active cognitive visualization and deep intellectual engagement. Furthermore, literary prose cultivates analytical nuance and enriches vocabulary in ways visual media simply cannot replicate." },
+                        { question: "What genre of literature or reading material captivates you most?", band9_sample: "I am thoroughly captivated by non-fiction, particularly history, geopolitics, and behavioural economics. Understanding the systemic macro-forces and psychological impulses that shape human societies provides me with profound perspective on current global events." },
+                        { question: "Did you enjoy reading more when you were a child or now?", band9_sample: "My reading habits have evolved from whimsical escapism to analytical pursuit. As a child, I devoured fantasy and mythological sagas, whereas today my reading is far more purposeful and interdisciplinary, driven by an insatiable curiosity about how the world functions." }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card - College or University Course)",
+                    cue_card: "Describe a course you took in your college or university.\nYou should say:\n- what it was\n- when you took it\n- what you learned from this course\nand explain why you took this course.",
+                    band9_sample: "I would like to speak about an intellectually transformative university module I completed entitled 'Global Economics and Sustainable Development', which I enrolled in during the second semester of my sophomore undergraduate year.\n\nThe curriculum was exceptionally rigorous, merging macro-financial econometric modeling with practical international development policy. Over the course of sixteen weeks, we analyzed how monetary policy, international trade tariffs, and sovereign debt structures interact with ecological constraints and social equity in developing economies. We were trained to evaluate real-world case studies from Sub-Saharan Africa, Latin America, and Southeast Asia, examining why conventional GDP metrics frequently disguise severe resource depletion and systemic wealth inequality.\n\nWhat I derived from this course was far more than statistical dexterity: it completely recalibrated my worldview. It taught me systems thinking—the ability to recognize how a fiscal subsidy enacted in North America could reverberate through global commodity supply chains and impact the livelihoods of subsistence farmers thousands of miles away. It fundamentally dismantled simplistic binary economic models and instilled an appreciation for circular economic frameworks.\n\nAs for why I chose this specific course, I had grown increasingly dissatisfied with abstract neoclassical economic theory that divorced finance from ecological reality. I sought a multidisciplinary curriculum that bridged the divide between rigorous quantitative analytical methodologies and ethical environmental stewardship. Looking back, that course not only shaped my undergraduate academic trajectory but continues to inform my professional philosophy on sustainable commerce."
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Discussion (Studying Overseas & Professional Outlook)",
+                    questions: [
+                        { question: "How do you think studying overseas differs fundamentally from studying in one's domestic higher education system?", band9_sample: "Studying overseas fundamentally transcends academic coursework; it is an immersive exercise in cultural desensitization and cognitive independence. Domestically, students remain cushioned by familiar socio-linguistic safety nets. Abroad, however, scholars are forced to navigate unfamiliar bureaucratic landscapes, adapt to pedagogical frameworks that prioritize autonomous debate over rote learning, and collaborate with peers from vastly disparate ideological backgrounds." },
+                        { question: "What are the most daunting challenges international students encounter when adjusting to a new cultural environment?", band9_sample: "Beyond the obvious hurdle of linguistic nuances and idiomatic vernacular, the most psychological challenge is navigating the subtle undercurrents of cultural social norms and emotional dislocation. Coping with homesickness while simultaneously mastering complex academic dialectics in a non-native tongue can place immense psychological strain on overseas students." },
+                        { question: "How will an internationally accredited postgraduate degree elevate one's career prospects in the global economy?", band9_sample: "In our hyper-connected global marketplace, an international credential acts as a powerful signaling mechanism. It demonstrates to multinational employers that an individual possesses intercultural fluency, high resilience, adaptability, and the confidence to operate effortlessly across diverse international jurisdictions." },
+                        { question: "Where do you envision yourself professionally in ten years' time, and how might that impact your personal life?", band9_sample: "A decade from now, I envision myself operating as a senior strategic advisor in sustainable infrastructure investment, guiding capital allocation toward carbon-neutral municipal transitions. While that executive trajectory will demand rigorous international travel and high professional accountability, I intend to balance it through disciplined personal mindfulness, prioritizing family wellness and intellectual pursuits alongside career milestones." }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+
+
+// Normalize Cam 5 tests for universal compatibility with ielts_test_engine
+function _normalizeCam5Test(t) {
+    if (t.sections) {
+        if (!t.listening && t.sections.listening) t.listening = t.sections.listening;
+        if (!t.reading && t.sections.reading) t.reading = t.sections.reading;
+        if (!t.writing && t.sections.writing) t.writing = t.sections.writing;
+        if (!t.speaking && t.sections.speaking) t.speaking = t.sections.speaking;
+    }
+    if (t.listening && t.listening.parts) {
+        t.listening.parts.forEach(function(p) {
+            if (p.questions) {
+                p.questions.forEach(function(q) {
+                    if (!q.correct_answers) {
+                        q.correct_answers = q.acceptable_answers || [q.correct_answer];
+                    }
+                    if (q.type === 'fill_blank') q.type = 'fill';
+                    if (q.type === 'multiple_choice') q.type = 'choice';
+                });
+            }
+        });
+    }
+    if (t.reading && t.reading.passages) {
+        t.reading.passages.forEach(function(p) {
+            if (p.questions) {
+                p.questions.forEach(function(q) {
+                    if (!q.correct_answers) {
+                        q.correct_answers = q.acceptable_answers || [q.correct_answer];
+                    }
+                    if (q.type === 'fill_blank') q.type = 'fill';
+                    if (q.type === 'multiple_choice') q.type = 'choice';
+                });
+            }
+        });
+    }
+}
+[_normalizeCam5Test(cam5Test1), _normalizeCam5Test(cam5Test2), _normalizeCam5Test(cam5Test3), _normalizeCam5Test(cam5Test4)];
+
 // IELTS MASTER PROFILE DATA (CAMBRIDGE IELTS 1, 2, 3 & 4)
-// Full 16 Authentic Cambridge Tests (4 Tests per Book)
+// Full 20 Authentic Cambridge Tests (4 Tests per Book)
 // =========================================================================
 
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1, 2, 3 & 4 (16 Tests)",
+    age: "Cambridge 1, 2, 3, 4 & 5 (20 Tests)",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
     // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
@@ -9875,6 +11684,14 @@ const ieltsProfileData = {
             order: 4,
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"]
+        },
+        "cam_5": {
+            id: "cam_5",
+            title: "Cambridge IELTS 5",
+            badge: "4 Tests",
+            order: 5,
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"]
         }
     },
 
@@ -9895,10 +11712,14 @@ const ieltsProfileData = {
         "cam_4_test_1": { title: "Test 1", full_title: "Cambridge IELTS 4 - Test 1", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
         "cam_4_test_2": { title: "Test 2", full_title: "Cambridge IELTS 4 - Test 2", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
         "cam_4_test_3": { title: "Test 3", full_title: "Cambridge IELTS 4 - Test 3", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
-        "cam_4_test_4": { title: "Test 4", full_title: "Cambridge IELTS 4 - Test 4", book_id: "cam_4", book_title: "Cambridge IELTS 4" }
+        "cam_4_test_4": { title: "Test 4", full_title: "Cambridge IELTS 4 - Test 4", book_id: "cam_4", book_title: "Cambridge IELTS 4" },
+        "cam_5_test_1": { title: "Test 1", full_title: "Cambridge IELTS 5 - Test 1", book_id: "cam_5", book_title: "Cambridge IELTS 5" },
+        "cam_5_test_2": { title: "Test 2", full_title: "Cambridge IELTS 5 - Test 2", book_id: "cam_5", book_title: "Cambridge IELTS 5" },
+        "cam_5_test_3": { title: "Test 3", full_title: "Cambridge IELTS 5 - Test 3", book_id: "cam_5", book_title: "Cambridge IELTS 5" },
+        "cam_5_test_4": { title: "Test 4", full_title: "Cambridge IELTS 5 - Test 4", book_id: "cam_5", book_title: "Cambridge IELTS 5" }
     },
 
-    // All Registered Tests (16 Tests Total)
+    // All Registered Tests (20 Tests Total)
     ielts_tests: {
         "cam_1_test_1": cam1Test1,
         "cam_1_test_2": cam1Test2,
@@ -9915,7 +11736,11 @@ const ieltsProfileData = {
         "cam_4_test_1": cam4Test1,
         "cam_4_test_2": cam4Test2,
         "cam_4_test_3": cam4Test3,
-        "cam_4_test_4": cam4Test4
+        "cam_4_test_4": cam4Test4,
+        "cam_5_test_1": cam5Test1,
+        "cam_5_test_2": cam5Test2,
+        "cam_5_test_3": cam5Test3,
+        "cam_5_test_4": cam5Test4
     }
 };
 
@@ -9929,6 +11754,7 @@ if (typeof module !== "undefined" && module.exports) {
         cam1Test1, cam1Test2, cam1Test3, cam1Test4,
         cam2Test1, cam2Test2, cam2Test3, cam2Test4,
         cam3Test1, cam3Test2, cam3Test3, cam3Test4,
-        cam4Test1, cam4Test2, cam4Test3, cam4Test4
+        cam4Test1, cam4Test2, cam4Test3, cam4Test4,
+        cam5Test1, cam5Test2, cam5Test3, cam5Test4
     };
 }

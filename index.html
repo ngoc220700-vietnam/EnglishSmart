@@ -1410,8 +1410,8 @@
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
     <script src="data.js?v=20261019_v1"></script>
-    <script src="ielts_data.js?v=20261105_cam4_16tests"></script>
-    <script src="ielts_test_engine.js?v=20261105_cam4_16tests"></script>
+    <script src="ielts_data.js?v=20261106_cam5_20tests"></script>
+    <script src="ielts_test_engine.js?v=20261106_cam5_20tests"></script>
     <script src="starters_data.js?v=20261022_v3"></script>
     <script src="starters_test_engine.js?v=20261022_v3"></script>
 
@@ -2205,7 +2205,8 @@
                 "cam_1": { id: "cam_1", title: "Cambridge IELTS 1", badge: "4 Tests", test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"] },
                 "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", badge: "4 Tests", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] },
                 "cam_3": { id: "cam_3", title: "Cambridge IELTS 3", badge: "4 Tests", test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"] },
-                "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", badge: "4 Tests", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] }
+                "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", badge: "4 Tests", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] },
+                "cam_5": { id: "cam_5", title: "Cambridge IELTS 5", badge: "4 Tests", test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"] }
             };
 
             const wrapper = document.createElement('div');
@@ -2217,6 +2218,7 @@
                 const isCam2 = (bKey === 'cam_2');
                 const isCam3 = (bKey === 'cam_3');
                 const isCam4 = (bKey === 'cam_4');
+                const isCam5 = (bKey === 'cam_5');
 
                 let boxClass = "bg-indigo-50/70 border border-indigo-200/90 rounded-2xl p-2.5 shadow-2xs";
                 let icon = "\uD83D\uDCD8";
@@ -2237,6 +2239,11 @@
                     icon = "\uD83D\uDCD5";
                     badgeColor = "bg-rose-200 text-rose-900";
                     headerColor = "text-rose-950";
+                } else if (isCam5) {
+                    boxClass = "bg-purple-50/70 border border-purple-200/90 rounded-2xl p-2.5 shadow-2xs";
+                    icon = "\uD83D\uDCD4";
+                    badgeColor = "bg-purple-200 text-purple-900";
+                    headerColor = "text-purple-950";
                 }
 
                 const bookBox = document.createElement('div');

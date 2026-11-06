@@ -217,7 +217,9 @@ function renderIeltsTestView() {
         const books = ieltsProfileData.books || {
             "cam_1": { id: "cam_1", title: "Cambridge IELTS 1", test_ids: ["cam_1_test_1", "cam_1_test_2", "cam_1_test_3", "cam_1_test_4"] },
             "cam_2": { id: "cam_2", title: "Cambridge IELTS 2", test_ids: ["cam_2_test_1", "cam_2_test_2", "cam_2_test_3", "cam_2_test_4"] },
-            "cam_3": { id: "cam_3", title: "Cambridge IELTS 3", test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"] }
+            "cam_3": { id: "cam_3", title: "Cambridge IELTS 3", test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"] },
+            "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] },
+            "cam_5": { id: "cam_5", title: "Cambridge IELTS 5", test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"] }
         };
         const optKeys = Array.from(fastSelect.options).map(o => o.value);
         const allTestKeys = Object.keys(ieltsProfileData.units || {});
