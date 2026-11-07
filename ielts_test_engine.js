@@ -1,4 +1,4 @@
-﻿// =========================================================================
+// =========================================================================
 // CAMBRIDGE IELTS TEST ENGINE (4 SKILLS: LISTENING, READING, WRITING, SPEAKING)
 // Automatic Official Band Scoring 1.0 - 9.0 & Detailed Explanations
 // =========================================================================
@@ -220,7 +220,8 @@ function renderIeltsTestView() {
             "cam_3": { id: "cam_3", title: "Cambridge IELTS 3", test_ids: ["cam_3_test_1", "cam_3_test_2", "cam_3_test_3", "cam_3_test_4"] },
             "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] },
             "cam_5": { id: "cam_5", title: "Cambridge IELTS 5", test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"] },
-            "cam_6": { id: "cam_6", title: "Cambridge IELTS 6", test_ids: ["cam_6_test_1", "cam_6_test_2", "cam_6_test_3", "cam_6_test_4"] }
+            "cam_6": { id: "cam_6", title: "Cambridge IELTS 6", test_ids: ["cam_6_test_1", "cam_6_test_2", "cam_6_test_3", "cam_6_test_4"] },
+            "cam_7": { id: "cam_7", title: "Cambridge IELTS 7", test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"] }
         };
         const optKeys = Array.from(fastSelect.options).map(o => o.value);
         const allTestKeys = Object.keys(ieltsProfileData.units || {});
