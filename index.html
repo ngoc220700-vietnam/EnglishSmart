@@ -1409,11 +1409,11 @@
     </div>
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
-    <script src="data.js?v=20261019_v1"></script>
-    <script src="ielts_data.js?v=20261107_cam7_28tests"></script>
-    <script src="ielts_test_engine.js?v=20261107_cam7_28tests"></script>
-    <script src="starters_data.js?v=20261022_v3"></script>
-    <script src="starters_test_engine.js?v=20261022_v3"></script>
+    <script src="data.js?v=20261108_safe_v1"></script>
+    <script src="ielts_data.js?v=20261108_safe_v1"></script>
+    <script src="ielts_test_engine.js?v=20261108_safe_v1"></script>
+    <script src="starters_data.js?v=20261108_safe_v1"></script>
+    <script src="starters_test_engine.js?v=20261108_safe_v1"></script>
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>
@@ -5012,10 +5012,42 @@
             }, { passive: false });
         })();
 
-        // Khởi chạy khi mới vào web
-        updateDirectionUI();
-        renderWelcomeScreen();
-        initLayoutResizer();
+        // Resilient Safe Init and Auto Recovery
+        function safeInitWelcomeScreen() {
+            try {
+                if (typeof updateDirectionUI === "function") updateDirectionUI();
+            } catch (err) {
+                console.warn("updateDirectionUI init warn:", err);
+            }
+            try {
+                if (typeof renderWelcomeScreen === "function") renderWelcomeScreen();
+            } catch (err) {
+                console.error("renderWelcomeScreen init error:", err);
+            }
+            try {
+                if (typeof initLayoutResizer === "function") initLayoutResizer();
+            } catch (err) {
+                console.warn("initLayoutResizer init warn:", err);
+            }
+        }
+
+        // Immediate execution
+        safeInitWelcomeScreen();
+
+        // DOMContentLoaded and load event listeners
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", safeInitWelcomeScreen);
+        }
+        window.addEventListener("load", safeInitWelcomeScreen);
+
+        // Watchdog fallback if grid remains empty
+        setTimeout(function() {
+            var grid = document.getElementById("welcome-student-grid");
+            if (grid && (!grid.children || grid.children.length === 0)) {
+                console.log("Watchdog: Retrying renderWelcomeScreen...");
+                safeInitWelcomeScreen();
+            }
+        }, 800);
     </script>
 </body>
 </html>
