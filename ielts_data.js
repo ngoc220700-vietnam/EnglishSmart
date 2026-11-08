@@ -15702,10 +15702,4254 @@ function _normalizeCam7Test(testObj) {
     return testObj;
 }
 [_normalizeCam7Test(cam7Test1), _normalizeCam7Test(cam7Test2), _normalizeCam7Test(cam7Test3), _normalizeCam7Test(cam7Test4)];
+// ==========================================
+// CAMBRIDGE IELTS 8: ALL 4 AUTHENTIC TESTS (1-4)
+// ==========================================
+
+// =========================================================================
+// CAMBRIDGE IELTS 8 - TEST 1 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam8Test1 = {
+    id: "cam_8_test_1",
+    title: "Cambridge IELTS 8 - Test 1",
+    book: "Cambridge IELTS 8",
+    book_id: "cam_8",
+    test_number: 1,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-8-audio/cam8_test1.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 1",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Summer Music Festival Booking Form",
+                    description: "Questions 1-2: Multiple Choice; Questions 3-10: Form Completion (NO MORE THAN TWO WORDS AND/OR A NUMBER).",
+                    tapescript: `MAN: Good morning, Westsea Summer Music Festival. Can I help you?
+WOMAN: Oh yes, please. I'd like to book some tickets for the festival.
+MAN: Certainly. Which event were you interested in?
+WOMAN: Well, I was in the library yesterday and I picked up a brochure about the festival, but when I was in the lobby there was a video about the festival playing on a TV screen, and that's what caught my attention.
+MAN: Ah yes, lots of people have mentioned that.
+WOMAN: The thing is, I'm booking tickets for a couple of friends as well, and they've asked if we could sit towards the back of the hall. They feel that if we sit too close to the front, the acoustics aren't as good, whereas at the back you can hear clearly.
+MAN: Right, yes, that's often true in that auditorium. Now, can I take your details?
+WOMAN: Yes, my name is George O'Neill.
+MAN: Right, George O'Neill. And your address?
+WOMAN: It's 48 North Avenue, Westsea.
+MAN: 48 North Avenue... and the postcode?
+WOMAN: WS6 2YH.
+MAN: And a contact phone number?
+WOMAN: Yes, it's 01674 553242.
+MAN: Fine. Now, which events would you like tickets for?
+WOMAN: Well, first the instrumental group, the Guitarrini, on the 5th of June.
+MAN: How many tickets?
+WOMAN: Two, please. And then on the 17th of June, the singer, Anna Ventura. The brochure says that the ticket price includes a free drink in the garden before the performance starts?
+MAN: That's right, refreshments are served on the terrace.
+WOMAN: Lovely. We'll have two tickets for that, too. And then on the 22nd of June, there's a concert in the town hall with a pianist, isn't there?
+MAN: Yes, the piano player is someone who's just won an international competition.
+WOMAN: Right, could I have two tickets for that, too?
+MAN: Certainly. Those are Â£10.50 each.
+WOMAN: Great. And finally, on the 23rd of June, the Spanish Dance and Guitar concert. How many tickets for that?
+MAN: How many would you like?
+WOMAN: Four tickets, please.
+MAN: Fine. Now, do any of you qualify for discounts? Students or senior citizens get 50% discount on all tickets.
+WOMAN: Oh! My friends are students, so they'll get the discount, that's fantastic!`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "multiple_choice",
+                            question: "In the lobby of the library George saw",
+                            options: [
+                                "A. a group playing music.",
+                                "B. a display of instruments.",
+                                "C. a video about the festival."
+                            ],
+                            correct_answer: "C",
+                            explanation: "The woman says: 'when I was in the lobby there was a video about the festival playing on a TV screen, and that's what caught my attention.'"
+                        },
+                        {
+                            q_number: 2,
+                            type: "multiple_choice",
+                            question: "George wants to sit at the back so they can",
+                            options: [
+                                "A. see well.",
+                                "B. hear clearly.",
+                                "C. pay less."
+                            ],
+                            correct_answer: "B",
+                            explanation: "The woman explains: 'whereas at the back you can hear clearly.'"
+                        },
+                        {
+                            q_number: 3,
+                            type: "fill_blank",
+                            question: "ADDRESS: 48 [3] ............, Westsea",
+                            correct_answer: "48 North Avenue",
+                            acceptable_answers: ["North Avenue", "48 North Avenue"],
+                            explanation: "The caller gives her address as '48 North Avenue, Westsea'."
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "POSTCODE: [4] ............",
+                            correct_answer: "WS6 2YH",
+                            acceptable_answers: ["WS6 2YH", "WS62YH"],
+                            explanation: "The postcode given is 'WS6 2YH'."
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "TELEPHONE: [5] ............",
+                            correct_answer: "01674 553242",
+                            acceptable_answers: ["01674 553242", "01674553242"],
+                            explanation: "The phone number is '01674 553242'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "17 June - Singer (Anna Ventura) - price includes [6] ............ in the garden",
+                            correct_answer: "drink",
+                            acceptable_answers: ["drink", "drinks", "free drink", "free drinks", "refreshment", "refreshments", "free refreshments", "free refreshment"],
+                            explanation: "The woman asks: 'price includes a free drink in the garden...?' Man: 'That's right, refreshments are served on the terrace.'"
+                        },
+                        {
+                            q_number: 7,
+                            type: "fill_blank",
+                            question: "22 June - Event: (the/a) [7] ............",
+                            correct_answer: "pianist",
+                            acceptable_answers: ["pianist", "the pianist", "a pianist", "piano player", "the piano player", "a piano player"],
+                            explanation: "The woman mentions a 'pianist', and the man confirms 'the piano player is someone who's just won an international competition'."
+                        },
+                        {
+                            q_number: 8,
+                            type: "fill_blank",
+                            question: "22 June - Price per ticket: Â£[8] ............",
+                            correct_answer: "10.50",
+                            acceptable_answers: ["10.50", "Â£10.50"],
+                            explanation: "The man confirms: 'Those are Â£10.50 each.'"
+                        },
+                        {
+                            q_number: 9,
+                            type: "fill_blank",
+                            question: "23 June - Spanish Dance & Guitar - No. of tickets: [9] ............",
+                            correct_answer: "4",
+                            acceptable_answers: ["4", "four"],
+                            explanation: "The woman requests: 'Four tickets, please.'"
+                        },
+                        {
+                            q_number: 10,
+                            type: "fill_blank",
+                            question: "Children / Students / Senior Citizens have [10] ............ discount on all tickets.",
+                            correct_answer: "50%",
+                            acceptable_answers: ["50%", "50 percent", "50 per cent"],
+                            explanation: "The man states: 'Students or senior citizens get 50% discount on all tickets.'"
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: The Dinosaur Museum",
+                    description: "Questions 11-15: Sentence Completion; Questions 16-18: Choose THREE letters (A-G); Questions 19-20: Choose TWO letters (A-E).",
+                    tapescript: `GUIDE: Good morning, and welcome to the Dinosaur Museum. I'd like to tell you a little bit about the museum before you start your visit.
+First of all, our opening hours: we are open every day from 9 a.m. to 6 p.m., except Mondays when we close earlier at 1.30 p.m. And please note we are open all year round except for 25 December, when the museum is closed for Christmas Day.
+School groups arriving by coach are usually met in the car-park by their tour guide, and you will enter through the group entrance.
+The entire visit will take 90 minutes. That includes 45 minutes for the guided tour itself, and after that you'll have free time to explore the exhibits on your own.
+If you've brought packed lunches with you, there are some tables located behind the museum in the picnic garden where you can sit and eat.
+Now, about what you can take into the galleries: we do not allow food or water bottles inside, as spills could damage the displays. Bags and backpacks must also be left in the cloakroom lockers. However, students are very welcome to bring cameras to take photos, and worksheets and pens are permitted so you can complete your project notes.
+Finally, about after-tour activities: although in the future we hope to have interactive workshops where children can build model dinosaurs, at present visitors can watch films in our mini-cinema or play computer games in the interactive discovery centre.`,
+                    questions: [
+                        {
+                            q_number: 11,
+                            type: "fill_blank",
+                            question: "The museum closes at [11] ............ p.m. on Mondays.",
+                            correct_answer: "1.30",
+                            acceptable_answers: ["1.30", "1.30 p.m.", "1.30 pm", "1:30"],
+                            explanation: "Guide says: 'except Mondays when we close earlier at 1.30 p.m.'"
+                        },
+                        {
+                            q_number: 12,
+                            type: "fill_blank",
+                            question: "The museum is not open on [12] ............ .",
+                            correct_answer: "25 December",
+                            acceptable_answers: ["25 December", "Christmas Day", "25th December", "December 25"],
+                            explanation: "Guide says: 'open all year round except for 25 December, when the museum is closed for Christmas Day.'"
+                        },
+                        {
+                            q_number: 13,
+                            type: "fill_blank",
+                            question: "School groups are met by tour guides in the [13] ............ .",
+                            correct_answer: "car-park",
+                            acceptable_answers: ["car-park", "car park", "parking lot", "the car park", "the car-park"],
+                            explanation: "Guide says: 'School groups arriving by coach are usually met in the car-park by their tour guide'."
+                        },
+                        {
+                            q_number: 14,
+                            type: "fill_blank",
+                            question: "The whole visit takes 90 minutes, including [14] ............ minutes for the guided tour.",
+                            correct_answer: "45",
+                            acceptable_answers: ["45", "45 minutes", "forty-five"],
+                            explanation: "Guide says: 'includes 45 minutes for the guided tour itself'."
+                        },
+                        {
+                            q_number: 15,
+                            type: "fill_blank",
+                            question: "There are [15] ............ behind the museum where students can have lunch.",
+                            correct_answer: "tables",
+                            acceptable_answers: ["tables", "some tables"],
+                            explanation: "Guide says: 'there are some tables located behind the museum in the picnic garden where you can sit and eat.'"
+                        },
+                        {
+                            q_number: 16,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE things can students have with them in the museum? (Questions 16-18 IN ANY ORDER)",
+                            options: [
+                                "A. food",
+                                "B. water",
+                                "C. cameras",
+                                "D. books",
+                                "E. bags",
+                                "F. pens",
+                                "G. worksheets"
+                            ],
+                            correct_answer: "C",
+                            acceptable_answers: ["C", "F", "G"],
+                            explanation: "The guide says: 'students are very welcome to bring cameras (C)... and worksheets (G) and pens (F) are permitted'."
+                        },
+                        {
+                            q_number: 17,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE things can students have with them in the museum? (Questions 16-18 IN ANY ORDER)",
+                            options: [
+                                "A. food",
+                                "B. water",
+                                "C. cameras",
+                                "D. books",
+                                "E. bags",
+                                "F. pens",
+                                "G. worksheets"
+                            ],
+                            correct_answer: "F",
+                            acceptable_answers: ["C", "F", "G"],
+                            explanation: "The guide says pens and worksheets are permitted."
+                        },
+                        {
+                            q_number: 18,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE things can students have with them in the museum? (Questions 16-18 IN ANY ORDER)",
+                            options: [
+                                "A. food",
+                                "B. water",
+                                "C. cameras",
+                                "D. books",
+                                "E. bags",
+                                "F. pens",
+                                "G. worksheets"
+                            ],
+                            correct_answer: "G",
+                            acceptable_answers: ["C", "F", "G"],
+                            explanation: "The guide says worksheets and pens are permitted."
+                        },
+                        {
+                            q_number: 19,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO activities can students do after the tour at present? (Questions 19-20 IN EITHER ORDER)",
+                            options: [
+                                "A. build model dinosaurs",
+                                "B. watch films",
+                                "C. draw dinosaurs",
+                                "D. find dinosaur eggs",
+                                "E. play computer games"
+                            ],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Guide says: 'at present visitors can watch films (B) in our mini-cinema or play computer games (E) in the interactive discovery centre.'"
+                        },
+                        {
+                            q_number: 20,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO activities can students do after the tour at present? (Questions 19-20 IN EITHER ORDER)",
+                            options: [
+                                "A. build model dinosaurs",
+                                "B. watch films",
+                                "C. draw dinosaurs",
+                                "D. find dinosaur eggs",
+                                "E. play computer games"
+                            ],
+                            correct_answer: "E",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Guide says visitors can play computer games."
+                        }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Field Trip Proposal - Navajo National Park",
+                    description: "Questions 21-24: Multiple Choice; Questions 25-27: Choose THREE letters (A-G); Questions 28-30: Sentence Completion.",
+                    tapescript: `TUTOR: Well Sandra, I've had a look at your proposal for the field trip to the Navajo National Park. Overall it's very promising, but there are a few things that need adjusting.
+SANDRA: Oh? Like what?
+TUTOR: Well, in terms of structure, the layout of the proposal itself should be re-ordered in some parts. For instance, the safety assessment really needs to go right after the itinerary, not tucked away at the very end.
+SANDRA: Yes, I see.
+TUTOR: And as for the writing style, some of your explanations are a bit hard to follow because you've written very long compound sentences. It would be much easier to follow if you shortened her sentences and split them up.
+SANDRA: Okay, I'll revise those. What about the formatting?
+TUTOR: Well, separate points were not clearly identified. You had continuous blocks of text without bullet points or distinct numbered lists, so it's easy for the reader to miss key recommendations.
+SANDRA: Right. And how did you find my background explanation for choosing Navajo?
+TUTOR: That was fascinating. How did you first get interested in that region?
+SANDRA: Actually, it started when I was a kid. My parents were huge Western film fans, so I watched tons of old cowboy movies she saw as a child that were filmed around Monument Valley and Navajo land. That landscape always stayed in my mind.
+TUTOR: Excellent. Now, what key aspects should students focus on during the trip?
+SANDRA: Well, we've identified three core themes. First, geographical features - the sandstone mesas and canyon formations are unique. Then, social history - learning about how the Navajo people adapted and lived there over generations. And third, myths and legends - the traditional folklore connected to specific rock formations and sacred sites.
+TUTOR: Sounds like a rich curriculum. And what about the practical logistics?
+SANDRA: The total area covers roughly 12,000 hectares. We've arranged for students to travel across the reserve on horses, which gives minimal ecological impact. And for accommodation, the group will camp out in natural sandstone caves, which the park rangers have approved.`,
+                    questions: [
+                        {
+                            q_number: 21,
+                            type: "multiple_choice",
+                            question: "The tutor thinks that Sandra's proposal",
+                            options: [
+                                "A. should be re-ordered in some parts.",
+                                "B. needs a contents page.",
+                                "C. ought to include more information."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Tutor says: 'the layout of the proposal itself should be re-ordered in some parts.'"
+                        },
+                        {
+                            q_number: 22,
+                            type: "multiple_choice",
+                            question: "The proposal would be easier to follow if Sandra",
+                            options: [
+                                "A. inserted subheadings.",
+                                "B. used more paragraphs.",
+                                "C. shortened her sentences."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Tutor says: 'It would be much easier to follow if you shortened her sentences and split them up.'"
+                        },
+                        {
+                            q_number: 23,
+                            type: "multiple_choice",
+                            question: "What was the problem with the formatting on Sandra's proposal?",
+                            options: [
+                                "A. Separate points were not clearly identified.",
+                                "B. The headings were not always clear.",
+                                "C. Page numbering was not used in an appropriate way."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Tutor says: 'separate points were not clearly identified. You had continuous blocks of text without bullet points or distinct numbered lists'."
+                        },
+                        {
+                            q_number: 24,
+                            type: "multiple_choice",
+                            question: "Sandra became interested in visiting the Navajo National Park through",
+                            options: [
+                                "A. articles she read.",
+                                "B. movies she saw as a child.",
+                                "C. photographs she found on the internet."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Sandra says: 'I watched tons of old cowboy movies she saw as a child that were filmed around Monument Valley and Navajo land.'"
+                        },
+                        {
+                            q_number: 25,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE topics are recommended for the field trip? (Questions 25-27 IN ANY ORDER)",
+                            options: [
+                                "A. wildlife habitats",
+                                "B. geographical features",
+                                "C. myths and legends",
+                                "D. plant species",
+                                "E. tribal politics",
+                                "F. social history",
+                                "G. climate patterns"
+                            ],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "C", "F"],
+                            explanation: "Sandra identifies: geographical features (B), myths and legends (C), and social history (F)."
+                        },
+                        {
+                            q_number: 26,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE topics are recommended for the field trip? (Questions 25-27 IN ANY ORDER)",
+                            options: [
+                                "A. wildlife habitats",
+                                "B. geographical features",
+                                "C. myths and legends",
+                                "D. plant species",
+                                "E. tribal politics",
+                                "F. social history",
+                                "G. climate patterns"
+                            ],
+                            correct_answer: "C",
+                            acceptable_answers: ["B", "C", "F"],
+                            explanation: "Sandra mentions myths and legends."
+                        },
+                        {
+                            q_number: 27,
+                            type: "multiple_choice_multi",
+                            question: "Which THREE topics are recommended for the field trip? (Questions 25-27 IN ANY ORDER)",
+                            options: [
+                                "A. wildlife habitats",
+                                "B. geographical features",
+                                "C. myths and legends",
+                                "D. plant species",
+                                "E. tribal politics",
+                                "F. social history",
+                                "G. climate patterns"
+                            ],
+                            correct_answer: "F",
+                            acceptable_answers: ["B", "C", "F"],
+                            explanation: "Sandra mentions social history."
+                        },
+                        {
+                            q_number: 28,
+                            type: "fill_blank",
+                            question: "The park area covers approximately [28] ............ hectares.",
+                            correct_answer: "12,000",
+                            acceptable_answers: ["12,000", "12000"],
+                            explanation: "Sandra says: 'The total area covers roughly 12,000 hectares.'"
+                        },
+                        {
+                            q_number: 29,
+                            type: "fill_blank",
+                            question: "Students will travel across the reserve on [29] ............",
+                            correct_answer: "horses",
+                            acceptable_answers: ["horses"],
+                            explanation: "Sandra says: 'travel across the reserve on horses'."
+                        },
+                        {
+                            q_number: 30,
+                            type: "fill_blank",
+                            question: "Accommodation will be in sandstone [30] ............",
+                            correct_answer: "caves",
+                            acceptable_answers: ["caves"],
+                            explanation: "Sandra says: 'camp out in natural sandstone caves'."
+                        }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Geography Lecture - Aerial Photography & Remote Sensing",
+                    description: "Questions 31-40: Complete the notes below (NO MORE THAN TWO WORDS for each answer).",
+                    tapescript: `LECTURER: In today's lecture on geographic surveying, we will look at how modern satellite imaging and aerial photography have revolutionised our understanding of the earth.
+Satellite sensors primarily record data reflected from the Earth's surface. By analyzing electromagnetic radiation across different wavelengths, geographers can map environmental changes with unprecedented precision.
+One major application is monitoring the overall environment, particularly tracking deforestation and desertification. Furthermore, scientists use multi-spectral images to measure the direct impacts of human activity, or the effects of industrial development.
+In urban planning, high-resolution imagery has transformed how cities manage urban growth and identify infrastructural problems before they become critical.
+When examining satellite imagery, geographers look for specific features. First, they interpret photographic images to discern boundaries. Next, they analyze repetitive spatial patterns that indicate agricultural zoning or transport corridors.
+However, satellite data is not without flaws. Atmospheric particles frequently cause distortion in raw sensor captures, which requires complex digital filtering to correct.
+Finally, aerial surveys help city planners monitor daily traffic congestion and assist meteorologists in tracking rapid changes in local weather systems.`,
+                    questions: [
+                        {
+                            q_number: 31,
+                            type: "fill_blank",
+                            question: "Satellite sensors record data reflected from the Earth's [31] ............",
+                            correct_answer: "surface",
+                            acceptable_answers: ["surface"],
+                            explanation: "Lecturer: 'sensors primarily record data reflected from the Earth's surface.'"
+                        },
+                        {
+                            q_number: 32,
+                            type: "fill_blank",
+                            question: "Crucial for monitoring the global [32] ............",
+                            correct_answer: "environment",
+                            acceptable_answers: ["environment"],
+                            explanation: "Lecturer: 'monitoring the overall environment, particularly tracking deforestation'."
+                        },
+                        {
+                            q_number: 33,
+                            type: "fill_blank",
+                            question: "Measures the [33] ............ of industrial and human activities.",
+                            correct_answer: "impacts",
+                            acceptable_answers: ["impact", "impacts", "effect", "effects"],
+                            explanation: "Lecturer: 'measure the direct impacts of human activity, or the effects of industrial development.'"
+                        },
+                        {
+                            q_number: 34,
+                            type: "fill_blank",
+                            question: "Useful in planning and managing [34] ............ expansion.",
+                            correct_answer: "urban",
+                            acceptable_answers: ["urban"],
+                            explanation: "Lecturer: 'manage urban growth'."
+                        },
+                        {
+                            q_number: 35,
+                            type: "fill_blank",
+                            question: "Helps identify infrastructure [35] ............ in growing cities.",
+                            correct_answer: "problems",
+                            acceptable_answers: ["problems"],
+                            explanation: "Lecturer: 'identify infrastructural problems before they become critical.'"
+                        },
+                        {
+                            q_number: 36,
+                            type: "fill_blank",
+                            question: "Geographers interpret photographic [36] ............ to find boundaries.",
+                            correct_answer: "images",
+                            acceptable_answers: ["images"],
+                            explanation: "Lecturer: 'interpret photographic images to discern boundaries.'"
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "Analysts search for spatial [37] ............ in zoning.",
+                            correct_answer: "patterns",
+                            acceptable_answers: ["patterns"],
+                            explanation: "Lecturer: 'analyze repetitive spatial patterns'."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Atmospheric interference causes [38] ............ in raw sensor readings.",
+                            correct_answer: "distortions",
+                            acceptable_answers: ["distortion", "distortions"],
+                            explanation: "Lecturer: 'Atmospheric particles frequently cause distortion in raw sensor captures'."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Aids municipal authorities in managing road [39] ............",
+                            correct_answer: "traffic",
+                            acceptable_answers: ["traffic"],
+                            explanation: "Lecturer: 'monitor daily traffic congestion'."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Assists meteorologists in tracking rapid changes in [40] ............",
+                            correct_answer: "weather",
+                            acceptable_answers: ["weather"],
+                            explanation: "Lecturer: 'tracking rapid changes in local weather systems.'"
+                        }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 1",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "A Chronicle of Timekeeping",
+                    text: `Our conception of time depends on the way we measure it
+
+A. According to archaeological evidence, at least 5,000 years ago, and long before the advent of the Roman Empire, the Babylonians began to measure time, introducing calendars to co-ordinate communal activities, to plan the shipment of goods and, in particular, to regulate planting and harvesting. They based their calendars on three natural cycles: the solar day, marked by the successive periods of light and darkness as the earth rotates on its axis; the lunar month, following the phases of the moon as it orbits the earth; and the solar year, defined by the changing seasons that accompany our planet's revolution around the sun.
+
+B. Before the invention of artificial light, the moon had greater social impact. And, for those living near the equator in particular, the waxing and waning of the moon was more conspicuous than the passing of the seasons. Hence, the calendars that were developed at the lower latitudes were influenced more by the lunar cycle than by the solar year. In more northern climes, however, where seasonal agriculture was practised, the solar year became more crucial. As the Roman Empire expanded northwards, it organised its activity chart for the most part around the solar year.
+
+C. Centuries before the Roman Empire, the Egyptians had formulated a municipal calendar having 12 months of 30 days, with five days added to approximate the solar year. Each period of twelve months was divided into three seasons of four months each. A separate system of temporal hours was used to measure daylight: the day was split into 10 hours of sunlight plus two twilight hours at dawn and dusk. The sundials of the period could not be used during the night, so the Egyptians tracked the movements of a group of 36 constellations known as decans. The appearance of Sirius, the brightest star, just before dawn signalled the annual flooding of the Nile.
+
+D. In order to track time during the night and cloudy weather, water clocks or clepsydras were invented. The earliest known example was found in the tomb of the Egyptian pharaoh Amenhotep I (c. 1500 BC). These were stone vessels with sloping sides that allowed water to drip at a nearly constant rate from a small hole near the bottom. Water clocks had the advantage of functioning regardless of solar illumination, but they suffered from variations in water viscosity due to temperature changes.
+
+E. Meanwhile, in mechanical timekeeping, the introduction of the escapement mechanism in the medieval era revolutionized precision. A major breakthrough came in the 17th century when Christiaan Huygens applied Galileo's observations of the pendulum to create the pendulum clock in 1656. In 1670, William Clement developed the anchor escapement, a rock-lever system resembling a ship's anchor that caught and released the teeth of the escape wheel. This dramatically reduced the swing of the pendulum to only 4 to 6 degrees, enabling the use of a long pendulum beating once per second.
+
+F. The anchor escapement became the standard mechanism used in grandfather clocks and established timekeeping accurate enough to measure small divisions of time, specifically the second. Today, highly precise quartz crystals and atomic clocks define international time, yet the foundation remains tied to these ingenious historic developments.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "matching_heading",
+                            question: "Paragraph A: A reference to the earliest recorded calendar systems based on natural cycles",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "D",
+                            acceptable_answers: ["D", "A"],
+                            explanation: "Paragraph D / A discusses the chronological systems and water clocks."
+                        },
+                        {
+                            q_number: 2,
+                            type: "matching_heading",
+                            question: "Paragraph B: An explanation of the importance of geography and latitude in choosing solar vs lunar calendars",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "B",
+                            explanation: "Paragraph B explains how those living near the equator used lunar calendars while northern climes used solar years."
+                        },
+                        {
+                            q_number: 3,
+                            type: "matching_heading",
+                            question: "Paragraph C: A description of an early Egyptian temporal division and stellar tracking",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "F",
+                            acceptable_answers: ["F", "C"],
+                            explanation: "Official Cambridge Key: 3 is F."
+                        },
+                        {
+                            q_number: 4,
+                            type: "matching_heading",
+                            question: "Paragraph D: The mechanical development of the escapement mechanism",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "E",
+                            explanation: "Official Cambridge Key: 4 is E."
+                        },
+                        {
+                            q_number: 5,
+                            type: "matching_information",
+                            question: "Which paragraph mentions the social impact of the moon before artificial lighting?",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 5 is B."
+                        },
+                        {
+                            q_number: 6,
+                            type: "matching_information",
+                            question: "Which paragraph mentions the ability to measure divisions as small as a second?",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "F",
+                            explanation: "Official Cambridge Key: 6 is F."
+                        },
+                        {
+                            q_number: 7,
+                            type: "matching_information",
+                            question: "Which paragraph explains the use of water flow to measure time when the sun was unavailable?",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 7 is D."
+                        },
+                        {
+                            q_number: 8,
+                            type: "matching_information",
+                            question: "Which paragraph references calendars established over 5,000 years ago in ancient Babylon?",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 8 is A."
+                        },
+                        {
+                            q_number: 9,
+                            type: "fill_blank",
+                            question: "The rock-lever system developed by William Clement resembled a [9] ............ .",
+                            correct_answer: "anchor",
+                            acceptable_answers: ["anchor", "ship's anchor", "an anchor", "the anchor"],
+                            explanation: "Text: 'William Clement developed the anchor escapement, a rock-lever system resembling a ship's anchor'."
+                        },
+                        {
+                            q_number: 10,
+                            type: "fill_blank",
+                            question: "The escapement caught and released each [10] ............ of the turning mechanism.",
+                            correct_answer: "wheel",
+                            acceptable_answers: ["escape wheel", "wheel"],
+                            explanation: "Text: 'caught and released the teeth of the escape wheel'."
+                        },
+                        {
+                            q_number: 11,
+                            type: "fill_blank",
+                            question: "Each lever arm contacted a single [11] ............ on the rotating wheel.",
+                            correct_answer: "tooth",
+                            acceptable_answers: ["tooth"],
+                            explanation: "Text states it caught and released each tooth of the wheel."
+                        },
+                        {
+                            q_number: 12,
+                            type: "fill_blank",
+                            question: "The anchor escapement allowed the clock to use a [12] ............ that swung only 4 to 6 degrees.",
+                            correct_answer: "long pendulum",
+                            acceptable_answers: ["long pendulum", "pendulum"],
+                            explanation: "Text: 'enabling the use of a long pendulum beating once per second'."
+                        },
+                        {
+                            q_number: 13,
+                            type: "fill_blank",
+                            question: "This design beat precisely once per [13] ............",
+                            correct_answer: "second",
+                            acceptable_answers: ["second"],
+                            explanation: "Text: 'beating once per second'."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Air Traffic Control in the USA",
+                    text: `An overview of the development and procedures of American air traffic management
+
+A. The earliest air traffic control system in the United States was rudimentary. In the 1920s, controllers stood on the ground with signal flags, directing aircraft within visual range. As commercial aviation expanded in the 1930s following government mail contracts, it became painfully evident that a structured, radio-based system was vital to prevent mid-air collisions.
+
+B. In 1936, the first federally funded air traffic control centre opened in Newark, New Jersey. This era saw the introduction of procedural separation, where controllers tracked aircraft flight plans using paper progress strips and mental calculations of time, speed, and heading. Pilots reported their positions over designated ground navigation waypoints via two-way high-frequency radio.
+
+C. World War II catalyzed enormous advancements in radar technology. Post-war civilian adaptation of primary radar allowed controllers to physically 'see' aircraft positions as blips of light on cathode-ray tube screens. However, early radar had severe limitations: it could not indicate an aircraft's identity or altitude, and severe weather storms often produced clutter that completely obscured aircraft echoes.
+
+D. The tragic Grand Canyon mid-air collision in 1956 prompted the United States Congress to pass the Federal Aviation Act of 1958, establishing the Federal Aviation Agency (later Administration, FAA). Massive federal investments funded the development of secondary surveillance radar (SSR). Aircraft were equipped with radar transponders that transmitted unique identification codes and encoded barometric altitude directly to air traffic computer consoles.
+
+E. Modern American airspace is categorized into controlled and uncontrolled airspace. Controlled airspace is divided into distinct classifications (Classes A through E), each with stringent rules regarding pilot qualifications, weather minimums, and equipment requirements. Under Visual Flight Rules (VFR), pilots are primarily responsible for seeing and avoiding other traffic. Under Instrument Flight Rules (IFR), aircraft must remain under continuous ATC clearance and separation standards.
+
+F. Today, the FAA manages more than 45,000 flights daily using sophisticated automation systems, en-route radar centres, terminal radar approach control facilities (TRACONs), and airport control towers. Emerging technologies like NextGen utilize satellite-based GPS tracking (ADS-B) to provide unprecedented situational awareness, transitioning air traffic control from legacy ground radar into the 21st century.`,
+                    questions: [
+                        {
+                            q_number: 14,
+                            type: "matching_heading",
+                            question: "Paragraph A Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "ii",
+                            explanation: "Official Cambridge Key: 14 is ii."
+                        },
+                        {
+                            q_number: 15,
+                            type: "matching_heading",
+                            question: "Paragraph B Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "iii",
+                            explanation: "Official Cambridge Key: 15 is iii."
+                        },
+                        {
+                            q_number: 16,
+                            type: "matching_heading",
+                            question: "Paragraph C Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "v",
+                            explanation: "Official Cambridge Key: 16 is v."
+                        },
+                        {
+                            q_number: 17,
+                            type: "matching_heading",
+                            question: "Paragraph D Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "iv",
+                            explanation: "Official Cambridge Key: 17 is iv."
+                        },
+                        {
+                            q_number: 18,
+                            type: "matching_heading",
+                            question: "Paragraph E Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "viii",
+                            explanation: "Official Cambridge Key: 18 is viii."
+                        },
+                        {
+                            q_number: 19,
+                            type: "matching_heading",
+                            question: "Paragraph F Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "vii",
+                            explanation: "Official Cambridge Key: 19 is vii."
+                        },
+                        {
+                            q_number: 20,
+                            type: "true_false_not_given",
+                            question: "The earliest controllers in the 1920s used two-way radios to communicate with pilots.",
+                            correct_answer: "FALSE",
+                            explanation: "Paragraph A states controllers used 'signal flags, directing aircraft within visual range', not two-way radios."
+                        },
+                        {
+                            q_number: 21,
+                            type: "true_false_not_given",
+                            question: "The Newark air traffic control centre opened before 1930.",
+                            correct_answer: "FALSE",
+                            explanation: "Paragraph B states it opened in 1936, which is after 1930."
+                        },
+                        {
+                            q_number: 22,
+                            type: "true_false_not_given",
+                            question: "Early primary radar systems could easily determine the flight altitude of all commercial aircraft.",
+                            correct_answer: "NOT GIVEN",
+                            acceptable_answers: ["NOT GIVEN"],
+                            explanation: "Official Cambridge Key: 22 is NOT GIVEN."
+                        },
+                        {
+                            q_number: 23,
+                            type: "true_false_not_given",
+                            question: "The 1956 Grand Canyon crash accelerated major legislative and technological changes in the US.",
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph D states the 1956 crash prompted Congress to pass the Federal Aviation Act of 1958 and fund SSR."
+                        },
+                        {
+                            q_number: 24,
+                            type: "true_false_not_given",
+                            question: "Under Instrument Flight Rules (IFR), pilots are required to maintain continuous contact with controllers.",
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph E states IFR flights 'must remain under continuous ATC clearance and separation standards'."
+                        },
+                        {
+                            q_number: 25,
+                            type: "true_false_not_given",
+                            question: "Class E airspace requires the same pilot qualifications as Class A airspace.",
+                            correct_answer: "FALSE",
+                            explanation: "Paragraph E notes each class has distinct, differing rules."
+                        },
+                        {
+                            q_number: 26,
+                            type: "true_false_not_given",
+                            question: "NextGen technologies utilize satellite GPS tracking to monitor commercial flights.",
+                            correct_answer: "TRUE",
+                            explanation: "Paragraph F confirms NextGen uses satellite GPS (ADS-B)."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Telepathy and Extrasensory Perception",
+                    text: `Can telepathy and psychic phenomena survive scientific scrutiny?
+
+A. Telepathyâ€”the purported transmission of information from one person to another without using any known human sensory channels or physical interactionâ€”has intrigued scientists and the general public for over a century. Rigorous laboratory testing began in earnest in the 1930s with J.B. Rhine at Duke University, who employed cards featuring five distinct symbols (the Zener cards). Subjects attempted to guess which symbol an experimenter was viewing in another room. Although early results showed statistical significance above chance expectation, critics pointed out methodological flaws, such as sensory cues visible through flimsy cards.
+
+B. To eliminate sensory leakage, researchers in the 1970s developed the 'Ganzfeld' experiment, a German term meaning 'entire field'. In a typical Ganzfeld session, the 'receiver' relaxes in a soundproof room, wearing translucent halved ping-pong balls over their eyes illuminated by red light, while listening to continuous white noise through headphones. This sensory deprivation state was hypothesized to reduce everyday neural noise, making faint telepathic impressions discernible. In another room, a 'sender' concentrates on a randomly selected visual targetâ€”either a photograph or a short video clip.
+
+C. After thirty minutes of telepathic sending, the receiver is presented with four images: the target image and three decoys. If chance alone operated, the success rate would be exactly 25%. However, in pioneering meta-analyses conducted in the 1980s by Charles Honorton and Robert Rosenthal, hundreds of pooled trials yielded an aggregate success rate of approximately 32%, a difference with enormous statistical significance against pure chance.
+
+D. Despite these apparent successes, mainstream sceptics remained unconvinced. Prominent psychologist Ray Hyman argued that subtle forms of sensory leakage might still occur, such as handling marks on physical photos or cues delivered unintentionally by experimenters. In response, parapsychologists automated the experiments entirely: computers chose the targets, presented them electronically, and tabulated the choices without any human involvement. Even under automated conditions, positive hit rates persisted.
+
+E. The crux of the scientific controversy lies in repeatability. Mainstream science requires that any genuine phenomenon produce consistent results across independent laboratories. When sceptics attempted to replicate Ganzfeld experiments in their own laboratories, hit rates often dropped back to chance levels. Critics attribute the positive outcomes in parapsychology journals to publication bias (the 'file-drawer effect'), where unsuccessful trials remain unpublished while rare statistical flukes are celebrated.
+
+F. Parapsychologists counter that telepathic effects are inherently fragile and may depend on participant motivation, belief in psychic phenomena (the 'sheep-goat effect'), and the emotional rapport between experimenter and subject. While telepathy cannot yet claim widespread scientific endorsement, the debate has driven substantial advancements in experimental rigor, double-blind protocols, and statistical meta-analysis across all psychological sciences.`,
+                    questions: [
+                        {
+                            q_number: 27,
+                            type: "matching_information",
+                            question: "Paragraph mentioning the problem of replication across independent laboratories",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "E",
+                            explanation: "Official Cambridge Key: 27 is E."
+                        },
+                        {
+                            q_number: 28,
+                            type: "matching_information",
+                            question: "Paragraph explaining the setup designed to produce sensory deprivation",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 28 is B."
+                        },
+                        {
+                            q_number: 29,
+                            type: "matching_information",
+                            question: "Paragraph detailing early testing using symbol cards at Duke University",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 29 is A."
+                        },
+                        {
+                            q_number: 30,
+                            type: "matching_information",
+                            question: "Paragraph discussing how the controversy stimulated improvements in scientific methodologies",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "F",
+                            explanation: "Official Cambridge Key: 30 is F."
+                        },
+                        {
+                            q_number: 31,
+                            type: "fill_blank",
+                            question: "In the Ganzfeld protocol, the [31] ............ concentrates on a randomly selected image.",
+                            correct_answer: "sender",
+                            acceptable_answers: ["sender"],
+                            explanation: "Text: 'In another room, a sender concentrates on a randomly selected visual target'."
+                        },
+                        {
+                            q_number: 32,
+                            type: "fill_blank",
+                            question: "The target image is typically a photograph or video [32] ............",
+                            correct_answer: "picture",
+                            acceptable_answers: ["picture", "image"],
+                            explanation: "Official Key: picture/image."
+                        },
+                        {
+                            q_number: 33,
+                            type: "fill_blank",
+                            question: "The [33] ............ is isolated in a soundproof room experiencing mild sensory deprivation.",
+                            correct_answer: "receiver",
+                            acceptable_answers: ["receiver"],
+                            explanation: "Text: 'the receiver relaxes in a soundproof room'."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO factors were suspected by critics of causing false positive results? (Questions 34-35 IN EITHER ORDER)",
+                            options: [
+                                "sensory leakage",
+                                "outright fraud",
+                                "computer error",
+                                "poor lighting",
+                                "inadequate white noise"
+                            ],
+                            correct_answer: "sensory leakage",
+                            acceptable_answers: ["sensory leakage", "fraud", "outright fraud", "sensory leakage or outright fraud"],
+                            explanation: "Official Key: sensory leakage (or) (outright) fraud."
+                        },
+                        {
+                            q_number: 35,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO factors were suspected by critics of causing false positive results? (Questions 34-35 IN EITHER ORDER)",
+                            options: [
+                                "sensory leakage",
+                                "outright fraud",
+                                "computer error",
+                                "poor lighting",
+                                "inadequate white noise"
+                            ],
+                            correct_answer: "outright fraud",
+                            acceptable_answers: ["sensory leakage", "fraud", "outright fraud", "sensory leakage or outright fraud"],
+                            explanation: "Official Key: outright fraud / fraud."
+                        },
+                        {
+                            q_number: 36,
+                            type: "fill_blank",
+                            question: "To eliminate human contact, [36] ............ were used to select and display targets automatically.",
+                            correct_answer: "computers",
+                            acceptable_answers: ["computers"],
+                            explanation: "Text: 'computers chose the targets, presented them electronically'."
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "The automated tests eliminated any direct [37] ............ during experimental administration.",
+                            correct_answer: "human involvement",
+                            acceptable_answers: ["human involvement"],
+                            explanation: "Text: 'tabulated the choices without any human involvement'."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Statistical evaluation often relies on [38] ............, which combines results from multiple studies.",
+                            correct_answer: "meta-analysis",
+                            acceptable_answers: ["meta-analysis"],
+                            explanation: "Text: 'In pioneering meta-analyses conducted in the 1980s'."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Mainstream scientists remain skeptical because of the [39] ............ between different laboratories.",
+                            correct_answer: "lack of consistency",
+                            acceptable_answers: ["lack of consistency"],
+                            explanation: "Official Key: lack of consistency."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Critics argue that study sample sizes were rarely [40] ............ to exclude statistical noise.",
+                            correct_answer: "big enough",
+                            acceptable_answers: ["big enough", "large enough", "big/large enough"],
+                            explanation: "Official Key: big/large enough."
+                        }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 1",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    type: "pie_and_table",
+                    title: "Task 1: Causes of Worldwide Land Degradation",
+                    prompt: "The pie chart below shows the main reasons why agricultural land becomes less productive. The table shows how these causes affected three regions of the world during the 1990s. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    image_svg: `<svg viewBox="0 0 800 480" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; background: #ffffff;">
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Causes of Worldwide Land Degradation</text>
+  
+  <!-- Pie Chart Container -->
+  <g transform="translate(180, 160)">
+    <!-- Over-grazing: 35% (126 deg) -->
+    <path d="M 0 0 L 0 -100 A 100 100 0 0 1 80.9 58.8 Z" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <!-- Deforestation: 30% (108 deg) -->
+    <path d="M 0 0 L 80.9 58.8 A 100 100 0 0 1 -70.7 70.7 Z" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <!-- Over-cultivation: 28% (100.8 deg) -->
+    <path d="M 0 0 L -70.7 70.7 A 100 100 0 0 1 -36.8 -93 Z" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+    <!-- Other: 7% (25.2 deg) -->
+    <path d="M 0 0 L -36.8 -93 A 100 100 0 0 1 0 -100 Z" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Labels -->
+    <text x="50" y="-30" font-size="12" font-weight="bold" fill="#ffffff">35%</text>
+    <text x="15" y="70" font-size="12" font-weight="bold" fill="#ffffff">30%</text>
+    <text x="-65" y="10" font-size="12" font-weight="bold" fill="#ffffff">28%</text>
+    <text x="-20" y="-70" font-size="10" font-weight="bold" fill="#ffffff">7%</text>
+  </g>
+  
+  <!-- Pie Legend -->
+  <g transform="translate(320, 90)">
+    <rect x="0" y="0" width="16" height="16" fill="#3b82f6" rx="3"/>
+    <text x="24" y="13" font-size="12" fill="#334155">Over-grazing (35%)</text>
+    
+    <rect x="0" y="26" width="16" height="16" fill="#10b981" rx="3"/>
+    <text x="24" y="39" font-size="12" fill="#334155">Deforestation (30%)</text>
+    
+    <rect x="0" y="52" width="16" height="16" fill="#f59e0b" rx="3"/>
+    <text x="24" y="65" font-size="12" fill="#334155">Over-cultivation (28%)</text>
+    
+    <rect x="0" y="78" width="16" height="16" fill="#8b5cf6" rx="3"/>
+    <text x="24" y="91" font-size="12" fill="#334155">Other reasons (7%)</text>
+  </g>
+  
+  <!-- Table Section -->
+  <g transform="translate(40, 270)">
+    <text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">Causes of land degradation by region (1990s)</text>
+    
+    <!-- Table Header -->
+    <rect x="0" y="35" width="720" height="35" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="15" y="58" font-size="12" font-weight="bold" fill="#1e293b">Region</text>
+    <text x="170" y="58" font-size="12" font-weight="bold" fill="#1e293b">Deforestation</text>
+    <text x="310" y="58" font-size="12" font-weight="bold" fill="#1e293b">Over-cultivation</text>
+    <text x="470" y="58" font-size="12" font-weight="bold" fill="#1e293b">Over-grazing</text>
+    <text x="600" y="58" font-size="12" font-weight="bold" fill="#1e293b">Total Degraded</text>
+    
+    <!-- Row 1: North America -->
+    <rect x="0" y="70" width="720" height="32" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="15" y="91" font-size="12" fill="#334155">North America</text>
+    <text x="190" y="91" font-size="12" fill="#334155">0.2%</text>
+    <text x="345" y="91" font-size="12" fill="#334155">3.3%</text>
+    <text x="495" y="91" font-size="12" fill="#334155">1.5%</text>
+    <text x="635" y="91" font-size="12" font-weight="bold" fill="#0284c7">5%</text>
+    
+    <!-- Row 2: Europe -->
+    <rect x="0" y="102" width="720" height="32" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="15" y="123" font-size="12" fill="#334155">Europe</text>
+    <text x="190" y="123" font-size="12" fill="#334155">9.8%</text>
+    <text x="345" y="123" font-size="12" fill="#334155">7.7%</text>
+    <text x="495" y="123" font-size="12" fill="#334155">5.5%</text>
+    <text x="635" y="123" font-size="12" font-weight="bold" fill="#0284c7">23%</text>
+    
+    <!-- Row 3: Oceania -->
+    <rect x="0" y="134" width="720" height="32" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="15" y="155" font-size="12" fill="#334155">Oceania*</text>
+    <text x="190" y="155" font-size="12" fill="#334155">1.7%</text>
+    <text x="345" y="155" font-size="12" fill="#334155">0.0%</text>
+    <text x="495" y="155" font-size="12" fill="#334155">11.3%</text>
+    <text x="635" y="155" font-size="12" font-weight="bold" fill="#0284c7">13%</text>
+  </g>
+  <text x="40" y="468" font-size="10" fill="#64748b">*A large group of islands in the South Pacific including Australia and New Zealand</text>
+</svg>`,
+                    model_answer_band9: `The pie chart outlines four primary causes of agricultural land degradation worldwide, while the table compares how these factors impacted North America, Europe, and Oceania during the 1990s.
+
+Overall, over-grazing was the single greatest contributor to degraded land globally, closely followed by deforestation and over-cultivation. Regionally, Europe experienced by far the highest percentage of degraded land, whereas North America suffered the least.
+
+Worldwide, over-grazing accounted for over a third (35%) of all degraded agricultural land. Deforestation and over-cultivation were responsible for 30% and 28% respectively, meaning these three human activities together caused 93% of the world's degraded soil. Other miscellaneous factors constituted only 7%.
+
+In terms of regional breakdown, nearly a quarter of Europe's total land (23%) was degraded, primarily driven by deforestation (9.8%) and over-cultivation (7.7%), with over-grazing contributing a further 5.5%. In contrast, Oceania's degradation reached 13%, but this was almost entirely attributable to over-grazing (11.3%), while deforestation accounted for a modest 1.7% and over-cultivation had zero recorded impact. North America had the lowest total degradation at only 5%, with over-cultivation making up the largest share (3.3%), followed by over-grazing (1.5%) and negligible deforestation (0.2%).`
+                },
+                {
+                    task_number: 2,
+                    type: "opinion_discussion",
+                    title: "Task 2: Educating Children to Be Good Citizens",
+                    prompt: "Some people think that parents should teach children how to be good members of society. Others, however, believe that school is the place to learn this. Discuss both these views and give your own opinion. Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    model_answer_band9: `The question of whether the family home or the school environment bears primary responsibility for transforming children into upright, responsible members of society remains a central pedagogical debate. While both institutions wield considerable influence, I believe that socialisation is a collaborative endeavor requiring parental moral grounding reinforced by formal institutional schooling.
+
+On the one hand, advocates of parental responsibility argue that the household represents a child's earliest and most enduring moral compass. From infancy, parents model fundamental virtues such as empathy, honesty, respect, and mutual consideration through daily routines. Because familial bonds are rooted in profound emotional attachments, parental praise and discipline carry unmatched psychological weight. If parents neglect basic etiquette and civic values, children often develop behavioral dysfunctions that external authorities struggle to correct later in life.
+
+On the other hand, proponents of school-based education emphasize that schools provide a miniature replica of adult civil society that a domestic setting cannot simulate. Within classrooms and schoolyards, children interact with peers and adults from diverse socioeconomic and cultural backgrounds. Here, they must adhere to rigid institutional rules, practice turn-taking, collaborate on collective projects, and resolve interpersonal conflicts democratically. Furthermore, structured curricula in civics, ethics, and history teach pupils their legal duties, environmental responsibilities, and communal solidarity on a macro level.
+
+In conclusion, although the domestic foundation laid by parents instills fundamental ethical values, schools provide the vital public arena where those values are practiced at scale. Therefore, fostering conscientious citizens depends on active synergy between supportive parenting and comprehensive institutional education.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 1",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction & Familiar Topics",
+                    topic: "Neighbours",
+                    questions: [
+                        {
+                            question: "How well do you know the people who live next door to you?",
+                            band9_sample: "I know my immediate neighbors reasonably well. We've lived in the same apartment building for roughly four years now, so we frequently exchange pleasantries in the elevator and catch up on building updates."
+                        },
+                        {
+                            question: "How often do you see them? [Why/Why not?]",
+                            band9_sample: "I bump into them several times a week, typically in the morning when we're heading out to work or on weekends in the local supermarket. We don't intrude into each other's private lives, but we remain warm and accessible."
+                        },
+                        {
+                            question: "What kinds of problems do people sometimes have with their neighbours?",
+                            band9_sample: "The most pervasive grievance usually revolves around noise pollutionâ€”whether that's late-night parties, loud musical instruments, or home renovation drills. Boundary disputes and inconsiderate parking can also provoke friction."
+                        },
+                        {
+                            question: "How do you think neighbours can help each other?",
+                            band9_sample: "Neighbors can offer invaluable mutual support, such as keeping an eye on each other's homes during vacations, collecting parcel deliveries, or offering basic assistance during emergencies."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card)",
+                    cue_card: `Describe a time when you were asked to give your opinion in a questionnaire or survey.
+
+You should say:
+â€¢ what the questionnaire/survey was about
+â€¢ why you were asked to give your opinions
+â€¢ what opinions you gave
+and explain how you felt about giving your opinions in this questionnaire/survey.`,
+                    band9_sample: `I'd like to talk about a comprehensive passenger satisfaction survey that I completed about six months ago after taking a high-speed intercity train trip.
+
+As I was disembarking at the central station, customer service representatives from the state railway company were handing out tablets with a QR code and asking frequent travelers if they would dedicate five minutes to evaluate their travel experience. Since I commute by train twice a week, I was more than happy to participate.
+
+The survey examined several distinct operational aspects, including ticket booking convenience, carriage cleanliness, onboard Wi-Fi reliability, punctuality, and catering standards. In my evaluation, I gave exceptionally high ratings for punctuality and digital ticketing, which were seamless. However, I voiced candid criticism regarding the unstable internet connectivity in transit and the lack of healthy, affordable meal options in the dining car.
+
+Overall, I found participating in the survey immensely rewarding. Too often consumers feel powerless against large corporate monopolies, so having a structured platform to articulate genuine constructive feedback gave me a sense of civic engagement. To my pleasant surprise, the railway operator subsequently rolled out upgraded Wi-Fi routers a few months later, which reinforced my belief that public surveys truly make a tangible difference.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion",
+                    sub_topics: [
+                        {
+                            title: "Asking questions & Gathering opinions",
+                            questions: [
+                                {
+                                    question: "What kinds of organisation want to find out about people's opinions?",
+                                    band9_sample: "A vast spectrum of bodies rely on public sentiment. Commercial enterprises frequently conduct market research to refine consumer products and predict buying patterns. Concurrently, governmental departments and municipal councils gather feedback to design responsive public transit and healthcare policies."
+                                },
+                                {
+                                    question: "Do you think that questionnaires or surveys are good ways of finding out people's opinions?",
+                                    band9_sample: "They are highly effective for capturing quantitative data across expansive demographics quickly and cost-effectively. However, their primary limitation is qualitative depth; multiple-choice checkboxes rarely capture the emotional subtleties and nuanced motivations that an in-depth interview can reveal."
+                                },
+                                {
+                                    question: "What reasons might people have for not wanting to give their opinions?",
+                                    band9_sample: "A primary deterrent is time scarcity; modern individuals lead hectic lifestyles and view unsolicited surveys as intrusive. Additionally, mounting concerns regarding digital privacy and data harvesting make citizens reluctant to disclose personal perspectives."
+                                }
+                            ]
+                        },
+                        {
+                            title: "Questionnaires in educational settings",
+                            questions: [
+                                {
+                                    question: "Do you think it would be a good idea for schools to ask students their opinions about lessons?",
+                                    band9_sample: "Absolutely. Soliciting constructive pupil feedback empowers learners and fosters a collaborative academic environment. It encourages students to take ownership of their education rather than remaining passive recipients."
+                                },
+                                {
+                                    question: "What would the advantages for schools be if they asked students their opinions?",
+                                    band9_sample: "Institutions gain candid insights into teaching methodologies that either engage or alienate pupils. Instructors can adjust the pedagogical pace, incorporate more interactive media, and preempt academic disengagement before grades deteriorate."
+                                },
+                                {
+                                    question: "Would there be any disadvantages in asking students' opinions?",
+                                    band9_sample: "The potential danger lies in popularity contests or vindictive ratings. Immature students might penalize rigorous, demanding teachers simply because they assign substantial homework, rather than objectively evaluating instructional efficacy."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// =========================================================================
+// CAMBRIDGE IELTS 8 - TEST 2 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam8Test2 = {
+    id: "cam_8_test_2",
+    title: "Cambridge IELTS 8 - Test 2",
+    book: "Cambridge IELTS 8",
+    book_id: "cam_8",
+    test_number: 2,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-8-audio/cam8_test2.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 2",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Total Insurance Incident Report",
+                    description: "Questions 1-10: Complete the form below (NO MORE THAN THREE WORDS AND/OR A NUMBER).",
+                    tapescript: `MICHAEL: Hello, I'm calling to report an insurance incident regarding damage to household goods during shipping.
+AGENT: Certainly sir, let me take your details. Can I have your full name, please?
+MICHAEL: Yes, it's Michael Alexander.
+AGENT: And your address in Sydney?
+MICHAEL: 24 Manly Street, Milperra, Sydney.
+AGENT: Milperra... how do you spell that?
+MICHAEL: M-I-L-P-E-R-R-A.
+AGENT: Thank you. And who was your shipping agent?
+MICHAEL: The company was called First Class Movers.
+AGENT: Right, First Class Movers. When did the shipment arrive in Sydney?
+MICHAEL: It arrived on the 28th of November.
+AGENT: And the reference number on your shipping manifest?
+MICHAEL: It's 601 ACK.
+AGENT: Great. Now, could you describe the damaged items and the nature of the damage?
+MICHAEL: Well, first of all, there's a large antique television. The screen is completely cracked.
+AGENT: Television screen cracked. Where did that happen?
+MICHAEL: In transit, probably during unloading. And then there's an ornamental mirror that was intended for the bathroom.
+AGENT: Yes?
+MICHAEL: When we unpacked the crate, the wooden frame had split right near the bathroom door fitting.
+AGENT: Right, wooden frame split. Anything else?
+MICHAEL: Yes, a dining room table.
+AGENT: What is the estimated cost of repair for that?
+MICHAEL: The quote from the carpenter is 140 dollars. One of the carved legs was snapped off.
+AGENT: Right, table leg snapped off, $140. Any kitchenware?
+MICHAEL: Yes, a box containing ceramic plates was dropped. Several heirloom dinner plates were smashed.
+AGENT: And the value of those plates?
+MICHAEL: About 60 dollars for the replacement set.
+AGENT: Fine, Mr Alexander. We'll process your claim right away.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "fill_blank",
+                            question: "Address: 24 Manly Street, [1] ............, Sydney",
+                            correct_answer: "Milperra",
+                            acceptable_answers: ["Milperra"],
+                            explanation: "Caller spells: M-I-L-P-E-R-R-A."
+                        },
+                        {
+                            q_number: 2,
+                            type: "fill_blank",
+                            question: "Shipping agent: [2] ............",
+                            correct_answer: "First Class Movers",
+                            acceptable_answers: ["First Class Movers"],
+                            explanation: "Caller: 'The company was called First Class Movers.'"
+                        },
+                        {
+                            q_number: 3,
+                            type: "fill_blank",
+                            question: "Date of arrival: [3] ............",
+                            correct_answer: "28 November",
+                            acceptable_answers: ["28 November", "28th November", "November 28"],
+                            explanation: "Caller: 'It arrived on the 28th of November.'"
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "Television: [4] ............ is cracked.",
+                            correct_answer: "screen",
+                            acceptable_answers: ["screen", "the screen"],
+                            explanation: "Caller: 'The screen is completely cracked.'"
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "Mirror for the [5] ............ : frame split.",
+                            correct_answer: "bathroom",
+                            acceptable_answers: ["bathroom"],
+                            explanation: "Caller: 'an ornamental mirror that was intended for the bathroom'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "Split right near the bathroom [6] ............",
+                            correct_answer: "door",
+                            acceptable_answers: ["door"],
+                            explanation: "Caller: 'near the bathroom door fitting'."
+                        },
+                        {
+                            q_number: 7,
+                            type: "fill_blank",
+                            question: "Dining table repair quote: $[7] ............",
+                            correct_answer: "140",
+                            acceptable_answers: ["140", "$140"],
+                            explanation: "Caller: 'The quote from the carpenter is 140 dollars.'"
+                        },
+                        {
+                            q_number: 8,
+                            type: "fill_blank",
+                            question: "Damage: one table [8] ............ snapped off.",
+                            correct_answer: "leg",
+                            acceptable_answers: ["leg"],
+                            explanation: "Caller: 'One of the carved legs was snapped off.'"
+                        },
+                        {
+                            q_number: 9,
+                            type: "fill_blank",
+                            question: "Dinner [9] ............ smashed.",
+                            correct_answer: "plates",
+                            acceptable_answers: ["plates"],
+                            explanation: "Caller: 'Several heirloom dinner plates were smashed.'"
+                        },
+                        {
+                            q_number: 10,
+                            type: "fill_blank",
+                            question: "Replacement cost: $[10] ............",
+                            correct_answer: "60",
+                            acceptable_answers: ["60", "$60"],
+                            explanation: "Caller: 'About 60 dollars for the replacement set.'"
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Redhill Nature Reserve & Community Farm",
+                    description: "Questions 11-14: Label the map/plan; Questions 15-20: Multiple Choice.",
+                    tapescript: `SPEAKER: Welcome everyone to the Redhill Nature Reserve and Community Farm briefing.
+Let me draw your attention to the map of our facility.
+Right as you enter from the main entrance gates on the southern boundary, you'll see the visitor reception centre straight ahead.
+If you take the path leading to the north-east, you will enter the ancient deciduous woodland, marked on your guide as the Forest.
+Continuing along the stream towards the west, you will come across our sustainable aquaculture ponds, known as the Fish Farm.
+Just beyond the ponds, adjacent to the polytunnels on the north-western corner, is our organic vegetable production area, labeled the Market Garden.
+Now, concerning our visitor programs: our educational school workshops take place every Wednesday and Friday. For families, the petting zoo is open daily, where young children can feed lambs and rabbits under staff supervision.
+Please be advised that dogs are strictly prohibited in the nature sanctuary to prevent disturbing ground-nesting birds, though service animals are naturally exempt.
+Volunteers are warmly invited to join our weekend conservation working bees, which run from 10 a.m. to 2 p.m. every Saturday.`,
+                    questions: [
+                        {
+                            q_number: 11,
+                            type: "multiple_choice",
+                            question: "The visitor reception centre is located",
+                            options: [
+                                "A. near the pond.",
+                                "B. opposite the main entrance.",
+                                "C. behind the greenhouse."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Speaker: 'straight ahead from the main entrance gates'."
+                        },
+                        {
+                            q_number: 12,
+                            type: "fill_blank",
+                            question: "Area 12 on the map: [12] ............",
+                            correct_answer: "the Forest",
+                            acceptable_answers: ["Forest", "the Forest"],
+                            explanation: "Speaker: 'path leading to the north-east... marked as the Forest'."
+                        },
+                        {
+                            q_number: 13,
+                            type: "fill_blank",
+                            question: "Area 13 on the map: [13] ............",
+                            correct_answer: "Fish Farm",
+                            acceptable_answers: ["Fish Farm", "Fish Farms", "Fish Farm(s)"],
+                            explanation: "Speaker: 'sustainable aquaculture ponds, known as the Fish Farm'."
+                        },
+                        {
+                            q_number: 14,
+                            type: "fill_blank",
+                            question: "Area 14 on the map: [14] ............",
+                            correct_answer: "Market Garden",
+                            acceptable_answers: ["Market Garden"],
+                            explanation: "Speaker: 'organic vegetable production area, labeled the Market Garden'."
+                        },
+                        {
+                            q_number: 15,
+                            type: "multiple_choice",
+                            question: "School educational visits take place on",
+                            options: [
+                                "A. Mondays and Tuesdays.",
+                                "B. Tuesdays and Thursdays.",
+                                "C. Wednesdays and Fridays."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Speaker: 'workshops take place every Wednesday and Friday.'"
+                        },
+                        {
+                            q_number: 16,
+                            type: "multiple_choice",
+                            question: "Children in the petting zoo are permitted to",
+                            options: [
+                                "A. feed selected animals.",
+                                "B. ride ponies.",
+                                "C. collect bird eggs."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Speaker: 'where young children can feed lambs and rabbits'."
+                        },
+                        {
+                            q_number: 17,
+                            type: "multiple_choice",
+                            question: "Pet dogs are",
+                            options: [
+                                "A. permitted on leads.",
+                                "B. allowed only in the cafe area.",
+                                "C. not allowed in the sanctuary."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Speaker: 'dogs are strictly prohibited in the nature sanctuary'."
+                        },
+                        {
+                            q_number: 18,
+                            type: "multiple_choice",
+                            question: "Volunteer conservation activities occur",
+                            options: [
+                                "A. every Sunday morning.",
+                                "B. every Saturday from 10 to 2.",
+                                "C. weekday afternoons."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Speaker: 'run from 10 a.m. to 2 p.m. every Saturday.'"
+                        },
+                        {
+                            q_number: 19,
+                            type: "multiple_choice",
+                            question: "The organic farm produce can be purchased",
+                            options: [
+                                "A. online only.",
+                                "B. at local supermarkets.",
+                                "C. at the farm shop."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 19 is C."
+                        },
+                        {
+                            q_number: 20,
+                            type: "multiple_choice",
+                            question: "Annual membership cards offer",
+                            options: [
+                                "A. free parking and quarterly newsletter.",
+                                "B. unlimited cafe discounts.",
+                                "C. private tours with head biologist."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 20 is A."
+                        }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Biology Research - Honeybee Colony Behavior",
+                    description: "Questions 21-24: Multiple Choice; Questions 25-30: Complete the flow-chart.",
+                    tapescript: `TUTOR: Well David and Chloe, how is your experimental study on pollinator dynamics progressing?
+CHLOE: It's coming along well. We've focused our research on how environmental factors impact honeybee foraging efficiency.
+DAVID: Initially we considered looking at pesticide residues, but we realized that monitoring foraging duration across varied ambient temperatures was far more feasible for our timeframe.
+TUTOR: Good decision. And what about your methodology?
+CHLOE: In the field, we placed electronic micro-sensors on individual foraging insects to record when they departed the hive and when they returned.
+DAVID: We also tracked their feeding and eating behaviors at artificial nectar stations set up at predetermined distances.
+CHLOE: After gathering raw field observations, we brought samples back to the laboratory for metabolic analysis.
+DAVID: One interesting finding was how access to clean water influenced their thermoregulation on hot days.
+CHLOE: Exactly. Bees carrying higher moisture content showed increased resilience, and their wings maintained higher vibration frequencies.
+TUTOR: Excellent. And were the tracking sensors reliable and accurate throughout?
+DAVID: Yes, the micro-sensor data proved remarkably reliable and accurate compared to manual stopwatches.`,
+                    questions: [
+                        {
+                            q_number: 21,
+                            type: "multiple_choice",
+                            question: "The students narrowed their research focus to",
+                            options: [
+                                "A. foraging duration and temperature.",
+                                "B. pesticide mortality rates.",
+                                "C. floral scent preferences."
+                            ],
+                            correct_answer: "A",
+                            explanation: "David confirms they monitored foraging duration across varied ambient temperatures."
+                        },
+                        {
+                            q_number: 22,
+                            type: "multiple_choice",
+                            question: "How did the researchers track individual bees?",
+                            options: [
+                                "A. fluorescent paint markings",
+                                "B. electronic micro-sensors",
+                                "C. high-speed video capture"
+                            ],
+                            correct_answer: "B",
+                            explanation: "Chloe: 'placed electronic micro-sensors on individual foraging insects'."
+                        },
+                        {
+                            q_number: 23,
+                            type: "multiple_choice",
+                            question: "The artificial nectar stations were placed at",
+                            options: [
+                                "A. random locations.",
+                                "B. tree tops.",
+                                "C. predetermined distances."
+                            ],
+                            correct_answer: "C",
+                            explanation: "David: 'artificial nectar stations set up at predetermined distances'."
+                        },
+                        {
+                            q_number: 24,
+                            type: "multiple_choice",
+                            question: "What surprised the students about bee behavior?",
+                            options: [
+                                "A. the importance of hydration for cooling",
+                                "B. the speed of hive communications",
+                                "C. their reluctance to forage on windy mornings"
+                            ],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 24 is A."
+                        },
+                        {
+                            q_number: 25,
+                            type: "fill_blank",
+                            question: "Sensors mounted directly onto individual [25] ............",
+                            correct_answer: "insects",
+                            acceptable_answers: ["insects"],
+                            explanation: "Chloe: 'sensors on individual foraging insects'."
+                        },
+                        {
+                            q_number: 26,
+                            type: "fill_blank",
+                            question: "Monitored their [26] ............ patterns at feeding stations.",
+                            correct_answer: "feeding",
+                            acceptable_answers: ["feeding", "eating", "feeding/eating"],
+                            explanation: "Official Key: feeding/eating."
+                        },
+                        {
+                            q_number: 27,
+                            type: "fill_blank",
+                            question: "Samples transferred to the university [27] ............ for bio-assays.",
+                            correct_answer: "laboratory",
+                            acceptable_answers: ["laboratory"],
+                            explanation: "Chloe: 'brought samples back to the laboratory'."
+                        },
+                        {
+                            q_number: 28,
+                            type: "fill_blank",
+                            question: "Identified regular consumption of [28] ............ to regulate body heat.",
+                            correct_answer: "water",
+                            acceptable_answers: ["water"],
+                            explanation: "David: 'access to clean water influenced their thermoregulation'."
+                        },
+                        {
+                            q_number: 29,
+                            type: "fill_blank",
+                            question: "Optimal hydration allowed rapid vibration of bee [29] ............",
+                            correct_answer: "wings",
+                            acceptable_answers: ["wings"],
+                            explanation: "Chloe: 'their wings maintained higher vibration frequencies'."
+                        },
+                        {
+                            q_number: 30,
+                            type: "fill_blank",
+                            question: "Automated telemetry readings proved both [30] ............ and accurate.",
+                            correct_answer: "reliable",
+                            acceptable_answers: ["reliable", "accurate", "reliable/accurate"],
+                            explanation: "Official Key: reliable/accurate."
+                        }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Engineering & Architecture - Sustainable High-Rise Design",
+                    description: "Questions 31-40: Multiple Choice and Matching (A-F).",
+                    tapescript: `LECTURER: Today we examine modern high-rise architectural engineering with an emphasis on sustainable urban towers.
+Historically, skyscraper construction prioritized structural height and prestige over environmental performance. However, modern mega-cities face immense pressures on energy consumption.
+Heating, ventilation, and air-conditioning account for nearly 40% of a commercial tower's operational carbon footprint. Therefore, contemporary architects employ passive aerodynamic facades.
+By designing porous outer envelopes that harness natural prevailing winds, internal air circulation can be achieved with minimal mechanical cooling.
+Furthermore, solar envelope studies dictate tower orientations to maximize daylight harvesting while minimizing intense thermal gain during peak midday hours.
+Now let us review five landmark sustainable skyscrapers and their signature innovations:
+First, the Pearl River Tower in Guangzhou utilizes integrated wind turbines channeled through aerodynamic openings on its facade.
+Second, the Bahrain World Trade Center incorporates large-scale skybridges housing functional wind generators.
+Third, the Commerzbank Tower in Frankfurt features internal sky gardens that rise spirally up the central atrium, providing natural ventilation and communal green spaces.
+Fourth, the Bank of America Tower in New York utilizes geothermal cooling loops and rainwater catchment that flushes all plumbing fixtures.
+Finally, the Pixel Building in Melbourne achieves carbon neutrality through colorful sun-shade louvers and on-site anaerobic wastewater digestion.`,
+                    questions: [
+                        {
+                            q_number: 31,
+                            type: "multiple_choice",
+                            question: "Traditional high-rise architecture prioritized",
+                            options: [
+                                "A. low material expenses.",
+                                "B. structural height and prestige.",
+                                "C. speed of occupancy."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Lecturer: 'Historically, skyscraper construction prioritized structural height and prestige'."
+                        },
+                        {
+                            q_number: 32,
+                            type: "multiple_choice",
+                            question: "Air conditioning in commercial towers typically consumes",
+                            options: [
+                                "A. 20% of operational energy.",
+                                "B. nearly 40% of the operational footprint.",
+                                "C. over 60% of total electrical capacity."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Lecturer: 'account for nearly 40% of a commercial tower's operational carbon footprint'."
+                        },
+                        {
+                            q_number: 33,
+                            type: "multiple_choice",
+                            question: "Aerodynamic porous building facades",
+                            options: [
+                                "A. harness prevailing winds for natural cooling.",
+                                "B. reduce total steel requirements by half.",
+                                "C. eliminate external sound vibration."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Lecturer: 'harness natural prevailing winds, internal air circulation can be achieved with minimal mechanical cooling'."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice",
+                            question: "Solar envelope orientation aims to",
+                            options: [
+                                "A. optimize daylight while reducing heat gain.",
+                                "B. protect adjacent buildings from shadows.",
+                                "C. maximize surface area for advertising panels."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Lecturer: 'maximize daylight harvesting while minimizing intense thermal gain'."
+                        },
+                        {
+                            q_number: 35,
+                            type: "multiple_choice",
+                            question: "Rainwater catchment systems primarily serve to",
+                            options: [
+                                "A. cool the central elevator shafts.",
+                                "B. hydrate decorative rooftop lawns.",
+                                "C. supply non-potable sanitation plumbing."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 35 is C."
+                        },
+                        {
+                            q_number: 36,
+                            type: "multiple_choice",
+                            question: "On-site wastewater treatment",
+                            options: [
+                                "A. is required by federal building codes.",
+                                "B. produces potable mineral drinking water.",
+                                "C. relies on anaerobic bio-digestion."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 36 is C."
+                        },
+                        {
+                            q_number: 37,
+                            type: "multiple_choice",
+                            question: "Integrated wind turbines in Pearl River Tower",
+                            options: [
+                                "A. generate all building power requirements.",
+                                "B. utilize aerodynamic facade channels.",
+                                "C. rotate only during typhoon conditions."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 37 is B."
+                        },
+                        {
+                            q_number: 38,
+                            type: "matching_heading",
+                            question: "Feature of Commerzbank Tower in Frankfurt",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "F",
+                            explanation: "Official Cambridge Key: 38 is F."
+                        },
+                        {
+                            q_number: 39,
+                            type: "matching_heading",
+                            question: "Feature of Bahrain World Trade Center",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 39 is D."
+                        },
+                        {
+                            q_number: 40,
+                            type: "matching_heading",
+                            question: "Feature of Melbourne Pixel Building",
+                            options: ["A", "B", "C", "D", "E", "F"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 40 is C."
+                        }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 2",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Sheet Glass Manufacture: The Float Process",
+                    text: `How glass manufacturing was revolutionized by the floating ribbon technique
+
+Glass, where would we be without it? For centuries, window glass was produced using labor-intensive traditional methods. The earliest technique involved spinning a molten glass bulb on an iron rod until centrifugal force flattened it into a thin circular disk, known as crown glass. While crown glass had a brilliantly fire-polished surface, it was marred by concentric rings and a thick central bullseye mark.
+
+Later, the cylinder process was developed: craftsmen blew large glass cylinders, sliced them lengthwise, and reheated them to flatten them into sheets. Although this allowed larger panes, contact with the flattening bed inevitably left the surface marked and unpolished. Achieving flat glass that was both optically clear and perfectly unblemished required grinding and polishing both faces with abrasive slurriesâ€”a slow, expensive, and intensely labor-intensive enterprise that wasted up to 20% of the raw material.
+
+The revolutionary breakthrough came in the 1950s when Alastair Pilkington conceived the float glass process. His brilliant insight was to pour a continuous ribbon of molten glass over a bath of molten tin. Because the tin has a higher specific gravity than glass and remains liquid at the temperature range where glass solidifies, the glass floats naturally on the perfectly smooth liquid metal surface. Gravity and surface tension cause the molten glass to spread outward without any physical rollers touching its upper or lower surfaces, creating two perfectly flat, parallel, and fire-polished faces.
+
+To control the final thickness of the ribbon, cooled edge-rollers grip the margins of the floating glass ribbon as it advances through the enclosed bath chamber under a protective nitrogen-hydrogen atmosphere. Exiting the tin bath onto an annealing lehr, the glass is gradually cooled to eliminate internal thermal stresses before being automatically inspected and sliced into commercial sheets. Today, over 90% of all architectural and automotive flat glass in the world is produced via the float method.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "fill_blank",
+                            question: "Crown glass was manufactured by [1] ............ a molten blob until flat.",
+                            correct_answer: "spinning",
+                            acceptable_answers: ["spinning"],
+                            explanation: "Text: 'involved spinning a molten glass bulb on an iron rod'."
+                        },
+                        {
+                            q_number: 2,
+                            type: "fill_blank",
+                            question: "Grinding and polishing was required to make ancient flat glass [2] ............",
+                            correct_answer: "unblemished",
+                            acceptable_answers: ["unblemished", "perfectly unblemished"],
+                            explanation: "Text: 'Achieving flat glass that was both optically clear and perfectly unblemished'."
+                        },
+                        {
+                            q_number: 3,
+                            type: "fill_blank",
+                            question: "Traditional glass grinding was extremely [3] ............",
+                            correct_answer: "labour-intensive",
+                            acceptable_answers: ["labour-intensive", "labor-intensive"],
+                            explanation: "Text: 'an intensely labor-intensive enterprise'."
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "Edge-gripping rollers regulate the final [4] ............ of the sheet.",
+                            correct_answer: "thickness",
+                            acceptable_answers: ["thickness"],
+                            explanation: "Text: 'To control the final thickness of the ribbon, cooled edge-rollers grip the margins'."
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "Contact with flattening beds left early cylinder glass [5] ............",
+                            correct_answer: "marked",
+                            acceptable_answers: ["marked"],
+                            explanation: "Text: 'inevitably left the surface marked and unpolished'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "In the modern float chamber, [6] ............ is poured onto a liquid bed.",
+                            correct_answer: "molten glass",
+                            acceptable_answers: ["molten glass", "glass"],
+                            explanation: "Text: 'pour a continuous ribbon of molten glass over a bath'."
+                        },
+                        {
+                            q_number: 7,
+                            type: "fill_blank",
+                            question: "The molten glass floats across a bath of liquid [7] ............",
+                            correct_answer: "molten tin",
+                            acceptable_answers: ["molten tin", "tin", "metal", "molten metal"],
+                            explanation: "Text: 'over a bath of molten tin'."
+                        },
+                        {
+                            q_number: 8,
+                            type: "fill_blank",
+                            question: "Cooled edge [8] ............ govern the lateral spread and speed of the ribbon.",
+                            correct_answer: "rollers",
+                            acceptable_answers: ["rollers"],
+                            explanation: "Text: 'cooled edge-rollers grip the margins'."
+                        },
+                        {
+                            q_number: 9,
+                            type: "true_false_not_given",
+                            question: "Alastair Pilkington patented the float process during the 1950s.",
+                            correct_answer: "TRUE",
+                            explanation: "Text states Pilkington conceived the float glass process in the 1950s."
+                        },
+                        {
+                            q_number: 10,
+                            type: "true_false_not_given",
+                            question: "Pilkington worked as an apprentice in a French glass factory before developing the float process.",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "The text does not mention where Pilkington trained or if he worked in France."
+                        },
+                        {
+                            q_number: 11,
+                            type: "true_false_not_given",
+                            question: "Molten glass is denser than liquid tin and sinks to the bottom of the float bath.",
+                            correct_answer: "FALSE",
+                            explanation: "Text states: 'Because the tin has a higher specific gravity than glass... the glass floats naturally'."
+                        },
+                        {
+                            q_number: 12,
+                            type: "true_false_not_given",
+                            question: "The upper surface of the float glass ribbon cools without any mechanical contact.",
+                            correct_answer: "TRUE",
+                            explanation: "Text states: 'without any physical rollers touching its upper or lower surfaces'."
+                        },
+                        {
+                            q_number: 13,
+                            type: "true_false_not_given",
+                            question: "Today, the vast majority of flat glass worldwide is manufactured using Pilkington's method.",
+                            correct_answer: "TRUE",
+                            explanation: "Text: 'Today, over 90% of all architectural and automotive flat glass in the world is produced via the float method'."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "The Little Ice Age",
+                    text: `Climate cycles and historical consequences of the Little Ice Age
+
+A. This book will provide a detailed examination of the Little Ice Age, a climatic interval extending roughly from the fourteenth to the mid-nineteenth century. Far from being a continuous, unbroken deep freeze, the Little Ice Age was characterized by abrupt climatic fluctuationsâ€”swings between intensely bitter winters and blistering, drought-ridden summers.
+
+B. The beginning of this epoch brought an abrupt termination to the preceding Medieval Warm Period, during which Norse settlers had colonized coastal Greenland and vineyards flourished across southern Britain. By 1315, relentless, torrential rainfall devastated crops across northern Europe, triggering the Great Famine of 1315â€“1317. Over the following centuries, Alpine glaciers advanced down valleys, engulfing whole villages, while pack ice locked Scandinavian ports for months on end.
+
+C. Scientists reconstruct past temperatures through diverse proxy indicators: tree-ring dendrochronology, deep ice cores drilled from polar ice caps, and historical documents such as parish tax records and grape harvest dates. These records demonstrate that solar variability (the Maunder Minimum in sunspots) and powerful volcanic eruptions contributed to the cooling trends. Volcanic aerosols injected into the stratosphere reflected incoming solar radiation back into space.
+
+D. The Little Ice Age played a profound, often underappreciated role in shaping human history and modern agricultural techniques. In the Netherlands, severe winter freezes forced the Dutch to develop ice skates, sledges, and canal defenses. Furthermore, agricultural crises stimulated crop rotation, seed selection, and root vegetable farming, which underpinned the subsequent agricultural revolution.
+
+E. By the mid-nineteenth century, temperatures began their modern upward ascent, marking the conclusion of the Little Ice Age and ushering in our current era of human-induced global warming.`,
+                    questions: [
+                        {
+                            q_number: 14,
+                            type: "matching_heading",
+                            question: "Paragraph A Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "ii",
+                            explanation: "Official Cambridge Key: 14 is ii."
+                        },
+                        {
+                            q_number: 15,
+                            type: "matching_heading",
+                            question: "Paragraph B Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "vii",
+                            explanation: "Official Cambridge Key: 15 is vii."
+                        },
+                        {
+                            q_number: 16,
+                            type: "matching_heading",
+                            question: "Paragraph C Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "ix",
+                            explanation: "Official Cambridge Key: 16 is ix."
+                        },
+                        {
+                            q_number: 17,
+                            type: "matching_heading",
+                            question: "Paragraph D Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "iv",
+                            explanation: "Official Cambridge Key: 17 is iv."
+                        },
+                        {
+                            q_number: 18,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO natural phenomena caused the severe temperature dips during the Little Ice Age? (Questions 18-19 IN EITHER ORDER)",
+                            options: [
+                                "A. oceanic salinity decline",
+                                "B. reduced solar sunspot activity",
+                                "C. stratospheric volcanic ash",
+                                "D. tectonic plate shifts",
+                                "E. magnetic pole migration"
+                            ],
+                            correct_answer: "C",
+                            acceptable_answers: ["B", "C"],
+                            explanation: "Official Key: C and B."
+                        },
+                        {
+                            q_number: 19,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO natural phenomena caused the severe temperature dips during the Little Ice Age? (Questions 18-19 IN EITHER ORDER)",
+                            options: [
+                                "A. oceanic salinity decline",
+                                "B. reduced solar sunspot activity",
+                                "C. stratospheric volcanic ash",
+                                "D. tectonic plate shifts",
+                                "E. magnetic pole migration"
+                            ],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "C"],
+                            explanation: "Official Key: B and C."
+                        },
+                        {
+                            q_number: 20,
+                            type: "matching_information",
+                            question: "Matching information 20",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 20 is A."
+                        },
+                        {
+                            q_number: 21,
+                            type: "matching_information",
+                            question: "Matching information 21",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "H",
+                            explanation: "Official Cambridge Key: 21 is H."
+                        },
+                        {
+                            q_number: 22,
+                            type: "matching_information",
+                            question: "Matching information 22",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "G",
+                            explanation: "Official Cambridge Key: 22 is G."
+                        },
+                        {
+                            q_number: 23,
+                            type: "multiple_choice",
+                            question: "The Great Famine of 1315-1317 was directly precipitated by",
+                            options: [
+                                "A. early spring blizzards.",
+                                "B. insect plagues.",
+                                "C. incessant torrential summer downpours."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 23 is C."
+                        },
+                        {
+                            q_number: 24,
+                            type: "multiple_choice",
+                            question: "Tree rings and ice cores are examples of",
+                            options: [
+                                "A. historical municipal chronicles.",
+                                "B. geological fault indicators.",
+                                "C. paleoclimatic proxy data sources."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 24 is C."
+                        },
+                        {
+                            q_number: 25,
+                            type: "multiple_choice",
+                            question: "Dutch societal adaptations to frozen canals included",
+                            options: [
+                                "A. developing skates and winter transport infrastructure.",
+                                "B. relocating maritime trade overseas.",
+                                "C. abandoning seasonal agriculture entirely."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 25 is A."
+                        },
+                        {
+                            q_number: 26,
+                            type: "multiple_choice",
+                            question: "The culmination of the Little Ice Age occurred around",
+                            options: [
+                                "A. 1750.",
+                                "B. the mid-nineteenth century.",
+                                "C. the early twentieth century."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 26 is B."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "The Power of Scents: Olfaction and Emotion",
+                    text: `The psychological and physical mechanics of our most neglected sense
+
+A. The sense of smell is our most emotionally evocative faculty, yet it remains remarkably underappreciated in Western culture. Odours evoke memories of poignant vividnessâ€”the scent of rain on dry soil, freshly baked bread in childhood, or a particular floral perfume can instantly transport us across decades. Olfactory signals travel directly to the limbic system, the brain's emotional nexus, bypassing the conscious cognitive processing through which visual and auditory stimuli pass.
+
+B. Despite its potent biological roots, human olfaction is hampered by linguistic poverty. While our vocabulary boasts hundreds of specialized words for colours, sounds, and geometric shapes, we possess almost no intrinsic words dedicated solely to scents. Instead, we are compelled to describe smells by analogy: something smells 'fruity', 'flowery', 'smoky', or 'metallic'. When asked to identify common household aromas like coffee, cinnamon, or baby powder without visual assistance, participants often flounder, recognizing the smell intimately yet unable to articulate its name.
+
+C. In addition to personal psychological associations, smells perform crucial social and biological functions. Scents can convey chemical messages of fear, attraction, and emotional distress. Anthropological studies demonstrate that clothing steeped in human scent can foster bonding between mothers and newborn infants within mere hours of birth. Moreover, distinct cultural groups exhibit radically divergent olfactory values: an odour cherished in one culture as an auspicious ceremonial perfume may be dismissed elsewhere as rank or unhygienic.
+
+D. Researchers emphasize that smell plays a silent yet ubiquitous role in physical well-being. Anosmiaâ€”the complete loss of the sense of smellâ€”frequently precipitates severe depressive episodes, as sufferers feel disconnected from their surroundings, unable to enjoy meals, and terrified by undetected hazards like gas leaks or spoiled food. Recent advancements in neurobiology suggest that olfactory receptors are not restricted to the nasal passages but are scattered throughout various internal organs, responding to airborne chemicals in ways science is only beginning to decipher.`,
+                    questions: [
+                        {
+                            q_number: 27,
+                            type: "matching_heading",
+                            question: "Paragraph A Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "viii",
+                            explanation: "Official Cambridge Key: 27 is viii."
+                        },
+                        {
+                            q_number: 28,
+                            type: "matching_heading",
+                            question: "Paragraph B Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "ii",
+                            explanation: "Official Cambridge Key: 28 is ii."
+                        },
+                        {
+                            q_number: 29,
+                            type: "matching_heading",
+                            question: "Paragraph C Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "vi",
+                            explanation: "Official Cambridge Key: 29 is vi."
+                        },
+                        {
+                            q_number: 30,
+                            type: "matching_heading",
+                            question: "Paragraph D Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "i",
+                            explanation: "Official Cambridge Key: 30 is i."
+                        },
+                        {
+                            q_number: 31,
+                            type: "matching_heading",
+                            question: "Heading 31",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "iii",
+                            explanation: "Official Cambridge Key: 31 is iii."
+                        },
+                        {
+                            q_number: 32,
+                            type: "matching_heading",
+                            question: "Heading 32",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "v",
+                            explanation: "Official Cambridge Key: 32 is v."
+                        },
+                        {
+                            q_number: 33,
+                            type: "multiple_choice",
+                            question: "Olfactory stimuli trigger vivid emotional memories because they",
+                            options: [
+                                "A. possess stronger neural waves than light.",
+                                "B. activate language centers immediately.",
+                                "C. connect directly to the brain's limbic system."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Paragraph A confirms olfactory signals bypass cognitive filters straight to the limbic system."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice",
+                            question: "Describing odours is notoriously difficult because",
+                            options: [
+                                "A. human languages lack dedicated olfactory vocabularies.",
+                                "B. memories of smells fade within seconds.",
+                                "C. airborne odor molecules mutate rapidly."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Paragraph B explains that our vocabulary has almost no intrinsic words dedicated solely to scents."
+                        },
+                        {
+                            q_number: 35,
+                            type: "multiple_choice",
+                            question: "Studies of newborn infants reveal that bonding is enhanced by",
+                            options: [
+                                "A. synthetic pheromone sprays.",
+                                "B. maternal voice pitch.",
+                                "C. clothing imbued with natural parental scent."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Paragraph C states that clothing steeped in human scent fosters maternal-infant bonding."
+                        },
+                        {
+                            q_number: 36,
+                            type: "multiple_choice",
+                            question: "Anosmia can lead to psychological depression because sufferers",
+                            options: [
+                                "A. lose their sense of hearing simultaneously.",
+                                "B. cannot travel internationally.",
+                                "C. are socially ostracized.",
+                                "D. feel profoundly detached from food, memories, and surroundings."
+                            ],
+                            correct_answer: "D",
+                            explanation: "Paragraph D notes that anosmia disconnects sufferers from surroundings and meals."
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "Mother-infant attachment is stimulated by exposure to maternal scent in [37] ............",
+                            correct_answer: "clothing",
+                            acceptable_answers: ["clothing"],
+                            explanation: "Official Cambridge Key: 37 is clothing."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Describing odours accurately is hindered by our limited linguistic [38] ............",
+                            correct_answer: "vocabulary",
+                            acceptable_answers: ["vocabulary"],
+                            explanation: "Official Cambridge Key: 38 is vocabulary."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Internal bodily receptors react to unseen airborne [39] ............",
+                            correct_answer: "chemicals",
+                            acceptable_answers: ["chemicals"],
+                            explanation: "Official Cambridge Key: 39 is chemicals."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Different human [40] ............ possess vastly contrasting standards of agreeable scents.",
+                            correct_answer: "cultures",
+                            acceptable_answers: ["cultures"],
+                            explanation: "Official Cambridge Key: 40 is cultures."
+                        }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 2",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    type: "three_pie_charts",
+                    title: "Task 1: Annual School Expenditure in 1981, 1991, and 2001",
+                    prompt: "The three pie charts below show the changes in annual spending by a particular UK school in 1981, 1991 and 2001. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    image_svg: `<svg viewBox="0 0 840 440" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; background: #ffffff;">
+  <!-- Title -->
+  <text x="420" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Changes in Annual School Spending (1981, 1991, 2001)</text>
+
+  <!-- 1981 Chart -->
+  <g transform="translate(150, 160)">
+    <text x="0" y="-105" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">1981</text>
+    <!-- Teachers: 40% (144 deg) -->
+    <path d="M 0 0 L 0 -85 A 85 85 0 0 1 50 -68.8 Z" fill="#3b82f6"/>
+    <!-- Other workers: 28% (100.8 deg) -->
+    <path d="M 0 0 L 50 -68.8 A 85 85 0 0 1 -75.9 38.1 Z" fill="#10b981"/>
+    <!-- Furniture: 15% (54 deg) -->
+    <path d="M 0 0 L -75.9 38.1 A 85 85 0 0 1 -76.8 -36.4 Z" fill="#f59e0b"/>
+    <!-- Resources: 15% (54 deg) -->
+    <path d="M 0 0 L -76.8 -36.4 A 85 85 0 0 1 -10.6 -84.3 Z" fill="#8b5cf6"/>
+    <!-- Insurance: 2% (7.2 deg) -->
+    <path d="M 0 0 L -10.6 -84.3 A 85 85 0 0 1 0 -85 Z" fill="#ec4899"/>
+    
+    <text x="35" y="-30" font-size="11" font-weight="bold" fill="#ffffff">40%</text>
+    <text x="-15" y="45" font-size="11" font-weight="bold" fill="#ffffff">28%</text>
+    <text x="-60" y="-5" font-size="10" font-weight="bold" fill="#ffffff">15%</text>
+    <text x="-40" y="-50" font-size="10" font-weight="bold" fill="#ffffff">15%</text>
+  </g>
+
+  <!-- 1991 Chart -->
+  <g transform="translate(420, 160)">
+    <text x="0" y="-105" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">1991</text>
+    <!-- Teachers: 50% (180 deg) -->
+    <path d="M 0 0 L 0 -85 A 85 85 0 0 1 0 85 Z" fill="#3b82f6"/>
+    <!-- Other workers: 22% (79.2 deg) -->
+    <path d="M 0 0 L 0 85 A 85 85 0 0 1 -83.5 -15.8 Z" fill="#10b981"/>
+    <!-- Resources: 20% (72 deg) -->
+    <path d="M 0 0 L -83.5 -15.8 A 85 85 0 0 1 -25.2 -81.2 Z" fill="#8b5cf6"/>
+    <!-- Furniture: 5% (18 deg) -->
+    <path d="M 0 0 L -25.2 -81.2 A 85 85 0 0 1 -1.4 -84.9 Z" fill="#f59e0b"/>
+    <!-- Insurance: 3% (10.8 deg) -->
+    <path d="M 0 0 L -1.4 -84.9 A 85 85 0 0 1 0 -85 Z" fill="#ec4899"/>
+    
+    <text x="35" y="5" font-size="12" font-weight="bold" fill="#ffffff">50%</text>
+    <text x="-40" y="50" font-size="11" font-weight="bold" fill="#ffffff">22%</text>
+    <text x="-55" y="-35" font-size="11" font-weight="bold" fill="#ffffff">20%</text>
+  </g>
+
+  <!-- 2001 Chart -->
+  <g transform="translate(690, 160)">
+    <text x="0" y="-105" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">2001</text>
+    <!-- Teachers: 45% (162 deg) -->
+    <path d="M 0 0 L 0 -85 A 85 85 0 0 1 26.3 80.8 Z" fill="#3b82f6"/>
+    <!-- Furniture: 23% (82.8 deg) -->
+    <path d="M 0 0 L 26.3 80.8 A 85 85 0 0 1 -78.4 32.7 Z" fill="#f59e0b"/>
+    <!-- Other workers: 15% (54 deg) -->
+    <path d="M 0 0 L -78.4 32.7 A 85 85 0 0 1 -81.5 -24 Z" fill="#10b981"/>
+    <!-- Resources: 9% (32.4 deg) -->
+    <path d="M 0 0 L -81.5 -24 A 85 85 0 0 1 -42.5 -73.6 Z" fill="#8b5cf6"/>
+    <!-- Insurance: 8% (28.8 deg) -->
+    <path d="M 0 0 L -42.5 -73.6 A 85 85 0 0 1 0 -85 Z" fill="#ec4899"/>
+    
+    <text x="40" y="5" font-size="12" font-weight="bold" fill="#ffffff">45%</text>
+    <text x="-25" y="65" font-size="11" font-weight="bold" fill="#ffffff">23%</text>
+    <text x="-65" y="10" font-size="10" font-weight="bold" fill="#ffffff">15%</text>
+    <text x="-55" y="-45" font-size="9" font-weight="bold" fill="#ffffff">9%</text>
+    <text x="-15" y="-65" font-size="9" font-weight="bold" fill="#ffffff">8%</text>
+  </g>
+
+  <!-- Shared Legend -->
+  <g transform="translate(110, 320)">
+    <rect x="0" y="0" width="16" height="16" fill="#3b82f6" rx="3"/>
+    <text x="24" y="13" font-size="12" fill="#334155">Teachers' salaries</text>
+
+    <rect x="180" y="0" width="16" height="16" fill="#10b981" rx="3"/>
+    <text x="204" y="13" font-size="12" fill="#334155">Other workers' salaries</text>
+
+    <rect x="400" y="0" width="16" height="16" fill="#f59e0b" rx="3"/>
+    <text x="424" y="13" font-size="12" fill="#334155">Furniture & equipment</text>
+
+    <rect x="100" y="35" width="16" height="16" fill="#8b5cf6" rx="3"/>
+    <text x="124" y="48" font-size="12" fill="#334155">Resources (e.g. books)</text>
+
+    <rect x="340" y="35" width="16" height="16" fill="#ec4899" rx="3"/>
+    <text x="364" y="48" font-size="12" fill="#334155">Insurance</text>
+  </g>
+</svg>`,
+                    model_answer_band9: `The three pie charts illustrate how a specific British school distributed its annual financial budget across five expenditure categories in 1981, 1991, and 2001.
+
+Overall, teachers' salaries consistently represented the largest single cost in all three decades, while insurance remained the smallest. Furniture and equipment saw a dramatic surge by the end of the period, whereas spending on other staff salaries steadily declined.
+
+In 1981, teachers' remuneration accounted for 40% of overall spending. This proportion expanded to reach exactly half (50%) in 1991, before retreating slightly to 45% in 2001. By stark contrast, other staff salaries experienced a sustained contraction, falling from 28% in 1981 to 22% in 1991, and nearly halving to 15% by 2001.
+
+Expenditure on physical and academic materials displayed fluctuating trajectories. Funding for resources such as books initially increased from 15% in 1981 to 20% in 1991, but slumped to just 9% by 2001. Conversely, investment in furniture and equipment plummeted from 15% in 1981 to a negligible 5% in 1991, before soaring to 23% in 2001â€”becoming the school's second largest expenditure. Finally, insurance costs climbed steadily fourfold, rising from 2% in 1981 to 3% in 1991 and ending at 8% in 2001.`
+                },
+                {
+                    task_number: 2,
+                    type: "opinion_discussion",
+                    title: "Task 2: Impact of Modern Communication Technology on Relationships",
+                    prompt: "Nowadays the way many people interact with each other has changed because of technology. In what ways has technology affected the types of relationships people make? Has this become a positive or negative development? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    model_answer_band9: `The omnipresence of telecommunication technology and social networking has irrevocably restructured human relationships. It has simultaneously broadened our social networks across geographic frontiers while often diluting the psychological intimacy traditionally nurtured through physical coexistence. On balance, I contend that this shift represents a net positive development, provided individuals maintain conscious boundaries against digital superficiality.
+
+First and foremost, technology has fundamentally diversified the types of connections humans can form. Historically, personal relationships were strictly constrained by physical vicinity: people befriended neighbors, classmates, or workplace colleagues. In the digital era, online communities, forums, and algorithmic networks connect individuals based on esoteric intellectual interests, shared professional goals, or niche creative passions, irrespective of geographical borders. For instance, scholars or minority groups residing in geographically isolated areas can now establish profound solidarity with global peers. Furthermore, messaging apps and video conferencing allow geographically dispersed family members and long-distance partners to maintain real-time emotional continuity across continents.
+
+Nevertheless, critics rightly caution against the qualitative erosion of interpersonal connections. Face-to-face communication engages nuanced vocal inflections, subconscious body language, and empathetic micro-expressions that digital screens cannot fully replicate. Over-reliance on mediated messaging often breeds transactional, commodified friendships, where social value is measured in superficial 'likes' or followers rather than genuine emotional availability. The illusion of constant connectedness can paradoxically lead to elevated feelings of isolation among younger demographics who substitute deep intimacy with digital performance.
+
+In conclusion, while technological mediation carries distinct risks of emotional shallowness and social isolation, its extraordinary power to democratize connectivity and transcend spatial barriers makes it an overwhelmingly beneficial evolution in human relations.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 2",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction & Familiar Topics",
+                    topic: "Newspapers and Magazines",
+                    questions: [
+                        {
+                            question: "Which magazines and newspapers do you read? [Why?]",
+                            band9_sample: "I primarily read digital editions of international publications like The Economist and The Guardian. I appreciate their in-depth investigative journalism and rigorous editorial analysis, which offer deeper context than sensationalized daily news feeds."
+                        },
+                        {
+                            question: "What kinds of article are you most interested in? [Why?]",
+                            band9_sample: "I'm particularly drawn to analytical features on global economics, technological innovation, and sustainable environmental architecture. These pieces explore systemic trends rather than transient day-to-day headlines."
+                        },
+                        {
+                            question: "Have you ever read a newspaper or magazine in a foreign language? [When/Why?]",
+                            band9_sample: "Yes, absolutely. During my undergraduate studies, I began reading English periodicals daily to expand my academic vocabulary and familiarize myself with natural journalistic idioms."
+                        },
+                        {
+                            question: "Do you think reading a newspaper or magazine in a foreign language is a good way to learn the language? [Why/Why not?]",
+                            band9_sample: "Undoubtedly. Reading authentic foreign press exposes learners to contemporary vocabulary, sophisticated sentence structures, and nuanced cultural idioms in authentic contextual usage."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card)",
+                    cue_card: `Describe a restaurant that you enjoyed going to.
+
+You should say:
+â€¢ where the restaurant was
+â€¢ why you chose this restaurant
+â€¢ what type of food you ate in this restaurant
+and explain why you enjoyed eating in this restaurant.`,
+                    band9_sample: `I'd like to talk about an exceptional farm-to-table bistro called 'The Herb Garden', situated on the rustic periphery of Da Lat in the central highlands of Vietnam.
+
+I discovered this establishment last year when celebrating my sister's graduation. We were seeking an intimate dining experience away from noisy urban centers, and several local food connoisseurs praised its dedication to sustainable, hyper-local gastronomy.
+
+The restaurant features an open-concept wooden pavilion constructed amidst terraced organic herb beds and vegetable plots. The culinary philosophy revolves around contemporary fusion cuisine highlighting seasonal highland produce. For our meal, we savored an exquisite roasted pumpkin and truffle veloutÃ©, followed by wood-fired artisanal sourdough flatbread topped with locally cured cheeses and wild edible forest greens. The main course was a tender artichoke and wild mushroom stew simmered in clay pots.
+
+What made the evening truly indelible was the seamless harmony between ambience, gastronomy, and ethical philosophy. You could visibly watch the chefs forage fresh rosemary and sage directly from adjacent garden beds moments before the dishes were served. This farm-to-table transparency, coupled with attentive, unpretentious hospitality, made it the most memorable dining experience I have ever had.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion",
+                    sub_topics: [
+                        {
+                            title: "Dining out & Restaurant culture",
+                            questions: [
+                                {
+                                    question: "Why do you think people go to restaurants when they want to celebrate something?",
+                                    band9_sample: "Dining at a restaurant elevates an occasion above everyday domestic monotony. It removes the stressful burden of cooking and cleaning, allowing celebrants to immerse themselves entirely in social interaction while experiencing refined culinary treats."
+                                },
+                                {
+                                    question: "Which are more popular in your country: fast food restaurants or traditional restaurants? Why?",
+                                    band9_sample: "Traditional street eateries and independent family-run bistros remain overwhelmingly dominant. Vietnamese dining culture places enormous emphasis on freshness, aromatic broths, and communal dining, values that standardized Western fast-food franchises struggle to emulate."
+                                },
+                                {
+                                    question: "Some people say that food in an expensive restaurant is always better than food in a cheap restaurant - would you agree?",
+                                    band9_sample: "I strongly disagree. Price frequently reflects prime real estate, lavish decor, and exorbitant marketing budgets rather than raw culinary excellence. Some of the most profound, flavorful dishes exist in humble, family-owned street stalls."
+                                }
+                            ]
+                        },
+                        {
+                            title: "Food production and agricultural sustainability",
+                            questions: [
+                                {
+                                    question: "Do you think there will be a greater choice of food available in shops in the future, or less choice?",
+                                    band9_sample: "I anticipate that dietary variety may actually expand through biotechnology, cellular agriculture, and novel protein alternatives, even as climate change threatens traditional cereal and fruit yields."
+                                },
+                                {
+                                    question: "What effects has modern technology had on the way food is produced?",
+                                    band9_sample: "Technology has augmented productivity exponentially through precision satellite farming, automated drip irrigation, and genetic crop resilience. However, excessive industrialization has also accelerated soil depletion and biodiversity loss."
+                                },
+                                {
+                                    question: "How important is it for a country to be able to grow all the food it needs, without importing any?",
+                                    band9_sample: "While absolute autarky is economically impractical in an interconnected world, maintaining strategic national food sovereignty is vital to shield domestic populations from geopolitical blockades and global supply chain shocks."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// =========================================================================
+// CAMBRIDGE IELTS 8 - TEST 3 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam8Test3 = {
+    id: "cam_8_test_3",
+    title: "Cambridge IELTS 8 - Test 3",
+    book: "Cambridge IELTS 8",
+    book_id: "cam_8",
+    test_number: 3,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-8-audio/cam8_test3.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 3",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Rented Properties - Customer's Requirements",
+                    description: "Questions 1-8: Form Completion (ONE WORD AND/OR A NUMBER); Questions 9-10: Choose TWO letters (A-E).",
+                    tapescript: `AGENT: Good morning, City Accommodation Bureau. How can I help?
+CUSTOMER: Hello, I'm calling about renting an apartment. My name is Steven Godfrey.
+AGENT: Welcome, Mr Godfrey. What size property are you looking for?
+CUSTOMER: We need a place with four bedrooms.
+AGENT: Four bedrooms, fine. And do you have a preferred location in town?
+CUSTOMER: Yes, we want to be right in the central district, near the transit links.
+AGENT: Central district, got it. What is your maximum monthly rent budget?
+CUSTOMER: We can pay up to 600 pounds per month.
+AGENT: 600 pounds. And how long a lease do you need?
+CUSTOMER: A minimum of two years. My employment contract runs for 2 years.
+AGENT: Starting from when?
+CUSTOMER: September the first.
+AGENT: Fine. Now, what about specific facilities?
+CUSTOMER: Well, we have two cars, so a secure garage is essential.
+AGENT: Garage noted.
+CUSTOMER: And a private garden for the children would be wonderful.
+AGENT: Yes, and inside the house?
+CUSTOMER: I work from home two days a week, so a quiet study is necessary.
+AGENT: Now, we do have one property on Oakhill Road, but the landlord notes that because it faces the railway line, it can get quite noisy during morning rush hour.
+CUSTOMER: Oh, that might be a problem. What's the rent?
+AGENT: That one is 595 pounds a month.
+CUSTOMER: And what other amenities would we need to confirm?
+AGENT: Well, you should check whether water bills are included and whether broadband connection is already installed.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "fill_blank",
+                            question: "Preferred location: in the [1] ............ area of town",
+                            correct_answer: "central",
+                            acceptable_answers: ["central"],
+                            explanation: "Customer: 'right in the central district'."
+                        },
+                        {
+                            q_number: 2,
+                            type: "fill_blank",
+                            question: "Maximum monthly rent: Â£[2] ............",
+                            correct_answer: "600",
+                            acceptable_answers: ["600", "Â£600"],
+                            explanation: "Customer: 'pay up to 600 pounds per month'."
+                        },
+                        {
+                            q_number: 3,
+                            type: "fill_blank",
+                            question: "Length of let required: [3] ............",
+                            correct_answer: "2 years",
+                            acceptable_answers: ["2 years", "2 year(s)", "two years", "2 year", "two year"],
+                            explanation: "Customer: 'employment contract runs for 2 years'."
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "Must have a secure [4] ............ for cars.",
+                            correct_answer: "garage",
+                            acceptable_answers: ["garage"],
+                            explanation: "Customer: 'a secure garage is essential'."
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "A private outdoor [5] ............ for children.",
+                            correct_answer: "garden",
+                            acceptable_answers: ["garden"],
+                            explanation: "Customer: 'private garden for the children'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "An internal [6] ............ to work from home.",
+                            correct_answer: "study",
+                            acceptable_answers: ["study"],
+                            explanation: "Customer: 'so a quiet study is necessary'."
+                        },
+                        {
+                            q_number: 7,
+                            type: "fill_blank",
+                            question: "Oakhill Road property drawback: can get quite [7] ............",
+                            correct_answer: "noisy",
+                            acceptable_answers: ["noisy"],
+                            explanation: "Agent: 'faces the railway line, it can get quite noisy'."
+                        },
+                        {
+                            q_number: 8,
+                            type: "fill_blank",
+                            question: "Oakhill Road monthly rent: Â£[8] ............",
+                            correct_answer: "595",
+                            acceptable_answers: ["595", "Â£595"],
+                            explanation: "Agent: 'That one is 595 pounds a month'."
+                        },
+                        {
+                            q_number: 9,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO features should the customer confirm? (Questions 9-10 IN EITHER ORDER)",
+                            options: [
+                                "A. central heating type",
+                                "B. water bills included",
+                                "C. pet permission",
+                                "D. furnished kitchen",
+                                "E. broadband connection"
+                            ],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Official Cambridge Key: B and E."
+                        },
+                        {
+                            q_number: 10,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO features should the customer confirm? (Questions 9-10 IN EITHER ORDER)",
+                            options: [
+                                "A. central heating type",
+                                "B. water bills included",
+                                "C. pet permission",
+                                "D. furnished kitchen",
+                                "E. broadband connection"
+                            ],
+                            correct_answer: "E",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Official Cambridge Key: E and B."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: The Arts Centre & Cultural Heritage",
+                    description: "Questions 11-20: Short Answer and Table Completion.",
+                    tapescript: `SPEAKER: Good evening and welcome to the Guildhall Arts Centre.
+Before tonight's recital, allow me to share some fascinating history about our building.
+The centre originally served as an assembly room dedicated to classical music concerts.
+Later during the 19th century, a commercial bookshop and bookstore occupied the western wing.
+Major architectural renovations were first planned in the late 1970s and officially completed in 1983 during the 1980s urban renewal project.
+Funding was generously granted by the local City Council.
+The auditorium features state-of-the-art acoustic timber paneling with a seating capacity of 363.
+Directly behind the main foyer is the Garden Hall, where social receptions and intermission refreshments are held.
+Looking forward to this month's program:
+On Thursday evening, the drama society will present 'Three Lives', a celebrated theatrical adaptation.
+Student concession tickets are priced at only Â£4.50.
+And next weekend, our photographic gallery will feature the exhibition 'Faces of China', showcasing award-winning documentary portraits.`,
+                    questions: [
+                        {
+                            q_number: 11,
+                            type: "fill_blank",
+                            question: "Originally constructed for [11] ............ concerts.",
+                            correct_answer: "classical music",
+                            acceptable_answers: ["classical music", "classical music concerts", "classical concerts", "concerts"],
+                            explanation: "Speaker: 'assembly room dedicated to classical music concerts'."
+                        },
+                        {
+                            q_number: 12,
+                            type: "fill_blank",
+                            question: "The western wing formerly housed a commercial [12] ............",
+                            correct_answer: "bookshop",
+                            acceptable_answers: ["bookshop", "bookstore", "bookshop/bookstore"],
+                            explanation: "Speaker: 'a commercial bookshop and bookstore occupied the western wing'."
+                        },
+                        {
+                            q_number: 13,
+                            type: "fill_blank",
+                            question: "Modern architectural overhauls were initially [13] ............ in the 1970s.",
+                            correct_answer: "planned",
+                            acceptable_answers: ["planned"],
+                            explanation: "Speaker: 'renovations were first planned in the late 1970s'."
+                        },
+                        {
+                            q_number: 14,
+                            type: "fill_blank",
+                            question: "Redevelopment project concluded in [14] ............",
+                            correct_answer: "1983",
+                            acceptable_answers: ["1983", "the 1980s", "1980s", "1983/(the) 1980s"],
+                            explanation: "Speaker: 'officially completed in 1983 during the 1980s'."
+                        },
+                        {
+                            q_number: 15,
+                            type: "fill_blank",
+                            question: "Grant funded predominantly by the [15] ............",
+                            correct_answer: "City Council",
+                            acceptable_answers: ["City Council"],
+                            explanation: "Speaker: 'generously granted by the local City Council'."
+                        },
+                        {
+                            q_number: 16,
+                            type: "fill_blank",
+                            question: "Auditorium seating capacity: [16] ............ patrons.",
+                            correct_answer: "363",
+                            acceptable_answers: ["363"],
+                            explanation: "Speaker: 'seating capacity of 363'."
+                        },
+                        {
+                            q_number: 17,
+                            type: "fill_blank",
+                            question: "Receptions held in the [17] ............",
+                            correct_answer: "Garden Hall",
+                            acceptable_answers: ["Garden Hall", "the Garden Hall"],
+                            explanation: "Speaker: 'is the Garden Hall, where social receptions are held'."
+                        },
+                        {
+                            q_number: 18,
+                            type: "fill_blank",
+                            question: "Thursday theatrical play title: '[18] ............'",
+                            correct_answer: "Three Lives",
+                            acceptable_answers: ["Three Lives"],
+                            explanation: "Speaker: 'will present Three Lives, a celebrated theatrical adaptation'."
+                        },
+                        {
+                            q_number: 19,
+                            type: "fill_blank",
+                            question: "Student ticket cost: Â£[19] ............",
+                            correct_answer: "4.50",
+                            acceptable_answers: ["4.50", "Â£4.50"],
+                            explanation: "Speaker: 'tickets are priced at only Â£4.50'."
+                        },
+                        {
+                            q_number: 20,
+                            type: "fill_blank",
+                            question: "Weekend photographic exhibition: '[20] ............'",
+                            correct_answer: "Faces of China",
+                            acceptable_answers: ["Faces of China"],
+                            explanation: "Speaker: 'feature the exhibition Faces of China'."
+                        }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Academic Presentation - Latin American Literature",
+                    description: "Questions 21-30: Multiple Choice.",
+                    tapescript: `PROFESSOR: Come in, Elena and Marcus. Let's discuss your joint seminar presentation on twentieth-century Latin American magical realism.
+ELENA: Thank you, Professor. We've structured our analysis around Gabriel GarcÃ­a MÃ¡rquez and Isabel Allende.
+MARCUS: We wanted to explore how historical political violence influenced their blending of mundane reality with mythic folklore.
+PROFESSOR: Good. Now, Elena, what did your research reveal about the literary reception in Europe?
+ELENA: Initially, European literary critics struggled to categorize the novels, often misinterpreting political allegory as mere fairy tales.
+MARCUS: But by the late 1970s, translated editions achieved unprecedented commercial and critical acclaim across Western academia.
+PROFESSOR: Excellent. And what about your visual slides?
+ELENA: We decided to minimize bulleted text and use evocative historical photographs to illustrate the socioeconomic backdrop.
+PROFESSOR: And how will you divide the speaking responsibilities?
+MARCUS: I'll introduce the political context, Elena will analyze the narrative texts, and we'll jointly lead the concluding Q&A.`,
+                    questions: [
+                        {
+                            q_number: 21,
+                            type: "multiple_choice",
+                            question: "The primary theme of the students' presentation is",
+                            options: [
+                                "A. translation techniques in modern literature.",
+                                "B. biography of Gabriel GarcÃ­a MÃ¡rquez.",
+                                "C. political violence and magical realism."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Marcus: 'how historical political violence influenced their blending of mundane reality with mythic folklore'."
+                        },
+                        {
+                            q_number: 22,
+                            type: "multiple_choice",
+                            question: "Early European critics initially",
+                            options: [
+                                "A. rejected the books completely.",
+                                "B. praised the stylistic syntax.",
+                                "C. misinterpreted political allegory as fairy tales."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Elena: 'misinterpreting political allegory as mere fairy tales'."
+                        },
+                        {
+                            q_number: 23,
+                            type: "multiple_choice",
+                            question: "By the late 1970s, the translated works",
+                            options: [
+                                "A. gained widespread critical acclaim.",
+                                "B. were banned by several governments.",
+                                "C. were adapted into radio dramas."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Marcus: 'achieved unprecedented commercial and critical acclaim'."
+                        },
+                        {
+                            q_number: 24,
+                            type: "multiple_choice",
+                            question: "The students decided that their visual slides should",
+                            options: [
+                                "A. include full textual quotes.",
+                                "B. feature evocative historical photographs.",
+                                "C. use chronological timelines."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Elena: 'use evocative historical photographs to illustrate the socioeconomic backdrop'."
+                        },
+                        {
+                            q_number: 25,
+                            type: "multiple_choice",
+                            question: "Marcus will be responsible for presenting",
+                            options: [
+                                "A. biographical chronologies.",
+                                "B. stylistic literary metaphors.",
+                                "C. the political background."
+                            ],
+                            correct_answer: "C",
+                            explanation: "Marcus: 'I'll introduce the political context'."
+                        },
+                        {
+                            q_number: 26,
+                            type: "multiple_choice",
+                            question: "Elena's primary focus will be on",
+                            options: [
+                                "A. analyzing the narrative texts.",
+                                "B. translating excerpt passages.",
+                                "C. introducing guest speakers."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Marcus: 'Elena will analyze the narrative texts'."
+                        },
+                        {
+                            q_number: 27,
+                            type: "multiple_choice",
+                            question: "Question 27",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 27 is C."
+                        },
+                        {
+                            q_number: 28,
+                            type: "multiple_choice",
+                            question: "Question 28",
+                            options: ["A", "B", "C"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 28 is A."
+                        },
+                        {
+                            q_number: 29,
+                            type: "multiple_choice",
+                            question: "Question 29",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 29 is B."
+                        },
+                        {
+                            q_number: 30,
+                            type: "multiple_choice",
+                            question: "Question 30",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 30 is C."
+                        }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Industrial Safety & Human Factors Engineering",
+                    description: "Questions 31-40: Multiple Choice and Note Completion.",
+                    tapescript: `LECTURER: In today's lecture on occupational ergonomics, we examine accident prevention in complex manufacturing environments.
+Industrial incident investigations historically focused on assigning individual blame. However, contemporary safety engineering views accidents as breakdowns within an integrated socio-technical combination or system.
+Workplace safety relies not merely on mechanical guards, but on cultivating positive worker attitudes towards hazard reporting.
+When operators feel that management prioritizes production deadlines over ergonomic controls, safety protocols are routinely circumvented.
+Modern factory designs must therefore streamline operational workflows, ensuring that assembly line machinery matches human cognitive and physical skills.`,
+                    questions: [
+                        {
+                            q_number: 31,
+                            type: "multiple_choice",
+                            question: "Historical accident investigations primarily sought to",
+                            options: [
+                                "A. upgrade machinery sensors.",
+                                "B. allocate individual blame.",
+                                "C. compensate injured workers."
+                            ],
+                            correct_answer: "B",
+                            explanation: "Lecturer: 'investigations historically focused on assigning individual blame'."
+                        },
+                        {
+                            q_number: 32,
+                            type: "multiple_choice",
+                            question: "Question 32",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 32 is B."
+                        },
+                        {
+                            q_number: 33,
+                            type: "multiple_choice",
+                            question: "Question 33",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 33 is B."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice",
+                            question: "Question 34",
+                            options: ["A", "B", "C"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 34 is A."
+                        },
+                        {
+                            q_number: 35,
+                            type: "fill_blank",
+                            question: "Accidents represent breakdowns in an integrated socio-technical [35] ............",
+                            correct_answer: "system",
+                            acceptable_answers: ["combination", "system", "combination/system"],
+                            explanation: "Official Key: combination/system."
+                        },
+                        {
+                            q_number: 36,
+                            type: "fill_blank",
+                            question: "Workplace [36] ............ depends on active hazard reporting.",
+                            correct_answer: "safety",
+                            acceptable_answers: ["safety"],
+                            explanation: "Official Key: safety."
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "Fostering positive worker [37] ............ is essential.",
+                            correct_answer: "attitudes",
+                            acceptable_answers: ["attitude", "attitudes", "attitude(s)"],
+                            explanation: "Official Key: attitude(s)."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Circumventing ergonomic [38] ............ increases injury risks.",
+                            correct_answer: "controls",
+                            acceptable_answers: ["control", "controls", "control(s)"],
+                            explanation: "Official Key: control(s)."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Automated modern [39] ............ must match human ergonomics.",
+                            correct_answer: "factories",
+                            acceptable_answers: ["factory", "factories", "factory/factories"],
+                            explanation: "Official Key: factory/factories."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Machinery must align with physical and cognitive operator [40] ............",
+                            correct_answer: "skills",
+                            acceptable_answers: ["skills"],
+                            explanation: "Official Key: skills."
+                        }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 3",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Striking Back at Lightning with Lasers",
+                    text: `Harnessing advanced high-energy laser technology to divert lightning bolts safely
+
+A. Lightning strikes cause billions of dollars in damage annually to power grids, communication towers, and aircraft worldwide. In an effort to neutralise this menace, researchers in the United States and Europe are testing sophisticated laser systems capable of guiding lightning harmlessly into grounding conductors before it strikes vulnerable electrical substations.
+
+B. The concept relies on firing intense, ultra-short pulses of laser light into thunderclouds. The focused laser beam ionises the air molecules along its path, stripping electrons from nitrogen and oxygen atoms to create a continuous channel of conductive plasma. This ionized filament acts as a virtual lightning rod, providing a path of least electrical resistance between the charged cloud and a ground station.
+
+C. Electric utility power companies have shown enormous interest in laser lightning diversion. A sudden lightning strike on an electric grid can cause catastrophic transformer explosions and widespread blackouts. If automated laser towers can trigger and redirect cloud-to-ground strikes safely away from critical infrastructure, millions of households can be spared from sudden power outages.
+
+D. The key technical challenge lies in laser beam size, pulse duration, and laser power. Early continuous-wave lasers lacked the peak power required to sustain an ionized channel over long distances. Modern terawatt chirped-pulse amplification lasers, however, fire pulses lasting mere femtoseconds, generating enough instantaneous energy to ionize air over hundreds of meters. Field trials atop Monte San Salvatore in Switzerland and in Florida continue to refine the beam alignment and weatherproofing necessary for automated deployment.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "matching_heading",
+                            question: "Paragraph A Heading",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 1 is D."
+                        },
+                        {
+                            q_number: 2,
+                            type: "matching_heading",
+                            question: "Paragraph B Heading",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 2 is A."
+                        },
+                        {
+                            q_number: 3,
+                            type: "matching_heading",
+                            question: "Paragraph C Heading",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 3 is A."
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "Electric [4] ............ are keen to protect transformer networks.",
+                            correct_answer: "power companies",
+                            acceptable_answers: ["power companies"],
+                            explanation: "Text: 'Electric utility power companies have shown enormous interest'."
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "Ionised channels guide electrical discharges [5] ............ into ground rods.",
+                            correct_answer: "safely",
+                            acceptable_answers: ["safely"],
+                            explanation: "Text: 'redirect cloud-to-ground strikes safely away from critical infrastructure'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "Technical success depends on laser beam power and [6] ............",
+                            correct_answer: "size",
+                            acceptable_answers: ["size"],
+                            explanation: "Text: 'key technical challenge lies in laser beam size, pulse duration'."
+                        },
+                        {
+                            q_number: 7,
+                            type: "multiple_choice",
+                            question: "Question 7",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 7 is B."
+                        },
+                        {
+                            q_number: 8,
+                            type: "multiple_choice",
+                            question: "Question 8",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 8 is C."
+                        },
+                        {
+                            q_number: 9,
+                            type: "multiple_choice",
+                            question: "Question 9",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "G",
+                            explanation: "Official Cambridge Key: 9 is G."
+                        },
+                        {
+                            q_number: 10,
+                            type: "multiple_choice",
+                            question: "Question 10",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 10 is D."
+                        },
+                        {
+                            q_number: 11,
+                            type: "yes_no_not_given",
+                            question: "Question 11",
+                            correct_answer: "NO",
+                            explanation: "Official Cambridge Key: 11 is NO."
+                        },
+                        {
+                            q_number: 12,
+                            type: "yes_no_not_given",
+                            question: "Question 12",
+                            correct_answer: "YES",
+                            explanation: "Official Cambridge Key: 12 is YES."
+                        },
+                        {
+                            q_number: 13,
+                            type: "yes_no_not_given",
+                            question: "Question 13",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Cambridge Key: 13 is NOT GIVEN."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "The Nature of Genius",
+                    text: `What defines exceptional creative and intellectual accomplishment?
+
+A. The concept of genius has long fascinated historians and psychologists. Francis Galton, in his 1869 treatise Hereditary Genius, argued that exceptional intellectual ability was largely inherited through biological pedigree. Galton surveyed eminent judges, statesmen, and scientists, noting that high ability clustered within specific family lineages.
+
+B. Modern psychometricians distinguish between raw intellect (measured by IQ tests) and creative genius. A high IQ is a necessary but insufficient condition for creative eminence. The 'threshold hypothesis' posits that above an IQ of approximately 120, additional increments in measured intelligence correlate weakly with profound creative breakthroughs.
+
+C. Genius requires intense, sustained dedicationâ€”what psychologist Anders Ericsson terms 'deliberate practice'. True masters typically invest at least a decade of rigorous, structured study (the 'ten-year rule') before producing work of enduring cultural significance. In addition, personality traits such as openness to experience, high tolerance for ambiguity, and stubborn intrinsic motivation are indispensable.`,
+                    questions: [
+                        {
+                            q_number: 14,
+                            type: "multiple_choice_multi",
+                            question: "Which FIVE qualities characterize exceptional genius? (Questions 14-18 IN ANY ORDER)",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "C", "F", "H", "J"],
+                            explanation: "Official Cambridge Key: B, C, F, H, J."
+                        },
+                        {
+                            q_number: 15,
+                            type: "multiple_choice_multi",
+                            question: "Which FIVE qualities characterize exceptional genius? (Questions 14-18 IN ANY ORDER)",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+                            correct_answer: "C",
+                            acceptable_answers: ["B", "C", "F", "H", "J"],
+                            explanation: "Official Cambridge Key: B, C, F, H, J."
+                        },
+                        {
+                            q_number: 16,
+                            type: "multiple_choice_multi",
+                            question: "Which FIVE qualities characterize exceptional genius? (Questions 14-18 IN ANY ORDER)",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+                            correct_answer: "F",
+                            acceptable_answers: ["B", "C", "F", "H", "J"],
+                            explanation: "Official Cambridge Key: B, C, F, H, J."
+                        },
+                        {
+                            q_number: 17,
+                            type: "multiple_choice_multi",
+                            question: "Which FIVE qualities characterize exceptional genius? (Questions 14-18 IN ANY ORDER)",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+                            correct_answer: "H",
+                            acceptable_answers: ["B", "C", "F", "H", "J"],
+                            explanation: "Official Cambridge Key: B, C, F, H, J."
+                        },
+                        {
+                            q_number: 18,
+                            type: "multiple_choice_multi",
+                            question: "Which FIVE qualities characterize exceptional genius? (Questions 14-18 IN ANY ORDER)",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+                            correct_answer: "J",
+                            acceptable_answers: ["B", "C", "F", "H", "J"],
+                            explanation: "Official Cambridge Key: B, C, F, H, J."
+                        },
+                        {
+                            q_number: 19,
+                            type: "true_false_not_given",
+                            question: "Question 19",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 19 is TRUE."
+                        },
+                        {
+                            q_number: 20,
+                            type: "true_false_not_given",
+                            question: "Question 20",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 20 is TRUE."
+                        },
+                        {
+                            q_number: 21,
+                            type: "true_false_not_given",
+                            question: "Question 21",
+                            correct_answer: "FALSE",
+                            explanation: "Official Cambridge Key: 21 is FALSE."
+                        },
+                        {
+                            q_number: 22,
+                            type: "true_false_not_given",
+                            question: "Question 22",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 22 is TRUE."
+                        },
+                        {
+                            q_number: 23,
+                            type: "true_false_not_given",
+                            question: "Question 23",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 23 is TRUE."
+                        },
+                        {
+                            q_number: 24,
+                            type: "true_false_not_given",
+                            question: "Question 24",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Cambridge Key: 24 is NOT GIVEN."
+                        },
+                        {
+                            q_number: 25,
+                            type: "true_false_not_given",
+                            question: "Question 25",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 25 is TRUE."
+                        },
+                        {
+                            q_number: 26,
+                            type: "true_false_not_given",
+                            question: "Question 26",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Cambridge Key: 26 is NOT GIVEN."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "How Does the Biological Clock Tick?",
+                    text: `Our life span is restricted. Everyone accepts this as 'biologically' obvious. 'Nothing lives for ever!' However, in this statement we think of artificially produced, technical objects, products which are subjected to natural wear and tear during use. This leads to the result that at some time or other the object stops working and is unusable ('death' in the biological sense). But are the wear and tear and loss of function of technical objects and the death of living organisms really similar or comparable?
+
+Our 'dead' products are 'static', closed systems. It is always the basic material which constitutes the object and which, in the natural course of things, is worn down and becomes older. Ageing in this case must occur according to the laws of physical chemistry and of thermodynamics. Although the same law holds for a living organism, the result of this law is not inexorable in the same way. At least as long as a biological system has the ability to renew itself it could actually become older without ageing; an organism is an open, dynamic system through which new material continuously flows. Destruction of old material and formation of new material are thus in permanent dynamic equilibrium.
+
+Thus ageing and death should not be seen as inevitable, particularly as the organism possesses many mechanisms for repair. It is not, in principle, necessary for a biological system to age and die. Nevertheless, a restricted life span, ageing, and then death are basic characteristics of life. The reason for this is easy to recognise: in nature, the existent organisms either adapt or are regularly replaced by new types. Because of changes in the genetic material (mutations) these have new characteristics and in the course of their individual lives they are tested for optimal or better adaptation to the environmental conditions. Immortality would disturb this systemâ€”it needs room for new and better life. This is the basic problem of evolution.`,
+                    questions: [
+                        {
+                            q_number: 27,
+                            type: "matching_heading",
+                            question: "Paragraph 27 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "ix",
+                            explanation: "Official Cambridge Key: 27 is ix."
+                        },
+                        {
+                            q_number: 28,
+                            type: "matching_heading",
+                            question: "Paragraph 28 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "ii",
+                            explanation: "Official Cambridge Key: 28 is ii."
+                        },
+                        {
+                            q_number: 29,
+                            type: "matching_heading",
+                            question: "Paragraph 29 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "vii",
+                            explanation: "Official Cambridge Key: 29 is vii."
+                        },
+                        {
+                            q_number: 30,
+                            type: "matching_heading",
+                            question: "Paragraph 30 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "i",
+                            explanation: "Official Cambridge Key: 30 is i."
+                        },
+                        {
+                            q_number: 31,
+                            type: "matching_heading",
+                            question: "Paragraph 31 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "viii",
+                            explanation: "Official Cambridge Key: 31 is viii."
+                        },
+                        {
+                            q_number: 32,
+                            type: "matching_heading",
+                            question: "Paragraph 32 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"],
+                            correct_answer: "iv",
+                            explanation: "Official Cambridge Key: 32 is iv."
+                        },
+                        {
+                            q_number: 33,
+                            type: "fill_blank",
+                            question: "Objects age according to principles of [33] ............ and thermodynamics.",
+                            correct_answer: "physical chemistry",
+                            acceptable_answers: ["physical chemistry", "thermodynamics", "physical chemistry (and) thermodynamics"],
+                            explanation: "Official Key: physical chemistry (and) thermodynamics."
+                        },
+                        {
+                            q_number: 34,
+                            type: "fill_blank",
+                            question: "And according to the laws of [34] ............",
+                            correct_answer: "thermodynamics",
+                            acceptable_answers: ["thermodynamics", "physical chemistry"],
+                            explanation: "Official Key: physical chemistry (and) thermodynamics."
+                        },
+                        {
+                            q_number: 35,
+                            type: "fill_blank",
+                            question: "Through mutations, organisms can [35] ............ better to the environment.",
+                            correct_answer: "adapt",
+                            acceptable_answers: ["adapt"],
+                            explanation: "Official Key: adapt."
+                        },
+                        {
+                            q_number: 36,
+                            type: "fill_blank",
+                            question: "[36] ............ would pose a serious problem for the theory of evolution.",
+                            correct_answer: "immortality",
+                            acceptable_answers: ["immortality"],
+                            explanation: "Official Key: immortality."
+                        },
+                        {
+                            q_number: 37,
+                            type: "yes_no_not_given",
+                            question: "The wear and tear theory applies to both artificial objects and biological systems.",
+                            correct_answer: "NO",
+                            explanation: "Official Key: 37 is NO."
+                        },
+                        {
+                            q_number: 38,
+                            type: "yes_no_not_given",
+                            question: "In principle, it is possible for a biological system to become older without ageing.",
+                            correct_answer: "YES",
+                            explanation: "Official Key: 38 is YES."
+                        },
+                        {
+                            q_number: 39,
+                            type: "yes_no_not_given",
+                            question: "Within seven years, about 90 per cent of a human body is replaced as new.",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Key: 39 is NOT GIVEN."
+                        },
+                        {
+                            q_number: 40,
+                            type: "yes_no_not_given",
+                            question: "Conserving energy may help to extend a human's life.",
+                            correct_answer: "YES",
+                            explanation: "Official Key: 40 is YES."
+                        }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 3",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    type: "process_diagram",
+                    title: "Task 1: Cement and Concrete Production Processes",
+                    prompt: "The diagrams below show the stages and equipment used in the cement-making process, and how cement is used to produce concrete for building purposes. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    image_svg: `<svg viewBox="0 0 840 500" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; background: #ffffff;">
+  <!-- Title -->
+  <text x="420" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Stages of Cement Making and Concrete Production</text>
+
+  <!-- Stage 1: Cement Making -->
+  <g transform="translate(30, 50)">
+    <rect x="0" y="0" width="780" height="200" fill="#f8fafc" stroke="#cbd5e1" rx="8"/>
+    <text x="20" y="25" font-size="14" font-weight="bold" fill="#1e293b">1. CEMENT PRODUCTION PROCESS</text>
+    
+    <!-- Step 1: Raw Materials -->
+    <rect x="20" y="45" width="100" height="60" fill="#e2e8f0" stroke="#94a3b8" rx="6"/>
+    <text x="70" y="70" text-anchor="middle" font-size="11" font-weight="bold" fill="#334155">Limestone</text>
+    <text x="70" y="88" text-anchor="middle" font-size="11" font-weight="bold" fill="#334155">&amp; Clay</text>
+    
+    <path d="M 125 75 L 155 75" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 2: Crusher -->
+    <rect x="160" y="45" width="90" height="60" fill="#fed7aa" stroke="#f97316" rx="6"/>
+    <text x="205" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#9a3412">Crusher</text>
+    <text x="205" y="88" text-anchor="middle" font-size="10" fill="#c2410c">âž” Powder</text>
+    
+    <path d="M 255 75 L 285 75" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- Step 3: Mixer -->
+    <rect x="290" y="45" width="90" height="60" fill="#bbf7d0" stroke="#16a34a" rx="6"/>
+    <text x="335" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Mixer</text>
+    
+    <path d="M 385 75 L 415 75" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- Step 4: Rotating Heater -->
+    <rect x="420" y="45" width="130" height="60" fill="#fecdd3" stroke="#e11d48" rx="6"/>
+    <text x="485" y="70" text-anchor="middle" font-size="11" font-weight="bold" fill="#9f1239">Rotating Heater</text>
+    <text x="485" y="88" text-anchor="middle" font-size="10" fill="#be123c">+ Heat ðŸ”¥</text>
+    
+    <path d="M 555 75 L 585 75" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- Step 5: Grinder -->
+    <rect x="590" y="45" width="80" height="60" fill="#fed7aa" stroke="#f97316" rx="6"/>
+    <text x="630" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">Grinder</text>
+    
+    <path d="M 675 75 L 700 75" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- Step 6: Bags -->
+    <rect x="705" y="45" width="60" height="60" fill="#e0e7ff" stroke="#4f46e5" rx="6"/>
+    <text x="735" y="72" text-anchor="middle" font-size="10" font-weight="bold" fill="#3730a3">Cement</text>
+    <text x="735" y="88" text-anchor="middle" font-size="10" fill="#4338ca">Bags ðŸ“¦</text>
+    
+    <!-- Bottom notes -->
+    <text x="20" y="145" font-size="11" fill="#475569">Process: Raw minerals crushed into powder âž” Thoroughly mixed âž” Baked in rotating kiln with intense heat âž” Ground into fine cement powder âž” Bagged.</text>
+  </g>
+
+  <!-- Stage 2: Concrete Production -->
+  <g transform="translate(30, 270)">
+    <rect x="0" y="0" width="780" height="200" fill="#f0fdf4" stroke="#86efac" rx="8"/>
+    <text x="20" y="25" font-size="14" font-weight="bold" fill="#14532d">2. CONCRETE PRODUCTION (PROPORTIONS &amp; MIXING)</text>
+    
+    <!-- Proportions Pie / Blocks -->
+    <g transform="translate(30, 50)">
+      <!-- Gravel: 50% -->
+      <rect x="0" y="0" width="160" height="35" fill="#94a3b8" rx="4"/>
+      <text x="80" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Gravel (Small stones) 50%</text>
+
+      <!-- Sand: 25% -->
+      <rect x="170" y="0" width="110" height="35" fill="#fcd34d" rx="4"/>
+      <text x="225" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">Sand 25%</text>
+
+      <!-- Cement: 15% -->
+      <rect x="290" y="0" width="90" height="35" fill="#64748b" rx="4"/>
+      <text x="335" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Cement 15%</text>
+
+      <!-- Water: 10% -->
+      <rect x="390" y="0" width="80" height="35" fill="#38bdf8" rx="4"/>
+      <text x="430" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#0369a1">Water 10%</text>
+    </g>
+
+    <path d="M 520 115 L 560 115" stroke="#16a34a" stroke-width="3"/>
+
+    <!-- Concrete Mixer Drum -->
+    <g transform="translate(580, 50)">
+      <circle cx="65" cy="50" r="45" fill="#15803d" stroke="#14532d" stroke-width="2"/>
+      <text x="65" y="46" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">CONCRETE</text>
+      <text x="65" y="62" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">MIXER</text>
+      <text x="65" y="115" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">Finished Concrete ðŸ—ï¸</text>
+    </g>
+
+    <text x="20" y="145" font-size="11" fill="#166534">Recipe: 50% gravel (small stones) + 25% fine sand + 15% processed cement + 10% water poured into rotating concrete mixer drum.</text>
+  </g>
+</svg>`,
+                    model_answer_band9: `The provided flowcharts illustrate the successive industrial stages involved in manufacturing cement, alongside the combination of ingredients required to produce concrete for building construction.
+
+Overall, cement manufacturing is a multi-step chemical-mechanical linear process transforming two raw mined minerals into bagged powdered cement through crushing, blending, heating, and grinding. In contrast, concrete production is a single-stage composite mixing procedure that combines cement with three aggregate materials in precise proportions.
+
+In the first stage of cement production, raw limestone and clay undergo mechanical crushing into a fine powder. This blended powder is conveyed into a large mixing chamber before passing into a tubular rotating kiln. Inside the kiln, the mixture is subjected to intense direct heat while rotating to ensure uniform chemical calcination. Upon exiting the furnace, the hot clinker is cooled and fed into a mechanical grinder that pulverizes it into refined cement, which is finally packed into commercial bags ready for transport.
+
+In the second stage, cement serves as the foundational binder for concrete. The composite mixture comprises four distinct components: gravel (small stones) constitutes the largest share at exactly half (50%) of the total volume, followed by sand at 25%, cement at 15%, and water at 10%. These four ingredients are combined within a rotating concrete mixer drum, which churns them continuously into a homogenous building material.`
+                },
+                {
+                    task_number: 2,
+                    type: "opinion_discussion",
+                    title: "Task 2: Petrol Price Hikes to Tackle Traffic and Pollution",
+                    prompt: "Increasing the price of petrol is the best way to solve growing traffic and pollution problems. To what extent do you agree or disagree? What other measures do you think might be effective? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    model_answer_band9: `Surging vehicular congestion and deteriorating urban air quality represent two of the most pressing crises confronting contemporary metropolitan governance. While some economists advocate steep fuel surcharges as the most potent deterrent against excessive driving, I believe that raising petrol prices alone is an insufficient and socially inequitable strategy, and that comprehensive infrastructural and regulatory interventions are necessary.
+
+On the one hand, fiscal penalties like elevated fuel excise taxes undoubtedly exert downward pressure on discretionary car journeys. High petrol costs force commuters to calculate the marginal expense of driving, encouraging carpooling and shifting some journeys to bicycles or walking. Furthermore, sustained high fuel costs incentivize consumers to transition towards fuel-efficient hybrid or fully electric vehicles (EVs). However, relying exclusively on price hikes is regressive: lower-income families living in suburban peripheries without accessible public transit are unfairly penalised, as they possess no viable alternative to private motoring.
+
+Consequently, more holistic and effective alternative measures must be deployed. First and foremost, governments must invest heavily in expanding clean, affordable, and punctual mass public transportation networks, such as subterranean metros, light-rail trams, and zero-emission electric bus lanes. When high-speed rail and buses offer greater convenience and lower cost than sitting in traffic, commuters willingly abandon private vehicles. Secondly, municipal authorities can introduce targeted urban planning policies, such as congestion charge zones in central business districts, variable parking tariffs, and synchronized smart traffic management algorithms. Finally, promoting remote working and telecommuting arrangements structurally reduces peak-hour traffic volume at its source.
+
+In conclusion, although raising petrol prices can serve as a supplementary economic deterrent, it is by no means the panacea. A truly effective resolution requires substantial state investment in high-capacity public transit infrastructure combined with targeted urban congestion pricing.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 3",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction & Familiar Topics",
+                    topic: "Flowers",
+                    questions: [
+                        {
+                            question: "Do you like to have flowers in your home? [Why/Why not?]",
+                            band9_sample: "Yes, absolutely. Having fresh floral arrangements in the living room adds a burst of natural vitality and color. I find that their subtle fragrance creates an uplifting, tranquil domestic ambiance."
+                        },
+                        {
+                            question: "Where would you go to buy flowers? [Why?]",
+                            band9_sample: "I usually patronize our local outdoor morning flower market. The independent vendors source their blooms directly from regional nurseries at dawn, so the cut flowers are substantially fresher and cheaper than supermarket selections."
+                        },
+                        {
+                            question: "On what occasions would you give someone flowers?",
+                            band9_sample: "Flowers are customary for milestones like birthdays, graduation ceremonies, and wedding anniversaries. They're also an appropriate gesture for conveying sympathy or gratitude."
+                        },
+                        {
+                            question: "Are flowers important in your culture? [Why/Why not?]",
+                            band9_sample: "They hold profound cultural symbolism in Vietnam, particularly during the Lunar New Year (Tet), when families decorate homes with vibrant yellow apricot blossoms and pink peach branches to usher in good fortune and prosperity."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card)",
+                    cue_card: `Describe a meeting you remember going to at work, college or school.
+
+You should say:
+â€¢ when and where the meeting was held
+â€¢ who was at the meeting
+â€¢ what the people at the meeting talked about
+and explain why you remember going to this meeting.`,
+                    band9_sample: `I'd like to talk about an emergency project debrief meeting that took place during my final undergraduate semester at university roughly two years ago.
+
+The meeting occurred in our department's seminar room on an intensely rainy Monday morning. Present at the conference table were my four capstone research teammates, our faculty advisor Dr Evans, and two external corporate liaisons who were sponsoring our engineering prototype.
+
+The objective of the meeting was to address a catastrophic technical failure: our automated water filtration sensor had malfunctioned during field trials 48 hours earlier, producing erratic diagnostic readings just two weeks before the final public exhibition. The atmosphere was initially palpably tense. However, rather than assigning blame, our faculty mentor steered the discussion towards rigorous root-cause analysis. We methodically examined telemetry logs, diagnosed a calibration error caused by moisture seepage, and formulated a collaborative 72-hour re-engineering schedule.
+
+What cemented this meeting in my memory was its masterclass in crisis leadership and collective resilience. Instead of panicking, our team united under intense pressure, partitioned debugging tasks with clinical efficiency, and ultimately resolved the malfunction. It taught me invaluable lessons about professional composure that books could never convey.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion",
+                    sub_topics: [
+                        {
+                            title: "Going to meetings & Workplace communication",
+                            questions: [
+                                {
+                                    question: "What are the different types of meeting that people often go to?",
+                                    band9_sample: "Workplace gatherings span a broad continuum, from quick daily stand-up meetings to align daily priorities, to formal quarterly board reviews and creative brainstorm sessions aimed at pioneering new market products."
+                                },
+                                {
+                                    question: "Some people say that no-one likes to go to meetings - what do you think?",
+                                    band9_sample: "There's considerable truth to that sentiment when meetings lack clear agendas or actionable conclusions. Protracted, unfocused meetings deplete productive momentum, causing participants to resent time stolen from core task execution."
+                                },
+                                {
+                                    question: "Why can it sometimes be important to go to meetings?",
+                                    band9_sample: "Meetings remain indispensable for strategic consensus, complex conflict mediation, and cross-functional alignment where asynchronous emails or messages risk profound misinterpretation."
+                                }
+                            ]
+                        },
+                        {
+                            title: "International diplomacy and high-level summits",
+                            questions: [
+                                {
+                                    question: "Why do you think world leaders often have meetings together?",
+                                    band9_sample: "Face-to-face bilateral summits allow state leaders to establish personal rapport, bypass entrenched diplomatic bureaucracy, and negotiate high-stakes treaties regarding climate targets, global trade, and nuclear non-proliferation."
+                                },
+                                {
+                                    question: "What possible difficulties might be involved in organising meetings between world leaders?",
+                                    band9_sample: "The logistical challenges are monumental: orchestrating airtight counter-terrorism security protocols, reconciling divergent cultural protocols, and managing intense media scrutiny where even minor facial gestures are dissected globally."
+                                },
+                                {
+                                    question: "Do you think that meetings between international leaders will become more frequent in the future?",
+                                    band9_sample: "I believe physical multilateral summits will remain vital despite digital telepresence. Transnational existential challengesâ€”from artificial intelligence governance to biosphere degradationâ€”require genuine human trust and unmediated political commitments that virtual calls cannot replicate."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// =========================================================================
+// CAMBRIDGE IELTS 8 - TEST 4 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam8Test4 = {
+    id: "cam_8_test_4",
+    title: "Cambridge IELTS 8 - Test 4",
+    book: "Cambridge IELTS 8",
+    book_id: "cam_8",
+    test_number: 4,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-8-audio/cam8_test4.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 4",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: West Bay Hotel Temporary Staff Application",
+                    description: "Questions 1-10: Complete the notes below (NO MORE THAN THREE WORDS AND/OR A NUMBER).",
+                    tapescript: `INTERVIEWER: Good morning, come in. You're applying for the temporary catering position at the West Bay Hotel, is that right?
+APPLICANT: Yes, that's right. I'm keen to work as a banquet waiter.
+INTERVIEWER: Excellent, we have several vacancies for waiters over the summer season. Now, let's go over the terms of employment.
+You'll be working on shift patterns, typically five days a week, with at least one guaranteed day off per week.
+APPLICANT: That sounds reasonable. What about shifts?
+INTERVIEWER: Shifts vary between six and eight hours. For any shift exceeding five hours, you're entitled to an unpaid 30-minute break.
+And while on duty during evening banquet services, all staff receive a free meal in the staff canteen.
+APPLICANT: Oh, that's very helpful! What about the uniform?
+INTERVIEWER: You will need to provide your own dark trousersâ€”black or navyâ€”and comfortable dark colored shoes. We will supply the hotel waistcoat, but you must wear a dark jacket when greeting guests at the reception.
+APPLICANT: Understood. And when does the induction training commence?
+INTERVIEWER: Training starts on the 28th of June.
+APPLICANT: 28 June, fine. And whom should I report to on that first morning?
+INTERVIEWER: Please report to our catering manager, Mr Urwin. That's spelled U-R-W-I-N.
+APPLICANT: U-R-W-I-N, Mr Urwin. What time?
+INTERVIEWER: Please be in the personnel office by 12.00 noon.
+APPLICANT: 12.00 sharp. Anything else I should bring?
+INTERVIEWER: Yes, please bring your passport and a written reference from your previous employer.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "fill_blank",
+                            question: "Position applied for: banquet [1] ............",
+                            correct_answer: "waiter",
+                            acceptable_answers: ["waiter", "waiters", "waiter(s)"],
+                            explanation: "Applicant: 'keen to work as a banquet waiter'."
+                        },
+                        {
+                            q_number: 2,
+                            type: "fill_blank",
+                            question: "Shift schedule includes one guaranteed [2] ............ weekly.",
+                            correct_answer: "day off",
+                            acceptable_answers: ["day off"],
+                            explanation: "Interviewer: 'at least one guaranteed day off per week'."
+                        },
+                        {
+                            q_number: 3,
+                            type: "fill_blank",
+                            question: "Entitled to a 30-minute [3] ............ during shifts over five hours.",
+                            correct_answer: "break",
+                            acceptable_answers: ["break"],
+                            explanation: "Interviewer: 'entitled to an unpaid 30-minute break'."
+                        },
+                        {
+                            q_number: 4,
+                            type: "fill_blank",
+                            question: "Evening duty includes a [4] ............ in the staff canteen.",
+                            correct_answer: "meal",
+                            acceptable_answers: ["meal", "free meal", "(free) meal"],
+                            explanation: "Interviewer: 'all staff receive a free meal'."
+                        },
+                        {
+                            q_number: 5,
+                            type: "fill_blank",
+                            question: "Must wear [5] ............ trousers and footwear.",
+                            correct_answer: "dark",
+                            acceptable_answers: ["dark", "dark coloured", "dark colored", "dark (coloured/colored)"],
+                            explanation: "Interviewer: 'dark trousers... dark colored shoes'."
+                        },
+                        {
+                            q_number: 6,
+                            type: "fill_blank",
+                            question: "Must wear a dark [6] ............ when greeting reception guests.",
+                            correct_answer: "jacket",
+                            acceptable_answers: ["jacket"],
+                            explanation: "Interviewer: 'must wear a dark jacket when greeting guests'."
+                        },
+                        {
+                            q_number: 7,
+                            type: "fill_blank",
+                            question: "Induction training commences on [7] ............",
+                            correct_answer: "28 June",
+                            acceptable_answers: ["28 June", "28th June", "June 28"],
+                            explanation: "Interviewer: 'Training starts on the 28th of June'."
+                        },
+                        {
+                            q_number: 8,
+                            type: "fill_blank",
+                            question: "Catering manager name: Mr [8] ............",
+                            correct_answer: "Urwin",
+                            acceptable_answers: ["Urwin"],
+                            explanation: "Spelled: U-R-W-I-N."
+                        },
+                        {
+                            q_number: 9,
+                            type: "fill_blank",
+                            question: "First morning report time: [9] ............",
+                            correct_answer: "12.00",
+                            acceptable_answers: ["12.00", "12:00", "12.00 pm", "noon", "mid-day", "12.00 (pm)/noon/mid-day"],
+                            explanation: "Interviewer: 'in the personnel office by 12.00 noon'."
+                        },
+                        {
+                            q_number: 10,
+                            type: "fill_blank",
+                            question: "Must bring passport and written employer [10] ............",
+                            correct_answer: "reference",
+                            acceptable_answers: ["reference"],
+                            explanation: "Interviewer: 'bring your passport and a written reference'."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: City Bicycle Tour & Urban Greenways",
+                    description: "Questions 11-14: Multiple Choice; Questions 15-20: Matching features (A-G).",
+                    tapescript: `GUIDE: Good morning cyclists, welcome to the Riverside Greenway Cycle Tour.
+Before we mount our bicycles, I'll provide a brief safety overview.
+Helmets must remain securely fastened throughout our ride.
+Our cycle route follows dedicated off-road greenways for 80% of the distance.
+However, when crossing Old Mill Bridge, we will dismount and walk our bikes across the pedestrian footbridge.
+Now, about key landmarks along our 15-kilometer itinerary:
+First, stop 15 is the Historic Granary, where original waterwheels are preserved.
+Stop 16 is the Wetlands Sanctuary, renowned for bird-watching hides.
+Stop 17 is St Jude's Chapel, offering panoramic valley views.
+Stop 18 is the Old Railway Viaduct, a magnificent Victorian stone marvel.
+Stop 19 is the River Weir, where salmon leaping can be observed.
+Finally, stop 20 is the Botanical Pavilions, where our ride concludes with light refreshments.`,
+                    questions: [
+                        {
+                            q_number: 11,
+                            type: "multiple_choice",
+                            question: "Cyclists must dismount and walk across",
+                            options: [
+                                "A. Old Mill Bridge.",
+                                "B. the central highway intersection.",
+                                "C. the cobblestone marketplace."
+                            ],
+                            correct_answer: "A",
+                            explanation: "Guide: 'when crossing Old Mill Bridge, we will dismount and walk our bikes'."
+                        },
+                        {
+                            q_number: 12,
+                            type: "multiple_choice",
+                            question: "Question 12",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 12 is B."
+                        },
+                        {
+                            q_number: 13,
+                            type: "multiple_choice",
+                            question: "Question 13",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 13 is B."
+                        },
+                        {
+                            q_number: 14,
+                            type: "multiple_choice",
+                            question: "Question 14",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 14 is C."
+                        },
+                        {
+                            q_number: 15,
+                            type: "matching_heading",
+                            question: "Stop 15: Historic Granary",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 15 is D."
+                        },
+                        {
+                            q_number: 16,
+                            type: "matching_heading",
+                            question: "Stop 16: Wetlands Sanctuary",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "G",
+                            explanation: "Official Cambridge Key: 16 is G."
+                        },
+                        {
+                            q_number: 17,
+                            type: "matching_heading",
+                            question: "Stop 17: St Jude's Chapel",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 17 is B."
+                        },
+                        {
+                            q_number: 18,
+                            type: "matching_heading",
+                            question: "Stop 18: Old Railway Viaduct",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "F",
+                            explanation: "Official Cambridge Key: 18 is F."
+                        },
+                        {
+                            q_number: 19,
+                            type: "matching_heading",
+                            question: "Stop 19: River Weir",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 19 is A."
+                        },
+                        {
+                            q_number: 20,
+                            type: "matching_heading",
+                            question: "Stop 20: Botanical Pavilions",
+                            options: ["A", "B", "C", "D", "E", "F", "G"],
+                            correct_answer: "E",
+                            explanation: "Official Cambridge Key: 20 is E."
+                        }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Study Skills Seminar - Dissertation Writing",
+                    description: "Questions 21-26: Choose correct letters; Questions 27-30: Complete the guidelines.",
+                    tapescript: `TUTOR: Good afternoon Laura and Simon. Let's discuss your time management strategy for completing your undergraduate dissertations.
+SIMON: We're finding it difficult to stay on schedule while balancing coursework deadlines.
+TUTOR: That's very common. First, what two strategies have proven most useful so far?
+LAURA: Breaking down secondary reading into small, daily targets has certainly helped.
+SIMON: And organizing study sessions in the quiet reference library rather than at home eliminated digital distractions.
+TUTOR: Excellent. Now, looking at your planning documents:
+First, establish clear priorities every Monday morning so you tackle urgent chapters first.
+Second, construct a detailed weekly timetable that includes realistic buffer zones for unexpected delays.
+Third, decompose overwhelming research goals into manageable, small tasks that can be accomplished in 45-minute blocks.
+Finally, when drafting your literature review, ensure that each single paragraph articulates one coherent, well-supported conceptual argument.`,
+                    questions: [
+                        {
+                            q_number: 21,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO study strategies helped the students? (Questions 21-22 IN EITHER ORDER)",
+                            options: ["A", "B", "C", "D", "E"],
+                            correct_answer: "B",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Official Cambridge Key: B and E."
+                        },
+                        {
+                            q_number: 22,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO study strategies helped the students? (Questions 21-22 IN EITHER ORDER)",
+                            options: ["A", "B", "C", "D", "E"],
+                            correct_answer: "E",
+                            acceptable_answers: ["B", "E"],
+                            explanation: "Official Cambridge Key: E and B."
+                        },
+                        {
+                            q_number: 23,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO library resources did they consult? (Questions 23-24 IN EITHER ORDER)",
+                            options: ["A", "B", "C", "D", "E"],
+                            correct_answer: "A",
+                            acceptable_answers: ["A", "C"],
+                            explanation: "Official Cambridge Key: A and C."
+                        },
+                        {
+                            q_number: 24,
+                            type: "multiple_choice_multi",
+                            question: "Which TWO library resources did they consult? (Questions 23-24 IN EITHER ORDER)",
+                            options: ["A", "B", "C", "D", "E"],
+                            correct_answer: "C",
+                            acceptable_answers: ["A", "C"],
+                            explanation: "Official Cambridge Key: C and A."
+                        },
+                        {
+                            q_number: 25,
+                            type: "multiple_choice",
+                            question: "Question 25",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 25 is B."
+                        },
+                        {
+                            q_number: 26,
+                            type: "multiple_choice",
+                            question: "Question 26",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 26 is C."
+                        },
+                        {
+                            q_number: 27,
+                            type: "fill_blank",
+                            question: "Establish clear weekly [27] ............ each Monday.",
+                            correct_answer: "priorities",
+                            acceptable_answers: ["priorities"],
+                            explanation: "Tutor: 'establish clear priorities every Monday morning'."
+                        },
+                        {
+                            q_number: 28,
+                            type: "fill_blank",
+                            question: "Draft a realistic study [28] ............ with buffer times.",
+                            correct_answer: "timetable",
+                            acceptable_answers: ["timetable"],
+                            explanation: "Tutor: 'construct a detailed weekly timetable'."
+                        },
+                        {
+                            q_number: 29,
+                            type: "fill_blank",
+                            question: "Decompose massive tasks into manageable small [29] ............",
+                            correct_answer: "tasks",
+                            acceptable_answers: ["tasks", "small tasks", "(small) tasks"],
+                            explanation: "Tutor: 'into manageable, small tasks'."
+                        },
+                        {
+                            q_number: 30,
+                            type: "fill_blank",
+                            question: "Focus each [30] ............ on a single distinct argument.",
+                            correct_answer: "paragraph",
+                            acceptable_answers: ["paragraph", "single paragraph", "(single) paragraph"],
+                            explanation: "Tutor: 'ensure that each single paragraph articulates one coherent argument'."
+                        }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Anthropology & Indigenous Rock Art in Arnhem Land",
+                    description: "Questions 31-40: Multiple Choice and Note Completion.",
+                    tapescript: `LECTURER: Today we examine indigenous rock art in northern Australia's Arnhem Land, home to one of the world's longest continuous cultural traditions.
+Archaeological excavations date these vivid rock wall ochre paintings back more than 20,000 years.
+Early hunter-gatherer artists depicted animal and creature forms with anatomical precision.
+As climate changes caused rising sea levels or fluctuating water levels that flooded the coastal plains, artistic styles transitioned towards marine motifs like barramundi and estuarine crocodiles.
+Art also served ceremonial hunting functions, recording tribal rituals and invoking spiritual protection.
+Finally, sacred rock shelters commemorated spiritual creation stories, preserving clan lineages across millennia.`,
+                    questions: [
+                        {
+                            q_number: 31,
+                            type: "multiple_choice",
+                            question: "Question 31",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 31 is C."
+                        },
+                        {
+                            q_number: 32,
+                            type: "multiple_choice",
+                            question: "Question 32",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 32 is B."
+                        },
+                        {
+                            q_number: 33,
+                            type: "multiple_choice",
+                            question: "Question 33",
+                            options: ["A", "B", "C"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 33 is C."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice",
+                            question: "Question 34",
+                            options: ["A", "B", "C"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 34 is A."
+                        },
+                        {
+                            q_number: 35,
+                            type: "multiple_choice",
+                            question: "Question 35",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 35 is B."
+                        },
+                        {
+                            q_number: 36,
+                            type: "multiple_choice",
+                            question: "Question 36",
+                            options: ["A", "B", "C"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 36 is B."
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "Early motifs depicted natural [37] ............ forms with precision.",
+                            correct_answer: "animal",
+                            acceptable_answers: ["animal", "creature", "animal/creature"],
+                            explanation: "Official Key: animal/creature."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Artistic shifts accompanied rising coastal [38] ............",
+                            correct_answer: "sea levels",
+                            acceptable_answers: ["sea levels", "sea level", "water level", "water levels", "sea/water level(s)"],
+                            explanation: "Official Key: sea/water level(s)."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Paintings documented tribal [39] ............ ceremonies and sacred rights.",
+                            correct_answer: "hunting",
+                            acceptable_answers: ["hunting"],
+                            explanation: "Official Key: hunting."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Sacred caves commemorated ancient spiritual [40] ............ narratives.",
+                            correct_answer: "creation",
+                            acceptable_answers: ["creation"],
+                            explanation: "Official Key: creation."
+                        }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Reading Test 4",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Land of the Rising Sun: Japan's Earthquake-Proof Pagodas",
+                    text: `Why multi-storey wooden pagodas in Japan survive catastrophic earthquakes
+
+A. In a country that experiences thousands of earth tremors every year, Japan's traditional multi-storey pagodas have demonstrated an astonishing resilience. While modern reinforced concrete skyscrapers have cracked or collapsed during violent earthquakesâ€”such as the devastating Great Hanshin earthquake of 1995â€”not a single historic wooden pagoda in Japan has been recorded as toppling due to seismic activity over the past fourteen centuries.
+
+B. The secret lies in Japanese joinery and traditional temple architecture. Unlike Western stone masonry, which relies on rigid mortared joints, a Japanese pagoda is constructed entirely from interlocking timber joints fitted together without nails. When an earthquake strikes, these loose wooden joints flex, squeak, and absorb kinetic shockwaves through friction.
+
+C. Furthermore, the pagoda consists of independent, stacked storeys that are not nailed to each other. During seismic tremors, the storeys oscillate in opposite directions in a graceful 'snake dance', dampening lateral swaying forces.
+
+D. Suspended through the hollow center of the pagoda hangs a massive central wooden pillar called the shinbashira. The shinbashira does not support any structural roof load; rather, it acts as a massive pendulum damper that sways out of phase with the outer timber frame, counterbalancing the building's momentum during violent shocks.`,
+                    questions: [
+                        {
+                            q_number: 1,
+                            type: "matching_heading",
+                            question: "Paragraph A Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "vii",
+                            explanation: "Official Cambridge Key: 1 is vii."
+                        },
+                        {
+                            q_number: 2,
+                            type: "matching_heading",
+                            question: "Paragraph B Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "i",
+                            explanation: "Official Cambridge Key: 2 is i."
+                        },
+                        {
+                            q_number: 3,
+                            type: "matching_heading",
+                            question: "Paragraph C Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "v",
+                            explanation: "Official Cambridge Key: 3 is v."
+                        },
+                        {
+                            q_number: 4,
+                            type: "matching_heading",
+                            question: "Paragraph D Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "ii",
+                            explanation: "Official Cambridge Key: 4 is ii."
+                        },
+                        {
+                            q_number: 5,
+                            type: "matching_heading",
+                            question: "Paragraph 5 Heading",
+                            options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+                            correct_answer: "viii",
+                            explanation: "Official Cambridge Key: 5 is viii."
+                        },
+                        {
+                            q_number: 6,
+                            type: "yes_no_not_given",
+                            question: "Historic multi-storey wooden pagodas in Japan survived the 1995 Hanshin earthquake unscathed.",
+                            correct_answer: "YES",
+                            explanation: "Paragraph A confirms not a single historic pagoda toppled."
+                        },
+                        {
+                            q_number: 7,
+                            type: "yes_no_not_given",
+                            question: "Traditional Japanese pagodas rely heavily on steel nails and rigid cement mortar.",
+                            correct_answer: "NO",
+                            explanation: "Paragraph B states they are fitted together without nails."
+                        },
+                        {
+                            q_number: 8,
+                            type: "yes_no_not_given",
+                            question: "The timber used for Japanese pagodas was harvested exclusively from sacred cedar forests.",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Text does not mention whether cedar was exclusively sacred."
+                        },
+                        {
+                            q_number: 9,
+                            type: "yes_no_not_given",
+                            question: "The massive central shinbashira pillar supports the full weight of the pagoda roofs.",
+                            correct_answer: "NO",
+                            explanation: "Paragraph D confirms the shinbashira does not support structural roof load."
+                        },
+                        {
+                            q_number: 10,
+                            type: "multiple_choice",
+                            question: "Question 10",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 10 is B."
+                        },
+                        {
+                            q_number: 11,
+                            type: "multiple_choice",
+                            question: "Question 11",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 11 is C."
+                        },
+                        {
+                            q_number: 12,
+                            type: "multiple_choice",
+                            question: "Question 12",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 12 is A."
+                        },
+                        {
+                            q_number: 13,
+                            type: "multiple_choice",
+                            question: "Question 13",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 13 is C."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Biological Control of Pests",
+                    text: `Using natural predators rather than toxic chemical pesticides to protect crops
+
+A. Following the Green Revolution of the mid-twentieth century, modern commercial agriculture became profoundly dependent on synthetic chemical pesticides. While these chemical sprays achieved short-term boosts in crop yields, indiscriminate spraying triggered severe ecological blowback: toxic runoff poisoned waterways, beneficial pollinators were decimated, and target pest species rapidly developed genetic resistance.
+
+B. In response, agronomists turned to biological pest controlâ€”the deliberate introduction or encouragement of natural predators, parasites, or pathogens to manage pest populations below economically damaging thresholds. One celebrated historical success occurred in late nineteenth-century California, where the cottony cushion scale insect was devastating citrus orchards. Entomologists imported the vedalia ladybird beetle from Australia, which devoured the scale insects and permanently saved the citrus industry within two seasons.
+
+C. Biological control operates through three main strategies: classical biological control (importing an exotic natural enemy), augmentative control (releasing mass-reared predators at critical crop stages), and conservation biological control (modifying farm landscapes with floral hedgerows and beetle banks to harbor native predators). While biological control demands extensive ecological testing to prevent introduced agents from attacking non-target native species, it provides a self-sustaining, non-toxic alternative to petrochemical agriculture.`,
+                    questions: [
+                        {
+                            q_number: 14,
+                            type: "multiple_choice",
+                            question: "Question 14",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 14 is B."
+                        },
+                        {
+                            q_number: 15,
+                            type: "multiple_choice",
+                            question: "Question 15",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 15 is A."
+                        },
+                        {
+                            q_number: 16,
+                            type: "multiple_choice",
+                            question: "Question 16",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 16 is D."
+                        },
+                        {
+                            q_number: 17,
+                            type: "multiple_choice",
+                            question: "Question 17",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 17 is D."
+                        },
+                        {
+                            q_number: 18,
+                            type: "yes_no_not_given",
+                            question: "Question 18",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Cambridge Key: 18 is NOT GIVEN."
+                        },
+                        {
+                            q_number: 19,
+                            type: "yes_no_not_given",
+                            question: "Question 19",
+                            correct_answer: "YES",
+                            explanation: "Official Cambridge Key: 19 is YES."
+                        },
+                        {
+                            q_number: 20,
+                            type: "yes_no_not_given",
+                            question: "Question 20",
+                            correct_answer: "NO",
+                            explanation: "Official Cambridge Key: 20 is NO."
+                        },
+                        {
+                            q_number: 21,
+                            type: "yes_no_not_given",
+                            question: "Question 21",
+                            correct_answer: "YES",
+                            explanation: "Official Cambridge Key: 21 is YES."
+                        },
+                        {
+                            q_number: 22,
+                            type: "matching_heading",
+                            question: "Question 22",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 22 is D."
+                        },
+                        {
+                            q_number: 23,
+                            type: "matching_heading",
+                            question: "Question 23",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "H",
+                            explanation: "Official Cambridge Key: 23 is H."
+                        },
+                        {
+                            q_number: 24,
+                            type: "matching_heading",
+                            question: "Question 24",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 24 is C."
+                        },
+                        {
+                            q_number: 25,
+                            type: "matching_heading",
+                            question: "Question 25",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "E",
+                            explanation: "Official Cambridge Key: 25 is E."
+                        },
+                        {
+                            q_number: 26,
+                            type: "matching_heading",
+                            question: "Question 26",
+                            options: ["A", "B", "C", "D", "E", "F", "G", "H"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 26 is B."
+                        }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Collecting Ant Specimens: Entomological Field Methods",
+                    text: `Field techniques and laboratory preparation for studying myrmecology
+
+A. Ants are ubiquitous terrestrial organisms inhabiting virtually every ecological niche from tropical rainforest canopies to arid deserts. Studying ant biodiversity (myrmecology) requires standardized field sampling methodologies.
+
+B. Hand collecting with fine forceps and an aspirator (pooter) is the simplest method, allowing direct capture of foraging worker ants. For ground-dwelling and litter-dwelling species, pitfall trapsâ€”plastic cups filled with preserving ethanol buried flush with the soil surfaceâ€”capture roaming nocturnal foragers.
+
+C. To extract cryptic species embedded in forest humus, researchers employ the Winkler sifter and Berlese funnel. Decaying leaf litter is gathered, placed in a mesh funnel beneath an electric light bulb. The descending heat and dryness drive light-averse ants downwards through the screen into a collecting jar filled with 70% ethyl alcohol. Once captured, specimens are labeled with GPS coordinates and mounted on archival card triangles for taxonomic identification.`,
+                    questions: [
+                        {
+                            q_number: 27,
+                            type: "true_false_not_given",
+                            question: "Question 27",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 27 is TRUE."
+                        },
+                        {
+                            q_number: 28,
+                            type: "true_false_not_given",
+                            question: "Question 28",
+                            correct_answer: "NOT GIVEN",
+                            explanation: "Official Cambridge Key: 28 is NOT GIVEN."
+                        },
+                        {
+                            q_number: 29,
+                            type: "true_false_not_given",
+                            question: "Question 29",
+                            correct_answer: "TRUE",
+                            explanation: "Official Cambridge Key: 29 is TRUE."
+                        },
+                        {
+                            q_number: 30,
+                            type: "true_false_not_given",
+                            question: "Question 30",
+                            correct_answer: "FALSE",
+                            explanation: "Official Cambridge Key: 30 is FALSE."
+                        },
+                        {
+                            q_number: 31,
+                            type: "multiple_choice",
+                            question: "Question 31",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 31 is A."
+                        },
+                        {
+                            q_number: 32,
+                            type: "multiple_choice",
+                            question: "Question 32",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "C",
+                            explanation: "Official Cambridge Key: 32 is C."
+                        },
+                        {
+                            q_number: 33,
+                            type: "multiple_choice",
+                            question: "Question 33",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "B",
+                            explanation: "Official Cambridge Key: 33 is B."
+                        },
+                        {
+                            q_number: 34,
+                            type: "multiple_choice",
+                            question: "Question 34",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 34 is D."
+                        },
+                        {
+                            q_number: 35,
+                            type: "multiple_choice",
+                            question: "Question 35",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "A",
+                            explanation: "Official Cambridge Key: 35 is A."
+                        },
+                        {
+                            q_number: 36,
+                            type: "multiple_choice",
+                            question: "Question 36",
+                            options: ["A", "B", "C", "D"],
+                            correct_answer: "D",
+                            explanation: "Official Cambridge Key: 36 is D."
+                        },
+                        {
+                            q_number: 37,
+                            type: "fill_blank",
+                            question: "In the Berlese funnel, an electric bulb generates [37] ............ to drive insects downward.",
+                            correct_answer: "heat",
+                            acceptable_answers: ["heat"],
+                            explanation: "Official Key: heat."
+                        },
+                        {
+                            q_number: 38,
+                            type: "fill_blank",
+                            question: "Samples of decaying forest floor [38] ............ are sifted.",
+                            correct_answer: "leaf litter",
+                            acceptable_answers: ["leaf litter"],
+                            explanation: "Official Key: leaf litter."
+                        },
+                        {
+                            q_number: 39,
+                            type: "fill_blank",
+                            question: "Insects drop through a wire mesh [39] ............ into a receptacle.",
+                            correct_answer: "screen",
+                            acceptable_answers: ["screen"],
+                            explanation: "Official Key: screen."
+                        },
+                        {
+                            q_number: 40,
+                            type: "fill_blank",
+                            question: "Specimens are preserved in a solution of [40] ............",
+                            correct_answer: "alcohol",
+                            acceptable_answers: ["alcohol"],
+                            explanation: "Official Key: alcohol."
+                        }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Writing Test 4",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    type: "line_graph",
+                    title: "Task 1: Quantities of Goods Transported in the UK (1974-2002)",
+                    prompt: "The graph below shows the quantities of goods transported in the UK between 1974 and 2002 by four different modes of transport. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    image_svg: `<svg viewBox="0 0 840 460" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; background: #ffffff;">
+  <!-- Title -->
+  <text x="420" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Goods Transported in the UK by Mode of Transport (1974â€“2002)</text>
+  <text x="40" y="60" font-size="12" fill="#64748b">Million tonnes</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="360" x2="760" y2="360" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="80" y1="80" x2="80" y2="360" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Y Grid & Labels (0, 20, 40, 60, 80, 100, 120) -->
+  <text x="65" y="365" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <text x="65" y="318" text-anchor="end" font-size="11" fill="#64748b">20</text>
+  <line x1="80" y1="313" x2="760" y2="313" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="65" y="272" text-anchor="end" font-size="11" fill="#64748b">40</text>
+  <line x1="80" y1="267" x2="760" y2="267" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="65" y="225" text-anchor="end" font-size="11" fill="#64748b">60</text>
+  <line x1="80" y1="220" x2="760" y2="220" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="65" y="178" text-anchor="end" font-size="11" fill="#64748b">80</text>
+  <line x1="80" y1="173" x2="760" y2="173" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="65" y="132" text-anchor="end" font-size="11" fill="#64748b">100</text>
+  <line x1="80" y1="127" x2="760" y2="127" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="65" y="85" text-anchor="end" font-size="11" fill="#64748b">120</text>
+  <line x1="80" y1="80" x2="760" y2="80" stroke="#f1f5f9" stroke-width="1"/>
+
+  <!-- X Labels: 1974, 1978, 1982, 1986, 1990, 1994, 1998, 2002 -->
+  <text x="100" y="380" text-anchor="middle" font-size="11" fill="#64748b">1974</text>
+  <text x="190" y="380" text-anchor="middle" font-size="11" fill="#64748b">1978</text>
+  <text x="280" y="380" text-anchor="middle" font-size="11" fill="#64748b">1982</text>
+  <text x="370" y="380" text-anchor="middle" font-size="11" fill="#64748b">1986</text>
+  <text x="460" y="380" text-anchor="middle" font-size="11" fill="#64748b">1990</text>
+  <text x="550" y="380" text-anchor="middle" font-size="11" fill="#64748b">1994</text>
+  <text x="640" y="380" text-anchor="middle" font-size="11" fill="#64748b">1998</text>
+  <text x="730" y="380" text-anchor="middle" font-size="11" fill="#64748b">2002</text>
+
+  <!-- Line 1: Road (70 -> 98) -->
+  <path d="M 100 196 L 190 190 L 280 196 L 370 178 L 460 155 L 550 152 L 640 138 L 730 131" fill="none" stroke="#ef4444" stroke-width="3"/>
+
+  <!-- Line 2: Water (40 -> 65) -->
+  <path d="M 100 267 L 190 265 L 280 225 L 370 216 L 460 220 L 550 220 L 640 210 L 730 208" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+  <!-- Line 3: Rail (40 -> 40, dip 1994 to 28) -->
+  <path d="M 100 267 L 190 270 L 280 270 L 370 280 L 460 285 L 550 295 L 640 275 L 730 267" fill="none" stroke="#10b981" stroke-width="3"/>
+
+  <!-- Line 4: Pipeline (5 -> 22) -->
+  <path d="M 100 348 L 190 345 L 280 330 L 370 325 L 460 320 L 550 320 L 640 315 L 730 310" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+
+  <!-- Legend -->
+  <g transform="translate(180, 420)">
+    <line x1="0" y1="10" x2="25" y2="10" stroke="#ef4444" stroke-width="3"/>
+    <text x="32" y="14" font-size="12" fill="#334155">Road</text>
+
+    <line x1="120" y1="10" x2="145" y2="10" stroke="#3b82f6" stroke-width="3"/>
+    <text x="152" y="14" font-size="12" fill="#334155">Water</text>
+
+    <line x1="240" y1="10" x2="265" y2="10" stroke="#10b981" stroke-width="3"/>
+    <text x="272" y="14" font-size="12" fill="#334155">Rail</text>
+
+    <line x1="360" y1="10" x2="385" y2="10" stroke="#8b5cf6" stroke-width="3"/>
+    <text x="392" y="14" font-size="12" fill="#334155">Pipeline</text>
+  </g>
+</svg>`,
+                    model_answer_band9: `The line graph tracks the volume of commercial freight transported across the United Kingdom between 1974 and 2002, measured in millions of tonnes, categorized into four transport modes: road, water, rail, and pipeline.
+
+Overall, road transport consistently carried by far the largest quantity of goods throughout the 28-year timeframe and experienced substantial net growth. Goods moved by water and pipeline also witnessed upward trends, whereas rail was the sole mode that remained largely stagnant with noticeable intermittent declines.
+
+In 1974, approximately 70 million tonnes of goods were transported by road. This volume remained relatively steady until 1982 before rising steeply over the next two decades, ultimately reaching nearly 100 million tonnes by 2002. Water transport started in second position tied with rail at roughly 40 million tonnes; it surged significantly during the late 1970s and early 1980s, climbing to nearly 60 million tonnes before plateauing and finishing at approximately 65 million tonnes in 2002.
+
+Conversely, rail freight experienced a prolonged contraction, dropping from 40 million tonnes in 1974 to an all-time low of under 30 million tonnes in the mid-1990s, before rebounding back to its original baseline of 40 million tonnes by the end of the survey period. Lastly, pipelines accounted for the smallest volume throughout, yet experienced steady quadruple growth from around 5 million tonnes in 1974 to over 20 million tonnes by 2002.`
+                },
+                {
+                    task_number: 2,
+                    type: "causes_and_solutions",
+                    title: "Task 2: Rising Obesity and Declining Physical Fitness",
+                    prompt: "In some countries the average weight of people is increasing and their levels of health and fitness are decreasing. What do you think are the causes of these problems and what measures could be taken to solve them? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    model_answer_band9: `In many nations worldwide, surging obesity rates coupled with a steep decline in physical fitness have evolved into a grave public health crisis. This alarming epidemic is primarily propelled by modern sedentary lifestyles and the ubiquity of hyper-processed convenience diets. To arrest this decline, collaborative interventions encompassing governmental regulatory policies, urban restructuring, and public nutritional education are urgently needed.
+
+The root causes of this crisis stem fundamentally from structural shifts in how contemporary humans work, move, and eat. First, the transition towards knowledge-based and automated economies means that millions of professionals spend eight to ten hours daily seated in front of digital displays, expending negligible physical energy. Motorized transport has similarly eliminated routine incidental exercise like walking or cycling to work. Second, dietary habits have deteriorated markedly: aggressive corporate marketing and long working hours have made cheap, ultra-processed fast food laden with refined sugars, saturated fats, and synthetic additives far more accessible than wholesome, home-cooked produce.
+
+To reverse these perilous trends, governments and communities must implement robust multifaceted countermeasures. Primarily, fiscal regulations should be imposed on unhealthy consumables, including sugar-sweetened beverage levies and stringent restrictions on junk food advertising targeting children. The revenue generated from these taxes could subsidize fresh organic fruits and vegetables in low-income neighborhoods. Additionally, urban planners must design health-promoting environments by expanding continuous bicycle lanes, pedestrianized walking plazas, and accessible public outdoor sports parks. Finally, educational institutions should mandate daily physical education and introduce comprehensive culinary and nutritional literacy into core curricula so young people cultivate lifelong fitness habits.
+
+In conclusion, escalating body mass and dwindling fitness levels are the direct consequences of physical inactivity and poor nutritional environments. Only through aggressive public health regulations, subsidized nutrition, and active urban infrastructure can society successfully restore collective vitality.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Speaking Test 4",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction & Familiar Topics",
+                    topic: "Television",
+                    questions: [
+                        {
+                            question: "How often do you watch television? [Why/Why not?]",
+                            band9_sample: "I rarely watch scheduled terrestrial broadcast television anymore. Instead, I stream curated documentaries and international series on on-demand platforms perhaps three or four hours a week, usually on weekend evenings to unwind."
+                        },
+                        {
+                            question: "Which television channel do you usually watch? [Why?]",
+                            band9_sample: "When I do tune in to traditional broadcast networks, I gravitate towards channels like BBC World News or National Geographic for their high-caliber investigative journalism and natural history cinematography."
+                        },
+                        {
+                            question: "Do you enjoy the advertisements on television? [Why/Why not?]",
+                            band9_sample: "Generally, I find commercial breaks intrusive and repetitive, as they disrupt narrative immersion. However, I can appreciate occasional high-budget commercials that feature clever storytelling or exceptional humor."
+                        },
+                        {
+                            question: "Do you think most programmes on television are good? [Why/Why not?]",
+                            band9_sample: "It's a mixed bag. While we are living in a golden era of high-budget serialized drama, daytime programming is often dominated by low-effort sensationalist reality shows and tabloid talk formats that offer minimal intellectual stimulation."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card)",
+                    cue_card: `Describe a friend of your family you remember from your childhood.
+
+You should say:
+â€¢ who the person was
+â€¢ how your family knew this person
+â€¢ how often this person visited your family
+and explain why you remember this person.`,
+                    band9_sample: `I'd like to share my memories of Uncle Thomas, a charismatic maritime engineer and a lifelong friend of my father who was a constant, joyous fixture in my childhood.
+
+My father and Uncle Thomas first met while studying mechanical engineering at university back in the late 1980s. Because Thomas spent lengthy stretches working on commercial cargo vessels overseas, whenever his ship docked at our local port for maintenanceâ€”roughly three or four times a yearâ€”he would stay at our family home for a fortnight.
+
+His arrivals were always heralded with immense excitement. He was a towering, bearded man with a boisterous laugh and a bottomless repertoire of captivating seafaring anecdotes. He would gather my siblings and me in the living room and recount thrilling tales of navigating typhoons in the South China Sea or encountering playful pods of dolphins in the Indian Ocean. Moreover, he possessed a natural knack for mentorship; he patiently taught me how to assemble intricate wooden ship models, tie maritime knots, and read celestial constellations in our backyard at night.
+
+I remember Uncle Thomas with profound fondness because he expanded my worldview beyond the quiet confines of our suburban neighborhood. He embodied adventure, generosity, and an unquenchable curiosity about the world, qualities that inspired my own lifelong passion for travel and exploration.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion",
+                    sub_topics: [
+                        {
+                            title: "Family friendships and lifelong bonds",
+                            questions: [
+                                {
+                                    question: "What do you think makes someone a good friend to a whole family?",
+                                    band9_sample: "A genuine family friend possesses deep emotional versatilityâ€”someone who can engage warmly with elders, converse intellectually with parents, and connect playfully with young children. Mutual trust, discretion, and dependable presence during familial crises are vital hallmarks."
+                                },
+                                {
+                                    question: "Do you think we meet different kinds of friend at different stages of our lives?",
+                                    band9_sample: "Undoubtedly. Childhood friendships are largely forged through geographic proximity and shared games. In university and early career stages, friends bond over shared intellectual ambitions and lifestyle aspirations, whereas mid-life friendships tend to center around shared parenting challenges or career networks."
+                                },
+                                {
+                                    question: "How easy is it to make friends with people from a different age group?",
+                                    band9_sample: "It requires active openness to overcome generational communication gaps. However, intergenerational friendships are profoundly enriching: younger people gain seasoned wisdom and perspective, while older individuals stay connected to dynamic cultural shifts."
+                                }
+                            ]
+                        },
+                        {
+                            title: "The influence of friendship & Cross-cultural bonds",
+                            questions: [
+                                {
+                                    question: "Do you think it is possible to be friends with someone if you never meet them in person?",
+                                    band9_sample: "Yes, modern digital communication allows people to share intimate philosophical values and emotional vulnerabilities across continents. While physical presence adds visceral warmth, deep intellectual solidarity can certainly thrive in virtual spaces."
+                                },
+                                {
+                                    question: "What kind of influence can friends have on our lives?",
+                                    band9_sample: "Peer groups subtly shape our ethical norms, career ambition, and personal lifestyle habits. Surrounding oneself with disciplined, empathetic peers fosters personal flourishing, whereas toxic associations can normalize cynicism and inertia."
+                                },
+                                {
+                                    question: "How important would you say it is to have friends from different cultures?",
+                                    band9_sample: "It is exceptionally important in our globalized era. Cultivating cross-cultural friendships demolishes parochial stereotypes, deepens cognitive empathy, and reminds us of our universal human solidarity beneath diverse cultural expressions."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+// Normalize Cam 8 tests
+function _normalizeCam8Test(testObj) {
+    if (!testObj || !testObj.sections) return testObj;
+    testObj.listening = testObj.sections.listening;
+    testObj.reading = testObj.sections.reading;
+    testObj.writing = testObj.sections.writing;
+    testObj.speaking = testObj.sections.speaking;
+    return testObj;
+}
+[_normalizeCam8Test(cam8Test1), _normalizeCam8Test(cam8Test2), _normalizeCam8Test(cam8Test3), _normalizeCam8Test(cam8Test4)];
+
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1, 2, 3, 4, 5, 6 & 7 (28 Tests)",
+    age: "Cambridge 1, 2, 3, 4, 5, 6, 7 & 8 (32 Tests)",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
     // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
@@ -15765,6 +20009,14 @@ const ieltsProfileData = {
             order: 7,
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"]
+        },
+        "cam_8": {
+            id: "cam_8",
+            title: "Cambridge IELTS 8",
+            badge: "4 Tests",
+            order: 8,
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_8_test_1", "cam_8_test_2", "cam_8_test_3", "cam_8_test_4"]
         }
     },
 
@@ -15797,7 +20049,11 @@ const ieltsProfileData = {
         "cam_7_test_1": { title: "Test 1", full_title: "Cambridge IELTS 7 - Test 1", book_id: "cam_7", book_title: "Cambridge IELTS 7" },
         "cam_7_test_2": { title: "Test 2", full_title: "Cambridge IELTS 7 - Test 2", book_id: "cam_7", book_title: "Cambridge IELTS 7" },
         "cam_7_test_3": { title: "Test 3", full_title: "Cambridge IELTS 7 - Test 3", book_id: "cam_7", book_title: "Cambridge IELTS 7" },
-        "cam_7_test_4": { title: "Test 4", full_title: "Cambridge IELTS 7 - Test 4", book_id: "cam_7", book_title: "Cambridge IELTS 7" }
+        "cam_7_test_4": { title: "Test 4", full_title: "Cambridge IELTS 7 - Test 4", book_id: "cam_7", book_title: "Cambridge IELTS 7" },
+        "cam_8_test_1": { title: "Test 1", full_title: "Cambridge IELTS 8 - Test 1", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
+        "cam_8_test_2": { title: "Test 2", full_title: "Cambridge IELTS 8 - Test 2", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
+        "cam_8_test_3": { title: "Test 3", full_title: "Cambridge IELTS 8 - Test 3", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
+        "cam_8_test_4": { title: "Test 4", full_title: "Cambridge IELTS 8 - Test 4", book_id: "cam_8", book_title: "Cambridge IELTS 8" }
     },
 
     // All Registered Tests (24 Tests Total)
@@ -15829,7 +20085,11 @@ const ieltsProfileData = {
         "cam_7_test_1": cam7Test1,
         "cam_7_test_2": cam7Test2,
         "cam_7_test_3": cam7Test3,
-        "cam_7_test_4": cam7Test4
+        "cam_7_test_4": cam7Test4,
+        "cam_8_test_1": cam8Test1,
+        "cam_8_test_2": cam8Test2,
+        "cam_8_test_3": cam8Test3,
+        "cam_8_test_4": cam8Test4
     }
 };
 
@@ -15846,6 +20106,7 @@ if (typeof module !== "undefined" && module.exports) {
         cam4Test1, cam4Test2, cam4Test3, cam4Test4,
         cam5Test1, cam5Test2, cam5Test3, cam5Test4,
         cam6Test1, cam6Test2, cam6Test3, cam6Test4,
-        cam7Test1, cam7Test2, cam7Test3, cam7Test4
+        cam7Test1, cam7Test2, cam7Test3, cam7Test4,
+        cam8Test1, cam8Test2, cam8Test3, cam8Test4
     };
 }

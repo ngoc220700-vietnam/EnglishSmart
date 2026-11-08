@@ -1409,11 +1409,11 @@
     </div>
 
     <!-- KẾT NỐI VỚI FILE DỮ LIỆU TỪ VỰNG & TEST ENGINE -->
-    <script src="data.js?v=20261108_safe_v1"></script>
-    <script src="ielts_data.js?v=20261108_safe_v1"></script>
-    <script src="ielts_test_engine.js?v=20261108_safe_v1"></script>
-    <script src="starters_data.js?v=20261108_safe_v1"></script>
-    <script src="starters_test_engine.js?v=20261108_safe_v1"></script>
+    <script src="data.js?v=20261108_cam8_v1"></script>
+    <script src="ielts_data.js?v=20261108_cam8_v1"></script>
+    <script src="ielts_test_engine.js?v=20261108_cam8_v1"></script>
+    <script src="starters_data.js?v=20261108_cam8_v1"></script>
+    <script src="starters_test_engine.js?v=20261108_cam8_v1"></script>
 
     <!-- LOGIC ĐIỀU KHIỂN TRANG MỞ ĐẦU & FLASHCARD -->
     <script>
@@ -2208,7 +2208,8 @@
                 "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", badge: "4 Tests", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] },
                 "cam_5": { id: "cam_5", title: "Cambridge IELTS 5", badge: "4 Tests", test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"] },
                 "cam_6": { id: "cam_6", title: "Cambridge IELTS 6", badge: "4 Tests", test_ids: ["cam_6_test_1", "cam_6_test_2", "cam_6_test_3", "cam_6_test_4"] },
-                "cam_7": { id: "cam_7", title: "Cambridge IELTS 7", badge: "4 Tests", test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"] }
+                "cam_7": { id: "cam_7", title: "Cambridge IELTS 7", badge: "4 Tests", test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"] },
+                "cam_8": { id: "cam_8", title: "Cambridge IELTS 8", badge: "4 Tests", test_ids: ["cam_8_test_1", "cam_8_test_2", "cam_8_test_3", "cam_8_test_4"] }
             };
 
             const wrapper = document.createElement('div');
@@ -2223,6 +2224,7 @@
                 const isCam5 = (bKey === 'cam_5');
                 const isCam6 = (bKey === 'cam_6');
                 const isCam7 = (bKey === 'cam_7');
+                const isCam8 = (bKey === 'cam_8');
 
                 let boxClass = "bg-indigo-50/70 border border-indigo-200/90 rounded-2xl p-2.5 shadow-2xs";
                 let icon = "\uD83D\uDCD8";
