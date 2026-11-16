@@ -221,7 +221,8 @@ function renderIeltsTestView() {
             "cam_4": { id: "cam_4", title: "Cambridge IELTS 4", test_ids: ["cam_4_test_1", "cam_4_test_2", "cam_4_test_3", "cam_4_test_4"] },
             "cam_5": { id: "cam_5", title: "Cambridge IELTS 5", test_ids: ["cam_5_test_1", "cam_5_test_2", "cam_5_test_3", "cam_5_test_4"] },
             "cam_6": { id: "cam_6", title: "Cambridge IELTS 6", test_ids: ["cam_6_test_1", "cam_6_test_2", "cam_6_test_3", "cam_6_test_4"] },
-            "cam_7": { id: "cam_7", title: "Cambridge IELTS 7", test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"] },`r`n            "cam_8": { id: "cam_8", title: "Cambridge IELTS 8", test_ids: ["cam_8_test_1", "cam_8_test_2", "cam_8_test_3", "cam_8_test_4"] }
+                        "cam_7": { id: "cam_7", title: "Cambridge IELTS 7", test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"] },
+            "cam_8": { id: "cam_8", title: "Cambridge IELTS 8", test_ids: ["cam_8_test_1", "cam_8_test_2", "cam_8_test_3", "cam_8_test_4"] }
         };
         const optKeys = Array.from(fastSelect.options).map(o => o.value);
         const allTestKeys = Object.keys(ieltsProfileData.units || {});
@@ -1298,9 +1299,9 @@ Respond ONLY with a valid JSON object matching this exact format:
 
 function renderIeltsWritingView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
-    const wri = test.writing;
-    const task = activeWritingTask === 1 ? wri.task_1 : wri.task_2;
-    const taskKey = activeWritingTask === 1 ? 'task_1' : 'task_2';
+    const wri = (test && test.writing) || {};
+    const task1 = wri.task_1 || (wri.tasks && wri.tasks[0]) || {}; const task2 = wri.task_2 || (wri.tasks && wri.tasks[1]) || {}; const task = activeWritingTask === 1 ? task1 : task2;
+    const taskKey = activeWritingTask === 1 ? "task_1" : "task_2";
     const currentEssay = ieltsUserAnswers.writing[taskKey] || '';
     const wordCount = countWords(currentEssay);
     const minWords = task.min_words || (activeWritingTask === 1 ? 150 : 250);
@@ -1406,8 +1407,20 @@ function handleWritingInput(val) {
 // =========================================================================
 function renderIeltsSpeakingView(container) {
     const test = ieltsProfileData.ielts_tests[activeIeltsTestId];
-    const spk = test.speaking;
+    const spk = (test && test.speaking) || {};
+        let p1List = [];
+    if (Array.isArray(spk.part_1)) p1List = spk.part_1;
+    else if (spk.part_1 && Array.isArray(spk.part_1.questions)) p1List = spk.part_1.questions.map(q => typeof q === 'string' ? { question: q } : q);
+    else if (spk.parts && spk.parts[0] && Array.isArray(spk.parts[0].questions)) p1List = spk.parts[0].questions;
 
+    const p2Card = spk.part_2 || (spk.parts && spk.parts[1]) || {};
+
+    let p3List = [];
+    if (Array.isArray(spk.part_3)) p3List = spk.part_3;
+    else if (spk.part_3 && Array.isArray(spk.part_3.questions)) p3List = spk.part_3.questions.map(q => typeof q === 'string' ? { question: q } : q);
+    else if (spk.part_3 && Array.isArray(spk.part_3.topics)) {
+        spk.part_3.topics.forEach(top => { (top.questions || []).forEach(q => { p3List.push(typeof q === 'string' ? { question: q } : q); }); });
+    } if ((!p3List || p3List.length === 0) && spk.parts && spk.parts[2]) { if (spk.parts[2].questions) p3List = spk.parts[2].questions; else if (spk.parts[2].sub_topics) { spk.parts[2].sub_topics.forEach(st => { if (st.questions) p3List = p3List.concat(st.questions); }); } }
     let contentHtml = '';
     if (activeSpeakingPart === 1) {
         contentHtml = `
@@ -1415,7 +1428,7 @@ function renderIeltsSpeakingView(container) {
                 <div class="p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950 flex items-center justify-between">
                     <span>💡 <strong>Part 1:</strong> Answer everyday questions naturally with 2-4 complete sentences.</span>
                 </div>
-                ${spk.part_1.map((item, idx) => `
+                ${p1List.map((item, idx) => `
                     <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
                         <div class="flex items-start justify-between gap-2 mb-2">
                             <p class="font-extrabold text-xs sm:text-sm text-slate-900 flex-1">
@@ -1451,7 +1464,7 @@ function renderIeltsSpeakingView(container) {
             </div>
         `;
     } else if (activeSpeakingPart === 2) {
-        const card = spk.part_2;
+        const card = p2Card;
         contentHtml = `
             <div class="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
                 <div class="p-4 rounded-2xl bg-gradient-to-tr from-amber-50 to-orange-50 border border-amber-300">
@@ -1509,7 +1522,7 @@ function renderIeltsSpeakingView(container) {
                 <div class="p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950">
                     💡 <strong>Part 3:</strong> In-depth two-way academic discussion. Express opinions, analyze causes, and provide reasoned justifications.
                 </div>
-                ${spk.part_3.map((item, idx) => `
+                ${p3List.map((item, idx) => `
                     <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
                         <div class="flex items-start justify-between gap-2 mb-2">
                             <p class="font-extrabold text-xs sm:text-sm text-slate-900 flex-1">
@@ -1778,7 +1791,7 @@ function gradeIeltsTest(showModal = true) {
                 id: q.id,
                 prompt: q.prompt || q.question || '',
                 userAns: userAns || '(Not answered)',
-                correctAns: q.correct_answers[0],
+                correctAns: (q.correct_answers && q.correct_answers.length > 0) ? q.correct_answers[0] : (q.correct_answer || ''),
                 isCorrect: isCorr,
                 evidence: q.evidence || '',
                 explanation: q.explanation || ''
@@ -1804,7 +1817,7 @@ function gradeIeltsTest(showModal = true) {
                 id: q.id,
                 prompt: q.statement || q.prompt || q.question || '',
                 userAns: userAns || '(Not answered)',
-                correctAns: q.correct_answers[0],
+                correctAns: (q.correct_answers && q.correct_answers.length > 0) ? q.correct_answers[0] : (q.correct_answer || ''),
                 isCorrect: isCorr,
                 evidence: q.evidence || '',
                 explanation: q.explanation || ''

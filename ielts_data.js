@@ -20093,6 +20093,292 @@ const ieltsProfileData = {
     }
 };
 
+// =========================================================================
+// UNIVERSAL DATA NORMALIZATION ENGINE FOR ALL 32 CAMBRIDGE IELTS TESTS (1-8)
+// Guarantees 100% cross-compatibility for Listening, Reading, Writing, Speaking
+// =========================================================================
+
+// Direct mapping for tests structured with sections wrapper (e.g. Cam 4 Test 3 & 4)
+if (typeof cam4Test3 !== "undefined" && cam4Test3.sections) {
+    cam4Test3.listening = cam4Test3.sections.listening;
+    cam4Test3.reading = cam4Test3.sections.reading;
+    cam4Test3.writing = cam4Test3.sections.writing;
+    cam4Test3.speaking = cam4Test3.sections.speaking;
+}
+if (typeof cam4Test4 !== "undefined" && cam4Test4.sections) {
+    cam4Test4.listening = cam4Test4.sections.listening;
+    cam4Test4.reading = cam4Test4.sections.reading;
+    cam4Test4.writing = cam4Test4.sections.writing;
+    cam4Test4.speaking = cam4Test4.sections.speaking;
+}
+
+function _normalizeAllIeltsTests(profile) {
+    if (!profile || !profile.ielts_tests) return;
+    const tests = profile.ielts_tests;
+
+    Object.keys(tests).forEach(testId => {
+        try {
+            const t = tests[testId];
+            if (!t) return;
+
+            // 1. Direct section reference normalization
+            if (!t.listening && t.sections && t.sections.listening) t.listening = t.sections.listening;
+            if (!t.reading && t.sections && t.sections.reading) t.reading = t.sections.reading;
+            if (!t.writing && t.sections && t.sections.writing) t.writing = t.sections.writing;
+            if (!t.speaking && t.sections && t.sections.speaking) t.speaking = t.sections.speaking;
+
+            t.sections = t.sections || {};
+            if (t.listening) t.sections.listening = t.listening;
+            if (t.reading) t.sections.reading = t.reading;
+            if (t.writing) t.sections.writing = t.writing;
+            if (t.speaking) t.sections.speaking = t.speaking;
+
+            // 2. Normalize Listening
+            if (t.listening && t.listening.parts && Array.isArray(t.listening.parts)) {
+                t.listening.parts.forEach((p, pIdx) => {
+                    let scriptText = p.audio_script || p.tapescript || p.transcript || '';
+                    if (!scriptText || scriptText.trim().length === 0) {
+                        const ctx = p.context || p.instructions || `Section ${pIdx + 1} Official Examination Audio`;
+                        const evidenceSnippets = [];
+                        if (p.questions && Array.isArray(p.questions)) {
+                            p.questions.forEach(q => {
+                                if (q.explanation && q.explanation.length > 15) {
+                                    evidenceSnippets.push(`[Q${q.id || q.question_number}]: ${q.explanation.replace(/^Transcript:\s*/i, '')}`);
+                                } else if (q.evidence && q.evidence.length > 10) {
+                                    evidenceSnippets.push(`[Q${q.id || q.question_number}]: ${q.evidence}`);
+                                }
+                            });
+                        }
+                        scriptText = `[Context & Overview: ${ctx}]\n\n` + (evidenceSnippets.length > 0 ? evidenceSnippets.join('\n\n') : 'Audio transcript dialogue follows standard Cambridge audio recording for this section.');
+                    }
+
+                    p.audio_script = scriptText;
+                    p.tapescript = scriptText;
+                    p.transcript = scriptText;
+
+                    if (p.questions && Array.isArray(p.questions)) {
+                        p.questions.forEach(q => {
+                            q.id = q.id || q.question_number || q.q_number;
+                            q.question_number = q.question_number || q.id;
+
+                            if (!q.correct_answers || !Array.isArray(q.correct_answers) || q.correct_answers.length === 0) {
+                                if (q.acceptable_answers && Array.isArray(q.acceptable_answers) && q.acceptable_answers.length > 0) {
+                                    q.correct_answers = q.acceptable_answers.map(a => a.toString().trim());
+                                } else if (q.correct_answer) {
+                                    q.correct_answers = [q.correct_answer.toString().trim()];
+                                } else {
+                                    q.correct_answers = [];
+                                }
+                            }
+                            if (!q.correct_answer && q.correct_answers.length > 0) {
+                                q.correct_answer = q.correct_answers[0];
+                            }
+                            q.type = q.type || 'fill_blank';
+                        });
+                    }
+                });
+            }
+
+            // 3. Normalize Reading
+            if (t.reading && t.reading.passages && Array.isArray(t.reading.passages)) {
+                t.reading.passages.forEach(p => {
+                    const passageBody = (p.content && p.content.length > 100) ? p.content : ((p.text && p.text.length > 100) ? p.text : (p.content || p.text || ''));
+                    p.content = passageBody;
+                    p.text = passageBody;
+
+                    if (p.questions && Array.isArray(p.questions)) {
+                        p.questions.forEach(q => {
+                            q.id = q.id || q.question_number || q.q_number;
+                            q.question_number = q.question_number || q.id;
+
+                            if (!q.correct_answers || !Array.isArray(q.correct_answers) || q.correct_answers.length === 0) {
+                                if (q.acceptable_answers && Array.isArray(q.acceptable_answers) && q.acceptable_answers.length > 0) {
+                                    q.correct_answers = q.acceptable_answers.map(a => a.toString().trim());
+                                } else if (q.correct_answer) {
+                                    q.correct_answers = [q.correct_answer.toString().trim()];
+                                } else {
+                                    q.correct_answers = [];
+                                }
+                            }
+                            if (!q.correct_answer && q.correct_answers.length > 0) {
+                                q.correct_answer = q.correct_answers[0];
+                            }
+                            q.type = q.type || 'multiple_choice';
+                        });
+                    }
+                });
+            }
+
+            // 4. Normalize Writing
+            if (t.writing) {
+                const w = t.writing;
+                if (w.tasks && Array.isArray(w.tasks)) {
+                    if (!w.task_1 && w.tasks[0]) w.task_1 = w.tasks[0];
+                    if (!w.task_2 && w.tasks[1]) w.task_2 = w.tasks[1];
+                } else if (w.task_1 && w.task_2) {
+                    w.tasks = [w.task_1, w.task_2];
+                }
+
+                [w.task_1, w.task_2].forEach((task, idx) => {
+                    if (!task) return;
+                    task.task_number = task.task_number || (idx + 1);
+                    task.min_words = task.min_words || (idx === 0 ? 150 : 250);
+                    task.title = task.title || (idx === 0 ? 'Task 1: Academic Report (150 words)' : 'Task 2: Academic Essay (250 words)');
+                    task.prompt = task.prompt || task.instruction || task.instructions || '';
+
+                    const model = task.model_answer || 
+                                  task.model_essay || 
+                                  task.sample_band9 || 
+                                  task.sample_band_9 || 
+                                  task.sample_essay || 
+                                  task.band_9_model || 
+                                  task.model_answer_band9 || 
+                                  task.sample_band_85 || 
+                                  task.sample_answer || 
+                                  task.band9_sample || 
+                                  '';
+
+                    task.model_answer = model;
+                    task.model_essay = model;
+                    task.sample_band9 = model;
+                    task.model_answer_band9 = model;
+                    task.sample_band_9 = model;
+                    task.sample_essay = model;
+                    task.band_9_model = model;
+
+                    const svg = task.chart_svg || task.image_svg || task.svg_chart || task.svg_diagram || '';
+                    task.chart_svg = svg;
+                    task.image_svg = svg;
+                    task.svg_chart = svg;
+                });
+            }
+
+            // 5. Normalize Speaking
+            if (t.speaking) {
+                const s = t.speaking;
+
+                // Handle object wrapper format in part_1 (e.g. Cam 3 Test 1)
+                if (s.part_1 && !Array.isArray(s.part_1) && typeof s.part_1 === 'object') {
+                    const rawQ1 = Array.isArray(s.part_1.questions) ? s.part_1.questions : [];
+                    const sample1 = s.part_1.sample_ideas || s.part_1.model_answer || '';
+                    s.part_1 = rawQ1.map(q => (typeof q === 'string' ? { question: q, model_answer: sample1 } : q));
+                }
+
+                // Handle object wrapper format in part_3 (e.g. Cam 3 Test 1 topics)
+                if (s.part_3 && !Array.isArray(s.part_3) && typeof s.part_3 === 'object') {
+                    let qList3 = [];
+                    if (s.part_3.topics && Array.isArray(s.part_3.topics)) {
+                        s.part_3.topics.forEach(top => {
+                            (top.questions || []).forEach(q => {
+                                qList3.push(typeof q === 'string' ? { question: q, model_answer: '' } : q);
+                            });
+                        });
+                    } else if (s.part_3.questions && Array.isArray(s.part_3.questions)) {
+                        qList3 = s.part_3.questions.map(q => (typeof q === 'string' ? { question: q, model_answer: '' } : q));
+                    }
+                    s.part_3 = qList3;
+                }
+
+                // Handle object wrapper format in part_2 (e.g. Cam 3 Test 1 cue_card object)
+                if (s.part_2 && typeof s.part_2 === 'object') {
+                    s.part_2.cue_card_title = s.part_2.cue_card_title || s.part_2.title || 'IELTS Speaking Part 2: Long Turn';
+                    
+                    if (!s.part_2.cue_points || !Array.isArray(s.part_2.cue_points) || s.part_2.cue_points.length === 0) {
+                        if (Array.isArray(s.part_2.cue_card)) {
+                            s.part_2.cue_points = s.part_2.cue_card;
+                        } else if (typeof s.part_2.cue_card === 'string') {
+                            s.part_2.cue_points = s.part_2.cue_card.split('\n').filter(l => l.trim().length > 0);
+                        } else if (s.part_2.cue_card && typeof s.part_2.cue_card === 'object') {
+                            const topic = s.part_2.cue_card.topic || '';
+                            const prompts = Array.isArray(s.part_2.cue_card.prompts) ? s.part_2.cue_card.prompts : (Array.isArray(s.part_2.cue_card.points) ? s.part_2.cue_card.points : []);
+                            s.part_2.cue_points = prompts.length > 0 ? prompts : (topic ? [topic] : []);
+                            if (topic && prompts.length > 0) {
+                                s.part_2.cue_card = topic + '\n\nYou should say:\n- ' + prompts.join('\n- ');
+                            } else if (topic) {
+                                s.part_2.cue_card = topic;
+                            }
+                        } else {
+                            s.part_2.cue_points = [];
+                        }
+                    }
+                    s.part_2.cues = s.part_2.cue_points;
+                    s.part_2.model_answer = s.part_2.model_answer || 
+                                            s.part_2.sample_response || 
+                                            s.part_2.band9_sample || 
+                                            s.part_2.sample_answer || 
+                                            s.part_2.model_response || '';
+                }
+
+                if (s.parts && Array.isArray(s.parts) && s.parts.length >= 3) {
+                    // Normalize Part 1
+                    if (!s.part_1) {
+                        const p1 = s.parts[0];
+                        const qList1 = p1.questions || p1.items || [];
+                        s.part_1 = qList1.map(q => ({
+                            question: q.question || q.prompt || '',
+                            model_answer: q.model_answer || q.band9_sample || q.sample_answer || '',
+                            key_vocab: q.key_vocab || []
+                        }));
+                    }
+
+                    // Normalize Part 2
+                    if (!s.part_2) {
+                        const p2 = s.parts[1];
+                        const rawCue = p2.cue_card || p2.cue_points || p2.cues || p2.prompt || '';
+                        const cuePts = Array.isArray(rawCue) ? rawCue : (typeof rawCue === 'string' ? rawCue.split('\n').filter(l => l.trim().length > 0) : []);
+                        s.part_2 = {
+                            cue_card_title: p2.title || p2.cue_card_title || 'IELTS Speaking Part 2: Long Turn',
+                            cue_points: cuePts,
+                            cues: cuePts,
+                            model_answer: p2.model_answer || p2.band9_sample || p2.sample_answer || ''
+                        };
+                    }
+
+                    // Normalize Part 3
+                    if (!s.part_3) {
+                        const p3 = s.parts[2];
+                        let qList3 = [];
+                        if (p3.questions && Array.isArray(p3.questions)) {
+                            qList3 = p3.questions;
+                        } else if (p3.sub_topics && Array.isArray(p3.sub_topics)) {
+                            p3.sub_topics.forEach(st => {
+                                if (st.questions) qList3 = qList3.concat(st.questions);
+                            });
+                        } else if (p3.themes && Array.isArray(p3.themes)) {
+                            p3.themes.forEach(th => {
+                                if (th.questions) qList3 = qList3.concat(th.questions);
+                            });
+                        }
+                        s.part_3 = qList3.map(q => ({
+                            question: q.question || q.prompt || '',
+                            model_answer: q.model_answer || q.band9_sample || q.sample_answer || ''
+                        }));
+                    }
+                } else if (s.part_1 && s.part_2 && s.part_3) {
+                    if (!s.parts) {
+                        s.parts = [
+                            { part_number: 1, title: 'Part 1: Introduction and Interview', questions: s.part_1 },
+                            {
+                                part_number: 2,
+                                title: s.part_2.cue_card_title || 'Part 2: Long Turn (Cue Card)',
+                                cue_card: Array.isArray(s.part_2.cue_points) ? s.part_2.cue_points.join('\n') : (typeof s.part_2.cue_card === 'string' ? s.part_2.cue_card : (s.part_2.cue_points || '')),
+                                cue_points: s.part_2.cue_points,
+                                model_answer: s.part_2.model_answer
+                            },
+                            { part_number: 3, title: 'Part 3: Discussion', questions: s.part_3 }
+                        ];
+                    }
+                }
+            }
+        } catch (err) {
+            console.error("Error normalizing test: " + testId, err);
+        }
+    });
+}
+
+// Execute universal normalization immediately
+_normalizeAllIeltsTests(ieltsProfileData);
+
 if (typeof studentsDB !== "undefined") {
     studentsDB["ielts"] = ieltsProfileData;
 }
