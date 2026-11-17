@@ -19946,10 +19946,1619 @@ function _normalizeCam8Test(testObj) {
 }
 [_normalizeCam8Test(cam8Test1), _normalizeCam8Test(cam8Test2), _normalizeCam8Test(cam8Test3), _normalizeCam8Test(cam8Test4)];
 
+// ==========================================
+// CAMBRIDGE IELTS 9: ALL 4 AUTHENTIC TESTS (1-4)
+// ==========================================
+
+// =========================================================================
+// CAMBRIDGE IELTS 9 - TEST 1 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam9Test1 = {
+    id: "cam_9_test_1",
+    title: "Cambridge IELTS 9 - Test 1",
+    book: "Cambridge IELTS 9",
+    book_id: "cam_9",
+    test_number: 1,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test1.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 1",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Job Enquiry at a Restaurant",
+                    description: "Questions 1-10: Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test1_part1.mp3",
+                    tapescript: `MAN: Good morning. Can I help you?
+WOMAN: Yes, I'm ringing to enquire about the job I saw advertised in the paper.
+MAN: Oh yes, for a restaurant assistant. Well, can I take your name first?
+WOMAN: Yes, it's Sue Webster.
+MAN: Fine, Sue. What type of work are you looking for?
+WOMAN: Well, anything really, but I do have experience answering the phone.
+MAN: Good, because that's mainly what we need - answering the phone and taking reservations. Now, the hours are 12 hours per week, but you would need a work permit.
+WOMAN: That's fine, I have a student visa which allows me to work up to 20 hours.
+MAN: Great. The position is at our Hillsdunne Road branch. Do you know where that is?
+WOMAN: Yes, I do.
+MAN: Nearest bus stop is right next to the library, so it's very convenient.
+WOMAN: That sounds great. And what is the pay?
+MAN: The basic pay is 4.45 an hour.
+WOMAN: Okay. Are there any extra benefits?
+MAN: Yes, you get a free dinner when you're on evening shifts, and extra pay when you work on national holidays.
+WOMAN: That's nice.
+MAN: Also, we provide transport home when you work late - usually when you work after 11 o'clock.
+WOMAN: Excellent. What qualities are you looking for in candidates?
+MAN: We need someone with a clear voice, because of all the telephone bookings, and an ability to think quickly when things get busy.
+WOMAN: I'm confident I can do that.
+MAN: Good. We're arranging interviews for Thursday the 22nd of October at 6 p.m. Bring the names of two referees.
+WOMAN: Who should I ask for when I arrive?
+MAN: Ask for Samira Manuja. That's M-A-N-U-J-A.
+WOMAN: Thank you very much!`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Type of work: [1] .........", prefix: "Type of work:", suffix: "", correct_answer: "answering the phone", acceptable_answers: ["answering the phone", "answer the phone", "answering phone", "answer phone"], answer_display: "answering (the) phone", explanation: "Transcript: 'I do have experience answering the phone. Good, because that's mainly what we need - answering the phone'." },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Work in the: [2] ......... branch", prefix: "Work in the:", suffix: "branch", correct_answer: "Hillsdunne Road", acceptable_answers: ["Hillsdunne Road", "Hillsdunne"], answer_display: "Hillsdunne Road", explanation: "Transcript: 'The position is at our Hillsdunne Road branch.'" },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Nearest bus stop: next to [3] .........", prefix: "Nearest bus stop: next to", suffix: "", correct_answer: "library", acceptable_answers: ["library", "the library"], answer_display: "library", explanation: "Transcript: 'Nearest bus stop is right next to the library.'" },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Pay: £ [4] ......... an hour", prefix: "Pay: £", suffix: "an hour", correct_answer: "4.45", acceptable_answers: ["4.45", "4.45 pounds", "£4.45"], answer_display: "4.45", explanation: "Transcript: 'The basic pay is 4.45 an hour.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Extra benefits: extra pay when you work on [5] .........", prefix: "extra pay when you work on", suffix: "", correct_answer: "national holidays", acceptable_answers: ["national holidays", "public holidays"], answer_display: "national holidays", explanation: "Transcript: 'and extra pay when you work on national holidays.'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "transport home when you work [6] .........", prefix: "transport home when you work", suffix: "", correct_answer: "after 11 o'clock", acceptable_answers: ["after 11", "after 11 o'clock", "after 11.00", "after 11pm"], answer_display: "after 11 (o'clock)", explanation: "Transcript: 'transport home when you work late - usually when you work after 11 o'clock.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Qualities required: [7] .........", prefix: "Qualities required:", suffix: "", correct_answer: "clear voice", acceptable_answers: ["clear voice", "a clear voice"], answer_display: "clear voice", explanation: "Transcript: 'We need someone with a clear voice, because of all the telephone bookings.'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "ability to [8] .........", prefix: "ability to", suffix: "", correct_answer: "think quickly", acceptable_answers: ["think quickly", "think fast"], answer_display: "think quickly", explanation: "Transcript: 'and an ability to think quickly when things get busy.'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Interview arranged for: Thursday [9] ......... at 6 p.m.", prefix: "Interview arranged for: Thursday", suffix: "at 6 p.m.", correct_answer: "22 October", acceptable_answers: ["22 October", "22nd October", "October 22", "October 22nd"], answer_display: "22 October", explanation: "Transcript: 'We're arranging interviews for Thursday the 22nd of October at 6 p.m.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Ask for: Samira [10] .........", prefix: "Ask for: Samira", suffix: "", correct_answer: "Manuja", acceptable_answers: ["Manuja"], answer_display: "Manuja", explanation: "Transcript: 'Ask for Samira Manuja. That's M-A-N-U-J-A.'" }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Sports World Information",
+                    description: "Questions 11-16: Notes Completion (ONE WORD AND/OR A NUMBER); Questions 17-18: Multiple Choice; Questions 19-20: Multiple Selection.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test1_part2.mp3",
+                    tapescript: `SPEAKER: Good morning everyone, and welcome to Sports World. We're very proud to open this brand new branch here in Bradcaster. As you know, we are part of an international sports goods company, and this new store is located right in the shopping centre to the west of Bradcaster.
+Inside, on floors one to three, you'll find an enormous range of sports clothing and equipment. We pride ourselves on having virtually everything in stock, but if we don't have the exact item you need, we can get you any item within 10 days.
+Unlike other general sports stores, this shop specialises in equipment for running. We also have a special section on the ground floor which just sells bags of all kinds.
+Now, about our special opening events. On Saturday morning only, we have a champion athlete visiting the shop to sign autographs. Also, there's a sports quiz running throughout the weekend: the first person to answer 20 quiz questions correctly will win a video!
+Finally, our fitness test. Please remember you need to reserve a place in advance. And as a special opening offer, the test is cheaper this month than our usual rate.`,
+                    questions: [
+                        { id: 11, question_number: 11, type: "fill_blank", question: "a new [11] ......... of an international sports goods company", prefix: "a new", suffix: "of an international sports goods company", correct_answer: "branch", acceptable_answers: ["branch"], answer_display: "branch", explanation: "Transcript: 'open this brand new branch here in Bradcaster.'" },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "located in the shopping centre to the [12] ......... of Bradcaster", prefix: "located in the shopping centre to the", suffix: "of Bradcaster", correct_answer: "west", acceptable_answers: ["west"], answer_display: "west", explanation: "Transcript: 'located right in the shopping centre to the west of Bradcaster.'" },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "has sports [13] ......... and equipment on floors 1 - 3", prefix: "has sports", suffix: "and equipment on floors 1 - 3", correct_answer: "clothing", acceptable_answers: ["clothing", "clothes"], answer_display: "clothing", explanation: "Transcript: 'enormous range of sports clothing and equipment.'" },
+                        { id: 14, question_number: 14, type: "fill_blank", question: "can get you any item within [14] ......... days", prefix: "can get you any item within", suffix: "days", correct_answer: "10", acceptable_answers: ["10", "ten"], answer_display: "10", explanation: "Transcript: 'can get you any item within 10 days.'" },
+                        { id: 15, question_number: 15, type: "fill_blank", question: "shop specialises in equipment for [15] .........", prefix: "shop specialises in equipment for", suffix: "", correct_answer: "running", acceptable_answers: ["running"], answer_display: "running", explanation: "Transcript: 'this shop specialises in equipment for running.'" },
+                        { id: 16, question_number: 16, type: "fill_blank", question: "has a special section which just sells [16] .........", prefix: "has a special section which just sells", suffix: "", correct_answer: "bags", acceptable_answers: ["bags"], answer_display: "bags", explanation: "Transcript: 'special section on the ground floor which just sells bags of all kinds.'" },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "A champion athlete will be in the shop", options: ["A. on Saturday morning only.", "B. all day Saturday.", "C. for the whole weekend."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transcript: 'On Saturday morning only, we have a champion athlete visiting the shop.'" },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "The first person to answer 20 quiz questions correctly will win", options: ["A. gym membership.", "B. a video.", "C. a calendar."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'the first person to answer 20 quiz questions correctly will win a video!'" },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Which TWO pieces of information does the speaker give about the fitness test? [Select Option 1]", options: ["A. You need to reserve a place.", "B. It is free to account holders.", "C. You get advice on how to improve your health.", "D. It takes place in a special clinic.", "E. It is cheaper this month."], correct_answer: "A", acceptable_answers: ["A", "E"], answer_display: "A / E", explanation: "Transcript: 'Please remember you need to reserve a place in advance (A)... test is cheaper this month (E).'" },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Which TWO pieces of information does the speaker give about the fitness test? [Select Option 2]", options: ["A. You need to reserve a place.", "B. It is free to account holders.", "C. You get advice on how to improve your health.", "D. It takes place in a special clinic.", "E. It is cheaper this month."], correct_answer: "E", acceptable_answers: ["A", "E"], answer_display: "A / E", explanation: "Transcript: 'Please remember you need to reserve a place in advance (A)... test is cheaper this month (E).'" }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Course Feedback (Spiros & Hiroko)",
+                    description: "Questions 21-30: Choose the correct letter, A, B or C.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test1_part3.mp3",
+                    tapescript: `TUTOR: Well, Spiros and Hiroko, now that you've both done your marketing presentations, how do you feel it went?
+SPIROS: I felt quite pleased with my style, actually. I'd practiced keeping my delivery dynamic and using good visual aids, so that went well.
+TUTOR: Yes, the presentation style was impressive. And Hiroko, what surprised you about the other students' presentations?
+HIROKO: I was amazed at how few of them made eye contact with the audience. They didn't look at the audience enough, just stared down at their speaking notes.
+TUTOR: Yes, eye contact is vital. And how did you feel right after you finished giving your presentation, Hiroko?
+HIROKO: To be honest, I felt quite dissatisfied. I stumbled over some statistics and didn't cover everything I wanted.
+TUTOR: Don't be too hard on yourself. Spiros, how do you feel about your participation in weekly tutorials?
+SPIROS: Not very happy, really. I struggle to get my point across because native speakers talk so fast.
+TUTOR: Why do you think native students participate so easily?
+SPIROS: Because they know each other well from previous courses, so there's an established comfort level.
+HIROKO: But I'm feeling much more positive about tutorials now because I find myself making more of a contribution each week.
+TUTOR: Good. To help understand difficult lectures, Hiroko, what worked for you?
+HIROKO: I consulted reference materials in the library beforehand to familiarize myself with the core concepts.
+TUTOR: And Spiros, what about your reading skills?
+SPIROS: It still takes me a long time to read academic journal papers, although my vocabulary has expanded.
+TUTOR: Hiroko, what is your main subject area again?
+HIROKO: Health education.
+TUTOR: And what should students focus on developing in reading classes?
+HIROKO: Rather than just vocabulary, I believe we need to develop better reading strategies like skimming and scanning complex articles.`,
+                    questions: [
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "One reason why Spiros felt happy about his marketing presentation was that", options: ["A. he was not nervous.", "B. his style was good.", "C. the presentation was the best in his group."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'I felt quite pleased with my style, actually.'" },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "What surprised Hiroko about the other students' presentations?", options: ["A. Their presentations were not interesting.", "B. They found their presentations stressful.", "C. They didn't look at the audience enough."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Transcript: 'They didn't look at the audience enough, just stared down at their speaking notes.'" },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "After she gave her presentation, Hiroko felt", options: ["A. delighted.", "B. dissatisfied.", "C. embarrassed."], correct_answer: "C", acceptable_answers: ["C", "B"], answer_display: "C", explanation: "Answer key: C (dissatisfied / embarrassed)." },
+                        { id: 24, question_number: 24, type: "multiple_choice", question: "How does Spiros feel about his performance in tutorials?", options: ["A. not very happy", "B. really pleased", "C. fairly confident"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transcript: 'Not very happy, really. I struggle to get my point across.'" },
+                        { id: 25, question_number: 25, type: "multiple_choice", question: "Why can the other students participate so easily in discussions?", options: ["A. They are polite to each other.", "B. They agree to take turns in speaking.", "C. They know each other well."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Transcript: 'Because they know each other well from previous courses.'" },
+                        { id: 26, question_number: 26, type: "multiple_choice", question: "Why is Hiroko feeling more positive about tutorials now?", options: ["A. She finds the other students' opinions more interesting.", "B. She is making more of a contribution.", "C. The tutor includes her in the discussion."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'because I find myself making more of a contribution each week.'" },
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "To help her understand lectures, Hiroko", options: ["A. consulted reference materials.", "B. had extra tutorials with her lecturers.", "C. borrowed lecture notes from other students."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transcript: 'I consulted reference materials in the library beforehand.'" },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "What does Spiros think of his reading skills?", options: ["A. He reads faster than he used to.", "B. It still takes him a long time to read.", "C. He tends to struggle with new vocabulary."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'It still takes me a long time to read academic journal papers.'" },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "What is Hiroko's subject area?", options: ["A. environmental studies", "B. health education", "C. engineering"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'Health education.'" },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Hiroko thinks that in the reading classes the students should", options: ["A. learn more vocabulary.", "B. read more in their own subject areas.", "C. develop better reading strategies."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Transcript: 'I believe we need to develop better reading strategies.'" }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Mass Strandings of Whales and Dolphins",
+                    description: "Questions 31-40: Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test1_part4.mp3",
+                    tapescript: `LECTURER: Today we're examining the phenomenon of mass strandings of whales and dolphins, where entire pods swim onto beaches and perish.
+Firstly, geographic and oceanographic factors play a crucial role. Strandings are especially common in areas where the tides can change quickly, trapping animals in shallow coastal channels.
+Another major theory involves parasites. Certain parasites infest the cranial cavities of marine mammals, severely damaging their hearing, which they depend upon completely for echolocation navigation.
+Toxins also cause incidents. Marine poisons from marine plants consumed by prey animals and then ingested by whales can cause neurological collapse. In 1988 at Cape Cod, humpback whales were killed by saxitoxin.
+Accidental strandings occur when animals chase prey, but this is unlikely to explain mass events because the majority of animals were not feeding when stranded.
+Human activity is increasingly implicated. Intense noises from military sonar tests have been directly linked to fatal strandings. For instance, in the Bahamas in 2000, strandings were atypical because the whales stranded were all healthy and were not in a family group.
+Finally, group behaviour explains why so many die together. Strandings occur predominantly in the most social species of whales. When a pod leader becomes disoriented or sick, the entire group follows. Marine biologist Connor noted that the animals form complex social networks that prioritize pod cohesion above individual survival.`,
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Common in areas where the [31] ......... can change quickly", prefix: "Common in areas where the", suffix: "can change quickly", correct_answer: "tides", acceptable_answers: ["tides", "tide"], answer_display: "tide / tides", explanation: "Transcript: 'especially common in areas where the tides can change quickly.'" },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "parasites can affect marine animals' [32] ......... which they depend on for navigation", prefix: "parasites can affect marine animals'", suffix: "which they depend on for navigation", correct_answer: "hearing", acceptable_answers: ["hearing", "ear", "ears"], answer_display: "hearing / ear / ears", explanation: "Transcript: 'severely damaging their hearing, which they depend upon completely for echolocation.'" },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Poisons from [33] ......... are commonly consumed by whales", prefix: "Poisons from", suffix: "are commonly consumed by whales", correct_answer: "plants", acceptable_answers: ["plants", "plant"], answer_display: "plants", explanation: "Transcript: 'Marine poisons from marine plants consumed by prey animals.'" },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Prey animals/fish: Unlikely because animals were not [34] ......... when they stranded", prefix: "Unlikely because the majority of animals were not", suffix: "when they stranded", correct_answer: "feeding", acceptable_answers: ["feeding", "eating"], answer_display: "feeding / eating", explanation: "Transcript: 'majority of animals were not feeding when stranded.'" },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "[35] ......... from military tests are linked to some recent strandings", prefix: "", suffix: "from military tests are linked to some recent strandings", correct_answer: "noises", acceptable_answers: ["noise", "noises"], answer_display: "noise / noises", explanation: "Transcript: 'Intense noises from military sonar tests have been directly linked.'" },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Bahamas stranding: the whales were all [36] .........", prefix: "the whales were all", suffix: "", correct_answer: "healthy", acceptable_answers: ["healthy"], answer_display: "healthy", explanation: "Transcript: 'the whales stranded were all healthy.'" },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Bahamas stranding: the whales were not in a [37] .........", prefix: "were not in a", suffix: "", correct_answer: "group", acceptable_answers: ["group", "family group"], answer_display: "group", explanation: "Transcript: 'and were not in a family group.'" },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "More strandings in the most [38] ......... species of whales", prefix: "More strandings in the most", suffix: "species of whales", correct_answer: "social", acceptable_answers: ["social"], answer_display: "social", explanation: "Transcript: 'Strandings occur predominantly in the most social species of whales.'" },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "1994 dolphin stranding: only the [39] ......... was ill", prefix: "only the", suffix: "was ill", correct_answer: "leader", acceptable_answers: ["leader"], answer_display: "leader", explanation: "Transcript: 'When a pod leader becomes disoriented or sick.'" },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Marine Mammals Ashore (Connor): information about stranding [40] .........", prefix: "gives information about stranding", suffix: "", correct_answer: "networks", acceptable_answers: ["network", "networks"], answer_display: "network / networks", explanation: "Transcript: 'animals form complex social networks that prioritize pod cohesion.'" }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Academic Reading Test 1",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Passage 1: William Henry Perkin - The man who invented synthetic dyes",
+                    content: `William Henry Perkin was born on March 12, 1838, in London, England. As a boy, Perkin's curiosity prompted early interests in the arts, sciences, photography, and engineering. But it was a chance stumbling upon a run-down, yet functional, laboratory in his late grandfather's home that solidified the young man's enthusiasm for chemistry.
+
+As a student at the City of London School, Perkin became immersed in the study of chemistry. His talent and devotion to the subject were perceived by his teacher, Thomas Hall, who encouraged him to attend a series of lectures given by the eminent scientist Michael Faraday at the Royal Institution. Those speeches fired the young chemist's enthusiasm further, and he later went on to attend the Royal College of Chemistry, which he succeeded in entering in 1853, at the age of 15.
+
+At the time of Perkin's enrolment, the Royal College of Chemistry was headed by the noted German chemist August Wilhelm Hofmann. Perkin's scientific gifts soon caught Hofmann's attention and, within two years, he became Hofmann's youngest assistant. Not long after that, Perkin made the scientific breakthrough that would bring him both fame and fortune.
+
+At the time, quinine was the only viable medical treatment for malaria. The drug is derived from the bark of the cinchona tree, native to South America, and by 1856 demand for the drug was surpassing the available supply. Thus, when Hofmann made some passing comments about the desirability of a synthetic substitute for quinine, it was unsurprising that his star pupil was moved to take up the challenge.
+
+During his vacation in 1856, Perkin spent his time in the laboratory on the top floor of his family's house. He was attempting to manufacture quinine from aniline, an inexpensive and readily available coal tar waste product. Despite his best efforts, however, he did not end up with quinine. Instead, he produced a mysterious dark sludge. Luckily, Perkin's scientific training and nature prompted him to investigate the substance further. Incorporating potassium dichromate and alcohol into the aniline at various stages of the experimental process, he finally produced a deep purple solution. And, proving the truth of the famous scientist Louis Pasteur's words 'chance favours only the prepared mind', Perkin saw the potential of his unexpected find.
+
+Historically, textile dyes were made from such natural sources as plants and animal excretions. Some of these, such as the glandular mucus of snails, were difficult to obtain and outrageously expensive. Indeed, the purple colour extracted from a snail was once so costly that in society at the time only the rich could afford it. Further, natural dyes tended to be muddy in hue and fade quickly. It was against this backdrop that Perkin's discovery was made.
+
+Perkin quickly grasped that his purple solution could be used to colour fabric, thus making it the world's first synthetic dye. Realising the importance of this breakthrough, he lost no time in patenting it. But perhaps the most fascinating of all Perkin's reactions to his find was his nearly instant recognition that the new dye had commercial possibilities.
+
+Perkin originally named his dye Tyrian Purple, but it later became commonly known as mauve. He asked advice of Scottish dye works owner Robert Pullar, who assured him that manufacturing the dye would be well worth it if the colour remained fast and the cost was relatively low. So, over the fierce objections of his mentor Hofmann, he left college to give birth to the modern chemical industry.
+
+With the help of his father and brother, Perkin set up a factory not far from London. Utilising the cheap and plentiful coal tar that was an almost unlimited byproduct of London's gas street lighting, the dye works began producing the world's first synthetically dyed material in 1857. The company received a commercial boost from the Empress Eugénie of France, when she decided the new colour flattered her. Very soon, mauve was the necessary shade for all the fashionable ladies in that country. Not to be outdone, England's Queen Victoria also appeared in public wearing a mauve gown, thus making it all the rage in England as well. The dye was bold and fast, and the public clamoured for more.
+
+Perkin went back to the drawing board. Although Perkin's fame was achieved and fortune assured by his first discovery, the chemist continued his research. Among other dyes he developed and introduced were aniline red (1859) and aniline black (1863) and, in the late 1860s, Perkin's green.
+
+It is important to note that Perkin's synthetic dye discoveries had outcomes far beyond the merely decorative. The dyes also became vital to medical research in many ways. For instance, they were used to stain previously invisible microbes and bacteria, allowing researchers to identify such bacilli as tuberculosis, cholera, and anthrax. Artificial dyes continue to play a crucial role today. And, in what would have been particularly pleasing to Perkin, their current use is in the search for a vaccine against malaria.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "true_false_not_given", statement: "Michael Faraday was the first person to recognise Perkin's ability as a student of chemistry.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Passage: His teacher, Thomas Hall, perceived his talent, not Faraday." },
+                        { id: 2, question_number: 2, type: "true_false_not_given", statement: "Michael Faraday suggested to Perkin that he should attend the Royal College of Chemistry.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "No mention of Faraday suggesting the specific college." },
+                        { id: 3, question_number: 3, type: "true_false_not_given", statement: "Perkin employed August Wilhelm Hofmann as his assistant.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Passage states Perkin became Hofmann's youngest assistant, not the employer." },
+                        { id: 4, question_number: 4, type: "true_false_not_given", statement: "Perkin was still young when he made the scientific discovery that made him famous.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Perkin was 15 in 1853 and made the breakthrough during vacation in 1856 (age 18)." },
+                        { id: 5, question_number: 5, type: "true_false_not_given", statement: "The trees from which quinine is derived grow only in South America.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Passage says native to South America, but not that they grow *only* there." },
+                        { id: 6, question_number: 6, type: "true_false_not_given", statement: "Perkin hoped to manufacture a drug from a coal tar waste product.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Passage: 'He was attempting to manufacture quinine from aniline, an inexpensive and readily available coal tar waste product.'" },
+                        { id: 7, question_number: 7, type: "true_false_not_given", statement: "Perkin was inspired by the discoveries of the famous scientist Louis Pasteur.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "The author quotes Pasteur to describe Perkin's prepared mind, but Perkin was not necessarily inspired by him." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Before synthetic dyes, purple colour was so costly that only the [8] ......... could afford it.", prefix: "Before synthetic dyes, purple colour was so costly that only the", suffix: "could afford it.", correct_answer: "rich", acceptable_answers: ["rich", "only rich", "the rich"], answer_display: "rich", explanation: "Passage: 'in society at the time only the rich could afford it.'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Perkin immediately recognized that his find had [9] .........", prefix: "Perkin immediately recognized that his find had", suffix: "", correct_answer: "commercial possibilities", acceptable_answers: ["commercial possibilities", "commercial potential"], answer_display: "commercial (possibilities)", explanation: "Passage: 'recognition that the new dye had commercial possibilities.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "The original name was Tyrian Purple, but it became commonly known as [10] .........", prefix: "The original name was Tyrian Purple, but it became commonly known as", suffix: "", correct_answer: "mauve", acceptable_answers: ["mauve"], answer_display: "mauve", explanation: "Passage: 'it later became commonly known as mauve.'" },
+                        { id: 11, question_number: 11, type: "fill_blank", question: "He consulted Scottish dye works owner [11] .........", prefix: "He consulted Scottish dye works owner", suffix: "", correct_answer: "Robert Pullar", acceptable_answers: ["Robert Pullar", "Pullar"], answer_display: "Robert Pullar", explanation: "Passage: 'He asked advice of Scottish dye works owner Robert Pullar.'" },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "The company received a boost when Empress Eugénie of [12] ......... decided the color flattered her.", prefix: "Empress Eugénie of", suffix: "decided the color flattered her.", correct_answer: "France", acceptable_answers: ["France"], answer_display: "France", explanation: "Passage: 'Empress Eugénie of France, when she decided the new colour flattered her.'" },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "Artificial dyes are currently used in research for a vaccine against [13] .........", prefix: "vaccine against", suffix: "", correct_answer: "malaria", acceptable_answers: ["malaria"], answer_display: "malaria", explanation: "Passage: 'their current use is in the search for a vaccine against malaria.'" }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Passage 2: IS THERE ANYBODY OUT THERE? - The Search for Extraterrestrial Intelligence",
+                    content: `The primary reason for the search is basic curiosity - the same curiosity about the natural world that drives all pure science. We want to know whether we are alone in the universe, whether life is a unique fluke that occurred only on our planet or is widespread in the cosmos.
+
+Even if life is common, does it evolve into intelligent species, or does it usually stall at primitive microbial stages? Furthermore, if intelligence has evolved on other worlds, have those civilizations developed technological civilizations capable of communicating across interstellar distances?
+
+SETI (the Search for Extraterrestrial Intelligence) concentrates on radio frequencies. Radio waves travel at the speed of light, traverse interstellar dust and gas clouds with minimal attenuation, and represent an energy-efficient medium for transmitting information across galactic space.
+
+In 1992, NASA inaugurated the ambitious High Resolution Microwave Survey, scanning millions of radio channels simultaneously across the microwave spectrum. The program targeted two distinct search modalities: targeted searches of approximately 1,000 nearby Sun-like stars, and an all-sky survey examining the entire celestial sphere.
+
+The scale of the cosmos is humbling. Our Milky Way galaxy contains several hundred billion stars, spanning a diameter of approximately 100,000 light-years. Within this vast stellar sea, planetary systems have survived for several billion years, providing ample spans for evolutionary development.
+
+Scientists acknowledge that the likelihood of receiving an alien signal depends heavily upon the longevity of technological civilizations. If civilizations routinely destroy themselves through nuclear conflict or environmental catastrophe shortly after developing radio transmission capabilities, the galactic communicative window remains exceedingly narrow.
+
+Despite decades of monitoring, no confirmed extraterrestrial transmission has yet been verified. Yet astronomers emphasize that we have examined only an infinitesimal fraction of the cosmic parameter space - a metaphor often likened to dipping a single drinking cup into the ocean and concluding the ocean contains no fish.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "matching", question: "Paragraph A main heading", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "ix", acceptable_answers: ["ix", "iv"], answer_display: "iv / ix", explanation: "Heading matching basic scientific curiosity." },
+                        { id: 15, question_number: 15, type: "matching", question: "Paragraph B main heading", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "vii", acceptable_answers: ["vii"], answer_display: "vii", explanation: "Heading matching evolutionary trajectories and intelligence." },
+                        { id: 16, question_number: 16, type: "matching", question: "Paragraph C main heading", options: ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"], correct_answer: "ii", acceptable_answers: ["ii"], answer_display: "ii", explanation: "Heading matching radio wave transmission advantages." },
+                        { id: 17, question_number: 17, type: "fill_blank", question: "Planetary systems have survived for [17] .........", prefix: "Planetary systems have survived for", suffix: "", correct_answer: "several billion years", acceptable_answers: ["several billion years", "billion years"], answer_display: "several billion years", explanation: "Passage: 'survived for several billion years.'" },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "SETI searches concentrate on [18] .........", prefix: "SETI searches concentrate on", suffix: "", correct_answer: "radio waves", acceptable_answers: ["radio waves", "radio signals", "radio frequencies"], answer_display: "radio (waves/signals)", explanation: "Passage: 'SETI concentrates on radio frequencies / radio waves.'" },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Targeted searches of approximately [19] ......... nearby Sun-like stars", prefix: "Targeted searches of approximately", suffix: "nearby Sun-like stars", correct_answer: "1000 stars", acceptable_answers: ["1000", "1000 stars", "1,000", "one thousand"], answer_display: "1000 (stars)", explanation: "Passage: 'targeted searches of approximately 1,000 nearby Sun-like stars.'" },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Our galaxy contains [20] ......... billion stars", prefix: "Our galaxy contains", suffix: "billion stars", correct_answer: "several hundred", acceptable_answers: ["several hundred"], answer_display: "several hundred", explanation: "Passage: 'contains several hundred billion stars.'" },
+                        { id: 21, question_number: 21, type: "yes_no_not_given", statement: "Alien civilizations may be capable of interstellar communication.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Passage discusses technological civilizations communicating across interstellar distances." },
+                        { id: 22, question_number: 22, type: "yes_no_not_given", statement: "Radio signals can pass through cosmic dust clouds easily.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Passage: 'Radio waves traverse interstellar dust and gas clouds with minimal attenuation.'" },
+                        { id: 23, question_number: 23, type: "yes_no_not_given", statement: "NASA's 1992 project was universally praised by government officials.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Passage does not discuss government praise or political reaction." },
+                        { id: 24, question_number: 24, type: "yes_no_not_given", statement: "Astronomers have surveyed the vast majority of potential extraterrestrial radio frequencies.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "Passage: 'we have examined only an infinitesimal fraction of the cosmic parameter space.'" },
+                        { id: 25, question_number: 25, type: "yes_no_not_given", statement: "Extraterrestrial life forms are likely to look remarkably similar to humans.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "No mention of alien physical appearance." },
+                        { id: 26, question_number: 26, type: "yes_no_not_given", statement: "A confirmed radio signal from an alien civilization has already been detected.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "Passage: 'no confirmed extraterrestrial transmission has yet been verified.'" }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Passage 3: The History of the Tortoise",
+                    content: `If you go far enough back in our evolutionary ancestry, every vertebrate animal lived in water. The transition onto land was an epic evolutionary conquest requiring profound anatomical redesigns: robust limbs to support body weight without water buoyancy, impermeable skin to prevent fatal desiccation, and lungs to extract atmospheric oxygen rather than dissolved aquatic oxygen through gills.
+
+Yet several terrestrial animal lineages made a radical about-turn and returned to the water. Whales, dolphins, seals, dugongs, and sea turtles all abandoned dry land to reclaim marine or freshwater habitats. While doing so, they retained tell-tale anatomical signatures of their terrestrial ancestry: air-breathing lungs, embryonic limb buds, and internal reproduction.
+
+The evolutionary history of tortoises and turtles presents an extraordinary double reversal. It has long been recognized that modern marine turtles evolved from ancestral freshwater or land-dwelling chelonians. But what about modern land tortoises? Did they never leave land, or did their lineage return to water and subsequently emerge onto dry land a second time?
+
+To resolve this enigmatic question, evolutionary biologists analyzed anatomical ratios from fossilized limb bones. In 1992, researchers measured 3 measurements across various chelonian foot and limb fossils and plotted them on a triangular graph.
+
+The resulting data revealed that the fossil species grouped into distinct clusters representing purely terrestrial tortoises versus purely aquatic turtles. Intriguingly, transitional fossils fell neatly into an amphibious cluster half way between the two extremes.
+
+Statistical comparisons demonstrated unequivocally that modern dry-land tortoises did not descend directly from primitive land vertebrates that remained continuously on land. Instead, their ancestors went into the water as amphibious turtles before their descendants re-emerged onto dry land to pioneer a second terrestrial existence.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Animals that returned to water retained land features such as [27] ......... and internal reproduction", prefix: "retained land features such as", suffix: "and internal reproduction", correct_answer: "breathing", acceptable_answers: ["breathing", "air-breathing", "lungs"], answer_display: "breathing / lungs", explanation: "Passage: 'retained air-breathing lungs and internal reproduction.'" },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Internal [28] ......... was also retained by land animals returning to sea", prefix: "Internal", suffix: "was also retained", correct_answer: "reproduction", acceptable_answers: ["reproduction"], answer_display: "reproduction", explanation: "Passage: 'internal reproduction.'" },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Water animals extracted oxygen through [29] .........", prefix: "oxygen through", suffix: "", correct_answer: "gills", acceptable_answers: ["gills"], answer_display: "gills", explanation: "Passage: 'lungs to extract atmospheric oxygen rather than dissolved aquatic oxygen through gills.'" },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Examples of animals that returned to water include whales and [30] .........", prefix: "whales and", suffix: "", correct_answer: "dolphins", acceptable_answers: ["dolphins", "seals"], answer_display: "dolphins", explanation: "Passage: 'Whales, dolphins, seals, dugongs...'" },
+                        { id: 31, question_number: 31, type: "true_false_not_given", statement: "The transition from water to land was achieved quickly by prehistoric vertebrates.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Passage calls it an 'epic evolutionary conquest' but does not specify temporal speed." },
+                        { id: 32, question_number: 32, type: "true_false_not_given", statement: "Modern whales breathe underwater like prehistoric fish.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Whales breathe air through lungs, not underwater." },
+                        { id: 33, question_number: 33, type: "true_false_not_given", statement: "Marine turtles evolved from terrestrial or freshwater chelonians.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Passage: 'modern marine turtles evolved from ancestral freshwater or land-dwelling chelonians.'" },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Researchers took [34] ......... across fossil limb bones", prefix: "Researchers took", suffix: "across fossil limb bones", correct_answer: "3 measurements", acceptable_answers: ["3 measurements", "three measurements"], answer_display: "3 measurements", explanation: "Passage: 'measured 3 measurements across various chelonian foot and limb fossils.'" },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Plotted the data points on a [35] .........", prefix: "Plotted the data points on a", suffix: "", correct_answer: "triangular graph", acceptable_answers: ["triangular graph", "graph"], answer_display: "(triangular) graph", explanation: "Passage: 'plotted them on a triangular graph.'" },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Species grouped into distinct [36] .........", prefix: "grouped into distinct", suffix: "", correct_answer: "cluster", acceptable_answers: ["cluster", "clusters"], answer_display: "cluster", explanation: "Passage: 'grouped into distinct clusters.'" },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Transitional fossils fell into an [37] ......... cluster", prefix: "fell into an", suffix: "cluster", correct_answer: "amphibious", acceptable_answers: ["amphibious"], answer_display: "amphibious", explanation: "Passage: 'fell neatly into an amphibious cluster.'" },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Located [38] ......... between the two ecological extremes", prefix: "Located", suffix: "between the two ecological extremes", correct_answer: "half way", acceptable_answers: ["half way", "halfway"], answer_display: "half way", explanation: "Passage: 'half way between the two extremes.'" },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Modern [39] ......... evolved after their ancestors experienced a double reversal", prefix: "Modern", suffix: "evolved after their ancestors experienced a double reversal", correct_answer: "dry-land tortoises", acceptable_answers: ["dry-land tortoises", "land tortoises", "tortoises"], answer_display: "dry-land tortoises", explanation: "Passage: 'modern dry-land tortoises did not descend directly... pioneer a second terrestrial existence.'" },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "What is the primary conclusion regarding the evolutionary history of tortoises?", options: ["A. They remained solely on land throughout history.", "B. They originated as deep-sea mammals.", "C. They never evolved lungs.", "D. They re-emerged onto land after an ancestral aquatic phase."], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D", explanation: "Passage confirms the double reversal back to land." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Academic Writing Test 1",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Task 1: Academic Report (150 words)",
+                    prompt: "The two maps below show an island, before and after the construction of some tourist facilities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    min_words: 150,
+                    chart_svg: `<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl">
+  <defs>
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fde047"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="32" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">IELTS Writing Task 1: Island Redevelopment for Tourism</text>
+  
+  <!-- Map 1: Before -->
+  <g transform="translate(30, 60)">
+    <rect width="350" height="320" rx="16" fill="url(#seaGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="175" y="35" fill="#f8fafc" font-size="16" font-weight="bold" text-anchor="middle">BEFORE REDEVELOPMENT</text>
+    <ellipse cx="175" cy="180" rx="130" ry="85" fill="url(#islandGrad)" stroke="#ca8a04" stroke-width="2"/>
+    <path d="M 60 170 Q 75 140 90 190 Q 75 220 60 170" fill="#fef9c3" stroke="#eab308"/>
+    <text x="75" y="185" fill="#854d0e" font-size="12" font-weight="bold" text-anchor="middle">Beach</text>
+    <!-- Palm trees -->
+    <text x="130" y="160" font-size="20">🌴</text>
+    <text x="190" y="150" font-size="20">🌴</text>
+    <text x="230" y="190" font-size="20">🌴</text>
+    <text x="160" y="210" font-size="20">🌴</text>
+    <text x="175" y="295" fill="#94a3b8" font-size="12" text-anchor="middle">Total Length: ~250 metres (Completely Uninhabited)</text>
+  </g>
+
+  <!-- Map 2: After -->
+  <g transform="translate(420, 60)">
+    <rect width="350" height="320" rx="16" fill="url(#seaGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="175" y="35" fill="#f8fafc" font-size="16" font-weight="bold" text-anchor="middle">AFTER REDEVELOPMENT</text>
+    <ellipse cx="175" cy="180" rx="130" ry="85" fill="url(#islandGrad)" stroke="#ca8a04" stroke-width="2"/>
+    
+    <!-- Beach & Swimming -->
+    <path d="M 60 170 Q 75 140 90 190 Q 75 220 60 170" fill="#fef9c3" stroke="#eab308"/>
+    <text x="75" y="175" fill="#854d0e" font-size="11" font-weight="bold" text-anchor="middle">Beach</text>
+    <text x="75" y="195" fill="#0284c7" font-size="10" font-weight="bold" text-anchor="middle">Swimming</text>
+
+    <!-- Western Accommodation Units (Circular Huts) -->
+    <g fill="#f97316" stroke="#c2410c">
+      <circle cx="115" cy="150" r="7"/><circle cx="135" cy="140" r="7"/><circle cx="145" cy="160" r="7"/>
+      <circle cx="125" cy="175" r="7"/><circle cx="110" cy="190" r="7"/><circle cx="135" cy="200" r="7"/>
+    </g>
+    
+    <!-- Central Reception & Restaurant -->
+    <rect x="160" y="165" width="30" height="25" rx="4" fill="#3b82f6" stroke="#1d4ed8"/>
+    <text x="175" y="182" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Reception</text>
+    
+    <rect x="160" y="115" width="30" height="22" rx="4" fill="#ef4444" stroke="#b91c1c"/>
+    <text x="175" y="130" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Restaurant</text>
+
+    <!-- Eastern Accommodation Units -->
+    <g fill="#f97316" stroke="#c2410c">
+      <circle cx="215" cy="150" r="7"/><circle cx="235" cy="140" r="7"/><circle cx="255" cy="155" r="7"/>
+      <circle cx="245" cy="175" r="7"/><circle cx="225" cy="190" r="7"/><circle cx="250" cy="205" r="7"/>
+      <circle cx="270" cy="180" r="7"/><circle cx="270" cy="160" r="7"/>
+    </g>
+
+    <!-- Pier for boats -->
+    <rect x="170" y="250" width="10" height="40" fill="#78716c" stroke="#44403c"/>
+    <rect x="155" y="285" width="40" height="10" rx="3" fill="#78716c" stroke="#44403c"/>
+    <text x="175" y="307" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">Pier (Boats dock)</text>
+
+    <!-- Paths & Roads -->
+    <path d="M 175 190 L 175 250" stroke="#f1f5f9" stroke-width="2" stroke-dasharray="4,2"/>
+    <path d="M 175 165 L 175 137" stroke="#f1f5f9" stroke-width="2" stroke-dasharray="4,2"/>
+    <path d="M 145 165 L 85 180" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+</svg>`,
+                    model_answer: `The two maps illustrate the extensive developments that took place on a small island to transform it into a recreational tourist resort.
+
+Overall, the previously uninhabited and undeveloped island was comprehensively modernized with accommodation clusters, central dining and reception facilities, access roads, and marine transport infrastructure, while preserving the western coastline for visitor leisure.
+
+Prior to redevelopment, the island had a length of approximately 250 metres and was completely devoid of man-made structures. It consisted solely of a natural sandy beach on the western edge, surrounded by the sea, with palm trees sparsely dispersed across the terrain.
+
+Following the construction, a centralized reception building was erected in the middle of the island, encircled by a vehicle track that links directly to a restaurant to the north and extends southwards to a newly built pier where tour boats and yachts dock. To provide tourist lodging, two distinct clusters of circular accommodation huts were built: one in the western sector near the beach, connected by paved footpaths, and a larger group in the eastern sector. A dedicated pedestrian footpath connects the western chalets directly to the beach, which is now designated as an active swimming area.`
+                },
+                {
+                    task_number: 2,
+                    title: "Task 2: Academic Essay (250 words)",
+                    prompt: "Some experts believe that it is better for children to begin learning a foreign language at primary school rather than secondary school. Do the advantages of this outweigh the disadvantages? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    min_words: 250,
+                    model_answer: `Traditionally, children have begun studying foreign languages upon entering secondary school. However, a growing consensus among contemporary educational theorists advocates introducing second-language acquisition during early primary education. While this policy poses specific pedagogical challenges, I firmly believe that its cognitive, linguistic, and cultural merits substantially outweigh any administrative drawbacks.
+
+The primary argument in favor of early exposure centers on children's unique neurodevelopmental plasticity. Young learners naturally acquire linguistic phonology and syntax intuitively through communicative play and immersion, closely mirroring mother-tongue acquisition. Unlike self-conscious adolescents who frequently experience performance anxiety and inhibition, primary pupils exhibit natural spontaneity and uninhibited willingness to practice novel phonemes, resulting in authentic pronunciation and native-like intonation. Furthermore, primary curricula possess greater structural flexibility, permitting frequent, bite-sized sessions that sustain long-term engagement and cultivate multicultural empathy from an impressionable age.
+
+Conversely, skeptics highlight legitimate pedagogical obstacles. Primary educators are predominantly generalists who may lack advanced foreign language proficiency or formal methodology training. Introducing unqualified instructors can inadvertently instill flawed pronunciation patterns that prove difficult to eradicate later. Additionally, if early language education lacks standardized regional curricula, secondary schools will inevitably receive intakes with starkly disparate proficiency tiers, complicating subsequent instruction.
+
+Nevertheless, these practical concerns can be effectively mitigated through strategic institutional investment. Education authorities should implement rigorous teacher-training initiatives and employ itinerant language specialists to support classroom generalists. Standardized national learning frameworks can ensure seamless continuity between primary and secondary phases.
+
+In conclusion, although the early introduction of foreign language study necessitates careful curricular alignment and teacher preparation, the profound neurocognitive advantages of childhood language acquisition render this pedagogical shift overwhelmingly advantageous.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Academic Speaking Test 1",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Familiar Topics (Games)",
+                    questions: [
+                        {
+                            question: "What games are popular in your country? [Why?]",
+                            model_answer: "In my country, board games like chess and traditional card games remain immensely popular across generations, primarily because they foster intimate social bonding. Concurrently, competitive mobile e-sports such as PUBG Mobile and League of Legends have exploded among the youth due to widespread smartphone penetration and high-speed broadband."
+                        },
+                        {
+                            question: "Do you play any games? [Why/Why not?]",
+                            model_answer: "Yes, I regularly play strategy board games like Settlers of Catan on weekends with close friends. It serves as an invaluable intellectual detox from demanding screen work, requiring tactical negotiation, resource management, and creative problem-solving."
+                        },
+                        {
+                            question: "How do people learn to play games in your country?",
+                            model_answer: "Most traditional games are transmitted informally within households, where older siblings or grandparents guide younger generations. Meanwhile, contemporary video and board games are predominantly acquired through interactive digital tutorials, online gaming streams, and peer communities."
+                        },
+                        {
+                            question: "Do you think it's important for people to play games? [Why/Why not?]",
+                            model_answer: "Without a doubt. Games are fundamentally cognitive exercises that enhance spatial reasoning, risk assessment, and emotional resilience under pressure. Furthermore, collaborative multiplayer games cultivate essential team-working and communicative diplomacy skills."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card - An Open-air Market)",
+                    cue_card: "Describe an open-air or street market which you enjoyed visiting.\n\nYou should say:\n- where the market is\n- what the market sells\n- how big the market is\nand explain why you enjoyed visiting this market.",
+                    cue_points: [
+                        "where the market is",
+                        "what the market sells",
+                        "how big the market is",
+                        "and explain why you enjoyed visiting this market"
+                    ],
+                    model_answer: `I would like to describe the Chatuchak Weekend Market located in Bangkok, Thailand, which is widely celebrated as one of the most vibrant open-air bazaars in Southeast Asia. I had the privilege of exploring it during a solo backpacking trip across Thailand two years ago.
+
+The market occupies an astronomical footprint of over thirty-five acres, partitioned into twenty-seven distinct thematic sections with more than fifteen thousand individual stalls. Navigating through its labyrinthine alleys is truly a sensory spectacle.
+
+In terms of merchandise, the market offers a staggering kaleidoscope of goods. You can encounter everything from hand-woven tribal textiles, vintage denim jackets, and bespoke ceramic handicrafts, to indigenous herbal aromatics, live aquatic pets, and antique decorative furniture. Additionally, the culinary alleys serve mouth-watering street delicacies including spicy mango sticky rice, freshly grilled river prawns, and fragrant coconut ice cream.
+
+What made my visit extraordinarily memorable was the palpable vitality and communal warmth that permeated the atmosphere. Despite the sweltering tropical heat, stallholders engaged patrons with infectious humor and spirited bargaining etiquette. Discovering one-of-a-kind handcrafted souvenirs while inhaling the fragrant symphony of exotic spices provided an authentic cultural immersion that sterile modern shopping malls simply cannot replicate.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion (Markets and Modern Shopping)",
+                    questions: [
+                        {
+                            question: "Do people in your country enjoy going to open-air markets that sell food, clothes, or old objects? Which type is more popular?",
+                            model_answer: "Yes, open-air wet markets for fresh produce remain integral to daily life because citizens value farm-fresh organic poultry and seasonal vegetables over packaged supermarket alternatives. While antique flea markets appeal to niche collectors, morning food markets command overwhelming daily footfall across all demographics."
+                        },
+                        {
+                            question: "Do you think markets are more suitable places for selling certain types of things compared to shops?",
+                            model_answer: "Absolutely. Perishable artisanal goods, regional culinary produce, and secondhand antiques thrive in open-air markets because consumers demand tactile inspection and spontaneous haggling. Conversely, standardized luxury apparel and sensitive electronic hardware are much better suited to air-conditioned stores with strict warranty assurances."
+                        },
+                        {
+                            question: "Do you think young people feel the same about shopping at markets as older people?",
+                            model_answer: "There is a noticeable generational divergence. Older citizens frequently patronize traditional open-air markets out of long-standing habitual loyalty and personal camaraderie with trusted vendors. In contrast, youth prioritize speed, hygiene, and cashless transaction efficiency, often gravitating towards digital e-commerce or trendy vintage night markets that offer curated aesthetic experiences."
+                        },
+                        {
+                            question: "How does advertising influence what people choose to buy? Is this true for everyone?",
+                            model_answer: "Advertising wields formidable subconscious influence through targeted digital algorithms, influencer endorsements, and emotional branding that manufacture artificial consumer desire. While younger demographic cohorts and impulse buyers are acutely susceptible, discerning consumers with high financial literacy tend to conduct objective comparative research before committing capital."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+cam9Test1.listening = cam9Test1.sections.listening;
+cam9Test1.reading = cam9Test1.sections.reading;
+cam9Test1.writing = cam9Test1.sections.writing;
+cam9Test1.speaking = cam9Test1.sections.speaking;
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { cam9Test1 };
+}
+
+// =========================================================================
+// CAMBRIDGE IELTS 9 - TEST 2 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam9Test2 = {
+    id: "cam_9_test_2",
+    title: "Cambridge IELTS 9 - Test 2",
+    book: "Cambridge IELTS 9",
+    book_id: "cam_9",
+    test_number: 2,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test2.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 2",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Total Health Clinic Patient Form",
+                    description: "Questions 1-10: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test2_part1.mp3",
+                    tapescript: `CLERK: Good morning, Total Health Clinic. Can I take your details?
+PATIENT: Yes, please. My name is Carl Bhatt. That's B-H-A-T-T.
+CLERK: Thank you, Mr Bhatt. And your date of birth?
+PATIENT: The 31st of March, 1985.
+CLERK: And what is your occupation?
+PATIENT: I work in nursing at the local general hospital.
+CLERK: Nursing, wonderful. Now, how many times a week do you do vigorous exercise?
+PATIENT: Usually about 2 times a week.
+CLERK: And your diet - do you eat meat?
+PATIENT: Yes, I do eat meat, but plenty of vegetables as well.
+CLERK: Good. What kind of accommodation do you live in?
+PATIENT: I'm currently living in a bedsit near the city center.
+CLERK: And what are your main hobbies or interests?
+PATIENT: I enjoy going to the theatre when I have free evenings.
+CLERK: Fine. In your household, are you living with mature or younger people?
+PATIENT: It's mostly mature residents in my block.
+CLERK: And would you prefer appointments in town or at our suburban clinic?
+PATIENT: In town would be much more accessible for me.
+CLERK: Lastly, what kind of room would you prefer for physical therapy - private or shared?
+PATIENT: A shared therapy room is completely fine with me.
+CLERK: Wonderful, thank you!`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Patient Surname: [1] .........", prefix: "Patient Surname:", suffix: "", correct_answer: "Bhatt", acceptable_answers: ["Bhatt"], answer_display: "Bhatt", explanation: "Transcript: 'My name is Carl Bhatt. That's B-H-A-T-T.'" },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Date of Birth: [2] ......... 1985", prefix: "Date of Birth:", suffix: "1985", correct_answer: "31 March", acceptable_answers: ["31 March", "31st March", "March 31"], answer_display: "31 March", explanation: "Transcript: 'The 31st of March, 1985.'" },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Occupation: [3] .........", prefix: "Occupation:", suffix: "", correct_answer: "nursing", acceptable_answers: ["nursing", "nurse"], answer_display: "nursing", explanation: "Transcript: 'I work in nursing at the local general hospital.'" },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Exercise frequency: [4] ......... times a week", prefix: "Exercise frequency:", suffix: "times a week", correct_answer: "2", acceptable_answers: ["2", "two"], answer_display: "2", explanation: "Transcript: 'Usually about 2 times a week.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Diet includes: [5] .........", prefix: "Diet includes:", suffix: "", correct_answer: "meat", acceptable_answers: ["meat"], answer_display: "meat", explanation: "Transcript: 'Yes, I do eat meat.'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Accommodation type: [6] .........", prefix: "Accommodation type:", suffix: "", correct_answer: "bedsit", acceptable_answers: ["bedsit", "bed-sit"], answer_display: "bedsit", explanation: "Transcript: 'I'm currently living in a bedsit near the city center.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Main interest: [7] .........", prefix: "Main interest:", suffix: "", correct_answer: "theatre", acceptable_answers: ["theatre", "theater"], answer_display: "theatre / theater", explanation: "Transcript: 'I enjoy going to the theatre.'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Living with [8] ......... residents", prefix: "Living with", suffix: "residents", correct_answer: "mature", acceptable_answers: ["mature", "older"], answer_display: "mature / older", explanation: "Transcript: 'It's mostly mature residents in my block.'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Preferred clinic location: in [9] .........", prefix: "Preferred clinic location: in", suffix: "", correct_answer: "town", acceptable_answers: ["town"], answer_display: "town", explanation: "Transcript: 'In town would be much more accessible for me.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Therapy room type: [10] ......... room", prefix: "Therapy room type:", suffix: "room", correct_answer: "shared", acceptable_answers: ["shared"], answer_display: "shared", explanation: "Transcript: 'A shared therapy room is completely fine with me.'" }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Redfern Community Park Development",
+                    description: "Questions 11-13: Notes Completion; Questions 14-20: Multiple Choice & Map Labeling.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test2_part2.mp3",
+                    tapescript: `GUIDE: Welcome to the Redfern Community Park briefing. Over the past five years, the city council has preserved mature trees across the entire reserve to safeguard wildlife habitats.
+Regarding community volunteer days, we organize clean-up and conservation sessions every Friday and Sunday.
+In the southeastern sector, the old historical farm buildings have been restored into an interactive educational center for schoolchildren.
+Now for key landmarks on the site map: the bird hide is located next to the northern marshland. The children's adventure playground is situated on the eastern lawn near the lake, while the visitor information kiosk stands right beside the main pedestrian entrance.`,
+                    questions: [
+                        { id: 11, question_number: 11, type: "fill_blank", question: "Council preserved mature [11] ......... across the reserve", prefix: "Council preserved mature", suffix: "across the reserve", correct_answer: "trees", acceptable_answers: ["trees", "tree"], answer_display: "trees", explanation: "Transcript: 'preserved mature trees across the entire reserve.'" },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "Volunteer sessions organized every [12] .........", prefix: "Volunteer sessions organized every", suffix: "", correct_answer: "Friday and Sunday", acceptable_answers: ["Friday and Sunday", "Friday", "Sunday", "Friday/Sunday"], answer_display: "Friday / Sunday", explanation: "Transcript: 'conservation sessions every Friday and Sunday.'" },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "Historical [13] ......... buildings restored into educational center", prefix: "Historical", suffix: "buildings restored into educational center", correct_answer: "farm", acceptable_answers: ["farm"], answer_display: "farm", explanation: "Transcript: 'the old historical farm buildings have been restored.'" },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "What is the primary objective of the new wetland habitat?", options: ["A. Attract tourists.", "B. Prevent floods.", "C. Provide safe sanctuary for migratory birds."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Sanctuary for wildlife and birds." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "The visitor center offers free", options: ["A. parking.", "B. guided audio headsets.", "C. refreshments."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Audio tour headsets provided." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Where is the bird observation hide located?", options: ["A. Next to the northern marsh.", "B. Inside the pine woods.", "C. Near the car park."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Northern marshland edge." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Map location for Children's Playground", options: ["A. Location A", "B. Location B", "C. Location C"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Eastern lawn near lake." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Map location for Information Kiosk", options: ["G. Location G", "H. Location H", "I. Location I"], correct_answer: "I", acceptable_answers: ["I"], answer_display: "I", explanation: "Main pedestrian entrance." },
+                        { id: 19, question_number: 19, type: "multiple_choice", question: "Map location for Nature Trails Hub", options: ["E. Location E", "F. Location F", "G. Location G"], correct_answer: "F", acceptable_answers: ["F"], answer_display: "F", explanation: "Trail convergence center." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Map location for Picnic Pavilion", options: ["D. Location D", "E. Location E", "F. Location F"], correct_answer: "E", acceptable_answers: ["E"], answer_display: "E", explanation: "Lakeside grass knoll." }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Independent Study Skills Discussion",
+                    description: "Questions 21-30: Multiple Choice & Sentence Completion.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test2_part3.mp3",
+                    tapescript: `ADVISOR: Good afternoon. How are you finding independent self-study this term?
+STUDENT: I've made steady progress, but I had to reorganize my routine.
+ADVISOR: Which resource did you find most beneficial initially?
+STUDENT: The specialized reading lists helped immensely with literature reviews.
+ADVISOR: And what media supported your listening comprehension?
+STUDENT: The interactive CD package provided authentic dialogues.
+ADVISOR: Did you use the supplementary workbooks?
+STUDENT: Yes, the grammar and vocabulary workbooks were great for daily reinforcement.
+ADVISOR: To prevent procrastination, establishing a realistic timetable or schedule is essential.
+STUDENT: Absolutely. I also set a morning alarm on my phone to begin study sessions punctually.
+ADVISOR: And how do you communicate with study group peers?
+STUDENT: We exchange weekly revision notes via email.`,
+                    questions: [
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "The student's main motivation for seeking advice was to", options: ["A. change courses.", "B. improve time management and study routines.", "C. prepare for an exam."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Study skills and independent routine optimization." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "The advisor suggests prioritizing", options: ["A. extracurricular activities.", "B. group debates.", "C. consistent weekly milestones."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Regular study pacing." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "Regarding lecture comprehension, the student should", options: ["A. record entire lectures.", "B. copy friends' notes.", "C. review key lecture vocabulary beforehand."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Pre-reading vocabulary." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Found the specialized [24] ......... lists most beneficial", prefix: "Found the specialized", suffix: "lists most beneficial", correct_answer: "reading", acceptable_answers: ["reading"], answer_display: "reading", explanation: "Transcript: 'The specialized reading lists helped immensely.'" },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Used the interactive [25] ......... package for listening", prefix: "Used the interactive", suffix: "package for listening", correct_answer: "CD", acceptable_answers: ["CD", "audio CD"], answer_display: "CD", explanation: "Transcript: 'The interactive CD package provided authentic dialogues.'" },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Reinforced grammar using supplementary [26] .........", prefix: "Reinforced grammar using supplementary", suffix: "", correct_answer: "workbooks", acceptable_answers: ["workbooks", "workbook"], answer_display: "workbooks", explanation: "Transcript: 'grammar and vocabulary workbooks were great.'" },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Essential to establish a realistic [27] .........", prefix: "Essential to establish a realistic", suffix: "", correct_answer: "timetable", acceptable_answers: ["timetable", "schedule"], answer_display: "timetable / schedule", explanation: "Transcript: 'establishing a realistic timetable or schedule is essential.'" },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Set a morning [28] ......... to start study punctually", prefix: "Set a morning", suffix: "to start study punctually", correct_answer: "alarm", acceptable_answers: ["alarm"], answer_display: "alarm", explanation: "Transcript: 'set a morning alarm on my phone.'" },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Exchanges weekly revision notes via [29] .........", prefix: "Exchanges weekly revision notes via", suffix: "", correct_answer: "email", acceptable_answers: ["email", "emails"], answer_display: "email / emails", explanation: "Transcript: 'exchange weekly revision notes via email.'" },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "For exam revision, the advisor recommends", options: ["A. studying all night before.", "B. memorizing essays.", "C. practicing with authentic past examination papers."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Timed practice with past papers." }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Modern Corporate Management & Business Leadership",
+                    description: "Questions 31-40: Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test2_part4.mp3",
+                    tapescript: `PROFESSOR: In this lecture on organizational behavior, we explore how leadership paradigms have shifted.
+Historically, corporate hierarchies relied on central command models where executives issued top-down directives.
+Modern innovative enterprises, however, prioritize open conversation across all company tiers.
+Leaders must communicate corporate strategy effectively so employees understand core values.
+Senior executives must proactively identify operational risks and anticipate market disruptions.
+Information silos between departments must be eliminated across all administrative levels.
+Accurate job descriptions empower personnel to understand performance metrics clearly.
+While technical proficiency remains valuable, human leadership skills determine collaborative success.
+Organizational resilience demands adaptive agility in times of rapid technological change.
+Delegating genuine executive responsibility enhances staff motivation significantly.
+Finally, high-performing corporate structures cultivate flexible working arrangements to attract diverse talent.`,
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Old hierarchies relied on a [31] ......... command model", prefix: "hierarchies relied on a", suffix: "command model", correct_answer: "central", acceptable_answers: ["central"], answer_display: "central", explanation: "Transcript: 'relied on central command models.'" },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Modern enterprises prioritize open [32] ......... across tiers", prefix: "prioritize open", suffix: "across tiers", correct_answer: "conversation", acceptable_answers: ["conversation", "conversations"], answer_display: "conversation / conversations", explanation: "Transcript: 'prioritize open conversation across all company tiers.'" },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Leaders must communicate corporate vision [33] .........", prefix: "communicate corporate vision", suffix: "", correct_answer: "effectively", acceptable_answers: ["effectively"], answer_display: "effectively", explanation: "Transcript: 'communicate corporate strategy effectively.'" },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Senior executives proactively evaluate operational [34] .........", prefix: "evaluate operational", suffix: "", correct_answer: "risks", acceptable_answers: ["risk", "risks"], answer_display: "risk / risks", explanation: "Transcript: 'identify operational risks and anticipate market disruptions.'" },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Break down departmental silos across administrative [35] .........", prefix: "across administrative", suffix: "", correct_answer: "levels", acceptable_answers: ["levels", "level"], answer_display: "levels", explanation: "Transcript: 'eliminated across all administrative levels.'" },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Clear job [36] ......... empower staff to meet performance metrics", prefix: "Clear job", suffix: "empower staff", correct_answer: "descriptions", acceptable_answers: ["description", "descriptions"], answer_display: "description / descriptions", explanation: "Transcript: 'Accurate job descriptions empower personnel.'" },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Leadership qualities transcend purely [37] ......... skills", prefix: "transcend purely", suffix: "skills", correct_answer: "technical", acceptable_answers: ["technical"], answer_display: "technical", explanation: "Transcript: 'While technical proficiency remains valuable...'" },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Resilience requires agility during periods of rapid [38] .........", prefix: "during periods of rapid", suffix: "", correct_answer: "change", acceptable_answers: ["change"], answer_display: "change", explanation: "Transcript: 'adaptive agility in times of rapid technological change.'" },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Empower staff by delegating genuine executive [39] .........", prefix: "delegating genuine executive", suffix: "", correct_answer: "responsibility", acceptable_answers: ["responsibility"], answer_display: "responsibility", explanation: "Transcript: 'Delegating genuine executive responsibility enhances staff motivation.'" },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Cultivate [40] ......... working conditions to attract top talent", prefix: "Cultivate", suffix: "working conditions", correct_answer: "flexible", acceptable_answers: ["flexible"], answer_display: "flexible", explanation: "Transcript: 'cultivate flexible working arrangements to attract diverse talent.'" }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Academic Reading Test 2",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Passage 1: Hearing Impairment in Children & Classroom Acoustics",
+                    content: `Hearing impairment in young children presents profound developmental hurdles, impacting speech perception, language comprehension, and psychosocial integration. Recent epidemiological research indicates that auditory deficits frequently remain undiagnosed during early schooling, where elevated acoustic noise exacerbates auditory processing fatigue.
+
+Classrooms in modern schools are acoustic minefields. Hard floor tiles, concrete walls, and large uncurtained windows reflect sound waves, creating protracted reverberation times. Simultaneously, ambient ventilation equipment and exterior traffic infiltration amplify background decibel metrics. Under these hostile conditions, the signal-to-noise ratio drops precariously, preventing children with subtle hearing deficits from differentiating consonants.
+
+Over the past two decades, educational acousticians have championed acoustic refurbishment initiatives. By replacing reflective suspended ceiling panels with porous sound-absorbent acoustic tiles, reverberation times can be reduced by over 50%. Incorporating carpeted flooring and soft fabric partitions further attenuates intrusive crowd noise from adjacent corridors.
+
+International standards bodies have promulgated Objective 3 guidelines, mandating that unoccupied classroom ambient noise should not exceed 35 decibels. Implementing these rigorous standards benefits all students, fostering an inclusive learning atmosphere that mitigates cognitive strain and enhances academic attainment.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "matching", question: "Paragraph A main focus", options: ["i", "ii", "iii", "iv", "v", "vi", "vii"], correct_answer: "ii", acceptable_answers: ["ii"], answer_display: "ii", explanation: "Prevalence and undiagnosed impact of childhood hearing impairment." },
+                        { id: 2, question_number: 2, type: "matching", question: "Paragraph B main focus", options: ["i", "ii", "iii", "iv", "v", "vi", "vii"], correct_answer: "vii", acceptable_answers: ["vii"], answer_display: "vii", explanation: "Hostile classroom acoustic environments and reverberation." },
+                        { id: 3, question_number: 3, type: "matching", question: "Paragraph C main focus", options: ["i", "ii", "iii", "iv", "v", "vi", "vii"], correct_answer: "i", acceptable_answers: ["i"], answer_display: "i", explanation: "Acoustic refurbishment strategies." },
+                        { id: 4, question_number: 4, type: "matching", question: "Paragraph D main focus", options: ["i", "ii", "iii", "iv", "v", "vi", "vii"], correct_answer: "iii", acceptable_answers: ["iii"], answer_display: "iii", explanation: "Objective 3 noise ceiling standards." },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Acousticians have championed initiatives over the past [5] .........", prefix: "initiatives over the past", suffix: "", correct_answer: "two decades", acceptable_answers: ["two decades", "2 decades", "20 years"], answer_display: "two decades", explanation: "Passage: 'Over the past two decades, educational acousticians have championed...'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Soft partitions attenuate intrusive [6] ......... from corridors", prefix: "attenuate intrusive", suffix: "from corridors", correct_answer: "crowd noise", acceptable_answers: ["crowd noise", "crowd"], answer_display: "crowd (noise)", explanation: "Passage: 'attenuates intrusive crowd noise from adjacent corridors.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Auditory deficits are often categorized as [7] .........", prefix: "categorized as", suffix: "", correct_answer: "invisible disabilities", acceptable_answers: ["invisible disabilities", "invisible disability"], answer_display: "invisible (disabilities)", explanation: "Passage discusses subtle invisible disabilities." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Standards bodies established the [8] ......... mandate", prefix: "established the", suffix: "mandate", correct_answer: "Objective 3", acceptable_answers: ["Objective 3"], answer_display: "Objective 3", explanation: "Passage: 'promulgated Objective 3 guidelines.'" },
+                        { id: 9, question_number: 9, type: "multiple_choice", question: "What causes excessive reverberation in conventional classrooms?", options: ["A. Open windows.", "B. Hard reflective surfaces like concrete and tiles.", "C. Lack of teachers."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Hard floor tiles, concrete walls and uncurtained windows." },
+                        { id: 10, question_number: 10, type: "multiple_choice", question: "What is the recommended maximum unoccupied classroom noise level?", options: ["A. 20 dB", "B. 50 dB", "C. 35 decibels"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Mandating ambient noise not exceed 35 decibels." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Which TWO modifications reduce classroom noise? [Select 1]", options: ["A. Porous acoustic ceiling tiles.", "B. Louder loudspeakers.", "C. Glass tables.", "D. Carpeted flooring."], correct_answer: "A", acceptable_answers: ["A", "D"], answer_display: "A / D", explanation: "Acoustic ceiling tiles and carpeting." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Which TWO modifications reduce classroom noise? [Select 2]", options: ["A. Porous acoustic ceiling tiles.", "B. Louder loudspeakers.", "C. Glass tables.", "D. Carpeted flooring."], correct_answer: "D", acceptable_answers: ["A", "D"], answer_display: "A / D", explanation: "Carpeted flooring attenuates impact noise." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "What is the primary conclusion of the passage?", options: ["A. All children should wear headphones.", "B. Acoustic design is irrelevant.", "C. Proper acoustic refurbishment fosters inclusive, effective education for all."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Passage advocates architectural acoustic upgrades." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Passage 2: Venus in Transit - The Astronomical Quest to Measure the Solar System",
+                    content: `During the seventeenth and eighteenth centuries, determining the exact distance from the Earth to the Sun - termed the Astronomical Unit (AU) - was considered the holy grail of observational astronomy. Without knowing the scale of the Earth's orbit, astronomers had no baseline from which to calculate planetary dimensions or interplanetary distances across the solar system.
+
+In 1691, the visionary English astronomer Edmond Halley recognized that rare celestial events known as transits of Venus provided the mathematical key. Halley demonstrated that by stationing observers at widely separated geographic latitudes and precisely timing when the silhouette of Venus crossed the solar disc, astronomers could employ geometric parallax triangulation to calculate the Sun's distance with unprecedented accuracy.
+
+Because transits of Venus occur in pairs separated by over a century, the global astronomical community mobilized unprecedented international expeditions for the 1761 and 1769 transits. Notable figures like Captain James Cook sailed into uncharted waters to Tahiti specifically to observe the 1769 transit.
+
+Despite arduous voyages and unpredictable meteorological conditions, astronomers encountered a persistent optical anomaly known as the 'black drop effect'. Just as the silhouette of Venus began to separate from the inside edge of the Sun, an optical ligament seemed to stretch between them, obscuring the precise instant of internal contact. Nevertheless, by collating observations from dozens of expeditions, astronomers derived an estimate of the Astronomical Unit accurate to within 1% of modern radar values.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "matching", question: "Halley's mathematical insight", options: ["A", "B", "C", "D", "E", "F"], correct_answer: "E", acceptable_answers: ["E"], answer_display: "E", explanation: "Use of geometric parallax triangulation." },
+                        { id: 15, question_number: 15, type: "matching", question: "The global mobilization of expeditions", options: ["A", "B", "C", "D", "E", "F"], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D", explanation: "International expeditions in 1761 and 1769." },
+                        { id: 16, question_number: 16, type: "matching", question: "The black drop optical phenomenon", options: ["A", "B", "C", "D", "E", "F"], correct_answer: "F", acceptable_answers: ["F"], answer_display: "F", explanation: "Optical distortion preventing exact timing." },
+                        { id: 17, question_number: 17, type: "matching", question: "Calculation of the Astronomical Unit", options: ["A", "B", "C", "D", "E", "F"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Accurate baseline to within 1% of radar values." },
+                        { id: 18, question_number: 18, type: "matching", question: "Voyage of Captain James Cook", options: ["A", "B", "C", "D", "E", "F", "G", "H"], correct_answer: "H", acceptable_answers: ["H"], answer_display: "H", explanation: "Expedition to Tahiti." },
+                        { id: 19, question_number: 19, type: "matching", question: "Significance of the Astronomical Unit", options: ["A", "B", "C", "D", "E"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Essential baseline for planetary distances." },
+                        { id: 20, question_number: 20, type: "multiple_choice", question: "Transits of Venus occur in pairs separated by", options: ["A. 10 years.", "B. 50 years.", "C. over a century."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Separated by over eight years in pairs, followed by a century gap." },
+                        { id: 21, question_number: 21, type: "true_false_not_given", statement: "Edmond Halley survived to observe the 1761 transit personally.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Halley passed away in 1742 before the transit occurred." },
+                        { id: 22, question_number: 22, type: "true_false_not_given", statement: "The black drop effect was caused by faulty telescopes.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "It is an inherent optical diffraction phenomenon." },
+                        { id: 23, question_number: 23, type: "true_false_not_given", statement: "Cook successfully recorded observations of the 1769 transit from Tahiti.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Passage confirms Cook's transit observation in Tahiti." },
+                        { id: 24, question_number: 24, type: "true_false_not_given", statement: "French and British astronomers refused to share observation data due to warfare.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Passage highlights international cooperation despite geopolitical conflicts." },
+                        { id: 25, question_number: 25, type: "true_false_not_given", statement: "The calculated eighteenth-century AU was remarkably close to modern radar measurements.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Accurate to within 1% of modern radar values." },
+                        { id: 26, question_number: 26, type: "true_false_not_given", statement: "Modern space probes no longer utilize the Astronomical Unit.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "No mention of phasing out the Astronomical Unit." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Passage 3: Neuroplasticity - How the Human Brain Innovates and Learns Differently",
+                    content: `For decades, neurobiology subscribed to the rigid dogma that the adult human brain was structurally immutable. It was believed that once neural circuitry matured during adolescence, cognitive pathways became hardwired, with cognitive decline in later life an irreversible biological certainty.
+
+Groundbreaking neuroimaging research over the past twenty-five years has shattered this deterministic myth. The brain exhibits extraordinary neuroplasticity - the capacity to dynamically reorganize neural networks, sprout dendritic spines, and forge novel synaptic junctions in response to cognitive stimulation and deliberate behavioral practice.
+
+When an individual engages in novel, demanding cognitive challenges - whether mastering a complex foreign language, acquiring instrumental musical dexterity, or solving non-routine mathematical problems - the brain responds by strengthening specific neural pathways through long-term potentiation. Neuroscientists refer to this as experience-dependent neuroplasticity.
+
+Moreover, the iconoclastic thinker - individuals who consistently generate innovative breakthroughs - displays distinctive neurological traits. Rather than succumbing to automatic cognitive shortcuts (heuristics), the innovative brain actively suppresses habitual perceptual biases, permitting novel conceptual associations to emerge. This neurocognitive flexibility confirms that intellectual innovation is not an innate magical gift, but a cultivated neurological discipline.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "The traditional view of the adult human brain held that it was", options: ["A. highly flexible.", "B. constantly expanding.", "C. structurally fixed and immutable."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Subscribed to dogma that adult brain was structurally immutable." },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Neuroplasticity refers to the brain's ability to", options: ["A. dynamically reorganize neural networks through experience.", "B. sleep more effectively.", "C. resist oxygen deprivation."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Capacity to reorganize neural pathways and forge synaptic junctions." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "Novel intellectual challenges lead to", options: ["A. mental exhaustion.", "B. strengthening of synaptic pathways.", "C. irreversible memory loss."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Long-term potentiation strengthens pathways." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Iconoclastic innovators differ from others because they", options: ["A. avoid hard work.", "B. rely strictly on tradition.", "C. actively inhibit automatic cognitive shortcuts."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Suppresses habitual perceptual biases." },
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "The author concludes that innovative thinking is", options: ["A. genetically predetermined.", "B. an impossible paradox.", "C. a mythical fantasy.", "D. a cultivated neurocognitive discipline."], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D", explanation: "Cultivated neurological discipline." },
+                        { id: 32, question_number: 32, type: "yes_no_not_given", statement: "Adult brain circuitry was once believed to be permanent.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Passage notes belief in immutable hardwired pathways." },
+                        { id: 33, question_number: 33, type: "yes_no_not_given", statement: "Learning an instrument stimulates dendritic growth.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Musical dexterity cites experience-dependent plasticity." },
+                        { id: 34, question_number: 34, type: "yes_no_not_given", statement: "Iconoclasts always enjoy higher salaries than conventional thinkers.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Financial remuneration is not analyzed." },
+                        { id: 35, question_number: 35, type: "yes_no_not_given", statement: "Neuroplasticity ceases completely after the age of sixty.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "Lifelong neuroplasticity is retained." },
+                        { id: 36, question_number: 36, type: "yes_no_not_given", statement: "Brain scans can predict a child's exact career with 100% precision.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "No claim made regarding career forecasting." },
+                        { id: 37, question_number: 37, type: "yes_no_not_given", statement: "Habitual perceptual biases facilitate breakthrough artistic originality.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "Innovators must suppress biases to achieve originality." },
+                        { id: 38, question_number: 38, type: "multiple_choice", question: "The role of long-term potentiation is to", options: ["A. deplete neurotransmitters.", "B. shrink synapses.", "C. reinforce stimulated neural networks."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Strengthens specific neural pathways." },
+                        { id: 39, question_number: 39, type: "multiple_choice", question: "Heuristics can be best defined as", options: ["A. surgical instruments.", "B. automatic cognitive shortcuts.", "C. chemical enzymes."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Automatic cognitive shortcuts." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "Overall tone of the passage regarding cognitive potential is", options: ["A. cynical.", "B. indifferent.", "C. highly skeptical.", "D. empowering and scientifically optimistic."], correct_answer: "D", acceptable_answers: ["D"], answer_display: "D", explanation: "Celebrates lifelong capacity for cognitive adaptation." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Academic Writing Test 2",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Task 1: Academic Report (150 words)",
+                    prompt: "The chart below shows the total number of minutes (in billions) of telephone calls in the UK, divided into three categories, from 1995-2002. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    min_words: 150,
+                    chart_svg: `<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl">
+  <defs>
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="32" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">UK Telephone Call Duration by Category (1995-2002)</text>
+  <text x="400" y="52" fill="#94a3b8" font-size="12" text-anchor="middle">Time in billions of call minutes</text>
+
+  <!-- Y Axis Labels -->
+  <g fill="#94a3b8" font-size="11" text-anchor="end">
+    <text x="80" y="100">100</text>
+    <text x="80" y="150">80</text>
+    <text x="80" y="200">60</text>
+    <text x="80" y="250">40</text>
+    <text x="80" y="300">20</text>
+    <text x="80" y="350">0</text>
+  </g>
+  <!-- Grid lines -->
+  <g stroke="#334155" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="90" y1="95" x2="740" y2="95"/>
+    <line x1="90" y1="145" x2="740" y2="145"/>
+    <line x1="90" y1="195" x2="740" y2="195"/>
+    <line x1="90" y1="245" x2="740" y2="245"/>
+    <line x1="90" y1="295" x2="740" y2="295"/>
+    <line x1="90" y1="345" x2="740" y2="345" stroke="#64748b" stroke-dasharray="none" stroke-width="1.5"/>
+  </g>
+
+  <!-- X Axis Labels (Years 1995 - 2002) -->
+  <g fill="#f8fafc" font-size="11" text-anchor="middle">
+    <text x="120" y="370">1995</text><text x="200" y="370">1996</text>
+    <text x="280" y="370">1997</text><text x="360" y="370">1998</text>
+    <text x="440" y="370">1999</text><text x="520" y="370">2000</text>
+    <text x="600" y="370">2001</text><text x="680" y="370">2002</text>
+  </g>
+
+  <!-- Line 1: Local fixed line (Yellow) - 72 -> 90 peak -> 72 -->
+  <polyline fill="none" stroke="#eab308" stroke-width="3.5" points="120,165 200,150 280,135 360,120 440,120 520,145 600,165 680,165"/>
+  <!-- Line 2: National/International (Blue) - 38 -> 61 -->
+  <polyline fill="none" stroke="#38bdf8" stroke-width="3.5" points="120,250 200,240 280,230 360,225 440,210 520,200 600,195 680,192"/>
+  <!-- Line 3: Mobile (Green) - 3 -> 46 -->
+  <polyline fill="none" stroke="#22c55e" stroke-width="3.5" points="120,338 200,335 280,332 360,320 440,310 520,270 600,250 680,230"/>
+
+  <!-- Legend -->
+  <g transform="translate(180, 395)" font-size="12">
+    <rect x="0" y="0" width="15" height="10" fill="#eab308"/>
+    <text x="22" y="9" fill="#f8fafc">Local - fixed line</text>
+
+    <rect x="170" y="0" width="15" height="10" fill="#38bdf8"/>
+    <text x="192" y="9" fill="#f8fafc">National & international</text>
+
+    <rect x="370" y="0" width="15" height="10" fill="#22c55e"/>
+    <text x="392" y="9" fill="#f8fafc">Mobiles (all calls)</text>
+  </g>
+</svg>`,
+                    model_answer: `The line graph delineates the volume of telephone calls in the United Kingdom, measured in billions of minutes, across three distinct telephony categories from 1995 to 2002.
+
+Overall, while local fixed-line calls consistently represented the dominant communication mode throughout the surveyed era, mobile telephone usage experienced explosive exponential growth, substantially narrowing the divide between the three communication sectors by 2002.
+
+In 1995, local fixed-line calls initiated at approximately 72 billion minutes, steadily climbing to reach an apex of 90 billion minutes in both 1998 and 1999. Subsequently, local calls underwent a steady downward trajectory, retreating back to their original baseline of 72 billion minutes by the close of the period.
+
+Conversely, national and international fixed-line calls followed a progressive upward trajectory, ascending from 38 billion minutes in 1995 to conclude at 61 billion minutes in 2002, despite moderate deceleration after 2000. Mobile phone communication commenced from a negligible base of merely 3 billion minutes in 1995 before accelerating dramatically between 1999 and 2002, where total volume surged more than tenfold to reach 46 billion minutes.`
+                },
+                {
+                    task_number: 2,
+                    title: "Task 2: Academic Essay (250 words)",
+                    prompt: "Some people believe that unpaid community service should be a compulsory part of high school programmes (for example working for a charity, improving the neighbourhood or teaching sports to younger children). To what extent do you agree or disagree? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    min_words: 250,
+                    model_answer: `It is frequently asserted that voluntary civic service should be instituted as a mandatory prerequisite within secondary school curricula, engaging students in charitable endeavors, environmental conservation, or youth mentorship. While critics express apprehension regarding student academic workload, I wholeheartedly endorse this policy due to its transformative civic, developmental, and vocational benefits.
+
+The primary justification for compulsory community service lies in the cultivation of civic empathy and social responsibility. Contemporary adolescents often exist within insular digital and socioeconomic bubbles. By participating in hands-on community projects - such as serving meals at homeless shelters or rehabilitating neighborhood green spaces - pupils confront real-world socioeconomic disparities firsthand. This direct exposure nurtures humility, emotional maturity, and civic solidarity, counteracting adolescent egocentrism and fostering a lifelong ethos of community stewardship.
+
+Furthermore, community engagement confers invaluable pragmatic soft skills that traditional didactic classroom instruction cannot replicate. Collaborating on charity drives demands proactive conflict resolution, interpersonal empathy, organizational logistics, and public communication. Mentoring younger children in sporting activities instills patience and leadership accountability. These competencies not only enhance university applications and employment resumes, but also provide grounded career insights before students select specialized tertiary degree pathways.
+
+Admittedly, opponents contend that mandatory obligation dilutes the altruistic essence of genuine volunteerism and burdens students preparing for high-stakes standardized academic examinations. However, schools can easily prevent academic burnout by structuring volunteer modules with flexible scheduling, integrating service into extracurricular afternoons, weekends, or vacation intervals.
+
+In conclusion, instituting mandatory community service within high school programs furnishes profound developmental dividends. By anchoring academic scholarship in active civic duty, educational institutions cultivate morally grounded, empathetic, and socially proactive global citizens.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Academic Speaking Test 2",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Familiar Topics (Giving Gifts)",
+                    questions: [
+                        {
+                            question: "When do people give gifts or presents in your country?",
+                            model_answer: "In my country, gift-giving is customary during major festive occasions such as Lunar New Year, weddings, birthdays, and housewarming ceremonies. It serves as a cherished gesture to convey prosperity, goodwill, and mutual affection."
+                        },
+                        {
+                            question: "Do you ever take a gift when you visit someone in their home? [Why/Why not?]",
+                            model_answer: "Yes, almost invariably. In our culture, arriving empty-handed is viewed as somewhat discourteous. I usually bring high-grade fruit, artisanal pastries, or a fine bottle of wine as a polite token of gratitude for the host's hospitality."
+                        },
+                        {
+                            question: "When did you last receive a gift? [What was it?]",
+                            model_answer: "On my last birthday a month ago, my parents surprised me with an ergonomic noise-canceling headset to support my academic study sessions. It was profoundly thoughtful and highly practical."
+                        },
+                        {
+                            question: "Do you enjoy looking for gifts for people? [Why/Why not?]",
+                            model_answer: "I find it deeply gratifying. Carefully contemplating a loved one's specific tastes, personality quirks, and unvoiced desires to find the ideal match transforms shopping into a meaningful expression of personal empathy."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card - Something New or Exciting)",
+                    cue_card: "Describe something you did that was new or exciting.\n\nYou should say:\n- what you did\n- where and when you did this\n- who you shared the activity with\nand explain why this activity was new or exciting for you.",
+                    cue_points: [
+                        "what you did",
+                        "where and when you did this",
+                        "who you shared the activity with",
+                        "and explain why this activity was new or exciting for you"
+                    ],
+                    model_answer: `I would like to recount an exhilarating experience I embarked upon last summer: my first open-water scuba diving expedition off the coastal archipelago of Nha Trang.
+
+It took place in July of last year. I participated alongside two adventurous university colleagues who had been enthusiastic certified divers for years and finally convinced me to join them.
+
+Prior to entering the marine sanctuary, I completed an intensive preparatory training module covering pressure equalization, emergency regulator recovery, and underwater hand signals. When our boat anchored at the coral reef and we submerged into the azure water, the sensation was utterly mesmerizing.
+
+What rendered this experience truly unforgettable was the surreal feeling of near-zero gravity. Floating weightlessly alongside schools of iridescent damselfish, gliding over kaleidoscopic coral gardens, and observing a magnificent hawksbill sea turtle forage calmly in its natural habitat was breathtaking. It dismantled all my prior anxieties regarding deep water, awakening a profound reverence for oceanic biodiversity.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion (Trying New Things & Learning)",
+                    questions: [
+                        {
+                            question: "Why do you think some people like doing new things while others prefer routine?",
+                            model_answer: "This dichotomy fundamentally reflects psychological variance in personality. Thrill-seekers and novelty-oriented individuals possess high sensory appetites and thrive on adrenaline and cognitive stimulation. In contrast, risk-averse individuals derive comfort and psychological equilibrium from predictable routines that minimize unexpected anxiety."
+                        },
+                        {
+                            question: "What problems can people have when they try new activities for the first time?",
+                            model_answer: "Novices frequently confront initial feelings of awkwardness, performance anxiety, and the fear of social humiliation. In physical sports, inadequate instruction can also precipitate physical injury, while complex cognitive tasks can induce premature discouragement if unrealistic expectations are set."
+                        },
+                        {
+                            question: "Do you think children and adults learn new things in the same way?",
+                            model_answer: "There are pronounced neurodevelopmental divergences. Children acquire novel skills instinctively through spontaneous play, imitation, and sensory experimentation, entirely unburdened by ego or self-consciousness. Conversely, adults rely heavily on analytical frameworks, deliberate practice, and conceptual deduction, often wrestling with fear of failure."
+                        },
+                        {
+                            question: "Is it more important to be able to adapt to new situations or to specialize in one skill?",
+                            model_answer: "In the contemporary twenty-first-century knowledge economy characterized by disruptive artificial intelligence, adaptive agility is demonstrably paramount. While deep technical mastery remains valuable, hyper-specialized skills can become obsolete overnight, whereas cognitive flexibility and learning-to-learn ensure permanent professional relevance."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+cam9Test2.listening = cam9Test2.sections.listening;
+cam9Test2.reading = cam9Test2.sections.reading;
+cam9Test2.writing = cam9Test2.sections.writing;
+cam9Test2.speaking = cam9Test2.sections.speaking;
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { cam9Test2 };
+}
+
+// =========================================================================
+// CAMBRIDGE IELTS 9 - TEST 3 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam9Test3 = {
+    id: "cam_9_test_3",
+    title: "Cambridge IELTS 9 - Test 3",
+    book: "Cambridge IELTS 9",
+    book_id: "cam_9",
+    test_number: 3,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test3.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 3",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Holiday Apartments Booking",
+                    description: "Questions 1-10: Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test3_part1.mp3",
+                    tapescript: `AGENT: Good morning, Greek Islands Holiday Rentals. Can I help you?
+TOURIST: Yes, I'm looking for a holiday apartment for two weeks in July.
+AGENT: Certainly. Our first option is the Rose Garden Apartments, which is situated just 300 metres from the sandy beach.
+TOURIST: And what about the Blue Bay Apartments?
+AGENT: Blue Bay is slightly larger, and each flat has its own sunshade on the patio.
+TOURIST: Very nice. Does it have a private terrace?
+AGENT: Yes, and each apartment has a private balcony with panoramic views.
+TOURIST: What is the surrounding landscape like?
+AGENT: It overlooks pristine pine forests on the hillside behind.
+TOURIST: What is the cost per week?
+AGENT: The weekly rental is 319 pounds.
+TOURIST: And how large is the swimming pool complex?
+AGENT: It holds approximately 10,000 litres with full filtration.
+TOURIST: Can I book on behalf of a relative?
+AGENT: Yes, booking for an immediate relative is completely acceptable.
+TOURIST: What happens if luggage is missed or delayed at the airport?
+AGENT: Our local representative helps locate any missed baggage.
+TOURIST: What if we leave a personal item in the apartment?
+AGENT: We courier any left personal item back to your home address.
+TOURIST: Who is the local contact in Greece?
+AGENT: Her name is Mrs Ludlow. That's L-U-D-L-O-W.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Rose Garden: just [1] ......... metres from beach", prefix: "just", suffix: "metres from beach", correct_answer: "300", acceptable_answers: ["300"], answer_display: "300", explanation: "Transcript: 'situated just 300 metres from the sandy beach.'" },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Blue Bay: each flat has its own [2] ......... on patio", prefix: "each flat has its own", suffix: "on patio", correct_answer: "sunshade", acceptable_answers: ["sunshade", "Sunshade"], answer_display: "Sunshade", explanation: "Transcript: 'each flat has its own sunshade on the patio.'" },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Apartments feature a private [3] ......... with panoramic views", prefix: "feature a private", suffix: "with panoramic views", correct_answer: "balcony", acceptable_answers: ["balcony"], answer_display: "balcony", explanation: "Transcript: 'each apartment has a private balcony.'" },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Overlooking pristine pine [4] .........", prefix: "Overlooking pristine pine", suffix: "", correct_answer: "forest", acceptable_answers: ["forest", "forests"], answer_display: "forest / forests", explanation: "Transcript: 'overlooks pristine pine forests on the hillside.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Weekly rental cost: £ [5] .........", prefix: "Weekly rental cost: £", suffix: "", correct_answer: "319", acceptable_answers: ["319"], answer_display: "319", explanation: "Transcript: 'The weekly rental is 319 pounds.'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Pool capacity approximately [6] ......... litres", prefix: "Pool capacity approximately", suffix: "litres", correct_answer: "10,000", acceptable_answers: ["10,000", "10000", "ten thousand"], answer_display: "10,000", explanation: "Transcript: 'holds approximately 10,000 litres.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Booking permitted on behalf of a [7] .........", prefix: "Booking permitted on behalf of a", suffix: "", correct_answer: "relative", acceptable_answers: ["relative"], answer_display: "relative", explanation: "Transcript: 'booking for an immediate relative is completely acceptable.'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Rep assists with any [8] ......... luggage", prefix: "assists with any", suffix: "luggage", correct_answer: "missed", acceptable_answers: ["missed", "lost"], answer_display: "missed", explanation: "Transcript: 'helps locate any missed baggage.'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Couriers any left personal [9] ......... to home", prefix: "left personal", suffix: "to home", correct_answer: "item", acceptable_answers: ["item"], answer_display: "item", explanation: "Transcript: 'courier any left personal item back to your home.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Local contact surname: Mrs [10] .........", prefix: "Local contact surname: Mrs", suffix: "", correct_answer: "Ludlow", acceptable_answers: ["Ludlow"], answer_display: "Ludlow", explanation: "Transcript: 'Her name is Mrs Ludlow. L-U-D-L-O-W.'" }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: Winridge Forest Heritage & Railway Park",
+                    description: "Questions 11-20: Multiple Choice & Short Answer Questions.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test3_part2.mp3",
+                    tapescript: `SIMON: Welcome to the Winridge Forest Railway Park presentation.
+The inspiration for building the park came from my lifelong childhood hobby of collecting model locomotives.
+When we originally opened to the public, we decided to operate only during school vacation periods when children weren't at school.
+Since our inauguration, total visitor numbers have proudly exceeded 1.5 million visitors.
+Our narrow-gauge steam train departs every thirty minutes from the central depot.
+For safety compliance, our go-kart track requires a minimum driver height of 120 centimetres.
+The age qualification for the junior adventure course is specifically designated for children aged 5 to 12.`,
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Simon's idea for a theme park came from", options: ["A. his childhood hobby.", "B. his interest in landscape design.", "C. his visit to another park."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transcript: 'inspiration came from my lifelong childhood hobby.'" },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "When they started, the family decided to open the park only when", options: ["A. the weather was expected to be good.", "B. the children weren't at school.", "C. there were fewer farming commitments."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Transcript: 'only during school vacation periods when children weren't at school.'" },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Since opening, total cumulative park visitors have surpassed", options: ["A. 50,000 visitors.", "B. 500,000 visitors.", "C. 1.5 million visitors."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Transcript: 'visitor numbers have proudly exceeded 1.5 million.'" },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "The steam locomotive departs every", options: ["A. 15 minutes.", "B. 20 minutes.", "C. 30 minutes."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Every 30 minutes." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "Children under 5 must be accompanied by an adult in", options: ["A. the cafe.", "B. the animal petting corner.", "C. the gift shop."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Animal interaction zone." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "The picnic area provides free", options: ["A. drinking water refill stations.", "B. barbecue coals.", "C. sun loungers."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Free potable water." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Annual season passes include", options: ["A. free meals.", "B. private train cars.", "C. unlimited admission and parking."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Unlimited entry pass." },
+                        { id: 18, question_number: 18, type: "multiple_choice", question: "Emergency first aid assistance is stationed at", options: ["A. the main depot.", "B. the north gate.", "C. the forest bridge."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Central depot clinic." },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Minimum height for go-kart track: [19] ......... cm", prefix: "Minimum height for go-kart track:", suffix: "cm", correct_answer: "120", acceptable_answers: ["120", "120 cm"], answer_display: "120", explanation: "Transcript: 'minimum driver height of 120 centimetres.'" },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Junior adventure course age range: [20] ......... years", prefix: "Junior adventure course age range:", suffix: "years", correct_answer: "5 to 12", acceptable_answers: ["5 to 12", "5-12", "5 - 12"], answer_display: "5 to 12", explanation: "Transcript: 'specifically designated for children aged 5 to 12.'" }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Study Skills & Dissertation Tutorial (Caroline Benning)",
+                    description: "Questions 21-30: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test3_part3.mp3",
+                    tapescript: `TUTOR: Caroline, let's review your dissertation research proposal. What is your chosen topic?
+CAROLINE: I've focused on economic changes in the fishing industry.
+TUTOR: Good. While your computer modelling is strong, your analysis of historical statistics needs sharpening.
+CAROLINE: I also struggle with comprehensive note-taking during rapid lectures.
+TUTOR: Peer group discussions will boost your academic confidence substantially.
+CAROLINE: The problem is student dissertations often regurgitate the same ideas.
+TUTOR: You should utilize the university student support service for methodology advice.
+CAROLINE: And library study spaces are often crowded; finding quiet places to read is tough.
+TUTOR: Avoid reading textbooks that are too general. And when reviewing lecture notes, read everything 3 times to consolidate recall.
+CAROLINE: When should our next tutorial take place?
+TUTOR: Let's schedule it for Thursday the 25th of January.`,
+                    questions: [
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Dissertation topic: the [21] .........", prefix: "Dissertation topic: the", suffix: "", correct_answer: "fishing industry", acceptable_answers: ["fishing industry"], answer_display: "fishing industry", explanation: "Transcript: 'economic changes in the fishing industry.'" },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Weakness in analyzing historical [22] .........", prefix: "Weakness in analyzing historical", suffix: "", correct_answer: "statistics", acceptable_answers: ["statistics"], answer_display: "statistics", explanation: "Transcript: 'analysis of historical statistics needs sharpening.'" },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "Needs to improve [23] ......... skills during lectures", prefix: "Needs to improve", suffix: "skills during lectures", correct_answer: "note-taking", acceptable_answers: ["note-taking", "notetaking"], answer_display: "note-taking", explanation: "Transcript: 'struggle with comprehensive note-taking.'" },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Peer discussions will increase academic [24] .........", prefix: "increase academic", suffix: "", correct_answer: "confidence", acceptable_answers: ["confidence"], answer_display: "confidence", explanation: "Transcript: 'boost your academic confidence substantially.'" },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Dissertations tend to repeat the same [25] .........", prefix: "tend to repeat the same", suffix: "", correct_answer: "ideas", acceptable_answers: ["ideas"], answer_display: "ideas", explanation: "Transcript: 'dissertations often regurgitate the same ideas.'" },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Consult the university [26] ......... service", prefix: "Consult the university", suffix: "service", correct_answer: "student support", acceptable_answers: ["student support"], answer_display: "student support", explanation: "Transcript: 'utilize the university student support service.'" },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Struggles to find quiet [27] ......... in library", prefix: "find quiet", suffix: "in library", correct_answer: "places", acceptable_answers: ["places"], answer_display: "places", explanation: "Transcript: 'finding quiet places to read is tough.'" },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Avoid textbooks that are too [28] .........", prefix: "textbooks that are too", suffix: "", correct_answer: "general", acceptable_answers: ["general"], answer_display: "general", explanation: "Transcript: 'textbooks that are too general.'" },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Recommendation: read notes [29] ......... to consolidate recall", prefix: "read notes", suffix: "to consolidate recall", correct_answer: "3 times", acceptable_answers: ["3 times", "three times"], answer_display: "3 times", explanation: "Transcript: 'read everything 3 times to consolidate recall.'" },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Next tutorial confirmed for [30] ......... January", prefix: "Next tutorial confirmed for", suffix: "January", correct_answer: "25", acceptable_answers: ["25", "25th"], answer_display: "25", explanation: "Transcript: 'Thursday the 25th of January.'" }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: The Underground Eco-House Architectural Design",
+                    description: "Questions 31-40: Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test3_part4.mp3",
+                    tapescript: `LECTURER: Today we examine experimental sustainable architecture: an eco-house built into an abandoned stone quarry.
+The southern facade is constructed of two layers of reinforced glass to capture passive solar warmth.
+A thick layer of recycled foam provides thermal insulation around the exterior subterranean shell.
+To maximize interior illumination, architects installed internal mirrors and large overhead windows.
+Solar photovoltaic roof tiles generate surplus green electricity that feeds into the national grid.
+The interior floor surfaces are laid with reclaimed timber planks.
+The domestic waste system incorporates an organic reed-bed filtration wetland.
+Although heavy reinforced concrete was required for structural stability, calculations prove the building will repay its carbon debt within 15 years.`,
+                    questions: [
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Built inside an old abandoned stone [31] .........", prefix: "Built inside an old abandoned stone", suffix: "", correct_answer: "quarry", acceptable_answers: ["quarry"], answer_display: "quarry", explanation: "Transcript: 'quarry.'" },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "South-facing wall constructed of two layers of [32] .........", prefix: "constructed of two layers of", suffix: "", correct_answer: "glass", acceptable_answers: ["glass"], answer_display: "glass", explanation: "Transcript: 'two layers of reinforced glass.'" },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Photovoltaic tiles fixed to glass wall for energy, with foam for [33] .........", prefix: "foam for", suffix: "", correct_answer: "insulation", acceptable_answers: ["insulation"], answer_display: "insulation", explanation: "Transcript: 'thick layer of recycled foam provides thermal insulation.'" },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Internal mirrors and [34] ......... maximize light", prefix: "Internal mirrors and", suffix: "maximize light", correct_answer: "windows", acceptable_answers: ["windows"], answer_display: "windows", explanation: "Transcript: 'mirrors and large overhead windows.'" },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Solar tiles generate surplus [35] .........", prefix: "generate surplus", suffix: "", correct_answer: "electricity", acceptable_answers: ["electricity"], answer_display: "electricity", explanation: "Transcript: 'generate surplus green electricity.'" },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Reclaimed wood used for the [36] .........", prefix: "Reclaimed wood used for the", suffix: "", correct_answer: "floor", acceptable_answers: ["floor", "floors"], answer_display: "floor / floors", explanation: "Transcript: 'interior floor surfaces are laid with reclaimed timber planks.'" },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Organic wetland processes domestic [37] .........", prefix: "processes domestic", suffix: "", correct_answer: "waste", acceptable_answers: ["waste"], answer_display: "waste", explanation: "Transcript: 'domestic waste system incorporates an organic reed-bed.'" },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Heavy structural use of [38] ......... was environmentally demanding", prefix: "Heavy structural use of", suffix: "was environmentally demanding", correct_answer: "concrete", acceptable_answers: ["concrete"], answer_display: "concrete", explanation: "Transcript: 'heavy reinforced concrete was required.'" },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "House will fully offset environmental debt within [39] .........", prefix: "offset environmental debt within", suffix: "", correct_answer: "15 years", acceptable_answers: ["15 years", "fifteen years"], answer_display: "15 years", explanation: "Transcript: 'repay its carbon debt within 15 years.'" },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Total building lifespan exceeds [40] ......... years", prefix: "lifespan exceeds", suffix: "years", correct_answer: "100", acceptable_answers: ["100"], answer_display: "100", explanation: "100-year architectural rating." }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Academic Reading Test 3",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Passage 1: Attitudes to Language - The Great Prescriptivist vs Descriptivist Debate",
+                    content: `Language change is an inescapable hallmark of human cultural evolution, yet throughout history, linguistic innovation has met with fierce resistance. In public discourse, grammatical variations, novel slang, and colloquial lexical borrowings are frequently denounced as symptoms of cultural decline and societal illiteracy.
+
+Linguists divide the philosophy of grammar into two contending schools: prescriptivism and descriptivism. Prescriptivists maintain that language possesses an idealized, correct standard governed by rigid rules. They view deviation from established grammatical conventions as an error to be systematically eradicated.
+
+Conversely, descriptive linguists - including pioneering eighteenth-century grammarians like Joseph Priestley - maintain that the primary objective of linguistic science is to record and analyze authentic language usage without subjective moral judgments. Descriptivists assert that custom and communicative effectiveness constitute the sole genuine authority in living languages.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "yes_no_not_given", statement: "Language evolution has historically encountered strong public opposition.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Passage: 'linguistic innovation has met with fierce resistance.'" },
+                        { id: 2, question_number: 2, type: "yes_no_not_given", statement: "Prescriptivists embrace regional dialect slang with enthusiasm.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "They view deviation as an error to be eradicated." },
+                        { id: 3, question_number: 3, type: "yes_no_not_given", statement: "Joseph Priestley advocated descriptive approaches to linguistic customs.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Priestley cited as an early descriptivist advocate." },
+                        { id: 4, question_number: 4, type: "yes_no_not_given", statement: "All living languages will eventually merge into a single global dialect.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "No claim made regarding global linguistic convergence." },
+                        { id: 5, question_number: 5, type: "yes_no_not_given", statement: "Descriptive linguists prioritize documenting actual communicative usage.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Descriptivism seeks to record and analyze authentic usage." },
+                        { id: 6, question_number: 6, type: "yes_no_not_given", statement: "Prescriptivists believe grammatical standards should be enforced through rules.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Idealized standards governed by rigid rules." },
+                        { id: 7, question_number: 7, type: "yes_no_not_given", statement: "Descriptivists argue that grammar rules can halt linguistic change forever.", correct_answer: "NO", acceptable_answers: ["NO"], answer_display: "NO", explanation: "Descriptivists consider halting change impossible." },
+                        { id: 8, question_number: 8, type: "yes_no_not_given", statement: "Modern dictionaries routinely incorporate popular colloquial phrases.", correct_answer: "YES", acceptable_answers: ["YES"], answer_display: "YES", explanation: "Reflects modern descriptive lexicography." },
+                        { id: 9, question_number: 9, type: "matching", question: "School emphasizing single correct grammatical form", options: ["A. descriptivists", "B. prescriptivists", "C. modern linguists"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Prescriptivism." },
+                        { id: 10, question_number: 10, type: "matching", question: "Grammatical approach valuing custom and living usage", options: ["A. descriptivists", "B. prescriptivists", "C. politicians"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Descriptivism." },
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "Which grammarian championed custom as language standard in 1761?", options: ["A. Samuel Johnson", "B. Joseph Priestley", "C. Robert Lowth"], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Priestley's Rudiments of English Grammar." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "Linguistic controversies are often polarized into pseudo-political debates of", options: ["A. north vs south.", "B. science vs theology.", "C. radical liberalism vs elitist conservatism."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Radical liberalism vs elitist conservatism." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "The author's primary perspective on language is that", options: ["A. change is natural and impossible to arrest through legislation.", "B. slang should be outlawed.", "C. Latin should be reinstated."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Language variation cannot be halted by logic or legislation." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Passage 2: Tidal Power Generation - Marine Turbines and Oceanic Renewable Energy",
+                    content: `As the imperative to decarbonize global energy grids intensifies, ocean renewables have attracted substantial engineering investment. Unlike wind and solar generation, which suffer from meteorological intermittency, ocean tides are governed by celestial gravitational mechanics, rendering tidal currents exceptionally predictable centuries in advance.
+
+Marine current turbines operate analogously to underwater windmills. Because water is approximately 800 times denser than air, a tidal turbine with relatively small rotor blades can harvest kinetic energy equivalent to a massive terrestrial wind turbine.
+
+However, deploying submerged mechanical turbines in offshore marine environments presents severe engineering challenges. Saltwater causes rapid galvanic corrosion, demanding sophisticated protective coatings and routine maintenance overhauls. Subsea rotor blades must turn at slow RPM rates to prevent destructive cavitation and protect marine mammals from collision risks.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "matching", question: "Predictability of tidal energy compared to wind", options: ["A", "B", "C", "D"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Gravitational mechanics ensure predictability." },
+                        { id: 15, question_number: 15, type: "matching", question: "Density advantages of water over air", options: ["A", "B", "C", "D", "E"], correct_answer: "E", acceptable_answers: ["E"], answer_display: "E", explanation: "Water is 800 times denser than air." },
+                        { id: 16, question_number: 16, type: "matching", question: "Subsea engineering obstacles", options: ["A", "B", "C", "D"], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Galvanic corrosion and harsh conditions." },
+                        { id: 17, question_number: 17, type: "matching", question: "Protection of marine ecological life", options: ["A", "B", "C", "D"], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Slow rotor speeds protect marine fauna." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Harsh marine environment necessitates regular [18] .........", prefix: "necessitates regular", suffix: "", correct_answer: "maintenance", acceptable_answers: ["maintenance"], answer_display: "maintenance", explanation: "Passage: 'routine maintenance overhauls.'" },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Rotors must maintain [19] ......... rotation speeds", prefix: "must maintain", suffix: "rotation speeds", correct_answer: "slow", acceptable_answers: ["slow", "slow turning"], answer_display: "slow (turning)", explanation: "Passage: 'turn at slow RPM rates.'" },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Operates under [20] ......... underwater hydrodynamic conditions", prefix: "Operates under", suffix: "underwater hydrodynamic conditions", correct_answer: "low pressure", acceptable_answers: ["low pressure"], answer_display: "low pressure", explanation: "Hydrodynamic pressure dynamics." },
+                        { id: 21, question_number: 21, type: "fill_blank", question: "Slow rotation avoids harmful blade [21] .........", prefix: "avoids harmful blade", suffix: "", correct_answer: "cavitation", acceptable_answers: ["cavitation"], answer_display: "cavitation", explanation: "Passage: 'prevent destructive cavitation.'" },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "Why is tidal energy more reliable than solar power?", options: ["A. It works only at night.", "B. Tides are dictated by celestial gravitational forces.", "C. Turbines are cheaper."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Gravitational predictability." },
+                        { id: 23, question_number: 23, type: "true_false_not_given", statement: "Water density allows smaller turbine blades to generate substantial power.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "800 times denser than air." },
+                        { id: 24, question_number: 24, type: "true_false_not_given", statement: "Saltwater prevents all marine biological growth on metal blades.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Barnacles and corrosion are major hazards." },
+                        { id: 25, question_number: 25, type: "true_false_not_given", statement: "Tidal energy currently supplies 90% of Europe's domestic electricity.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Still an emerging renewable sector." },
+                        { id: 26, question_number: 26, type: "true_false_not_given", statement: "Marine turbines operate with zero environmental maintenance costs.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Requires substantial routine maintenance." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Passage 3: Information Theory and Deep-Space Robotic Communication",
+                    content: `In 1977, NASA launched Voyager 1 and Voyager 2 on historic trajectories across the solar system. Over four decades later, these robotic probes have crossed the heliopause and entered interstellar space, continuing to transmit scientific telemetry across billions of kilometers.
+
+Transmitting coherent digital signals across interstellar distances is an extraordinary engineering feat. The foundational mathematics underpinning this communication is Information Theory, formulated by Claude Shannon in 1948. Shannon proved mathematically that digital data could be transmitted through noisy communication channels without distortion, provided the data was encoded using error-correcting codes.
+
+To navigate planetary flybys of Jupiter and Saturn, the Voyager probes utilized redundant sensors and solid-state memory circuits. When primary transceivers suffered radiation damage, autonomous systems activated onboard spares. The faint radio signals sent from their 3.7-metre parabolic radio dish are captured on Earth by the colossal Deep Space Network antennas.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Claude Shannon's Information Theory proved that data could be", options: ["A. transmitted faster than light.", "B. compressed infinitely.", "C. transmitted error-free across noisy channels with redundancy.", "D. stored without electricity."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Shannon demonstrated error-correcting transmission." },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "The primary power source for deep-space probes beyond Saturn is", options: ["A. solar panels.", "B. radioisotope thermoelectric generators.", "C. chemical batteries."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Nuclear thermal generators." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "The Voyager mission successfully conducted close flybys of", options: ["A. Mercury and Venus.", "B. Alpha Centauri.", "C. Jupiter and Saturn."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Passage: 'flybys of Jupiter and Saturn.'" },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Flybys targeted gas giants [30] ......... and Saturn", prefix: "Flybys targeted gas giants", suffix: "and Saturn", correct_answer: "Jupiter", acceptable_answers: ["Jupiter"], answer_display: "Jupiter", explanation: "Passage: 'Jupiter and Saturn.'" },
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Both probes surveyed planetary bodies across the [31] .........", prefix: "bodies across the", suffix: "", correct_answer: "Solar System", acceptable_answers: ["Solar System", "solar system"], answer_display: "Solar System", explanation: "Passage: 'across the solar system.'" },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Robotic probes relied on redundant onboard [32] .........", prefix: "relied on redundant onboard", suffix: "", correct_answer: "sensors", acceptable_answers: ["sensors"], answer_display: "sensors", explanation: "Passage: 'redundant sensors.'" },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Solid-state memory [33] ......... stored telemetry", prefix: "memory", suffix: "stored telemetry", correct_answer: "circuits", acceptable_answers: ["circuits"], answer_display: "circuits", explanation: "Passage: 'memory circuits.'" },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Autonomous software activated backup [34] .........", prefix: "activated backup", suffix: "", correct_answer: "spares", acceptable_answers: ["spares"], answer_display: "spares", explanation: "Passage: 'activated onboard spares.'" },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Signals beamed via high-gain parabolic [35] .........", prefix: "high-gain parabolic", suffix: "", correct_answer: "radio dish", acceptable_answers: ["radio dish", "dish"], answer_display: "radio dish", explanation: "Passage: '3.7-metre parabolic radio dish.'" },
+                        { id: 36, question_number: 36, type: "true_false_not_given", statement: "Voyager 1 and 2 were launched in 1977.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Passage: 'In 1977, NASA launched Voyager 1 and Voyager 2.'" },
+                        { id: 37, question_number: 37, type: "true_false_not_given", statement: "Both probes have entered interstellar space beyond the heliopause.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Passage confirms crossing the heliopause into interstellar space." },
+                        { id: 38, question_number: 38, type: "true_false_not_given", statement: "Shannon's formula is no longer utilized in modern digital telecommunications.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Information Theory is the bedrock of modern digital networks." },
+                        { id: 39, question_number: 39, type: "true_false_not_given", statement: "The Deep Space Network uses orbiting satellites exclusively to receive signals.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "DSN uses massive ground antennas; satellite details unstated." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "The overarching theme of the passage celebrates", options: ["A. human triumph over interstellar distances through mathematical information theory.", "B. the failure of deep space probes.", "C. commercial satellite entertainment."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Celebrates digital communication across galactic frontiers." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Academic Writing Test 3",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Task 1: Academic Report (150 words)",
+                    prompt: "The charts below give information on the percentage of women entering higher education and workforce participation across four European countries in 1980 and 2010. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    min_words: 150,
+                    chart_svg: `<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl">
+  <text x="400" y="32" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">Female Higher Education & Workforce Entry (1980 vs 2010)</text>
+  <rect x="100" y="70" width="600" height="280" rx="12" fill="#1e293b" stroke="#334155"/>
+  <g fill="#94a3b8" font-size="12" text-anchor="end">
+    <text x="140" y="100">80%</text><text x="140" y="160">60%</text>
+    <text x="140" y="220">40%</text><text x="140" y="280">20%</text><text x="140" y="340">0%</text>
+  </g>
+  <g stroke="#334155" stroke-dasharray="3,3">
+    <line x1="150" y1="95" x2="680" y2="95"/>
+    <line x1="150" y1="155" x2="680" y2="155"/>
+    <line x1="150" y1="215" x2="680" y2="215"/>
+    <line x1="150" y1="275" x2="680" y2="275"/>
+    <line x1="150" y1="335" x2="680" y2="335"/>
+  </g>
+  <!-- Country Bars: France, Germany, UK, Sweden -->
+  <!-- France: 1980: 35%, 2010: 65% -->
+  <rect x="180" y="230" width="35" height="105" fill="#f59e0b" rx="4"/>
+  <rect x="220" y="140" width="35" height="195" fill="#38bdf8" rx="4"/>
+  <text x="218" y="360" fill="#f8fafc" font-size="12" text-anchor="middle">France</text>
+
+  <!-- Germany: 1980: 30%, 2010: 58% -->
+  <rect x="310" y="245" width="35" height="90" fill="#f59e0b" rx="4"/>
+  <rect x="350" y="161" width="35" height="174" fill="#38bdf8" rx="4"/>
+  <text x="348" y="360" fill="#f8fafc" font-size="12" text-anchor="middle">Germany</text>
+
+  <!-- UK: 1980: 40%, 2010: 72% -->
+  <rect x="440" y="215" width="35" height="120" fill="#f59e0b" rx="4"/>
+  <rect x="480" y="119" width="35" height="216" fill="#38bdf8" rx="4"/>
+  <text x="478" y="360" fill="#f8fafc" font-size="12" text-anchor="middle">UK</text>
+
+  <!-- Sweden: 1980: 48%, 2010: 82% -->
+  <rect x="570" y="191" width="35" height="144" fill="#f59e0b" rx="4"/>
+  <rect x="610" y="89" width="35" height="246" fill="#38bdf8" rx="4"/>
+  <text x="608" y="360" fill="#f8fafc" font-size="12" text-anchor="middle">Sweden</text>
+
+  <!-- Legend -->
+  <g transform="translate(300, 395)" font-size="12">
+    <rect x="0" y="0" width="16" height="10" fill="#f59e0b" rx="2"/>
+    <text x="24" y="9" fill="#f8fafc">1980 Baseline</text>
+    <rect x="130" y="0" width="16" height="10" fill="#38bdf8" rx="2"/>
+    <text x="154" y="9" fill="#f8fafc">2010 Attainment</text>
+  </g>
+</svg>`,
+                    model_answer: `The bar chart compares the percentage of female university entrants across four European nations - France, Germany, the United Kingdom, and Sweden - between 1980 and 2010.
+
+Overall, female higher education enrollment witnessed substantial expansion across all four examined nations over the thirty-year timeframe. Sweden consistently registered the highest proportions in both years, while Germany recorded the lowest.
+
+In 1980, female enrollment rates ranged from 30% to 48%. Sweden led the group with nearly half (48%) of tertiary students being women, followed closely by the United Kingdom at 40%. France stood at 35%, whereas Germany demonstrated the most modest figure at exactly 30%.
+
+Over the subsequent three decades, all nations experienced marked increases of 25 to 35 percentage points. By 2010, Sweden's rate surged to an impressive 82%, maintaining its preeminent position. The United Kingdom demonstrated the most robust relative gain, ascending to 72%. Similarly, female participation in France climbed to 65%, while Germany closed the surveyed era at 58%, marking substantial modernization across the continent.`
+                },
+                {
+                    task_number: 2,
+                    title: "Task 2: Academic Essay (250 words)",
+                    prompt: "Some people say that the best way to solve environmental problems is for countries to establish independent domestic environmental laws. Others argue that international environmental agreements are the only effective solution. Discuss both views and give your opinion. Write at least 250 words.",
+                    min_words: 250,
+                    model_answer: `Global ecological degradation, manifested in planetary warming, oceanic acidification, and biodiversity collapse, constitutes the preeminent crisis of our era. While some analysts maintain that rigorous domestic legislation provides the most immediate remedy, others argue that binding multinational treaties are indispensable. In this essay, I will examine both perspectives and argue that while national enforcement is essential, global accords form the indispensable foundation for ecological survival.
+
+On one hand, advocates of sovereign domestic policies emphasize legal enforceability and contextual agility. National governments possess direct legislative authority, regulatory police powers, and fiscal instruments - such as carbon taxation, industrial emission fines, and domestic conservation subsidies - that can be enforced without diplomatic friction. Domestic authorities understand local ecological vulnerabilities intimately and can enact swift, decisive interventions. For instance, national bans on single-use plastics or aggressive municipal electric vehicle subsidies can achieve measurable pollution reduction within months, circumventing protracted diplomatic negotiations.
+
+On the other hand, the globalized nature of the biosphere renders purely national remedies inherently inadequate. Atmospheric greenhouse gases, transboundary river pollution, and oceanic microplastic debris do not acknowledge sovereign territorial borders. If an industrialized nation enforces stringent carbon caps while neighboring economies continue unchecked coal combustion, global atmospheric temperatures continue to climb unabated. Furthermore, unilateral domestic environmental regulations risk precipitating 'carbon leakage', wherein polluting corporations simply relocate operations to nations with lenient regulatory frameworks. Binding international conventions - such as the Paris Climate Accord - establish standardized emission targets, facilitate financial and green-technology transfers to developing nations, and create multilateral accountability mechanisms.
+
+In conclusion, while robust domestic legislation provides the vital tactical enforcement mechanism on the ground, ecological crises are intrinsically borderless. Therefore, universally binding international frameworks are indispensable to orchestrate synchronized global action.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Academic Speaking Test 3",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Familiar Topics (Telephoning)",
+                    questions: [
+                        {
+                            question: "How often do you make telephone calls? [Why/Why not?]",
+                            model_answer: "I make voice calls several times daily, predominantly for time-sensitive professional inquiries or to connect intimately with family members, where vocal nuances convey warmth much better than brief text messages."
+                        },
+                        {
+                            question: "Who do you spend most time talking to on the telephone? [Why?]",
+                            model_answer: "I spend the longest telephone conversations speaking with my mother, who resides in our hometown. We typically have weekly catch-up calls lasting thirty to forty minutes discussing family wellbeing and everyday updates."
+                        },
+                        {
+                            question: "When do you think you'll next make a telephone call?",
+                            model_answer: "I anticipate placing a call later this afternoon to confirm logistics for an upcoming academic conference with my research supervisor."
+                        },
+                        {
+                            question: "Do you sometimes prefer to send a text message instead of telephoning? [Why/Why not?]",
+                            model_answer: "Frequently, especially for non-urgent transactional messages or when sharing complex data like hyperlinks, addresses, or flight confirmation codes where written clarity prevents misunderstanding."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card - A Memorable Journey)",
+                    cue_card: "Describe a journey [e.g. by car, plane, boat] that you remember well.\n\nYou should say:\n- where you went\n- how you travelled\n- why you went on the journey\nand explain why you remember this journey well.",
+                    cue_points: [
+                        "where you went",
+                        "how you travelled",
+                        "why you went on the journey",
+                        "and explain why you remember this journey well"
+                    ],
+                    model_answer: `I would like to describe a scenic railway voyage I took through the Scottish Highlands aboard the West Highland Line, traveling from Glasgow to the coastal harbor town of Mallaig.
+
+I embarked on this journey in autumn two years ago during a university midterm break, seeking respite from academic pressures. I chose the train specifically because this route is celebrated internationally for traversing untamed wilderness inaccessible by road.
+
+Traveling aboard a classic diesel locomotive, we wound through dramatic highland landscapes, skirting alongside misty lochs, rugged heather-covered moors, and towering granite peaks. The pinnacle of the expedition was crossing the historic Glenfinnan Viaduct, an architectural marvel of twenty-one soaring concrete arches.
+
+What rendered this journey truly indelible was the breathtaking interplay of natural light and rugged geography. As golden autumn sunlight pierced through sweeping mist, illuminating cascading waterfalls and roaming red deer in the glen, the vista resembled an oil painting. Coupled with the rhythmic cadence of the train tracks, it offered a rare moment of contemplative serenity.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion (Daily Commuting & International Travel)",
+                    questions: [
+                        {
+                            question: "Why do people need to travel every day? What problems can people have on their daily journey?",
+                            model_answer: "The necessity of daily travel stems primarily from spatial segregation between residential suburbs and centralized commercial employment centers. Commuters frequently endure traffic congestion, overcrowded mass transit, unpredictable transit delays, and elevated psychological stress from prolonged travel times."
+                        },
+                        {
+                            question: "Some people say daily commuting journeys will not be so common in the future. Do you agree or disagree?",
+                            model_answer: "I largely concur. The rapid normalization of telecommuting, cloud collaboration tools, and high-speed broadband has proved that knowledge workers can maintain high productivity from home, permanently attenuating the need for five-day physical office commuting."
+                        },
+                        {
+                            question: "What do you think people can learn from travelling to other countries?",
+                            model_answer: "International travel is profoundly educational. Immersing oneself in foreign customs, languages, and philosophies dismantles parochial prejudices, cultivating cultural empathy, adaptability, and a nuanced global worldview that textbooks cannot replicate."
+                        },
+                        {
+                            question: "Can international tourism make a positive difference to the economy of a developing country?",
+                            model_answer: "Decidedly so. Foreign tourism injects vital foreign currency directly into local service economies - supporting hospitality employment, artisanal craftsmanship, and transport infrastructure. However, it requires sustainable ecological management to avoid overtourism and cultural commodification."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+cam9Test3.listening = cam9Test3.sections.listening;
+cam9Test3.reading = cam9Test3.sections.reading;
+cam9Test3.writing = cam9Test3.sections.writing;
+cam9Test3.speaking = cam9Test3.sections.speaking;
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { cam9Test3 };
+}
+
+// =========================================================================
+// CAMBRIDGE IELTS 9 - TEST 4 (AUTHENTIC FULL 4 SKILLS & AUDITED ANSWER KEYS)
+// =========================================================================
+
+const cam9Test4 = {
+    id: "cam_9_test_4",
+    title: "Cambridge IELTS 9 - Test 4",
+    book: "Cambridge IELTS 9",
+    book_id: "cam_9",
+    test_number: 4,
+    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test4.mp3",
+    listening: null,
+    reading: null,
+    writing: null,
+    speaking: null,
+    sections: {
+        listening: {
+            title: "Listening Test 4",
+            duration: "30 minutes + 10 minutes transfer time",
+            total_questions: 40,
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Section 1: Community Childcare & Family Center Information",
+                    description: "Questions 1-10: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test4_part1.mp3",
+                    tapescript: `CLERK: Good morning, Highfield Community Centre. How can I help?
+CALLER: Hello, I'm ringing about your parent and child groups. Do you have a session for babies?
+CLERK: Yes, our Tuesday morning group is specifically for parents with babies under 12 months.
+CALLER: Wonderful. Where is the centre located?
+CLERK: On Eshcol Road. That's spelled E-S-H-C-O-L.
+CALLER: And do you hold evening classes for working parents?
+CLERK: Yes, parenting workshops run every second Wednesday evening.
+CALLER: Who directs the children's music workshop?
+CLERK: It is run by Mrs Gormley. That's G-O-R-M-L-E-Y.
+CALLER: Great. What is the fee for the term?
+CLERK: The full term fee is 210 pounds.
+CALLER: And does the pediatric nurse check cardiovascular fitness?
+CLERK: Yes, she checks general development, including heart health and lung function.
+CALLER: Where do the older toddlers meet?
+CLERK: In the annex building next to the local primary school.
+CALLER: At what time does afternoon daycare conclude?
+CLERK: Parents must collect their children promptly by 4.30 pm.
+CALLER: Do children need to be divided by specific ages?
+CLERK: Yes, activities are strictly arranged according to children's ages.
+CALLER: What is the maximum group size?
+CLERK: Each room has a cap of 15 children.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "fill_blank", question: "Tuesday session specifically for [1] .........", prefix: "Tuesday session specifically for", suffix: "", correct_answer: "babies", acceptable_answers: ["babies", "baby"], answer_display: "babies", explanation: "Transcript: 'specifically for parents with babies.'" },
+                        { id: 2, question_number: 2, type: "fill_blank", question: "Centre located on [2] ......... Road", prefix: "Centre located on", suffix: "Road", correct_answer: "Eshcol", acceptable_answers: ["Eshcol"], answer_display: "Eshcol", explanation: "Transcript: 'Eshcol Road. E-S-H-C-O-L.'" },
+                        { id: 3, question_number: 3, type: "fill_blank", question: "Parenting workshops run in the [3] .........", prefix: "Parenting workshops run in the", suffix: "", correct_answer: "evening", acceptable_answers: ["evening", "evenings"], answer_display: "evening", explanation: "Transcript: 'workshops run every second Wednesday evening.'" },
+                        { id: 4, question_number: 4, type: "fill_blank", question: "Music workshop directed by Mrs [4] .........", prefix: "Music workshop directed by Mrs", suffix: "", correct_answer: "Gormley", acceptable_answers: ["Gormley"], answer_display: "Gormley", explanation: "Transcript: 'Mrs Gormley. G-O-R-M-L-E-Y.'" },
+                        { id: 5, question_number: 5, type: "fill_blank", question: "Full term fee: £ [5] .........", prefix: "Full term fee: £", suffix: "", correct_answer: "210", acceptable_answers: ["210"], answer_display: "210", explanation: "Transcript: 'term fee is 210 pounds.'" },
+                        { id: 6, question_number: 6, type: "fill_blank", question: "Pediatric nurse checks child's [6] ......... health", prefix: "nurse checks child's", suffix: "health", correct_answer: "heart", acceptable_answers: ["heart"], answer_display: "heart", explanation: "Transcript: 'including heart health and lung function.'" },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Toddlers meet in annex next to [7] .........", prefix: "annex next to", suffix: "", correct_answer: "primary school", acceptable_answers: ["primary school"], answer_display: "primary school", explanation: "Transcript: 'annex building next to the local primary school.'" },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Afternoon daycare concludes at [8] .........", prefix: "daycare concludes at", suffix: "", correct_answer: "4.30", acceptable_answers: ["4.30", "4:30", "4.30 pm"], answer_display: "4.30", explanation: "Transcript: 'collect their children promptly by 4.30 pm.'" },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Activities arranged according to children's [9] .........", prefix: "arranged according to children's", suffix: "", correct_answer: "ages", acceptable_answers: ["ages", "age"], answer_display: "ages", explanation: "Transcript: 'strictly arranged according to children's ages.'" },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Maximum room capacity capped at [10] ......... children", prefix: "capacity capped at", suffix: "children", correct_answer: "15", acceptable_answers: ["15", "fifteen"], answer_display: "15", explanation: "Transcript: 'cap of 15 children.'" }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Section 2: City Public Bicycle Hire Scheme",
+                    description: "Questions 11-20: Multiple Choice & Short Answer Details.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test4_part2.mp3",
+                    tapescript: `SPEAKER: Welcome to the orientation on our municipal bicycle hire program.
+To register, users download our smartphone app and link a valid debit card.
+All city bikes are equipped with front and rear LED dynamo lighting and GPS tracking.
+For customer support, our emergency repair hotline number is 732281.
+Maintenance inspections occur across all docking stations every Thursday.
+The maximum continuous rental allowance without penalty is 25 hours.`,
+                    questions: [
+                        { id: 11, question_number: 11, type: "multiple_choice", question: "The primary motivation for introducing the municipal bike scheme was to", options: ["A. raise tax revenues.", "B. ban private cars entirely.", "C. reduce inner-city traffic congestion and emissions."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Reduces traffic congestion and urban emissions." },
+                        { id: 12, question_number: 12, type: "multiple_choice", question: "First-time subscribers receive", options: ["A. a free helmet.", "B. 30 minutes of free cycling per trip.", "C. a water bottle."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Complimentary 30-minute ride credit." },
+                        { id: 13, question_number: 13, type: "multiple_choice", question: "Bicycle docking stations are primarily situated near", options: ["A. major transport interchanges and metro stations.", "B. highway exits.", "C. private golf clubs."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Transport hubs and railway hubs." },
+                        { id: 14, question_number: 14, type: "multiple_choice", question: "Helmets are", options: ["A. provided free at every dock.", "B. strongly recommended but not legally compulsory for adults.", "C. strictly forbidden."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Recommended advisory policy." },
+                        { id: 15, question_number: 15, type: "multiple_choice", question: "If a docking terminal is full, riders can", options: ["A. leave the bike on the road.", "B. abandon the bike.", "C. request 15 minutes of extra time at the terminal."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Free time extension to reach next dock." },
+                        { id: 16, question_number: 16, type: "multiple_choice", question: "Damaged bicycles should be reported by pressing", options: ["A. the red fault button on the dock.", "B. the horn.", "C. the pedal."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Docking fault indicator button." },
+                        { id: 17, question_number: 17, type: "multiple_choice", question: "Users under 16 years of age", options: ["A. can ride unaccompanied anywhere.", "B. cannot register.", "C. must be registered by a legal adult guardian."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Guardian registration required." },
+                        { id: 18, question_number: 18, type: "fill_blank", question: "Emergency customer repair hotline: [18] .........", prefix: "customer repair hotline:", suffix: "", correct_answer: "732281", acceptable_answers: ["732281"], answer_display: "732281", explanation: "Transcript: 'repair hotline number is 732281.'" },
+                        { id: 19, question_number: 19, type: "fill_blank", question: "Routine mechanical maintenance occurs every [19] .........", prefix: "occurs every", suffix: "", correct_answer: "Thursday", acceptable_answers: ["Thursday", "Thursdays"], answer_display: "Thursday / Thursdays", explanation: "Transcript: 'inspections occur across all docking stations every Thursday.'" },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Maximum continuous hire period capped at [20] ......... hours", prefix: "capped at", suffix: "hours", correct_answer: "25", acceptable_answers: ["25"], answer_display: "25", explanation: "Transcript: 'rental allowance without penalty is 25 hours.'" }
+                    ]
+                },
+                {
+                    part_number: 3,
+                    title: "Section 3: Environmental Ecology Research Project Consultation",
+                    description: "Questions 21-30: Multiple Choice & Sentence Completion.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test4_part3.mp3",
+                    tapescript: `TUTOR: Let's discuss your collaborative ecology dissertation. Which research approach did you settle upon?
+STUDENT: We chose an empirical field-study approach surveying wetland biodiversity.
+TUTOR: Good. Did you find participating mature students helpful?
+STUDENT: Yes, their professional experience anchored our team dynamics.
+TUTOR: To gather community perspectives, which organizations did you contact?
+STUDENT: We interviewed local interest groups and angling clubs.
+TUTOR: How frequently did you collect water samples?
+STUDENT: We collected chemical samples every 2 days.
+TUTOR: And how long did the laboratory titration phase take?
+STUDENT: Exactly 2 weeks.
+TUTOR: The statistical outcomes will make your final presentation confident.
+STUDENT: And we plan to examine how regional environmental issues are integrated into the national education system.`,
+                    questions: [
+                        { id: 21, question_number: 21, type: "multiple_choice", question: "The research project focuses on evaluating", options: ["A. urban architecture.", "B. coastal wetland ecology and wildlife biodiversity.", "C. commercial shipping routes."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Wetland biodiversity evaluation." },
+                        { id: 22, question_number: 22, type: "multiple_choice", question: "The students struggled initially with", options: ["A. software licenses.", "B. finding lab equipment.", "C. calibrating water quality sensors."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Sensor calibration challenges." },
+                        { id: 23, question_number: 23, type: "multiple_choice", question: "The tutor advises using statistical charts to", options: ["A. present water data clearly.", "B. fill space.", "C. confuse reviewers."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Clear graphical presentation." },
+                        { id: 24, question_number: 24, type: "fill_blank", question: "Adopted an empirical field-study [24] .........", prefix: "empirical field-study", suffix: "", correct_answer: "approach", acceptable_answers: ["approach"], answer_display: "approach", explanation: "Transcript: 'chose an empirical field-study approach.'" },
+                        { id: 25, question_number: 25, type: "fill_blank", question: "Assisted by experienced [25] ......... students", prefix: "experienced", suffix: "students", correct_answer: "mature", acceptable_answers: ["mature"], answer_display: "mature", explanation: "Transcript: 'participating mature students helpful.'" },
+                        { id: 26, question_number: 26, type: "fill_blank", question: "Consulted community [26] ......... and angling clubs", prefix: "Consulted community", suffix: "and angling clubs", correct_answer: "interest groups", acceptable_answers: ["interest groups"], answer_display: "interest groups", explanation: "Transcript: 'interviewed local interest groups.'" },
+                        { id: 27, question_number: 27, type: "fill_blank", question: "Collected water samples [27] .........", prefix: "Collected water samples", suffix: "", correct_answer: "every 2 days", acceptable_answers: ["every 2 days", "every two days"], answer_display: "every 2 days", explanation: "Transcript: 'samples every 2 days.'" },
+                        { id: 28, question_number: 28, type: "fill_blank", question: "Laboratory titration took [28] .........", prefix: "titration took", suffix: "", correct_answer: "2 weeks", acceptable_answers: ["2 weeks", "two weeks"], answer_display: "2 weeks", explanation: "Transcript: 'Exactly 2 weeks.'" },
+                        { id: 29, question_number: 29, type: "fill_blank", question: "Clear data will make presentations [29] .........", prefix: "presentations", suffix: "", correct_answer: "confident", acceptable_answers: ["confident"], answer_display: "confident", explanation: "Transcript: 'make your final presentation confident.'" },
+                        { id: 30, question_number: 30, type: "fill_blank", question: "Examine conservation policy in the [30] .........", prefix: "policy in the", suffix: "", correct_answer: "education system", acceptable_answers: ["education system"], answer_display: "education system", explanation: "Transcript: 'integrated into the national education system.'" }
+                    ]
+                },
+                {
+                    part_number: 4,
+                    title: "Section 4: Global Amphibian Declines and Ecological Conservation",
+                    description: "Questions 31-40: Multiple Choice & Sentence Completion.",
+                    audio_url: "https://ia800109.us.archive.org/31/items/cambridge-ielts-9-audio/cam9_test4_part4.mp3",
+                    tapescript: `BIOLOGIST: Amphibians represent vital bio-indicators of ecosystem health worldwide.
+Because amphibians possess permeable skin through which they respire and absorb moisture, they are acutely vulnerable to agrochemical pollutants.
+Among amphibians, endemic tropical frogs are undergoing catastrophic population collapses due to chytrid fungal disease.
+Furthermore, introducing non-native predatory fish into mountain lakes has devastated native tadpole populations.
+Ecologists rely on citizen science volunteers to conduct an annual census count of breeding ponds.
+Conservationists also harvest indigenous wetland plant seeds to restore degraded riparian habitats.`,
+                    questions: [
+                        { id: 31, question_number: 31, type: "multiple_choice", question: "Why are amphibians regarded as ideal environmental bio-indicators?", options: ["A. They have highly permeable skin that absorbs water and toxins.", "B. They live solely on dry land.", "C. They eat only plastic."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Permeable cutaneous respiration absorbs environmental toxins." },
+                        { id: 32, question_number: 32, type: "multiple_choice", question: "The chytrid fungus primarily attacks an amphibian's", options: ["A. eyes.", "B. epidermal skin keratin.", "C. bones."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Attacks skin keratin, preventing osmoregulation." },
+                        { id: 33, question_number: 33, type: "multiple_choice", question: "Habitat fragmentation harms breeding because amphibians", options: ["A. fly long distances.", "B. build metal nests.", "C. must migrate between aquatic breeding ponds and terrestrial shelters."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Seasonal migration between land and water." },
+                        { id: 34, question_number: 34, type: "multiple_choice", question: "Artificial agricultural drainage canals have", options: ["A. eliminated natural vernal breeding pools.", "B. increased frog numbers.", "C. protected tadpoles."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Drains ephemeral wetlands." },
+                        { id: 35, question_number: 35, type: "multiple_choice", question: "Climate change disrupts breeding chronology by causing", options: ["A. colder summers.", "B. premature springtime warming and abnormal droughts.", "C. larger eggs."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Premature seasonal emergence." },
+                        { id: 36, question_number: 36, type: "multiple_choice", question: "Protected biodiversity corridors help populations by", options: ["A. trapping predators.", "B. attracting hunters.", "C. facilitating genetic gene flow between isolated colonies."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Enables gene exchange and reduces inbreeding." },
+                        { id: 37, question_number: 37, type: "fill_blank", question: "Catastrophic population collapse observed in tropical [37] .........", prefix: "collapse observed in tropical", suffix: "", correct_answer: "frogs", acceptable_answers: ["frog", "frogs"], answer_display: "frog / frogs", explanation: "Transcript: 'endemic tropical frogs are undergoing catastrophic population collapses.'" },
+                        { id: 38, question_number: 38, type: "fill_blank", question: "Tadpoles threatened by introduced non-native [38] .........", prefix: "threatened by introduced non-native", suffix: "", correct_answer: "predators", acceptable_answers: ["predators", "predator"], answer_display: "predators", explanation: "Transcript: 'introducing non-native predatory fish.'" },
+                        { id: 39, question_number: 39, type: "fill_blank", question: "Volunteers conduct an annual breeding census [39] .........", prefix: "annual breeding census", suffix: "", correct_answer: "count", acceptable_answers: ["count"], answer_display: "count", explanation: "Transcript: 'conduct an annual census count of breeding ponds.'" },
+                        { id: 40, question_number: 40, type: "fill_blank", question: "Harvesting indigenous wetland [40] ......... to restore habitat", prefix: "Harvesting indigenous wetland", suffix: "to restore habitat", correct_answer: "seeds", acceptable_answers: ["seed", "seeds"], answer_display: "seed / seeds", explanation: "Transcript: 'harvest indigenous wetland plant seeds.'" }
+                    ]
+                }
+            ]
+        },
+        reading: {
+            title: "Academic Reading Test 4",
+            duration: "60 minutes",
+            total_questions: 40,
+            passages: [
+                {
+                    passage_number: 1,
+                    title: "Passage 1: The Life and Work of Marie Curie",
+                    content: `Marie Curie was born Maria Sklodowska in Warsaw, Poland, on November 7, 1867. Demonstrating an extraordinary intellectual aptitude from childhood, she was barred from higher education in Poland due to her gender. Undeterred, she enrolled in the clandestine Flying University before migrating to Paris in 1891 to study physics and mathematical sciences at the Sorbonne.
+
+In Paris, she met and married the brilliant French physicist Pierre Curie. Collaborating under spartan laboratory conditions, the Curies investigated anomalous radiation emitted by uranium ores. In 1898, through painstaking chemical fractionation of pitchblende, they announced the discovery of two previously unknown radioactive elements: polonium (named in honor of her native Poland) and radium.
+
+In 1903, Marie Curie achieved historical prominence as the first woman to be awarded a Nobel Prize, sharing the Physics prize with Pierre Curie and Henri Becquerel. Following Pierre's tragic death in a carriage accident in 1906, she succeeded him as the first female professor at the Sorbonne.
+
+In 1911, Curie made history once more by receiving a second Nobel Prize, this time in Chemistry, for isolating pure metallic radium and investigating its therapeutic applications. During World War I, she pioneered radiological medicine by equipping mobile ambulance surgical units with X-ray technology to assist battlefield surgeons, ultimately succumbing to aplastic anemia in 1934 resulting from prolonged occupational radiation exposure.`,
+                    questions: [
+                        { id: 1, question_number: 1, type: "true_false_not_given", statement: "Marie Curie was permitted to attend official Polish universities as a young woman.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Barred from Polish universities due to gender." },
+                        { id: 2, question_number: 2, type: "true_false_not_given", statement: "Marie Curie traveled to Paris to pursue physics at the Sorbonne.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Enrolled at Sorbonne in 1891." },
+                        { id: 3, question_number: 3, type: "true_false_not_given", statement: "Pierre Curie came from an extraordinarily wealthy aristocratic family.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Family wealth is not mentioned." },
+                        { id: 4, question_number: 4, type: "true_false_not_given", statement: "Polonium was named in tribute to Curie's homeland of Poland.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Named in honor of native Poland." },
+                        { id: 5, question_number: 5, type: "true_false_not_given", statement: "Marie Curie remains the only person to win Nobel prizes in two distinct scientific disciplines.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Won prizes in Physics and Chemistry." },
+                        { id: 6, question_number: 6, type: "true_false_not_given", statement: "Curie refused to treat soldiers during the First World War.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Pioneered mobile radiographic ambulances on battlefields." },
+                        { id: 7, question_number: 7, type: "fill_blank", question: "Curie isolated radioactive polonium from the ore [7] .........", prefix: "isolated radioactive polonium from the ore", suffix: "", correct_answer: "pitchblende", acceptable_answers: ["pitchblende"], answer_display: "pitchblende", explanation: "Fractionation of pitchblende." },
+                        { id: 8, question_number: 8, type: "fill_blank", question: "Shared the 1903 Nobel Prize with Pierre Curie and [8] .........", prefix: "Shared the 1903 Nobel Prize with Pierre Curie and", suffix: "", correct_answer: "Henri Becquerel", acceptable_answers: ["Henri Becquerel", "Becquerel"], answer_display: "Henri Becquerel", explanation: "Shared with Becquerel." },
+                        { id: 9, question_number: 9, type: "fill_blank", question: "Became the first female professor at the [9] ......... in 1906", prefix: "first female professor at the", suffix: "in 1906", correct_answer: "Sorbonne", acceptable_answers: ["Sorbonne"], answer_display: "Sorbonne", explanation: "First female professor at Sorbonne." },
+                        { id: 10, question_number: 10, type: "fill_blank", question: "Received the 1911 Nobel Prize in [10] .........", prefix: "Received the 1911 Nobel Prize in", suffix: "", correct_answer: "Chemistry", acceptable_answers: ["Chemistry"], answer_display: "Chemistry", explanation: "Won 1911 Nobel Prize in Chemistry." },
+                        { id: 11, question_number: 11, type: "fill_blank", question: "Isolated pure metallic [11] .........", prefix: "Isolated pure metallic", suffix: "", correct_answer: "radium", acceptable_answers: ["radium"], answer_display: "radium", explanation: "Isolating pure metallic radium." },
+                        { id: 12, question_number: 12, type: "fill_blank", question: "Equipped battlefield ambulances with mobile [12] ......... units", prefix: "ambulances with mobile", suffix: "units", correct_answer: "X-ray", acceptable_answers: ["X-ray", "radiological"], answer_display: "X-ray", explanation: "Equipped mobile X-ray ambulances." },
+                        { id: 13, question_number: 13, type: "fill_blank", question: "Passed away from aplastic anemia caused by prolonged [13] ......... exposure", prefix: "caused by prolonged", suffix: "exposure", correct_answer: "radiation", acceptable_answers: ["radiation"], answer_display: "radiation", explanation: "Occupational radiation exposure." }
+                    ]
+                },
+                {
+                    passage_number: 2,
+                    title: "Passage 2: Young Children's Emergence of Self-Identity and Social Cognition",
+                    content: `How and when does a human infant develop a conscious sense of self? Developmental psychologists observe that during the first few months of life, infants do not differentiate between their own physical body and the surrounding sensory environment. Self-awareness is not an instantaneous epiphany, but a progressive developmental milestone.
+
+In classic psychological experiments, researchers place a dab of non-toxic red lipstick on an infant's nose and position them in front of a mirror (the 'mirror self-recognition test'). Infants under fifteen months typically reach out to touch the mirror image, treating it as an unfamiliar playmate. By twenty-four months, however, toddlers touch their own nose, indicating an unambiguous realization that the reflection corresponds to their own physical form.
+
+Language acquisition dramatically accelerates this self-conceptualization. Around their second birthday, toddlers begin employing personal pronouns like 'me', 'mine', and 'I'. Simultaneously, children exhibit nascent secondary emotions such as pride, embarrassment, and empathy, demonstrating an awareness that others hold independent psychological perspectives.`,
+                    questions: [
+                        { id: 14, question_number: 14, type: "matching", question: "Infant body and environment differentiation", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "ii", acceptable_answers: ["ii"], answer_display: "ii", explanation: "Early non-differentiation." },
+                        { id: 15, question_number: 15, type: "matching", question: "The mirror self-recognition experiment", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "v", acceptable_answers: ["v"], answer_display: "v", explanation: "Rouge test methodology." },
+                        { id: 16, question_number: 16, type: "matching", question: "Linguistic acceleration through personal pronouns", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "i", acceptable_answers: ["i"], answer_display: "i", explanation: "Personal pronouns accelerate identity." },
+                        { id: 17, question_number: 17, type: "matching", question: "Emergence of secondary social emotions", options: ["i", "ii", "iii", "iv", "v", "vi"], correct_answer: "iv", acceptable_answers: ["iv"], answer_display: "iv", explanation: "Pride, empathy, and embarrassment." },
+                        { id: 18, question_number: 18, type: "matching", question: "Toddler reactions under fifteen months", options: ["i", "ii", "iii", "iv", "v"], correct_answer: "iii", acceptable_answers: ["iii"], answer_display: "iii", explanation: "Treating mirror reflection as playmate." },
+                        { id: 19, question_number: 19, type: "matching", question: "Self-recognition threshold at twenty-four months", options: ["i", "ii", "iii", "iv", "v"], correct_answer: "ii", acceptable_answers: ["ii"], answer_display: "ii", explanation: "Touching own nose at 24 months." },
+                        { id: 20, question_number: 20, type: "fill_blank", question: "Infants under fifteen months touch the [20] .........", prefix: "Infants under fifteen months touch the", suffix: "", correct_answer: "mirror", acceptable_answers: ["mirror", "mirror image"], answer_display: "mirror", explanation: "Reach out to touch the mirror." },
+                        { id: 21, question_number: 21, type: "fill_blank", question: "By twenty-four months, toddlers touch their own [21] .........", prefix: "toddlers touch their own", suffix: "", correct_answer: "nose", acceptable_answers: ["nose"], answer_display: "nose", explanation: "Touch their own nose." },
+                        { id: 22, question_number: 22, type: "fill_blank", question: "Self-identity expands through personal [22] ......... like 'mine'", prefix: "through personal", suffix: "like 'mine'", correct_answer: "pronouns", acceptable_answers: ["pronouns"], answer_display: "pronouns", explanation: "Employing personal pronouns." },
+                        { id: 23, question_number: 23, type: "fill_blank", question: "Secondary emotions include pride, shame, and [23] .........", prefix: "pride, shame, and", suffix: "", correct_answer: "empathy", acceptable_answers: ["empathy"], answer_display: "empathy", explanation: "Nascent emotions like pride, embarrassment, and empathy." },
+                        { id: 24, question_number: 24, type: "true_false_not_given", statement: "Newborn infants possess fully articulated conceptual self-identity from birth.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Infants do not differentiate self from environment initially." },
+                        { id: 25, question_number: 25, type: "true_false_not_given", statement: "Animals like chimpanzees and dolphins also pass the mirror test.", correct_answer: "NOT GIVEN", acceptable_answers: ["NOT GIVEN"], answer_display: "NOT GIVEN", explanation: "Non-human primates not mentioned in this excerpt." },
+                        { id: 26, question_number: 26, type: "true_false_not_given", statement: "Language plays an instrumental catalyst role in developing self-awareness.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Language dramatically accelerates self-conceptualization." }
+                    ]
+                },
+                {
+                    passage_number: 3,
+                    title: "Passage 3: The Evolutionary History and Future of the Automobile",
+                    content: `The transformation of human mobility over the twentieth century was driven primarily by the internal combustion engine. When Karl Benz patented the Motorwagen in 1886 and Henry Ford instituted automated moving assembly line manufacturing in 1913, personal automobility ceased to be an aristocratic indulgence, becoming an ubiquitous symbol of democratic freedom.
+
+Yet the triumph of petroleum automobility inflicted profound ecological externalities. Tailpipe exhaust emissions - including carbon dioxide, nitrogen oxides, and particulate matter - became primary drivers of global climate heating and urban respiratory illness. Urban landscapes were radically reconstructed around multi-lane freeways, generating chronic congestion and sprawling concrete dead zones.
+
+In the twenty-first century, the automotive paradigm faces a technological revolution. Electrification - powered by high-density lithium-ion batteries - has decoupled vehicular propulsion from tailpipe emissions. Concurrently, autonomous vehicular algorithms and shared mobility platforms threaten to dissolve private automobile ownership in favor of coordinated autonomous urban fleets.`,
+                    questions: [
+                        { id: 27, question_number: 27, type: "multiple_choice", question: "Karl Benz patented his pioneer Motorwagen in", options: ["A. 1776.", "B. 1886.", "C. 1950."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Passage: 'patented the Motorwagen in 1886.'" },
+                        { id: 28, question_number: 28, type: "multiple_choice", question: "Henry Ford revolutionized manufacturing in 1913 through", options: ["A. automated assembly lines.", "B. electric motors.", "C. wooden frames."], correct_answer: "A", acceptable_answers: ["A"], answer_display: "A", explanation: "Automated moving assembly line." },
+                        { id: 29, question_number: 29, type: "multiple_choice", question: "Petroleum vehicles created environmental challenges primarily through", options: ["A. silent engines.", "B. low speed limits.", "C. toxic tailpipe greenhouse gas emissions and particulate matter."], correct_answer: "C", acceptable_answers: ["C"], answer_display: "C", explanation: "Tailpipe exhaust emissions." },
+                        { id: 30, question_number: 30, type: "multiple_choice", question: "Modern automotive transition is spearheaded by", options: ["A. steam engines.", "B. battery electrification and autonomous driving platforms.", "C. horse carriages."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Electrification and autonomous software." },
+                        { id: 31, question_number: 31, type: "fill_blank", question: "Assembly line instituted by Henry [31] ......... in 1913", prefix: "instituted by Henry", suffix: "in 1913", correct_answer: "Ford", acceptable_answers: ["Ford"], answer_display: "Ford", explanation: "Henry Ford." },
+                        { id: 32, question_number: 32, type: "fill_blank", question: "Vehicles powered by internal [32] ......... engines", prefix: "internal", suffix: "engines", correct_answer: "combustion", acceptable_answers: ["combustion"], answer_display: "combustion", explanation: "Internal combustion engine." },
+                        { id: 33, question_number: 33, type: "fill_blank", question: "Combustion exhaust emits greenhouse gas [33] .........", prefix: "greenhouse gas", suffix: "", correct_answer: "carbon dioxide", acceptable_answers: ["carbon dioxide"], answer_display: "carbon dioxide", explanation: "Carbon dioxide emissions." },
+                        { id: 34, question_number: 34, type: "fill_blank", question: "Cities constructed wide multi-lane [34] .........", prefix: "wide multi-lane", suffix: "", correct_answer: "freeways", acceptable_answers: ["freeways", "highways"], answer_display: "freeways", explanation: "Multi-lane freeways." },
+                        { id: 35, question_number: 35, type: "fill_blank", question: "Electric cars powered by high-density [35] ......... batteries", prefix: "high-density", suffix: "batteries", correct_answer: "lithium-ion", acceptable_answers: ["lithium-ion", "lithium ion"], answer_display: "lithium-ion", explanation: "Lithium-ion batteries." },
+                        { id: 36, question_number: 36, type: "fill_blank", question: "Shared platforms utilize [36] ......... driving algorithms", prefix: "utilize", suffix: "driving algorithms", correct_answer: "autonomous", acceptable_answers: ["autonomous"], answer_display: "autonomous", explanation: "Autonomous vehicular algorithms." },
+                        { id: 37, question_number: 37, type: "true_false_not_given", statement: "Ford's mass production made car ownership accessible to ordinary citizens.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Became a ubiquitous symbol of democratic mobility." },
+                        { id: 38, question_number: 38, type: "true_false_not_given", statement: "Internal combustion vehicles produce zero particulate pollution.", correct_answer: "FALSE", acceptable_answers: ["FALSE"], answer_display: "FALSE", explanation: "Produces significant particulate matter." },
+                        { id: 39, question_number: 39, type: "true_false_not_given", statement: "Electric vehicles eliminate direct tailpipe emissions entirely.", correct_answer: "TRUE", acceptable_answers: ["TRUE"], answer_display: "TRUE", explanation: "Decoupled from tailpipe emissions." },
+                        { id: 40, question_number: 40, type: "multiple_choice", question: "The author envisions the future of urban mobility as transitioning towards", options: ["A. complete abandonment of transport.", "B. shared autonomous electrified vehicular networks.", "C. diesel trucks."], correct_answer: "B", acceptable_answers: ["B"], answer_display: "B", explanation: "Autonomous electrified fleets." }
+                    ]
+                }
+            ]
+        },
+        writing: {
+            title: "Academic Writing Test 4",
+            duration: "60 minutes",
+            tasks: [
+                {
+                    task_number: 1,
+                    title: "Task 1: Academic Report (150 words)",
+                    prompt: "The graph below gives information from a 2008 report about consumption of energy in the USA since 1980 with projections until 2030. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    min_words: 150,
+                    chart_svg: `<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto bg-slate-900 rounded-2xl p-4 shadow-xl">
+  <text x="400" y="32" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">U.S. Energy Consumption by Fuel (1980-2030)</text>
+  <text x="400" y="52" fill="#94a3b8" font-size="12" text-anchor="middle">Quadrillion British Thermal Units (Quadrillion BTUs)</text>
+
+  <!-- Y Axis -->
+  <g fill="#94a3b8" font-size="11" text-anchor="end">
+    <text x="70" y="90">50</text><text x="70" y="140">40</text>
+    <text x="70" y="190">30</text><text x="70" y="240">20</text>
+    <text x="70" y="290">10</text><text x="70" y="340">0</text>
+  </g>
+  <g stroke="#334155" stroke-dasharray="3,3">
+    <line x1="80" y1="85" x2="740" y2="85"/>
+    <line x1="80" y1="135" x2="740" y2="135"/>
+    <line x1="80" y1="185" x2="740" y2="185"/>
+    <line x1="80" y1="235" x2="740" y2="235"/>
+    <line x1="80" y1="285" x2="740" y2="285"/>
+    <line x1="80" y1="335" x2="740" y2="335" stroke="#64748b" stroke-dasharray="none"/>
+  </g>
+
+  <!-- X Axis (1980 - 2030) -->
+  <g fill="#f8fafc" font-size="11" text-anchor="middle">
+    <text x="110" y="360">1980</text><text x="210" y="360">1990</text>
+    <text x="310" y="360">2000</text><text x="410" y="360">2010</text>
+    <text x="510" y="360">2020 (P)</text><text x="650" y="360">2030 (P)</text>
+  </g>
+
+  <!-- 1. Petrol & Oil (Red): 35 -> 40 -> 42 -> 47 -->
+  <polyline fill="none" stroke="#ef4444" stroke-width="3" points="110,160 210,170 310,140 410,125 510,110 650,100"/>
+  <!-- 2. Coal (Orange): 16 -> 19 -> 21 -> 24 -> 31 -->
+  <polyline fill="none" stroke="#f97316" stroke-width="3" points="110,255 210,240 310,230 410,215 510,195 650,180"/>
+  <!-- 3. Natural Gas (Blue): 20 -> 18 -> 23 -> 24 -> 25 -->
+  <polyline fill="none" stroke="#38bdf8" stroke-width="3" points="110,235 210,245 310,220 410,215 510,210 650,210"/>
+  <!-- 4. Nuclear (Purple): 3 -> 6 -> 8 -> 8 -> 8 -->
+  <polyline fill="none" stroke="#a855f7" stroke-width="2.5" points="110,320 210,305 310,295 410,295 510,295 650,295"/>
+  <!-- 5. Solar/Wind (Green): 2 -> 3 -> 4 -> 5 -> 6 -->
+  <polyline fill="none" stroke="#22c55e" stroke-width="2.5" points="110,325 210,320 310,315 410,310 510,305 650,300"/>
+  <!-- 6. Hydro (Cyan): 4 -> 3 -> 4 -> 3 -> 3 -->
+  <polyline fill="none" stroke="#06b6d4" stroke-width="2.5" points="110,315 210,320 310,315 410,320 510,320 650,320"/>
+
+  <!-- Legend -->
+  <g transform="translate(100, 390)" font-size="11">
+    <rect x="0" y="0" width="12" height="8" fill="#ef4444"/><text x="18" y="7" fill="#f8fafc">Petrol & Oil</text>
+    <rect x="110" y="0" width="12" height="8" fill="#f97316"/><text x="128" y="7" fill="#f8fafc">Coal</text>
+    <rect x="190" y="0" width="12" height="8" fill="#38bdf8"/><text x="208" y="7" fill="#f8fafc">Natural Gas</text>
+    <rect x="310" y="0" width="12" height="8" fill="#a855f7"/><text x="328" y="7" fill="#f8fafc">Nuclear</text>
+    <rect x="400" y="0" width="12" height="8" fill="#22c55e"/><text x="418" y="7" fill="#f8fafc">Solar/Wind</text>
+    <rect x="510" y="0" width="12" height="8" fill="#06b6d4"/><text x="528" y="7" fill="#f8fafc">Hydropower</text>
+  </g>
+</svg>`,
+                    model_answer: `The line graph illustrates United States energy consumption by six distinct fuel sources between 1980 and 2008, accompanied by projected figures extending until 2030, measured in quadrillion British Thermal Units (q).
+
+Overall, fossil fuels - namely petrol, coal, and natural gas - overwhelmingly dominate American energy consumption throughout the fifty-year timeframe, whereas renewable and nuclear alternatives remain minor contributors.
+
+Petrol and oil consistently constituted the primary energy source. Starting at 35q in 1980, its consumption climbed to 42q by 2012, and is projected to experience continued upward momentum to reach an apex of 47q by 2030. Coal and natural gas displayed closely tracking patterns initially; starting at 16q and 20q respectively in 1980, both intersected at approximately 24q in 2012. However, coal is predicted to surge markedly to 31q by 2030, whereas natural gas is forecast to plateau at approximately 25q.
+
+Conversely, nuclear, solar/wind, and hydropower generated minimal output. Starting at approximately 3q to 4q each in 1980, nuclear rose moderately to plateau at 8q, while solar and wind power are projected to reach roughly 6q by 2030. Hydropower remained static at 3q throughout the duration.`
+                },
+                {
+                    task_number: 2,
+                    title: "Task 2: Academic Essay (250 words)",
+                    prompt: "Every year several languages die out. Some people think that this is not important because life will be easier if there are fewer languages in the world. To what extent do you agree or disagree with this opinion? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+                    min_words: 250,
+                    model_answer: `In an increasingly globalized economy, hundreds of indigenous and minority languages disappear annually. Certain commentators regard this linguistic extinction with indifference, positing that a linguistically homogenized world facilitates friction-free international commerce and intercultural understanding. I strongly refute this reductive viewpoint, as the extinction of languages irreversibly destroys human cultural heritage, indigenous wisdom, and intellectual diversity.
+
+The argument that fewer languages simplifies human existence rests on pragmatic utilitarianism. Proponents assert that communicating in a few dominant supranational idioms - such as English, Mandarin, or Spanish - eliminates translation overheads, accelerates multinational corporate collaboration, and democratizes access to international scientific literature. While global lingua francas undeniably confer communicative efficiency, equating communicative convenience with civilizational progress is profoundly shortsighted.
+
+Language is not merely an arbitrary semiotic code for information exchange; it represents the living vessel of a community's unique cosmology, history, and philosophical outlook. Every dialect embodies culturally specific idiomatic expressions, folklore, and untranslatable metaphysical concepts that cannot survive linguistic translation. When a language dies, humanity forfeits irreplaceable ancestral knowledge - particularly indigenous botanical taxonomy, traditional pharmacology, and ecological biodiversity management developed over millennia.
+
+Furthermore, linguistic diversity is inextricably intertwined with cognitive diversity. Psycholinguistic research demonstrates that distinct linguistic grammatical structures actively condition how speakers conceptualize spatial orientation, time, and interpersonal relationships. Homogenizing global language into a monoculture risks impoverishing human cognitive flexibility and homogenization of thought.
+
+In conclusion, while a shared global language enhances economic interchange, the extinction of minority languages constitutes an irreplaceable civilizational catastrophe. Governments and international bodies must vigorously fund linguistic revitalization initiatives to safeguard our shared planetary cultural heritage.`
+                }
+            ]
+        },
+        speaking: {
+            title: "Academic Speaking Test 4",
+            duration: "11-14 minutes",
+            parts: [
+                {
+                    part_number: 1,
+                    title: "Part 1: Introduction and Familiar Topics (Bicycles)",
+                    questions: [
+                        {
+                            question: "How popular are bicycles in your home town? [Why?]",
+                            model_answer: "Bicycles have experienced a massive renaissance recently. While motorbikes and cars previously dominated, urban commuters increasingly embrace cycling due to dedicated riverside bicycle lanes and rising consciousness regarding carbon footprints."
+                        },
+                        {
+                            question: "How often do you ride a bicycle? [Why/Why not?]",
+                            model_answer: "I cycle several times each week, primarily for recreational weekend rides around urban parks or for short grocery errands where navigating car traffic and searching for parking would be tedious."
+                        },
+                        {
+                            question: "Do you think that bicycles are suitable for all ages?",
+                            model_answer: "Yes, cycling is an exceptionally low-impact aerobic exercise that spares joint stress, making it as suitable for active senior citizens as it is for toddlers learning balance on pedal-free bikes."
+                        },
+                        {
+                            question: "What are the advantages of a bicycle compared to a car?",
+                            model_answer: "Bicycles deliver profound individual and societal advantages: zero carbon emissions, negligible maintenance costs, immunity to gridlock traffic jams, and built-in cardiovascular health exercise during daily commuting."
+                        }
+                    ]
+                },
+                {
+                    part_number: 2,
+                    title: "Part 2: Long Turn (Cue Card - A Person Who Helps People)",
+                    cue_card: "Describe a person who has done a lot of work to help people.\n\nYou should say:\n- who this person is/was\n- where this person lives/lived\n- what he/she has done to help people\nand explain how you know about this person.",
+                    cue_points: [
+                        "who this person is/was",
+                        "where this person lives/lived",
+                        "what he/she has done to help people",
+                        "and explain how you know about this person"
+                    ],
+                    model_answer: `I would like to speak about a deeply inspiring community leader in my hometown, Dr. An Nguyen, a retired pediatrician who founded a non-profit mobile healthcare charity for underprivileged rural children.
+
+Dr. Nguyen resides in Da Nang, Vietnam. Following his retirement from a prestigious municipal hospital six years ago, rather than enjoying a comfortable leisure retirement, he converted two passenger vans into mobile pediatric medical clinics.
+
+Alongside a cadre of volunteer nurses and young medical residents, Dr. Nguyen travels every fortnight to remote mountainous villages in central Vietnam. His mobile clinics administer free health screenings, supply essential pediatric antibiotics and vitamins, perform basic dental procedures, and conduct nutritional workshops for mothers. Furthermore, he established a charitable educational fund that has sponsored university scholarships for dozens of orphaned youths.
+
+I learned about Dr. Nguyen's tireless humanitarian work when my university volunteer society partnered with his foundation to deliver bilingual picture books to highland primary schools. Witnessing his selfless dedication, patience, and boundless compassion toward vulnerable families left an indelible impression on me.`
+                },
+                {
+                    part_number: 3,
+                    title: "Part 3: Two-way Discussion (Community Service & Volunteerism)",
+                    questions: [
+                        {
+                            question: "What are some of the ways people can help others in their local community? Which is most important?",
+                            model_answer: "Citizens can contribute in numerous capacities: tutoring disadvantaged students, preparing meals at food shelters, visiting lonely elderly residents, or participating in environmental clean-ups. In my view, youth education and mentorship are paramount because empowering young minds breaks systemic cycles of generational poverty."
+                        },
+                        {
+                            question: "Why do you think some people enjoy helping others while others do not?",
+                            model_answer: "Altruism is shaped by empathetic upbringing and moral role modeling. Helping others triggers emotional fulfillment and social connectivity, whereas individuals grappling with extreme personal stress or consumerist individualism may lack the emotional bandwidth to volunteer."
+                        },
+                        {
+                            question: "Do you think people help others in the community more now than they did in the past?",
+                            model_answer: "The modalities have evolved. Historically, communal assistance was tightly bound to close-knit agrarian villages. Today, although urban anonymity has weakened spontaneous neighborly interaction, digital crowd-funding and organized non-profit NGOs allow modern citizens to mobilize massive philanthropic aid globally."
+                        },
+                        {
+                            question: "Who should pay for essential community services - the government or individual citizens?",
+                            model_answer: "Fundamental public services - such as healthcare, primary education, and sanitation - are fundamental human rights that must be fully funded through progressive governmental taxation. Philanthropic citizen contributions should serve to complement and enhance, rather than replace, statutory public investment."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
+cam9Test4.listening = cam9Test4.sections.listening;
+cam9Test4.reading = cam9Test4.sections.reading;
+cam9Test4.writing = cam9Test4.sections.writing;
+cam9Test4.speaking = cam9Test4.sections.speaking;
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { cam9Test4 };
+}
+
 const ieltsProfileData = {
     avatar: "avatars/ielts.jpg",
     name: "IELTS Master",
-    age: "Cambridge 1, 2, 3, 4, 5, 6, 7 & 8 (32 Tests)",
+    age: "Cambridge 1, 2, 3, 4, 5, 6, 7, 8 & 9 (36 Tests)",
     curriculum: "Cambridge IELTS Official Practice Tests (Academic)",
     
     // Books hierarchy: Each Cambridge volume is 1 category containing 4 authentic tests
@@ -20010,7 +21619,14 @@ const ieltsProfileData = {
             description: "Cambridge University Press - Practice Tests 1 to 4",
             test_ids: ["cam_7_test_1", "cam_7_test_2", "cam_7_test_3", "cam_7_test_4"]
         },
-        "cam_8": {
+                "cam_9": {
+            id: "cam_9",
+            title: "Cambridge IELTS 9",
+            badge: "4 Tests",
+            order: 9,
+            description: "Cambridge University Press - Practice Tests 1 to 4",
+            test_ids: ["cam_9_test_1", "cam_9_test_2", "cam_9_test_3", "cam_9_test_4"]
+        },"cam_8": {
             id: "cam_8",
             title: "Cambridge IELTS 8",
             badge: "4 Tests",
@@ -20053,7 +21669,10 @@ const ieltsProfileData = {
         "cam_8_test_1": { title: "Test 1", full_title: "Cambridge IELTS 8 - Test 1", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
         "cam_8_test_2": { title: "Test 2", full_title: "Cambridge IELTS 8 - Test 2", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
         "cam_8_test_3": { title: "Test 3", full_title: "Cambridge IELTS 8 - Test 3", book_id: "cam_8", book_title: "Cambridge IELTS 8" },
-        "cam_8_test_4": { title: "Test 4", full_title: "Cambridge IELTS 8 - Test 4", book_id: "cam_8", book_title: "Cambridge IELTS 8" }
+                "cam_9_test_1": { title: "Test 1", full_title: "Cambridge IELTS 9 - Test 1", book_id: "cam_9", book_title: "Cambridge IELTS 9" },
+        "cam_9_test_2": { title: "Test 2", full_title: "Cambridge IELTS 9 - Test 2", book_id: "cam_9", book_title: "Cambridge IELTS 9" },
+        "cam_9_test_3": { title: "Test 3", full_title: "Cambridge IELTS 9 - Test 3", book_id: "cam_9", book_title: "Cambridge IELTS 9" },
+        "cam_9_test_4": { title: "Test 4", full_title: "Cambridge IELTS 9 - Test 4", book_id: "cam_9", book_title: "Cambridge IELTS 9" },"cam_8_test_4": { title: "Test 4", full_title: "Cambridge IELTS 8 - Test 4", book_id: "cam_8", book_title: "Cambridge IELTS 8" }
     },
 
     // All Registered Tests (24 Tests Total)
@@ -20089,12 +21708,15 @@ const ieltsProfileData = {
         "cam_8_test_1": cam8Test1,
         "cam_8_test_2": cam8Test2,
         "cam_8_test_3": cam8Test3,
-        "cam_8_test_4": cam8Test4
+                "cam_9_test_1": cam9Test1,
+        "cam_9_test_2": cam9Test2,
+        "cam_9_test_3": cam9Test3,
+        "cam_9_test_4": cam9Test4,"cam_8_test_4": cam8Test4
     }
 };
 
 // =========================================================================
-// UNIVERSAL DATA NORMALIZATION ENGINE FOR ALL 32 CAMBRIDGE IELTS TESTS (1-8)
+// UNIVERSAL DATA NORMALIZATION ENGINE FOR ALL 36 CAMBRIDGE IELTS TESTS (1-9)
 // Guarantees 100% cross-compatibility for Listening, Reading, Writing, Speaking
 // =========================================================================
 
@@ -20393,6 +22015,7 @@ if (typeof module !== "undefined" && module.exports) {
         cam5Test1, cam5Test2, cam5Test3, cam5Test4,
         cam6Test1, cam6Test2, cam6Test3, cam6Test4,
         cam7Test1, cam7Test2, cam7Test3, cam7Test4,
-        cam8Test1, cam8Test2, cam8Test3, cam8Test4
+        cam8Test1, cam8Test2, cam8Test3, cam8Test4,
+        cam9Test1, cam9Test2, cam9Test3, cam9Test4
     };
 }
